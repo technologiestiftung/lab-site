@@ -1,0 +1,14 @@
+{
+  "name": "TSB-Lab-Site",
+  "version": "1.0.0",
+  "description": "Website for the ideation and prototyping lab",
+  "main": "build.js",
+  "scripts": {},
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^3.1.0",
+    "grunt-contrib-watch": "^1.0.0"
+  },
+  "author": "Sebastian Meier @seb_meier"
+}

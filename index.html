@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="de" itemscope itemtype="http://schema.org/Article">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Ideation &amp; Prototyping Lab</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link type="text/plain" rel="author" href="humans.txt" />
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="apple-touch-icon" href="icons/icon.png">
+
+        <!-- FACEBOOK -->
+        <meta property="og:url" content="http://lab.technologiestiftung-berlin.de">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Ideation &amp; Prototyping Lab">
+        <meta property="og:image" content="http://lab.technologiestiftung-berlin.de/icons/social_media.jpg">
+        <meta property="og:description" content="PROJECT DESCRIPTION">
+        <meta property="og:site_name" content="Ideation &amp; Prototyping Lab">
+        <meta property="article:author" content="Sebastian Meier">
+
+        <!-- TWITTER -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@TSBBerlin">
+        <meta name="twitter:creator" content="@seb_meier">
+        <meta name="twitter:url" content="http://lab.technologiestiftung-berlin.de">
+        <meta name="twitter:title" content="Ideation &amp; Prototyping Lab">
+        <meta name="twitter:description" content="PROJECT DESCRIPTION">
+        <meta name="twitter:image" content="http://lab.technologiestiftung-berlin.de/icons/social_media.jpg">
+
+        <!-- GOOGLE+/SCHEMA.ORG -->
+        <meta itemprop="name" content="Ideation &amp; Prototyping Lab">
+        <meta itemprop="description" content="PROJECT DESCRIPTION">
+        <meta itemprop="image" content="http://lab.technologiestiftung-berlin.de/icons/social_media.jpg">
+
+        <!-- CANONICAL URL -->
+        <link rel="canonical" href="http://lab.technologiestiftung-berlin.de">
+        <!--<link rel="shortlink" href="tsblab.de/projects/PROJECT">-->
+
+        <meta name="theme-color" content="#1e3791">
+        <link rel="stylesheet" href="css/style.css">
+        <!-- TODO Only Load font on index -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,300i" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <div id="nav" class="container">
+                <ul>
+                    <li><a href="#projects">Projekte</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                    <li class="lang"><a href="index_en.html">English</a></li>
+                </ul>
+            </div>
+        </nav>
+        <header>
+            <div id="teaser">
+                <div class="container">
+                    <div id="logo"></div>
+                    <div id="teaser-text">
+                        <h1>Ideation &amp; Prototyping Lab</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+                    </div>
+                    <hr class="clear" />
+                </div>
+            </div>
+        </header>
+        <main>
+            <div id="projects" class="container">
+                <h2>Projekte</h2>
+                <ul id="filter-list">
+                    <li><a class="button" data-value="tool">Werkzeuge</a></li>
+                    <li><a class="button" data-value="datascience">Data Science</a></li>
+                    <li><a class="button" data-value="visualisation">Visualisierung</a></li>
+                    <li><a class="button" data-value="introductions">Einblicke</a></li>
+                </ul>
+                <ul id="project-list">
+                    <li class="f-tool">
+                        <a href="http://lab.technologiestiftung-berlin.de/projects/kita-finder/">
+                            <img src="./projects/kita-finder/thumb@2x.png" alt="Berliner Kitas - Status Quo" />
+                            <span class="tag button">Tool</span><span class="date">10/2017</span>
+                            <span class="title">Kita Suche</span>
+                            <span class="subtitle">Neuartige Suche für das Verzeichnis Berliner Kitas</span>
+                        </a>
+                    </li>
+                    <li class="f-visualisation">
+                        <a href="http://lab.technologiestiftung-berlin.de/projects/kitas/">
+                            <img src="./projects/kitas/thumb@2x.png" alt="Berliner Kitas - Status Quo" />
+                            <span class="tag button">Visualisierung</span><span class="date">10/2017</span>
+                            <span class="title">Berliner Kitas — Status&nbsp;Quo</span>
+                            <span class="subtitle">Wie steht es um die Kitas in Berlin?</span>
+                        </a>
+                    </li>
+                    <li class="f-datascience">
+                        <a href="http://lab.technologiestiftung-berlin.de/projects/predictions/">
+                            <img src="./projects/predictions/thumb@2x.png" alt="Berliner Kitas - Status Quo" />
+                            <span class="tag button">Data&nbsp;Science</span><span class="date">10/2017</span>
+                            <span class="title">Datengestütze Prognosen</span>
+                            <span class="subtitle">Bessere Prognosen durch mehr offene Daten.</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div id="team" class="container">
+                <h2>Team</h2>
+                  
+            </div>
+        </main>
+        <footer>
+            <div id="footer">
+                <div class="container">
+                    <img src="images/tsb-logo.png" alt="Technologiestiftung Berlin" />
+                </div>
+            </div>
+        </footer>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script type="text/javascript" src="js/min/logo.min.js"></script>
+        <script type="text/javascript" src="js/min/script.min.js"></script>
+        <script type="text/javascript">
+            var _logo = logo(d3.select('#logo'), 200, 20, 5, false, true, {min:0.2, max:2});
+            d3.selectAll('#project-list li')
+                .classed('two-break', function(d,i){ return (i%2==0)?true:false; })
+                .classed('three-break', function(d,i){ return (i%3==0)?true:false; });
+        </script>
+    </body>
+</html>
