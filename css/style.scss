@@ -61,7 +61,6 @@ html {
 
 img,
 embed,
-iframe,
 object,
 audio,
 video {
@@ -766,6 +765,11 @@ blockquote{
   margin: 20px 0 40px 0;
 }
 
+.embed{
+  text-align: center;
+}
+
 .embed iframe{
   margin:0 auto;
+  max-width:100%;
 }

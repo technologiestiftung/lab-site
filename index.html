@@ -176,15 +176,5 @@
         <script src="https://d3js.org/d3.v4.min.js"></script>
         <script type="text/javascript" src="js/min/logo.min.js"></script>
         <script type="text/javascript" src="js/min/script.min.js"></script>
-        <script type="text/javascript">
-            var _logo = logo(d3.select('#logo'), 200, 20, 5, false, true, {min:0.2, max:2});
-            setTimeout(function(){console.log(d3.select('#logo').node().innerHTML);}, 700);
-            d3.selectAll('#project-list li')
-                .classed('two-break', function(d,i){ return (i%2==0)?true:false; })
-                .classed('three-break', function(d,i){ return (i%3==0)?true:false; });
-            d3.selectAll('#team-list li')
-                .classed('two-break', function(d,i){ return (i%2==0)?true:false; })
-                .classed('three-break', function(d,i){ return (i%3==0)?true:false; });
-        </script>
     </body>
 </html>
