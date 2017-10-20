@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>PROJECT TITLE | Ideation &amp; Prototyping Lab</title>
+        <title>{{PROJECT TITLE}} | Ideation &amp; Prototyping Lab</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -12,11 +12,12 @@
         <link rel="apple-touch-icon" href="../../icons/icon.png">
 
         <!-- FACEBOOK -->
-        <meta property="og:url" content="http://lab.technologiestiftung-berlin.de/projects/PROJECT/index.html">
+        <meta property="fb:app_id" content="487094758334595">
+        <meta property="og:url" content="http://lab.technologiestiftung-berlin.de/projects/{{PROJECT}}/index.html">
         <meta property="og:type" content="website">
-        <meta property="og:title" content="PROJECT TITLE">
-        <meta property="og:image" content="http://lab.technologiestiftung-berlin.de/projects/PROJECT/social_media.jpg">
-        <meta property="og:description" content="PROJECT DESCRIPTION">
+        <meta property="og:title" content="{{PROJECT TITLE}}">
+        <meta property="og:image" content="http://lab.technologiestiftung-berlin.de/projects/{{PROJECT}}/social_media.jpg">
+        <meta property="og:description" content="{{PROJECT DESCRIPTION}}">
         <meta property="og:site_name" content="Ideation &amp; Prototyping Lab">
         <meta property="article:author" content="Sebastian Meier">
 
@@ -24,35 +25,126 @@
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@TSBBerlin">
         <meta name="twitter:creator" content="@seb_meier">
-        <meta name="twitter:url" content="http://lab.technologiestiftung-berlin.de/projects/PROJECT/index.html">
-        <meta name="twitter:title" content="PROJECT TITLE">
-        <meta name="twitter:description" content="PROJECT DESCRIPTION">
-        <meta name="twitter:image" content="http://lab.technologiestiftung-berlin.de/projects/PROJECT/social_media.jpg">
+        <meta name="twitter:url" content="http://lab.technologiestiftung-berlin.de/projects/{{PROJECT}}/index.html">
+        <meta name="twitter:title" content="{{PROJECT TITLE}}">
+        <meta name="twitter:description" content="{{PROJECT DESCRIPTION}}">
+        <meta name="twitter:image" content="http://lab.technologiestiftung-berlin.de/projects/{{PROJECT}}/social_media.jpg">
 
         <!-- GOOGLE+/SCHEMA.ORG -->
-        <meta itemprop="name" content="PROJECT TITLE">
-        <meta itemprop="description" content="PROJECT DESCRIPTION">
-        <meta itemprop="image" content="http://lab.technologiestiftung-berlin.de/projects/PROJECT/social_media.jpg">
+        <meta itemprop="name" content="{{PROJECT TITLE}}">
+        <meta itemprop="description" content="{{PROJECT DESCRIPTION}}">
+        <meta itemprop="image" content="http://lab.technologiestiftung-berlin.de/projects/{{PROJECT}}/social_media.jpg">
 
         <!-- CANONICAL URL -->
-        <link rel="canonical" href="http://lab.technologiestiftung-berlin.de/projects/PROJECT/index.html">
+        <link rel="canonical" href="http://lab.technologiestiftung-berlin.de/projects/{{PROJECT}}/index.html">
         <!--<link rel="shortlink" href="tsblab.de/projects/PROJECT">-->
 
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,300i|Kalam:700" rel="stylesheet">
         <meta name="theme-color" content="#1e3791">
+        <link href="../../js/prism/prism.css" rel="stylesheet" />
         <link rel="stylesheet" href="../../css/style.css">
     </head>
     <body>
-        <header>
-            
+        <header id="page-head">
+            <div class="container">
+                <div class="left">
+                    <div id="minilogo"></div><a href="http://lab.technologiestiftung-berlin.de">Ideation&nbsp;&amp; Prototyping&nbsp;Lab</a>
+                </div>
+                <div class="right">
+                    <nav>
+                        <a href="http://lab.technologiestiftung-berlin.de">Zurück zum Lab</a>&nbsp;<span class="arrow">&#8614;</span>
+                    </nav>
+                </div>
+            </div>
         </header>
+        <main>
+            <div id="title">
+                <div class="container">
+                    <span class="button tag">{{TAG}}</span>
+                    <h1>{{PROJECT TITLE}}</h1>
+                    <span class="title-subline">{{AUTHOR}} (<a href="https://twitter.com/{{TWITTER_HANDLE}}">@{{TWITTER_HANDLE}}</a>) | 10/2017</span>
+                </div>
+            </div>
+            <div class="container p-bottom">
+                <p class="copy">Lorem ipsum dolor sit <i>amet</i>, <strong>consectetuer</strong> adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. <a href="#">Cum sociis natoque penatibus</a> et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
+            </div>
 
+            <div class="special-section" style="height:400px; line-height: 400px; text-align: center;">
+                Custom Vis Section
+                <!-- You do what ever you want in here. Remove custom style above. -->
+            </div>
 
-        <footer>
-            
+            <div class="container p-bottom">
+                <p class="copy">Lorem ipsum dolor sit <i>amet</i>, <strong>consectetuer</strong> adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. <a href="#">Cum sociis natoque penatibus</a> et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
+                <blockquote>
+                    <p>
+                        Open Data ist schon ne richtig feine Sache.
+                    </p>
+                    <span class="author">Sagt der Ben</span>
+                </blockquote>
+                <p class="copy">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
+            </div>
+
+            <div class="embed">
+                <iframe width="854" height="480" src="https://www.youtube.com/embed/T4tYKGnm2ZI" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="container">
+                <pre><code class="language-css">p { color: red; }</code></pre>
+            </div>
+
+            <div class="container small">
+                <pre><code class="language-css">p { color: red; }</code></pre>
+            </div>
+
+            <div class="container center">
+                <a id="github" href="https://github.com/technologiestiftung/{{GITHUB_URL}}">
+                    <img src="../../images/github.svg" alt="Project on Github" />
+                    <span class="github-title">technologiestiftung/{{GITHUB-URL}}</span><br />
+                    <span class="github-subline">Visit Project on GitHub</span>
+                    <hr class="clear" />
+                </a>
+            </div>
+        </main>
+        <footer id="contact">
+            <div id="footer">
+                <div class="container">
+                    <a href="http://www.technologiestiftung-berlin.de"><img src="../../images/tsb-logo.png" alt="Technologiestiftung Berlin" /></a>
+                    <div class="contact-meta">
+                        Grunewaldstraße 61-62<br />
+                        10825 Berlin<br />
+                        +49 30 209 69 99-0<br />
+                        <a href="mailto:info@technologiestiftung-berlin.de">info@technologiestiftung-berlin.de</a>
+                    </div>
+                    <div class="contact-social">
+                        <a href=""><img src="../../images/twitter.png" alt=""></a>
+                        <a href=""><img src="../../images/facebook.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div id="end">
+                <div class="container">
+                    <div class="left">© Technologiestiftung Berlin 2017</div>
+                    <div class="right">
+                        <a href="https://www.technologiestiftung-berlin.de/de/stiftung/kontakt-anfahrt/" target="_blank">Kontakt</a>
+                        &nbsp;|&nbsp;
+                        <a href="https://www.technologiestiftung-berlin.de/de/impressum" target="_blank">Impressum</a>
+                        &nbsp;|&nbsp;
+                        <a href="https://www.technologiestiftung-berlin.de/de/datenschutz/" target="_blank">Datenschutz</a>
+                    </div>
+                </div>
+            </div>
         </footer>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="../../js/prism/prism.js"></script>
+        <script type="text/javascript" src="../../js/min/logo.min.js"></script>
         <script type="text/javascript" src="../../js/min/script.min.js"></script>
+        <!-- Add your custom JS files here and place them directly in your project folder -->
         <script type="text/javascript">
-            
+            var _logo = logo(d3.select('#minilogo'), 50, 5, 5, false, true, {min:0.2, max:1.5});
+            /*
+                Init Custom Code hier
+            */
         </script>
     </body>
 </html>
