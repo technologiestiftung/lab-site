@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>{{PROJECT TITLE}} | Ideation &amp; Prototyping Lab</title>
+        <title>{{SHORT_TITLE}} | Ideation &amp; Prototyping Lab</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -15,9 +15,9 @@
         <meta property="fb:app_id" content="487094758334595">
         <meta property="og:url" content="http://lab.technologiestiftung-berlin.de/projects/{{PROJECT}}/index.html">
         <meta property="og:type" content="website">
-        <meta property="og:title" content="{{PROJECT TITLE}}">
+        <meta property="og:title" content="{{PROJECT_TITLE}}">
         <meta property="og:image" content="http://lab.technologiestiftung-berlin.de/projects/{{PROJECT}}/social_media.jpg">
-        <meta property="og:description" content="{{PROJECT DESCRIPTION}}">
+        <meta property="og:description" content="{{PROJECT_DESCRIPTION}}">
         <meta property="og:site_name" content="Ideation &amp; Prototyping Lab">
         <meta property="article:author" content="Sebastian Meier">
 
@@ -26,13 +26,13 @@
         <meta name="twitter:site" content="@TSBBerlin">
         <meta name="twitter:creator" content="@seb_meier">
         <meta name="twitter:url" content="http://lab.technologiestiftung-berlin.de/projects/{{PROJECT}}/index.html">
-        <meta name="twitter:title" content="{{PROJECT TITLE}}">
-        <meta name="twitter:description" content="{{PROJECT DESCRIPTION}}">
+        <meta name="twitter:title" content="{{PROJECT_TITLE}}">
+        <meta name="twitter:description" content="{{PROJECT_DESCRIPTION}}">
         <meta name="twitter:image" content="http://lab.technologiestiftung-berlin.de/projects/{{PROJECT}}/social_media.jpg">
 
         <!-- GOOGLE+/SCHEMA.ORG -->
-        <meta itemprop="name" content="{{PROJECT TITLE}}">
-        <meta itemprop="description" content="{{PROJECT DESCRIPTION}}">
+        <meta itemprop="name" content="{{PROJECT_TITLE}}">
+        <meta itemprop="description" content="{{PROJECT_DESCRIPTION}}">
         <meta itemprop="image" content="http://lab.technologiestiftung-berlin.de/projects/{{PROJECT}}/social_media.jpg">
 
         <!-- CANONICAL URL -->
@@ -51,8 +51,11 @@
                     <div id="minilogo"></div><a href="http://lab.technologiestiftung-berlin.de">Ideation&nbsp;&amp; Prototyping&nbsp;Lab</a>
                 </div>
                 <div class="right">
-                    <nav>
-                        <a href="http://lab.technologiestiftung-berlin.de">Zurück zum Lab</a>&nbsp;<span class="arrow">&#8614;</span>
+                    <nav id="page-nav">
+                        <ul>
+                            <li><a href="http://lab.technologiestiftung-berlin.de">Zurück zum Lab</a>&nbsp;<span class="arrow">&#8614;</span></li>
+                            <li class="lang"><a href="http://lab.technologiestiftung-berlin.de/{{PROJECT}}/index_en.html">English</a></li>
+                        </ul>
                     </nav>
                 </div>
             </div>
@@ -61,7 +64,7 @@
             <div id="title">
                 <div class="container">
                     <span class="button tag">{{TAG}}</span>
-                    <h1>{{PROJECT TITLE}}</h1>
+                    <h1>{{PROJECT_TITLE}}</h1>
                     <span class="title-subline">{{AUTHOR}} (<a href="https://twitter.com/{{TWITTER_HANDLE}}">@{{TWITTER_HANDLE}}</a>) | 10/2017</span>
                 </div>
             </div>
@@ -83,6 +86,11 @@
                     <span class="author">Sagt der Ben</span>
                 </blockquote>
                 <p class="copy">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
+            </div>
+
+            <div class="container small p-bottom">
+                <img class="responsive" src="images/mindcraft.jpg" alt="Berlin in Mindcraft" />
+                <p class="caption">Berlin in Mindcraft, Technologiestiftung Berlin 2017</p>
             </div>
 
             <div class="container small embed">
