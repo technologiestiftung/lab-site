@@ -4,6 +4,10 @@
 - kita-finder
 - prediction
 
+- build script/folder for deployment
+
+
+
 - class system
 
 p-top

@@ -24,12 +24,16 @@ var embedResize = debounce(function() {
 	});
 }, 250);
 
-window.addEventListener('resize', embedResize);
-
-embedResize();
+if(d3.select('.embed').size()>=1){
+	window.addEventListener('resize', embedResize);
+	embedResize();
+}
 
 if(d3.select('#minilogo').size()>=1){
 	logo(d3.select('#minilogo'), 50, 5, 5, false, true, {min:0.2, max:1.5});
+	d3.selectAll('.gallery li')
+	    .classed('two-break', function(d,i){ return (i%2==0)?true:false; })
+	    .classed('three-break', function(d,i){ return (i%3==0)?true:false; });
 }else if(d3.select('#logo').size()>=1){
 	logo(d3.select('#logo'), 200, 20, 5, false, true, {min:0.2, max:2});
 	d3.selectAll('#project-list li')

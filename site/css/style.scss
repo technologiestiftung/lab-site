@@ -165,6 +165,7 @@ body{
   width:90%;
   max-width:1200px;
   margin:0 auto;
+  clear:both;
 }
 
 .container.small{
@@ -703,6 +704,7 @@ pre[class*="language-"]{
 #github{
   font-family: 'Roboto Mono', monospace;
   display: inline-block;
+  max-width:100%;
   border-radius:10px;
   border:1px solid rgba(0,0,0,0.1);
   background-color:rgba(0,0,0,0.05);
@@ -710,8 +712,9 @@ pre[class*="language-"]{
   text-align: left;
   text-decoration:none;
   color:#000;
+  overflow: hidden;
   img{
-    margin:20px;
+    margin:20px 0 20px 20px;
     float:left;
   }
   &:hover{
@@ -723,13 +726,14 @@ pre[class*="language-"]{
 
 .github-title{
   display: inline-block;
-  padding:17px 20px 0 0;
+  padding:17px 20px 0 20px;
   font-size:20px;
 }
 
 .github-subline{
   font-size:14px;
   font-style:italic;
+  padding:0 0 10px 20px;
 }
 
 p.copy{
@@ -737,7 +741,6 @@ p.copy{
   margin:0 auto;
   font-family: 'Roboto Mono', monospace;
   font-size:18px;
-  padding:20px 0;
   line-height: 28px;
   a{
     text-decoration: none;
@@ -816,5 +819,216 @@ p.caption{
     font-family: 'Roboto Mono', monospace;
     font-size:14px;
     line-height:0;
+  }
+}
+
+.gallery{
+  width:100%;
+}
+
+.gallery li{
+  display: block;
+  text-align: center;
+  margin:0 auto 20px auto;
+}
+
+@media (min-width: 505px) {
+  .gallery{
+    max-width:505px;
+    margin:0 auto;
+  }
+  .gallery li{
+    float:left;
+    max-width:242px;
+    width:47%;
+    margin-right:0;
+    &.two-break{
+      margin-right:6%;
+      clear:both;
+    }
+  }
+}
+
+@media (min-width: 786px) {
+  .gallery{
+    max-width:768px;
+  }
+  .gallery li{
+    max-width:242px;
+    width:30%;
+    margin-right:0;
+    margin-left:5%;
+    &.two-break{
+      margin-left:5%;
+      margin-right:0;
+      clear:none;
+    }
+    &.three-break.two-break{
+      margin-left:0;
+      clear:both;
+    }
+    &.three-break{
+      margin-left:0;
+      clear:both;
+    }
+  }
+}
+
+/* TMP LIGHTBOX */
+
+#lightbox{
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:rgba(255,255,255,0.8);
+  text-align:center;
+
+  img{
+    min-width:50px;
+    min-height:50px;
+    max-width:90%;
+    max-height:90vh;
+    background-position: center;
+    background-image:url(../images/loading.gif);
+    border:transparent;
+    background-repeat: no-repeat;
+    height:auto;
+    width:auto;
+  }
+
+  .outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  } 
+
+  .middle {
+    display: table-cell;
+    vertical-align: middle;
+    max-width:100%;
+    max-height:100%;
+  }
+
+  .inner {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto; 
+    width: 100%;
+  }
+}
+
+#lghtbx-close{
+  display: block;
+  position: fixed;
+  top:10px;
+  right:10px;
+  text-indent: 2000px;
+  color:transparent;
+  overflow:hidden;
+  width:20px;
+  height:19px;
+  background-image:url('../images/lightbox-close@2x.png');
+  background-size:40px 19px;
+  background-repeat: no-repeat;
+  background-position:left;
+  &:hover{
+    background-position:right;
+    cursor: pointer;
+  }
+}
+
+#lghtbx-subline{
+  position: fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  text-align:center;
+  span{
+    display: inline-block;
+    padding:5px 10px 10px 10px;
+    background-color:#fff;
+    font-family: 'Roboto Mono', monospace;
+    font-size:14px;
+  }
+}
+
+#lghtbx-next, #lghtbx-prev{
+  cursor: pointer;
+  background-repeat: no-repeat;
+  display: block;
+  position:fixed;
+  top:50%;
+  margin-top:-24.5px;
+  width:27px;
+  height:49px;
+  background-size: 54px 49px;
+}
+
+#lghtbx-next{
+  right:10px;
+  background-position: right;
+  background-image:url(../images/lightbox-next@2x.png);
+  &:hover,&.inactive{
+    background-position:left;
+  }
+}
+
+#lghtbx-prev{
+  left:10px;
+  background-position: left;
+  background-image:url(../images/lightbox-prev@2x.png);
+  &:hover,&.inactive{
+    background-position:right;
+  }
+}
+
+hr.divider{
+  width:100%;
+  clear:both;
+  border:transparent;
+  height:17px;
+  background-position: center;
+  background-image:url(../images/divider.png);
+  background-repeat: no-repeat;
+  margin:20px 0;
+  &.small{
+    max-width:768px;
+    margin:20px auto;
+  }
+}
+
+.project main{
+  h2{
+    text-align:left;
+    font-style: normal;
+    font-family:'ClanOT-Medium', Helvetica, sans-serif;
+    font-weight:400;
+    font-size:20px;
+    display: block;
+    max-width:700px;
+    margin:0px auto;
+  }
+  h3{
+    text-align:left;
+    font-style: normal;
+    font-family:'ClanOT-Medium', Helvetica, sans-serif;
+    font-weight:400;
+    font-size:16px;
+    display: block;
+    max-width:700px;
+    margin:0px auto;
+  }
+  ul,ol{
+    max-width:700px;
+    margin:0px auto;
+    font-family: 'Roboto Mono', monospace;
+    font-size:18px;
+    line-height:28px;
+  }
+  ul{
+    list-style-type: circle;
   }
 }
