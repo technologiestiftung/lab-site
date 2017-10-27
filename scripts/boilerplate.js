@@ -16,6 +16,8 @@ var fs = require('fs'),
  
 var default_params = {
 	PROJECT : '{{PROJECT}}', //project URL
+	DATE : '{{DATE}}',
+	EMAIL : '{{EMAIL}}',	
 	GITHUB_URL : '{{PROJECT}}',
 	TWITTER_HANDLE : '{{TWITTER_HANDLE}}',
 	AUTHOR : '{{AUTHOR}}',

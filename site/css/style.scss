@@ -744,8 +744,8 @@ p.copy{
   max-width:700px;
   margin:0 auto;
   font-family: 'Roboto Mono', monospace;
-  font-size:18px;
-  line-height: 28px;
+  font-size:14px;
+  line-height: 24px;
   a{
     text-decoration: none;
     font-weight: bold;
@@ -754,6 +754,20 @@ p.copy{
       text-decoration:underline;
     }
   }
+}
+
+pre code{
+  font-size:14px;
+}
+
+@media (min-width: 768px) {
+  p.copy{
+    font-size:18px;
+    line-height: 28px;
+  }
+  pre code{
+    font-size:16px;
+  } 
 }
 
 blockquote{
@@ -769,6 +783,9 @@ blockquote{
     font-size:18px;
     font-style:italic;
     padding:10px 0 0 20px;
+  }
+  &.center{
+    text-align:center;
   }
 }
 
@@ -1029,8 +1046,8 @@ hr.divider{
     max-width:700px;
     margin:0px auto;
     font-family: 'Roboto Mono', monospace;
-    font-size:18px;
-    line-height:28px;
+    font-size:14px;
+    line-height:24px;
   }
   ul{
     list-style-type: circle;
@@ -1079,7 +1096,7 @@ hr.divider{
   font-size:14px;
 }
 
-@media (min-width: 786px) {
+@media (min-width: 768px) {
   .download-list li{
     clear:none;
     float:left;
@@ -1087,12 +1104,26 @@ hr.divider{
     margin-left:2.5%;
     margin-right:2.5%;
   }
+
+  .project main{
+    ul,ol{
+      font-size:18px;
+      line-height:28px;
+    }
+  }
 }
 
 #author{
   text-align: center;
   img{
     margin-bottom:20px;
+  }
+  a{
+    color:#000;
+    text-decoration:underline;
+    &:hover{
+      text-decoration:none;
+    }
   }
   h3{
     color:#555;
