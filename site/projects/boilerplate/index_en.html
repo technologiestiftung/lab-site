@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="de" itemscope itemtype="http://schema.org/Article">
+<html lang="en" itemscope itemtype="http://schema.org/Article">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>{{SHORT_TITLE}} | Ideation &amp; Prototyping Lab</title>
-        <meta name="description" content="{{PROJECT_DESCRIPTION}}">
+        <title>{{SHORT_TITLE_EN}} | Ideation &amp; Prototyping Lab</title>
+        <meta name="description" content="{PROJECT_DESCRIPTION_EN}}">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <link type="text/plain" rel="author" href="../../humans.txt" />
@@ -15,9 +15,9 @@
         <meta property="fb:app_id" content="487094758334595">
         <meta property="og:url" content="http://lab.technologiestiftung-berlin.de/projects/{{PROJECT}}/index.html">
         <meta property="og:type" content="website">
-        <meta property="og:title" content="{{PROJECT_TITLE}}">
+        <meta property="og:title" content="{{PROJECT_TITLE_EN}}">
         <meta property="og:image" content="http://lab.technologiestiftung-berlin.de/projects/{{PROJECT}}/social_media.jpg">
-        <meta property="og:description" content="{{PROJECT_DESCRIPTION}}">
+        <meta property="og:description" content="{{PROJECT_DESCRIPTION_EN}}">
         <meta property="og:site_name" content="Ideation &amp; Prototyping Lab">
         <meta property="article:author" content="Sebastian Meier">
 
@@ -26,13 +26,13 @@
         <meta name="twitter:site" content="@TSBBerlin">
         <meta name="twitter:creator" content="{{TWITTER_HANDLE}}">
         <meta name="twitter:url" content="http://lab.technologiestiftung-berlin.de/projects/{{PROJECT}}/index.html">
-        <meta name="twitter:title" content="{{PROJECT_TITLE}}">
-        <meta name="twitter:description" content="{{PROJECT_DESCRIPTION}}">
+        <meta name="twitter:title" content="{{PROJECT_TITLE_EN}}">
+        <meta name="twitter:description" content="{{PROJECT_DESCRIPTION_EN}}">
         <meta name="twitter:image" content="http://lab.technologiestiftung-berlin.de/projects/{{PROJECT}}/social_media.jpg">
 
         <!-- GOOGLE+/SCHEMA.ORG -->
-        <meta itemprop="name" content="{{PROJECT_TITLE}}">
-        <meta itemprop="description" content="{{PROJECT_DESCRIPTION}}">
+        <meta itemprop="name" content="{{PROJECT_TITLE_EN}}">
+        <meta itemprop="description" content="{{PROJECT_DESCRIPTION_EN}}">
         <meta itemprop="image" content="http://lab.technologiestiftung-berlin.de/projects/{{PROJECT}}/social_media.jpg">
 
         <!-- CANONICAL URL -->
@@ -53,8 +53,8 @@
                 <div class="right">
                     <nav id="page-nav">
                         <ul>
-                            <li><a href="http://lab.technologiestiftung-berlin.de">Zurück zum Lab</a>&nbsp;<span class="arrow">&#8614;</span></li>
-                            <li class="lang"><a href="http://lab.technologiestiftung-berlin.de/{{PROJECT}}/index_en.html">English</a></li>
+                            <li><a href="http://lab.technologiestiftung-berlin.de">Back to the Lab</a>&nbsp;<span class="arrow">&#8614;</span></li>
+                            <li class="lang"><a href="http://lab.technologiestiftung-berlin.de/{{PROJECT}}/index_en.html">Deutsch</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -63,8 +63,8 @@
         <main>
             <div id="title">
                 <div class="container">
-                    <span class="button tag">{{TAG}}</span>
-                    <h1>{{PROJECT_TITLE}}</h1>
+                    <span class="button tag">{{TAG_EN}}</span>
+                    <h1>{{PROJECT_TITLE_EN}}</h1>
                     <span class="title-subline">{{AUTHOR}} (<a href="https://twitter.com/{{TWITTER_HANDLE}}">@{{TWITTER_HANDLE}}</a>) | 10/2017</span>
                 </div>
             </div>
@@ -166,17 +166,17 @@
             </div>
 
             <div class="container center">
-                <a id="github" href="https://github.com/technologiestiftung/{{GITHUB_URL}}">
+                <a id="github" href="https://github.com/technologiestiftung/{{GITHUB_URL_EN}}">
                     <img src="../../images/github.svg" alt="Project on Github" />
                     <span class="github-title">technologiestiftung/{{GITHUB_URL}}</span><br />
-                    <span class="github-subline">Projekt auf GitHub</span>
+                    <span class="github-subline">Visit Project on GitHub</span>
                     <hr class="clear" />
                 </a>
             </div>
 
-            <div id="author">
+            <div id="author" class="container small p-top">
                 <img src="../../images/team/author_{{AUTHOR_IMAGE}}.png" alt="{{AUTHOR}}" />
-                <h3>Über den Autor</h3>
+                <h3>About the author</h3>
                 <h2>{{AUTHOR}}</h2>
                 <p>{{AUTHOR_BIO}}</p>
                 <hr class="clear" />
