@@ -334,6 +334,10 @@ body{
   color:#DEE3F7;
 }
 
+.project .button.tag{
+  cursor:auto;
+}
+
 #project-list a:hover .button.tag{
   background-color:rgba(0,0,0,0.7);
   color:#fff;
@@ -439,7 +443,7 @@ h2{
   }
 
   #footer .contact-meta{
-    padding-top:3px;
+    padding-top:23px;
     padding-left:20px;
   }
 
@@ -450,7 +454,7 @@ h2{
 
 @media (min-width: 920px) {
   #footer .contact-social{
-    padding-top:40px;
+    padding-top:50px;
     padding-left:15px;
     float:left;
     clear:none;
@@ -1030,5 +1034,90 @@ hr.divider{
   }
   ul{
     list-style-type: circle;
+  }
+}
+
+.download-list ul, .download-list li{
+  list-style: none;
+}
+
+.download-list li{
+  width:100%;
+  clear:both;
+}
+
+.download-list li a{
+  color:#000;
+  text-decoration: none;
+}
+
+.download-list li a:hover{
+  color:#979797;
+  .download-icon{
+    background-position: right;
+  }
+}
+
+.download-icon{
+  background-image:url(../images/download.png);
+  background-size:54px 42px;
+  background-repeat: no-repeat;
+  background-position: left;
+  width:27px;
+  height:42px;
+  float:left;
+  display: inline-block;
+  margin:7px 20px 20px 0;
+}
+
+.download-title{
+  font-weight:bold;
+  font-size:18px;
+}
+
+.download-subtitle{
+  font-size:14px;
+}
+
+@media (min-width: 786px) {
+  .download-list li{
+    clear:none;
+    float:left;
+    width:45%;
+    margin-left:2.5%;
+    margin-right:2.5%;
+  }
+}
+
+#author{
+  text-align: center;
+  img{
+    margin-bottom:20px;
+  }
+  h3{
+    color:#555;
+    padding-bottom:3px;
+  }
+  h2,h3{
+    text-align:center;
+  }
+  p{
+    padding-top:20px;
+    text-align:left;
+    font-family: 'Roboto Mono', monospace;
+    font-size:14px;
+    line-height:24px;
+  }
+}
+
+@media (min-width: 786px) {
+  #author{
+    h2,h3{
+      text-align:left;
+    }
+    img{
+      float:left;
+      margin-right:20px;
+    }
   }
 }
