@@ -11,6 +11,10 @@
         <link rel="manifest" href="../../site.webmanifest">
         <link rel="apple-touch-icon" href="../../icons/icon.png">
 
+        <link rel="icon" type="image/png" href="../../icons/favicon-alpha-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="../../icons/favicon-alpha-96x96.png" sizes="96x96">
+        <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+
         <!-- FACEBOOK -->
         <meta property="fb:app_id" content="487094758334595">
         <meta property="og:url" content="http://lab.technologiestiftung-berlin.de/projects/{{PROJECT}}/index.html">
@@ -65,7 +69,7 @@
                 <div class="container">
                     <span class="button tag">{{TAG_EN}}</span>
                     <h1>{{PROJECT_TITLE_EN}}</h1>
-                    <span class="title-subline">{{AUTHOR}} (<a href="https://twitter.com/{{TWITTER_HANDLE}}">@{{TWITTER_HANDLE}}</a>) | 10/2017</span>
+                    <span class="title-subline">{{AUTHOR}} (<a href="https://twitter.com/{{TWITTER_HANDLE}}">@{{TWITTER_HANDLE}}</a>) | {{DATE}}</span>
                 </div>
             </div>
 
@@ -178,7 +182,7 @@
                 <img src="../../images/team/author_{{AUTHOR_IMAGE}}.png" alt="{{AUTHOR}}" />
                 <h3>About the author</h3>
                 <h2>{{AUTHOR}}</h2>
-                <p>{{AUTHOR_BIO}}</p>
+                <p>{{AUTHOR_BIO_EN}}<br /><a href="maito:{{EMAIL}}">{{EMAIL}}</a></p>
                 <hr class="clear" />
             </div>
 
