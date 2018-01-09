@@ -48,8 +48,8 @@ for(var i = 2; i<process.argv.length; i++){
 	}
 }
 
-if (fs.existsSync()) {
-    let author = JSON.parse(fs.readFileSync('./authors/'+default.params.AUTHOR+'.json', 'utf8'))
+if (fs.existsSync('./authors/'+default_params.AUTHOR+'.json')) {
+    let author = JSON.parse(fs.readFileSync('./authors/'+default_params.AUTHOR+'.json', 'utf8'))
     for(var key in author){
     	default_params[key] = author[key]
     }
@@ -68,7 +68,7 @@ if(default_params.PROJECT == '{{PROJECT}}'){
 	}else{
 		//Create Folder
 		fs.mkdirSync(path)
-		fs.writeFileSync('project.json', JSON.stringify(default_params), 'utf8')
+		fs.writeFileSync(path + '/project.json', JSON.stringify(default_params), 'utf8')
 
 		//Copy Boilerplate
 		ncp('./site/projects/boilerplate', path, function (err) {

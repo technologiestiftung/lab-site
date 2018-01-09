@@ -1,31 +1,48 @@
 let fs = require('fs')
 
-let index_html = fs.readFileSync('scripts/templates/index.html', 'utf8'),
-	index_en_html = fs.readFileSync('scripts/templates/index_en.html', 'utf8')
+let index_html = {
+	DE:fs.readFileSync('scripts/templates/index.html', 'utf8'),
+	EN:fs.readFileSync('scripts/templates/index_en.html', 'utf8')
+}
+
+// || git subtree push --prefix site origin gh-pages
 
 let project_path = 'site/projects/',
 	projects = [],
-	filters = {de:[],en:[]},
-	langs = ['de','en']
+	filters = {DE:[],EN:[]},
+	langs = ['DE','EN']
 
 fs.readdirSync(project_path).forEach(file => {
-	if (fs.existsSync(project_path+file+'/project.json')) {
+	if (file != '.DS_Store' && file.length > 2 && fs.existsSync(project_path+file+'/project.json')) {
 		let project = JSON.parse(fs.readFileSync(project_path+file+'/project.json', 'utf8'))
+		if(project.DATE.indexOf('/')==-1){
+			project.DATE = '12/2017'
+		}
+		let d = project.DATE.split('/')
+		project.sort = parseInt(d[1]) + parseInt(d[0])/24
 		projects.push(project)
-		if(filters.de.indexOf(project.TAG_DE)==-1){
-			filters.de.push(project.TAG_DE)
-		}
-		if(filters.en.indexOf(project.TAG_EN)==-1){
-			filters.en.push(project.TAG_EN)
-		}
+
+		langs.forEach(lang=>{
+			if(filters[lang].indexOf(project['TAG_'+lang])==-1){
+				filters[lang].push(project['TAG_'+lang])
+			}
+		})
 	}
 })
 
-let filter_html = {en:'',de:''},
-	projects_html = {en:'',de:''}
+projects.sort(function(a,b){
+	return b.sort - a.sort;
+})
+
+let filter_html = {EN:'',DE:''},
+	projects_html = {EN:'',DE:''}
 
 function strToValue(str){
-	return toLowerCase(str.split(' ').join('-'));
+	if(str && str.length > 1){
+		return (str.split(' ').join('-')).toLowerCase().trim();
+	}else{
+		return '';
+	}
 }
 
 langs.forEach(lang=>{
@@ -33,7 +50,7 @@ langs.forEach(lang=>{
 		filter_html[lang] += '\n'
 		filter_html[lang] += '                    <li><a class="button" data-value="' + strToValue(f) + '">' + f + '</a></li>'
 	})
-	index_html.replace('{{FILTERLIST}}', filter_html[lang])
+	index_html[lang] = index_html[lang].replace('{{FILTERLIST}}', filter_html[lang])
 })
 
 langs.forEach(lang=>{
@@ -41,7 +58,7 @@ langs.forEach(lang=>{
 
 		projects_html[lang] += '\n'
 		projects_html[lang] += '                    <li class="f-' + strToValue(p['TAG_'+lang]) + '">'+'\n'
-        projects_html[lang] += '                    	<a href="http://lab.technologiestiftung-berlin.de/projects/' + p.PROJECT + '/index' + (lang=='de')?'':'_en' + '.html">'+'\n'
+        projects_html[lang] += '                    	<a href="http://lab.technologiestiftung-berlin.de/projects/' + p.PROJECT + '/index' + ((lang=='DE')?'':'_en') + '.html">'+'\n'
 		projects_html[lang] += '                  		  <img src="http://lab.technologiestiftung-berlin.de/projects/' + p.PROJECT + '/thumb@2x.png" alt="' + p['PROJECT_TITLE_'+lang] + '" />'+'\n'
 		projects_html[lang] += '          		          <span class="tag button">' + p['TAG_'+lang] + '</span><span class="date">' + p.DATE + '</span>'+'\n'
 		projects_html[lang] += '         		           <span class="title">' + p['PROJECT_TITLE_'+lang] + '</span>'+'\n'
@@ -50,5 +67,8 @@ langs.forEach(lang=>{
 		projects_html[lang] += '                    </li>'+'\n'
 
 	})
-	index_html.replace('{{PROJECTLIST}}', projects_html[lang])
+	index_html[lang] = index_html[lang].replace('{{PROJECTLIST}}', projects_html[lang])
+
+	fs.writeFileSync('site/index' + ((lang=='DE')?'':'_en') + '.html', index_html[lang], 'utf8')
 })
+
