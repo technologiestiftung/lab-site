@@ -79,36 +79,10 @@
             <div id="projects" class="container">
                 <h2>Projects</h2>
                 <ul id="filter-list">
-                    <li><a class="button" data-value="tool">Tools</a></li>
-                    <li><a class="button" data-value="datascience">Data Science</a></li>
-                    <li><a class="button" data-value="visualisation">Visualisation</a></li>
-                    <li><a class="button" data-value="introductions">Insights</a></li>
+                    {{FILTERLIST}}
                 </ul>
                 <ul id="project-list">
-                    <li class="f-tool">
-                        <a href="http://lab.technologiestiftung-berlin.de/projects/kita-finder/">
-                            <img src="./projects/kita-finder/thumb@2x.png" alt="Berliner Kitas - Status Quo" />
-                            <span class="tag button">Tool</span><span class="date">10/2017</span>
-                            <span class="title">Kita Explorer</span>
-                            <span class="subtitle">Novel search interface for exploring Berlin's child day care centers.</span>
-                        </a>
-                    </li>
-                    <li class="f-visualisation">
-                        <a href="http://lab.technologiestiftung-berlin.de/projects/kitas/">
-                            <img src="./projects/kitas/thumb@2x.png" alt="Berliner Kitas - Status Quo" />
-                            <span class="tag button">Visualisation</span><span class="date">10/2017</span>
-                            <span class="title">Berlin's Kitas — Status&nbsp;Quo</span>
-                            <span class="subtitle">What is the current state of the more than 2500 child day care centers in Berlin?</span>
-                        </a>
-                    </li>
-                    <li class="f-datascience">
-                        <a href="http://lab.technologiestiftung-berlin.de/projects/predictions/">
-                            <img src="./projects/predictions/thumb@2x.png" alt="Berliner Kitas - Status Quo" />
-                            <span class="tag button">Data&nbsp;Science</span><span class="date">10/2017</span>
-                            <span class="title">Data-driven Forecasting</span>
-                            <span class="subtitle">Better predictions for the local gouvernment and industry based on open data.</span>
-                        </a>
-                    </li>
+                    {{PROJECTLIST}}
                 </ul>
             </div>
             <div id="team" class="container small">

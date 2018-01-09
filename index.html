@@ -79,36 +79,10 @@
             <div id="projects" class="container">
                 <h2>Projekte</h2>
                 <ul id="filter-list">
-                    <li><a class="button" data-value="tool">Werkzeuge</a></li>
-                    <li><a class="button" data-value="datascience">Data Science</a></li>
-                    <li><a class="button" data-value="visualisation">Visualisierung</a></li>
-                    <li><a class="button" data-value="introductions">Einblicke</a></li>
+                    {{FILTERLIST}}
                 </ul>
                 <ul id="project-list">
-                    <li class="f-tool">
-                        <a href="http://lab.technologiestiftung-berlin.de/projects/kita-finder/">
-                            <img src="./projects/kita-finder/thumb@2x.png" alt="Berliner Kitas - Status Quo" />
-                            <span class="tag button">Tool</span><span class="date">10/2017</span>
-                            <span class="title">Kita Suche</span>
-                            <span class="subtitle">Neuartige Suche für das Verzeichnis der Berliner Kitas</span>
-                        </a>
-                    </li>
-                    <li class="f-visualisation">
-                        <a href="http://lab.technologiestiftung-berlin.de/projects/kitas/">
-                            <img src="./projects/kitas/thumb@2x.png" alt="Berliner Kitas - Status Quo" />
-                            <span class="tag button">Visualisierung</span><span class="date">10/2017</span>
-                            <span class="title">Berliner Kitas — Status&nbsp;Quo</span>
-                            <span class="subtitle">Wie sieht die Situation der fast 2500 Kitas in Berlin aus?</span>
-                        </a>
-                    </li>
-                    <li class="f-datascience">
-                        <a href="http://lab.technologiestiftung-berlin.de/projects/predictions/">
-                            <img src="./projects/predictions/thumb@2x.png" alt="Berliner Kitas - Status Quo" />
-                            <span class="tag button">Data&nbsp;Science</span><span class="date">10/2017</span>
-                            <span class="title">Datengestütze Prognosen</span>
-                            <span class="subtitle">Bessere Prognosen für Verwaltung und Industrie durch offene Daten.</span>
-                        </a>
-                    </li>
+                    {{PROJECTLIST}}
                 </ul>
             </div>
             <div id="team" class="container small">
