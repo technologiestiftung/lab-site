@@ -5,23 +5,50 @@ let index_html = fs.readFileSync('scripts/templates/index.html', 'utf8'),
 
 let project_path = 'site/projects/',
 	projects = [],
-	filters = []
+	filters = {de:[],en:[]},
+	langs = ['de','en']
 
 fs.readdirSync(project_path).forEach(file => {
 	if (fs.existsSync(project_path+file+'/project.json')) {
-		projects.push(JSON.parse(fs.readFileSync(project_path+file+'/project.json', 'utf8')))
+		let project = JSON.parse(fs.readFileSync(project_path+file+'/project.json', 'utf8'))
+		projects.push(project)
+		if(filters.de.indexOf(project.TAG_DE)==-1){
+			filters.de.push(project.TAG_DE)
+		}
+		if(filters.en.indexOf(project.TAG_EN)==-1){
+			filters.en.push(project.TAG_EN)
+		}
 	}
 })
 
+let filter_html = {en:'',de:''},
+	projects_html = {en:'',de:''}
 
+function strToValue(str){
+	return toLowerCase(str.split(' ').join('-'));
+}
 
+langs.forEach(lang=>{
+	filters[lang].forEach(f=>{
+		filter_html[lang] += '\n'
+		filter_html[lang] += '                    <li><a class="button" data-value="' + strToValue(f) + '">' + f + '</a></li>'
+	})
+	index_html.replace('{{FILTERLIST}}', filter_html[lang])
+})
 
-                    <li><a class="button" data-value="tool">Werkzeuge</a></li>
-                    <li class="f-tool">
-                        <a href="http://lab.technologiestiftung-berlin.de/projects/kita-finder/">
-                            <img src="./projects/kita-finder/thumb@2x.png" alt="Berliner Kitas - Status Quo" />
-                            <span class="tag button">Tool</span><span class="date">10/2017</span>
-                            <span class="title">Kita Suche</span>
-                            <span class="subtitle">Neuartige Suche für das Verzeichnis der Berliner Kitas</span>
-                        </a>
-                    </li>
+langs.forEach(lang=>{
+	projects.forEach(p=>{
+
+		projects_html[lang] += '\n'
+		projects_html[lang] += '                    <li class="f-tool">'+'\n'
+        projects_html[lang] += '                    	<a href="http://lab.technologiestiftung-berlin.de/projects/' + p.PROJECT + '">'+'\n'
+		projects_html[lang] += '                  		  <img src="./projects/kita-finder/thumb@2x.png" alt="' + p['PROJECT_TITLE_'+lang] + '" />'+'\n'
+		projects_html[lang] += '          		          <span class="tag button">Tool</span><span class="date">10/2017</span>'+'\n'
+		projects_html[lang] += '         		           <span class="title">Kita Suche</span>'+'\n'
+		projects_html[lang] += '         		           <span class="subtitle">Neuartige Suche für das Verzeichnis der Berliner Kitas</span>'+'\n'
+		projects_html[lang] += '         	           </a>'+'\n'
+		projects_html[lang] += '                    </li>'+'\n'
+
+	})
+	index_html.replace('{{PROJECTLIST}}', projects_html[lang])
+})

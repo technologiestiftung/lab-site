@@ -20,13 +20,13 @@ Recommended but not required params:
 
 	DATE="10/2017" 
 	GITHUB_URL="population-prediction" 
-	TAG="Data Science" 
+	TAG_DE="Data Science" 
 	TAG_EN="Data Science" 
-	PROJECT_TITLE="Datengestützte Prognosen mit offenen Daten" 
+	PROJECT_TITLE_DE="Datengestützte Prognosen mit offenen Daten" 
 	PROJECT_TITLE_EN="Data-driven Predictions based on Open Data" 
-	SHORT_TITLE="Datengestützte Prognosen" 
+	SHORT_TITLE_DE="Datengestützte Prognosen" 
 	SHORT_TITLE_EN="Data-driven Predictions" 
-	PROJECT_DESCRIPTION="Gute Vorhersagemodelle, speziell im Bereich des Machine-Learning, stützen sich auf große Datenmengen. Welche Rolle spielen staatliche Open Data Datensätze in diesem Kontext?"
+	PROJECT_DESCRIPTION_DE="Gute Vorhersagemodelle, speziell im Bereich des Machine-Learning, stützen sich auf große Datenmengen. Welche Rolle spielen staatliche Open Data Datensätze in diesem Kontext?"
 	PROJECT_DESCRIPTION_EN="Good prediction models, especially in the domain of machine-learning, are buid upon big data sets. What role can governmental open data play in this context?"
 
 Author params:
