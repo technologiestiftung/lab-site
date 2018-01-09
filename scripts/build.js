@@ -40,12 +40,12 @@ langs.forEach(lang=>{
 	projects.forEach(p=>{
 
 		projects_html[lang] += '\n'
-		projects_html[lang] += '                    <li class="f-tool">'+'\n'
-        projects_html[lang] += '                    	<a href="http://lab.technologiestiftung-berlin.de/projects/' + p.PROJECT + '">'+'\n'
-		projects_html[lang] += '                  		  <img src="./projects/kita-finder/thumb@2x.png" alt="' + p['PROJECT_TITLE_'+lang] + '" />'+'\n'
-		projects_html[lang] += '          		          <span class="tag button">Tool</span><span class="date">10/2017</span>'+'\n'
-		projects_html[lang] += '         		           <span class="title">Kita Suche</span>'+'\n'
-		projects_html[lang] += '         		           <span class="subtitle">Neuartige Suche für das Verzeichnis der Berliner Kitas</span>'+'\n'
+		projects_html[lang] += '                    <li class="f-' + strToValue(p['TAG_'+lang]) + '">'+'\n'
+        projects_html[lang] += '                    	<a href="http://lab.technologiestiftung-berlin.de/projects/' + p.PROJECT + '/index' + (lang=='de')?'':'_en' + '.html">'+'\n'
+		projects_html[lang] += '                  		  <img src="http://lab.technologiestiftung-berlin.de/projects/' + p.PROJECT + '/thumb@2x.png" alt="' + p['PROJECT_TITLE_'+lang] + '" />'+'\n'
+		projects_html[lang] += '          		          <span class="tag button">' + p['TAG_'+lang] + '</span><span class="date">' + p.DATE + '</span>'+'\n'
+		projects_html[lang] += '         		           <span class="title">' + p['PROJECT_TITLE_'+lang] + '</span>'+'\n'
+		projects_html[lang] += '         		           <span class="subtitle">' + p['SHORT_SUBTITLE_'+lang] + '</span>'+'\n'
 		projects_html[lang] += '         	           </a>'+'\n'
 		projects_html[lang] += '                    </li>'+'\n'
 
