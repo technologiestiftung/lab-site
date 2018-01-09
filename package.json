@@ -4,7 +4,7 @@
   "description": "Website for the ideation and prototyping lab",
   "main": "build.js",
   "scripts": {
-    "build": "node scripts/build.js",
+    "build": "node scripts/build.js && git subtree push --prefix site origin gh-pages",
     "boilerplate": "node scripts/boilerplate.js"
   },
   "devDependencies": {
