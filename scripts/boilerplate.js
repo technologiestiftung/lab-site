@@ -15,6 +15,7 @@ var fs = require('fs'),
 	ncp.limit = 2;
  
 var default_params = {
+	LIVE:false,
 	PROJECT : '{{PROJECT}}', //project URL
 	DATE : '{{DATE}}',
 	EMAIL : '{{EMAIL}}',	
@@ -34,6 +35,8 @@ var default_params = {
 	SHORT_TITLE_EN : '{{SHORT_TITLE_EN}}'
 }
 
+//TODO: Add user
+
 for(var i = 2; i<process.argv.length; i++){
 	var pair = process.argv[i].split('=')
 	if(!(pair[0] in default_params)){
@@ -41,6 +44,13 @@ for(var i = 2; i<process.argv.length; i++){
 	}else{
 		default_params[pair[0]] = pair[1]
 	}
+}
+
+if (fs.existsSync()) {
+    let author = JSON.parse(fs.readFileSync('./authors/'+default.params.AUTHOR+'.json', 'utf8'))
+    for(var key in author){
+    	default_params[key] = author[key]
+    }
 }
 
 if(default_params.PROJECT == '{{PROJECT}}'){
@@ -56,6 +66,7 @@ if(default_params.PROJECT == '{{PROJECT}}'){
 	}else{
 		//Create Folder
 		fs.mkdirSync(path)
+		fs.writeFileSync('project.json', JSON.stringify(default_params), 'utf8')
 
 		//Copy Boilerplate
 		ncp('./site/projects/boilerplate', path, function (err) {
