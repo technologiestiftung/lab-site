@@ -14,6 +14,7 @@ fs.readdirSync(project_path).forEach(file => {
 	if (file != '.DS_Store' && file.length > 2 && fs.existsSync(project_path+file+'/project.json')) {
 		let project = JSON.parse(fs.readFileSync(project_path+file+'/project.json', 'utf8'))
 		if(project.LIVE){
+			console.log(project.PROJECT)
 			if(project.DATE.indexOf('/')==-1){
 				project.DATE = '12/2017'
 			}
