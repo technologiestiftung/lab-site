@@ -13,18 +13,20 @@ let project_path = 'docs/projects/',
 fs.readdirSync(project_path).forEach(file => {
 	if (file != '.DS_Store' && file.length > 2 && fs.existsSync(project_path+file+'/project.json')) {
 		let project = JSON.parse(fs.readFileSync(project_path+file+'/project.json', 'utf8'))
-		if(project.DATE.indexOf('/')==-1){
-			project.DATE = '12/2017'
-		}
-		let d = project.DATE.split('/')
-		project.sort = parseInt(d[1]) + parseInt(d[0])/24
-		projects.push(project)
-
-		langs.forEach(lang=>{
-			if(filters[lang].indexOf(project['TAG_'+lang])==-1){
-				filters[lang].push(project['TAG_'+lang])
+		if(project.LIVE){
+			if(project.DATE.indexOf('/')==-1){
+				project.DATE = '12/2017'
 			}
-		})
+			let d = project.DATE.split('/')
+			project.sort = parseInt(d[1]) + parseInt(d[0])/24
+			projects.push(project)
+
+			langs.forEach(lang=>{
+				if(filters[lang].indexOf(project['TAG_'+lang])==-1){
+					filters[lang].push(project['TAG_'+lang])
+				}
+			})
+		}
 	}
 })
 
