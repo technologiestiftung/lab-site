@@ -7,7 +7,7 @@
     "EMAIL": "meier@technologiestiftung-berlin.de",
     "GITHUB_URL": "predictions",
     "LIVE": true,
-    "PROJECT": "prediction",
+    "PROJECT": "predictions",
     "PROJECT_DESCRIPTION_DE": "Gute Vorhersagemodelle, speziell im Bereich des Machine-Learning, stützen sich auf große Datenmengen. Welche Rolle spielen staatliche Open Data Datensätze in diesem Kontext?",
     "PROJECT_DESCRIPTION_EN": "{{PROJECT_DESCRIPTION_EN}}",
     "PROJECT_TITLE_DE": "Datengestützte Prognosen mit offenen Daten",
