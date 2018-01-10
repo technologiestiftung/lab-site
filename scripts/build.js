@@ -59,8 +59,8 @@ langs.forEach(lang=>{
 
 		projects_html[lang] += '\n'
 		projects_html[lang] += '                    <li class="f-' + strToValue(p['TAG_'+lang]) + '">'+'\n'
-        projects_html[lang] += '                    	<a href="http://lab.technologiestiftung-berlin.de/projects/' + p.PROJECT + '/index' + ((lang=='DE')?'':'_en') + '.html">'+'\n'
-		projects_html[lang] += '                  		  <img src="http://lab.technologiestiftung-berlin.de/projects/' + p.PROJECT + '/thumb@2x.png" alt="' + p['PROJECT_TITLE_'+lang] + '" />'+'\n'
+        projects_html[lang] += '                    	<a href="./projects/' + p.PROJECT + '/index' + ((lang=='DE')?'':'_en') + '.html">'+'\n'
+		projects_html[lang] += '                  		  <img src="./projects/' + p.PROJECT + '/thumb@2x.png" alt="' + p['PROJECT_TITLE_'+lang] + '" />'+'\n'
 		projects_html[lang] += '          		          <span class="tag button">' + p['TAG_'+lang] + '</span><span class="date">' + p.DATE + '</span>'+'\n'
 		projects_html[lang] += '         		           <span class="title">' + p['PROJECT_TITLE_'+lang] + '</span>'+'\n'
 		projects_html[lang] += '         		           <span class="subtitle">' + p['SHORT_SUBTITLE_'+lang] + '</span>'+'\n'
