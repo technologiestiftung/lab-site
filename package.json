@@ -4,7 +4,8 @@
   "description": "Website for the ideation and prototyping lab",
   "main": "build.js",
   "scripts": {
-    "build": "node scripts/build.js && git add . && git commit -a -m \"build\" && git push && git checkout gh-pages && git rebase master && git filter-branch --prune-empty --subdirectory-filter site gh-pages",
+    "build": "node scripts/build.js",
+    "publish": "git checkout master && git add . && git commit -a -m \"build\" && git push && git merge --strategy=ours gh-pages -m \"build\" && git add . && git commit -a -m \"after-build\" && git push && git checkout pages && git pull --allow-unrelated-histories && git merge master && git filter-branch --prune-empty --subdirectory-filter docs gh-pages && git add . && git commit -a -m \"build\" && git push",
     "boilerplate": "node scripts/boilerplate.js"
   },
   "devDependencies": {

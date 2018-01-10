@@ -61,7 +61,7 @@ if(default_params.PROJECT == '{{PROJECT}}'){
 
 }else{
 
-	var path = './site/projects/'+ default_params.PROJECT
+	var path = './docs/projects/'+ default_params.PROJECT
 
 	if (fs.existsSync(path)) {
 		console.log('PROJECT folder already exists, overwriting is disabled, please delete the folder first')
@@ -71,7 +71,7 @@ if(default_params.PROJECT == '{{PROJECT}}'){
 		fs.writeFileSync(path + '/project.json', JSON.stringify(default_params), 'utf8')
 
 		//Copy Boilerplate
-		ncp('./site/projects/boilerplate', path, function (err) {
+		ncp('./docs/projects/boilerplate', path, function (err) {
 			if (err) { return console.error(err); }
 
 			(['index.html','index_en.html']).forEach(function(file){

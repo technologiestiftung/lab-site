@@ -5,9 +5,7 @@ let index_html = {
 	EN:fs.readFileSync('scripts/templates/index_en.html', 'utf8')
 }
 
-// || git subtree push --prefix site origin gh-pages
-
-let project_path = 'site/projects/',
+let project_path = 'docs/projects/',
 	projects = [],
 	filters = {DE:[],EN:[]},
 	langs = ['DE','EN']
@@ -69,6 +67,6 @@ langs.forEach(lang=>{
 	})
 	index_html[lang] = index_html[lang].replace('{{PROJECTLIST}}', projects_html[lang])
 
-	fs.writeFileSync('site/index' + ((lang=='DE')?'':'_en') + '.html', index_html[lang], 'utf8')
+	fs.writeFileSync('docs/index' + ((lang=='DE')?'':'_en') + '.html', index_html[lang], 'utf8')
 })
 

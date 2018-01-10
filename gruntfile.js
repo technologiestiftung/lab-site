@@ -4,8 +4,8 @@ module.exports = function (grunt) {
     // define source files and their destinations
     uglify: {
         files: { 
-            src: 'site/js/*.js',  // source files mask
-            dest: 'site/js/min/',    // destination folder
+            src: 'docs/js/*.js',  // source files mask
+            dest: 'docs/js/min/',    // destination folder
             expand: true,    // allow dynamic building
             flatten: true,   // remove all unnecessary nesting
             ext: '.min.js'   // replace .js to .min.js
@@ -21,15 +21,15 @@ module.exports = function (grunt) {
             expand: true,
             cwd: 'site/css',
             src: ['*.scss'],
-            dest: 'site/css',
+            dest: 'docs/css',
             ext: '.css'
           }]
         }
     },
 
     watch: {
-        js:  { files: 'site/js/*.js', tasks: [ 'uglify' ] },
-        sass:  { files: 'site/css/*.scss', tasks: [ 'sass' ] }
+        js:  { files: 'docs/js/*.js', tasks: [ 'uglify' ] },
+        sass:  { files: 'docs/css/*.scss', tasks: [ 'sass' ] }
     }
 });
 
