@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="de" itemscope itemtype="http://schema.org/Article">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>OpenData und Metadaten | Ideation &amp; Prototyping Lab</title>
+        <meta name="description" content="Mit der weitreichenden Implementierung von Gesetzen, welche die Freigabe offener Daten fördern, nimmt die Anzahl der Datensätze in den entsprechenden Portalen zu. Um diese Nachhaltig zu verwalten, maschinenlesbar  und nutzbar zu machen bedarf es guter Metadaten. Der neue deutsche Standard für Metadaten DCAT-AP.de ist ein erster Schritt in die richtige Richtung.">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link type="text/plain" rel="author" href="../../humans.txt" />
+        <link rel="manifest" href="../../site.webmanifest">
+        <link rel="apple-touch-icon" href="../../icons/icon.png">
+
+        <link rel="icon" type="image/png" href="../../icons/favicon-alpha-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="../../icons/favicon-alpha-96x96.png" sizes="96x96">
+        <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+
+        <!-- FACEBOOK -->
+        <meta property="fb:app_id" content="487094758334595">
+        <meta property="og:url" content="http://lab.technologiestiftung-berlin.de/projects/opendata-metadata-dcat-ap/index.html">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="OpenData und Metadaten">
+        <meta property="og:image" content="http://lab.technologiestiftung-berlin.de/projects/opendata-metadata-dcat-ap/social_media.jpg">
+        <meta property="og:description" content="Mit der weitreichenden Implementierung von Gesetzen, welche die Freigabe offener Daten fördern, nimmt die Anzahl der Datensätze in den entsprechenden Portalen zu. Um diese Nachhaltig zu verwalten, maschinenlesbar  und nutzbar zu machen bedarf es guter Metadaten. Der neue deutsche Standard für Metadaten DCAT-AP.de ist ein erster Schritt in die richtige Richtung.">
+        <meta property="og:site_name" content="Ideation &amp; Prototyping Lab">
+        <meta property="article:author" content="Sebastian Meier">
+
+        <!-- TWITTER -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@TSBBerlin">
+        <meta name="twitter:creator" content="seb_meier">
+        <meta name="twitter:url" content="http://lab.technologiestiftung-berlin.de/projects/opendata-metadata-dcat-ap/index.html">
+        <meta name="twitter:title" content="OpenData und Metadaten">
+        <meta name="twitter:description" content="Mit der weitreichenden Implementierung von Gesetzen, welche die Freigabe offener Daten fördern, nimmt die Anzahl der Datensätze in den entsprechenden Portalen zu. Um diese Nachhaltig zu verwalten, maschinenlesbar  und nutzbar zu machen bedarf es guter Metadaten. Der neue deutsche Standard für Metadaten DCAT-AP.de ist ein erster Schritt in die richtige Richtung.">
+        <meta name="twitter:image" content="http://lab.technologiestiftung-berlin.de/projects/opendata-metadata-dcat-ap/social_media.jpg">
+
+        <!-- GOOGLE+/SCHEMA.ORG -->
+        <meta itemprop="name" content="OpenData und Metadaten">
+        <meta itemprop="description" content="Mit der weitreichenden Implementierung von Gesetzen, welche die Freigabe offener Daten fördern, nimmt die Anzahl der Datensätze in den entsprechenden Portalen zu. Um diese Nachhaltig zu verwalten, maschinenlesbar  und nutzbar zu machen bedarf es guter Metadaten. Der neue deutsche Standard für Metadaten DCAT-AP.de ist ein erster Schritt in die richtige Richtung.">
+        <meta itemprop="image" content="http://lab.technologiestiftung-berlin.de/projects/opendata-metadata-dcat-ap/social_media.jpg">
+
+        <!-- CANONICAL URL -->
+        <link rel="canonical" href="http://lab.technologiestiftung-berlin.de/projects/opendata-metadata-dcat-ap/index.html">
+        <!--<link rel="shortlink" href="tsblab.de/projects/PROJECT">-->
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,300i|Barlow:400,400i,700,700i" rel="stylesheet">
+        <meta name="theme-color" content="#1e3791">
+        <link href="../../js/prism/prism.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../../css/style.css">
+    </head>
+    <body class="project">
+        <header id="page-head">
+            <div class="container">
+                <div class="left">
+                    <div id="minilogo"></div><a href="http://lab.technologiestiftung-berlin.de">Ideation&nbsp;&amp; Prototyping&nbsp;Lab</a>
+                </div>
+                <div class="right">
+                    <nav id="page-nav">
+                        <ul>
+                            <li><a href="http://lab.technologiestiftung-berlin.de">Zurück zum Lab</a>&nbsp;<span class="arrow">&#8614;</span></li>
+                            <li class="lang"><a href="http://lab.technologiestiftung-berlin.de/projects/opendata-metadata-dcat-ap/index_en.html">English</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div id="title">
+                <div class="container">
+                    <span class="button tag">Wissen</span>
+                    <h1>OpenData und Metadaten</h1>
+                    <span class="title-subline">Sebastian Meier (<a href="https://twitter.com/seb_meier">@seb_meier</a>) | 01/11/2018</span>
+                </div>
+            </div>
+
+            <!-- Start editing here -->
+
+            <div class="container p-bottom">
+                <h2>Metadaten — Eine Einführung</h2>
+                <p class="copy p-bottom">
+                    Metadaten enthalten zusätzliche Informationen die andere Daten beschreiben. Metadaten sind in diesem Sinne nichts Neues, Bilder- und Musik-Dateien beispielsweise enthalten schon seid vielen Jahren Metadaten. Im Falle von Medien, beschreiben Metadaten zum Beispiel den Interpreten, Veröffentlichungsjahr, Genre und im Falle von Musik, die Zugehörigkeit zu einem Album. Metadaten erlauben es einzelne Dateien in einen Kontext zu setzen, Dateien mit einander in Abhänigkeit zu bringen und diese zu Sortieren und durchsuchbar zu machen. Ähnliche Ziele liegen den Bestrebungen von Metadaten für offene Daten (Open Data) zu Grunde. Einen Datensatz maschinenlesbar in ein OpenData-Portal zu stellen ist nur ein erster Schritt, diesen Datensatz standard-konform und detailiert zu beschreiben macht den Datensatz zu einem nachhaltigen Baustein einer transparenten und digitalen Infrastruktur. Im folgenden wird der neue deutsche OpenData Standard DCAT-AP.de vorgestellt und anhand angewandter Beispiele der Mehrwert von Metadaten aufgezeigt.
+                </p>
+                <h2>DCAT-AP.de</h2>
+                <p class="copy">
+                    DCAT steht für Data Catalog Vocabulary (Datenkatalogs Vokabular) und AP für Application Profile (Anwendungsprofil). Es handelt sich hierbei um einen europäischen Standard für das beschreiben von Datensätzen. DCAT-AP.de ist die deutsche Version des europäischen Standards. DCAT-AP.de lässt sich in zwei Komponenten herunterbrechen: 1. Eine <strong>Struktur</strong> um Metadaten-Dateien aufzubauen und bestimmte Inhalte darin abzulegen, z.B. die URL zum Datensatz oder die Lizenz unter welchem der Datensatz verfügbar ist. 2. Ein <strong>kontrolliertes Vokabular</strong> mit dem bestimmte Strukturen gefüllt werden können, z.B. Lizenzen, Art des Datenanbieters oder Räumliche Ebenen (z.B. National  oder Kommune). Für den Einsatz von DCAT-AP.de wird ein Minimum an Beschreibung vorgeschlagen (DATEI-LINK). Dieses Minimum kann abhängig von Datensatz und verfügbaren Informationen sehr breit erweitert werden (DATEI-LINK). Metadaten können in den maschinenlesbaren Dateiformaten XML, RDF und JSON bereitgestellt werden. Definitionen der einzelnen Begriffe und deren Vokabularien können auf www.DCAT-AP.de nachgeschlagen werden.
+                </p>
+            </div>
+
+            <div class="container small p-bottom">
+                <h3>DCAT-AP Minimum Variante</h3>
+                <pre><code class="language-json">
+{
+    "dcat:Catalog": {
+        "dct:title": ["Transparenzportal Hamburg"],
+        "dct:description": ["Das Transparenzportal Hamburg ist das ..."],
+        "dct:publisher": {"foaf:name": "Freie und Hansestadt Hamburg"},
+        "dcat:dataset": ["https://www.govdata.de/web/guest/suchen/..."]
+    },
+    "dcat:Dataset": [{
+        "dct:identifier": ["https://www.govdata.de/web/guest/suchen/..."],
+        "dct:title": ["Naturräume Geest und Marsch"],
+        "dct:description": ["Die Zuordnung des Hamburger Stadtgebietes..."],
+        "dcatde:contributorID": ["http://dcat-ap.de/def/contributors/..."],
+        "dcat:distribution": ["http://geodienste.hamburg.de/HH_WFS_..."],
+        "dct:license": ["http://dcat-ap.de/def/licenses/dl-by-de/2.0/"]
+    }]
+}
+                </code></pre>
+                <p class="copy">
+                    Die Metadaten-Beschreibungen nach DCAT-AP bestehen immer aus mehreren Hauptelemente. In der Minimum Variante sind dies <i>dcat:Catalog</i> und <i>dcat:Dataset</i>. <i>dcat:Catalog</i> beschreibt den Katalog in welchem der eigentliche Datensatz veröffentlich wurde. Alle Informationen innerhalb dieses Objektes (außer dcat:dataset) beziehen sich auf den Katalog selber. <i>dcat:Dataset</i> beschreibt dann den spezifischen Datensatz zu dem die Metadaten veröffentlicht wurden. Darüber hinaus gibt es noch weitere Hauptelemente wie beispielsweise <i>dcat:Distribution</i>.
+                </p>
+            </div>
+
+            <div class="container small p-bottom">
+                <h2>Anwendungsbeispiele</h2>
+                <p class="copy p-bottom">
+                    Während sich die Minimum-Variante auf eine essentielle Beschreibung von Titel, Beschreibung, Lizenz, URLs und Informationen zum Urheber beschränkt, kommt die wahre Stärke des Metadaten Standards in den erweiterten Elementen zum Vorschein. Im Folgenden werden ein paar Anwendungsbeispiele für diese erweiterten Beschreibungen von Datensätzen vorgestellt.
+                </p>
+                <h3>Zeitliche Beschreibung</h3>
+                 <pre><code class="language-json">
+{
+    "dcat:Catalog": {
+        "dct:issued": "2017-03-10T10:00:00",
+        "dct:modified": "2017-07-15T11:05:00"
+    },
+    "dcat:Dataset": [{
+        "dct:issued": "2017-02-27",
+        "dct:modified": "2017-07-15T11:05:00",
+        "dct:accrualPeriodicity": "http://dcat-ap.de/def/changefrequency/yearly",
+        "dct:temporal": [
+            {
+                "schema:startDate": "2016-01-01",
+                "schema:endDate": "2016-12-31"
+            }
+        ]
+    }]
+}
+                </code></pre>
+                <p class="copy p-bottom">
+                    <i>dct:issued</i> und <i>dct:modified</i> beschreiben wann ein Katalog oder Datensatz erstellt bzw zum letzten Mal bearbeitet wurde. Hierüber können Nutzer*innen der Daten feststellen ob Sie selber die aktuellste Version des Datensatzes nutzen oder ob sie Ihre eigene Version aktualisieren müssen. <i>dct:accrualPeriodicity</i> informiert Anwender*innen darüber hinaus in welchem Rythmus die Daten aktualisiert werden. Für nachhaltige Kooperationen zwischen Datenlieferant*innen und Nutzer*innen ist es wichtig eine Verlässlichkeit der Datenbereitstellung transparent zu dokumentieren. Über die Kennzeichnung der Rythmen der Veröffentlichung können Datennutzer*innen Ihre Prozesse entsprechend anpassen. <i>dct:temporal</i> bezieht sich im Gegensatz zu den vorherigen Informationen nicht auf den Katalog oder Datensatz als Objekt sondern auf die Eigenschaften der enthaltenen Daten. <i>dct:temporal</i> definiert über <i>schema:startDate</i> und <i>schema:endDate</i> welche Zeitspanne vom Datensatz abgedeckt werden. Über diese Information können Daten beispielsweise verglichen werden, ohne dass die Daten selber dafür analysiert werden müssen. Dies erlaubt es auch Suchmaschinen für offene Daten entsprechend zu optimieren und ermöglicht Nutzer*innen so schnell und einfach verschiedene Datensätze zum selben Zeitraum zu finden.
+                </p>
+                <p class="copy">
+                    Um die Wichtigkeit der Angabe solcher Zeiträume zu unterstreichen, zeigt die folgende Abbildung zufällig ausgewählte Datensätze des Amts für Statistik Berlin Brandenburg (AfSBB) und die Zeiträume für welche die Daten verfügbar sind. In manchen Fällen wie beispielsweise den Wahldaten oder dem Zensus, sind die Daten nur für bestimmte Jahre verfügbar. In anderen Fällen wie zum Beispiel dem Berufsqualifikationsfeststellungsgesetz (BQFG) oder der Erfassung der Auszubildenden haben sich statistische Systematiken verändert und dem zu Folge musste eine neue Zeitreihe angelgt werden. In anderen Fällen wurden die Daten nur bis zu einem bestimmten Datum erfasst oder werden erst zu einem späteren Zeitpunkt für das letzte Jahr online gestellt.
+                </p>
+            </div>
+            <div class="special-section">
+                <svg id="temporal-overlaps" style="width:100%;height:200px;"></svg>
+            </div>
+            <div class="container small">
+                <h3>Räumliche Beschreibung</h3>
+                 <pre><code class="language-json">
+{
+    "dcat:Catalog": {
+        "dct:spatial": ["http://www.geonames.org/2911298/"]
+    },
+    "dcat:Dataset": [{
+        "dcatde:politicalGeocodingLevelURI": [
+            "http://dcat-ap.de/def/politicalGeocoding/Level/state"
+        ],
+        "dcatde:politicalGeocodingURI": [
+            "http://dcat-ap.de/def/politicalGeocoding/stateKey/11"
+        ],
+        "dcatde:geocodingText": ["Freie und Hansestadt Hamburg"],
+        "dct:spatial": [
+            {
+                "type": "Polygon",
+                "crs": "urn:ogc:def:crs:OGC:1.3:CRS84",
+                "coordinates": "[[[10.326304,53.394985], [10.326304,53.964153], [8.420551,53.964153], [8.420551,53.394985], [10.326304,53.394985]]]"
+            }
+        ]
+    }]
+}
+                </code></pre>
+                <p class="copy p-bottom">
+                    Wie bei der zeitlichen Einordnung funktioniert die räumliche Beschreibung ebenfalls auf zwei Ebenen. In Bezug auf den Katalog verortet eine Geoname ID das grobe Einzugsgebiet des Katalogs über das Feld <i>"dct:spatial"</i>. Geonames ist eine Datenbank mit Bezeichnungen und dazugehörigen räumlichen Koordinaten. Auf der zweiten Ebene werden die eigentlichen Daten und deren räumlicher Bezug genauer beschrieben. Die Auflösung der Daten wir über <i>dcatde:politicalGeocodingLevelURI</i> beschrieben. Bisher verfügbare Granularitäten sind internationale, EU-, Bundesebene, Bundesländer, Landkreise und Kommunen. Über <i>dcatde:politicalGeocodingURI</i> kann dann auch eine genaue ID für die entsprechende Referenz angegeben werden (für das Bundesland Berlin wäre dies exemplarisch die 11). Eine textuelle Beschreibung des Raumes kann zusätzlich über <i>dcatde:geocodingText</i> angegeben werden. Noch detailliertere Informationen werden über <i>dct:spatial</i> bereitgestellt. Hierin enthalten können räumliche Informationen z.B. in Form von Polygonen (Flächen) angegeben werden. Die einfachste Möglichkeit ist es eine sogenannte Bounding Box anzugeben, dies ist ein räumlicher Begrenzungsrahmen der um die räumlichen Daten gespannt wird (siehe Abbildung unten). Diese zusätzlichen räumlichen Beschreibungen der Daten erlauben es Nutzer*innen beispielsweise Daten zu finden, die gleiche Räume beschreiben und so mit einander verschnitten werden können.
+                </p>
+            </div>
+            <div class="special-section">
+                <svg id="spatial-overlaps" style="width:100%;height:500px;" width="100%" preserveAspectRatio="xMidYMid meet"></svg>
+            </div>
+            <div class="container small">
+               <h3>Kontaktdaten</h3>
+                <pre><code class="language-json">
+{
+    "dcat:Dataset": [{
+        "dcat:contactPoint": [{
+            "vcard:fn": "Sebastian Meier",
+            "vcard:hasEmail": "mailto:meier@technologiestiftung-berlin.de",
+            "vcard:hasTelephone": "+49 30 209 69 99 42"
+        }]
+    }]
+}
+                </code></pre>
+                <p class="copy">
+                    Um den Datennutzer*innen die Möglichkeit zugeben Fragen, beispielsweise zur Lizenz, direkt an den richtigen Ansprechpartner zu richten, erlaubt der Standard das integrieren von Kontaktinformation für jeden Datensatz.
+                </p>
+                <h3>Kontrollierte Vokabularien</h3>
+                <pre><code class="language-json">
+{
+    "dcat:Dataset": [{
+        "dcatde:originator": [{
+            "foaf:name": "Sebastian Meier",
+            "dct:type": "http://inspire.ec.europa.eu/metadata-codelist/ResponsiblePartyRole/processor"
+        }],
+        "dct:license": [
+            "http://dcat-ap.de/def/licenses/cc-by"
+        ]
+    }]
+}
+                </code></pre>
+                <p class="copy p-bottom">
+                    Ein Metadatenstandard der von diversen Datenlieferanten mit verschiedenen Hintergründen und institutionellen Anbindungen genutzt wird verlang nach kontrollierten Vokabularien um die Nachhaltigkeit des Standards zu sichern. Kontrollierte Vokabularien sind für viele Felder des Standards verfügbar. So gibt es beispielsweise eine Liste an Lizenzen. Die ID der Lizenz ist eine URL die entweder auf eine Definitionsseite verweist oder auf eine Übersicht der vorgegebenen IDs. Es ist sehr zu empfehlen, sich an die vorgegebenen Vokabularien zu halten und sollte ein Fall bisher nicht berücksichtigt worden sein, diesen an das zuständige Kommitte zu melden um diesen eventuell dem Vokabular hinzuzufügen.
+                </p>
+                <h3>Weiterführende Informationen</h3>
+                <pre><code class="language-json">
+{
+    "dcat:Dataset": [{
+        "dct:hasVersion": [
+            "https://www.govdata.de/web/guest/suchen/-/details/naturraume-geest-und-marsch4"
+        ],
+        "dct:isVersionOf": [
+            "https://www.govdata.de/web/guest/suchen/-/details/naturraume-geest-und-marsch2"
+        ],
+        "dct:language": [
+            "http://publications.europa.eu/resource/authority/language/GER"
+        ]
+    }]
+}
+                </code></pre>
+                <p class="copy">
+                    In dieser Einführung in den neuen Metadaten-Standard DCAT-AP.de wurde versucht den Mehrwert in Bezug auf Nachhaltigkeit, Benutzerfreundlichkeit und Maschinenlesbarkeit aufzuzeigen. Neben den oben aufgeführten Metadaten-Beschreibungen gibt es viele weitere Felder, wie z. B. die Möglichkeit aufzuzeigen, dass eine Datei eine neue Version einer bereits existierenden Version ist (<i>dct:hasVersion</i> bzw. <i>dct:isVersionOf</i>) oder die Sprache der Informationen im Datensatz (<i>dct:language</i>). In einigen Fällen wird es zu Redundanzen in den Metadaten kommen, wenn beispielsweise Ersteller und Kontaktperson die selbe sind, oder der Katalog den selben Raum umfasst wie ein individueller Datensatz. Im Sinne der Vollständigkeit und um möglichst viele Fälle abdecken zu können, ist dies durchaus gewollt. Im Alltag wird das Erstellen solcher Metadaten-Dateien in vielen Fällen teil-automatisiert durchgeführt, so sind beispielsweise die Daten zum Datenkatalog immer fast deckungsgleich und können so automatisch generiert werden.
+                </p>
+                <p class="copy">
+                    Weitere Informationen und eine vollständige Dokumentation aller Verfügbaren Metadaten-Merkmale finden Sie in den folgenden Dokumenten.
+                </p>
+                <ul class="p-bottom p-top">
+                    <li><a href="#">LINK</a></li>
+                    <li><a href="#">LINK</a></li>
+                    <li><a href="#">LINK</a></li>
+                    <li><a href="#">LINK</a></li>
+                    <li><a href="#">LINK</a></li>
+                </ul>
+                <h2>Beispiele</h2>
+                <p class="copy p-bottom">
+                    Die Technologiestiftung Berlin ist kein primärer Datenbereitsteller in der Metropolregion Berlin. Nichtsdestotrotz generieren wir in unseren Projekten häufig neue Daten durch das Verschneiden oder Veredeln von existierenden Datensätzen. Um Nutzerinnen die Arbeit und Nutzung dieser Daten zu erleichern, stellen wir diese wieder unter ihren originären Lizenz online zur Verfügung. Zu diesem Zweck haben wir ein kleines Datenportal angelegt. Jeder dort zum Download bereitstehende Datensatz wurde nach dem neuen DCAT-AP.de Standard beschrieben. Für einige Beispiele des neuen DCAT-AP.de Standards, schauen Sie sich unser Datenportal an. LINK
+                </p>
+                <img src="" alt="SCREENSHOT DATENPLATFORM" />
+            </div>
+            <div id="author" class="container small p-d-top">
+                <img src="../../images/team/author_sebastianmeier.png" alt="Sebastian Meier" />
+                <h3>Über den Autor</h3>
+                <h2><a href="maito:meier@technologiestiftung-berlin.de">Sebastian Meier</a></h2>
+                <p>Sebastian Meier ist Data Scientist bei der Technologiestiftung Berlin. Er studierte Kommunikations- und Interface-Design und schließt aktuell seinen Doktor im Bereich der Geoinformatik an der Uni Potsdam ab. Der Fokus von Sebastians Arbeit liegt auf der Analyse und Visualisierung räumlicher Daten, sowie menschzentrierter Perspektiven bei der Entwicklung von Mensch-Maschine-Schnittstellen.</p>
+                <hr class="clear" />
+            </div>
+            <!-- Stop editing here -->
+        </main>
+        <footer id="contact">
+            <div id="footer">
+                <div class="container">
+                    <a href="http://www.technologiestiftung-berlin.de"><img src="../../images/tsb-logo.png" alt="Technologiestiftung Berlin" /></a>
+                    <div class="contact-meta">
+                        Grunewaldstraße 61-62<br />
+                        10825 Berlin<br />
+                        +49 30 209 69 99-0<br />
+                        <a href="mailto:info@technologiestiftung-berlin.de">info@technologiestiftung-berlin.de</a>
+                    </div>
+                    <div class="contact-social">
+                        <a href=""><img src="../../images/twitter.png" alt=""></a>
+                        <a href=""><img src="../../images/facebook.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div id="end">
+                <div class="container">
+                    <div class="left">© Technologiestiftung Berlin 2017</div>
+                    <div class="right">
+                        <a href="https://www.technologiestiftung-berlin.de/de/stiftung/kontakt-anfahrt/" target="_blank">Kontakt</a>
+                        &nbsp;|&nbsp;
+                        <a href="https://www.technologiestiftung-berlin.de/de/impressum" target="_blank">Impressum</a>
+                        &nbsp;|&nbsp;
+                        <a href="https://www.technologiestiftung-berlin.de/de/datenschutz/" target="_blank">Datenschutz</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="../../js/prism/prism.js"></script>
+        <script src="topojson-client.js"></script>
+        <script type="text/javascript" src="../../js/min/logo.min.js"></script>
+        <script type="text/javascript" src="../../js/min/script.min.js"></script>
+        <!-- Add your custom JS files here and place them directly in your project folder -->
+        <script type="text/javascript">
+
+            var temporal = (function(){
+
+                var data = [{label:'Außenwanderungen',start:2005,end:2015,interval:1},{label:'Binnenwanderungen',start:2005,end:2013,interval:1},{label:'Einwohnerregister',start:2007,end:2016,interval:1},{label:'Mikozensus',start:2005,end:2016,interval:1},{label:'Auszubildende KLdB1992',start:2010,end:2011,interval:1},{label:'Auszubildende KLdB2010',start:2012,end:2015,interval:1},{label:'BQFG v1',start:2012,end:2013,interval:1},{label:'BQFG v1',start:2014,end:2016,interval:1},{label:'Zensus',start:2011,end:2011,interval:1},{label:'Wahlen',start:2005,end:2013,interval:4}];
+
+                var label_width = 150,
+                    margin = 20,
+                    lineHeight = 30,
+                    start = d3.min(data, function(d){return d.start;}),
+                    end = d3.max(data, function(d){return d.end;}),
+                    height = (lineHeight*data.length + margin*3),
+                    width = window.innerWidth,
+                    barWidth = (width - 3.5*margin - label_width)/(end-start + 1),
+                    labelData = [],
+                    svg = d3.select('#temporal-overlaps').attr('height',height).style('height',height).append('g').attr('transform','translate('+margin+','+(margin*1.5)+')');
+
+                data.forEach(function(d,c){
+                    d['data'] = [];
+                    for(var i = start; i<=end; i++){
+                        if(c===0){
+                            labelData.push(i);
+                        }
+                        if(d.interval == 1){
+                            if(i>=d.start && i<=d.end){
+                                d.data.push(true);
+                            }else{
+                                d.data.push(false);
+                            }
+                        }else if(d.interval == 4){
+                            if(i>=d.start && i<=d.end && (i-d.start)%4==0){
+                                d.data.push(true);
+                            }else{
+                                d.data.push(false);
+                            }
+                        }
+                    }
+                });
+
+                function drawItems(){
+
+                    var labels = svg.append('g').attr('transform','translate('+(label_width+margin)+',0)').selectAll('text').data(labelData).enter().append('text')
+                        .attr('text-anchor','middle')
+                        .attr('dx', function(d,i){ return i*barWidth + barWidth/2; })
+                        .attr('dy', 12)
+                        .text(function(d,i){
+                            if(width < 420 && i%2){
+                                return '';
+                            }else if(width < 600){
+                                return '\''+(d+'').substr(2,2);
+                            }
+                            return d;
+                        })
+                        .style('font-family','Helvetica,Arial,sans-serif')
+                        .style('font-size',12);
+
+                    var temporalItems = svg.selectAll('g').data(data).enter().append('g').attr('transform',function(d,i){return 'translate(0,'+(i*lineHeight)+')';});
+
+                        temporalItems.append('text')
+                            .text(function(d){return d.label})
+                            .attr('text-anchor','end')
+                            .attr('dx',label_width)
+                            .attr('dy',lineHeight-12)
+                            .style('font-family','Helvetica,Arial,sans-serif')
+                            .style('font-size',12);
+
+                        temporalItems.selectAll('rect').data(function(d){return d.data;}).enter().append('rect')
+                            .attr('height', lineHeight-2)
+                            .attr('width', barWidth-2)
+                            .attr('y',1)
+                            .attr('x',function(d,i){
+                                return i*barWidth + label_width + margin + 1;
+                            })
+                            .style('opacity',0.5)
+                            .style('fill', function(d){
+                                if(d){
+                                    return '#3192d0';
+                                }
+                                return 'rgba(0,0,0,0)';
+                            });
+                }
+
+                var resizeTemporal = debounce(function() {
+                    svg.selectAll('*').remove();
+                    width = window.innerWidth;
+                    barWidth = (width - 3.5*margin - label_width)/(end-start + 1);
+                    drawItems();
+                }, 250);
+
+                window.addEventListener('resize', resizeTemporal);
+                resizeTemporal();
+            })();
+
+            var spatial = (function(){
+
+                // Prepare our physical space
+                var svg = d3.select('#spatial-overlaps').attr("viewBox", "0 0 500 500"),
+                    width = 500,
+                    height = 500;
+
+                var projection = d3.geoMercator()
+                      .center([13.42, 52.51])
+                      .scale(40000)
+                      .translate([width / 2, height / 2]),
+                    path = d3.geoPath().projection(projection);
+
+                    d3.json("Bezirk.topojson", function(error, topo) {
+                      if (error) throw error;
+
+                      svg.append('path').attr('d', path(topojson.mesh(topo)))
+                      .style('fill','transparent')
+                      .style('stroke','black');
+
+                        var b = path.bounds(topojson.mesh(topo));
+                        svg.append('rect')
+                            .attr('x',b[0][0])
+                            .attr('y',b[0][1])
+                            .attr('width',(b[1][0]-b[0][0]))
+                            .attr('height',(b[1][1]-b[0][1]))
+                            .style('fill','transparent')
+                            .style('stroke','#000')
+                            .style('stroke-dasharray','5, 5');
+
+                        svg.append('text')
+                            .text('Berlin - Bounding Box')
+                            .attr('x',b[0][0])
+                            .attr('y',b[0][1])
+                            .attr('dy',-4)
+                            .style('font-family','Helvetica,Arial,sans-serif')
+                            .style('font-size',12);
+                    });
+
+                var resizeSpatial = debounce(function() {
+                    if(window.innerWidth < 500){
+                        svg.style('height', window.innerWidth);
+                    }
+                }, 250);
+
+                window.addEventListener('resize', resizeSpatial);
+                resizeSpatial();
+
+            })();
+
+        </script>
+    </body>
+</html>
