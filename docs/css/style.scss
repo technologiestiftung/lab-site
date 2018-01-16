@@ -95,6 +95,17 @@ body{
 #tsb-ani-logo path,#tsb-ani-logo line{fill:transparent;opacity:1;stroke-width:6px;stroke-linejoin:round;stroke-linecap:round}#tsb-ani-logo path{stroke:transparent}#tsb-ani-logo .edge{stroke:#6ECDF5}#tsb-ani-logo .hedge{stroke:#E60433}
 #minilogo #tsb-ani-logo path,#tsb-ani-logo line{stroke-width:3px;}
 
+#minilogo{
+  width:100px;
+  max-width:20%;
+  float:left;
+  margin-top:20px;
+  svg{
+    width:100%;
+    height:auto;
+  }
+}
+
 #teaser{
   width:100%;
   background-color:#fff;
@@ -721,10 +732,6 @@ hr.clear{
   }
 }
 
-#minilogo{
-  float:left;
-  margin-top:-20px;
-}
 
 /* ---- CONTENT ---- */
 
