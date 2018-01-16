@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
     "LIVE": true,
     "PROJECT": "H3LL0W0RLD",
@@ -20,3 +21,6 @@
     "SHORT_SUBTITLE_DE": "Herzlich Willkommen beim Ideation & Prototyping Lab",
     "SHORT_SUBTITLE_EN": "{{SHORT_SUBTITLE_EN}}"
 }
+=======
+{"LIVE":true,"PROJECT":"H3LL0W0RLD","DATE":"01/2018","EMAIL":"seibel@technologiestiftung-berlin.de","GITHUB_URL":"{{PROJECT}}","TWITTER_HANDLE":"bnjmnsbl","AUTHOR":"Benjamin Seibel","AUTHOR_IMAGE":"benjaminseibel","AUTHOR_BIO_DE":"...","AUTHOR_BIO_EN":"...","TAG_DE":"News","TAG_EN":"News","PROJECT_DESCRIPTION_DE":"Herzlich Willkommen beim Ideation & Prototyping Lab der Technologiestiftung Berlin","PROJECT_DESCRIPTION_EN":"Welcome at the Technology Foundation's Ideation & Prototyping Lab","PROJECT_TITLE_DE":"H3LL0 W0RLD","PROJECT_TITLE_EN":"H3LL0 W0RLD","SHORT_TITLE_DE":"H3LL0 W0RLD","SHORT_TITLE_EN":"H3LL0 W0RLD","SHORT_SUBTITLE_DE":"{{SHORT_SUBTITLE_DE}}","SHORT_SUBTITLE_EN":"{{SHORT_SUBTITLE_EN}}"}
+>>>>>>> 1710d9f146313d8264ea3dcda2978dca264a3f8a
