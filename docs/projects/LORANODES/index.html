@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="de" itemscope itemtype="http://schema.org/Article">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>NEUE LORA-NODES | Ideation &amp; Prototyping Lab</title>
+        <meta name="description" content="Kein Byte wird verschenkt">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link type="text/plain" rel="author" href="../../humans.txt" />
+        <link rel="manifest" href="../../site.webmanifest">
+        <link rel="apple-touch-icon" href="../../icons/icon.png">
+
+        <link rel="icon" type="image/png" href="../../icons/favicon-alpha-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="../../icons/favicon-alpha-96x96.png" sizes="96x96">
+        <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+
+        <!-- FACEBOOK -->
+        <meta property="fb:app_id" content="487094758334595">
+        <meta property="og:url" content="http://lab.technologiestiftung-berlin.de/projects/LORANODES/index.html">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="DIE NEUEN LORA-NODES SIND STARTKLAR">
+        <meta property="og:image" content="http://lab.technologiestiftung-berlin.de/projects/LORANODES/social_media.jpg">
+        <meta property="og:description" content="Kein Byte wird verschenkt">
+        <meta property="og:site_name" content="Ideation &amp; Prototyping Lab">
+        <meta property="article:author" content="Benjamin Seibel">
+
+        <!-- TWITTER -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@TSBBerlin">
+        <meta name="twitter:creator" content="bnjmnsbl">
+        <meta name="twitter:url" content="http://lab.technologiestiftung-berlin.de/projects/LORANODES/index.html">
+        <meta name="twitter:title" content="DIE NEUEN LORA-NODES SIND STARTKLAR">
+        <meta name="twitter:description" content="Kein Byte wird verschenkt">
+        <meta name="twitter:image" content="http://lab.technologiestiftung-berlin.de/projects/LORANODES/social_media.jpg">
+
+        <!-- GOOGLE+/SCHEMA.ORG -->
+        <meta itemprop="name" content="DIE NEUEN LORA-NODES SIND STARTKLAR">
+        <meta itemprop="description" content="Kein Byte wird verschenkt">
+        <meta itemprop="image" content="http://lab.technologiestiftung-berlin.de/projects/LORANODES/social_media.jpg">
+
+        <!-- CANONICAL URL -->
+        <link rel="canonical" href="http://lab.technologiestiftung-berlin.de/projects/LORANODES/index.html">
+        <!--<link rel="shortlink" href="tsblab.de/projects/PROJECT">-->
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,300i|Barlow:400,400i,700,700i" rel="stylesheet">
+        <meta name="theme-color" content="#1e3791">
+        <link href="../../js/prism/prism.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../../css/style.css">
+    </head>
+    <body class="project">
+        <header id="page-head">
+            <div class="container">
+                <div class="left">
+                    <div id="minilogo"></div><a href="http://lab.technologiestiftung-berlin.de">Ideation&nbsp;&amp; Prototyping&nbsp;Lab</a>
+                </div>
+                <div class="right">
+                    <nav id="page-nav">
+                        <ul>
+                            <li><a href="http://lab.technologiestiftung-berlin.de">Zurück zum Lab</a>&nbsp;<span class="arrow">&#8614;</span></li>
+                            <li class="lang"><a href="http://lab.technologiestiftung-berlin.de/projects/LORANODES/index_en.html">English</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div id="title">
+                <div class="container">
+                    <span class="button tag">News</span>
+                    <h1>DIE NEUEN LORA-NODES SIND STARTKLAR</h1>
+                    <span class="title-subline">Benjamin Seibel (<a href="https://twitter.com/bnjmnsbl">@bnjmnsbl</a>) | 01/2018</span>
+                </div>
+            </div>
+
+            <!-- Start editing here -->
+
+            <div class="container p-bottom">
+                <p class="copy p-bottom">Die letzten Tage hatte ich endlich Gelegenheit, mich mal wieder etwas praktischer mit dem Thema LoRaWAN zu beschäftigen. Unsere ersten <a href="https://github.com/technologiestiftung/LoRaWAN">Gehversuche</a> im freien Internet der Dinge sind schon einige Monate her und in der Zwischenzeit haben wir uns bei der Technologiestiftung eher mit dem Aufbau von <a href="https://www.technologiestiftung-berlin.de/de/blog/gewinnspiel-lorawan-gateways-gewinnerinnen-stehen-fest/">Infrastruktur</a> und der <a href="https://www.technologiestiftung-berlin.de/de/blog/anwendungen-netze-und-bildung/">Community-Organisation</a> rund um LoRa befasst. Jetzt aber haben wir unsere <a href="https://www.technologiestiftung-berlin.de/hackingbox/">Hacking Box</a> um zwanzig LoRa-Nodes erweitert, die natürlich auch eingerichtet und getestet werden wollten. Freiwillige vor!</p>
+            
+                 <div class="container small">
+                <img class="responsive" src="images/Node.jpg" alt="Frisch geschlüpft" />
+                <p class="caption"></p>
+                </div>
+
+                <p class="copy p-top">Die Nodes bestehen aus einem Arduino Mega 2560 und einem <a href="http://wiki.dragino.com/index.php?title=Lora_Shield">LoRa-Shield</a> von Dragino (teils mit, teils ohne GPS). Wir haben sie bei <a href="https://thethingsnetwork.org"> The Things Network (TTN) </a> registriert, mit Device-Adressen versorgt und für jedes der zwanzig Geräte ein eigenes .ino-File angelegt. Damit lassen sie sich nach einem Workshop schnell wieder in ihren Ursprungszustand zurückversetzen. Standardmäßig versenden die Nodes jetzt nach dem Einschalten eine kurze Nachricht mit einer individuellen Kennung. So sieht man 1.) dass sie ordnungsgemäß funktionieren und hat 2.) gleich ein Template, um weitere Anwendungen zu entwickeln.</p> 
+            
+                <p class="copy p-top p-bottom">Die Dragino-Shields vertragen sich übrigens nicht mit der offiziellen TTN-Arduino-Library. Macht aber nichts, da mit <a href="https://github.com/matthijskooijman/arduino-lmic">Arduino-LMIC</a> eine prima Alternative existiert. Auf GitHub findet sich ein passendes<a href="https://github.com/SensorsIot/LoRa/blob/master/Nodes/Dragino/HelloWorld/HelloWorld.ino"> Hello World-Programm</a>. Hier trägt man seine TTN-Keys ein, spielt das .ino auf den Arduino und schon sind wir auf Sendung:</p>
+
+                <div class="container small">
+                <img class="responsive" src="images/HelloByte3.png" alt="What, what?"/>
+            </div>
+                <p class="copy p-top p-bottom">Um die angekommenen Bytes wieder in lesbaren Text zu verwandeln, müssen wir in der TTN-Konsole eine Decoder-Function anlegen:</p>
+
+                <div class="container small">
+                <pre><code class="language-js">
+    function Decoder(bytes, port) {
+        var decoded = {};
+        decoded.message = String.fromCharCode.apply(null, bytes);
+        return decoded;       
+    }
+                </code></pre>
+                </div>
+
+                 <p class="copy p-top p-bottom">Wer sich über die Syntax wundert: Anders als der Arduino spricht die TTN-Konsole Javascript, wenn auch in etwas rudimentärer Form. Aber für unsere Zwecke reichts: </p>
+
+                <div class="container small">
+                <img class="responsive" src="images/HelloWorld3.png" alt="Now we're talkin" />
+                
+
+                 <p class="copy p-top">Zwei kleine Änderungen haben wir dann doch noch vorgenommen:</p>
+                 <p class="copy p-top"> 1.) Text versenden sollte man über LoRa eigentlich <a href="https://www.thethingsnetwork.org/docs/devices/bytes.html#how-to-send-text">gar nicht</a> – die Übertragungskapazitäten sind limitiert und Text ist hier einfach nicht effizient: Ein einzelner Unicode-Buchstabe braucht bereits stolze 3 Byte. Wenn 20 Geräte gleichzeitig ein „Hello World“ senden, könnten die LoRa-Götter böse werden. Zumindest aber verstopfen wir unnötig den Luftraum. Da wir lediglich für jedes Gerät eine individuelle Kennung senden möchten, sollten wir mit einem Byte pro Gerät locker auskommen (zur Erinnerung: 1 Byte = 8 Bit = 256 mögliche Werte).</p>
+
+                <p class="copy p-top">2.) Dem Kollegen Christian Hammel, der unser LoRa-Gateway betreibt, ist aufgefallen, dass die HelloWorld.ino standardmäßig mit einem <a href="https://docs.exploratory.engineering/lora/dr_sf/">Spreading Factor</a> von 12 sendet, was die Airtime unnötig in die Höhe treibt. Auch hier gilt zunächst: weniger ist mehr. Mit dem niedrigsten Spreading Faktor 7 reduzieren wir die genutzte Airtime von 1155ms auf nur noch 46ms. Nicht dass die Bundesnetzagentur noch einen Funkwagen vorbeischickt :) .</p>
+
+                 <p class="copy p-top p-bottom">Wir passen also den Arduino-Code ein wenig an: Die Message-Variable ändern wir so, dass nur noch ein Byte mit einer Kennzahl (hier: 42) versendet wird. Der Spreading Faktor wird nach unten geschraubt und zuletzt der Sende-Befehl angepasst.</p>
+                </div>
+                <div class="container small">
+                 <pre><code class="language-js">
+    //static uint8_t message[] = "Hello World";
+    byte message[] = {42};
+
+    //LMIC_setDrTxpow(DR_SF12,14);
+    LMIC_setDrTxpow(DR_SF7,14);
+
+    //LMIC_setTxData2(1, message, sizeof(message)-1, 0);
+    LMIC_setTxData2(1, message, 1, 0);
+                </code></pre>
+                </div>
+                <p class="copy p-top p-bottom">Unser einsames kleines Byte übersetzen wir erneut via Decoder-Funktion zurück in die ursprüngliche versendete ID. Voilà – schlanker geht’s nun aber wirklich nicht mehr:</p> 
+                
+                <div class="container small">
+                <img class="responsive" src="images/thin2.png" alt="Kein Byte wird verschenkt" />
+                
+                </div>
+                
+                    <p class="copy p-top">Unser angepasstes .ino liegt auf GitHub. Wenn ihr Lust habt, die LoRa-Nodes für Bildungszwecke auszuleihen, geht es <a href="https://www.technologiestiftung-berlin.de/hackingbox/">hier</a> entlang zur Hacking Box.</p>
+            </div>
+            
+            <div class="container center">
+                <a id="github" href="https://github.com/technologiestiftung/LoRa-HelloByte">
+                    <img src="../../images/github.svg" alt="Project on Github" />
+                    <span class="github-title">technologiestiftung/LoRa-HelloByte</span><br />
+                    <span class="github-subline">Projekt auf GitHub</span>
+                    <hr class="clear" />
+                </a>
+            </div>
+
+            <div id="author" class="container small p-top">
+                <img src="../../images/team/author_benjaminseibel.png" alt="Benjamin Seibel" />
+                <h3>Über den Autor</h3>
+                <h2><a href="maito:seibel@technologiestiftung-berlin.de">Benjamin Seibel</a></h2>
+                <p>Benjamin leitet das Ideation & Prototyping Lab und betreute zuvor bei der Technologiestiftung Berlin Open Data-Projekte. Er promovierte in Darmstadt und Harvard zur Mediengeschichte des E-Government und arbeitete als Journalist und Kurator u.a. in New York, Nicosia und Rotterdam. Twitter: <a href="https://twitter.com/bnjmnsbl">@bnjmnsbl</a></p>
+                <hr class="clear" />
+            </div>
+
+            <!-- Stop editing here -->
+
+        </main>
+        <footer id="contact">
+            <div id="footer">
+                <div class="container">
+                    <a href="http://www.technologiestiftung-berlin.de"><img src="../../images/tsb-logo.png" alt="Technologiestiftung Berlin" /></a>
+                    <div class="contact-meta">
+                        Grunewaldstraße 61-62<br />
+                        10825 Berlin<br />
+                        +49 30 209 69 99-0<br />
+                        <a href="mailto:info@technologiestiftung-berlin.de">info@technologiestiftung-berlin.de</a>
+                    </div>
+                    <div class="contact-social">
+                        <a href=""><img src="../../images/twitter.png" alt=""></a>
+                        <a href=""><img src="../../images/facebook.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div id="end">
+                <div class="container">
+                    <div class="left">© Technologiestiftung Berlin 2017</div>
+                    <div class="right">
+                        <a href="https://www.technologiestiftung-berlin.de/de/stiftung/kontakt-anfahrt/" target="_blank">Kontakt</a>
+                        &nbsp;|&nbsp;
+                        <a href="https://www.technologiestiftung-berlin.de/de/impressum" target="_blank">Impressum</a>
+                        &nbsp;|&nbsp;
+                        <a href="https://www.technologiestiftung-berlin.de/de/datenschutz/" target="_blank">Datenschutz</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="../../js/prism/prism.js"></script>
+        <script type="text/javascript" src="../../js/min/logo.min.js"></script>
+        <script type="text/javascript" src="../../js/min/script.min.js"></script>
+        <!-- Add your custom JS files here and place them directly in your project folder -->
+        <script type="text/javascript">
+            /*
+                Init Custom Code hier
+            */
+        </script>
+    </body>
+</html>
