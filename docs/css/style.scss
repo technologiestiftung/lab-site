@@ -681,10 +681,13 @@ hr.clear{
   min-height: 40px;
   .left{
     float:left;
-    a{
+    line-height:20px;
+    span{
       margin-top:22px;
       float:left;
       margin-left:10px;
+      a{font-family:'ClanOT-Medium'; font-style:normal;}
+      a.lab-logo{font-family:'Roboto Mono'; font-style:italic;}
     }
   }
   .right{
