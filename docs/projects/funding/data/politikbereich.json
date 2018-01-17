@@ -7,35 +7,51 @@
     "years": [
       {
         "count": 18,
-        "money": 117142119
+        "money": 117142119,
+        "moneyShare": 11.11,
+        "countShare": 0.22
       },
       {
         "count": 26,
-        "money": 162701516
+        "money": 162701516,
+        "moneyShare": 14.91,
+        "countShare": 0.3
       },
       {
         "count": 37,
-        "money": 182154044
+        "money": 182154044,
+        "moneyShare": 17.31,
+        "countShare": 0.5
       },
       {
         "count": 20,
-        "money": 239778307
+        "money": 239778307,
+        "moneyShare": 18,
+        "countShare": 0.26
       },
       {
         "count": 229,
-        "money": 824025630
+        "money": 824025630,
+        "moneyShare": 38.63,
+        "countShare": 2.71
       },
       {
         "count": 212,
-        "money": 2025361267
+        "money": 2025361267,
+        "moneyShare": 62.38,
+        "countShare": 2.56
       },
       {
         "count": 159,
-        "money": 244879851
+        "money": 244879851,
+        "moneyShare": 20.05,
+        "countShare": 1.98
       },
       {
         "count": 229,
-        "money": 255701228
+        "money": 255701228,
+        "moneyShare": 17.96,
+        "countShare": 2.7
       }
     ]
   },
@@ -47,35 +63,51 @@
     "years": [
       {
         "count": 569,
-        "money": 40430479
+        "money": 40430479,
+        "moneyShare": 3.83,
+        "countShare": 6.97
       },
       {
         "count": 572,
-        "money": 38496674
+        "money": 38496674,
+        "moneyShare": 3.53,
+        "countShare": 6.68
       },
       {
         "count": 594,
-        "money": 40707061
+        "money": 40707061,
+        "moneyShare": 3.87,
+        "countShare": 8.09
       },
       {
         "count": 525,
-        "money": 41676387
+        "money": 41676387,
+        "moneyShare": 3.13,
+        "countShare": 6.93
       },
       {
         "count": 558,
-        "money": 44259583
+        "money": 44259583,
+        "moneyShare": 2.07,
+        "countShare": 6.6
       },
       {
         "count": 548,
-        "money": 45199773
+        "money": 45199773,
+        "moneyShare": 1.39,
+        "countShare": 6.62
       },
       {
         "count": 566,
-        "money": 44383753
+        "money": 44383753,
+        "moneyShare": 3.63,
+        "countShare": 7.05
       },
       {
         "count": 579,
-        "money": 50012664
+        "money": 50012664,
+        "moneyShare": 3.51,
+        "countShare": 6.83
       }
     ]
   },
@@ -87,35 +119,51 @@
     "years": [
       {
         "count": 251,
-        "money": 30297209
+        "money": 30297209,
+        "moneyShare": 2.87,
+        "countShare": 3.07
       },
       {
         "count": 258,
-        "money": 32727447
+        "money": 32727447,
+        "moneyShare": 3,
+        "countShare": 3.01
       },
       {
         "count": 274,
-        "money": 32629783
+        "money": 32629783,
+        "moneyShare": 3.1,
+        "countShare": 3.73
       },
       {
         "count": 237,
-        "money": 32579399
+        "money": 32579399,
+        "moneyShare": 2.45,
+        "countShare": 3.13
       },
       {
         "count": 248,
-        "money": 32794949
+        "money": 32794949,
+        "moneyShare": 1.54,
+        "countShare": 2.93
       },
       {
         "count": 262,
-        "money": 35745519
+        "money": 35745519,
+        "moneyShare": 1.1,
+        "countShare": 3.16
       },
       {
         "count": 254,
-        "money": 34301337
+        "money": 34301337,
+        "moneyShare": 2.81,
+        "countShare": 3.16
       },
       {
         "count": 315,
-        "money": 37466653
+        "money": 37466653,
+        "moneyShare": 2.63,
+        "countShare": 3.72
       }
     ]
   },
@@ -127,35 +175,51 @@
     "years": [
       {
         "count": 358,
-        "money": 82254444
+        "money": 82254444,
+        "moneyShare": 7.8,
+        "countShare": 4.38
       },
       {
         "count": 471,
-        "money": 96492900
+        "money": 96492900,
+        "moneyShare": 8.84,
+        "countShare": 5.5
       },
       {
         "count": 362,
-        "money": 100838186
+        "money": 100838186,
+        "moneyShare": 9.58,
+        "countShare": 4.93
       },
       {
         "count": 525,
-        "money": 110110094
+        "money": 110110094,
+        "moneyShare": 8.27,
+        "countShare": 6.93
       },
       {
         "count": 531,
-        "money": 117084400
+        "money": 117084400,
+        "moneyShare": 5.49,
+        "countShare": 6.28
       },
       {
         "count": 537,
-        "money": 120154632
+        "money": 120154632,
+        "moneyShare": 3.7,
+        "countShare": 6.49
       },
       {
         "count": 532,
-        "money": 118931647
+        "money": 118931647,
+        "moneyShare": 9.74,
+        "countShare": 6.62
       },
       {
         "count": 623,
-        "money": 111931545
+        "money": 111931545,
+        "moneyShare": 7.86,
+        "countShare": 7.35
       }
     ]
   },
@@ -167,35 +231,51 @@
     "years": [
       {
         "count": 446,
-        "money": 48808057
+        "money": 48808057,
+        "moneyShare": 4.63,
+        "countShare": 5.46
       },
       {
         "count": 514,
-        "money": 50138399
+        "money": 50138399,
+        "moneyShare": 4.6,
+        "countShare": 6.01
       },
       {
         "count": 550,
-        "money": 54407576
+        "money": 54407576,
+        "moneyShare": 5.17,
+        "countShare": 7.49
       },
       {
         "count": 706,
-        "money": 63174512
+        "money": 63174512,
+        "moneyShare": 4.74,
+        "countShare": 9.32
       },
       {
         "count": 734,
-        "money": 71017219
+        "money": 71017219,
+        "moneyShare": 3.33,
+        "countShare": 8.68
       },
       {
         "count": 688,
-        "money": 63697134
+        "money": 63697134,
+        "moneyShare": 1.96,
+        "countShare": 8.31
       },
       {
         "count": 718,
-        "money": 71881272
+        "money": 71881272,
+        "moneyShare": 5.89,
+        "countShare": 8.94
       },
       {
         "count": 808,
-        "money": 96990559
+        "money": 96990559,
+        "moneyShare": 6.81,
+        "countShare": 9.54
       }
     ]
   },
@@ -207,35 +287,51 @@
     "years": [
       {
         "count": 80,
-        "money": 10850988
+        "money": 10850988,
+        "moneyShare": 1.03,
+        "countShare": 0.98
       },
       {
         "count": 128,
-        "money": 18864432
+        "money": 18864432,
+        "moneyShare": 1.73,
+        "countShare": 1.5
       },
       {
         "count": 180,
-        "money": 24781256
+        "money": 24781256,
+        "moneyShare": 2.35,
+        "countShare": 2.45
       },
       {
         "count": 247,
-        "money": 29766670
+        "money": 29766670,
+        "moneyShare": 2.24,
+        "countShare": 3.26
       },
       {
         "count": 223,
-        "money": 30547554
+        "money": 30547554,
+        "moneyShare": 1.43,
+        "countShare": 2.64
       },
       {
         "count": 227,
-        "money": 25998681
+        "money": 25998681,
+        "moneyShare": 0.8,
+        "countShare": 2.74
       },
       {
         "count": 270,
-        "money": 32812083
+        "money": 32812083,
+        "moneyShare": 2.69,
+        "countShare": 3.36
       },
       {
         "count": 302,
-        "money": 37572765
+        "money": 37572765,
+        "moneyShare": 2.64,
+        "countShare": 3.56
       }
     ]
   },
@@ -247,35 +343,51 @@
     "years": [
       {
         "count": 13,
-        "money": 973298
+        "money": 973298,
+        "moneyShare": 0.09,
+        "countShare": 0.16
       },
       {
         "count": 19,
-        "money": 930565
+        "money": 930565,
+        "moneyShare": 0.09,
+        "countShare": 0.22
       },
       {
         "count": 17,
-        "money": 1004899
+        "money": 1004899,
+        "moneyShare": 0.1,
+        "countShare": 0.23
       },
       {
         "count": 25,
-        "money": 1795019
+        "money": 1795019,
+        "moneyShare": 0.13,
+        "countShare": 0.33
       },
       {
         "count": 28,
-        "money": 1704509
+        "money": 1704509,
+        "moneyShare": 0.08,
+        "countShare": 0.33
       },
       {
         "count": 64,
-        "money": 3970109
+        "money": 3970109,
+        "moneyShare": 0.12,
+        "countShare": 0.77
       },
       {
         "count": 65,
-        "money": 4364139
+        "money": 4364139,
+        "moneyShare": 0.36,
+        "countShare": 0.81
       },
       {
         "count": 73,
-        "money": 5147387
+        "money": 5147387,
+        "moneyShare": 0.36,
+        "countShare": 0.86
       }
     ]
   },
@@ -287,35 +399,51 @@
     "years": [
       {
         "count": 4,
-        "money": 71057
+        "money": 71057,
+        "moneyShare": 0.01,
+        "countShare": 0.05
       },
       {
         "count": 39,
-        "money": 231529
+        "money": 231529,
+        "moneyShare": 0.02,
+        "countShare": 0.46
       },
       {
         "count": 12,
-        "money": 288482
+        "money": 288482,
+        "moneyShare": 0.03,
+        "countShare": 0.16
       },
       {
         "count": 6,
-        "money": 143153
+        "money": 143153,
+        "moneyShare": 0.01,
+        "countShare": 0.08
       },
       {
         "count": 12,
-        "money": 289827
+        "money": 289827,
+        "moneyShare": 0.01,
+        "countShare": 0.14
       },
       {
         "count": 10,
-        "money": 234956
+        "money": 234956,
+        "moneyShare": 0.01,
+        "countShare": 0.12
       },
       {
         "count": 11,
-        "money": 230707
+        "money": 230707,
+        "moneyShare": 0.02,
+        "countShare": 0.14
       },
       {
         "count": 15,
-        "money": 568625
+        "money": 568625,
+        "moneyShare": 0.04,
+        "countShare": 0.18
       }
     ]
   },
@@ -327,35 +455,51 @@
     "years": [
       {
         "count": 4917,
-        "money": 120094259
+        "money": 120094259,
+        "moneyShare": 11.39,
+        "countShare": 60.22
       },
       {
         "count": 4465,
-        "money": 142848467
+        "money": 142848467,
+        "moneyShare": 13.09,
+        "countShare": 52.17
       },
       {
         "count": 3184,
-        "money": 102396276
+        "money": 102396276,
+        "moneyShare": 9.73,
+        "countShare": 43.35
       },
       {
         "count": 3011,
-        "money": 65496371
+        "money": 65496371,
+        "moneyShare": 4.92,
+        "countShare": 39.75
       },
       {
         "count": 3291,
-        "money": 192785316
+        "money": 192785316,
+        "moneyShare": 9.04,
+        "countShare": 38.91
       },
       {
         "count": 3091,
-        "money": 83482071
+        "money": 83482071,
+        "moneyShare": 2.57,
+        "countShare": 37.33
       },
       {
         "count": 2626,
-        "money": 68834801
+        "money": 68834801,
+        "moneyShare": 5.64,
+        "countShare": 32.69
       },
       {
         "count": 2366,
-        "money": 63956079
+        "money": 63956079,
+        "moneyShare": 4.49,
+        "countShare": 27.92
       }
     ]
   },
@@ -367,35 +511,51 @@
     "years": [
       {
         "count": 98,
-        "money": 18526401
+        "money": 18526401,
+        "moneyShare": 1.76,
+        "countShare": 1.2
       },
       {
         "count": 92,
-        "money": 33563687
+        "money": 33563687,
+        "moneyShare": 3.08,
+        "countShare": 1.07
       },
       {
         "count": 83,
-        "money": 23389284
+        "money": 23389284,
+        "moneyShare": 2.22,
+        "countShare": 1.13
       },
       {
         "count": 123,
-        "money": 32199689
+        "money": 32199689,
+        "moneyShare": 2.42,
+        "countShare": 1.62
       },
       {
         "count": 170,
-        "money": 27164304
+        "money": 27164304,
+        "moneyShare": 1.27,
+        "countShare": 2.01
       },
       {
         "count": 233,
-        "money": 36722475
+        "money": 36722475,
+        "moneyShare": 1.13,
+        "countShare": 2.81
       },
       {
         "count": 216,
-        "money": 38298644
+        "money": 38298644,
+        "moneyShare": 3.14,
+        "countShare": 2.69
       },
       {
         "count": 219,
-        "money": 45540352
+        "money": 45540352,
+        "moneyShare": 3.2,
+        "countShare": 2.58
       }
     ]
   },
@@ -407,35 +567,51 @@
     "years": [
       {
         "count": 705,
-        "money": 219369985
+        "money": 219369985,
+        "moneyShare": 20.8,
+        "countShare": 8.63
       },
       {
         "count": 484,
-        "money": 148231866
+        "money": 148231866,
+        "moneyShare": 13.59,
+        "countShare": 5.65
       },
       {
         "count": 480,
-        "money": 58697981
+        "money": 58697981,
+        "moneyShare": 5.58,
+        "countShare": 6.54
       },
       {
         "count": 627,
-        "money": 318872333
+        "money": 318872333,
+        "moneyShare": 23.94,
+        "countShare": 8.28
       },
       {
         "count": 850,
-        "money": 342616254
+        "money": 342616254,
+        "moneyShare": 16.06,
+        "countShare": 10.05
       },
       {
         "count": 855,
-        "money": 358399934
+        "money": 358399934,
+        "moneyShare": 11.04,
+        "countShare": 10.33
       },
       {
         "count": 1060,
-        "money": 131057140
+        "money": 131057140,
+        "moneyShare": 10.73,
+        "countShare": 13.19
       },
       {
         "count": 1237,
-        "money": 272797524
+        "money": 272797524,
+        "moneyShare": 19.16,
+        "countShare": 14.6
       }
     ]
   },
@@ -447,35 +623,51 @@
     "years": [
       {
         "count": 208,
-        "money": 16579745
+        "money": 16579745,
+        "moneyShare": 1.57,
+        "countShare": 2.55
       },
       {
         "count": 218,
-        "money": 18749960
+        "money": 18749960,
+        "moneyShare": 1.72,
+        "countShare": 2.55
       },
       {
         "count": 223,
-        "money": 17784622
+        "money": 17784622,
+        "moneyShare": 1.69,
+        "countShare": 3.04
       },
       {
         "count": 226,
-        "money": 19707226
+        "money": 19707226,
+        "moneyShare": 1.48,
+        "countShare": 2.98
       },
       {
         "count": 202,
-        "money": 17845612
+        "money": 17845612,
+        "moneyShare": 0.84,
+        "countShare": 2.39
       },
       {
         "count": 241,
-        "money": 18909928
+        "money": 18909928,
+        "moneyShare": 0.58,
+        "countShare": 2.91
       },
       {
         "count": 234,
-        "money": 21192689
+        "money": 21192689,
+        "moneyShare": 1.74,
+        "countShare": 2.91
       },
       {
         "count": 209,
-        "money": 21802813
+        "money": 21802813,
+        "moneyShare": 1.53,
+        "countShare": 2.47
       }
     ]
   },
@@ -487,35 +679,51 @@
     "years": [
       {
         "count": 151,
-        "money": 43559664
+        "money": 43559664,
+        "moneyShare": 4.13,
+        "countShare": 1.85
       },
       {
         "count": 902,
-        "money": 30344547
+        "money": 30344547,
+        "moneyShare": 2.78,
+        "countShare": 10.54
       },
       {
         "count": 861,
-        "money": 75393801
+        "money": 75393801,
+        "moneyShare": 7.16,
+        "countShare": 11.72
       },
       {
         "count": 842,
-        "money": 22045514
+        "money": 22045514,
+        "moneyShare": 1.66,
+        "countShare": 11.12
       },
       {
         "count": 833,
-        "money": 20887584
+        "money": 20887584,
+        "moneyShare": 0.98,
+        "countShare": 9.85
       },
       {
         "count": 821,
-        "money": 20657549
+        "money": 20657549,
+        "moneyShare": 0.64,
+        "countShare": 9.92
       },
       {
         "count": 816,
-        "money": 23898355
+        "money": 23898355,
+        "moneyShare": 1.96,
+        "countShare": 10.16
       },
       {
         "count": 923,
-        "money": 24509013
+        "money": 24509013,
+        "moneyShare": 1.72,
+        "countShare": 10.89
       }
     ]
   },
@@ -527,35 +735,51 @@
     "years": [
       {
         "count": 13,
-        "money": 2366447
+        "money": 2366447,
+        "moneyShare": 0.22,
+        "countShare": 0.16
       },
       {
         "count": 18,
-        "money": 2364155
+        "money": 2364155,
+        "moneyShare": 0.22,
+        "countShare": 0.21
       },
       {
         "count": 19,
-        "money": 3073987
+        "money": 3073987,
+        "moneyShare": 0.29,
+        "countShare": 0.26
       },
       {
         "count": 17,
-        "money": 1317972
+        "money": 1317972,
+        "moneyShare": 0.1,
+        "countShare": 0.22
       },
       {
         "count": 23,
-        "money": 3064322
+        "money": 3064322,
+        "moneyShare": 0.14,
+        "countShare": 0.27
       },
       {
         "count": 15,
-        "money": 1674323
+        "money": 1674323,
+        "moneyShare": 0.05,
+        "countShare": 0.18
       },
       {
         "count": 25,
-        "money": 1849522
+        "money": 1849522,
+        "moneyShare": 0.15,
+        "countShare": 0.31
       },
       {
         "count": 30,
-        "money": 4290639
+        "money": 4290639,
+        "moneyShare": 0.3,
+        "countShare": 0.35
       }
     ]
   },
@@ -567,35 +791,51 @@
     "years": [
       {
         "count": 74,
-        "money": 272423644
+        "money": 272423644,
+        "moneyShare": 25.83,
+        "countShare": 0.91
       },
       {
         "count": 54,
-        "money": 263198255
+        "money": 263198255,
+        "moneyShare": 24.12,
+        "countShare": 0.63
       },
       {
         "count": 61,
-        "money": 281136278
+        "money": 281136278,
+        "moneyShare": 26.71,
+        "countShare": 0.83
       },
       {
         "count": 46,
-        "money": 243170533
+        "money": 243170533,
+        "moneyShare": 18.26,
+        "countShare": 0.61
       },
       {
         "count": 94,
-        "money": 269169373
+        "money": 269169373,
+        "moneyShare": 12.62,
+        "countShare": 1.11
       },
       {
         "count": 90,
-        "money": 283922515
+        "money": 283922515,
+        "moneyShare": 8.74,
+        "countShare": 1.09
       },
       {
         "count": 41,
-        "money": 263882425
+        "money": 263882425,
+        "moneyShare": 21.61,
+        "countShare": 0.51
       },
       {
         "count": 44,
-        "money": 268002937
+        "money": 268002937,
+        "moneyShare": 18.82,
+        "countShare": 0.52
       }
     ]
   },
@@ -607,35 +847,51 @@
     "years": [
       {
         "count": 132,
-        "money": 6369892
+        "money": 6369892,
+        "moneyShare": 0.6,
+        "countShare": 1.62
       },
       {
         "count": 156,
-        "money": 11453284
+        "money": 11453284,
+        "moneyShare": 1.05,
+        "countShare": 1.82
       },
       {
         "count": 156,
-        "money": 8478567
+        "money": 8478567,
+        "moneyShare": 0.81,
+        "countShare": 2.12
       },
       {
         "count": 144,
-        "money": 8362583
+        "money": 8362583,
+        "moneyShare": 0.63,
+        "countShare": 1.9
       },
       {
         "count": 163,
-        "money": 10404499
+        "money": 10404499,
+        "moneyShare": 0.49,
+        "countShare": 1.93
       },
       {
         "count": 162,
-        "money": 11782033
+        "money": 11782033,
+        "moneyShare": 0.36,
+        "countShare": 1.96
       },
       {
         "count": 201,
-        "money": 15753638
+        "money": 15753638,
+        "moneyShare": 1.29,
+        "countShare": 2.5
       },
       {
         "count": 246,
-        "money": 19212290
+        "money": 19212290,
+        "moneyShare": 1.35,
+        "countShare": 2.9
       }
     ]
   },
@@ -647,35 +903,51 @@
     "years": [
       {
         "count": 7,
-        "money": 1554589
+        "money": 1554589,
+        "moneyShare": 0.15,
+        "countShare": 0.09
       },
       {
         "count": 6,
-        "money": 1416950
+        "money": 1416950,
+        "moneyShare": 0.13,
+        "countShare": 0.07
       },
       {
         "count": 9,
-        "money": 1457475
+        "money": 1457475,
+        "moneyShare": 0.14,
+        "countShare": 0.12
       },
       {
         "count": 5,
-        "money": 1529773
+        "money": 1529773,
+        "moneyShare": 0.11,
+        "countShare": 0.07
       },
       {
         "count": 7,
-        "money": 1321274
+        "money": 1321274,
+        "moneyShare": 0.06,
+        "countShare": 0.08
       },
       {
         "count": 12,
-        "money": 2064130
+        "money": 2064130,
+        "moneyShare": 0.06,
+        "countShare": 0.14
       },
       {
         "count": 14,
-        "money": 1659747
+        "money": 1659747,
+        "moneyShare": 0.14,
+        "countShare": 0.17
       },
       {
         "count": 19,
-        "money": 2434680
+        "money": 2434680,
+        "moneyShare": 0.17,
+        "countShare": 0.22
       }
     ]
   },
@@ -687,35 +959,51 @@
     "years": [
       {
         "count": 0,
-        "money": 0
+        "money": 0,
+        "moneyShare": 0,
+        "countShare": 0
       },
       {
         "count": 0,
-        "money": 0
+        "money": 0,
+        "moneyShare": 0,
+        "countShare": 0
       },
       {
         "count": 5,
-        "money": 362250
+        "money": 362250,
+        "moneyShare": 0.03,
+        "countShare": 0.07
       },
       {
         "count": 9,
-        "money": 551672
+        "money": 551672,
+        "moneyShare": 0.04,
+        "countShare": 0.12
       },
       {
         "count": 12,
-        "money": 438931
+        "money": 438931,
+        "moneyShare": 0.02,
+        "countShare": 0.14
       },
       {
         "count": 9,
-        "money": 472339
+        "money": 472339,
+        "moneyShare": 0.01,
+        "countShare": 0.11
       },
       {
         "count": 14,
-        "money": 446840
+        "money": 446840,
+        "moneyShare": 0.04,
+        "countShare": 0.17
       },
       {
         "count": 9,
-        "money": 436530
+        "money": 436530,
+        "moneyShare": 0.03,
+        "countShare": 0.11
       }
     ]
   },
@@ -727,35 +1015,51 @@
     "years": [
       {
         "count": 6,
-        "money": 546321
+        "money": 546321,
+        "moneyShare": 0.05,
+        "countShare": 0.07
       },
       {
         "count": 18,
-        "money": 144543
+        "money": 144543,
+        "moneyShare": 0.01,
+        "countShare": 0.21
       },
       {
         "count": 88,
-        "money": 14524898
+        "money": 14524898,
+        "moneyShare": 1.38,
+        "countShare": 1.2
       },
       {
         "count": 74,
-        "money": 22468266
+        "money": 22468266,
+        "moneyShare": 1.69,
+        "countShare": 0.98
       },
       {
         "count": 66,
-        "money": 12993200
+        "money": 12993200,
+        "moneyShare": 0.61,
+        "countShare": 0.78
       },
       {
         "count": 63,
-        "money": 13489820
+        "money": 13489820,
+        "moneyShare": 0.42,
+        "countShare": 0.76
       },
       {
         "count": 60,
-        "money": 10253923
+        "money": 10253923,
+        "moneyShare": 0.84,
+        "countShare": 0.75
       },
       {
         "count": 60,
-        "money": 7024582
+        "money": 7024582,
+        "moneyShare": 0.49,
+        "countShare": 0.71
       }
     ]
   },
@@ -767,35 +1071,51 @@
     "years": [
       {
         "count": 40,
-        "money": 1856424
+        "money": 1856424,
+        "moneyShare": 0.18,
+        "countShare": 0.49
       },
       {
         "count": 47,
-        "money": 8289094
+        "money": 8289094,
+        "moneyShare": 0.76,
+        "countShare": 0.55
       },
       {
         "count": 56,
-        "money": 2538983
+        "money": 2538983,
+        "moneyShare": 0.24,
+        "countShare": 0.76
       },
       {
         "count": 62,
-        "money": 7929945
+        "money": 7929945,
+        "moneyShare": 0.6,
+        "countShare": 0.82
       },
       {
         "count": 47,
-        "money": 3046173
+        "money": 3046173,
+        "moneyShare": 0.14,
+        "countShare": 0.56
       },
       {
         "count": 52,
-        "money": 5135899
+        "money": 5135899,
+        "moneyShare": 0.16,
+        "countShare": 0.63
       },
       {
         "count": 49,
-        "money": 2386204
+        "money": 2386204,
+        "moneyShare": 0.2,
+        "countShare": 0.61
       },
       {
         "count": 49,
-        "money": 2310711
+        "money": 2310711,
+        "moneyShare": 0.16,
+        "countShare": 0.58
       }
     ]
   },
@@ -807,35 +1127,51 @@
     "years": [
       {
         "count": 12,
-        "money": 1677540
+        "money": 1677540,
+        "moneyShare": 0.16,
+        "countShare": 0.15
       },
       {
         "count": 11,
-        "money": 11567468
+        "money": 11567468,
+        "moneyShare": 1.06,
+        "countShare": 0.13
       },
       {
         "count": 32,
-        "money": 3755479
+        "money": 3755479,
+        "moneyShare": 0.36,
+        "countShare": 0.44
       },
       {
         "count": 34,
-        "money": 3382640
+        "money": 3382640,
+        "moneyShare": 0.25,
+        "countShare": 0.45
       },
       {
         "count": 12,
-        "money": 1445904
+        "money": 1445904,
+        "moneyShare": 0.07,
+        "countShare": 0.14
       },
       {
         "count": 10,
-        "money": 1993333
+        "money": 1993333,
+        "moneyShare": 0.06,
+        "countShare": 0.12
       },
       {
         "count": 18,
-        "money": 4535217
+        "money": 4535217,
+        "moneyShare": 0.37,
+        "countShare": 0.22
       },
       {
         "count": 21,
-        "money": 6912933
+        "money": 6912933,
+        "moneyShare": 0.49,
+        "countShare": 0.25
       }
     ]
   },
@@ -847,35 +1183,51 @@
     "years": [
       {
         "count": 4,
-        "money": 1458462
+        "money": 1458462,
+        "moneyShare": 0.14,
+        "countShare": 0.05
       },
       {
         "count": 7,
-        "money": 964480
+        "money": 964480,
+        "moneyShare": 0.09,
+        "countShare": 0.08
       },
       {
         "count": 4,
-        "money": 838917
+        "money": 838917,
+        "moneyShare": 0.08,
+        "countShare": 0.05
       },
       {
         "count": 1,
-        "money": 1174000
+        "money": 1174000,
+        "moneyShare": 0.09,
+        "countShare": 0.01
       },
       {
         "count": 48,
-        "money": 22534800
+        "money": 22534800,
+        "moneyShare": 1.06,
+        "countShare": 0.57
       },
       {
         "count": 0,
-        "money": 0
+        "money": 0,
+        "moneyShare": 0,
+        "countShare": 0
       },
       {
         "count": 0,
-        "money": 0
+        "money": 0,
+        "moneyShare": 0,
+        "countShare": 0
       },
       {
         "count": 0,
-        "money": 0
+        "money": 0,
+        "moneyShare": 0,
+        "countShare": 0
       }
     ]
   },
@@ -887,35 +1239,51 @@
     "years": [
       {
         "count": 5,
-        "money": 2646179
+        "money": 2646179,
+        "moneyShare": 0.25,
+        "countShare": 0.06
       },
       {
         "count": 5,
-        "money": 5261404
+        "money": 5261404,
+        "moneyShare": 0.48,
+        "countShare": 0.06
       },
       {
         "count": 6,
-        "money": 9843295
+        "money": 9843295,
+        "moneyShare": 0.94,
+        "countShare": 0.08
       },
       {
         "count": 9,
-        "money": 54281526
+        "money": 54281526,
+        "moneyShare": 4.08,
+        "countShare": 0.12
       },
       {
         "count": 8,
-        "money": 72479156
+        "money": 72479156,
+        "moneyShare": 3.4,
+        "countShare": 0.09
       },
       {
         "count": 26,
-        "money": 72884403
+        "money": 72884403,
+        "moneyShare": 2.24,
+        "countShare": 0.31
       },
       {
         "count": 18,
-        "money": 74877457
+        "money": 74877457,
+        "moneyShare": 6.13,
+        "countShare": 0.22
       },
       {
         "count": 13,
-        "money": 75993593
+        "money": 75993593,
+        "moneyShare": 5.34,
+        "countShare": 0.15
       }
     ]
   },
@@ -927,35 +1295,51 @@
     "years": [
       {
         "count": 17,
-        "money": 1053505
+        "money": 1053505,
+        "moneyShare": 0.1,
+        "countShare": 0.21
       },
       {
         "count": 14,
-        "money": 1140913
+        "money": 1140913,
+        "moneyShare": 0.1,
+        "countShare": 0.16
       },
       {
         "count": 18,
-        "money": 1909272
+        "money": 1909272,
+        "moneyShare": 0.18,
+        "countShare": 0.25
       },
       {
         "count": 21,
-        "money": 1733423
+        "money": 1733423,
+        "moneyShare": 0.13,
+        "countShare": 0.28
       },
       {
         "count": 17,
-        "money": 4229297
+        "money": 4229297,
+        "moneyShare": 0.2,
+        "countShare": 0.2
       },
       {
         "count": 15,
-        "money": 809500
+        "money": 809500,
+        "moneyShare": 0.02,
+        "countShare": 0.18
       },
       {
         "count": 19,
-        "money": 1398112
+        "money": 1398112,
+        "moneyShare": 0.11,
+        "countShare": 0.24
       },
       {
         "count": 33,
-        "money": 2053605
+        "money": 2053605,
+        "moneyShare": 0.14,
+        "countShare": 0.39
       }
     ]
   },
@@ -967,35 +1351,51 @@
     "years": [
       {
         "count": 22,
-        "money": 2641219
+        "money": 2641219,
+        "moneyShare": 0.25,
+        "countShare": 0.27
       },
       {
         "count": 22,
-        "money": 2646350
+        "money": 2646350,
+        "moneyShare": 0.24,
+        "countShare": 0.26
       },
       {
         "count": 20,
-        "money": 2109390
+        "money": 2109390,
+        "moneyShare": 0.2,
+        "countShare": 0.27
       },
       {
         "count": 21,
-        "money": 2231553
+        "money": 2231553,
+        "moneyShare": 0.17,
+        "countShare": 0.28
       },
       {
         "count": 21,
-        "money": 2494488
+        "money": 2494488,
+        "moneyShare": 0.12,
+        "countShare": 0.25
       },
       {
         "count": 23,
-        "money": 2675742
+        "money": 2675742,
+        "moneyShare": 0.08,
+        "countShare": 0.28
       },
       {
         "count": 34,
-        "money": 2843207
+        "money": 2843207,
+        "moneyShare": 0.23,
+        "countShare": 0.42
       },
       {
         "count": 37,
-        "money": 4227558
+        "money": 4227558,
+        "moneyShare": 0.3,
+        "countShare": 0.44
       }
     ]
   },
@@ -1007,35 +1407,51 @@
     "years": [
       {
         "count": 0,
-        "money": 0
+        "money": 0,
+        "moneyShare": 0,
+        "countShare": 0
       },
       {
         "count": 0,
-        "money": 0
+        "money": 0,
+        "moneyShare": 0,
+        "countShare": 0
       },
       {
         "count": 0,
-        "money": 0
+        "money": 0,
+        "moneyShare": 0,
+        "countShare": 0
       },
       {
         "count": 0,
-        "money": 0
+        "money": 0,
+        "moneyShare": 0,
+        "countShare": 0
       },
       {
         "count": 16,
-        "money": 41498
+        "money": 41498,
+        "moneyShare": 0,
+        "countShare": 0.19
       },
       {
         "count": 0,
-        "money": 0
+        "money": 0,
+        "moneyShare": 0,
+        "countShare": 0
       },
       {
         "count": 0,
-        "money": 0
+        "money": 0,
+        "moneyShare": 0,
+        "countShare": 0
       },
       {
         "count": 0,
-        "money": 0
+        "money": 0,
+        "moneyShare": 0,
+        "countShare": 0
       }
     ]
   },
@@ -1047,35 +1463,51 @@
     "years": [
       {
         "count": 13,
-        "money": 11013000
+        "money": 11013000,
+        "moneyShare": 1.04,
+        "countShare": 0.16
       },
       {
         "count": 11,
-        "money": 8044478
+        "money": 8044478,
+        "moneyShare": 0.74,
+        "countShare": 0.13
       },
       {
         "count": 10,
-        "money": 7725000
+        "money": 7725000,
+        "moneyShare": 0.73,
+        "countShare": 0.14
       },
       {
         "count": 11,
-        "money": 6262000
+        "money": 6262000,
+        "moneyShare": 0.47,
+        "countShare": 0.15
       },
       {
         "count": 11,
-        "money": 6285000
+        "money": 6285000,
+        "moneyShare": 0.29,
+        "countShare": 0.13
       },
       {
         "count": 12,
-        "money": 11249500
+        "money": 11249500,
+        "moneyShare": 0.35,
+        "countShare": 0.14
       },
       {
         "count": 11,
-        "money": 6235000
+        "money": 6235000,
+        "moneyShare": 0.51,
+        "countShare": 0.14
       },
       {
         "count": 12,
-        "money": 6974500
+        "money": 6974500,
+        "moneyShare": 0.49,
+        "countShare": 0.14
       }
     ]
   },
@@ -1087,35 +1519,51 @@
     "years": [
       {
         "count": 2,
-        "money": 18608
+        "money": 18608,
+        "moneyShare": 0,
+        "countShare": 0.02
       },
       {
         "count": 2,
-        "money": 241000
+        "money": 241000,
+        "moneyShare": 0.02,
+        "countShare": 0.02
       },
       {
         "count": 4,
-        "money": 232342
+        "money": 232342,
+        "moneyShare": 0.02,
+        "countShare": 0.05
       },
       {
         "count": 1,
-        "money": 12000
+        "money": 12000,
+        "moneyShare": 0,
+        "countShare": 0.01
       },
       {
         "count": 1,
-        "money": 13400
+        "money": 13400,
+        "moneyShare": 0,
+        "countShare": 0.01
       },
       {
         "count": 1,
-        "money": 20000
+        "money": 20000,
+        "moneyShare": 0,
+        "countShare": 0.01
       },
       {
         "count": 3,
-        "money": 16503
+        "money": 16503,
+        "moneyShare": 0,
+        "countShare": 0.04
       },
       {
         "count": 2,
-        "money": 10031
+        "money": 10031,
+        "moneyShare": 0,
+        "countShare": 0.02
       }
     ]
   },
@@ -1127,35 +1575,51 @@
     "years": [
       {
         "count": 0,
-        "money": 0
+        "money": 0,
+        "moneyShare": 0,
+        "countShare": 0
       },
       {
         "count": 0,
-        "money": 0
+        "money": 0,
+        "moneyShare": 0,
+        "countShare": 0
       },
       {
         "count": 0,
-        "money": 0
+        "money": 0,
+        "moneyShare": 0,
+        "countShare": 0
       },
       {
         "count": 0,
-        "money": 0
+        "money": 0,
+        "moneyShare": 0,
+        "countShare": 0
       },
       {
         "count": 0,
-        "money": 0
+        "money": 0,
+        "moneyShare": 0,
+        "countShare": 0
       },
       {
         "count": 0,
-        "money": 0
+        "money": 0,
+        "moneyShare": 0,
+        "countShare": 0
       },
       {
         "count": 0,
-        "money": 0
+        "money": 0,
+        "moneyShare": 0,
+        "countShare": 0
       },
       {
         "count": 1,
-        "money": 7500
+        "money": 7500,
+        "moneyShare": 0,
+        "countShare": 0.01
       }
     ]
   },
@@ -1167,35 +1631,51 @@
     "years": [
       {
         "count": 0,
-        "money": 0
+        "money": 0,
+        "moneyShare": 0,
+        "countShare": 0
       },
       {
         "count": 0,
-        "money": 0
+        "money": 0,
+        "moneyShare": 0,
+        "countShare": 0
       },
       {
         "count": 0,
-        "money": 0
+        "money": 0,
+        "moneyShare": 0,
+        "countShare": 0
       },
       {
         "count": 0,
-        "money": 0
+        "money": 0,
+        "moneyShare": 0,
+        "countShare": 0
       },
       {
         "count": 2,
-        "money": 38000
+        "money": 38000,
+        "moneyShare": 0,
+        "countShare": 0.02
       },
       {
         "count": 1,
-        "money": 20000
+        "money": 20000,
+        "moneyShare": 0,
+        "countShare": 0.01
       },
       {
         "count": 0,
-        "money": 0
+        "money": 0,
+        "moneyShare": 0,
+        "countShare": 0
       },
       {
         "count": 0,
-        "money": 0
+        "money": 0,
+        "moneyShare": 0,
+        "countShare": 0
       }
     ]
   }

@@ -2,16 +2,19 @@
 <!-- 
 
   TODO:
-  - add legend for circle size (a flexible one)
-  - add switch between absolute and relative values (1)
-  - add timeline
+  - add swoopy arrows to visualization [check]
   - add tooltip: hover (amount, deviation from average) [check]
-  - make the chart responsive
-  - check scaling ()
-  - calculate relative funding / yearwise
+  - add switch between absolute and relative values [check]
+  - calculate relative funding / yearwise [check]
+  - check scaling [check]
+  - add highlighting (vertical / horizontal) [check]
+  - add timeline [check]
+
+  - style introduction and reading direction
+  - add legend for circle size (a flexible one) !!!!
+  - make the chart responsive [half-check]
   - recreate dataset with fuzzy merging
-  - add highlighting (vertical / horizontal)
-  - add swoopy arrows to visualization
+  - write annotations (check with sebastian)
 
  -->
 
@@ -107,25 +110,26 @@
 						</div>
 
 
-						<div class="container p-bottom p-top flex">
-								<div class="btn-group flex-items">
-										<a id="btn_money_abs" class="button">Absolutes Volumen</a>
-										<a id="btn_money_rel" class="button">Förderanteil pro Jahr</a>
-										<a id="btn_count_abs" class="button">Anzahl Förderungen</a>
-										<a id="btn_count_rel" class="button">Förderanteile pro Jahr</a>
+						<div class="container p-bottom p-top m-width flex flex-row">
+
+							<h3>Wie diese Visualisierung zu lesen ist:</h3>
+
+								<div class="btn-group flex flex-col">
+									<a id="btn_money_abs" class="button">Alle Zuwendungen in €</a>
+									<a id="btn_count_abs" class="button">Anzahl d. Zuwendungen</a>
 								</div>
+
+								<div class="btn-group flex flex-col">
+									<a id="btn_money_rel" class="button">Zuwendungen pro Jahr in %</a>
+									<a id="btn_count_rel" class="button">Anzahl d. Zuwendungen pro Jahr in %</a>
+								</div>
+
 						</div>
-						
-						<div class="vis container p-bottom">
 
-							<!-- <div class="tooltip p-bottom" style="width: 100">
-									<h1 class="category_headline" ></h1>
-									<h2 id="scale">test</h2>
-									<h2 id="count_value">Test</h2>
-									<h2 id="money_value">test</h2>
-							</div> -->
-
-						<div id="chart"></div>
+						<div id="legend" class="container m-width p-top p-bottom">
+							<h3 id="legend-title">Wie diese Visualisierung zu lesen ist:</h3>
+						</div>
+						<div class="vis container p-bottom"><div id="chart"></div>
 
             <div class="container p-bottom">
                 <p class="copy">Lorem ipsum dolor sit <i>amet</i>, <strong>consectetuer</strong> adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. <a href="#">Cum sociis natoque penatibus</a> et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
@@ -252,7 +256,7 @@
 
 					var Chart = (function(window, d3) {
 
-						var svg, chartWrapper, category, circle, values, logValueScale, data, margin, sector, circleGroup, categories, labelsYear, marker, label
+						var svg, chartWrapper, category, circle, values, logValueScale, data, margin, sector, circleGroup, categories, labelsYear, marker, label, countMinMax, svgLegend
 
 						var idCircle = 1;
 						var countY = 1;
@@ -345,12 +349,39 @@
 							svg: {
 								width: '1000',
 								height: '1200',
-								maxRad: 100,
+								maxRad: 150,
 								minRad: 2
 							},
 							data: {
 								relative: true
 							}
+						}
+
+						var legendPos = {
+							moneyAbsolute: [
+								{ pos: 25, content: 'some useful informationmoneyAbsolute' },
+								{ pos: 50, content: 'some contentmoneyAbsolute' },
+								{ pos: 75, content: 'some contentmoneyAbsolute' },
+								{ pos: 100, content: 'some contentmoneyAbsolute' }
+							],
+							moneyRelative: [
+								{ pos: 25, content: 'some useful informationcountAbsolute' },
+								{ pos: 50, content: 'some contentcountAbsolute' },
+								{ pos: 75, content: 'some contentcountAbsolute' },
+								{ pos: 100, content: 'some contentcountAbsolute' }
+							],
+							countAbsolute: [
+								{ pos: 25, content: 'some useful information countAbsolute' },
+								{ pos: 50, content: 'some content countAbsolute' },
+								{ pos: 75, content: 'some content countAbsolute' },
+								{ pos: 100, content: 'some content countAbsolute' }
+							],
+							countRelative: [
+								{ pos: 25, content: 'some useful information countRelative' },
+								{ pos: 50, content: 'some content countRelative' },
+								{ pos: 75, content: 'some content countRelative' },
+								{ pos: 100, content: 'some content countRelative' }
+							],
 						}
 
 						var swoopy = swoopyArrow()
@@ -361,15 +392,20 @@
 						d3.json('data/politikbereich.json', init);
 						
 						function init(json) {
-							data = massage(json);
+							data = json;
 
 							chartWrapper = d3.select('#chart')
+							legendWrapper = d3.select('#legend')
 
 							moneyMinMax = d3.extent(data, (d, i) => { return d.money });
+							countMinMax = d3.extent(data, d => { return d.count });
+							
+							renderLegend('moneyAbsolute');
 
 							wrapperText = chartWrapper
 								.append('div')
 								.classed('labels', true)
+								
 							
 							wrapperText.selectAll('sectorLabel')
 								.data(data)
@@ -459,6 +495,45 @@
 							render();
 						}
 
+						function renderLegend(view) {
+							d3.select('.legend-wrapper').remove();
+
+							svgLegend = legendWrapper
+								.append('svg')
+								.classed('legend-wrapper', true)
+								.attr('height', 120)
+								.attr('width', 700)
+
+							svgLegend.selectAll('circles')
+								.data(legendPos[view])
+								.enter()
+								.append('circle')
+								.attr('cx', 0)
+								.attr('cy', 120)
+								.attr('r', d => { return d.pos })
+							
+							svgLegend.selectAll('lines')
+								.data(legendPos[view])
+								.enter()
+								.append('line')
+								.attr('x1', 0)
+								.attr('y1', d => { return d.pos - 4 })
+								.attr('x2', 150)
+								.attr('y2', d => {return d.pos - 4})
+								.attr('stroke-width', 1)
+								.attr('stroke','black')
+								.classed('legend-line', true)
+								
+							svgLegend.selectAll('annotations')
+								.data(legendPos[view])
+								.enter()
+								.append('text')
+								.classed('annotation', true)
+								.attr('x', 160)
+								.attr('y', d => { return d.pos})
+								.text(d => {return d.content})	
+						}
+
 						function render() {
 
 							var chartSizes = document.getElementById('chart').getBoundingClientRect();
@@ -519,21 +594,6 @@
 							var id = d3.select(this).attr('id');
 
 							d3.select(`#label-${id}`).classed('label-active', true)
-							}
-
-						function massage(json) {
-							json.forEach( (sector,i) => {
-								sector.index = i;
-								sector.years.forEach( year => {
-									var money = relative(year.money, sector.money, 1);
-									var count = relative(year.count, sector.count, 1);
-
-									year.shareMoney = money;
-									year.shareCount = count;
-								})
-							});
-
-							return json;
 						}
 
 						function resize(winWidth) {
@@ -545,61 +605,78 @@
 							var btn = d3.select(this);
 							updateMoneyAbs();
 							chooseSwoopy('moneyAbsolute');
+							renderLegend('moneyAbsolute');
 						});
 
 						d3.select('#btn_money_rel').on('click', () => {
 							var btn = d3.select(this);
 							chooseSwoopy('moneyRelative');
+							updateMoneyRel();
+							renderLegend('moneyRelative');
 						});
 
-						d3.select('#btn_count_abs').on('click', () => {
+						d3.select('#btn_count_rel').on('click', () => {
 							var btn = d3.select(this);
-							updateCountAbs();
+							updateCountRel();
 							chooseSwoopy('countRelative');
+							renderLegend('countRelative');
 						});
 
 						d3.select('#btn_count_abs').on('click', () => {
 							var btn = d3.select(this);
 							updateCountAbs();
 							chooseSwoopy('countAbsolute');
+							renderLegend('countAbsolute');
 						});
 
 						function updateCountAbs() {
 							circle
 									.transition()
-									.duration(1000)
+									.duration(750)
 									.attr('r', (d) => {
-										var value = d['shareCount'].map(0, 100, config.svg.minRad, config.svg.maxRad)
+										var value = d['count'].map(countMinMax[0], countMinMax[1], config.svg.minRad, config.svg.maxRad)
+										if(d.count === 0) { return 0 };
 										return value;
 									})
 									.attr('class', 'circle-count')
 						}
 
+						function updateCountRel() {
+							circle
+								.transition()
+								.duration(750)
+								.attr('r', (d) => {
+									var value = d['countShare'].map(0, 100, config.svg.minRad, config.svg.maxRad)
+									if(d.countShare === 0) { return 0 };
+									return value;
+								})
+								.attr('class', 'circle-count')
+						}
+
 						function updateMoneyRel() {
 							circle
-									.transition()
-									.duration(750)
-									.attr('r', (d) => {
-										var value = d['money'].map(moneyMinMax[0], moneyMinMax[1], config.svg.minRad, config.svg.maxRad);
+								.transition()
+								.duration(750)
+								.attr('r', (d) => {
+									var value = d['moneyShare'].map(0, 100, config.svg.minRad, config.svg.maxRad);
 
-										console.log(d['shareMoney']);
-										if(d.money === 0) { return 0 };
-										return value;
-									})
-									.attr('class', 'circle-money')
+									if(d.moneyShare === 0) { return 0 };
+									return value;
+								})
+								.attr('class', 'circle-count')
 						}
 
 						function updateMoneyAbs() {
 							circle
-									.transition()
-									.duration(750)
-									.attr('r', (d) => {
-										var value = d['money'].map(moneyMinMax[0], moneyMinMax[1], config.svg.minRad, config.svg.maxRad);
+								.transition()
+								.duration(750)
+								.attr('r', (d) => {
+									var value = d['money'].map(moneyMinMax[0], moneyMinMax[1], config.svg.minRad, config.svg.maxRad);
 
-										if(d.money === 0) { return 0 };
-										return value;
-									})
-									.attr('class', 'circle-money')
+									if(d.money === 0) { return 0 };
+									return value;
+								})
+								.attr('class', 'circle-money')
 						}
 
 						function chooseSwoopy(swoopyId) {

@@ -16,13 +16,21 @@ circle {
   font-weight: bold;
 }
 
+.m-width {
+  max-width: 700px !important;
+}
+
 .flex {
   display: flex;
   justify-content: center;
 }
 
-.flex-items {
-  
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
 }
 
 .tooltip {
@@ -95,6 +103,10 @@ h2 {
 
 svg {
   overflow: visible;
+}
+
+svg.legend-wrapper {
+  overflow: hidden;
 }
 
 svg.arrow-container {
