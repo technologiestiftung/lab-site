@@ -16,5 +16,8 @@
     "grunt-contrib-watch": "^1.0.0",
     "ncp": "^2.0.0"
   },
-  "author": "Sebastian Meier @seb_meier"
+  "author": "Sebastian Meier @seb_meier",
+  "dependencies": {
+    "moment": "^2.20.1"
+  }
 }

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Ideation &amp; Prototyping Lab</title>
+	<atom:link href="http://lab.technologiestiftung-berlin.de/feed.xml" rel="self" type="application/rss+xml" />
+	<link>http://lab.technologiestiftung-berlin.de</link>
+	<description>We are exploring and prototyping digital tools in order to collaboratively shape Berlin’s future for citizens, the local government and the industry.</description>
+	<lastBuildDate>Wed, 17 Jan 2018 11:47:04  +0100</lastBuildDate>
+	<language>en-us</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	
+<item>
+<title><![CDATA[H3LL0 W0RLD!]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/H3LL0W0RLD/index_en.html</link>
+<pubDate>Invalid date +0100</pubDate>
+<category><![CDATA[News]]></category>
+<description><![CDATA[Welcome at the Technology Foundation's Ideation & Prototyping Lab]]></description>
+<content:encoded><![CDATA[Welcome at the Technology Foundation's Ideation & Prototyping Lab]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/H3LL0W0RLD/index_en.html</guid>
+</item>
+
+<item>
+<title><![CDATA[OpenData and Metadata]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/opendata-metadata-dcat-ap/index_en.html</link>
+<pubDate>Thu, 1 Nov 2018 00:00:00  +0100</pubDate>
+<category><![CDATA[Knowledge]]></category>
+<description><![CDATA[With the implementation of new laws and regulations for fostering the publication of open data in Germany the number of open data sets is steadly growing. In order to create sustainable data management structures and for increasing the data's machinereadability, accessability and findability good meta data is required. The new German standard for meta data DCAT-AP.de is a first step in the right direction.]]></description>
+<content:encoded><![CDATA[With the implementation of new laws and regulations for fostering the publication of open data in Germany the number of open data sets is steadly growing. In order to create sustainable data management structures and for increasing the data's machinereadability, accessability and findability good meta data is required. The new German standard for meta data DCAT-AP.de is a first step in the right direction.]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/opendata-metadata-dcat-ap/index_en.html</guid>
+</item>
+
+<item>
+<title><![CDATA[New LoRa nodes are go!]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/LORANODES/index_en.html</link>
+<pubDate>Mon, 1 Oct 2018 00:00:00  +0100</pubDate>
+<category><![CDATA[LoRaWAN]]></category>
+<description><![CDATA[No byte will be wasted]]></description>
+<content:encoded><![CDATA[No byte will be wasted]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/LORANODES/index_en.html</guid>
+</item>
+
+<item>
+<title><![CDATA[Mobile LoRa Air Pollution Sensor]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/sense10/index_en.html</link>
+<pubDate>Fri, 20 Oct 2017 00:00:00  +0100</pubDate>
+<category><![CDATA[Citizen Science, LoRaWAN]]></category>
+<description><![CDATA[Sense10 is a fully functional mobile prototype that measures air quality. The idea was to combine the Airrohr from the Luftdaten.info initiative with the LoRaWAN technology. We now sending the exact location of the LoRa Node in combination with the measurement data from the NovaPM10 sensor. This then gets visualized on a map to enable people to watch where a people on the streets can get problems in terms of air quality.]]></description>
+<content:encoded><![CDATA[Sense10 is a fully functional mobile prototype that measures air quality. The idea was to combine the Airrohr from the Luftdaten.info initiative with the LoRaWAN technology. We now sending the exact location of the LoRa Node in combination with the measurement data from the NovaPM10 sensor. This then gets visualized on a map to enable people to watch where a people on the streets can get problems in terms of air quality.]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/sense10/index_en.html</guid>
+</item>
+
+	</channel>
+</rss>

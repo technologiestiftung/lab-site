@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Ideation &amp; Prototyping Lab</title>
+	<atom:link href="http://lab.technologiestiftung-berlin.de/feed.xml" rel="self" type="application/rss+xml" />
+	<link>http://lab.technologiestiftung-berlin.de</link>
+	<description>Wir erforschen und erproben digitale Werkzeuge um gemeinsam mit Bürger*innen, Verwaltung und Unternehmen die Zukunft Berlins zu gestalten.</description>
+	<lastBuildDate>Wed, 17 Jan 2018 11:47:04  +0100</lastBuildDate>
+	<language>de-DE</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	
+<item>
+<title><![CDATA[H3LL0 W0RLD!]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/H3LL0W0RLD/index.html</link>
+<pubDate>Invalid date +0100</pubDate>
+<category><![CDATA[News]]></category>
+<description><![CDATA[Herzlich Willkommen beim Ideation & Prototyping Lab der Technologiestiftung Berlin]]></description>
+<content:encoded><![CDATA[Herzlich Willkommen beim Ideation & Prototyping Lab der Technologiestiftung Berlin]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/H3LL0W0RLD/index.html</guid>
+</item>
+
+<item>
+<title><![CDATA[OpenData und Metadaten]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/opendata-metadata-dcat-ap/index.html</link>
+<pubDate>Thu, 1 Nov 2018 00:00:00  +0100</pubDate>
+<category><![CDATA[Wissen]]></category>
+<description><![CDATA[Mit der weitreichenden Implementierung von Gesetzen, welche die Freigabe offener Daten fördern, nimmt die Anzahl der Datensätze in den entsprechenden Portalen zu. Um diese Nachhaltig zu verwalten, maschinenlesbar  und nutzbar zu machen bedarf es guter Metadaten. Der neue deutsche Standard für Metadaten DCAT-AP.de ist ein erster Schritt in die richtige Richtung.]]></description>
+<content:encoded><![CDATA[Mit der weitreichenden Implementierung von Gesetzen, welche die Freigabe offener Daten fördern, nimmt die Anzahl der Datensätze in den entsprechenden Portalen zu. Um diese Nachhaltig zu verwalten, maschinenlesbar  und nutzbar zu machen bedarf es guter Metadaten. Der neue deutsche Standard für Metadaten DCAT-AP.de ist ein erster Schritt in die richtige Richtung.]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/opendata-metadata-dcat-ap/index.html</guid>
+</item>
+
+<item>
+<title><![CDATA[Neue LoRa-Nodes sind da]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/LORANODES/index.html</link>
+<pubDate>Mon, 1 Oct 2018 00:00:00  +0100</pubDate>
+<category><![CDATA[LoRaWAN]]></category>
+<description><![CDATA[Kein Byte wird verschenkt]]></description>
+<content:encoded><![CDATA[Kein Byte wird verschenkt]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/LORANODES/index.html</guid>
+</item>
+
+<item>
+<title><![CDATA[Mobiler Feinstaubsensor auf LoRa Basis]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/sense10/index.html</link>
+<pubDate>Fri, 20 Oct 2017 00:00:00  +0100</pubDate>
+<category><![CDATA[Citizen Science, LoRaWAN]]></category>
+<description><![CDATA[Sense10 ist ein mobiler Sensor, der es jedem ermöglicht, Luftqualität zu messen und darzustellen. Das Projekt bietet ein detaillierteren Einblick in die Herausforderungen im Umgang mit Luftbelastungen, die Menschen in einer Großstadt täglich ausgesetzt sind. Die Übertragung der Messdaten erfolgt über die LoRa-Technologie, so dass der Sensor keine direkte Internetverbindung benötigt.]]></description>
+<content:encoded><![CDATA[Sense10 ist ein mobiler Sensor, der es jedem ermöglicht, Luftqualität zu messen und darzustellen. Das Projekt bietet ein detaillierteren Einblick in die Herausforderungen im Umgang mit Luftbelastungen, die Menschen in einer Großstadt täglich ausgesetzt sind. Die Übertragung der Messdaten erfolgt über die LoRa-Technologie, so dass der Sensor keine direkte Internetverbindung benötigt.]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/sense10/index.html</guid>
+</item>
+
+	</channel>
+</rss>
