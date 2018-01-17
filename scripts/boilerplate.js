@@ -45,6 +45,9 @@ for(var i = 2; i<process.argv.length; i++){
 	if(!(pair[0] in default_params)){
 		console.log('unknown param '+pair[0])
 	}else{
+		if(pair[0] == 'TWITTER_HANDLE' && pair[1].indexOf('@')!=0){
+			pair[1] = '@'+pair[1]
+		}
 		default_params[pair[0]] = pair[1]
 	}
 }

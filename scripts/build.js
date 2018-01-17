@@ -24,7 +24,7 @@ fs.readdirSync(project_path).forEach(file => {
 
 			langs.forEach(lang=>{
 				(project['TAG_'+lang].split(',')).forEach(t=>{
-					if(filters[lang].indexOf(t)==-1){
+					if(filters[lang].indexOf(t.trim())==-1){
 						filters[lang].push(t.trim())
 					}
 				})
@@ -59,16 +59,20 @@ langs.forEach(lang=>{
 langs.forEach(lang=>{
 	projects.forEach(p=>{
 
-		let tags = ''
+		let tags = '';
+
 		(p['TAG_'+lang].split(',')).forEach((t,i)=>{
-			tags += ((i>0)?' ':'')+strToValue(t.trim())
+			tags += ((i>0)?' ':'')+strToValue(t.trim());
 		})
 
 		projects_html[lang] += '\n'
 		projects_html[lang] += '                    <li class="f-' + tags + '">'+'\n'
         projects_html[lang] += '                    	<a href="./projects/' + p.PROJECT + '/index' + ((lang=='DE')?'':'_en') + '.html">'+'\n'
-		projects_html[lang] += '                  		  <img src="./projects/' + p.PROJECT + '/thumb@2x.png" alt="' + p['PROJECT_TITLE_'+lang] + '" />'+'\n'
-		projects_html[lang] += '          		          <span class="tag button">' + p['TAG_'+lang] + '</span><span class="date">' + p.DATE + '</span>'+'\n'
+		projects_html[lang] += '                  		  <img src="./projects/' + p.PROJECT + '/thumb@2x.png" alt="' + p['PROJECT_TITLE_'+lang] + '" />'+'\n';
+		(p['TAG_'+lang].split(',')).forEach((t,i)=>{
+			projects_html[lang] += '<span class="tag button">' + t.trim() + '</span>';
+		})
+		projects_html[lang] += '          		          <span class="date">' + p.DATE + '</span>'+'\n'
 		projects_html[lang] += '         		           <span class="title">' + p['PROJECT_TITLE_'+lang] + '</span>'+'\n'
 		projects_html[lang] += '         		           <span class="subtitle">' + p['SHORT_SUBTITLE_'+lang] + '</span>'+'\n'
 		projects_html[lang] += '         	           </a>'+'\n'
