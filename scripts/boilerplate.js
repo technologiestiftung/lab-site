@@ -16,6 +16,7 @@ var fs = require('fs'),
  
 var default_params = {
 	LIVE:false,
+	TYPE:'full',
 	PROJECT : '{{PROJECT}}', //project URL
 	DATE : '{{DATE}}',
 	EMAIL : '{{EMAIL}}',	
@@ -71,14 +72,24 @@ if(default_params.PROJECT == '{{PROJECT}}'){
 		fs.writeFileSync(path + '/project.json', JSON.stringify(default_params), 'utf8')
 
 		//Copy Boilerplate
-		ncp('./docs/projects/boilerplate', path, function (err) {
+		ncp('./docs/projects/boilerplate'+(default_params.TYPE=='full')?'':'-light', path, function (err) {
 			if (err) { return console.error(err); }
 
 			(['index.html','index_en.html']).forEach(function(file){
 				var contents = fs.readFileSync(path+'/'+file, 'utf8')
 
 				for(var key in default_params){
-					contents = contents.split('{{'+key+'}}').join(default_params[key])
+					if(key.indexOf('TAG_')==0){
+						let tags = '';
+
+						(default_params[key].split(',')).forEach(t=>{
+							tags += '<span class="button tag">' + t.trim() + '</span>'
+						})
+
+						contents = contents.split('{{'+key+'}}').join(tags)
+					}else{
+						contents = contents.split('{{'+key+'}}').join(default_params[key])
+					}
 				}
 
 				fs.writeFileSync(path+'/'+file, contents, 'utf8')
