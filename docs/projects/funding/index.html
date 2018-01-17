@@ -1,0 +1,701 @@
+
+<!-- 
+
+  TODO:
+  - add legend for circle size (a flexible one)
+  - add switch between absolute and relative values (1)
+  - add timeline
+  - add tooltip: hover (amount, deviation from average) [check]
+  - make the chart responsive
+  - check scaling ()
+  - calculate relative funding / yearwise
+  - recreate dataset with fuzzy merging
+  - add highlighting (vertical / horizontal)
+  - add swoopy arrows to visualization
+
+ -->
+
+<!doctype html>
+<html lang="de" itemscope itemtype="http://schema.org/Article">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Berliner Zuwendungsdaten | Ideation &amp; Prototyping Lab</title>
+        <meta name="description" content="{{PROJECT_DESCRIPTION_DE}}">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link type="text/plain" rel="author" href="../../humans.txt" />
+        <link rel="manifest" href="../../site.webmanifest">
+        <link rel="apple-touch-icon" href="../../icons/icon.png">
+
+        <link rel="icon" type="image/png" href="../../icons/favicon-alpha-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="../../icons/favicon-alpha-96x96.png" sizes="96x96">
+        <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+
+        <!-- FACEBOOK -->
+        <meta property="fb:app_id" content="487094758334595">
+        <meta property="og:url" content="http://lab.technologiestiftung-berlin.de/projects/funding/index.html">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="{{PROJECT_TITLE_DE}}">
+        <meta property="og:image" content="http://lab.technologiestiftung-berlin.de/projects/funding/social_media.jpg">
+        <meta property="og:description" content="{{PROJECT_DESCRIPTION_DE}}">
+        <meta property="og:site_name" content="Ideation &amp; Prototyping Lab">
+        <meta property="article:author" content="Fabian Dinklage">
+
+        <!-- TWITTER -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@TSBBerlin">
+        <meta name="twitter:creator" content="fdnklg">
+        <meta name="twitter:url" content="http://lab.technologiestiftung-berlin.de/projects/funding/index.html">
+        <meta name="twitter:title" content="{{PROJECT_TITLE_DE}}">
+        <meta name="twitter:description" content="{{PROJECT_DESCRIPTION_DE}}">
+        <meta name="twitter:image" content="http://lab.technologiestiftung-berlin.de/projects/funding/social_media.jpg">
+
+        <!-- GOOGLE+/SCHEMA.ORG -->
+        <meta itemprop="name" content="{{PROJECT_TITLE_DE}}">
+        <meta itemprop="description" content="{{PROJECT_DESCRIPTION_DE}}">
+        <meta itemprop="image" content="http://lab.technologiestiftung-berlin.de/projects/funding/social_media.jpg">
+
+        <!-- CANONICAL URL -->
+        <link rel="canonical" href="http://lab.technologiestiftung-berlin.de/projects/funding/index.html">
+        <!--<link rel="shortlink" href="tsblab.de/projects/PROJECT">-->
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,300i|Barlow:400,400i,700,700i" rel="stylesheet">
+        <meta name="theme-color" content="#1e3791">
+        <link href="../../js/prism/prism.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../../css/style.css">
+				<link rel="stylesheet" href="./style.css">
+    </head>
+    <body class="project">
+        <header id="page-head">
+            <div class="container">
+                <div class="left">
+                    <div id="minilogo"></div><a href="http://lab.technologiestiftung-berlin.de">Ideation&nbsp;&amp; Prototyping&nbsp;Lab</a>
+                </div>
+                <div class="right">
+                    <nav id="page-nav">
+                        <ul>
+                            <li><a href="http://lab.technologiestiftung-berlin.de">Zurück zum Lab</a>&nbsp;<span class="arrow">&#8614;</span></li>
+                            <li class="lang"><a href="http://lab.technologiestiftung-berlin.de/projects/funding/index_en.html">English</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div id="title">
+                <div class="container">
+                    <span class="button tag">Datenvisualisierung</span>
+                    <h1>Berliner Zuwendungsdaten visualisiert</h1>
+                    <span class="title-subline">Fabian Dinklage (<a href="https://twitter.com/fdnklg">@fdnklg</a>) | 02/2018</span>
+                </div>
+            </div>
+
+            <!-- Start editing here -->
+
+            <div class="container p-bottom">
+                <p class="copy">Lorem ipsum dolor sit <i>amet</i>, <strong>consectetuer</strong> adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. <a href="#">Cum sociis natoque penatibus</a> et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
+						</div>
+
+
+						<div class="container p-bottom p-top flex">
+								<div class="btn-group flex-items">
+										<a id="btn_money_abs" class="button">Absolutes Volumen</a>
+										<a id="btn_money_rel" class="button">Förderanteil pro Jahr</a>
+										<a id="btn_count_abs" class="button">Anzahl Förderungen</a>
+										<a id="btn_count_rel" class="button">Förderanteile pro Jahr</a>
+								</div>
+						</div>
+						
+						<div class="vis container p-bottom">
+
+							<!-- <div class="tooltip p-bottom" style="width: 100">
+									<h1 class="category_headline" ></h1>
+									<h2 id="scale">test</h2>
+									<h2 id="count_value">Test</h2>
+									<h2 id="money_value">test</h2>
+							</div> -->
+
+						<div id="chart"></div>
+
+            <div class="container p-bottom">
+                <p class="copy">Lorem ipsum dolor sit <i>amet</i>, <strong>consectetuer</strong> adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. <a href="#">Cum sociis natoque penatibus</a> et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
+                <blockquote>
+                    <p>
+                        Open Data ist schon ne richtig feine Sache.
+                    </p>
+                    <span class="author">Sagt der Ben</span>
+                </blockquote>
+                <p class="copy">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
+               
+            </div>
+
+            <div class="container small center">
+                <a class="lghtbx" title="Image Title 5" href="images/mindcraft.jpg"><img src="images/mindcraft_thumb.jpg" alt="Thumbnail 5" /></a>
+			</div>
+			
+
+            <div class="container p-top">
+                <ul class="download-list">
+                    <li>
+                        <a href="#">
+                            <span class="download-icon"></span>
+                            <span class="download-title">Datei XY Integer tincidunt. Cras dapibus. Vivamus elementum.</span><br />
+                            <span class="download-subtitle">20 MB, 10/2017</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="download-icon"></span>
+                            <span class="download-title">Datei XY</span><br />
+                            <span class="download-subtitle">20 MB, 10/2017</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="download-icon"></span>
+                            <span class="download-title">Datei XY</span><br />
+                            <span class="download-subtitle">20 MB, 10/2017</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="download-icon"></span>
+                            <span class="download-title">Datei XY</span><br />
+                            <span class="download-subtitle">20 MB, 10/2017</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="container center">
+                <a id="github" href="https://github.com/technologiestiftung/{{PROJECT}}">
+                    <img src="../../images/github.svg" alt="Project on Github" />
+                    <span class="github-title">technologiestiftung/{{PROJECT}}</span><br />
+                    <span class="github-subline">Projekt auf GitHub</span>
+                    <hr class="clear" />
+                </a>
+            </div>
+
+            <div id="author" class="container small p-top">
+                <img src="../../images/team/author_fabiandinklage.png" alt="Fabian Dinklage" />
+                <h3>Über den Autor</h3>
+                <h2><a href="maito:dinklage@technologiestiftung-berlin.de">Fabian Dinklage</a></h2>
+                <p>...</p>
+                <hr class="clear" />
+            </div>
+
+            <!-- Stop editing here -->
+
+        </main>
+        <footer id="contact">
+            <div id="footer">
+                <div class="container">
+                    <a href="http://www.technologiestiftung-berlin.de"><img src="../../images/tsb-logo.png" alt="Technologiestiftung Berlin" /></a>
+                    <div class="contact-meta">
+                        Grunewaldstraße 61-62<br />
+                        10825 Berlin<br />
+                        +49 30 209 69 99-0<br />
+                        <a href="mailto:info@technologiestiftung-berlin.de">info@technologiestiftung-berlin.de</a>
+                    </div>
+                    <div class="contact-social">
+                        <a href=""><img src="../../images/twitter.png" alt=""></a>
+                        <a href=""><img src="../../images/facebook.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div id="end">
+                <div class="container">
+                    <div class="left">© Technologiestiftung Berlin 2017</div>
+                    <div class="right">
+                        <a href="https://www.technologiestiftung-berlin.de/de/stiftung/kontakt-anfahrt/" target="_blank">Kontakt</a>
+                        &nbsp;|&nbsp;
+                        <a href="https://www.technologiestiftung-berlin.de/de/impressum" target="_blank">Impressum</a>
+                        &nbsp;|&nbsp;
+                        <a href="https://www.technologiestiftung-berlin.de/de/datenschutz/" target="_blank">Datenschutz</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="../../js/prism/prism.js"></script>
+        <script type="text/javascript" src="../../js/min/logo.min.js"></script>
+				<script type="text/javascript" src="../../js/min/script.min.js"></script>
+				
+
+
+
+        <!-- Add your custom JS files here and place them directly in your project folder -->
+        <script type="text/javascript">
+					Number.prototype.map = function (in_min, in_max, out_min, out_max) {
+						return (this - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+					}
+
+					function relative(share, total, decimal) {
+						return Math.abs(((share / total) * 100).toFixed(decimal));
+					}
+
+					function numberFormat(num) {
+						var y = num.toString().split('.');
+						if(num > 9999) {y[0] = y[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');}
+						return y.join(',');
+					}
+
+					var Chart = (function(window, d3) {
+
+						var svg, chartWrapper, category, circle, values, logValueScale, data, margin, sector, circleGroup, categories, labelsYear, marker, label
+
+						var idCircle = 1;
+						var countY = 1;
+						var years = [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016];
+
+						var margin = {
+							top: 50,
+							bottom: 150,
+							left: 50,
+							right: 0
+						}
+
+						var antns = {
+								moneyRelative: [
+									{
+										pos: [650, 360, 700, 225],
+										content: [
+											'Dies ist ein Dummytext',
+											'der über mehrere Zeilen',
+											'verläuft.'
+										]
+									},
+									{
+										pos: [250, 560, 200, 525],
+										content: [
+											'Dies ist ein Dummytext',
+											'der über mehrere Zeilen',
+											'verläuft.'
+										]
+									},
+								],
+								moneyAbsolute: [
+									{
+										pos: [850, 260, 700, 125],
+										content: [
+											'Dies ist ein Dummytext',
+											'der über mehrere Zeilen',
+											'verläuft.'
+										]
+									},
+									{
+										pos: [250, 560, 200, 525],
+										content: [
+											'Dies ist ein Dummytext',
+											'der über mehrere Zeilen',
+											'verläuft.'
+										]
+									},
+								],
+								countRelative: [
+									{
+										pos: [850, 260, 700, 125],
+										content: [
+											'Dies ist ein Dummytext',
+											'der über mehrere Zeilen',
+											'verläuft.'
+										]
+									},
+									{
+										pos: [250, 560, 200, 525],
+										content: [
+											'Dies ist ein Dummytext',
+											'der über mehrere Zeilen',
+											'verläuft.'
+										]
+									},
+								],
+								countAbsolute: [
+									{
+										pos: [800, 100, 460, 325],
+										content: [
+											'Dies ist ein Dummytext',
+											'der über mehrere Zeilen',
+											'verläuft. Diesmal sind es',
+											'sogar vier Zeilen.'
+										]
+									},
+									{
+										pos: [650, 360, 400, 225],
+										content: [
+											'Dies ist ein Dummytext',
+											'der über mehrere Zeilen',
+											'verläuft.'
+										]
+									},
+								],
+						}
+						
+						var config = {
+							svg: {
+								width: '1000',
+								height: '1200',
+								maxRad: 100,
+								minRad: 2
+							},
+							data: {
+								relative: true
+							}
+						}
+
+						var swoopy = swoopyArrow()
+							.angle(Math.PI/4)
+							.x(function(d) { return d[0]; })
+							.y(function(d) { return d[1]; });
+
+						d3.json('data/politikbereich.json', init);
+						
+						function init(json) {
+							data = massage(json);
+
+							chartWrapper = d3.select('#chart')
+
+							moneyMinMax = d3.extent(data, (d, i) => { return d.money });
+
+							wrapperText = chartWrapper
+								.append('div')
+								.classed('labels', true)
+							
+							wrapperText.selectAll('sectorLabel')
+								.data(data)
+								.enter()
+								.append('p')
+								.classed('copy xs label', true)
+								.attr('id', (d,i) => { 
+									return `label-${i + 1}` })
+								.attr('style', 'width: 150px')
+								.text((d) => { return d.target; });
+										
+							svg = chartWrapper
+								.append('svg')
+								.classed('svg-wrapper', true)
+								.attr('width', config.svg.width)
+								.attr('height', config.svg.height)
+							
+							marker = svg
+								.append('marker')
+								.attr('id', 'arrowhead')
+								.attr('viewBox', '-10 -10 20 20')
+								.attr('refX', 0)
+								.attr('refY', 0)
+								.attr('markerWidth', 20)
+								.attr('markerHeight', 20)
+								.attr('stroke-width', 1)
+								.attr('orient', 'auto')
+							
+							marker
+								.append('polyline')
+								.attr('stroke-linejoin', 'bevel')
+								.attr('points', '-6.75,-6.75 0,0 -6.75,6.75')
+
+							labelsYear = svg
+								.append('g')
+								.classed('legend', true)
+								
+							labelsYear.selectAll('label')
+								.data(years)
+								.enter()
+								.append('text')
+								.classed('year', true)
+								.attr('id', d => { return d })
+								.text( d => { return d })
+								.attr('y', '40px')
+								.attr('x', (d,i) => { return ((config.svg.width / 8) * i) + 32 } )
+							
+
+							category = svg.selectAll('chartCategory')
+								.data(data)
+								.enter()
+								.append('g')
+								.classed('category', true)
+							
+							circleGroup = category.selectAll('circles')
+								.data((d) => { return d.years })
+								.enter()
+								.append('g')
+								.classed('circle', true)
+
+							circle = circleGroup
+								.append('circle')
+								.attr('id', (d,i) => { 
+									if(i === 7) { idCircle += 1 };
+									return `${idCircle}`; 
+									})
+								.classed('value', true)
+								.attr('data-year', (d,i) => {
+									return i
+								})
+								.attr('r', (d) => {
+									var value = d.money.map(moneyMinMax[0], moneyMinMax[1], config.svg.minRad, config.svg.maxRad);
+									if(d.money === 0) { return 0 };
+									return value;
+								})
+								.attr('cx', (d,i) => { 
+									var posY = (((config.svg.width - margin.left - margin.right) / 8) * i);
+									return posY;
+									})
+								.attr('cy', (d,i) => { 
+									if (i === 7) { countY += 1 }
+									return (((config.svg.height - margin.top - margin.bottom) / 31) * countY)
+									})
+								.on('mouseover', handleMouseOver)
+								.on('mouseout', handleMouseOut)
+						
+							render();
+						}
+
+						function render() {
+
+							var chartSizes = document.getElementById('chart').getBoundingClientRect();
+							var labelSizes = document.querySelector('.labels').getBoundingClientRect();
+							var countY = 1;
+
+							var newWidth = chartSizes.width - labelSizes.width
+
+							resize(newWidth);
+
+							updatePositions();
+						}
+
+						function updatePositions() {
+							var countY = 1;
+
+							svg
+								.attr('width', config.svg.width)
+								.attr('height', config.svg.height)
+							
+							circle
+								.attr('cx', (d,i) => { 
+									var posY = (((config.svg.width - margin.left - margin.right) / 8) * i);
+									return posY;
+								})
+								.attr('cy', (d,i) => { 
+									if (i === 7) { countY += 1 }
+									return (((config.svg.height - margin.top - margin.bottom) / 31) * countY)
+								})
+								
+							labelsYear.selectAll('years')
+								.attr('x', (d,i) => { return ((config.svg.width / 8) * i) + 32 } )
+							
+
+							category.attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+						}
+
+						function handleMouseOut() {
+							d3.select(this)
+								.classed('active', false)
+
+							var id = d3.select(this).attr('id');
+							d3.select(`#label-${id}`).classed('label-active', false)
+						}
+
+						function handleMouseOver(d, i) {
+							var tooltip = d3.select('.tooltip')
+
+							var count = d3.select('#count_value');
+							var money = d3.select('#money_value');     
+
+							count.text(`count: ${numberFormat(d.count)} transfers`);
+							money.text(`sum: ${numberFormat(d.money)} € (${d.shareMoney}%)`);
+
+							d3.select(this)
+								.classed('active', true)
+
+							var id = d3.select(this).attr('id');
+
+							d3.select(`#label-${id}`).classed('label-active', true)
+							}
+
+						function massage(json) {
+							json.forEach( (sector,i) => {
+								sector.index = i;
+								sector.years.forEach( year => {
+									var money = relative(year.money, sector.money, 1);
+									var count = relative(year.count, sector.count, 1);
+
+									year.shareMoney = money;
+									year.shareCount = count;
+								})
+							});
+
+							return json;
+						}
+
+						function resize(winWidth) {
+							config.svg.width = winWidth;
+							config.svg.height = 1200 - margin.top - margin.bottom;
+						}
+
+						d3.select('#btn_money_abs').on('click', () => {
+							var btn = d3.select(this);
+							updateMoneyAbs();
+							chooseSwoopy('moneyAbsolute');
+						});
+
+						d3.select('#btn_money_rel').on('click', () => {
+							var btn = d3.select(this);
+							chooseSwoopy('moneyRelative');
+						});
+
+						d3.select('#btn_count_abs').on('click', () => {
+							var btn = d3.select(this);
+							updateCountAbs();
+							chooseSwoopy('countRelative');
+						});
+
+						d3.select('#btn_count_abs').on('click', () => {
+							var btn = d3.select(this);
+							updateCountAbs();
+							chooseSwoopy('countAbsolute');
+						});
+
+						function updateCountAbs() {
+							circle
+									.transition()
+									.duration(1000)
+									.attr('r', (d) => {
+										var value = d['shareCount'].map(0, 100, config.svg.minRad, config.svg.maxRad)
+										return value;
+									})
+									.attr('class', 'circle-count')
+						}
+
+						function updateMoneyRel() {
+							circle
+									.transition()
+									.duration(750)
+									.attr('r', (d) => {
+										var value = d['money'].map(moneyMinMax[0], moneyMinMax[1], config.svg.minRad, config.svg.maxRad);
+
+										console.log(d['shareMoney']);
+										if(d.money === 0) { return 0 };
+										return value;
+									})
+									.attr('class', 'circle-money')
+						}
+
+						function updateMoneyAbs() {
+							circle
+									.transition()
+									.duration(750)
+									.attr('r', (d) => {
+										var value = d['money'].map(moneyMinMax[0], moneyMinMax[1], config.svg.minRad, config.svg.maxRad);
+
+										if(d.money === 0) { return 0 };
+										return value;
+									})
+									.attr('class', 'circle-money')
+						}
+
+						function chooseSwoopy(swoopyId) {
+
+							d3.selectAll('.annotation').remove();
+							d3.selectAll('.arrow').remove();
+
+							renderSwoopy(swoopyId);
+						}
+
+						function renderSwoopy(view) {
+
+							antns[view].forEach( annotation => {
+								svg.append("path")
+									.attr('class', 'arrow')
+									.attr('marker-end', 'url(#arrowhead)')
+									.datum([[annotation.pos[0],annotation.pos[1]],[annotation.pos[2],annotation.pos[3]]])
+									.attr("d", swoopy);
+								
+								var text = svg
+									.append("text")
+									.classed('annotation', true)
+									.attr('x', annotation.pos[0] + 10)
+									.attr('textLength', 200)
+									.attr('y', annotation.pos[1] - 10)
+								
+								text.selectAll('tSpan')
+									.data(annotation.content)
+									.enter()
+									.append('tspan')
+									.attr('x', annotation.pos[0] + 10)
+									.attr('dy', (d,i) => { 
+										var lineHeight = 1.2; 
+										return `${lineHeight}rem` ;
+									})
+									.text( d => { return d })
+								}) 
+						}
+
+						function swoopyArrow() {
+
+							var angle = Math.PI,
+								clockwise = true,
+								xValue = function(d) { return d[0]; },
+								yValue = function(d) { return d[1]; };
+
+							function render(data) {
+
+							data = data.map(function(d, i) {
+								return [xValue.call(data, d, i), yValue.call(data, d, i)];
+							});
+
+							// get the chord length ("height" {h}) between points
+							var h = hypotenuse(data[1][0]-data[0][0], data[1][1]-data[0][1])
+
+							// get the distance at which chord of height h subtends {angle} radians
+							var d = h / ( 2 * Math.tan(angle / 2) );
+
+							// get the radius {r} of the circumscribed circle
+							var r = hypotenuse(d, h/2)
+
+							var path =  "M " + data[0][0] + "," + data[0][1]
+								+ " a " + r + "," + r
+								+ " 0 0," + (clockwise ? "1" : "0") + " "
+								+ (data[1][0]-data[0][0]) + "," + (data[1][1]-data[0][1]);
+
+							return path
+							}
+
+							function hypotenuse(a, b) {
+							return Math.sqrt( Math.pow(a,2) + Math.pow(b,2) );
+							}
+
+							render.angle = function(_) {
+							if (!arguments.length) return angle;
+							angle = Math.min(Math.max(_, 1e-6), Math.PI-1e-6);
+							return render;
+							};
+
+							render.clockwise = function(_) {
+							if (!arguments.length) return clockwise;
+							clockwise = !!_;
+							return render;
+							};
+
+							render.x = function(_) {
+							if (!arguments.length) return xValue;
+							xValue = _;
+							return render;
+							};
+
+							render.y = function(_) {
+							if (!arguments.length) return yValue;
+							yValue = _;
+							return render;
+							};
+
+							return render;
+							}
+
+						window.addEventListener('resize', (event) => {
+							render();
+						})
+
+					})(window,d3);
+        </script>
+    </body>
+</html>
