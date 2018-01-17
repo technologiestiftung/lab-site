@@ -18,6 +18,8 @@ In the folder "authors" there are several json files for each team member, if th
 
 Recommended but not required params:
 
+	TYPE="full" (or light)
+
 	DATE="10/2017" 
 	GITHUB_URL="population-prediction" 
 	TAG_DE="Data Science" 

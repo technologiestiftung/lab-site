@@ -95,6 +95,17 @@ body{
 #tsb-ani-logo path,#tsb-ani-logo line{fill:transparent;opacity:1;stroke-width:6px;stroke-linejoin:round;stroke-linecap:round}#tsb-ani-logo path{stroke:transparent}#tsb-ani-logo .edge{stroke:#6ECDF5}#tsb-ani-logo .hedge{stroke:#E60433}
 #minilogo #tsb-ani-logo path,#tsb-ani-logo line{stroke-width:3px;}
 
+#minilogo{
+  width:100px;
+  max-width:20%;
+  float:left;
+  margin-top:20px;
+  svg{
+    width:100%;
+    height:auto;
+  }
+}
+
 #teaser{
   width:100%;
   background-color:#fff;
@@ -681,10 +692,13 @@ hr.clear{
   min-height: 40px;
   .left{
     float:left;
-    a{
+    line-height:20px;
+    span{
       margin-top:22px;
       float:left;
       margin-left:10px;
+      a{font-family:'ClanOT-Medium'; font-style:normal;}
+      a.lab-logo{font-family:'Roboto Mono'; font-style:italic;}
     }
   }
   .right{
@@ -718,10 +732,6 @@ hr.clear{
   }
 }
 
-#minilogo{
-  float:left;
-  margin-top:-20px;
-}
 
 /* ---- CONTENT ---- */
 
@@ -775,6 +785,7 @@ pre[class*="language-"]{
 }
 
 #github{
+  min-width: 250px;
   font-family: 'Roboto Mono', monospace;
   display: inline-block;
   max-width:100%;
