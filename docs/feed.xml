@@ -12,7 +12,7 @@
 	<atom:link href="http://lab.technologiestiftung-berlin.de/feed.xml" rel="self" type="application/rss+xml" />
 	<link>http://lab.technologiestiftung-berlin.de</link>
 	<description>Wir erforschen und erproben digitale Werkzeuge um gemeinsam mit Bürger*innen, Verwaltung und Unternehmen die Zukunft Berlins zu gestalten.</description>
-	<lastBuildDate>Wed, 17 Jan 2018 11:51:19  +0100</lastBuildDate>
+	<lastBuildDate>Wed, 17 Jan 2018 13:45:17  +0100</lastBuildDate>
 	<language>de-DE</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
@@ -48,6 +48,17 @@
 <content:encoded><![CDATA[Kein Byte wird verschenkt]]></content:encoded>
 <dc:creator><![CDATA[undefined]]></dc:creator>
 <guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/LORANODES/index.html</guid>
+</item>
+
+<item>
+<title><![CDATA[Berliner Zuwendungsdaten visualisiert]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/funding/index.html</link>
+<pubDate>Mon, 15 Jan 2018 00:00:00  +0100</pubDate>
+<category><![CDATA[Datenvisualisierung]]></category>
+<description><![CDATA[{{PROJECT_DESCRIPTION_DE}}]]></description>
+<content:encoded><![CDATA[{{PROJECT_DESCRIPTION_DE}}]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/funding/index.html</guid>
 </item>
 
 <item>
