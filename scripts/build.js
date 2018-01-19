@@ -75,7 +75,7 @@ langs.forEach(lang=>{
 		projects_html[lang] += '\n'
 		projects_html[lang] += '                    <li class="f-' + tags + '">'+'\n'
         projects_html[lang] += '                    	<a href="./projects/' + p.PROJECT + '/index' + ((lang=='DE')?'':'_en') + '.html">'+'\n'
-		projects_html[lang] += '                  		  <img src="./projects/' + p.PROJECT + '/thumb@2x.png" alt="' + p['PROJECT_TITLE_'+lang] + '" />'+'\n';
+		projects_html[lang] += '                  		  <img src="./projects/' + p.PROJECT + '/thumb@2x.jpg" srcset="./projects/' + p.PROJECT + '/thumb.jpg, ./projects/' + p.PROJECT + '/thumb@2x.jpg 2x" alt="' + p['PROJECT_TITLE_'+lang] + '" />'+'\n';
 		(p['TAG_'+lang].split(',')).forEach((t,i)=>{
 			projects_html[lang] += '<span class="tag button">' + t.trim() + '</span>';
 		})
