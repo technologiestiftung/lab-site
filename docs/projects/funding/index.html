@@ -127,7 +127,7 @@
 						</div>
 
 						<div id="legend" class="container m-width p-top p-bottom">
-							<h3 id="legend-title">Wie diese Visualisierung zu lesen ist:</h3>
+							<h3 id="legend-title"></h3>
 						</div>
 						<div class="vis container p-bottom"><div id="chart"></div>
 
@@ -198,7 +198,26 @@
                 <hr class="clear" />
             </div>
 
-            <!-- Stop editing here -->
+            <div id="tooltip">
+							<div class="tooltip--title">
+								<span>Sektor</span>
+								<h3 id="category_title"></h3>
+							</div>
+							<div class="tooltip--title p-top-m">
+								<span>Jahr</span>
+								<h3 id="date"></h3>
+							</div>
+							<div class="tooltip--title p-top-xs">
+								<span>Volumen</span>
+								<h3 id="money_value"></h3>
+							</div>
+							<div class="tooltip--title p-top-xs">
+								<span>Anzahl d. Zuwendungen</span>
+								<h3 id="count_value">Kategorie Name</h3>
+							</div>
+							
+							<span id="money_value"></span>
+						</div>
 
         </main>
         <footer id="contact">
@@ -256,9 +275,11 @@
 
 					var Chart = (function(window, d3) {
 
-						var svg, chartWrapper, category, circle, values, logValueScale, data, margin, sector, circleGroup, categories, labelsYear, marker, label, countMinMax, svgLegend
-
+						var svg, chartWrapper, category, circle, values, logValueScale, data, margin, sector, circleGroup, categories, labelsYear, marker, label, countMinMax, svgLegend, labelYear, xAxis, xScale, x, tooltip, swoopyArrow
+						
+						var categoryTitles = [];
 						var idCircle = 1;
+						var idCircle2 = 1;
 						var countY = 1;
 						var years = [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016];
 
@@ -266,17 +287,17 @@
 							top: 50,
 							bottom: 150,
 							left: 50,
-							right: 0
+							right: 50
 						}
 
 						var antns = {
 								moneyRelative: [
 									{
-										pos: [650, 360, 700, 225],
+										pos: [15, 127],
 										content: [
-											'Dies ist ein Dummytext',
-											'der über mehrere Zeilen',
-											'verläuft.'
+											'Mehr als 60% aller Zu-',
+											'wendungen fließen in die ',
+											'Baustelle des BER Flughafens.'
 										]
 									},
 									{
@@ -290,19 +311,26 @@
 								],
 								moneyAbsolute: [
 									{
-										pos: [850, 260, 700, 125],
+										pos: {
+											start: 25,
+											end: 75
+										},
 										content: [
-											'Dies ist ein Dummytext',
-											'der über mehrere Zeilen',
-											'verläuft.'
+											'Mehr als 60% aller Zu-',
+											'wendungen fließen in die ',
+											'Baustelle des BER Flughafens.'
 										]
 									},
 									{
-										pos: [250, 560, 200, 525],
+										pos: {
+											start: 127,
+											end: 164
+										},
 										content: [
-											'Dies ist ein Dummytext',
-											'der über mehrere Zeilen',
-											'verläuft.'
+											'Die Zuwendungen im Bereich',
+											'Integration haben sich',
+											'im Vergleich zum Vorjahr',
+											'mehr als ver 17facht.'
 										]
 									},
 								],
@@ -347,9 +375,9 @@
 						
 						var config = {
 							svg: {
-								width: '1000',
-								height: '1200',
-								maxRad: 150,
+								width: 1000,
+								height: 1200,
+								maxRad: 100,
 								minRad: 2
 							},
 							data: {
@@ -357,30 +385,38 @@
 							}
 						}
 
+						var legendTitle = {
+							moneyAbsolute: 'Der Kreisradius bildet das Volumen aller Zuwenungen in € ab.',
+							moneyRelative: 'Der Kreisradius bildet %-ualen Anteil aller Zuwendungen in € / Jahr ab.',
+							countRelative: 'Der Kreisradius bildet %-ualen Anteil der Anzahl aller Zuwendungen / Jahr ab.',
+							countAbsolute: 'Der Kreisradius bildet Anzahl aller Zuwendungen / Jahr ab.'
+						}
+
+
 						var legendPos = {
 							moneyAbsolute: [
-								{ pos: 25, content: 'some useful informationmoneyAbsolute' },
-								{ pos: 50, content: 'some contentmoneyAbsolute' },
-								{ pos: 75, content: 'some contentmoneyAbsolute' },
-								{ pos: 100, content: 'some contentmoneyAbsolute' }
+								{ pos: 100, content: '2.025.361.267 Billion €' },
+								{ pos: 75, content: '1.519.020.950 Billion €' },
+								{ pos: 50, content: '1.012.680.633 Milliare €' },
+								{ pos: 25, content: '506.340.316 Millionen €' }
 							],
 							moneyRelative: [
-								{ pos: 25, content: 'some useful informationcountAbsolute' },
-								{ pos: 50, content: 'some contentcountAbsolute' },
-								{ pos: 75, content: 'some contentcountAbsolute' },
-								{ pos: 100, content: 'some contentcountAbsolute' }
+								{ pos: 100, content: '25%' },
+								{ pos: 75, content: '50%' },
+								{ pos: 50, content: '75%' },
+								{ pos: 25, content: '100%' }
 							],
 							countAbsolute: [
-								{ pos: 25, content: 'some useful information countAbsolute' },
-								{ pos: 50, content: 'some content countAbsolute' },
-								{ pos: 75, content: 'some content countAbsolute' },
-								{ pos: 100, content: 'some content countAbsolute' }
+								{ pos: 100, content: '1229 Zuwendungen' },
+								{ pos: 75, content: '2459 Zuwendungen' },
+								{ pos: 50, content: '3688 Zuwendungen' },
+								{ pos: 25, content: '4917 Zuwendungen' }
 							],
 							countRelative: [
-								{ pos: 25, content: 'some useful information countRelative' },
-								{ pos: 50, content: 'some content countRelative' },
-								{ pos: 75, content: 'some content countRelative' },
-								{ pos: 100, content: 'some content countRelative' }
+								{ pos: 100, content: '25%' },
+								{ pos: 75, content: '50%' },
+								{ pos: 50, content: '75%' },
+								{ pos: 25, content: '100%' }
 							],
 						}
 
@@ -394,12 +430,39 @@
 						function init(json) {
 							data = json;
 
+							var dataAllYears = [];
+
+							data.forEach( category => {
+								categoryTitles.push(category.target);
+
+								category.years.forEach( year => {
+									dataAllYears.push(year);
+								})
+							})
+							var countAllYears = [];
+							var moneyAllYears = [];
+
+							dataAllYears.forEach( year => {
+								moneyAllYears.push(year.money);
+								countAllYears.push(year.count);
+							} )
+
 							chartWrapper = d3.select('#chart')
 							legendWrapper = d3.select('#legend')
 
-							moneyMinMax = d3.extent(data, (d, i) => { return d.money });
+							countMinMax = d3.extent(countAllYears);
+
+							moneyMinMax = d3.extent(moneyAllYears);
 							countMinMax = d3.extent(data, d => { return d.count });
-							
+
+							x = d3.extent(years);
+
+							xScale = d3.scaleLinear()
+								.domain(x)
+								.range([0, config.svg.width - margin.left - margin.right]);
+
+							xAxis = d3.axisBottom(xScale).ticks(8).tickFormat(d3.format("d"));;
+
 							renderLegend('moneyAbsolute');
 
 							wrapperText = chartWrapper
@@ -419,10 +482,17 @@
 										
 							svg = chartWrapper
 								.append('svg')
-								.classed('svg-wrapper', true)
+								.attr('id', 'svg-wrapper')
 								.attr('width', config.svg.width)
 								.attr('height', config.svg.height)
 							
+							svg.append('g').classed('x axis', true);
+
+							svg.select('.x.axis')
+								.append('g')
+								.attr('transform', `translate(${margin.left}, 0)`)
+								.call(xAxis)
+								
 							marker = svg
 								.append('marker')
 								.attr('id', 'arrowhead')
@@ -439,21 +509,6 @@
 								.attr('stroke-linejoin', 'bevel')
 								.attr('points', '-6.75,-6.75 0,0 -6.75,6.75')
 
-							labelsYear = svg
-								.append('g')
-								.classed('legend', true)
-								
-							labelsYear.selectAll('label')
-								.data(years)
-								.enter()
-								.append('text')
-								.classed('year', true)
-								.attr('id', d => { return d })
-								.text( d => { return d })
-								.attr('y', '40px')
-								.attr('x', (d,i) => { return ((config.svg.width / 8) * i) + 32 } )
-							
-
 							category = svg.selectAll('chartCategory')
 								.data(data)
 								.enter()
@@ -468,6 +523,12 @@
 
 							circle = circleGroup
 								.append('circle')
+								.attr('data-uid', (d,i) => {
+									if(i === 7) { idCircle2 += 1 };
+									var uid = `${idCircle2}${i}`;
+
+									return uid;
+								})
 								.attr('id', (d,i) => { 
 									if(i === 7) { idCircle += 1 };
 									return `${idCircle}`; 
@@ -481,14 +542,6 @@
 									if(d.money === 0) { return 0 };
 									return value;
 								})
-								.attr('cx', (d,i) => { 
-									var posY = (((config.svg.width - margin.left - margin.right) / 8) * i);
-									return posY;
-									})
-								.attr('cy', (d,i) => { 
-									if (i === 7) { countY += 1 }
-									return (((config.svg.height - margin.top - margin.bottom) / 31) * countY)
-									})
 								.on('mouseover', handleMouseOver)
 								.on('mouseout', handleMouseOut)
 						
@@ -498,6 +551,9 @@
 						function renderLegend(view) {
 							d3.select('.legend-wrapper').remove();
 
+							var title = d3.select('#legend-title');							
+							title.text(legendTitle[view]);
+							
 							svgLegend = legendWrapper
 								.append('svg')
 								.classed('legend-wrapper', true)
@@ -518,7 +574,7 @@
 								.append('line')
 								.attr('x1', 0)
 								.attr('y1', d => { return d.pos - 4 })
-								.attr('x2', 150)
+								.attr('x2', 120)
 								.attr('y2', d => {return d.pos - 4})
 								.attr('stroke-width', 1)
 								.attr('stroke','black')
@@ -529,26 +585,34 @@
 								.enter()
 								.append('text')
 								.classed('annotation', true)
-								.attr('x', 160)
+								.attr('x', 125)
 								.attr('y', d => { return d.pos})
 								.text(d => {return d.content})	
 						}
 
 						function render() {
 
-							var chartSizes = document.getElementById('chart').getBoundingClientRect();
-							var labelSizes = document.querySelector('.labels').getBoundingClientRect();
 							var countY = 1;
 
-							var newWidth = chartSizes.width - labelSizes.width
+							var chartSizes = document.getElementById('svg-wrapper').getBoundingClientRect();
+							var chartWrapper = document.getElementById('chart').getBoundingClientRect();
+							var labels = document.querySelector('.labels').getBoundingClientRect();
+							var newWidth = chartWrapper.width - labels.width;
 
-							resize(newWidth);
-
+							config.svg.width = newWidth;
+							
+							
 							updatePositions();
+						}
+						
+						function resize(winWidth) {
+							config.svg.width = winWidth;
+							config.svg.height = 1200 - margin.top - margin.bottom;
 						}
 
 						function updatePositions() {
 							var countY = 1;
+							var newWidth = config.svg.width - margin.left - margin.right;
 
 							svg
 								.attr('width', config.svg.width)
@@ -556,18 +620,20 @@
 							
 							circle
 								.attr('cx', (d,i) => { 
-									var posY = (((config.svg.width - margin.left - margin.right) / 8) * i);
-									return posY;
+									var posX = ((newWidth / (years.length - 1)) * i + 1);
+									return posX;
 								})
 								.attr('cy', (d,i) => { 
 									if (i === 7) { countY += 1 }
 									return (((config.svg.height - margin.top - margin.bottom) / 31) * countY)
 								})
-								
-							labelsYear.selectAll('years')
-								.attr('x', (d,i) => { return ((config.svg.width / 8) * i) + 32 } )
-							
 
+							xScale.range([0, newWidth]);
+							xAxis.scale(xScale);
+
+							svg.select('.x.axis')
+								 .call(xAxis)
+								
 							category.attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 						}
 
@@ -576,29 +642,49 @@
 								.classed('active', false)
 
 							var id = d3.select(this).attr('id');
-							d3.select(`#label-${id}`).classed('label-active', false)
+							d3.select(`#label-${id}`).classed('label-active', false);
+
+							tooltip.style('display', 'none');
+
 						}
 
 						function handleMouseOver(d, i) {
-							var tooltip = d3.select('.tooltip')
-
-							var count = d3.select('#count_value');
-							var money = d3.select('#money_value');     
-
-							count.text(`count: ${numberFormat(d.count)} transfers`);
-							money.text(`sum: ${numberFormat(d.money)} € (${d.shareMoney}%)`);
-
 							d3.select(this)
 								.classed('active', true)
 
 							var id = d3.select(this).attr('id');
 
 							d3.select(`#label-${id}`).classed('label-active', true)
+
+							updateTooltip(d, this);
 						}
 
-						function resize(winWidth) {
-							config.svg.width = winWidth;
-							config.svg.height = 1200 - margin.top - margin.bottom;
+						function updateTooltip(d, that) {
+							
+
+							tooltip = d3.select('#tooltip')
+							tooltip.style('display', 'block');
+
+							var x = d3.event.pageX + 10
+							var y = d3.event.pageY + 10
+
+							tooltip
+								.style('left', `${x}px`)
+								.style('top', `${y}px`)
+							
+
+							var count = d3.select('#count_value');
+							var money = d3.select('#money_value');
+							var date = d3.select('#date');
+							var category = d3.select('#category_title');
+
+							var yearId = d3.select(that).attr('data-year');
+							var categoryId = d3.select(that).attr('id');
+
+							category.text(categoryTitles[categoryId - 1]);
+							date.text(years[yearId]);
+							count.text(`${numberFormat(d.count)}`);
+							money.text(`${numberFormat(d.money)} € (${d.moneyShare}%)`);
 						}
 
 						d3.select('#btn_money_abs').on('click', () => {
@@ -690,24 +776,39 @@
 						function renderSwoopy(view) {
 
 							antns[view].forEach( annotation => {
-								svg.append("path")
+
+								var posX1 = d3.select(`circle[data-uid='${annotation.pos.start}']`).attr('cx');
+								var posX2 = d3.select(`circle[data-uid='${annotation.pos.end}']`).attr('cx');
+								var posY1 = d3.select(`circle[data-uid='${annotation.pos.start}']`).attr('cy');
+								var posY2 = d3.select(`circle[data-uid='${annotation.pos.end}']`).attr('cy');
+
+								svg
+									.append('circle')
+									.attr('r', 10)
+									.attr('fill', 'black')
+									.attr('cx', posX1)
+									.attr('cy', posY1)
+
+								// console.log(posX2, margin.left)
+
+								swoopyArrow = svg.append("path")
 									.attr('class', 'arrow')
 									.attr('marker-end', 'url(#arrowhead)')
-									.datum([[annotation.pos[0],annotation.pos[1]],[annotation.pos[2],annotation.pos[3]]])
+									.datum([[posX2, posY2], [posX1 , posY1]])
 									.attr("d", swoopy);
 								
 								var text = svg
 									.append("text")
 									.classed('annotation', true)
-									.attr('x', annotation.pos[0] + 10)
+									.attr('x', posX2 + 10)
 									.attr('textLength', 200)
-									.attr('y', annotation.pos[1] - 10)
+									.attr('y', posY2 + 10)
 								
 								text.selectAll('tSpan')
 									.data(annotation.content)
 									.enter()
 									.append('tspan')
-									.attr('x', annotation.pos[0] + 10)
+									.attr('x', posX2 + 10)
 									.attr('dy', (d,i) => { 
 										var lineHeight = 1.2; 
 										return `${lineHeight}rem` ;
