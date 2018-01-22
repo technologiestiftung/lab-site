@@ -29,7 +29,7 @@ if(d3.select('.embed').size()>=1){
 	embedResize();
 }
 
-if(d3.select('#minilogo').size()>=1){
+if(d3.selectAll('.gallery li').size()>=1){
 	d3.selectAll('.gallery li')
 	    .classed('two-break', function(d,i){ return (i%2==0)?true:false; })
 	    .classed('three-break', function(d,i){ return (i%3==0)?true:false; });
