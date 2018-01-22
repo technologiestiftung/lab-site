@@ -113,9 +113,7 @@
 						</div>
 
 
-						<div class="container p-bottom p-top m-width flex flex-row">
-
-							<h3>Wie diese Visualisierung zu lesen ist:</h3>
+						<div class="container m-width flex">
 
 								<div class="btn-group flex flex-col">
 									<a id="btn_money_abs" class="button">Alle Zuwendungen in €</a>
@@ -129,10 +127,12 @@
 
 						</div>
 
-						<div id="legend" class="container m-width p-top p-bottom">
+						<div class="vis container p-bottom"><div id="chart"></div>
+
+						<div id="legend" class="container m-width p-bottom">
 							<h3 id="legend-title"></h3>
 						</div>
-						<div class="vis container p-bottom"><div id="chart"></div>
+
 
             <div class="container p-bottom">
                 <p class="copy">Lorem ipsum dolor sit <i>amet</i>, <strong>consectetuer</strong> adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. <a href="#">Cum sociis natoque penatibus</a> et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
@@ -149,40 +149,6 @@
             <div class="container small center">
                 <a class="lghtbx" title="Image Title 5" href="images/mindcraft.jpg"><img src="images/mindcraft_thumb.jpg" alt="Thumbnail 5" /></a>
 			</div>
-			
-
-            <div class="container p-top">
-                <ul class="download-list">
-                    <li>
-                        <a href="#">
-                            <span class="download-icon"></span>
-                            <span class="download-title">Datei XY Integer tincidunt. Cras dapibus. Vivamus elementum.</span><br />
-                            <span class="download-subtitle">20 MB, 10/2017</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="download-icon"></span>
-                            <span class="download-title">Datei XY</span><br />
-                            <span class="download-subtitle">20 MB, 10/2017</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="download-icon"></span>
-                            <span class="download-title">Datei XY</span><br />
-                            <span class="download-subtitle">20 MB, 10/2017</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="download-icon"></span>
-                            <span class="download-title">Datei XY</span><br />
-                            <span class="download-subtitle">20 MB, 10/2017</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
 
             <div class="container center">
                 <a id="github" href="https://github.com/technologiestiftung/{{PROJECT}}">
@@ -296,15 +262,24 @@
 						var antns = {
 								moneyRelative: [
 									{
-										pos: [15, 127],
+										pos: {
+											start: 152,
+											end: 63
+										},
 										content: [
-											'Mehr als 60% aller Zu-',
-											'wendungen fließen in die ',
-											'Baustelle des BER Flughafens.'
+											'2011 fließt der größte Anteil',
+											'aller Förderungen des Jahres',
+											'mit mehr als 25% in',
+											'den Bereich Forschung.'
+											
+
 										]
 									},
 									{
-										pos: [250, 560, 200, 525],
+										pos: {
+											start: 167,
+											end: 225
+										},
 										content: [
 											'Dies ist ein Dummytext',
 											'der über mehrere Zeilen',
@@ -315,7 +290,7 @@
 								moneyAbsolute: [
 									{
 										pos: {
-											start: 25,
+											start: 15,
 											end: 75
 										},
 										content: [
@@ -326,8 +301,8 @@
 									},
 									{
 										pos: {
-											start: 127,
-											end: 164
+											start: 167,
+											end: 225
 										},
 										content: [
 											'Die Zuwendungen im Bereich',
@@ -339,38 +314,41 @@
 								],
 								countRelative: [
 									{
-										pos: [850, 260, 700, 125],
+										pos: {
+											start: 96,
+											end: 174
+										},
 										content: [
-											'Dies ist ein Dummytext',
-											'der über mehrere Zeilen',
-											'verläuft.'
-										]
-									},
-									{
-										pos: [250, 560, 200, 525],
-										content: [
-											'Dies ist ein Dummytext',
-											'der über mehrere Zeilen',
-											'verläuft.'
+											'Im Sektor Arbeit ist ein',
+											'werden vergleichsweise viele',
+											'Projekte gefördert. Die Anzahl',
+											'sinkt tendenziell. Dafür werden',
+											'größere Summen gefördert.'
 										]
 									},
 								],
 								countAbsolute: [
 									{
-										pos: [800, 100, 460, 325],
+										pos: {
+											start: 97,
+											end: 135
+										},
 										content: [
-											'Dies ist ein Dummytext',
-											'der über mehrere Zeilen',
-											'verläuft. Diesmal sind es',
-											'sogar vier Zeilen.'
+											'Die Anzahl d. Zuwendungen an',
+											'den Sektor Arbeit werden',
+											'vermutlich auf den Bereich',
+											'Stadtentwicklung umgelagert.'
 										]
 									},
 									{
-										pos: [650, 360, 400, 225],
+										pos: {
+											start: 297,
+											end: 305
+										},
 										content: [
-											'Dies ist ein Dummytext',
-											'der über mehrere Zeilen',
-											'verläuft.'
+											'2013 ist das einzige Jahr mit',
+											'indem Förderungen im Bereich',
+											'Sport bewilligt wurden.'
 										]
 									},
 								],
@@ -692,8 +670,8 @@
 
 						d3.select('#btn_money_abs').on('click', () => {
 							var btn = d3.select(this);
-							updateMoneyAbs();
 							chooseSwoopy('moneyAbsolute');
+							updateMoneyAbs();
 							renderLegend('moneyAbsolute');
 						});
 
@@ -706,15 +684,15 @@
 
 						d3.select('#btn_count_rel').on('click', () => {
 							var btn = d3.select(this);
-							updateCountRel();
 							chooseSwoopy('countRelative');
+							updateCountRel();
 							renderLegend('countRelative');
 						});
 
 						d3.select('#btn_count_abs').on('click', () => {
 							var btn = d3.select(this);
-							updateCountAbs();
 							chooseSwoopy('countAbsolute');
+							updateCountAbs();
 							renderLegend('countAbsolute');
 						});
 
@@ -778,21 +756,13 @@
 
 						function renderSwoopy(view) {
 
+							
 							antns[view].forEach( annotation => {
 
-								var posX1 = d3.select(`circle[data-uid='${annotation.pos.start}']`).attr('cx');
-								var posX2 = d3.select(`circle[data-uid='${annotation.pos.end}']`).attr('cx');
-								var posY1 = d3.select(`circle[data-uid='${annotation.pos.start}']`).attr('cy');
-								var posY2 = d3.select(`circle[data-uid='${annotation.pos.end}']`).attr('cy');
-
-								svg
-									.append('circle')
-									.attr('r', 10)
-									.attr('fill', 'black')
-									.attr('cx', posX1)
-									.attr('cy', posY1)
-
-								// console.log(posX2, margin.left)
+								var posX1 = Math.abs(d3.select(`circle[data-uid='${annotation.pos.start}']`).attr('cx')) + margin.right;
+								var posX2 = Math.abs(d3.select(`circle[data-uid='${annotation.pos.end}']`).attr('cx'))  + margin.right + 15;
+								var posY1 = Math.abs(d3.select(`circle[data-uid='${annotation.pos.start}']`).attr('cy')) + margin.top;
+								var posY2 = Math.abs(d3.select(`circle[data-uid='${annotation.pos.end}']`).attr('cy')) + margin.top + 15;
 
 								swoopyArrow = svg.append("path")
 									.attr('class', 'arrow')

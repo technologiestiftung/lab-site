@@ -27,6 +27,7 @@ circle {
 
 .flex-col {
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .flex-row {
@@ -166,6 +167,16 @@ a {
 .p-top-xs {
   padding-top: 5px
 }
+
+.button {
+  margin-bottom: 10px ;
+}
+
+.btn-group {
+  width: 50%
+}
+
+
 
 
 @media (max-width: 800px) {
