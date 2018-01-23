@@ -132,6 +132,14 @@ body{
   width:80%;
   max-width:600px;
   margin:0 auto;
+
+  a{
+    text-decoration:underline;
+    color:#000;
+    &:hover{
+      text-decoration:none;
+    }
+  }
 }
 
 @media (min-width: 768px) {
@@ -259,9 +267,33 @@ nav{
   }
 }
 
+#burger{
+  position: absolute;
+  top:35px;
+  right:15px;
+  display: block;
+  width:38px;
+  height:35px;
+  background-image:url('../images/menu_toggle@2x.png');
+  background-repeat: no-repeat;
+  background-size: 38px 72px;
+  background-position: top center;
+}
+
+#burger.active{
+  background-position: bottom center;
+}
+
 #nav ul{
-  padding-top:20px;
+  position: absolute;
+  top:0;
+  right:0;
+  background-color:rgba(255,255,255,0.95);
+  padding:33px 80px 20px 20px;
+  display: none;
+  clear:none;
   float:right;
+  line-height:24px;
 }
 
 #nav li{
@@ -286,13 +318,91 @@ nav{
   padding-left:10px;
 }
 
+#nav li.opendata{
+  border-right:1px solid #999;
+  padding-right:16px;
+  margin-right:16px;
+  overflow:visible;
+  height:38px;
+  img{
+    width:26px;
+    height:28px;
+    margin:-4px 8px 0 0;
+    float:left;
+  }
+}
+
+#nav ul li,
+#nav ul li.opendata,
+#nav ul li.lang{
+  clear:both;
+  padding:0;
+  margin:0;
+  border:0;
+}
+
+#nav ul li.opendata{
+  padding-bottom:15px;
+}
+
+#nav ul li.lang{
+  padding-top:15px;
+}
+
 @media (min-width: 400px) {
   #nav li{
-    padding:0 20px 0 0;
+    padding:0 16px 0 0;
   }
 
   #nav li.lang{
-    padding-left:20px;
+    padding-left:16px;
+  }
+}
+
+@media (min-width: 768px) {
+  #burger{
+    display: none;
+  }
+
+  #nav ul{
+    clear:both;
+    float:left;
+    display: block;
+    background:none;
+    position: inherit;
+    top:auto;
+    right:auto;
+    padding:20px 0 0 20px; 
+    line-height: inherit;
+  }
+
+  #nav ul li,
+  #nav ul li.opendata,
+  #nav ul li.lang{
+    clear:none;
+    padding:0 16px 0 0;
+    margin:0;
+    border:0;
+  }
+
+  #nav ul li.lang{
+    padding-left:16px;
+    border-left:1px solid #999;
+  }
+
+  #nav ul li.opendata{
+    padding-right:16px;
+    margin-right:16px;
+    border-right:1px solid #999;
+    height:18px;
+  }
+}
+
+@media (min-width: 1024px){
+  #nav ul{
+    clear:none;
+    float:right;
+    padding:20px 0 0 0; 
   }
 }
 

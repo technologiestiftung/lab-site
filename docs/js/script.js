@@ -14,6 +14,9 @@ function debounce(func, wait, immediate) {
 }
 
 var embedResize = debounce(function() {
+    if(window.innerWidth >= 768){
+        d3.select('#nav ul').style('display','block');
+    }
 	d3.selectAll('.embed').each(function(){
 		var w = d3.select(this).node().clientWidth;
 		d3.select(this).select('img,object,video,iframe').each(function(){
@@ -42,6 +45,17 @@ if(d3.selectAll('.gallery li').size()>=1){
 	    .classed('two-break', function(d,i){ return (i%2==0)?true:false; })
 	    .classed('three-break', function(d,i){ return (i%3==0)?true:false; });
 }
+
+/* Responsive Menu */
+
+d3.select('#burger').on('click', function(){
+    d3.select(this).classed('active', !d3.select(this).classed('active'));
+    if(d3.select(this).classed('active')){
+        d3.select('#nav ul').style('display', 'block');
+    }else{
+        d3.select('#nav ul').style('display', 'none');
+    }
+});
 
 /* Lightbox */
 
