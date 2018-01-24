@@ -38,7 +38,7 @@ circle {
   background: #F2F2F2;
   /* opacity: 0.25; */
   position: absolute;
-  display: flex;
+  /* display: block; */
   padding: 10px;
   width: 260px;
   height: 230px;
@@ -81,7 +81,10 @@ h2 {
 }
 
 .labels {
-  padding-top: 68px;
+  padding-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .label {
@@ -95,6 +98,7 @@ h2 {
 #chart {
   display: flex;
   margin-top: 120px;
+  margin-bottom: 100px;
 }
 
 .container {
@@ -176,6 +180,11 @@ a {
   width: 50%
 }
 
+.annotation {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
 
 
 
@@ -185,4 +194,12 @@ a {
     font-size: 0.75rem;
     font-family: 'Roboto Mono Bold', monospace;
   }
+}
+
+@media (max-width: 1000px) {
+
+  .annotation tspan {
+    font-size: 0.7rem;
+  }
+  
 }
