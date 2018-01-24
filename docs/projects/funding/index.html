@@ -1,6 +1,5 @@
 
 <!-- 
-
   TODO:
   - add swoopy arrows to visualization [check]
   - add tooltip: hover (amount, deviation from average) [check]
@@ -15,17 +14,17 @@
   - make the chart responsive [half-check]
   - recreate dataset with fuzzy merging
   - write annotations (check with sebastian)
-
  -->
 
 <!doctype html>
 <html lang="de" itemscope itemtype="http://schema.org/Article">
     <head>
+				
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Berliner Zuwendungsdaten | Ideation &amp; Prototyping Lab</title>
         <meta name="description" content="{{PROJECT_DESCRIPTION_DE}}">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
 
         <link type="text/plain" rel="author" href="../../humans.txt" />
         <link rel="manifest" href="../../site.webmanifest">
@@ -101,7 +100,7 @@
             <div id="title">
                 <div class="container">
                     <span class="button tag">Datenvisualisierung</span>
-                    <h1>Berliner Zuwendungsdaten visualisiert</h1>
+                    <h1>Die Förderungsdaten Berlins visualisiert</h1>
                     <span class="title-subline">Fabian Dinklage (<a href="https://twitter.com/fdnklg">@fdnklg</a>) | 02/2018</span>
                 </div>
             </div>
@@ -109,51 +108,97 @@
             <!-- Start editing here -->
 
             <div class="container p-bottom">
-                <p class="copy">Lorem ipsum dolor sit <i>amet</i>, <strong>consectetuer</strong> adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. <a href="#">Cum sociis natoque penatibus</a> et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
+                <p class="copy">
+
+										Seit dem 01.Juli 2009 werden jährlichen Abständen Förderungsdaten von der Senatsverwaltung für Integration, Arbeit und Soziales für mehr Transparenz online zur Verfügung gestellt. Die Vergabe der Förderungen werden individuell unterschiedlich im Rahmen der zur Verfügung stehenden Hausmittel vergeben. <br><br>
+										
+										 Die Daten enthalten Informationen über die Förderungsvolumen der Projekte sowie Projekttyp, Zeitpunkt und Name der Begünstigten. Diese sind über eine Suchmaske öffentlich <a href="http://www.berlin.de/sen/finanzen/service/zuwendungsdatenbank/">erreichbar.</a> Wir haben alle Förderungsdaten des Zeitraums 2009 bis 2016 gesammelt, aufbereitet und in einem Bubble Chart visualisiert. <br><br>
+
+								</p>
 						</div>
 
+						<div class="container p-top">
+							<h2>Zuwendungen der Stadt Berlin:</h2>
+							<p class="copy">Filtere den Datensatz folgenden Krieterien: <br> 
+								Geldvolumen pro Jahr, Anzahl der Zuwendungen im Jahr.</p>
+
+						</div>
 
 						<div class="container m-width flex">
 
-								<div class="btn-group flex flex-col">
-									<a id="btn_money_abs" class="button">Alle Zuwendungen in €</a>
-									<a id="btn_count_abs" class="button">Anzahl der Zuwendungen</a>
+								<div class="btn-group flex flex-row">
+									<a id="btn_money_abs" class="button button--square btn--type active">
+										Volumen <br>
+										in Euro
+									</a>
+									<a id="btn_count_abs" class="button button--square btn--type">
+										Volumen <br>
+										in %
+									</a>
+
+									<a id="btn_money_rel" class="button button--square btn--type">
+										Anzahl <br>
+										absolut
+									</a>
+									<a id="btn_count_rel" class="button button--square btn--type">
+										Anzahl <br>
+										in %
+									</a>
 								</div>
 
-								<div class="btn-group flex flex-col">
-									<a id="btn_money_rel" class="button">Zuwendungen pro Jahr in %</a>
-									<a id="btn_count_rel" class="button">Anzahl d. Zuwendungen pro Jahr in %</a>
+						</div>
+
+						<div id="legend" class="container m-width p-top-xl">
+								<h3 id="legend-title"></h3>
+						</div>
+
+						<div class="container">
+							<div id="tooltip">
+
+								<div class="tooltip--tile">
+										<div class="tooltip--title">
+												<span>Sektor</span>
+												<h3 id="category_title"></h3>
+											</div>
+			
+											<div class="tooltip--title">
+												<span>Jahr</span>
+												<h3 id="date"></h3>
+											</div>
 								</div>
 
+								<div class="tooltip--tile">
+									<div class="tooltip--title ">
+										<span>Volumen</span>
+										<h3 id="money_value"></h3>
+									</div>
+	
+									<div class="tooltip--title">
+										<span>Anzahl Zuwendungen</span>
+										<h3 id="count_value">Kategorie Name</h3>
+									</div>
+								</div>
+
+								<span id="money_value"></span>
+							</div>
 						</div>
 
 						<div class="vis container p-bottom"><div id="chart"></div>
 
-						<div id="legend" class="container m-width p-bottom">
-							<h3 id="legend-title"></h3>
-						</div>
-
-
             <div class="container p-bottom">
-                <p class="copy">Lorem ipsum dolor sit <i>amet</i>, <strong>consectetuer</strong> adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. <a href="#">Cum sociis natoque penatibus</a> et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
-                <blockquote>
-                    <p>
-                        Open Data ist schon ne richtig feine Sache.
-                    </p>
-                    <span class="author">Sagt der Ben</span>
-                </blockquote>
-                <p class="copy">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
-               
+                <p class="copy">
+									Die Visualisierung fasst mehr als 5.700 Förderungen der letzten 7 Jahre aufgeteilt nach den Förderungsbereichen zusammen. Bei Diesem Datensatz sind 3 Parameter besonders interessant. Der zeitliche Verlauf (X-Achse), die Projektbereiche (Y-Achse), und die Förderungssummen (Kreisradius). Mit einem Bubble Chart lassen sich die Parameter direkt miteinander in Verbindung bringen. Es wird deutlich welche Bereiche am meisten gefördert werden und wie die unterschiedlichen Bereiche zueinander stehen. Außerdem lassen sich Entwicklungen und Trends der Förderungen in Berlin innerhalb der letzen Jahre direkt ablesen. <br><br>
+
+									Diese Visualisierung summiert alle Einzelförderungen jährlich zusammen. Die einzelne Förderung wird so vernachlässigt und lässt sich nicht isoliert betrachten. Möchte man diese Daten zeigen, ist ein anderer Visualisierungstyp notwendig. Etwa eine <a href="http://www.infovis-wiki.net/index.php?title=Treemap">Treemap</a>, eine rechteckige Visualisierung, in der die Daten nach ihren Kategorien den Anteil des Raumes einnehmen und so die Visualisierung ausfüllen. Oder den vom Treemap inspirierten <a href="http://www.infovis-wiki.net/index.php/Circle_Packing">Circle Packing Chart</a>, in dem die Einzelförderungen in Form von Kreisen visualisiert werden und so den nächste größeren Kreis ausfüllen. Dieser Typ is etwas weniger effizient, was die Nutzung des Raumes betrifft. Die Hierachien sind allerdings etwas besser visuell nachzuvollziehen. Aufgrund der hohen Anzahl an Einträgen haben wir davon abgesehen, und die Einträge auf den entsprechende Kategorie reduziert.
+									
+									
+								</p>
             </div>
 
-            <div class="container small center">
-                <a class="lghtbx" title="Image Title 5" href="images/mindcraft.jpg"><img src="images/mindcraft_thumb.jpg" alt="Thumbnail 5" /></a>
-			</div>
-
             <div class="container center">
-                <a id="github" href="https://github.com/technologiestiftung/{{PROJECT}}">
+                <a id="github" href="https://github.com/technologiestiftung/zuwendungsdatenbank">
                     <img src="../../images/github.svg" alt="Project on Github" />
-                    <span class="github-title">technologiestiftung/{{PROJECT}}</span><br />
+                    <span class="github-title">technologiestiftung/zuwendungsdatenbank</span><br />
                     <span class="github-subline">Projekt auf GitHub</span>
                     <hr class="clear" />
                 </a>
@@ -163,30 +208,9 @@
                 <img src="../../images/team/author_fabiandinklage.png" alt="Fabian Dinklage" />
                 <h3>Über den Autor</h3>
                 <h2><a href="maito:dinklage@technologiestiftung-berlin.de">Fabian Dinklage</a></h2>
-                <p>...</p>
+                <p>Fabian Dinklage ist Studentische Hilfskraft im Ideation & Prototyping Lab der Technologiestiftung Berlin im Bereich Visualisation & Prototyping. Er studiert momentan Interface Design an der FH Potsdam. Sein Interesse liegt in der Transformation von Daten in visuelle Strukturen zur Gewinnung neuer Einsichten und der Entwicklung von bedeutsamen Mensch-Maschine Interaktionen.</p>
                 <hr class="clear" />
             </div>
-
-            <div id="tooltip">
-							<div class="tooltip--title">
-								<span>Sektor</span>
-								<h3 id="category_title"></h3>
-							</div>
-							<div class="tooltip--title p-top-m">
-								<span>Jahr</span>
-								<h3 id="date"></h3>
-							</div>
-							<div class="tooltip--title p-top-xs">
-								<span>Volumen</span>
-								<h3 id="money_value"></h3>
-							</div>
-							<div class="tooltip--title p-top-xs">
-								<span>Anzahl d. Zuwendungen</span>
-								<h3 id="count_value">Kategorie Name</h3>
-							</div>
-							
-							<span id="money_value"></span>
-						</div>
 
         </main>
         <footer id="contact">
@@ -244,19 +268,24 @@
 
 					var Chart = (function(window, d3) {
 
-						var svg, chartWrapper, category, circle, values, logValueScale, data, margin, sector, circleGroup, categories, labelsYear, marker, label, countMinMax, svgLegend, labelYear, xAxis, xScale, x, tooltip, swoopyArrow
+						var svg, chartWrapper, category, circle, values, logValueScale, data, margin, sector, circleGroup, categories, labelsYear, marker, label, countMinMax, svgLegend, labelYear, xAxis, xScale, x, tooltip, swoopyArrow, swoopyText, hoverCircle, clientWidth,
+						posX1, posX2, posY1, PosY2
+						
+						swoopyView = 'moneyAbsolute';
+						var btns = ['btn_money_abs', 'btn_count_abs', 'btn_money_rel', 'btn_count_rel'];
+
 						
 						var categoryTitles = [];
 						var idCircle = 1;
 						var idCircle2 = 1;
-						var countY = 1;
+						var countY = 0;
 						var years = [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016];
 
 						var margin = {
 							top: 50,
-							bottom: 150,
-							left: 50,
-							right: 50
+							bottom: 17,
+							left: 0,
+							right: 10
 						}
 
 						var antns = {
@@ -342,13 +371,13 @@
 									},
 									{
 										pos: {
-											start: 297,
-											end: 305
+											start: 287,
+											end: 253
 										},
 										content: [
-											'2013 ist das einzige Jahr mit',
-											'indem Förderungen im Bereich',
-											'Sport bewilligt wurden.'
+											'2016 ist das einzige Jahr',
+											'in dem Förderungen im Bereich',
+											'Tierschutz bewilligt wurden.'
 										]
 									},
 								],
@@ -357,9 +386,9 @@
 						var config = {
 							svg: {
 								width: 1000,
-								height: 1200,
-								maxRad: 100,
-								minRad: 2
+								height: 1000,
+								maxRad: 16000,
+								minRad: 9
 							},
 							data: {
 								relative: true
@@ -367,19 +396,19 @@
 						}
 
 						var legendTitle = {
-							moneyAbsolute: 'Der Kreisradius bildet das Volumen aller Zuwenungen in € ab.',
-							moneyRelative: 'Der Kreisradius bildet %-ualen Anteil aller Zuwendungen in € / Jahr ab.',
-							countRelative: 'Der Kreisradius bildet %-ualen Anteil der Anzahl aller Zuwendungen / Jahr ab.',
-							countAbsolute: 'Der Kreisradius bildet Anzahl aller Zuwendungen / Jahr ab.'
+							moneyAbsolute: 'Kreisradius: Volumen aller Zuwenungen in Euro',
+							moneyRelative: 'Kreisradius: Volumen in % pro Jahr',
+							countRelative: 'Kreisradius: Anzahl in % pro Jahr',
+							countAbsolute: 'Kreisradius: Anzahl d. Zuwendungen pro Jahr.'
 						}
 
 
 						var legendPos = {
 							moneyAbsolute: [
-								{ pos: 100, content: '2.025.361.267 Billion €' },
-								{ pos: 75, content: '1.519.020.950 Billion €' },
-								{ pos: 50, content: '1.012.680.633 Milliare €' },
-								{ pos: 25, content: '506.340.316 Millionen €' }
+								{ pos: 25, content: '2 Mrd.' },
+								{ pos: 50, content: '1.5 Mrd.' },
+								{ pos: 75, content: '1.5 Mrd.' },
+								{ pos: 100, content: '500 Mio.' }
 							],
 							moneyRelative: [
 								{ pos: 100, content: '25%' },
@@ -388,10 +417,10 @@
 								{ pos: 25, content: '100%' }
 							],
 							countAbsolute: [
-								{ pos: 100, content: '1229 Zuwendungen' },
-								{ pos: 75, content: '2459 Zuwendungen' },
-								{ pos: 50, content: '3688 Zuwendungen' },
-								{ pos: 25, content: '4917 Zuwendungen' }
+								{ pos: 100, content: '1200' },
+								{ pos: 75, content: '2400' },
+								{ pos: 50, content: '3600' },
+								{ pos: 25, content: '4900' }
 							],
 							countRelative: [
 								{ pos: 100, content: '25%' },
@@ -408,8 +437,11 @@
 
 						d3.json('data/politikbereich.json', init);
 						
+						
 						function init(json) {
 							data = json;
+							tooltip = d3.select('#tooltip')
+							tooltip.style('display', 'none');
 
 							var dataAllYears = [];
 
@@ -520,8 +552,9 @@
 								})
 								.attr('r', (d) => {
 									var value = d.money.map(moneyMinMax[0], moneyMinMax[1], config.svg.minRad, config.svg.maxRad);
+									var radius = Math.sqrt((value/ Math.PI))
 									if(d.money === 0) { return 0 };
-									return value;
+									return radius;
 								})
 								.on('mouseover', handleMouseOver)
 								.on('mouseout', handleMouseOut)
@@ -557,7 +590,7 @@
 								.attr('y1', d => { return d.pos - 4 })
 								.attr('x2', 120)
 								.attr('y2', d => {return d.pos - 4})
-								.attr('stroke-width', 1)
+								.attr('stroke-width', 0.5)
 								.attr('stroke','black')
 								.classed('legend-line', true)
 								
@@ -584,6 +617,7 @@
 							
 							
 							updatePositions();
+							renderLegend(swoopyView);
 						}
 						
 						function resize(winWidth) {
@@ -606,7 +640,7 @@
 								})
 								.attr('cy', (d,i) => { 
 									if (i === 7) { countY += 1 }
-									return (((config.svg.height - margin.top - margin.bottom) / 31) * countY)
+									return (((config.svg.height - margin.top - margin.bottom) / 29) * countY)
 								})
 
 							xScale.range([0, newWidth]);
@@ -616,6 +650,16 @@
 								 .call(xAxis)
 								
 							category.attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+							renderLegend(swoopyView);
+							chooseSwoopy(swoopyView);
+						}
+
+						function highlightBtn(btn) {
+							btns.forEach( button => {
+								d3.select(`#${button}`).classed('active', false);
+							})
+							d3.select(btn).classed('button active', true);
 						}
 
 						function handleMouseOut() {
@@ -624,9 +668,7 @@
 
 							var id = d3.select(this).attr('id');
 							d3.select(`#label-${id}`).classed('label-active', false);
-
 							tooltip.style('display', 'none');
-
 						}
 
 						function handleMouseOver(d, i) {
@@ -641,18 +683,24 @@
 						}
 
 						function updateTooltip(d, that) {
-							
 
 							tooltip = d3.select('#tooltip')
-							tooltip.style('display', 'block');
+							tooltip.style('display', 'flex');
 
-							var x = d3.event.pageX + 10
-							var y = d3.event.pageY + 10
 
-							tooltip
-								.style('left', `${x}px`)
-								.style('top', `${y}px`)
 							
+							if (clientWidth > 600) {
+
+								var x = d3.event.pageX + 10
+								var y = d3.event.pageY + 10
+								console.log(clientWidth, x);
+
+								if(clientWidth - x < 260) { x = d3.event.pageX - 280;}
+
+								tooltip
+									.style('left', `${x}px`)
+									.style('top', `${y}px`)									
+							}
 
 							var count = d3.select('#count_value');
 							var money = d3.select('#money_value');
@@ -669,31 +717,35 @@
 						}
 
 						d3.select('#btn_money_abs').on('click', () => {
-							var btn = d3.select(this);
-							chooseSwoopy('moneyAbsolute');
+							swoopyView = 'moneyAbsolute'
+							chooseSwoopy(swoopyView);
 							updateMoneyAbs();
-							renderLegend('moneyAbsolute');
+							renderLegend(swoopyView);
+							highlightBtn('#btn_money_abs');
 						});
 
 						d3.select('#btn_money_rel').on('click', () => {
-							var btn = d3.select(this);
-							chooseSwoopy('moneyRelative');
+							swoopyView = 'moneyRelative'
+							chooseSwoopy(swoopyView);
 							updateMoneyRel();
-							renderLegend('moneyRelative');
+							renderLegend(swoopyView);
+							highlightBtn('#btn_money_rel');
 						});
 
 						d3.select('#btn_count_rel').on('click', () => {
-							var btn = d3.select(this);
-							chooseSwoopy('countRelative');
+							swoopyView = 'countRelative'
+							chooseSwoopy(swoopyView);
 							updateCountRel();
-							renderLegend('countRelative');
+							renderLegend(swoopyView);
+							highlightBtn('#btn_count_rel');
 						});
 
 						d3.select('#btn_count_abs').on('click', () => {
-							var btn = d3.select(this);
-							chooseSwoopy('countAbsolute');
+							swoopyView = 'countAbsolute'
+							chooseSwoopy(swoopyView);
 							updateCountAbs();
-							renderLegend('countAbsolute');
+							renderLegend(swoopyView);
+							highlightBtn('#btn_count_abs');
 						});
 
 						function updateCountAbs() {
@@ -702,8 +754,9 @@
 									.duration(750)
 									.attr('r', (d) => {
 										var value = d['count'].map(countMinMax[0], countMinMax[1], config.svg.minRad, config.svg.maxRad)
+										var radius = Math.sqrt((value/ Math.PI))
 										if(d.count === 0) { return 0 };
-										return value;
+										return radius;
 									})
 									.attr('class', 'circle-count')
 						}
@@ -714,8 +767,9 @@
 								.duration(750)
 								.attr('r', (d) => {
 									var value = d['countShare'].map(0, 100, config.svg.minRad, config.svg.maxRad)
+									var radius = Math.sqrt((value/ Math.PI))
 									if(d.countShare === 0) { return 0 };
-									return value;
+									return radius;
 								})
 								.attr('class', 'circle-count')
 						}
@@ -726,22 +780,23 @@
 								.duration(750)
 								.attr('r', (d) => {
 									var value = d['moneyShare'].map(0, 100, config.svg.minRad, config.svg.maxRad);
-
+									var radius = Math.sqrt((value/ Math.PI))
 									if(d.moneyShare === 0) { return 0 };
-									return value;
+									return radius;
 								})
 								.attr('class', 'circle-count')
 						}
 
 						function updateMoneyAbs() {
+							console.log('inside')
 							circle
 								.transition()
 								.duration(750)
 								.attr('r', (d) => {
 									var value = d['money'].map(moneyMinMax[0], moneyMinMax[1], config.svg.minRad, config.svg.maxRad);
-
+									var radius = Math.sqrt((value/ Math.PI))
 									if(d.money === 0) { return 0 };
-									return value;
+									return radius;
 								})
 								.attr('class', 'circle-money')
 						}
@@ -751,18 +806,61 @@
 							d3.selectAll('.annotation').remove();
 							d3.selectAll('.arrow').remove();
 
-							renderSwoopy(swoopyId);
+							clientWidth = window.innerWidth;
+
+							if (clientWidth < 900) {
+								antns.moneyAbsolute[0].pos.end = 61;
+								antns.moneyAbsolute[1].pos.end = 222;
+
+								antns.countAbsolute[0].pos.end = 150;
+								antns.countAbsolute[1].pos.end = 240;
+
+								antns.moneyRelative[0].pos.end = 182;
+							}
+
+
+							if (clientWidth > 600) {
+								renderSwoopy(swoopyId);
+							}
+
+
+
+
+						}
+
+						function updateSwoopy() {
+
+							antns[swoopyView].forEach( annotation => {
+
+								posX1 = Math.abs(d3.select(`circle[data-uid='${annotation.pos.start}']`).attr('cx'));
+								posX2 = Math.abs(d3.select(`circle[data-uid='${annotation.pos.end}']`).attr('cx'))  + margin.right + 15;
+								posY1 = Math.abs(d3.select(`circle[data-uid='${annotation.pos.start}']`).attr('cy')) + margin.top;
+								posY2 = Math.abs(d3.select(`circle[data-uid='${annotation.pos.end}']`).attr('cy')) + margin.top + 15;
+
+
+								swoopyArrow
+									.datum([[posX2, posY2], [posX1 , posY1]])
+									.attr('x', posX2 + 10)
+									.attr('y', posY2 + 10)
+
+								swoopyText
+									.attr('x', posX2 + 10)
+									.attr('dy', (d,i) => { 
+											var lineHeight = 1.2; 
+											return `${lineHeight}rem` ;
+										})
+							})
+
 						}
 
 						function renderSwoopy(view) {
-
 							
 							antns[view].forEach( annotation => {
-
-								var posX1 = Math.abs(d3.select(`circle[data-uid='${annotation.pos.start}']`).attr('cx')) + margin.right;
-								var posX2 = Math.abs(d3.select(`circle[data-uid='${annotation.pos.end}']`).attr('cx'))  + margin.right + 15;
-								var posY1 = Math.abs(d3.select(`circle[data-uid='${annotation.pos.start}']`).attr('cy')) + margin.top;
-								var posY2 = Math.abs(d3.select(`circle[data-uid='${annotation.pos.end}']`).attr('cy')) + margin.top + 15;
+								
+								posX1 = Math.abs(d3.select(`circle[data-uid='${annotation.pos.start}']`).attr('cx'));
+								posX2 = Math.abs(d3.select(`circle[data-uid='${annotation.pos.end}']`).attr('cx'))  + margin.right + 15;
+							  posY1 = Math.abs(d3.select(`circle[data-uid='${annotation.pos.start}']`).attr('cy')) + margin.top;
+								posY2 = Math.abs(d3.select(`circle[data-uid='${annotation.pos.end}']`).attr('cy')) + margin.top + 15;
 
 								swoopyArrow = svg.append("path")
 									.attr('class', 'arrow')
@@ -770,14 +868,14 @@
 									.datum([[posX2, posY2], [posX1 , posY1]])
 									.attr("d", swoopy);
 								
-								var text = svg
+								swoopyText = svg
 									.append("text")
 									.classed('annotation', true)
 									.attr('x', posX2 + 10)
 									.attr('textLength', 200)
 									.attr('y', posY2 + 10)
 								
-								text.selectAll('tSpan')
+									swoopyText.selectAll('tSpan')
 									.data(annotation.content)
 									.enter()
 									.append('tspan')

@@ -702,10 +702,10 @@
         "countShare": 11.12
       },
       {
-        "count": 833,
-        "money": 20887584,
+        "count": 849,
+        "money": 20929082,
         "moneyShare": 0.98,
-        "countShare": 9.85
+        "countShare": 10.04
       },
       {
         "count": 821,
@@ -1396,62 +1396,6 @@
         "money": 4227558,
         "moneyShare": 0.3,
         "countShare": 0.44
-      }
-    ]
-  },
-  {
-    "target": "Sportförderung",
-    "source": "Bezirksamt Friedrichshain-Kreuzberg",
-    "count": 16,
-    "money": 41498,
-    "years": [
-      {
-        "count": 0,
-        "money": 0,
-        "moneyShare": 0,
-        "countShare": 0
-      },
-      {
-        "count": 0,
-        "money": 0,
-        "moneyShare": 0,
-        "countShare": 0
-      },
-      {
-        "count": 0,
-        "money": 0,
-        "moneyShare": 0,
-        "countShare": 0
-      },
-      {
-        "count": 0,
-        "money": 0,
-        "moneyShare": 0,
-        "countShare": 0
-      },
-      {
-        "count": 16,
-        "money": 41498,
-        "moneyShare": 0,
-        "countShare": 0.19
-      },
-      {
-        "count": 0,
-        "money": 0,
-        "moneyShare": 0,
-        "countShare": 0
-      },
-      {
-        "count": 0,
-        "money": 0,
-        "moneyShare": 0,
-        "countShare": 0
-      },
-      {
-        "count": 0,
-        "money": 0,
-        "moneyShare": 0,
-        "countShare": 0
       }
     ]
   },
