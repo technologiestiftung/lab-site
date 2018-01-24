@@ -131,6 +131,18 @@ svg {
   overflow: visible;
 }
 
+svg.arrow {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 5s linear forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 svg.legend-wrapper {
   overflow: hidden;
 }
@@ -254,7 +266,13 @@ a {
 @media (max-width: 1000px) {
 
   .annotation tspan {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
   
+}
+
+@media (max-width: 800px) {
+  .annotation {
+    font-size: 0.6rem;
+  }
 }

@@ -119,8 +119,7 @@
 
 						<div class="container p-top">
 							<h2>Zuwendungen der Stadt Berlin:</h2>
-							<p class="copy">Filtere den Datensatz folgenden Krieterien: <br> 
-								Geldvolumen pro Jahr, Anzahl der Zuwendungen im Jahr.</p>
+							<p class="copy">Filtere den Datensatz folgenden Kriterien: Geldvolumen pro Jahr oder Anzahl der Zuwendungen im Jahr.</p>
 
 						</div>
 
@@ -253,9 +252,6 @@
 				<script type="text/javascript" src="../../js/min/script.min.js"></script>
 				
 
-
-
-        <!-- Add your custom JS files here and place them directly in your project folder -->
         <script type="text/javascript">
 					Number.prototype.map = function (in_min, in_max, out_min, out_max) {
 						return (this - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
@@ -274,8 +270,11 @@
 					var Chart = (function(window, d3) {
 
 						var svg, chartWrapper, category, circle, values, logValueScale, data, margin, sector, circleGroup, categories, labelsYear, marker, label, countMinMax, svgLegend, labelYear, xAxis, xScale, x, tooltip, swoopyArrow, swoopyText, hoverCircle, clientWidth, radiusLegend,
-						posX1, posX2, posY1, PosY2
+						posX1, posX2, posY1, PosY2,
+
+						once = true,
 						
+
 						swoopyView = 'moneyAbsolute';
 						var btns = ['btn_money_abs', 'btn_count_abs', 'btn_money_rel', 'btn_count_rel'];
 
@@ -305,8 +304,6 @@
 											'aller Förderungen des Jahres',
 											'mit mehr als 25% in',
 											'den Bereich Forschung.'
-											
-
 										]
 									},
 									{
@@ -410,32 +407,32 @@
 
 						var legendPos = {
 							moneyAbsolute: [
-								{ pos: 0.05, content: '0.5 Mrd.' },
-								{ pos: 0.25, content: '2 Mrd.' },
-								{ pos: 0.5, content: '1.5 Mrd.' },
-								{ pos: 0.75, content: '1.5 Mrd.' },
-								{ pos: 1, content: '500 Mio.' }
+								{ pos: 0.05, content: '125 Mio.', posY: 0 },
+								{ pos: 0.25, content: '0.5 Mrd.', posY: 0 },
+								{ pos: 0.5, content: '1.0 Mrd.', posY: 0 },
+								{ pos: 0.75, content: '1.5 Mrd.', posY: 0 },
+								{ pos: 1, content: '2 Mrd.', posY: 0 }
 							],
 							moneyRelative: [
-						  	{ pos: 0.05, content: '5%' },
-								{ pos: 0.25, content: '25%' },
-								{ pos: 0.5, content: '50%' },
-								{ pos: 0.75, content: '75%' },
-								{ pos: 1, content: '100%' }
+						  	{ pos: 0.05, content: '5%', posY: 0  },
+								{ pos: 0.25, content: '25%', posY: 0  },
+								{ pos: 0.5, content: '50%', posY: 0  },
+								{ pos: 0.75, content: '75%', posY: 0  },
+								{ pos: 1, content: '100%', posY: 0  }
 							],
 							countAbsolute: [
-								{ pos: 0.05, content: '300' },
-								{ pos: 0.25, content: '1200' },
-								{ pos: 0.5, content: '2400' },
-								{ pos: 0.75, content: '3600' },
-								{ pos: 1, content: '4900' }
+								{ pos: 0.05, content: '300', posY: 0  },
+								{ pos: 0.25, content: '1200', posY: 0  },
+								{ pos: 0.5, content: '2400', posY: 0  },
+								{ pos: 0.75, content: '3600', posY: 0  },
+								{ pos: 1, content: '4900', posY: 0  }
 							],
 							countRelative: [
-								{ pos: 0.05, content: '5%' },
-								{ pos: 0.25, content: '25%' },
-								{ pos: 0.5, content: '50%' },
-								{ pos: 0.75, content: '75%' },
-								{ pos: 1, content: '100%' }
+								{ pos: 0.05, content: '5%', posY: 0  },
+								{ pos: 0.25, content: '25%', posY: 0  },
+								{ pos: 0.5, content: '50%', posY: 0 },
+								{ pos: 0.75, content: '75%', posY: 0  },
+								{ pos: 1, content: '100%', posY: 0  }
 							],
 						}
 
@@ -559,12 +556,7 @@
 								.attr('data-year', (d,i) => {
 									return i
 								})
-								.attr('r', (d) => {
-									var value = d.money.map(moneyMinMax[0], moneyMinMax[1], config.svg.minRad, config.svg.maxRad);
-									var radius = Math.sqrt((value/ Math.PI))
-									if(d.money === 0) { return 0 };
-									return radius;
-								})
+								.attr('r', 1)
 								.on('mouseover', handleMouseOver)
 								.on('mouseout', handleMouseOut)
 						
@@ -604,7 +596,7 @@
 									.attr('x2', 700)
 									.attr('y2', 93)
 									.attr('stroke', 'grey')
-									.attr('stroke-width', 0.5)
+									.attr('stroke-width', 1)
 
 								svgLegend.selectAll('circles')
 									.data(legendPos[view])
@@ -629,43 +621,64 @@
 									.attr('y', (d,i) => { return 120})
 									.text(d => {return d.content})	
 
-							}
+							};
 
-							else if (clientWidth < 750) {
+							if (clientWidth < 750) {
 								svgLegend = legendWrapper
 									.append('svg')
 									.classed('legend-wrapper', true)
 									.attr('height', 120)
 									.attr('width', 700)
+
 								svgLegend.selectAll('circles')
 									.data(legendPos[view])
 									.enter()
 									.append('circle')
-									.attr('cx', 0)
+									.attr('cx', 72)
 									.attr('cy', 120)
-									.attr('r', d => { 
+									.attr('r', (d,i) => { 
 										var radius = Math.sqrt((d.pos * total/ Math.PI))
+										legendPos[view][i].posY = radius;
 										return radius; 
 									})
+
 								
-								svgLegend
+								
+								svgLegend.selectAll('lines')
+									.data(legendPos[view])
+									.enter()
 									.append('line')
-									.attr('x1', 0)
-									.attr('y1', d => { return 48 })
-									.attr('x2', 120)
-									.attr('y2', d => {return 48})
+									.attr('x1', 72)
+									.attr('y1', d => { return 121 - d.posY })
+									.attr('x2', 172)
+									.attr('y2', d => { return 121 - d.posY })
 									.attr('stroke-width', 0.5)
 									.attr('stroke','black')
 									.classed('legend-line', true)
 									
-								svgLegend
+								svgLegend.selectAll('text')
+									.data(legendPos[view])
+									.enter()
 									.append('text')
 									.classed('annotation', true)
-									.attr('x', 125)
-									.attr('y', d => { return d.pos})
-									.text(d => {return d.content})	
+									.attr('x', 182)
+									.attr('y', d => { return 125 - d.posY })
+									.text(d => { return d.content })	
 							}
 			
+						}
+
+						function once(fn, context) { 
+							var result;
+
+							return function() { 
+								if(fn) {
+									result = fn.apply(context || this, arguments);
+									fn = null;
+								}
+
+								return result;
+							};
 						}
 
 
@@ -1011,6 +1024,24 @@
 
 							return render;
 							}
+
+						window.addEventListener('scroll', (event) => {
+
+							var client = d3.select('.project').node().getBoundingClientRect().top
+
+							if (client < -300 && once ) {
+								once = false;
+								circle
+									.transition()
+									.duration(1000)
+									.attr('r', (d) => {
+										var value = d.money.map(moneyMinMax[0], moneyMinMax[1], config.svg.minRad, config.svg.maxRad);
+										var radius = Math.sqrt((value/ Math.PI))
+										if(d.money === 0) { return 0 };
+										return radius;
+								})
+							}														
+						})
 
 						window.addEventListener('resize', (event) => {
 							render();
