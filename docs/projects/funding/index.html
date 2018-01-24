@@ -131,19 +131,24 @@
 										Volumen <br>
 										in Euro
 									</a>
-									<a id="btn_count_abs" class="button button--square btn--type">
+
+									<a id="btn_money_rel" class="button button--square btn--type">
 										Volumen <br>
 										in %
 									</a>
 
-									<a id="btn_money_rel" class="button button--square btn--type">
+									<a id="btn_count_abs" class="button button--square btn--type">
 										Anzahl <br>
 										absolut
 									</a>
+
 									<a id="btn_count_rel" class="button button--square btn--type">
-										Anzahl <br>
-										in %
+											Anzahl <br>
+											in %
 									</a>
+
+
+									
 								</div>
 
 						</div>
@@ -268,7 +273,7 @@
 
 					var Chart = (function(window, d3) {
 
-						var svg, chartWrapper, category, circle, values, logValueScale, data, margin, sector, circleGroup, categories, labelsYear, marker, label, countMinMax, svgLegend, labelYear, xAxis, xScale, x, tooltip, swoopyArrow, swoopyText, hoverCircle, clientWidth,
+						var svg, chartWrapper, category, circle, values, logValueScale, data, margin, sector, circleGroup, categories, labelsYear, marker, label, countMinMax, svgLegend, labelYear, xAxis, xScale, x, tooltip, swoopyArrow, swoopyText, hoverCircle, clientWidth, radiusLegend,
 						posX1, posX2, posY1, PosY2
 						
 						swoopyView = 'moneyAbsolute';
@@ -396,37 +401,41 @@
 						}
 
 						var legendTitle = {
-							moneyAbsolute: 'Kreisradius: Volumen aller Zuwenungen in Euro',
-							moneyRelative: 'Kreisradius: Volumen in % pro Jahr',
-							countRelative: 'Kreisradius: Anzahl in % pro Jahr',
-							countAbsolute: 'Kreisradius: Anzahl d. Zuwendungen pro Jahr.'
+							moneyAbsolute: 'Kreisfläche: Volumen aller Zuwenungen in Euro',
+							moneyRelative: 'Kreisfläche: Volumen in % pro Jahr',
+							countRelative: 'Kreisfläche: Anzahl in % pro Jahr',
+							countAbsolute: 'Kreisfläche: Anzahl d. Zuwendungen pro Jahr.'
 						}
 
 
 						var legendPos = {
 							moneyAbsolute: [
-								{ pos: 25, content: '2 Mrd.' },
-								{ pos: 50, content: '1.5 Mrd.' },
-								{ pos: 75, content: '1.5 Mrd.' },
-								{ pos: 100, content: '500 Mio.' }
+								{ pos: 0.05, content: '0.5 Mrd.' },
+								{ pos: 0.25, content: '2 Mrd.' },
+								{ pos: 0.5, content: '1.5 Mrd.' },
+								{ pos: 0.75, content: '1.5 Mrd.' },
+								{ pos: 1, content: '500 Mio.' }
 							],
 							moneyRelative: [
-								{ pos: 100, content: '25%' },
-								{ pos: 75, content: '50%' },
-								{ pos: 50, content: '75%' },
-								{ pos: 25, content: '100%' }
+						  	{ pos: 0.05, content: '5%' },
+								{ pos: 0.25, content: '25%' },
+								{ pos: 0.5, content: '50%' },
+								{ pos: 0.75, content: '75%' },
+								{ pos: 1, content: '100%' }
 							],
 							countAbsolute: [
-								{ pos: 100, content: '1200' },
-								{ pos: 75, content: '2400' },
-								{ pos: 50, content: '3600' },
-								{ pos: 25, content: '4900' }
+								{ pos: 0.05, content: '300' },
+								{ pos: 0.25, content: '1200' },
+								{ pos: 0.5, content: '2400' },
+								{ pos: 0.75, content: '3600' },
+								{ pos: 1, content: '4900' }
 							],
 							countRelative: [
-								{ pos: 100, content: '25%' },
-								{ pos: 75, content: '50%' },
-								{ pos: 50, content: '75%' },
-								{ pos: 25, content: '100%' }
+								{ pos: 0.05, content: '5%' },
+								{ pos: 0.25, content: '25%' },
+								{ pos: 0.5, content: '50%' },
+								{ pos: 0.75, content: '75%' },
+								{ pos: 1, content: '100%' }
 							],
 						}
 
@@ -563,46 +572,102 @@
 						}
 
 						function renderLegend(view) {
+
 							d3.select('.legend-wrapper').remove();
+
+							var total = config.svg.maxRad;
 
 							var title = d3.select('#legend-title');							
 							title.text(legendTitle[view]);
-							
-							svgLegend = legendWrapper
-								.append('svg')
-								.classed('legend-wrapper', true)
-								.attr('height', 120)
-								.attr('width', 700)
 
-							svgLegend.selectAll('circles')
-								.data(legendPos[view])
-								.enter()
-								.append('circle')
-								.attr('cx', 0)
-								.attr('cy', 120)
-								.attr('r', d => { return d.pos })
-							
-							svgLegend.selectAll('lines')
-								.data(legendPos[view])
-								.enter()
-								.append('line')
-								.attr('x1', 0)
-								.attr('y1', d => { return d.pos - 4 })
-								.attr('x2', 120)
-								.attr('y2', d => {return d.pos - 4})
-								.attr('stroke-width', 0.5)
-								.attr('stroke','black')
-								.classed('legend-line', true)
+							if (clientWidth > 750) {
+								svgLegend = legendWrapper
+									.append('svg')
+									.classed('legend-wrapper', true)
+									.attr('height', 150)
+									.attr('width', 700)
 								
-							svgLegend.selectAll('annotations')
-								.data(legendPos[view])
-								.enter()
-								.append('text')
-								.classed('annotation', true)
-								.attr('x', 125)
-								.attr('y', d => { return d.pos})
-								.text(d => {return d.content})	
+								var clipPath = svgLegend
+									.append('defs')
+									.append('clipPath')
+										.attr('id', 'cut-off-bottom')
+									.append('rect')
+										.attr('width', 700)
+										.attr('height', 92)
+										.attr('x', 0)
+										.attr('y', 0)
+								
+								svgLegend
+									.append('line')
+									.attr('x1', 0)
+									.attr('y1', 93)
+									.attr('x2', 700)
+									.attr('y2', 93)
+									.attr('stroke', 'grey')
+									.attr('stroke-width', 0.5)
+
+								svgLegend.selectAll('circles')
+									.data(legendPos[view])
+									.enter()
+									.append('circle')
+									.attr('clip-path', 'url(#cut-off-bottom)')
+									.attr('cx', (d,i) => {
+										return 100 * (i * 1.53) + 16
+									})
+									.attr('cy', 95)
+									.attr('r', d => { 
+										var radius = Math.sqrt((d.pos * total/ Math.PI))
+										return radius;
+									})
+								
+								svgLegend.selectAll('annotations')
+									.data(legendPos[view])
+									.enter()
+									.append('text')
+									.classed('annotation', true)
+									.attr('x', (d,i) => { return  100 * (i * 1.53)})
+									.attr('y', (d,i) => { return 120})
+									.text(d => {return d.content})	
+
+							}
+
+							else if (clientWidth < 750) {
+								svgLegend = legendWrapper
+									.append('svg')
+									.classed('legend-wrapper', true)
+									.attr('height', 120)
+									.attr('width', 700)
+								svgLegend.selectAll('circles')
+									.data(legendPos[view])
+									.enter()
+									.append('circle')
+									.attr('cx', 0)
+									.attr('cy', 120)
+									.attr('r', d => { 
+										var radius = Math.sqrt((d.pos * total/ Math.PI))
+										return radius; 
+									})
+								
+								svgLegend
+									.append('line')
+									.attr('x1', 0)
+									.attr('y1', d => { return 48 })
+									.attr('x2', 120)
+									.attr('y2', d => {return 48})
+									.attr('stroke-width', 0.5)
+									.attr('stroke','black')
+									.classed('legend-line', true)
+									
+								svgLegend
+									.append('text')
+									.classed('annotation', true)
+									.attr('x', 125)
+									.attr('y', d => { return d.pos})
+									.text(d => {return d.content})	
+							}
+			
 						}
+
 
 						function render() {
 
@@ -686,8 +751,6 @@
 
 							tooltip = d3.select('#tooltip')
 							tooltip.style('display', 'flex');
-
-
 							
 							if (clientWidth > 600) {
 
