@@ -75,7 +75,7 @@ if(default_params.PROJECT == '{{PROJECT}}'){
 		fs.writeFileSync(path + '/project.json', JSON.stringify(default_params), 'utf8')
 
 		//Copy Boilerplate
-		ncp('./docs/projects/boilerplate'+(default_params.TYPE=='full')?'':'-light', path, function (err) {
+		ncp('./docs/projects/boilerplate'+((default_params.TYPE=='full')?'':'-light'), path, function (err) {
 			if (err) { return console.error(err); }
 
 			(['index.html','index_en.html']).forEach(function(file){

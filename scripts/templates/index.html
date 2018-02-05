@@ -179,12 +179,14 @@
             d3.selectAll('#filter-list a').on('click', function(){ 
                 if(d3.select(this).classed('active')){ 
                     d3.selectAll('#filter-list a').classed('active',false); 
-                    d3.selectAll('#project-list li').style('display','block');
+                    d3.selectAll('#project-list li').style('display','block').classed('show',true);
+                    niceBreaks();
                 }else{  
                     d3.selectAll('#filter-list a').classed('active',false); 
                     d3.select(this).classed('active',true);
-                    d3.selectAll('#project-list li').style('display','none');
-                    d3.selectAll('#project-list li.f-' + d3.select(this).node().getAttribute('data-value')).style('display', 'block');
+                    d3.selectAll('#project-list li').style('display','none').classed('show',false);
+                    d3.selectAll('#project-list li.f-' + d3.select(this).node().getAttribute('data-value')).style('display', 'block').classed('show',true);
+                    niceBreaks();
                 }
             });
         </script>

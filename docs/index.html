@@ -99,29 +99,39 @@
                     
                     <li><a class="button" data-value="news">News</a></li>
                     <li><a class="button" data-value="lorawan">LoRaWAN</a></li>
+                    <li><a class="button" data-value="offene-daten">Offene Daten</a></li>
                     <li><a class="button" data-value="citizen-science">Citizen Science</a></li>
                 </ul>
                 <ul id="project-list">
                     
-                    <li class="f-news">
+                    <li class="show f-news">
                     	<a href="./projects/H3LL0W0RLD/index.html">
                   		  <img src="./projects/H3LL0W0RLD/thumb@2x.jpg" srcset="./projects/H3LL0W0RLD/thumb.jpg, ./projects/H3LL0W0RLD/thumb@2x.jpg 2x" alt="H3LL0 W0RLD!" />
-<span class="tag button">News</span>          		          <span class="date">01/16/2018</span>
+<span class="tag button">News</span>          		          <span class="date">06/02/2018</span>
          		           <span class="title">H3LL0 W0RLD!</span>
          		           <span class="subtitle">Willkommen beim Ideation & Prototyping Lab</span>
          	           </a>
                     </li>
 
-                    <li class="f-lorawan">
+                    <li class="show f-offene-daten">
+                    	<a href="./projects/kitas/index.html">
+                  		  <img src="./projects/kitas/thumb@2x.jpg" srcset="./projects/kitas/thumb.jpg, ./projects/kitas/thumb@2x.jpg 2x" alt="Berliner Kitas" />
+<span class="tag button">Offene Daten</span>          		          <span class="date">05/02/2018</span>
+         		           <span class="title">Berliner Kitas</span>
+         		           <span class="subtitle">Kartenanwendung zur Kita-Suche</span>
+         	           </a>
+                    </li>
+
+                    <li class="show f-lorawan">
                     	<a href="./projects/LORANODES/index.html">
                   		  <img src="./projects/LORANODES/thumb@2x.jpg" srcset="./projects/LORANODES/thumb.jpg, ./projects/LORANODES/thumb@2x.jpg 2x" alt="Neue LoRa-Nodes sind da" />
-<span class="tag button">LoRaWAN</span>          		          <span class="date">01/10/2018</span>
+<span class="tag button">LoRaWAN</span>          		          <span class="date">10/01/2018</span>
          		           <span class="title">Neue LoRa-Nodes sind da</span>
          		           <span class="subtitle">Kleiner LoRa-Test mit Arduino Mega und Dragino Shield</span>
          	           </a>
                     </li>
 
-                    <li class="f-citizen-science f-lorawan">
+                    <li class="show f-citizen-science f-lorawan">
                     	<a href="./projects/sense10/index.html">
                   		  <img src="./projects/sense10/thumb@2x.jpg" srcset="./projects/sense10/thumb.jpg, ./projects/sense10/thumb@2x.jpg 2x" alt="Mobiler Feinstaubsensor" />
 <span class="tag button">Citizen Science</span><span class="tag button">LoRaWAN</span>          		          <span class="date">20/10/2017</span>
@@ -209,12 +219,14 @@
             d3.selectAll('#filter-list a').on('click', function(){ 
                 if(d3.select(this).classed('active')){ 
                     d3.selectAll('#filter-list a').classed('active',false); 
-                    d3.selectAll('#project-list li').style('display','block');
+                    d3.selectAll('#project-list li').style('display','block').classed('show',true);
+                    niceBreaks();
                 }else{  
                     d3.selectAll('#filter-list a').classed('active',false); 
                     d3.select(this).classed('active',true);
-                    d3.selectAll('#project-list li').style('display','none');
-                    d3.selectAll('#project-list li.f-' + d3.select(this).node().getAttribute('data-value')).style('display', 'block');
+                    d3.selectAll('#project-list li').style('display','none').classed('show',false);
+                    d3.selectAll('#project-list li.f-' + d3.select(this).node().getAttribute('data-value')).style('display', 'block').classed('show',true);
+                    niceBreaks();
                 }
             });
         </script>

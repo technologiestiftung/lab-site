@@ -52,3 +52,9 @@ AUTHOR_IMAGE should refere to an image in the site/images/team/author_[AUTHOR_IM
 After a project is done, go into the project folder and open the project.json, this includes a "LIVE" attribute, set this to true. Afterwards run the build command:
 
 npm run build
+
+
+
+## Seb Boiler Default
+
+npm run boilerplate PROJECT="kitas" AUTHOR="sebastianmeier" TYPE="light" DATE="05/02/2018" GITHUB_URL="kita-explorer" TAG_DE="Offene Daten" TAG_EN="OpenData" PROJECT_TITLE_DE="Berliner Kitas" PROJECT_TITLE_EN="Berlin's Kitas" SHORT_TITLE_DE="Berliner Kitas" SHORT_TITLE_EN="Berlin's Kitas" SHORT_SUBTITLE_DE="Kartenanwendung zur Kita-Suche" SHORT_SUBTITLE_EN="Map-based application for finding Kitas" PROJECT_DESCRIPTION_DE="Die Kita-Suche soll Eltern bei der Suche der passenden Kita unterstützen. Die zeitgemäßen Such- und Filterfunktionen sowie die Kartendarstellung werden durch Daten des Landes Berlin möglich gemacht. Durch Beispiele wie dieses versucht das Ideation &amp;&nbsp;Protoyping Lab den Mehrwert von offenen Daten für Bürger*innen und Verwaltung zu unterstreichen." PROJECT_DESCRIPTION_EN="Kita-Suche should support parents to find the best Kita for their children. The innovative search- and filter-functionality as well as the map-based representation are driven by data from the city of Berlin. Through examples like this, the ideation and prototyping labs hopes to promote the benefits of open data for citizens and the city itself."

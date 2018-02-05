@@ -12,7 +12,7 @@
 	<atom:link href="http://lab.technologiestiftung-berlin.de/feed.xml" rel="self" type="application/rss+xml" />
 	<link>http://lab.technologiestiftung-berlin.de</link>
 	<description>We are exploring and prototyping digital tools in order to collaboratively shape Berlin’s future for citizens, the local government and the industry.</description>
-	<lastBuildDate>Mon, 5 Feb 2018 10:05:20  +0100</lastBuildDate>
+	<lastBuildDate>Mon, 5 Feb 2018 16:27:29  +0100</lastBuildDate>
 	<language>en-us</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
@@ -20,7 +20,7 @@
 <item>
 <title><![CDATA[H3LL0 W0RLD!]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/H3LL0W0RLD/index_en.html</link>
-<pubDate>Invalid date +0100</pubDate>
+<pubDate>Tue, 6 Feb 2018 00:00:00  +0100</pubDate>
 <category><![CDATA[News]]></category>
 <description><![CDATA[Welcome at the Technology Foundation's Ideation & Prototyping Lab]]></description>
 <content:encoded><![CDATA[Welcome at the Technology Foundation's Ideation & Prototyping Lab]]></content:encoded>
@@ -29,9 +29,20 @@
 </item>
 
 <item>
+<title><![CDATA[Berlin's Kitas]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/kitas/index_en.html</link>
+<pubDate>Mon, 5 Feb 2018 00:00:00  +0100</pubDate>
+<category><![CDATA[OpenData]]></category>
+<description><![CDATA[Kita-Suche should support parents to find the best Kita for their children. The innovative search- and filter-functionality as well as the map-based representation are driven by data from the city of Berlin. Through examples like this, the ideation and prototyping labs hopes to promote the benefits of open data for citizens and the city itself.]]></description>
+<content:encoded><![CDATA[Kita-Suche should support parents to find the best Kita for their children. The innovative search- and filter-functionality as well as the map-based representation are driven by data from the city of Berlin. Through examples like this, the ideation and prototyping labs hopes to promote the benefits of open data for citizens and the city itself.]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/kitas/index_en.html</guid>
+</item>
+
+<item>
 <title><![CDATA[New LoRa nodes are go!]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/LORANODES/index_en.html</link>
-<pubDate>Mon, 1 Oct 2018 00:00:00  +0100</pubDate>
+<pubDate>Wed, 10 Jan 2018 00:00:00  +0100</pubDate>
 <category><![CDATA[LoRaWAN]]></category>
 <description><![CDATA[No byte will be wasted]]></description>
 <content:encoded><![CDATA[No byte will be wasted]]></content:encoded>

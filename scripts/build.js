@@ -24,7 +24,8 @@ fs.readdirSync(project_path).forEach(file => {
 				project.DATE = '12/2017'
 			}
 
-			let date = project.DATE.split('/');
+			let date = project.DATE.split('/')
+
 			project.sort = moment(date[2]+'-'+date[1]+'-'+date[0])
 			projects.push(project)
 
@@ -73,7 +74,7 @@ langs.forEach(lang=>{
 		})
 
 		projects_html[lang] += '\n'
-		projects_html[lang] += '                    <li class="' + tags + '">'+'\n'
+		projects_html[lang] += '                    <li class="show ' + tags + '">'+'\n'
         projects_html[lang] += '                    	<a href="./projects/' + p.PROJECT + '/index' + ((lang=='DE')?'':'_en') + '.html">'+'\n'
 		projects_html[lang] += '                  		  <img src="./projects/' + p.PROJECT + '/thumb@2x.jpg" srcset="./projects/' + p.PROJECT + '/thumb.jpg, ./projects/' + p.PROJECT + '/thumb@2x.jpg 2x" alt="' + p['PROJECT_TITLE_'+lang] + '" />'+'\n';
 		(p['TAG_'+lang].split(',')).forEach((t,i)=>{

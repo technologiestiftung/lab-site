@@ -38,12 +38,16 @@ if(d3.selectAll('.gallery li').size()>=1){
 	    .classed('three-break', function(d,i){ return (i%3==0)?true:false; });
 }else if(d3.select('#logo').size()>=1){
 	logo(d3.select('#logo'), 200, 20, 5, false, true, {min:0.2, max:2});
-	d3.selectAll('#project-list li')
-	    .classed('two-break', function(d,i){ return (i%2==0)?true:false; })
-	    .classed('three-break', function(d,i){ return (i%3==0)?true:false; });
+	niceBreaks();
 	d3.selectAll('#team-list li')
 	    .classed('two-break', function(d,i){ return (i%2==0)?true:false; })
 	    .classed('three-break', function(d,i){ return (i%3==0)?true:false; });
+}
+
+function niceBreaks(){
+    d3.selectAll('#project-list li.show')
+        .classed('two-break', function(d,i){ return (i%2==0)?true:false; })
+        .classed('three-break', function(d,i){ return (i%3==0)?true:false; });
 }
 
 /* Responsive Menu */
