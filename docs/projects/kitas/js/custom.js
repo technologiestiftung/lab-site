@@ -153,6 +153,14 @@ var icons = (function(container, lang){
           .scale(70000)
           .translate([width / 2, height / 2]);
 
+        svg.append('text')
+          .text(((lang=='en')?'Berlin\'s Kitas, circle radius refers to size of Kita':'Berlins Kitas: der Radius der Kreise deutet die Größe der Kitas an.'))
+          .attr('text-anchor','middle')
+          .style('font-family','Arial')
+          .style('font-size',10)
+          .attr('y', height-20)
+          .attr('x',width/2);
+
       d3.queue()
         .defer(d3.json, './data/Bezirk.topojson')
         .defer(d3.csv, './data/locations.csv')
