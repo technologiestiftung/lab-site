@@ -12,7 +12,7 @@
 	<atom:link href="http://lab.technologiestiftung-berlin.de/feed.xml" rel="self" type="application/rss+xml" />
 	<link>http://lab.technologiestiftung-berlin.de</link>
 	<description>Wir erforschen und erproben digitale Werkzeuge um gemeinsam mit Bürger*innen, Verwaltung und Unternehmen die Zukunft Berlins zu gestalten.</description>
-	<lastBuildDate>Mon, 5 Feb 2018 09:49:22  +0100</lastBuildDate>
+	<lastBuildDate>Mon, 5 Feb 2018 09:51:16  +0100</lastBuildDate>
 	<language>de-DE</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
@@ -40,7 +40,7 @@
 </item>
 
 <item>
-<title><![CDATA[Mobiler Feinstaubsensor auf LoRa Basis]]></title>
+<title><![CDATA[Mobiler Feinstaubsensor]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/sense10/index.html</link>
 <pubDate>Fri, 20 Oct 2017 00:00:00  +0100</pubDate>
 <category><![CDATA[Citizen Science, LoRaWAN]]></category>
