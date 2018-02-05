@@ -436,7 +436,7 @@ nav{
   margin:0 5px;
 }
 
-.button:hover{
+.button:hover, .button.active{
   background-color:#1e3791;
   color:#DEE3F7;
 }
