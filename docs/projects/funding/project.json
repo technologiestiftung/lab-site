@@ -6,7 +6,7 @@
     "DATE": "15/01/2018",
     "EMAIL": "dinklage@technologiestiftung-berlin.de",
     "GITHUB_URL": "{{PROJECT}}",
-    "LIVE": true,
+    "LIVE": false,
     "PROJECT": "funding",
     "PROJECT_DESCRIPTION_DE": "{{PROJECT_DESCRIPTION_DE}}",
     "PROJECT_DESCRIPTION_EN": "{{PROJECT_DESCRIPTION_EN}}",
