@@ -12,11 +12,22 @@
 	<atom:link href="http://lab.technologiestiftung-berlin.de/feed.xml" rel="self" type="application/rss+xml" />
 	<link>http://lab.technologiestiftung-berlin.de</link>
 	<description>Wir erforschen und erproben digitale Werkzeuge um gemeinsam mit Bürger*innen, Verwaltung und Unternehmen die Zukunft Berlins zu gestalten.</description>
-	<lastBuildDate>Mon, 5 Feb 2018 16:27:29  +0100</lastBuildDate>
+	<lastBuildDate>Mon, 19 Feb 2018 23:37:19  +0100</lastBuildDate>
 	<language>de-DE</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	
+<item>
+<title><![CDATA[Berlins räumliche Einheiten]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/spatial-units/index.html</link>
+<pubDate>Wed, 14 Feb 2018 00:00:00  +0100</pubDate>
+<category><![CDATA[Offene Daten]]></category>
+<description><![CDATA[Das Land Berlin ist in verschiedene räumliche Einheiten unterteilt von den politischen Bezirksgrenzen über die statistischen lebensweltlich orientierten Räume (LOR) bis hin zu Gebäuden.]]></description>
+<content:encoded><![CDATA[Das Land Berlin ist in verschiedene räumliche Einheiten unterteilt von den politischen Bezirksgrenzen über die statistischen lebensweltlich orientierten Räume (LOR) bis hin zu Gebäuden.]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/spatial-units/index.html</guid>
+</item>
+
 <item>
 <title><![CDATA[H3LL0 W0RLD!]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/H3LL0W0RLD/index.html</link>

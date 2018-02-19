@@ -12,11 +12,22 @@
 	<atom:link href="http://lab.technologiestiftung-berlin.de/feed.xml" rel="self" type="application/rss+xml" />
 	<link>http://lab.technologiestiftung-berlin.de</link>
 	<description>We are exploring and prototyping digital tools in order to collaboratively shape Berlin’s future for citizens, the local government and the industry.</description>
-	<lastBuildDate>Mon, 5 Feb 2018 16:27:29  +0100</lastBuildDate>
+	<lastBuildDate>Mon, 19 Feb 2018 23:37:19  +0100</lastBuildDate>
 	<language>en-us</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	
+<item>
+<title><![CDATA[Berlin's spatial units]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/spatial-units/index_en.html</link>
+<pubDate>Wed, 14 Feb 2018 00:00:00  +0100</pubDate>
+<category><![CDATA[OpenData]]></category>
+<description><![CDATA[The city of Berlin is organised in various spatial units, from political district boundaries, to statistical life-world related spaces (LOR), to buildings.]]></description>
+<content:encoded><![CDATA[The city of Berlin is organised in various spatial units, from political district boundaries, to statistical life-world related spaces (LOR), to buildings.]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/spatial-units/index_en.html</guid>
+</item>
+
 <item>
 <title><![CDATA[H3LL0 W0RLD!]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/H3LL0W0RLD/index_en.html</link>
