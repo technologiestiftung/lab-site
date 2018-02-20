@@ -471,6 +471,22 @@
                 });
 
               });
+
+              var layermixResize = debounce(function() {
+                d3.selectAll('.layermix').each(function(d){
+                    var t = d3.select(this);
+                    var w = t.node().clientWidth;
+                    if(w<width){
+                        t.select('svg').attr('height', w/width*height);
+                    }else{
+                        t.select('svg').attr('height', height);
+                    }
+                });
+              }, 250);
+
+              window.addEventListener('resize', layermixResize);
+
+              layermixResize();
             });
 
         </script>
