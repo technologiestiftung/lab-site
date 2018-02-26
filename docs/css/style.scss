@@ -798,6 +798,8 @@ hr.clear{
 /* ---- Page Head ---- */
 
 #page-head{
+  width:100%;
+  overflow-x:hidden;
   background-color: #fff;
   min-height: 40px;
   .left{
