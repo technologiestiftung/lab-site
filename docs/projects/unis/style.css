@@ -1,0 +1,133 @@
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.selected {
+    fill: red;
+    transition: fill 0.25s;
+}
+
+.axis text {
+font: 10px sans-serif;
+}
+
+.cells circle:hover  {
+    fill: red;
+}
+
+.selected--cells {
+    fill: red; 
+}
+
+.selected--lines {
+    stroke: red;
+    transition: stroke 0.5s;
+}
+
+.unselected--lines {
+    stroke: #E5E5E5;
+    transition: stroke 0.5s;
+}
+
+.tooltip {
+    width: auto;
+    height: 300px;
+    font-family: 'Barlow', sans-serif;
+}
+
+.charts-section {
+    justify-content: space-between;
+    margin-top: 20px;
+    display: flex;
+    width: 70%;
+    border: 2px solid red;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.charts-section  #mapChart {
+    border: 2px solid green;
+}
+
+.charts-section  #beeChart {
+    border: 2px solid orange;
+}
+
+.chart-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.chart__h2 {
+    text-align: left;
+    font-style: normal;
+    font-family: 'ClanOT-Medium', Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    display: block;
+    max-width: 700px;
+    border-bottom: grey 1px solid;
+    padding-bottom: 10px;
+}
+
+.chart-subline {
+    border-top: grey 1px solid;
+    border-bottom: grey 1px solid;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.chart-subline span {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    font-family: 'Barlow', sans-serif;
+    color: grey;
+}
+
+div.chart-subline:first-child {
+    width: 60%;
+}
+
+.chart-legend__graph {
+    height: 20px;
+    width: auto;
+    background: green;
+}
+
+
+div.charts-section div.chart-wrapper h2 {
+    margin: 0;
+}
+
+.chart-legend {
+    height: 100px;
+    display: flex;
+}
+
+.chart-legend__h3 {
+    margin: 0;
+    text-align: left;
+    font-style: normal;
+    font-family: 'ClanOT-Medium', Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    display: block;
+    max-width: 700px;
+}
+
+.chart-legend__unis {
+    display: flex;
+}
+
+.chart-legend__unis--oval {
+    height: 20px;
+    width: 20px;
+    background: green;
+    border-radius: 100px;
+}
+
