@@ -293,96 +293,96 @@
 						}
 
 						var antns = {
-								moneyRelative: [
-									{
-										pos: {
-											start: 152,
-											end: 63
-										},
-										content: [
-											'2011 fließt der größte Anteil',
-											'aller Förderungen des Jahres',
-											'mit mehr als 25% in',
-											'den Bereich Forschung.'
-										]
+							moneyRelative: [
+								{
+									pos: {
+										start: 152,
+										end: 63
 									},
-									{
-										pos: {
-											start: 167,
-											end: 225
-										},
-										content: [
-											'Dies ist ein Dummytext',
-											'der über mehrere Zeilen',
-											'verläuft.'
-										]
+									content: [
+										'2011 fließt der größte Anteil',
+										'aller Förderungen des Jahres',
+										'mit mehr als 25% in',
+										'den Bereich Forschung.'
+									]
+								}/*,
+								{
+									pos: {
+										start: 167,
+										end: 225
 									},
-								],
-								moneyAbsolute: [
-									{
-										pos: {
-											start: 15,
-											end: 75
-										},
-										content: [
-											'Mehr als 60% aller Zu-',
-											'wendungen fließen in die ',
-											'Baustelle des BER Flughafens.'
-										]
+									content: [
+										'Dies ist ein Dummytext',
+										'der über mehrere Zeilen',
+										'verläuft.'
+									]
+								},*/
+							],
+							moneyAbsolute: [
+								{
+									pos: {
+										start: 15,
+										end: 75
 									},
-									{
-										pos: {
-											start: 167,
-											end: 225
-										},
-										content: [
-											'Die Zuwendungen im Bereich',
-											'Integration haben sich',
-											'im Vergleich zum Vorjahr',
-											'mehr als ver 17facht.'
-										]
+									content: [
+										'Mehr als 60% aller Zu-',
+										'wendungen fließen an die ',
+										'BVG und die S-Bahn.'
+									]
+								}/*,
+								{
+									pos: {
+										start: 167,
+										end: 225
 									},
-								],
-								countRelative: [
-									{
-										pos: {
-											start: 96,
-											end: 174
-										},
-										content: [
-											'Im Sektor Arbeit ist ein',
-											'werden vergleichsweise viele',
-											'Projekte gefördert. Die Anzahl',
-											'sinkt tendenziell. Dafür werden',
-											'größere Summen gefördert.'
-										]
+									content: [
+										'Die Zuwendungen im Bereich',
+										'Integration haben sich',
+										'im Vergleich zum Vorjahr',
+										'mehr als ver 17facht.'
+									]
+								},*/
+							],
+							countRelative: [
+								{
+									pos: {
+										start: 96,
+										end: 174
 									},
-								],
-								countAbsolute: [
-									{
-										pos: {
-											start: 97,
-											end: 135
-										},
-										content: [
-											'Die Anzahl d. Zuwendungen an',
-											'den Sektor Arbeit werden',
-											'vermutlich auf den Bereich',
-											'Stadtentwicklung umgelagert.'
-										]
+									content: [
+										'Im Sektor Arbeit werden',
+										'vergleichsweise viele',
+										'Projekte gefördert. Die Anzahl',
+										'sinkt tendenziell. Dafür werden',
+										'größere Summen gefördert.'
+									]
+								},
+							],
+							countAbsolute: [
+								{
+                                    pos: {
+                                        start: 97,
+                                        end: 135
+                                    },
+                                    content: [
+                                        'Die Umstrukturierung der',
+                                        'Senatsverwaltungen führt',
+                                        'auch bei den Förderungen',
+                                        'zu Verlagerungen.'
+                                    ]
+                                }/*,
+                                {
+									pos: {
+										start: 287,
+										end: 253
 									},
-									{
-										pos: {
-											start: 287,
-											end: 253
-										},
-										content: [
-											'2016 ist das einzige Jahr',
-											'in dem Förderungen im Bereich',
-											'Tierschutz bewilligt wurden.'
-										]
-									},
-								],
+									content: [
+										'2016 ist das einzige Jahr',
+										'in dem Förderungen im Bereich',
+										'Tierschutz bewilligt wurden.'
+									]
+								}*/
+							]
 						}
 						
 						var config = {
@@ -935,7 +935,7 @@
 								
 								posX1 = Math.abs(d3.select(`circle[data-uid='${annotation.pos.start}']`).attr('cx'));
 								posX2 = Math.abs(d3.select(`circle[data-uid='${annotation.pos.end}']`).attr('cx'))  + margin.right + 15;
-							  posY1 = Math.abs(d3.select(`circle[data-uid='${annotation.pos.start}']`).attr('cy')) + margin.top;
+							    posY1 = Math.abs(d3.select(`circle[data-uid='${annotation.pos.start}']`).attr('cy')) + margin.top;
 								posY2 = Math.abs(d3.select(`circle[data-uid='${annotation.pos.end}']`).attr('cy')) + margin.top + 15;
 
 								swoopyArrow = svg.append("path")
