@@ -12,7 +12,7 @@
 	<atom:link href="http://lab.technologiestiftung-berlin.de/feed.xml" rel="self" type="application/rss+xml" />
 	<link>http://lab.technologiestiftung-berlin.de</link>
 	<description>Wir erforschen und erproben digitale Werkzeuge um gemeinsam mit Bürger*innen, Verwaltung und Unternehmen die Zukunft Berlins zu gestalten.</description>
-	<lastBuildDate>Thu, 15 Mar 2018 22:27:04  +0100</lastBuildDate>
+	<lastBuildDate>Fri, 16 Mar 2018 10:42:34  +0100</lastBuildDate>
 	<language>de-DE</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
@@ -37,17 +37,6 @@
 <content:encoded><![CDATA[Daten vermitteln ein Gefühlt von Korrektheit. Dabei gibt es auch viele Gründe diese kritisch zu hinterfragen. Wir geben ein paar Beispiele.]]></content:encoded>
 <dc:creator><![CDATA[undefined]]></dc:creator>
 <guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/trust-in-numbers/index.html</guid>
-</item>
-
-<item>
-<title><![CDATA[Berlins Hochschulen]]></title>
-<link>http://lab.technologiestiftung-berlin.de/projects/unis/index.html</link>
-<pubDate>Thu, 15 Mar 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[Datenvisualisierung]]></category>
-<description><![CDATA[Beschreibung folgt​]]></description>
-<content:encoded><![CDATA[Beschreibung folgt​]]></content:encoded>
-<dc:creator><![CDATA[undefined]]></dc:creator>
-<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/unis/index.html</guid>
 </item>
 
 <item>

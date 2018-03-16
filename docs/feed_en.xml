@@ -12,7 +12,7 @@
 	<atom:link href="http://lab.technologiestiftung-berlin.de/feed.xml" rel="self" type="application/rss+xml" />
 	<link>http://lab.technologiestiftung-berlin.de</link>
 	<description>We are exploring and prototyping digital tools in order to collaboratively shape Berlin’s future for citizens, the local government and the industry.</description>
-	<lastBuildDate>Thu, 15 Mar 2018 22:27:04  +0100</lastBuildDate>
+	<lastBuildDate>Fri, 16 Mar 2018 10:42:34  +0100</lastBuildDate>
 	<language>en-us</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
@@ -37,17 +37,6 @@
 <content:encoded><![CDATA[Data inherits an aura of truth. But there are many reasons to critically question data. We are giving a couple of examples to get started.]]></content:encoded>
 <dc:creator><![CDATA[undefined]]></dc:creator>
 <guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/trust-in-numbers/index_en.html</guid>
-</item>
-
-<item>
-<title><![CDATA[Berlin's universities]]></title>
-<link>http://lab.technologiestiftung-berlin.de/projects/unis/index_en.html</link>
-<pubDate>Thu, 15 Mar 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[DataVis]]></category>
-<description><![CDATA[{{PROJECT_DESCRIPTION_EN}}]]></description>
-<content:encoded><![CDATA[{{PROJECT_DESCRIPTION_EN}}]]></content:encoded>
-<dc:creator><![CDATA[undefined]]></dc:creator>
-<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/unis/index_en.html</guid>
 </item>
 
 <item>
