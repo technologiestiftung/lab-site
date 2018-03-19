@@ -12,11 +12,22 @@
 	<atom:link href="http://lab.technologiestiftung-berlin.de/feed.xml" rel="self" type="application/rss+xml" />
 	<link>http://lab.technologiestiftung-berlin.de</link>
 	<description>We are exploring and prototyping digital tools in order to collaboratively shape Berlin’s future for citizens, the local government and the industry.</description>
-	<lastBuildDate>Mon, 19 Mar 2018 17:16:50  +0100</lastBuildDate>
+	<lastBuildDate>Mon, 19 Mar 2018 17:45:10  +0100</lastBuildDate>
 	<language>en-us</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	
+<item>
+<title><![CDATA[Introducing Victoria Dykes]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/tori-intro/index_en.html</link>
+<pubDate>Mon, 19 Mar 2018 00:00:00  +0100</pubDate>
+<category><![CDATA[Open Data]]></category>
+<description><![CDATA[Meet Victoria Dykes, the newest member of the Ideation & Prototyping Lab team.]]></description>
+<content:encoded><![CDATA[Meet Victoria Dykes, the newest member of the Ideation & Prototyping Lab team.]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/tori-intro/index_en.html</guid>
+</item>
+
 <item>
 <title><![CDATA[Broadband Berlin 2017]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/breitband-2017/index_en.html</link>
