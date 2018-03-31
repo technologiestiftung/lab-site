@@ -7,7 +7,7 @@
 		"uuidString": "803F065B-2964-4334-B40A-4F2432DB9DE9"
 		}
 	],
-"creatorBuild": "26148",
+"creatorBuild": "26330",
 "files": {
 	"\/css\/style-min.css": {
 		"aP": 1,
@@ -253,6 +253,7 @@
 	"animateCSSInjections": 1,
 	"autoBuildNewItems": 1,
 	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
+	"autoprefixerEnableIEGrid": 0,
 	"babelAuxiliaryCommentAfter": "",
 	"babelAuxiliaryCommentBefore": "",
 	"babelConfigFileHandlingType": 0,
@@ -816,6 +817,10 @@
 		"id-match": {
 			"active": 0,
 			"optionString": "'^[a-z]+([A-Z][a-z]+)*$', {'properties': false, 'onlyDeclarations': true}"
+			},
+		"implicit-arrow-linebreak": {
+			"active": 0,
+			"optionString": "'beside'"
 			},
 		"indent": {
 			"active": 0,
