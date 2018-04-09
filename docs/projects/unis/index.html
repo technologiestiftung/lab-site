@@ -46,18 +46,19 @@
 
         <!-- CANONICAL URL -->
         <link rel="canonical" href="http://lab.technologiestiftung-berlin.de/projects/unis/index.html">
-        <!--<link rel="shortlink" href="tsblab.de/projects/PROJECT">-->
+        <link rel="shortlink" href="tsblab.de/projects/PROJECT">
 
-        <!-- <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,300i|Barlow:400,400i,700,700i" rel="stylesheet"> -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,300i|Barlow:400,400i,700,700i" rel="stylesheet">
         <meta name="theme-color" content="#1e3791">
         <link href="../../js/prism/prism.css" rel="stylesheet" />
         <link rel="stylesheet" href="../../css/style.css">
         <link rel="stylesheet" href="./style.css">
+        <!-- <link rel="stylesheet" href="./bulma.css"> -->
     </head>
     <body class="project">
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
         <script src="https://rawgit.com/Kcnarf/d3-beeswarm/master/build/d3-beeswarm.js"></script>
-        <script src="https://unpkg.com/topojson-client@3"></script> -->
+        <script src="https://unpkg.com/topojson-client@3"></script>
 
         <script src="./js/d3-beeswarm.js"></script>
         <script src="./js/d3.min.js"></script>
@@ -89,7 +90,7 @@
             <div id="title">
                 <div class="container">
                     <span class="button tag">Datenvisualisierung</span>
-                    <h1>Berlins Hochschulen</h1>
+                    <h1>Hochschulen in Deutschland und Berlin</h1>
                     <span class="title-subline">Fabian Dinklage (<a href="https://twitter.com/fdnklg">@fdnklg</a>) | 15/03/2018</span>
                 </div>
             </div>
@@ -97,76 +98,125 @@
             <!-- Start editing here -->
 
             <div class="container p-bottom">
-                <p class="copy">Lorem ipsum dolor sit <i>amet</i>, <strong>consectetuer</strong> adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. <a href="#">Cum sociis natoque penatibus</a> et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
+                <p class="copy">Die Hochschulrektorenkonferenz ist ein freiwilliger Zusammenschluss der deutschen Hochschulen und vertritt deren Bedürfnisse öffentlich. Der <a href="https://www.hochschulkompass.de/home.html">Hochschulkompass</a> ist eine von der Konferenz betriebene Plattform, die als Katalog für Studieninteressierte dient. Sie enthält Informationen zu jeder Hochschule und angebotenen Studiengängen. Wir haben vom Hochschulkompass die Daten aller Hochschulen via Node-Script gescraped. Der Datensatz umfasst Daten zu Deutschlands 374 Hochschulen und die dazugehörigen mehr als 19.000 Studiengänge, die über die Suchmaske zugänglich sind. Zu jeder Hochschule sind unter anderem Informationen zur Gründung, Studiengängen, Kontaktinformationen und weitere enthalten.</p>
+            </div>
+
+            <div class="container p-bottom">
+                <p class="copy">
+                    Zur Veranschaulichung haben wir alle Hochschulen mit der Zahl Studierender auf einer Karte abgebildet. Ergänzend lassen sich Bereiche im Histogramm auswählen und filtern. Die Daten über die  Suchmaske zu erreichen, setzt voraus, dass man bereits weiß nach welcher Hochschule man sucht. Die Darstellung auf einer Karte ermöglicht den Vergleich aller Hochschulen nach der Anzahl Studierender.
+                </p>
             </div>
 
             <div class="special-section">
                 <div class="charts-section">
                     <div id="info"><h3 id="name"></h3></div>
                     <div class="chart-wrapper">
-                        <span class="chart__h2">Histogramm der Universitäten</span>
+                        <span class="chart__h2">Deutschlands Hochschulen</span>
                         <div class="chart-legend">
-                            <span class="chart-legend__h3">Studierende pro Universität</span>
-                            <div class="chart-legend__graph"></div>
+                            <span class="chart-legend__h3">Studierende <br> pro Universität</span>
+                            <div id="legend-bars" class="chart-legend__graph"></div>
                         </div>
                         <div id="mapChart"></div>
                         <div class="chart-subline">
                             <div>
-                                <span>Diese Grafik zeigt die Verteilung der Universitäten entlang Studierender, Studiengängen und Gründungsjahr</span>
+                                <span>Diese Grafik zeigt Deutschlands Hochschulen <br/> und die Anzahl d. eingeschriebenen Studierenden.</span>
                             </div>
                             <div>
-                                <span>Quelle: <a href="hochschulkompass.de">Hochschulkompass</a></span>
+                                <span>Quelle: <br/> <a class="link" href="hochschulkompass.de">Hochschulkompass</a></span>
                             </div>
                             </div>
                             <div id="tooltip" class="tooltip"></div>
                     </div>
                     <div class="chart-wrapper">
-                        <h2 class="chart__h2">Deutschlands Universitäten</h2>
+                        <span class="chart__h2">Hochschulen Histogramm</span>
                         <div class="chart-legend">
                             <span class="chart-legend__h3">Eingeschriebene Studierende</span>
                             <div class="chart-legend__unis">
                                 <div class="chart-legend__unis--oval"></div>
-                                <span class="chart-legend__h3">Ein Punkt, eine Universität</span>
+                                <span class="chart-legend__subline">Ein Punkt, eine Universität</span>
                             </div>
                         </div>
                         <div id="beeChart"></div>
                         <div class="chart-subline">
-                            <span>Diese Grafik zeigt die Verteilung der Universitäten entlang Studierender, Studiengängen und Gründungsjahr</span>
-                            <span>Quelle: <a href="hochschulkompass.de">Hochschulkompass</a></span>
+                            <span>Diese Grafik zeigt die Verteilung der Universitäten <br/> anhand der Studierendenzahlen in einem Histogramm.</span>
+                            <span>Quelle: <br/> <a class="link" href="hochschulkompass.de">Hochschulkompass</a></span>
                         </div>
+                        <div id="brushed-tooltip" class="tooltip"></div>
                     </div>
                 </div>
             </div>
 
             <div class="container p-bottom">
-                <p class="copy">Lorem ipsum dolor sit <i>amet</i>, <strong>consectetuer</strong> adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. <a href="#">Cum sociis natoque penatibus</a> et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
-                <blockquote>
-                    <p>
-                        Open Data ist schon ne richtig feine Sache.
-                    </p>
-                    <span class="author">Sagt der Ben</span>
-                </blockquote>
-                <p class="copy">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
-                <hr class="divider small" />
+                <p class="copy">
+                    Was auffällt ist, dass bei mehr als 80 Prozent der Hochschulen nur ein Drittel der Studierenden eingeschrieben ist. Gleichzeitig umfassen die zehn größten Universitäten bereits knapp 20 Prozent aller Studierenden in Deutschland.
+
+                    Bereits in Berlin befinden sich mehr als zehn Prozent Deutschlands Hochschulen. Je größer die Anzahl der Studierenden desto desto höher ist auch das Alter der Hochschule. Die Hochschulkultur in Deutschland reicht bis zu 750 Jahre zurück. Die 10 kleinsten Hochschulen stehen alle im Kontext der Theologie oder Kirchenmusik.                        
+                </p>
             </div>
 
+            <div class="special-section">
+                    <div class="charts-section">
+                        <div id="info"><h3 id="name"></h3></div>
+                        <div class="chart-wrapper">
+                            <span class="chart__h2">Berlins Hochschulen</span>
+                            <div class="chart-legend">
+                                <span class="chart-legend__h3">Studierende <br> pro Universität</span>
+                                <div id="legend-berlin-bars" class="chart-legend__graph"></div>
+                            </div>
+                            <div id="mapChartBerlin"></div>
+                            <div class="chart-subline">
+                                <div>
+                                    <span>Diese Grafik zeigt Deutschlands Hochschulen <br/> und die Anzahl d. eingeschriebenen Studierenden.</span>
+                                </div>
+                                <div>
+                                    <span>Quelle: <br/> <a class="link" href="hochschulkompass.de">Hochschulkompass</a></span>
+                                </div>
+                                </div>
+                                <div id="tooltip-berlin" class="tooltip"></div>
+                        </div>
+                        <div class="chart-wrapper">
+                            <span class="chart__h2">Hochschulen Histogramm</span>
+                            <div class="chart-legend">
+                                <span class="chart-legend__h3">Eingeschriebene Studierende</span>
+                                <div class="chart-legend__unis">
+                                    <div class="chart-legend__unis--oval"></div>
+                                    <span class="chart-legend__subline">Ein Punkt, eine Universität</span>
+                                </div>
+                            </div>
+                            <div id="beeChartBerlin"></div>
+                            <div class="chart-subline">
+                                <span>Diese Grafik zeigt die Verteilung der Universitäten <br/> anhand der Studierendenzahlen in einem Histogramm.</span>
+                                <span>Quelle: <br/> <a class="link" href="hochschulkompass.de">Hochschulkompass</a></span>
+                            </div>
+                            <div id="brushed-tooltip-berlin" class="tooltip"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container p-bottom">
+                    <p class="copy">
+                        Entlang des Datensatzes haben wir noch eine Liste der Top 10 der: <strong>Ältesten, kleinsten und vielfältigsten</strong> Hochschulen Deutschlands zusammengestellt.                       
+                    </p>
+                </div>
+
             <div class="container">
-                <div class="button-wrapper">
-                        <button id="filter--oldest">
-                            <span>Älteste Universitäten (Top10)</span>
-                            <span>Kurze Beschreibung</span>
+                <div class="table-headline">Die Top 10 Universitäten Deutschlands</div>
+                <div class="buttons grouped">
+                        <button class="button" id="filter--oldest">
+                            <span>Gründungsjahr</span>
                         </button>
-                        <button id="filter--diversity">
-                            <span>Größte Vielfalt (Top10)</span>
-                            <span>Kurze Beschreibung</span>
+                        <button class="button"  id="filter--diverse">
+                            <span>Studiengänge</span>
                         </button>
-                        <button id="filter--diverse">
-                            <span>Kleinsten Hochschulen (Top10)</span>
-                            <span>Kurze Beschreibung</span>
+                        <button class="button"  id="filter--countStudents">
+                            <span>Studierende</span>
                         </button>
                     </div>
-                <div id="table-wrapper">
-            </div>
+                <div class="table-legend">
+                    <span>Universität</span>
+                    <span class="legend-value">Anzahl</span>
+                </div>
+                <div id="table-wrapper"></div>
             </div>
 
             <div class="container center">
