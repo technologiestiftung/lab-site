@@ -52,6 +52,47 @@
         <meta name="theme-color" content="#1e3791">
         <link href="../../js/prism/prism.css" rel="stylesheet" />
         <link rel="stylesheet" href="../../css/style.css">
+        <style type="text/css">
+
+            input,
+            textarea{
+                font-family:Roboto Mono;
+                font-size:16px;
+                padding:5px;
+            }
+
+            input{
+                width:100px;
+                height:auto;
+            }
+
+            textarea{
+                width:100%;
+                height:300px;
+            }
+
+            input[type="button"]{
+                padding:10px 15px;
+                border-radius: 10px;
+                background-color:rgba(0,0,0,0.5);
+                color:#fff;
+                cursor: pointer;
+                width: auto;
+            }            
+
+            input[type="button"]:hover{
+                background-color:#1e3791;
+            }
+
+            .small{
+                font-size:14px;
+            }
+
+            #extra-fingerprint{
+                display: none;
+            }
+
+        </style>
     </head>
     <body class="project">
         <header id="page-head">
@@ -88,104 +129,191 @@
             <!-- Start editing here -->
 
             <div class="container p-bottom">
-                <p class="copy">Lorem ipsum dolor sit <i>amet</i>, <strong>consectetuer</strong> adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. <a href="#">Cum sociis natoque penatibus</a> et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
-            </div>
-
-            <div class="special-section" style="height:400px; line-height: 400px; text-align: center;">
-                Custom Vis Section
-                <!-- You do what ever you want in here. Remove custom style above. -->
+                <p class="copy">
+                    Not every data set is clean and organized. In order to help users deal with such messy data sets, we are building a set of tools to help you deal with such cases. Our first tool helps you remove typos and similar mistakes from a set of strings. In order to do so, we are using two methods to calculate the similarity of a string. You can try our tool directly on this web site or you can use it as a command line tool via <a href="https://www.npmjs.com/package/csv-string-optimization">NPM</a> or of course as a node package, inside your application. A short description of how our tool works is provided at the end of the article.
+                </p>
             </div>
 
             <div class="container p-bottom">
-                <p class="copy">Lorem ipsum dolor sit <i>amet</i>, <strong>consectetuer</strong> adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. <a href="#">Cum sociis natoque penatibus</a> et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
-                <blockquote>
-                    <p>
-                        Open Data ist schon ne richtig feine Sache.
-                    </p>
-                    <span class="author">Sagt der Ben</span>
-                </blockquote>
-                <p class="copy">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
-                <hr class="divider small" />
-                <h2 class="p-top">Für die Struktur</h2>
-                <h3>Noch ein paar Headlines</h3>
-                <ul class="p-top">
-                    <li>Und eine Liste Warum nicht</li>
+                <h2>Input</h2>
+                <p class="copy p-bottom">
+                    Paste the content of a CSV file into the text field below or drag'n'drop a CSV file onto the text field. The first row needs to contain the column names.<br />
+                    <span class="small">Please note, that the content to be processed should not be to large, in order to maintain a responsive interaction with the system (&lt;2MB).</span>
+                </p>
+                <textarea id="field-csv" name="csv">
+id,name
+88,Berlin
+90,Berlin
+92,Brlin
+100,Börlen
+102,Berlin
+104,Brlin
+108,Brln
+108,"'Berlin'"
+112,Hamburg
+                </textarea>
+                <p class="copy center p-bottom p-top">
+                    What delimiter is used in the CSV?<br />
+                    <input id="field-delimiter" type="text" name="delimiter" value="," placeholder="," /><br /><br />
+                    Which column should we analyse?<br />
+                    TODO: AUTOMATIC DETECTION OF COLUM NAMES
+                    <input id="field-column" type="text" name="column" value="name" placeholder="name" />
+                </p>
+                <h2>Comparison Algorithm</h2>
+                <p class="copy p-bottom">
+                    Which algorithm should we use to compare the strings?<br />
+                    <span class="small">An explanation of the methods can be found below.</span><br />
+                    <select id="field-method" name="method">
+                        <option value="fingerprint">Fingerprint</option>
+                        <option value="knn" selected="selected">KNN</option>
+                    </select>
+                </p>
+                <p id="extra-fingerprint" class="copy p-bottom">
+                    Additional parameters for the Fingerprint-Algorithm:<br />
+                    <span class="small">Type of Fingerprinting:</span><br />
+                    <select id="field-finger_type" name="method">
+                        <option value="normal" selected="selected">Normal</option>
+                        <option value="phonetic">Phonetic</option>
+                    </select><br />
+                    <span class="small">Language:</span><br />
+                    <select id="field-finger_lang" name="method">
+                        <option value="german" selected="selected">German</option>
+                        <option value="other">Other (preferably English)</option>
+                    </select><br />
+                    <span class="small">Should the words be stemmed:</span><br />
+                    <select id="field-finger_stemming" name="method">
+                        <option value="false" selected="selected">No</option>
+                        <option value="true">Yes</option>
+                    </select>
+                </p>
+                <p id="extra-knn" class="copy p-bottom">
+                    Additional parameters for the KNN-Algorithm:<br />
+                    <span class="small">Minimum number of characters to be the same in both strings:</span><br />
+                    <input id="field-ngram_size" type="text" name="ngram_size" value="2" placeholder="2" /><br />
+                    <span class="small">Maximum difference in percentage:</span><br />
+                    <input id="field-limit" type="text" name="limit" value="40" placeholder="40" />
+                </p>
+                <p class="copy">
+                    <input id="btn-analyse" class="btn" type="button" value="Vergleich durchführen">
+                </p>
+            </div>
+
+            <div class="container p-bottom">
+                <h2>Cleaning-Template</h2>
+                <p class="copy p-bottom">
+                    Based on the information provided above the following field holds a list of string comparison results. If a group consists of only one item with "ok":2, then there was no similar item found. Otherwise, there should be multiple items per group, all besides one should have "ok":1, which means that in the next step every item with a string in the "ok":1 group, will be replaced by the "ok":2 string. You are free to modify which item should receive the "2".<br />
+                    <span class="small">Depending on the size of your input data set, this might take a while.</span>
+                </p>
+                <textarea name="template" id="field-template"></textarea>
+                <p class="copy p-top">
+                    <input type="button" id="btn-clean" class="btn" value="CSV korrigieren">
+                </p>
+            </div>
+
+            <div class="container p-bottom">
+                <h2>Output Data</h2>
+                <p class="copy p-bottom">
+                    The following text field holds your cleaned data.<br />
+                    <span class="small">Depending on input size, this might take a while.</span>
+                </p>
+                <textarea id="clean-csv"></textarea>
+            </div>
+
+            <div class="container p-bottom">
+                <h2 class="p-bottom">How does this work?</h2>
+                <h2>Fingerprint</h2>
+                <p class="copy p-bottom">
+                    Die grundsätzliche Idee des Fingerprinting ist es einen Text auf seine essentiellen Bestandteile zu reduzieren und dadurch einen essentiellen Fingerabdruck zu generieren. Dieser Fingerabdruck wird dann mit anderen verglichen um gleiche Text zu identifizieren.
+                </p>
+                <h3>Normales Fingerprinting</h3>
+                <p class="copy">
+                    Um dies anzuwenden gibt es zwei Möglichkeit. In der normalen Variante werden folgende Schritte angewandt:
+                </p>
+                <ul class="p-bottom">
+                    <li>Leerzeichen am Anfang und Ende werden entfernt.</li>
+                    <li>Umwandlung in Kleinbuchstaben.</li>
+                    <li>Entfernen von Punktation und Leerzeichen.</li>
+                    <li>Umwandeln von Sonderzeichen (e.g. ä > ae).</li>
+                    <li>Entfernen von unsichtbaren Zeichen.</li>
                 </ul>
-                <ol class="p-top p-bottom">
-                    <li>Und eine mit Zahlen</li>
-                </ol>
-                <p class="copy">Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
-            </div>
+                <p class="copy">So wird dann z.B. aus</p>
+                <pre><code>
+                    'Grips'-Theater gemeinnützige Gesellschaft
+                    gripstheatergemeinnuetzigegesellschaft
+                </code></pre>
+                <p class="copy p-top">Dies bedeutet, dass alle folgenden Varianten zum selben Fingerabdruck werden:</p>
+                <pre><code>
+                    'Grips'-Theater gemeinnützige Gesellschaft
+                    Grips-Theater gemeinnützige Gesellschaft
+                     Grips Theater gemeinnützige Gesellschaft
+                    Grips Theater gemeinnützigeGesellschaft
 
-            <div class="container small p-bottom">
-                <img class="responsive" src="images/mindcraft.jpg" alt="Berlin in Mindcraft" />
-                <p class="caption">Berlin in Mindcraft, Technologiestiftung Berlin 2017</p>
-            </div>
+                    gripstheatergemeinnuetzigegesellschaft
+                </code></pre>
+                <p class="copy p-top p-bottom">Dieses Verfahren ist sehr schnell, kann aber Probleme wie komplexere Tippfehler häufig nicht erkennen.</p>
+                <h3>Phonetisches Fingerprinting</h3>
+                <p class="copy p-bottom">
+                    Beim phonetischen Fingerabdruck werden Textelemente erst in ihre phonetischen Marker übersetzt. Hierdurch können häufig kleine Schreibfehler, weil z.B. jemand nach Gehör geschrieben hat erkannt werden.<br /><br />
+                    So haben folgende Schreibweisen die selben phonetischen Marker:
+                </p>
+                <pre><code>
+                    Sebastian
+                    Sebästian
+                    Sebastien
 
-            <div class="container small embed">
-                <iframe width="854" height="480" src="https://www.youtube.com/embed/T4tYKGnm2ZI" frameborder="0" allowfullscreen></iframe>
-            </div>
+                    81826
+                </code></pre>
+                <p class="copy p-top p-bottom">
+                    Um die Umwandlung vorzunehmen wurden in unserem Modul zwei Bibliotheken integriert: für deutsch die cologne-Sammlung und für andere Sprachen die metaphone-Sammlung.
+                </p>
+                <h2>KNN / Neighbor</h2>
+                <p class="copy p-bottom">
+                    Die Nachbarschaftsmethode ist wesentlich komplexer und damit auch rechenintensiver, dafür aber auch genauer. Die Grundlage ist ein direkter Vergleich zweier Texte, bei dem die Distanz zwischen den Texten berechnet wird, genauer gesagt, die Levenshtein-Distanz. Diese beschreibt die Anzahl an Veränderungen am ersten Text (Löschen, Hinzufügen und Ersetzen von Zeichen), die notwendig sind um den anderen Text zu generieren. Um nicht jeden Text mit jedem anderen Text vergleichen zu müssen, wird vorher überprüft welche Texte überhaupt ähnliche Elemente enthalten. Hierzu wird der Text in kleine Bausteine aufgebrochen und diese werden miteinander verglichen. Umso länger die Bausteine umso schneller und umso kürzer die Bausteine umso genauer (Standardwert: 6).<br /><br />
+                    Folgend ein Beispiel für die Aufteilung eines Textes in 6er Zeichenketten:
+                </p>
+                <pre><code>
+                    Technologie
+                    Techno
+                     echnol
+                      chnolo
+                       hnolog
+                        nologi
+                         ologie
 
-            <div class="container">
-                <pre><code class="language-css">p { color: red; }</code></pre>
-            </div>
+                    Technik
+                    Techni
+                     echnik
 
-            <div class="container small">
-                <pre><code class="language-css">p { color: red; }</code></pre>
-            </div>
+                    Technische
+                    Techni
+                     echnis
+                      chnisc
+                       hnisch
+                        nische
 
-            <div class="container small">
-                <ul class="gallery lghtbx">
-                    <li><a title="Image Title 1" href="images/mindcraft.jpg"><img src="images/mindcraft_thumb.jpg" alt="Thumbnail 1" /></a></li>
-                    <li><a title="Image Title 2" href="images/mindcraft.jpg"><img src="images/mindcraft_thumb.jpg" alt="Thumbnail 2" /></a></li>
-                    <li><a title="Image Title 3" href="images/mindcraft.jpg"><img src="images/mindcraft_thumb.jpg" alt="Thumbnail 3" /></a></li>
-                    <li><a title="Image Title 4" href="images/mindcraft.jpg"><img src="images/mindcraft_thumb.jpg" alt="Thumbnail 4" /></a></li>
-                    <li><a title="Image Title 5" href="images/mindcraft.jpg"><img src="images/mindcraft_thumb.jpg" alt="Thumbnail 5" /></a></li>
-                </ul>
-            </div>
-
-            <div class="container small center">
-                <a class="lghtbx" title="Image Title 5" href="images/mindcraft.jpg"><img src="images/mindcraft_thumb.jpg" alt="Thumbnail 5" /></a>
-            </div>
-
-            <div class="container p-top">
-                <ul class="download-list">
-                    <li>
-                        <a href="#">
-                            <span class="download-icon"></span>
-                            <span class="download-title">Datei XY Integer tincidunt. Cras dapibus. Vivamus elementum.</span><br />
-                            <span class="download-subtitle">20 MB, 10/2017</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="download-icon"></span>
-                            <span class="download-title">Datei XY</span><br />
-                            <span class="download-subtitle">20 MB, 10/2017</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="download-icon"></span>
-                            <span class="download-title">Datei XY</span><br />
-                            <span class="download-subtitle">20 MB, 10/2017</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="download-icon"></span>
-                            <span class="download-title">Datei XY</span><br />
-                            <span class="download-subtitle">20 MB, 10/2017</span>
-                        </a>
-                    </li>
-                </ul>
+                </code></pre>
+                <p class="copy p-bottom p-top">
+                    Im obrigen Beispiel würden Technik und Technische den gemeinsamen Baustein "Techni" haben.<br /><br />
+                    Bei den Texten die eine Ähnlichkeit aufweisen, wird dann die konkrete Distanz berechnet. Hier sind ein paar Beispiele und die entsprechenden Distanzen:
+                </p>
+                <pre><code>
+                    Technik &lt;&gt; Technische = 4
+                    Berlin &lt;&gt; Bern = 2
+                    Senat &lt;&gt; Stern = 4
+                </code></pre>
+                <p class="copy p-bottom p-top">
+                    Für die Bewertung der Levenshteinschen Distanz (LD) setzen wir auf das Verhältnis zur Textlänge. Ein sehr langer Text der eine LD von 2 hat ist möglicherweise derselbe, ein Wort von nur 5 Zeichen mit einer LD von 2 ist mit einer geringeren Wahrscheinlichkeit derselbe.
+                </p>
+                <p class="copy p-bottom p-top">
+                    Die hier eingesetzten Methoden haben wir uns nicht ausgedacht, sondern sind gängige Methoden um solche Problem zu lösen. Inspiriert wurde unser Vorgehen von den Funktionalitäten der quelloffenen <a href="https://github.com/OpenRefine/OpenRefine">Open Refine</a> Anwendung, eine Desktop-Anwendung die sich bestens eignet um Datensätze zu säubern.
+                </p>
             </div>
 
             <div class="container center">
-                <a id="github" href="https://github.com/technologiestiftung/{{GITHUB_URL_EN}}">
+                <a id="github" href="https://github.com/technologiestiftung/csv-string-optimization">
                     <img src="../../images/github.svg" alt="Project on Github" />
-                    <span class="github-title">{{PROJECT}}</span><br />
-                    <span class="github-subline">Visit Project on GitHub</span>
+                    <span class="github-title">csv-string-optimization</span><br />
+                    <span class="github-subline">Projekt auf GitHub</span>
                     <hr class="clear" />
                 </a>
             </div>
@@ -234,10 +362,126 @@
         <script src="../../js/prism/prism.js"></script>
         <script type="text/javascript" src="../../js/min/script.min.js"></script>
         <!-- Add your custom JS files here and place them directly in your project folder -->
-        <script type="text/javascript">
-            /*
-                Init Custom Code hier
-            */
+       <script type="text/javascript">
+            
+            /*Drag'n'Drop*/
+            if (typeof window.FileReader !== 'undefined') {
+                var csvHolder = document.getElementById('field-csv'),
+                    templateHolder = document.getElementById('field-template');
+
+                buildHolder(csvHolder);
+                buildHolder(templateHolder);
+            }
+
+            function buildHolder(holder){
+                holder.ondrop = function(e) {
+                    e.preventDefault();
+
+                    var file = e.dataTransfer.files[0],
+                        reader = new FileReader();
+
+                    reader.onload = function(event) {
+                        holder.innerText = event.target.result;
+                    };
+
+                    reader.readAsText(file);
+                    return false;
+                };
+            }
+
+            var analyse_state = false;
+
+            d3.select('#field-method').on('change', function(){
+                d3.selectAll('#extra-knn, #extra-fingerprint').style('display','none');
+                d3.select('#extra-'+d3.select('#field-method').node().value).style('display','block');
+            });
+
+            d3.selectAll('.btn').on('click', function(){
+                if(!analyse_state){
+                    analyse_state = true;
+
+                    var values = [
+                            ['template',true],
+                            ['delimiter',true],
+                            ['column',true],
+                            ['method',false],
+                            ['csv',false],
+                            ['finger_stemming',false],
+                            ['finger_lang',false],
+                            ['finger_type',false],
+                            ['ngram_size',false],
+                            ['limit',false]
+                        ],
+                        request = '';
+
+                    values.forEach(function(d,i){
+                        var o = d3.select('#field-'+d[0]);
+                        if(i>0){
+                            request += '&';
+                        }
+                        request += d[0] + '=' + encodeURIComponent(((d[1])?o.property('value'):o.node().value));
+                    });
+
+                    var type = (d3.select(this).property('id').split('-'))[1];
+
+                    d3.request("https://tsb.ara.uberspace.de/csvopti/"+type)
+                        .header("X-Requested-With", "XMLHttpRequest")
+                        .header("Content-Type", "application/x-www-form-urlencoded")
+                        .post(request, function(err, data){
+                            if(err){
+                                console.log('err',err);
+                                console.log(err.target.response);
+                            }
+
+                            var template = (JSON.parse(data.response)).data;
+
+                            if(type === 'analyse'){
+
+                                var template_str = '[\n';
+
+                                template.forEach(function(d,i){
+                                    template_str += '    [\n';
+                                    d.forEach(function(dd,ii){
+                                        template_str += '        '+JSON.stringify(dd);
+                                        template_str += ((ii<d.length-1)?',':'') +'\n';
+                                    });
+                                    template_str += '    ]'+ ((i<template.length-1)?',':'') +'\n';
+                                });
+
+                                template_str += ']';
+
+                                d3.select('#field-template').node().value = template_str;
+
+                            }else{
+
+                                var csv_str = '', keys = [];
+
+                                for(var key in template[0]){
+                                    if(csv_str !== ''){ csv_str += ','; }
+                                    csv_str += '"'+key+'"';
+                                    keys.push(key);
+                                }
+                                csv_str += '\n';
+
+                                template.forEach(function(d,i){
+                                    keys.forEach(function(k,ki){
+                                        csv_str += '"'+d[k]+'"';
+                                        if(ki<keys.length-1){
+                                            csv_str += ',';
+                                        }
+                                    });
+                                    csv_str += '\n';
+                                });
+
+                                d3.select('#clean-csv').node().value = csv_str;
+
+                            }
+
+                            analyse_state = false;
+                        });
+                }
+            });
+
         </script>
 <!-- Piwik -->
 <script type="text/javascript">

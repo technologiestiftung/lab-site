@@ -130,7 +130,7 @@
 
             <div class="container p-bottom">
                 <p class="copy">
-                    Nicht jeder Datensatz ist so sauber und aufgeräumt wie man es sich wünscht. Deshalb arbeiten wir an einer Sammlung von Werkzeugen um solche Probleme schneller zu lösen. Das erste Tool in unserer Reihe hilft Tippfehler oder falsch geschriebene Namen zu identifizieren und diese zu vereinheitlichen. Hierzu werden die Werte einer Spalte auf textuelle Ähnlichkeit hin überprüft. Du kannst das Werkzeug gleich hier auf der Seite testen oder es dir via <a href="https://www.npmjs.com/package/csv-string-optimization">NPM</a> als Commandline Tool oder Node-Modul für deine Anwendung herunterladen. Eine kurze Erklärung wie das Tool funktioniert findest du am Ende der Seite.
+                    Nicht jeder Datensatz ist so sauber und aufgeräumt wie man es sich wünscht. Deshalb arbeiten wir an einer Sammlung von Werkzeugen um solche Probleme schneller zu lösen. Das erste Tool in unserer Reihe hilft Tippfehler oder falsch geschriebene Namen zu identifizieren und diese zu vereinheitlichen. Hierzu werden die Werte einer Spalte auf textuelle Ähnlichkeit hin überprüft. Du kannst das Werkzeug gleich hier auf der Seite testen oder es dir via <a href="https://www.npmjs.com/package/csv-string-optimization">NPM</a> als Werkzeug auf der Befehlszeile oder Node-Modul für deine Anwendung herunterladen. Eine kurze Erklärung wie das Tool funktioniert findest du am Ende der Seite.
                 </p>
             </div>
 
@@ -156,6 +156,7 @@ id,name
                     Welches Trennzeichen wird in der Datei eingesetzt?<br />
                     <input id="field-delimiter" type="text" name="delimiter" value="," placeholder="," /><br /><br />
                     Welche Spalte soll analysiert werden?<br />
+                    TODO
                     <span class="small">(genaue Bezeichnung wie in der ersten Zeile der CSV)</span><br />
                     <input id="field-column" type="text" name="column" value="name" placeholder="name" />
                 </p>
@@ -201,6 +202,7 @@ id,name
             <div class="container p-bottom">
                 <h2>Korrektur-Template</h2>
                 <p class="copy p-bottom">
+                    TODO: no similar
                     Basierend auf den oben eingegebenen Information wird im folgenden Feld eine Liste zu verbessernder Werte angezeigt. Jede Gruppe hat einen Wert mit "ok":2 und weitere mit "ok":1, ersterer ist das Ziel der Korrektur, ist die nicht korrekt können die Zahlen einfach getauscht werden.<br />
                     <span class="small">Abhängig von der Größe des Ausgangsdatensatzes kann es etwas dauern bis das Template angezeigt wird.</span>
                 </p>
