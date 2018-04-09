@@ -424,7 +424,7 @@ id,name
 
                     var type = (d3.select(this).property('id').split('-'))[1];
 
-                    d3.request("http://tsb.ara.uberspace.de/csvopti/"+type)
+                    d3.request("https://tsb.ara.uberspace.de/csvopti/"+type)
                         .header("X-Requested-With", "XMLHttpRequest")
                         .header("Content-Type", "application/x-www-form-urlencoded")
                         .post(request, function(err, data){
