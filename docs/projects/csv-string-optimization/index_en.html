@@ -130,7 +130,7 @@
 
             <div class="container p-bottom">
                 <p class="copy">
-                    Not every data set is clean and organized. In order to help users deal with such messy data sets, we are building a set of tools to help you deal with such cases. Our first tool helps you remove typos and similar mistakes from a set of strings. In order to do so, we are using two methods to calculate the similarity of a string. You can try our tool directly on this web site or you can use it as a command line tool via <a href="https://www.npmjs.com/package/csv-string-optimization">NPM</a> or of course as a node package, inside your application. A short description of how our tool works is provided at the end of the article.
+                    Not every data set is clean and organized. In order to help users deal with such messy data sets, we are building a set of tools to help us and you deal with such cases. Our first tool helps you remove typos and similar mistakes from a set of strings. We have used this tool in projects where we wanted to group columns by the name of an organization. In order to do so, we are using two methods to calculate the similarity of a string. You can try our tool directly on this web site or you can use it as a command line tool via <a href="https://www.npmjs.com/package/csv-string-optimization">NPM</a> or of course as a node package, inside your application. A short description of how our tool works is provided at the end of the article.
                 </p>
             </div>
 
@@ -268,10 +268,8 @@ id,name
                 </p>
                 <h2>KNN / Neighbour</h2>
                 <p class="copy p-bottom">
-                    The neighbourhood 
-
-                    Die Nachbarschaftsmethode ist wesentlich komplexer und damit auch rechenintensiver, dafür aber auch genauer. Die Grundlage ist ein direkter Vergleich zweier Texte, bei dem die Distanz zwischen den Texten berechnet wird, genauer gesagt, die Levenshtein-Distanz. Diese beschreibt die Anzahl an Veränderungen am ersten Text (Löschen, Hinzufügen und Ersetzen von Zeichen), die notwendig sind um den anderen Text zu generieren. Um nicht jeden Text mit jedem anderen Text vergleichen zu müssen, wird vorher überprüft welche Texte überhaupt ähnliche Elemente enthalten. Hierzu wird der Text in kleine Bausteine aufgebrochen und diese werden miteinander verglichen. Umso länger die Bausteine umso schneller und umso kürzer die Bausteine umso genauer (Standardwert: 6).<br /><br />
-                    Folgend ein Beispiel für die Aufteilung eines Textes in 6er Zeichenketten:
+                    The neighbourhood method is slightly more complex and therefore, on the one hand, requires more resources but, on the other hand, is a lot more precise. The foundation is a direct comparison of two text strings, calculating the distance between two strings using the Levenshtein distance. The latter calculates the number of manipulations required to convert string-1 to string-2 (Delete, Add, Replace). Calculating the distance between all items in a set would take quite a while, depending on the size of the data set, therefore, before calculating the distance, our module checks which strings actually contain corresponding sub-strings. The minimum length of a corresponding sub-string defines how detailed the check is, but also how fast it will be (longer sub-strings lead to fast processing but also less detailed checks; default length: 6).<br /><br />
+                    The following example demonstrates what sub-strings are (length:6):
                 </p>
                 <pre><code>
                     Technologie
@@ -295,8 +293,8 @@ id,name
 
                 </code></pre>
                 <p class="copy p-bottom p-top">
-                    Im obrigen Beispiel würden Technik und Technische den gemeinsamen Baustein "Techni" haben.<br /><br />
-                    Bei den Texten die eine Ähnlichkeit aufweisen, wird dann die konkrete Distanz berechnet. Hier sind ein paar Beispiele und die entsprechenden Distanzen:
+                    In the example above Technik and Technische both share the substring "Techni".<br /><br />
+                    For the strings that share a certain sub-string, the module calculates the exact distance. Following a few examples and their distance:
                 </p>
                 <pre><code>
                     Technik &lt;&gt; Technische = 4
@@ -304,10 +302,10 @@ id,name
                     Senat &lt;&gt; Stern = 4
                 </code></pre>
                 <p class="copy p-bottom p-top">
-                    Für die Bewertung der Levenshteinschen Distanz (LD) setzen wir auf das Verhältnis zur Textlänge. Ein sehr langer Text der eine LD von 2 hat ist möglicherweise derselbe, ein Wort von nur 5 Zeichen mit einer LD von 2 ist mit einer geringeren Wahrscheinlichkeit derselbe.
+                    We are interpreting the Levenshtein distance (LD) relative to the size of the text string itself. While a long string with an LD of two might actually be the same, a short string with LD 2 might not be.
                 </p>
                 <p class="copy p-bottom p-top">
-                    Die hier eingesetzten Methoden haben wir uns nicht ausgedacht, sondern sind gängige Methoden um solche Problem zu lösen. Inspiriert wurde unser Vorgehen von den Funktionalitäten der quelloffenen <a href="https://github.com/OpenRefine/OpenRefine">Open Refine</a> Anwendung, eine Desktop-Anwendung die sich bestens eignet um Datensätze zu säubern.
+                    We did not come up with the methods that we implemented into our tool, they are common methods for solving such problems. Our implementation was strongly inspired by the open source tool <a href="https://github.com/OpenRefine/OpenRefine">Open Refine</a>, which is a desktop application to help users search and clean their data.
                 </p>
             </div>
 
