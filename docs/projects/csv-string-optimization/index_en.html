@@ -223,25 +223,25 @@ id,name
                 <h2 class="p-bottom">How does this work?</h2>
                 <h2>Fingerprint</h2>
                 <p class="copy p-bottom">
-                    Die grundsätzliche Idee des Fingerprinting ist es einen Text auf seine essentiellen Bestandteile zu reduzieren und dadurch einen essentiellen Fingerabdruck zu generieren. Dieser Fingerabdruck wird dann mit anderen verglichen um gleiche Text zu identifizieren.
+                    The fundamental idea behind the fingerprinting approach is to reduce the text string down to its essential components, which then becomes it's fingerprint. The fingerprint is used to compare each string with all other strings and their fingerprints.
                 </p>
-                <h3>Normales Fingerprinting</h3>
+                <h3>Normal Fingerprinting</h3>
                 <p class="copy">
-                    Um dies anzuwenden gibt es zwei Möglichkeit. In der normalen Variante werden folgende Schritte angewandt:
+                    There are two methods for fingerprinting implemented in this tool. The first runs the following processes on the string:
                 </p>
                 <ul class="p-bottom">
-                    <li>Leerzeichen am Anfang und Ende werden entfernt.</li>
-                    <li>Umwandlung in Kleinbuchstaben.</li>
-                    <li>Entfernen von Punktation und Leerzeichen.</li>
-                    <li>Umwandeln von Sonderzeichen (e.g. ä > ae).</li>
-                    <li>Entfernen von unsichtbaren Zeichen.</li>
+                    <li>Remove spaces at the beginning and end of a string.</li>
+                    <li>Convert to lower case characters.</li>
+                    <li>Remove punctuation and spaces.</li>
+                    <li>Convert special characters (e.g. ä > ae).</li>
+                    <li>Remove invisible characters.</li>
                 </ul>
-                <p class="copy">So wird dann z.B. aus</p>
+                <p class="copy">This process, for example, converts:</p>
                 <pre><code>
                     'Grips'-Theater gemeinnützige Gesellschaft
                     gripstheatergemeinnuetzigegesellschaft
                 </code></pre>
-                <p class="copy p-top">Dies bedeutet, dass alle folgenden Varianten zum selben Fingerabdruck werden:</p>
+                <p class="copy p-top">This means that all of the following variations share the same fingerprint:</p>
                 <pre><code>
                     'Grips'-Theater gemeinnützige Gesellschaft
                     Grips-Theater gemeinnützige Gesellschaft
@@ -250,11 +250,11 @@ id,name
 
                     gripstheatergemeinnuetzigegesellschaft
                 </code></pre>
-                <p class="copy p-top p-bottom">Dieses Verfahren ist sehr schnell, kann aber Probleme wie komplexere Tippfehler häufig nicht erkennen.</p>
-                <h3>Phonetisches Fingerprinting</h3>
+                <p class="copy p-top p-bottom">This method is very fast, but in turn is not able to detect more complex typos and problems.</p>
+                <h3>Phonetic Fingerprinting</h3>
                 <p class="copy p-bottom">
-                    Beim phonetischen Fingerabdruck werden Textelemente erst in ihre phonetischen Marker übersetzt. Hierdurch können häufig kleine Schreibfehler, weil z.B. jemand nach Gehör geschrieben hat erkannt werden.<br /><br />
-                    So haben folgende Schreibweisen die selben phonetischen Marker:
+                    The method of phonetic fingerprinting is translating text strings into it's corresponding phonetic markers. Thereby, we can identify some typos and mistakes, for example if people write names by ear.<br /><br />
+                    The following variations all result in the same phonetic markers:
                 </p>
                 <pre><code>
                     Sebastian
@@ -264,10 +264,12 @@ id,name
                     81826
                 </code></pre>
                 <p class="copy p-top p-bottom">
-                    Um die Umwandlung vorzunehmen wurden in unserem Modul zwei Bibliotheken integriert: für deutsch die cologne-Sammlung und für andere Sprachen die metaphone-Sammlung.
+                    In order to convert strings to phonetic markers the module is using two libraries: cologne-framework for German and metaphone for other languages.
                 </p>
-                <h2>KNN / Neighbor</h2>
+                <h2>KNN / Neighbour</h2>
                 <p class="copy p-bottom">
+                    The neighbourhood 
+
                     Die Nachbarschaftsmethode ist wesentlich komplexer und damit auch rechenintensiver, dafür aber auch genauer. Die Grundlage ist ein direkter Vergleich zweier Texte, bei dem die Distanz zwischen den Texten berechnet wird, genauer gesagt, die Levenshtein-Distanz. Diese beschreibt die Anzahl an Veränderungen am ersten Text (Löschen, Hinzufügen und Ersetzen von Zeichen), die notwendig sind um den anderen Text zu generieren. Um nicht jeden Text mit jedem anderen Text vergleichen zu müssen, wird vorher überprüft welche Texte überhaupt ähnliche Elemente enthalten. Hierzu wird der Text in kleine Bausteine aufgebrochen und diese werden miteinander verglichen. Umso länger die Bausteine umso schneller und umso kürzer die Bausteine umso genauer (Standardwert: 6).<br /><br />
                     Folgend ein Beispiel für die Aufteilung eines Textes in 6er Zeichenketten:
                 </p>
