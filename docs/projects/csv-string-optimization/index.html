@@ -140,6 +140,10 @@
                 display: none;
             }
 
+            .btn{
+                outline: none;
+            }
+
         </style>
     </head>
     <body class="project">
@@ -241,9 +245,9 @@ id,name
                 </p>
                 <p id="extra-knn" class="copy p-bottom">
                     Zusatzparameter für den KNN-Algorithmus:<br />
-                    <span class="small">Mindestanzahl an übereinstimmenden Zeichen:</span><br />
+                    <span class="small">Mindestanzahl an übereinstimmenden Zeichen (empfohlen: 6):</span><br />
                     <input id="field-ngram_size" type="text" name="ngram_size" value="2" placeholder="2" /><br />
-                    <span class="small">Maximale Abweichung in Prozent:</span><br />
+                    <span class="small">Maximale Abweichung in Prozent (empfohlen: 10):</span><br />
                     <input id="field-limit" type="text" name="limit" value="40" placeholder="40" />
                 </p>
                 <p class="copy">
@@ -286,19 +290,19 @@ id,name
                 <p class="copy">
                     Um dies anzuwenden gibt es zwei Möglichkeit. In der normalen Variante werden folgende Schritte angewandt:
                 </p>
-                <ul class="p-bottom">
+                <ul class="p-bottom p-top">
                     <li>Leerzeichen am Anfang und Ende werden entfernt.</li>
                     <li>Umwandlung in Kleinbuchstaben.</li>
                     <li>Entfernen von Punktation und Leerzeichen.</li>
                     <li>Umwandeln von Sonderzeichen (e.g. ä > ae).</li>
                     <li>Entfernen von unsichtbaren Zeichen.</li>
                 </ul>
-                <p class="copy">So wird dann z.B. aus</p>
+                <p class="copy p-bottom">So wird dann z.B. aus</p>
                 <pre><code>
                     'Grips'-Theater gemeinnützige Gesellschaft
                     gripstheatergemeinnuetzigegesellschaft
                 </code></pre>
-                <p class="copy p-top">Dies bedeutet, dass alle folgenden Varianten zum selben Fingerabdruck werden:</p>
+                <p class="copy p-bottom p-top">Dies bedeutet, dass alle folgenden Varianten zum selben Fingerabdruck werden:</p>
                 <pre><code>
                     'Grips'-Theater gemeinnützige Gesellschaft
                     Grips-Theater gemeinnützige Gesellschaft
