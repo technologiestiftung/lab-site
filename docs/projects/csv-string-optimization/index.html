@@ -92,6 +92,41 @@
                 display: none;
             }
 
+            #table-container{
+                max-height:300px;
+                overflow:auto;
+                border:1px solid black;
+                margin-bottom:30px;
+            }
+
+            #table-container table{
+                width:100%;
+            }
+
+            #table-container table thead tr th{
+                border-bottom:2px solid black;
+            }
+
+            #table-container table tbody tr{
+                background-color:rgba(0,0,0,0.1);
+            }
+
+            #table-container table tbody{
+                border-top:10px solid #F2F2F2;
+                border-bottom:20px solid #F2F2F2;
+            }
+
+            #table-container table td,
+            #table-container table th{
+                padding:3px 5px;
+                font-size:16px;
+                font-family: Roboto Mono;
+            }
+
+            #table-container table tr td{
+                border-bottom:1px solid black;
+            }
+
         </style>
     </head>
     <body class="project">
@@ -151,14 +186,18 @@ id,name
 108,Brln
 108,"'Berlin'"
 112,Hamburg
+112,Hamburh
                 </textarea>
                 <p class="copy center p-bottom p-top">
+                    <input id="btn-refresh" class="btn" type="button" value="Ausgangsdatensatz aktualisieren"><br /><br />
                     Welches Trennzeichen wird in der Datei eingesetzt?<br />
+                    <span class="small">Dies sollte eigentlich automatisch erkannt werden.</span><br />
                     <input id="field-delimiter" type="text" name="delimiter" value="," placeholder="," /><br /><br />
                     Welche Spalte soll analysiert werden?<br />
-                    TODO
-                    <span class="small">(genaue Bezeichnung wie in der ersten Zeile der CSV)</span><br />
-                    <input id="field-column" type="text" name="column" value="name" placeholder="name" />
+                    <span class="small">Bitte auswählen.</span><br />
+                    <select id="field-column" value="column">
+                        <option value="name">name</option>
+                    </select>
                 </p>
                 <h2>Vergleichs-Algorithmus</h2>
                 <p class="copy p-bottom">
@@ -195,20 +234,22 @@ id,name
                     <input id="field-limit" type="text" name="limit" value="40" placeholder="40" />
                 </p>
                 <p class="copy">
-                    <input id="btn-analyse" class="btn" type="button" value="Vergleich durchführen">
+                    <input id="btn-analyse" class="btn btn-send" type="button" value="Vergleich durchführen">
                 </p>
             </div>
 
             <div class="container p-bottom">
                 <h2>Korrektur-Template</h2>
                 <p class="copy p-bottom">
-                    TODO: no similar
                     Basierend auf den oben eingegebenen Information wird im folgenden Feld eine Liste zu verbessernder Werte angezeigt. Jede Gruppe hat einen Wert mit "ok":2 und weitere mit "ok":1, ersterer ist das Ziel der Korrektur, ist die nicht korrekt können die Zahlen einfach getauscht werden.<br />
                     <span class="small">Abhängig von der Größe des Ausgangsdatensatzes kann es etwas dauern bis das Template angezeigt wird.</span>
                 </p>
+                <div id="table-container">
+                    <table id="table-template"></table>
+                </div>
                 <textarea name="template" id="field-template"></textarea>
                 <p class="copy p-top">
-                    <input type="button" id="btn-clean" class="btn" value="CSV korrigieren">
+                    <input type="button" id="btn-clean" class="btn btn-send" value="CSV korrigieren">
                 </p>
             </div>
 
@@ -360,7 +401,7 @@ id,name
                 </div>
             </div>
         </footer>
-        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="../../js/min/d3.v4.min.js"></script>
         <script src="../../js/prism/prism.js"></script>
         <script type="text/javascript" src="../../js/min/script.min.js"></script>
         <!-- Add your custom JS files here and place them directly in your project folder -->
@@ -393,18 +434,93 @@ id,name
 
             var analyse_state = false;
 
+            d3.select('#field-csv').on('change', function(){
+                refreshCSV();
+            });
+
+            d3.select('#btn-refresh').on('click', function(){
+                refreshCSV();
+            });
+
+            function refreshCSV(){
+                var csv = d3.select('#field-csv').node().value;
+                var delimiters = ['\t',',',';'], found = 0, delimiter = ',';
+                delimiters.forEach(function(d){
+                    var f = numberOfStrs(csv, d);
+                    if(f>found){
+                        found = f;
+                        delimiter = d;
+                    }
+                });
+
+                d3.select('#field-delimiter').property('value', delimiter);
+
+                updateColumns();
+            }
+
+            d3.select('#field-delimiter').on('change', function(){
+                updateColumns();
+            });
+
+            function updateColumns(){
+                var parser = d3.dsvFormat(d3.select('#field-delimiter').property('value'));
+                var csv = parser.parse(d3.select('#field-csv').node().value);
+                
+                d3.selectAll('#field-column option').remove();
+
+                d3.select('#field-column').selectAll('option').data(csv.columns).enter().append('option')
+                    .attr('value', function(d){
+                        return d;
+                    })
+                    .text(function(d){
+                        return d;
+                    });
+                
+            }
+
+            function numberOfStrs(str, stringsearch) {
+                for(var i=count=0; i<str.length; count+=+(stringsearch===str[i++]));
+                return count;
+            }
+
+            function tableHead(sel, type){
+                var tr = sel.append(type).append('tr');
+                tr.append('th').text('Wert');
+                tr.append('th').text('Anzahl');
+                tr.append('th').text('Ersetzen durch');
+            }
+
+            function setTemplateField(template){
+                var template_str = '[\n';
+
+                template.forEach(function(d,i){
+                    template_str += '    [\n';
+                    d.forEach(function(dd,ii){
+                        template_str += '        '+JSON.stringify(dd);
+                        template_str += ((ii<d.length-1)?',':'') +'\n';
+                    });
+                    template_str += '    ]'+ ((i<template.length-1)?',':'') +'\n';
+                });
+
+                template_str += ']';
+
+                d3.select('#field-template').node().value = template_str;
+            }
+
             d3.select('#field-method').on('change', function(){
                 d3.selectAll('#extra-knn, #extra-fingerprint').style('display','none');
                 d3.select('#extra-'+d3.select('#field-method').node().value).style('display','block');
             });
 
-            d3.selectAll('.btn').on('click', function(){
+            var globalTemplate = '';
+
+            d3.selectAll('.btn-send').on('click', function(){
                 if(!analyse_state){
                     analyse_state = true;
 
                     var values = [
                             ['template',true],
-                            ['delimiter',true],
+                            ['delimiter',false],
                             ['column',true],
                             ['method',false],
                             ['csv',false],
@@ -426,6 +542,8 @@ id,name
 
                     var type = (d3.select(this).property('id').split('-'))[1];
 
+                    //https://tsb.ara.uberspace.de/csvopti
+                    //http://localhost:2307
                     d3.request("https://tsb.ara.uberspace.de/csvopti/"+type)
                         .header("X-Requested-With", "XMLHttpRequest")
                         .header("Content-Type", "application/x-www-form-urlencoded")
@@ -439,21 +557,57 @@ id,name
 
                             if(type === 'analyse'){
 
-                                var template_str = '[\n';
+                                globalTemplate = template;
+                                setTemplateField(template);
 
-                                template.forEach(function(d,i){
-                                    template_str += '    [\n';
-                                    d.forEach(function(dd,ii){
-                                        template_str += '        '+JSON.stringify(dd);
-                                        template_str += ((ii<d.length-1)?',':'') +'\n';
+                                var table = d3.select('#table-template');
+                                table.selectAll('*').remove();
+                                tableHead(table, 'thead');
+
+                                var cleanTemplate = template.filter(function(d){ if(d.length>=2){ return true; } return false; });
+
+                                if(cleanTemplate.length > 0){
+
+                                    template.forEach(function(t,ti){
+                                        if(t.length > 1){
+
+                                            var tbody = table.append('tbody');
+
+                                            var tr = tbody.selectAll('tr').data(t).enter().append('tr');
+
+                                                tr.append('td').text(function(d, i){ return d.label; });
+                                                tr.append('td').text(function(d, i){ return d.c; });
+                                                tr.append('td').append('input') 
+                                                    .attr('name','group_'+ti)
+                                                    .attr('type', 'radio')
+                                                    .attr('data-group_id',ti)
+                                                    .attr('data-item_id', function(d,i){
+                                                        return i;
+                                                    })
+                                                    .attr('checked', function(d,i){
+                                                        return (d.ok === 2)?'checked':null;
+                                                    })
+                                                    .on('change', function(){
+                                                        var t = d3.select(this),
+                                                            g_id = t.attr('data-group_id'),
+                                                            i_id = t.attr('data-item_id');
+
+                                                        globalTemplate[g_id].forEach(function(g,i){
+                                                            globalTemplate[g_id][i].ok = 1;
+                                                        });
+                                                        globalTemplate[g_id][i_id].ok = 2;
+
+                                                        setTemplateField(globalTemplate);
+                                                    });
+
+                                        }
                                     });
-                                    template_str += '    ]'+ ((i<template.length-1)?',':'') +'\n';
-                                });
+                                }else{
 
-                                template_str += ']';
+                                    table.append('tbody').append('tr').append('td').attr('colspan',3).text('Es wurden keine ähnlichen Texte gefunden.');
+                                }
 
-                                d3.select('#field-template').node().value = template_str;
-
+                                //tableHead(table, 'tfoot');
                             }else{
 
                                 var csv_str = '', keys = [];
