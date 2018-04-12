@@ -93,10 +93,9 @@
             }
 
             #table-container{
-                max-height:300px;
+                height:300px;
                 overflow:auto;
                 border:1px solid black;
-                margin-bottom:30px;
             }
 
             #table-container table{
@@ -127,6 +126,20 @@
                 border-bottom:1px solid black;
             }
 
+            .remove-link{
+                font-weight: bold;
+                color:rgba(0,0,0,0.2);
+            }
+
+            .remove-link:hover{
+                color:#1e3791;
+                cursor: pointer;
+            }
+
+            #field-template{
+                display: none;
+            }
+
         </style>
     </head>
     <body class="project">
@@ -155,7 +168,7 @@
         <main>
             <div id="title">
                 <div class="container">
-                    <span class="button tag">Werkzeug</span>
+                    <span class="button tag" onclick="test()">Werkzeug</span>
                     <h1>CSV-Tool: Ähnliche Texte</h1>
                     <span class="title-subline">Sebastian Meier (<a href="https://twitter.com/seb_meier">@seb_meier</a>) | 06/04/2018</span>
                 </div>
@@ -189,7 +202,7 @@ id,name
 112,Hamburh
                 </textarea>
                 <p class="copy center p-bottom p-top">
-                    <input id="btn-refresh" class="btn" type="button" value="Ausgangsdatensatz aktualisieren"><br /><br />
+                    <input id="btn-refresh" class="btn" type="button" value="Ausgangsdatensatz importieren"><br /><br />
                     Welches Trennzeichen wird in der Datei eingesetzt?<br />
                     <span class="small">Dies sollte eigentlich automatisch erkannt werden.</span><br />
                     <input id="field-delimiter" type="text" name="delimiter" value="," placeholder="," /><br /><br />
@@ -249,6 +262,7 @@ id,name
                 </div>
                 <textarea name="template" id="field-template"></textarea>
                 <p class="copy p-top">
+                    <input type="button" id="btn-toggle" class="btn" value="Template-JSON anzeigen"><br /><br />
                     <input type="button" id="btn-clean" class="btn btn-send" value="CSV korrigieren">
                 </p>
             </div>
@@ -406,7 +420,22 @@ id,name
         <script type="text/javascript" src="../../js/min/script.min.js"></script>
         <!-- Add your custom JS files here and place them directly in your project folder -->
         <script type="text/javascript">
-            
+
+            var toggleState = false;
+            d3.select('#btn-toggle').on('click', function(){
+                if(!toggleState){
+                    toggleState = true;
+                    d3.select('#field-template').style('display','block');
+                    d3.select('#table-container').style('display','none');
+                    d3.select(this).property('value', 'Zurück zum Korrektur-Interface')
+                }else{
+                    toggleState = false;
+                    d3.select('#field-template').style('display','none');
+                    d3.select('#table-container').style('display','block');
+                    d3.select(this).property('value', 'Korrektur-Template anzeigen')
+                }
+            });
+
             /*Drag'n'Drop*/
             if (typeof window.FileReader !== 'undefined') {
                 var csvHolder = document.getElementById('field-csv'),
@@ -440,6 +469,11 @@ id,name
 
             d3.select('#btn-refresh').on('click', function(){
                 refreshCSV();
+            });
+
+            d3.select('#field-template').on('change', function(){
+                globalTemplate = JSON.parse(d3.select(this).node().value);
+                setTemplateField(globalTemplate, true);
             });
 
             function refreshCSV(){
@@ -488,9 +522,10 @@ id,name
                 tr.append('th').text('Wert');
                 tr.append('th').text('Anzahl');
                 tr.append('th').text('Ersetzen durch');
+                tr.append('th').text('Gehört nicht zur Gruppe');
             }
 
-            function setTemplateField(template){
+            function setTemplateField(template, updateTable){
                 var template_str = '[\n';
 
                 template.forEach(function(d,i){
@@ -505,6 +540,76 @@ id,name
                 template_str += ']';
 
                 d3.select('#field-template').node().value = template_str;
+
+                if(updateTable){
+                    buildTable(template);
+                }
+            }
+
+            function buildTable(template){
+                var table = d3.select('#table-template');
+                table.selectAll('*').remove();
+                tableHead(table, 'thead');
+
+                var cleanTemplate = template.filter(function(d){ if(d.length>=2){ return true; } return false; });
+
+                if(cleanTemplate.length > 0){
+
+                    template.forEach(function(t,ti){
+                        if(t.length > 1){
+
+                            var tbody = table.append('tbody');
+
+                            var tr = tbody.selectAll('tr').data(t).enter().append('tr').attr('id', 'group_'+ti);
+
+                                tr.append('td').text(function(d, i){ return d.label; });
+                                tr.append('td').text(function(d, i){ return d.c; });
+                                tr.append('td').append('input') 
+                                    .attr('name','group_'+ti)
+                                    .attr('type', 'radio')
+                                    .attr('data-group_id',ti)
+                                    .attr('data-item_id', function(d,i){
+                                        return i;
+                                    })
+                                    .attr('checked', function(d,i){
+                                        return (d.ok === 2)?'checked':null;
+                                    })
+                                    .on('change', function(){
+                                        var t = d3.select(this),
+                                            g_id = t.attr('data-group_id'),
+                                            i_id = t.attr('data-item_id');
+
+                                        globalTemplate[g_id].forEach(function(g,i){
+                                            globalTemplate[g_id][i].ok = 1;
+                                        });
+                                        globalTemplate[g_id][i_id].ok = 2;
+
+                                        setTemplateField(globalTemplate, false);
+                                    });
+
+                                tr.append('td').attr('class','remove-link').text('x')
+                                    .attr('data-group_id',ti)
+                                    .attr('data-item_id', function(d,i){
+                                        return i;
+                                    }).on('click', function(){
+                                        var t = d3.select(this),
+                                            g_id = t.attr('data-group_id'),
+                                            i_id = t.attr('data-item_id');
+
+                                        globalTemplate.push([globalTemplate[g_id][i_id]]);
+
+                                        globalTemplate[g_id].splice(i_id, 1);
+
+                                        setTemplateField(globalTemplate, true);
+                                    });
+                        }
+                    });
+                }else{
+
+                    table.append('tbody').append('tr').append('td').attr('colspan',3).text('Es wurden keine ähnlichen Texte gefunden.');
+                }
+
+                //tableHead(table, 'tfoot');
             }
 
             d3.select('#field-method').on('change', function(){
@@ -558,56 +663,8 @@ id,name
                             if(type === 'analyse'){
 
                                 globalTemplate = template;
-                                setTemplateField(template);
+                                setTemplateField(template, true);
 
-                                var table = d3.select('#table-template');
-                                table.selectAll('*').remove();
-                                tableHead(table, 'thead');
-
-                                var cleanTemplate = template.filter(function(d){ if(d.length>=2){ return true; } return false; });
-
-                                if(cleanTemplate.length > 0){
-
-                                    template.forEach(function(t,ti){
-                                        if(t.length > 1){
-
-                                            var tbody = table.append('tbody');
-
-                                            var tr = tbody.selectAll('tr').data(t).enter().append('tr');
-
-                                                tr.append('td').text(function(d, i){ return d.label; });
-                                                tr.append('td').text(function(d, i){ return d.c; });
-                                                tr.append('td').append('input') 
-                                                    .attr('name','group_'+ti)
-                                                    .attr('type', 'radio')
-                                                    .attr('data-group_id',ti)
-                                                    .attr('data-item_id', function(d,i){
-                                                        return i;
-                                                    })
-                                                    .attr('checked', function(d,i){
-                                                        return (d.ok === 2)?'checked':null;
-                                                    })
-                                                    .on('change', function(){
-                                                        var t = d3.select(this),
-                                                            g_id = t.attr('data-group_id'),
-                                                            i_id = t.attr('data-item_id');
-
-                                                        globalTemplate[g_id].forEach(function(g,i){
-                                                            globalTemplate[g_id][i].ok = 1;
-                                                        });
-                                                        globalTemplate[g_id][i_id].ok = 2;
-
-                                                        setTemplateField(globalTemplate);
-                                                    });
-
-                                        }
-                                    });
-                                }else{
-
-                                    table.append('tbody').append('tr').append('td').attr('colspan',3).text('Es wurden keine ähnlichen Texte gefunden.');
-                                }
-
-                                //tableHead(table, 'tfoot');
                             }else{
 
                                 var csv_str = '', keys = [];
