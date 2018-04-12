@@ -92,6 +92,58 @@
                 display: none;
             }
 
+            #table-container{
+                height:300px;
+                overflow:auto;
+                border:1px solid black;
+            }
+
+            #table-container table{
+                width:100%;
+            }
+
+            #table-container table thead tr th{
+                border-bottom:2px solid black;
+            }
+
+            #table-container table tbody tr{
+                background-color:rgba(0,0,0,0.1);
+            }
+
+            #table-container table tbody{
+                border-top:10px solid #F2F2F2;
+                border-bottom:20px solid #F2F2F2;
+            }
+
+            #table-container table td,
+            #table-container table th{
+                padding:3px 5px;
+                font-size:16px;
+                font-family: Roboto Mono;
+            }
+
+            #table-container table tr td{
+                border-bottom:1px solid black;
+            }
+
+            .remove-link{
+                font-weight: bold;
+                color:rgba(0,0,0,0.2);
+            }
+
+            .remove-link:hover{
+                color:#1e3791;
+                cursor: pointer;
+            }
+
+            #field-template{
+                display: none;
+            }
+
+            .btn{
+                outline: none;
+            }
+
         </style>
     </head>
     <body class="project">
@@ -138,7 +190,7 @@
                 <h2>Input</h2>
                 <p class="copy p-bottom">
                     Paste the content of a CSV file into the text field below or drag'n'drop a CSV file onto the text field. The first row needs to contain the column names.<br />
-                    <span class="small">Please note, that the content to be processed should not be to large, in order to maintain a responsive interaction with the system (&lt;2MB).</span>
+                    <span class="small">In order to maintain a responsive interaction with the system don't use the web interface for large CSVs (&lt;2MB).</span>
                 </p>
                 <textarea id="field-csv" name="csv">
 id,name
@@ -151,13 +203,18 @@ id,name
 108,Brln
 108,"'Berlin'"
 112,Hamburg
+112,Hamburh
                 </textarea>
                 <p class="copy center p-bottom p-top">
+                    <input id="btn-refresh" class="btn" type="button" value="Import Input Data"><br /><br />
                     What delimiter is used in the CSV?<br />
+                    <span class="small">This should be detected automatically.</span><br />
                     <input id="field-delimiter" type="text" name="delimiter" value="," placeholder="," /><br /><br />
                     Which column should we analyse?<br />
-                    TODO: AUTOMATIC DETECTION OF COLUM NAMES
-                    <input id="field-column" type="text" name="column" value="name" placeholder="name" />
+                    <span class="small">Please choose.</span><br />
+                    <select id="field-column" value="column">
+                        <option value="name">name</option>
+                    </select>
                 </p>
                 <h2>Comparison Algorithm</h2>
                 <p class="copy p-bottom">
@@ -188,13 +245,13 @@ id,name
                 </p>
                 <p id="extra-knn" class="copy p-bottom">
                     Additional parameters for the KNN-Algorithm:<br />
-                    <span class="small">Minimum number of characters to be the same in both strings:</span><br />
+                    <span class="small">Minimum number of characters to be the same in both strings (recommended: 6):</span><br />
                     <input id="field-ngram_size" type="text" name="ngram_size" value="2" placeholder="2" /><br />
-                    <span class="small">Maximum difference in percentage:</span><br />
+                    <span class="small">Maximum difference in percentage (recommended: 10):</span><br />
                     <input id="field-limit" type="text" name="limit" value="40" placeholder="40" />
                 </p>
                 <p class="copy">
-                    <input id="btn-analyse" class="btn" type="button" value="Vergleich durchführen">
+                    <input id="btn-analyse" class="btn btn-send" type="button" value="Vergleich durchführen">
                 </p>
             </div>
 
@@ -204,9 +261,13 @@ id,name
                     Based on the information provided above the following field holds a list of string comparison results. If a group consists of only one item with "ok":2, then there was no similar item found. Otherwise, there should be multiple items per group, all besides one should have "ok":1, which means that in the next step every item with a string in the "ok":1 group, will be replaced by the "ok":2 string. You are free to modify which item should receive the "2".<br />
                     <span class="small">Depending on the size of your input data set, this might take a while.</span>
                 </p>
+                <div id="table-container">
+                    <table id="table-template"></table>
+                </div>
                 <textarea name="template" id="field-template"></textarea>
                 <p class="copy p-top">
-                    <input type="button" id="btn-clean" class="btn" value="CSV korrigieren">
+                    <input type="button" id="btn-toggle" class="btn" value="Show Template-JSON"><br /><br />
+                    <input type="button" id="btn-clean" class="btn btn-send" value="Clean CSV">
                 </p>
             </div>
 
@@ -364,6 +425,21 @@ id,name
         <!-- Add your custom JS files here and place them directly in your project folder -->
        <script type="text/javascript">
             
+            var toggleState = false;
+            d3.select('#btn-toggle').on('click', function(){
+                if(!toggleState){
+                    toggleState = true;
+                    d3.select('#field-template').style('display','block');
+                    d3.select('#table-container').style('display','none');
+                    d3.select(this).property('value', 'Back to the cleaning interface')
+                }else{
+                    toggleState = false;
+                    d3.select('#field-template').style('display','none');
+                    d3.select('#table-container').style('display','block');
+                    d3.select(this).property('value', 'Show Template-JSON')
+                }
+            });
+
             /*Drag'n'Drop*/
             if (typeof window.FileReader !== 'undefined') {
                 var csvHolder = document.getElementById('field-csv'),
@@ -391,18 +467,169 @@ id,name
 
             var analyse_state = false;
 
+            d3.select('#field-csv').on('change', function(){
+                refreshCSV();
+            });
+
+            d3.select('#btn-refresh').on('click', function(){
+                refreshCSV();
+            });
+
+            d3.select('#field-template').on('change', function(){
+                globalTemplate = JSON.parse(d3.select(this).node().value);
+                setTemplateField(globalTemplate, true);
+            });
+
+            function refreshCSV(){
+                var csv = d3.select('#field-csv').node().value;
+                var delimiters = ['\t',',',';'], found = 0, delimiter = ',';
+                delimiters.forEach(function(d){
+                    var f = numberOfStrs(csv, d);
+                    if(f>found){
+                        found = f;
+                        delimiter = d;
+                    }
+                });
+
+                d3.select('#field-delimiter').property('value', delimiter);
+
+                updateColumns();
+            }
+
+            d3.select('#field-delimiter').on('change', function(){
+                updateColumns();
+            });
+
+            function updateColumns(){
+                var parser = d3.dsvFormat(d3.select('#field-delimiter').property('value'));
+                var csv = parser.parse(d3.select('#field-csv').node().value);
+                
+                d3.selectAll('#field-column option').remove();
+
+                d3.select('#field-column').selectAll('option').data(csv.columns).enter().append('option')
+                    .attr('value', function(d){
+                        return d;
+                    })
+                    .text(function(d){
+                        return d;
+                    });
+                
+            }
+
+            function numberOfStrs(str, stringsearch) {
+                for(var i=count=0; i<str.length; count+=+(stringsearch===str[i++]));
+                return count;
+            }
+
+            function tableHead(sel, type){
+                var tr = sel.append(type).append('tr');
+                tr.append('th').text('String');
+                tr.append('th').text('Count');
+                tr.append('th').text('Replace with');
+                tr.append('th').text('Is not part of the group');
+            }
+
+            function setTemplateField(template, updateTable){
+                var template_str = '[\n';
+
+                template.forEach(function(d,i){
+                    template_str += '    [\n';
+                    d.forEach(function(dd,ii){
+                        template_str += '        '+JSON.stringify(dd);
+                        template_str += ((ii<d.length-1)?',':'') +'\n';
+                    });
+                    template_str += '    ]'+ ((i<template.length-1)?',':'') +'\n';
+                });
+
+                template_str += ']';
+
+                d3.select('#field-template').node().value = template_str;
+
+                if(updateTable){
+                    buildTable(template);
+                }
+            }
+
+            function buildTable(template){
+                var table = d3.select('#table-template');
+                table.selectAll('*').remove();
+                tableHead(table, 'thead');
+
+                var cleanTemplate = template.filter(function(d){ if(d.length>=2){ return true; } return false; });
+
+                if(cleanTemplate.length > 0){
+
+                    template.forEach(function(t,ti){
+                        if(t.length > 1){
+
+                            var tbody = table.append('tbody');
+
+                            var tr = tbody.selectAll('tr').data(t).enter().append('tr').attr('id', 'group_'+ti);
+
+                                tr.append('td').text(function(d, i){ return d.label; });
+                                tr.append('td').text(function(d, i){ return d.c; });
+                                tr.append('td').append('input') 
+                                    .attr('name','group_'+ti)
+                                    .attr('type', 'radio')
+                                    .attr('data-group_id',ti)
+                                    .attr('data-item_id', function(d,i){
+                                        return i;
+                                    })
+                                    .attr('checked', function(d,i){
+                                        return (d.ok === 2)?'checked':null;
+                                    })
+                                    .on('change', function(){
+                                        var t = d3.select(this),
+                                            g_id = t.attr('data-group_id'),
+                                            i_id = t.attr('data-item_id');
+
+                                        globalTemplate[g_id].forEach(function(g,i){
+                                            globalTemplate[g_id][i].ok = 1;
+                                        });
+                                        globalTemplate[g_id][i_id].ok = 2;
+
+                                        setTemplateField(globalTemplate, false);
+                                    });
+
+                                tr.append('td').attr('class','remove-link').text('x')
+                                    .attr('data-group_id',ti)
+                                    .attr('data-item_id', function(d,i){
+                                        return i;
+                                    }).on('click', function(){
+                                        var t = d3.select(this),
+                                            g_id = t.attr('data-group_id'),
+                                            i_id = t.attr('data-item_id');
+
+                                        globalTemplate.push([globalTemplate[g_id][i_id]]);
+
+                                        globalTemplate[g_id].splice(i_id, 1);
+
+                                        setTemplateField(globalTemplate, true);
+                                    });
+                        }
+                    });
+                }else{
+
+                    table.append('tbody').append('tr').append('td').attr('colspan',3).text('No similar text strings were found.');
+                }
+
+                //tableHead(table, 'tfoot');
+            }
+
             d3.select('#field-method').on('change', function(){
                 d3.selectAll('#extra-knn, #extra-fingerprint').style('display','none');
                 d3.select('#extra-'+d3.select('#field-method').node().value).style('display','block');
             });
 
-            d3.selectAll('.btn').on('click', function(){
+            var globalTemplate = '';
+
+            d3.selectAll('.btn-send').on('click', function(){
                 if(!analyse_state){
                     analyse_state = true;
 
                     var values = [
                             ['template',true],
-                            ['delimiter',true],
+                            ['delimiter',false],
                             ['column',true],
                             ['method',false],
                             ['csv',false],
@@ -424,6 +651,8 @@ id,name
 
                     var type = (d3.select(this).property('id').split('-'))[1];
 
+                    //https://tsb.ara.uberspace.de/csvopti
+                    //http://localhost:2307
                     d3.request("https://tsb.ara.uberspace.de/csvopti/"+type)
                         .header("X-Requested-With", "XMLHttpRequest")
                         .header("Content-Type", "application/x-www-form-urlencoded")
@@ -437,20 +666,8 @@ id,name
 
                             if(type === 'analyse'){
 
-                                var template_str = '[\n';
-
-                                template.forEach(function(d,i){
-                                    template_str += '    [\n';
-                                    d.forEach(function(dd,ii){
-                                        template_str += '        '+JSON.stringify(dd);
-                                        template_str += ((ii<d.length-1)?',':'') +'\n';
-                                    });
-                                    template_str += '    ]'+ ((i<template.length-1)?',':'') +'\n';
-                                });
-
-                                template_str += ']';
-
-                                d3.select('#field-template').node().value = template_str;
+                                globalTemplate = template;
+                                setTemplateField(template, true);
 
                             }else{
 
