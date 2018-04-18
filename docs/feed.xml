@@ -12,16 +12,16 @@
 	<atom:link href="http://lab.technologiestiftung-berlin.de/feed.xml" rel="self" type="application/rss+xml" />
 	<link>http://lab.technologiestiftung-berlin.de</link>
 	<description>Wir erforschen und erproben digitale Werkzeuge um gemeinsam mit Bürger*innen, Verwaltung und Unternehmen die Zukunft Berlins zu gestalten.</description>
-	<lastBuildDate>Mon, 19 Mar 2018 17:45:10  +0100</lastBuildDate>
+	<lastBuildDate>Wed, 18 Apr 2018 14:53:36  +0100</lastBuildDate>
 	<language>de-DE</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	
 <item>
-<title><![CDATA[Vorstellung des neuen Teammitglieds: Victoria Dykes]]></title>
+<title><![CDATA[Neu im Team: Victoria Dykes]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/tori-intro/index.html</link>
 <pubDate>Mon, 19 Mar 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[Offene Daten]]></category>
+<category><![CDATA[Offene Daten, News]]></category>
 <description><![CDATA[Victoria Dykes ist das neuste Mitglied des Labs und wird auf Open Data fokussieren..]]></description>
 <content:encoded><![CDATA[Victoria Dykes ist das neuste Mitglied des Labs und wird auf Open Data fokussieren..]]></content:encoded>
 <dc:creator><![CDATA[undefined]]></dc:creator>
@@ -73,17 +73,6 @@
 </item>
 
 <item>
-<title><![CDATA[H3LL0 W0RLD!]]></title>
-<link>http://lab.technologiestiftung-berlin.de/projects/H3LL0W0RLD/index.html</link>
-<pubDate>Tue, 6 Feb 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[News]]></category>
-<description><![CDATA[Herzlich Willkommen beim Ideation & Prototyping Lab der Technologiestiftung Berlin]]></description>
-<content:encoded><![CDATA[Herzlich Willkommen beim Ideation & Prototyping Lab der Technologiestiftung Berlin]]></content:encoded>
-<dc:creator><![CDATA[undefined]]></dc:creator>
-<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/H3LL0W0RLD/index.html</guid>
-</item>
-
-<item>
 <title><![CDATA[Berliner Kitas]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/kitas/index.html</link>
 <pubDate>Mon, 5 Feb 2018 00:00:00  +0100</pubDate>
@@ -114,6 +103,17 @@
 <content:encoded><![CDATA[Sense10 ist ein mobiler Sensor, der es jedem ermöglicht, Luftqualität zu messen und darzustellen. Das Projekt bietet ein detaillierteren Einblick in die Herausforderungen im Umgang mit Luftbelastungen, die Menschen in einer Großstadt täglich ausgesetzt sind. Die Übertragung der Messdaten erfolgt über die LoRa-Technologie, so dass der Sensor keine direkte Internetverbindung benötigt.]]></content:encoded>
 <dc:creator><![CDATA[undefined]]></dc:creator>
 <guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/sense10/index.html</guid>
+</item>
+
+<item>
+<title><![CDATA[H3LL0 W0RLD!]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/H3LL0W0RLD/index.html</link>
+<pubDate>Sun, 1 Oct 2017 00:00:00  +0100</pubDate>
+<category><![CDATA[News]]></category>
+<description><![CDATA[Herzlich Willkommen beim Ideation & Prototyping Lab der Technologiestiftung Berlin]]></description>
+<content:encoded><![CDATA[Herzlich Willkommen beim Ideation & Prototyping Lab der Technologiestiftung Berlin]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/H3LL0W0RLD/index.html</guid>
 </item>
 
 	</channel>
