@@ -80,7 +80,7 @@
             <div id="title">
                 <div class="container">
                     <span class="button tag">OpenData</span>
-                    <h1>Magic Mirror</h1>
+                    <h1>Mirror, Mirror</h1>
                     <span class="title-subline">Benjamin Seibel (<a href="https://twitter.com/bnjmnsbl">@bnjmnsbl</a>) | 12/12/2017</span>
                 </div>
             </div>
@@ -89,7 +89,7 @@
 
            
             <div class="container p-bottom">
-                <p class="copy"><i>Have you ever looked at open data while brushing your teeth? At the lab, we often wonder how public data can be made more accessible. One way to achieve this is through interfaces that take data away from your computer screen and into everyday life – for example into your bathroom mirror.</i></p>
+                <p class="copy"><i>Who</i> hasn't <i>thought about open data while brushing their teeth? At the lab, we often wonder how public data can be made more accessible. One way to achieve this is through interfaces that bring data out of your computer screen and into your everyday life – for example, into your bathroom mirror.</i></p>
             </div>
 
             <div class="container small">
@@ -99,14 +99,14 @@
 
             <div class="container p-top">
                 <p class="copy">
-                 A "Magic Mirror" works by putting a display behind a semi-transparent mirror. The mirror lets through just enough light to hide the display itself, while the information seems to appear almost magically. We had a leftover screen at the foundation and decided to do some upcycling. Here's the recipe: </p>
+                 The idea behind this "Magic Mirror" is to put a display behind a semi-transparent mirror. The mirror lets in just enough light to hide the display itself, while the information on the display seems to appear within the mirror itself – as if by magic. We had a leftover screen at the foundation and decided to do some upcycling. Here's the recipe: </p>
             </div>
             <h2 class="p-top">Ingredients</h2>
              <ul class="p-top p-bottom">
                     <li>picture frame with a plastic or glass front</li>
                     <li>semi-transparent mirror foil</li>
                     <li>an old LCD screen with a wreckable case</li>
-                    <li>Raspberry Pi (we used a Model 3, older versions should work just fine)</li>
+                    <li>Raspberry Pi (we used a Model 3; older versions should work just fine)</li>
                     <li>HDMI cable</li>
                     <li>a bit of styrofoam, black cardboard and black spraypaint</li>
                     <li>An <a href="https://www.amazon.de/dp/B009ZCA27U/ref=asc_df_B009ZCA27U51779609/?tag=googshopde-21&creative=22410&creativeASIN=B009ZCA27U&linkCode=df0&hvadid=256579404646&hvpos=1o4&hvnetw=g&hvrand=9624166486250892299&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9061131&hvtargid=pla-619129793032&th=1&psc=1">easel</a> like you would use for a canvas</li>
@@ -119,7 +119,7 @@
              <h2 class="p-top">Hardware</h2>
             <div class="container p-top p-bottom">
                 <p class="copy">
-                    Hardware-wise, the biggest challenge was putting the foil on the picture frame without creating bubbles. I'm notoriously bad at stuff like this and was quite nervous ("We only got one attempt, guys!"), but Louise and Seb managed to do it masterfully. Meanwhile, I freed the display from it's case with a screwdriver and some raw violence, which felt like just the right task for me. 
+                    Hardware-wise, the biggest challenge was putting the foil on the picture frame without creating bubbles. I'm notoriously bad at stuff like this and was quite nervous ("We only have one attempt, guys!"), but Louise and Seb managed to do it masterfully. Meanwhile, I freed the display from its case with a screwdriver using a delicate mixture of precise techniques and brute force, meaning it was the perfect task for me. 
                 </p>
             </div>
 
@@ -130,7 +130,7 @@
 
              <div class="container p-top">
                 <p class="copy">
-                    We sprayed the styrofoam black and build a passe-partout to fit the display nicely behind in the picture frame. The final construction ended up quite heavy, so we decided against hanging the mirror on the wall and put it on the easel instead. This also makes it quite easy to move the mirror around. 
+                    We spraypainted the styrofoam black and built a passe-partout to fit the display nicely behind in the picture frame. The final construction ended up quite heavy, so we decided against hanging the mirror on the wall and put it on the easel instead. Having it on an easel also makes it quite easy to move the mirror around. 
 
                 </p>
             </div>
@@ -139,7 +139,7 @@
 
             <div class="container p-top p-bottom">
                 <p class="copy">
-                     Software-wise we did take a look at the modular <a href="https://magicmirror.builders/">Magic Mirror-Framework</a> for the Raspberry Pi. A nice open source project from the Netherlands that offers many different modules and even some open data widgets from Berlin, like <a href="https://github.com/deg0nz/MMM-PublicTransportBerlin">this one</a> for public transport timetables. The installation is also really easy. Unfortunately, the framework turned out to be a bit slow for animations – the second hand of our digital clock, for example, was moving quite erratically. 
+                     Software-wise we did take a look at the modular <a href="https://magicmirror.builders/">Magic Mirror-Framework</a> for the Raspberry Pi. This framework is a nice, open source project from the Netherlands that offers many different modules and even some open data widgets from Berlin, like <a href="https://github.com/deg0nz/MMM-PublicTransportBerlin">this one</a> for the public transport timetables. The installation is also fairly easy to complete. Unfortunately, the framework turned out to be a bit slow for animations – the second hand of our digital clock, for example, was moving quite erratically. 
                 </p>
             </div>
 
@@ -151,7 +151,7 @@
            
             <div class="container p-top p-bottom">
                 <p class="copy">
-                     In the end, we decided to go the easy way by just building a regular website and letting it run in the Raspi browser's fullscreen mode. It's more performant and you are able to use all the usual web tools to make your data look nice. This made it real easy to include for example a map on Berlin's air quality, live news or a twitter feed. 
+                     In the end, we decided to go the easy way by just building a regular website and letting it run in the Raspi browser's fullscreen mode. It performs better, and you are able to use all the usual array web tools out there to make your data look nice. This made it particularly easy to include a map on Berlin's air quality, live news or a twitter feed, for example. 
                 </p>
             </div>
            
@@ -162,7 +162,7 @@
            
             <div class="container p-top">
                 <p class="copy">
-                     Seeing that it wasn't really much of an effort to build, we are quite happy with the result. The mirror is a real eyecatcher at events and manages to draw attention also outside the data viz community. For us, it's a nice playground to experiment with different visuals. We'd like to try some things with facial recognition and machine learning soon, there is probably much potential for more complex application. Maybe even in the bathroom. Have fun building!
+                     Given that it wasn't too much of an effort to build, we're quite happy with the result. The mirror is a real eyecatcher at events and manages to draw attention outside the data viz community as well as within it. For us, it's a nice playground to experiment with different visuals. We'd like to try some things with facial recognition and machine learning soon – there is probably significant potential to execute more complex applications. Maybe even in the bathroom. And for those of you who've had your interest piqued and would like to construct your own Magic Mirror: happy building!
                 </p>
             </div>
            
