@@ -12,7 +12,7 @@
 	<atom:link href="http://lab.technologiestiftung-berlin.de/feed.xml" rel="self" type="application/rss+xml" />
 	<link>http://lab.technologiestiftung-berlin.de</link>
 	<description>We are exploring and prototyping digital tools in order to collaboratively shape Berlin’s future for citizens, the local government and the industry.</description>
-	<lastBuildDate>Thu, 19 Apr 2018 10:48:21  +0100</lastBuildDate>
+	<lastBuildDate>Thu, 19 Apr 2018 11:39:35  +0100</lastBuildDate>
 	<language>en-us</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
@@ -40,17 +40,6 @@
 </item>
 
 <item>
-<title><![CDATA[Broadband Berlin 2017]]></title>
-<link>http://lab.technologiestiftung-berlin.de/projects/breitband-2017/index_en.html</link>
-<pubDate>Thu, 15 Mar 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[OpenData]]></category>
-<description><![CDATA[Statistical and visual analysis of Berlin's broadband expansion's open data sets]]></description>
-<content:encoded><![CDATA[Statistical and visual analysis of Berlin's broadband expansion's open data sets]]></content:encoded>
-<dc:creator><![CDATA[undefined]]></dc:creator>
-<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/breitband-2017/index_en.html</guid>
-</item>
-
-<item>
 <title><![CDATA[Trust in Numbers]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/trust-in-numbers/index_en.html</link>
 <pubDate>Thu, 15 Mar 2018 00:00:00  +0100</pubDate>
@@ -59,6 +48,17 @@
 <content:encoded><![CDATA[Data inherits an aura of truth. But there are many reasons to critically question data. We are giving a couple of examples to get started.]]></content:encoded>
 <dc:creator><![CDATA[undefined]]></dc:creator>
 <guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/trust-in-numbers/index_en.html</guid>
+</item>
+
+<item>
+<title><![CDATA[Broadband Berlin 2017]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/breitband-2017/index_en.html</link>
+<pubDate>Thu, 15 Mar 2018 00:00:00  +0100</pubDate>
+<category><![CDATA[Open Data]]></category>
+<description><![CDATA[Statistical and visual analysis of Berlin's broadband expansion's open data sets]]></description>
+<content:encoded><![CDATA[Statistical and visual analysis of Berlin's broadband expansion's open data sets]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/breitband-2017/index_en.html</guid>
 </item>
 
 <item>
@@ -76,7 +76,7 @@
 <title><![CDATA[Berlin's spatial units]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/spatial-units/index_en.html</link>
 <pubDate>Wed, 14 Feb 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[OpenData]]></category>
+<category><![CDATA[Open Data]]></category>
 <description><![CDATA[The city of Berlin is organised in various spatial units, from political district boundaries, to statistical life-world related spaces (LOR), to buildings.]]></description>
 <content:encoded><![CDATA[The city of Berlin is organised in various spatial units, from political district boundaries, to statistical life-world related spaces (LOR), to buildings.]]></content:encoded>
 <dc:creator><![CDATA[undefined]]></dc:creator>
@@ -87,7 +87,7 @@
 <title><![CDATA[Berlin's Kitas]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/kitas/index_en.html</link>
 <pubDate>Mon, 5 Feb 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[OpenData]]></category>
+<category><![CDATA[Open Data]]></category>
 <description><![CDATA[Kita-Suche should support parents to find the best Kita for their children. The innovative search- and filter-functionality as well as the map-based representation are driven by data from the city of Berlin. Through examples like this, the ideation and prototyping labs hopes to promote the benefits of open data for citizens and the city itself.]]></description>
 <content:encoded><![CDATA[Kita-Suche should support parents to find the best Kita for their children. The innovative search- and filter-functionality as well as the map-based representation are driven by data from the city of Berlin. Through examples like this, the ideation and prototyping labs hopes to promote the benefits of open data for citizens and the city itself.]]></content:encoded>
 <dc:creator><![CDATA[undefined]]></dc:creator>
@@ -125,6 +125,17 @@
 <content:encoded><![CDATA[Welcome at the Technology Foundation's Ideation & Prototyping Lab]]></content:encoded>
 <dc:creator><![CDATA[undefined]]></dc:creator>
 <guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/H3LL0W0RLD/index_en.html</guid>
+</item>
+
+<item>
+<title><![CDATA[Mirror, Mirror]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/MagicMirror/index_en.html</link>
+<pubDate>Fri, 10 Mar 2017 00:00:00  +0100</pubDate>
+<category><![CDATA[Open Data, Hardware]]></category>
+<description><![CDATA[How can open data be made more accessible? One way is through new interfaces, such as our Magic Open Mirror]]></description>
+<content:encoded><![CDATA[How can open data be made more accessible? One way is through new interfaces, such as our Magic Open Mirror]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/MagicMirror/index_en.html</guid>
 </item>
 
 	</channel>
