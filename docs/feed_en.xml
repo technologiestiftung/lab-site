@@ -12,7 +12,7 @@
 	<atom:link href="http://lab.technologiestiftung-berlin.de/feed.xml" rel="self" type="application/rss+xml" />
 	<link>http://lab.technologiestiftung-berlin.de</link>
 	<description>We are exploring and prototyping digital tools in order to collaboratively shape Berlin’s future for citizens, the local government and the industry.</description>
-	<lastBuildDate>Thu, 19 Apr 2018 11:39:35  +0100</lastBuildDate>
+	<lastBuildDate>Thu, 19 Apr 2018 11:46:08  +0100</lastBuildDate>
 	<language>en-us</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
@@ -59,6 +59,17 @@
 <content:encoded><![CDATA[Statistical and visual analysis of Berlin's broadband expansion's open data sets]]></content:encoded>
 <dc:creator><![CDATA[undefined]]></dc:creator>
 <guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/breitband-2017/index_en.html</guid>
+</item>
+
+<item>
+<title><![CDATA[Mirror, Mirror]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/MagicMirror/index_en.html</link>
+<pubDate>Sat, 10 Mar 2018 00:00:00  +0100</pubDate>
+<category><![CDATA[Open Data, Hardware]]></category>
+<description><![CDATA[How can open data be made more accessible? One way is through new interfaces, such as our Magic Open Mirror]]></description>
+<content:encoded><![CDATA[How can open data be made more accessible? One way is through new interfaces, such as our Magic Open Mirror]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/MagicMirror/index_en.html</guid>
 </item>
 
 <item>
@@ -125,17 +136,6 @@
 <content:encoded><![CDATA[Welcome at the Technology Foundation's Ideation & Prototyping Lab]]></content:encoded>
 <dc:creator><![CDATA[undefined]]></dc:creator>
 <guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/H3LL0W0RLD/index_en.html</guid>
-</item>
-
-<item>
-<title><![CDATA[Mirror, Mirror]]></title>
-<link>http://lab.technologiestiftung-berlin.de/projects/MagicMirror/index_en.html</link>
-<pubDate>Fri, 10 Mar 2017 00:00:00  +0100</pubDate>
-<category><![CDATA[Open Data, Hardware]]></category>
-<description><![CDATA[How can open data be made more accessible? One way is through new interfaces, such as our Magic Open Mirror]]></description>
-<content:encoded><![CDATA[How can open data be made more accessible? One way is through new interfaces, such as our Magic Open Mirror]]></content:encoded>
-<dc:creator><![CDATA[undefined]]></dc:creator>
-<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/MagicMirror/index_en.html</guid>
 </item>
 
 	</channel>

@@ -12,7 +12,7 @@
 	<atom:link href="http://lab.technologiestiftung-berlin.de/feed.xml" rel="self" type="application/rss+xml" />
 	<link>http://lab.technologiestiftung-berlin.de</link>
 	<description>Wir erforschen und erproben digitale Werkzeuge um gemeinsam mit Bürger*innen, Verwaltung und Unternehmen die Zukunft Berlins zu gestalten.</description>
-	<lastBuildDate>Thu, 19 Apr 2018 11:39:35  +0100</lastBuildDate>
+	<lastBuildDate>Thu, 19 Apr 2018 11:46:08  +0100</lastBuildDate>
 	<language>de-DE</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
@@ -59,6 +59,17 @@
 <content:encoded><![CDATA[Statistische und visuelle Analyse der offenen Daten zum Berliner Breitbandausbau.]]></content:encoded>
 <dc:creator><![CDATA[undefined]]></dc:creator>
 <guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/breitband-2017/index.html</guid>
+</item>
+
+<item>
+<title><![CDATA[Spieglein, Spieglein]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/MagicMirror/index.html</link>
+<pubDate>Sat, 10 Mar 2018 00:00:00  +0100</pubDate>
+<category><![CDATA[Offene Daten, Hardware]]></category>
+<description><![CDATA[Die Frage, wie öffentliche Daten leichter zugänglich und verständlich gemacht werden können, beschäftigt uns im Lab in verschiedenen Dimensionen. Ein wichtiger Ansatz sind neue Interfaces, zum Beispiel unser Magic Mirror.]]></description>
+<content:encoded><![CDATA[Die Frage, wie öffentliche Daten leichter zugänglich und verständlich gemacht werden können, beschäftigt uns im Lab in verschiedenen Dimensionen. Ein wichtiger Ansatz sind neue Interfaces, zum Beispiel unser Magic Mirror.]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/MagicMirror/index.html</guid>
 </item>
 
 <item>
@@ -125,17 +136,6 @@
 <content:encoded><![CDATA[Herzlich Willkommen beim Ideation & Prototyping Lab der Technologiestiftung Berlin]]></content:encoded>
 <dc:creator><![CDATA[undefined]]></dc:creator>
 <guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/H3LL0W0RLD/index.html</guid>
-</item>
-
-<item>
-<title><![CDATA[Spieglein, Spieglein]]></title>
-<link>http://lab.technologiestiftung-berlin.de/projects/MagicMirror/index.html</link>
-<pubDate>Fri, 10 Mar 2017 00:00:00  +0100</pubDate>
-<category><![CDATA[Offene Daten, Hardware]]></category>
-<description><![CDATA[Die Frage, wie öffentliche Daten leichter zugänglich und verständlich gemacht werden können, beschäftigt uns im Lab in verschiedenen Dimensionen. Ein wichtiger Ansatz sind neue Interfaces, zum Beispiel unser Magic Mirror.]]></description>
-<content:encoded><![CDATA[Die Frage, wie öffentliche Daten leichter zugänglich und verständlich gemacht werden können, beschäftigt uns im Lab in verschiedenen Dimensionen. Ein wichtiger Ansatz sind neue Interfaces, zum Beispiel unser Magic Mirror.]]></content:encoded>
-<dc:creator><![CDATA[undefined]]></dc:creator>
-<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/MagicMirror/index.html</guid>
 </item>
 
 	</channel>
