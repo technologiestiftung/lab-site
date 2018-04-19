@@ -12,11 +12,22 @@
 	<atom:link href="http://lab.technologiestiftung-berlin.de/feed.xml" rel="self" type="application/rss+xml" />
 	<link>http://lab.technologiestiftung-berlin.de</link>
 	<description>We are exploring and prototyping digital tools in order to collaboratively shape Berlin’s future for citizens, the local government and the industry.</description>
-	<lastBuildDate>Wed, 18 Apr 2018 14:53:36  +0100</lastBuildDate>
+	<lastBuildDate>Thu, 19 Apr 2018 10:45:24  +0100</lastBuildDate>
 	<language>en-us</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	
+<item>
+<title><![CDATA[The benefits of Open Data for cities]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/od-for-cities/index_en.html</link>
+<pubDate>Thu, 19 Apr 2018 00:00:00  +0100</pubDate>
+<category><![CDATA[Open Data]]></category>
+<description><![CDATA[Three ways cities can profit from Open Data]]></description>
+<content:encoded><![CDATA[Three ways cities can profit from Open Data]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/od-for-cities/index_en.html</guid>
+</item>
+
 <item>
 <title><![CDATA[Introducing Victoria Dykes]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/tori-intro/index_en.html</link>
