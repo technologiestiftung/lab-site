@@ -467,7 +467,6 @@ nav{
   -moz-box-shadow:      0px 0px 10px 0px rgba(0,0,0,0.3);
   box-shadow:           0px 0px 10px 0px rgba(0,0,0,0.3);
   cursor: pointer;
-  min-height:400px;
 }
 
 #project-list a:hover{
@@ -534,6 +533,10 @@ nav{
     margin:40px 5% 0 5%;
   }
 
+  #project-list li a{
+    min-height:380px;
+  }
+
   #project-list li.two-break{
     clear:both;
   }
@@ -544,6 +547,10 @@ nav{
   #project-list li{
     margin: 40px 3% 0 3%;
     width: 27.3%;
+  }
+
+  #project-list li a{
+    min-height:390px;
   }
 
   #project-list li.two-break{
