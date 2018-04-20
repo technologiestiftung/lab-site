@@ -283,6 +283,7 @@
 						var idCircle = 1;
 						var idCircle2 = 1;
 						var countY = 0;
+						var countYTemp = 0;
 						var years = [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016];
 
 						var margin = {
@@ -359,18 +360,7 @@
 								},
 							],
 							countAbsolute: [
-								{
-                                    pos: {
-                                        start: 97,
-                                        end: 135
-                                    },
-                                    content: [
-                                        'Die Umstrukturierung der',
-                                        'Senatsverwaltungen führt',
-                                        'auch bei den Förderungen',
-                                        'zu Verlagerungen.'
-                                    ]
-                                }/*,
+
                                 {
 									pos: {
 										start: 287,
@@ -381,7 +371,7 @@
 										'in dem Förderungen im Bereich',
 										'Tierschutz bewilligt wurden.'
 									]
-								}*/
+								}
 							]
 						}
 						
@@ -543,18 +533,22 @@
 							circle = circleGroup
 								.append('circle')
 								.attr('data-uid', (d,i) => {
-									if(i === 7) { idCircle2 += 1 };
 									var uid = `${idCircle2}${i}`;
+									if(i === 7) { idCircle2 += 1 };
 
 									return uid;
 								})
 								.attr('id', (d,i) => { 
-									if(i === 7) { idCircle += 1 };
-									return `${idCircle}`; 
+									if (i < 7) { 
+										return `${idCircle}`; 
+									 } else if(i == 7) { 
+										idCircle += 1 
+										return `${idCircle - 1}`; 
+										 };
 									})
 								.classed('value', true)
 								.attr('data-year', (d,i) => {
-									return i
+									return i;
 								})
 								.attr('r', 1)
 								.on('mouseover', handleMouseOver)
@@ -705,6 +699,7 @@
 
 						function updatePositions() {
 							var countY = 1;
+							var countYTemp = 1;
 							var newWidth = config.svg.width - margin.left - margin.right;
 
 							svg
@@ -717,8 +712,12 @@
 									return posX;
 								})
 								.attr('cy', (d,i) => { 
-									if (i === 7) { countY += 1 }
-									return (((config.svg.height - margin.top - margin.bottom) / 29) * countY)
+									if (i === 7) { 
+										countYTemp = countY;
+										countY += 1
+										return (((config.svg.height - margin.top - margin.bottom) / 29) * countYTemp)
+										}
+										return (((config.svg.height - margin.top - margin.bottom) / 29) * countY)
 								})
 
 							xScale.range([0, newWidth]);
@@ -769,7 +768,6 @@
 
 								var x = d3.event.pageX + 10
 								var y = d3.event.pageY + 10
-								console.log(clientWidth, x);
 
 								if(clientWidth - x < 260) { x = d3.event.pageX - 280;}
 
@@ -884,15 +882,15 @@
 
 							clientWidth = window.innerWidth;
 
-							if (clientWidth < 900) {
-								antns.moneyAbsolute[0].pos.end = 61;
-								antns.moneyAbsolute[1].pos.end = 222;
+							// if (clientWidth < 900) {
+							// 	antns.moneyAbsolute[0].pos.end = 61;
+							// 	antns.moneyAbsolute[1].pos.end = 222;
 
-								antns.countAbsolute[0].pos.end = 150;
-								antns.countAbsolute[1].pos.end = 240;
+							// 	antns.countAbsolute[0].pos.end = 150;
+							// 	antns.countAbsolute[1].pos.end = 240;
 
-								antns.moneyRelative[0].pos.end = 182;
-							}
+							// 	antns.moneyRelative[0].pos.end = 182;
+							// }
 
 
 							if (clientWidth > 600) {

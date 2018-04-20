@@ -58,3 +58,10 @@ npm run build
 ## Seb Boiler Default
 
 npm run boilerplate PROJECT="kitas" AUTHOR="sebastianmeier" TYPE="light" DATE="05/02/2018" GITHUB_URL="kita-explorer" TAG_DE="Offene Daten" TAG_EN="OpenData" PROJECT_TITLE_DE="Berliner Kitas" PROJECT_TITLE_EN="Berlin's Kitas" SHORT_TITLE_DE="Berliner Kitas" SHORT_TITLE_EN="Berlin's Kitas" SHORT_SUBTITLE_DE="Kartenanwendung zur Kita-Suche" SHORT_SUBTITLE_EN="Map-based application for finding Kitas" PROJECT_DESCRIPTION_DE="Die Kita-Suche soll Eltern bei der Suche der passenden Kita unterstützen. Die zeitgemäßen Such- und Filterfunktionen sowie die Kartendarstellung werden durch Daten des Landes Berlin möglich gemacht. Durch Beispiele wie dieses versucht das Ideation &amp;&nbsp;Protoyping Lab den Mehrwert von offenen Daten für Bürger*innen und Verwaltung zu unterstreichen." PROJECT_DESCRIPTION_EN="Kita-Suche should support parents to find the best Kita for their children. The innovative search- and filter-functionality as well as the map-based representation are driven by data from the city of Berlin. Through examples like this, the ideation and prototyping labs hopes to promote the benefits of open data for citizens and the city itself."
+
+
+## Ben Boiler Default
+
+npm run boilerplate PROJECT="MagicMirror" AUTHOR="benjaminseibel" TYPE="light" DATE="12/12/2017" GITHUB_URL="mm-mockup" TAG_DE="Offene Daten" TAG_EN="OpenData" PROJECT_TITLE_DE="Spieglein, Spieglein" PROJECT_TITLE_EN="Magic Mirror" SHORT_TITLE_DE="Spieglein, Spieglein" SHORT_TITLE_EN="Magic Mirror" SHORT_SUBTITLE_DE="Wir bauen einen Magic Mirror" SHORT_SUBTITLE_EN="It's tooltime in the lab" PROJECT_DESCRIPTION_DE="Die Frage, wie öffentliche Daten leichter zugänglich und verständlich gemacht werden können, beschäftigt uns im Lab in verschiedenen Dimensionen. Ein wichtiger Ansatz sind neue Interfaces, zum Beispiel unser Magic Mirror." PROJECT_DESCRIPTION_EN="How can open data be made more accessible? One way is through new interfaces, such as our Magic Open Mirror"
+
+
