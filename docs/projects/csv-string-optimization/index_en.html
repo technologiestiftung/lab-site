@@ -144,6 +144,21 @@
                 outline: none;
             }
 
+            #algo-expansion{
+                display: none;
+            }
+
+            #algo-expand{
+                padding-bottom:20px;
+            }
+
+            #algo-expand span{
+                font-size:12px;
+                text-align:left;
+                width:20px;
+                display: inline-block;
+            }
+
         </style>
     </head>
     <body class="project">
@@ -206,6 +221,7 @@ id,name
 112,Hamburh
                 </textarea>
                 <p class="copy center p-bottom p-top">
+                    <span class="feedback" id="btn-refresh-message"></span>
                     <input id="btn-refresh" class="btn" type="button" value="Import Input Data"><br /><br />
                     What delimiter is used in the CSV?<br />
                     <span class="small">This should be detected automatically.</span><br />
@@ -216,41 +232,42 @@ id,name
                         <option value="name">name</option>
                     </select>
                 </p>
-                <h2>Comparison Algorithm</h2>
-                <p class="copy p-bottom">
+                <h2 id="algo-expand"><span>►</span>Comparison Algorithm</h2>
+                <p id="algo-expansion" class="copy p-bottom">
                     Which algorithm should we use to compare the strings?<br />
                     <span class="small">An explanation of the methods can be found below.</span><br />
                     <select id="field-method" name="method">
                         <option value="fingerprint">Fingerprint</option>
                         <option value="knn" selected="selected">KNN</option>
                     </select>
-                </p>
-                <p id="extra-fingerprint" class="copy p-bottom">
-                    Additional parameters for the Fingerprint-Algorithm:<br />
-                    <span class="small">Type of Fingerprinting:</span><br />
-                    <select id="field-finger_type" name="method">
-                        <option value="normal" selected="selected">Normal</option>
-                        <option value="phonetic">Phonetic</option>
-                    </select><br />
-                    <span class="small">Language:</span><br />
-                    <select id="field-finger_lang" name="method">
-                        <option value="german" selected="selected">German</option>
-                        <option value="other">Other (preferably English)</option>
-                    </select><br />
-                    <span class="small">Should the words be stemmed:</span><br />
-                    <select id="field-finger_stemming" name="method">
-                        <option value="false" selected="selected">No</option>
-                        <option value="true">Yes</option>
-                    </select>
-                </p>
-                <p id="extra-knn" class="copy p-bottom">
-                    Additional parameters for the KNN-Algorithm:<br />
-                    <span class="small">Minimum number of characters to be the same in both strings (recommended: 6):</span><br />
-                    <input id="field-ngram_size" type="text" name="ngram_size" value="2" placeholder="2" /><br />
-                    <span class="small">Maximum difference in percentage (recommended: 10):</span><br />
-                    <input id="field-limit" type="text" name="limit" value="40" placeholder="40" />
+                    <span id="extra-fingerprint" class="copy p-bottom">
+                        Additional parameters for the Fingerprint-Algorithm:<br />
+                        <span class="small">Type of Fingerprinting:</span><br />
+                        <select id="field-finger_type" name="method">
+                            <option value="normal" selected="selected">Normal</option>
+                            <option value="phonetic">Phonetic</option>
+                        </select><br />
+                        <span class="small">Language:</span><br />
+                        <select id="field-finger_lang" name="method">
+                            <option value="german" selected="selected">German</option>
+                            <option value="other">Other (preferably English)</option>
+                        </select><br />
+                        <span class="small">Should the words be stemmed:</span><br />
+                        <select id="field-finger_stemming" name="method">
+                            <option value="false" selected="selected">No</option>
+                            <option value="true">Yes</option>
+                        </select>
+                    </span>
+                    <span id="extra-knn" class="copy p-bottom">
+                        Additional parameters for the KNN-Algorithm:<br />
+                        <span class="small">Minimum number of characters to be the same in both strings (recommended: 6):</span><br />
+                        <input id="field-ngram_size" type="text" name="ngram_size" value="2" placeholder="2" /><br />
+                        <span class="small">Maximum difference in percentage (recommended: 10):</span><br />
+                        <input id="field-limit" type="text" name="limit" value="40" placeholder="40" />
+                    </span>
                 </p>
                 <p class="copy">
+                    <span class="feedback" id="btn-analyse-message"></span>
                     <input id="btn-analyse" class="btn btn-send" type="button" value="Vergleich durchführen">
                 </p>
             </div>
@@ -267,6 +284,7 @@ id,name
                 <textarea name="template" id="field-template"></textarea>
                 <p class="copy p-top">
                     <input type="button" id="btn-toggle" class="btn" value="Show Template-JSON"><br /><br />
+                    <span class="feedback" id="btn-clean-message"></span>
                     <input type="button" id="btn-clean" class="btn btn-send" value="Clean CSV">
                 </p>
             </div>
@@ -425,6 +443,18 @@ id,name
         <!-- Add your custom JS files here and place them directly in your project folder -->
        <script type="text/javascript">
             
+            d3.select('#algo-expand').on('click', function(){
+                if(d3.select(this).classed('active')){
+                    d3.select('#algo-expand').classed('active',false);
+                    d3.select('#algo-expansion').style('display','none');
+                    d3.select('#algo-expand span').html('►');
+                }else{
+                    d3.select('#algo-expand').classed('active',true);
+                    d3.select('#algo-expansion').style('display','block');
+                    d3.select('#algo-expand span').html('▼');
+                }
+            });
+
             var toggleState = false;
             d3.select('#btn-toggle').on('click', function(){
                 if(!toggleState){
@@ -481,6 +511,7 @@ id,name
             });
 
             function refreshCSV(){
+                d3.select('#btn-refresh-message').text('Importing data...');
                 var csv = d3.select('#field-csv').node().value;
                 var delimiters = ['\t',',',';'], found = 0, delimiter = ',';
                 delimiters.forEach(function(d){
@@ -494,6 +525,8 @@ id,name
                 d3.select('#field-delimiter').property('value', delimiter);
 
                 updateColumns();
+
+                d3.select('#btn-refresh-message').text('');
             }
 
             d3.select('#field-delimiter').on('change', function(){
@@ -624,8 +657,13 @@ id,name
             var globalTemplate = '';
 
             d3.selectAll('.btn-send').on('click', function(){
+                var btnid = d3.select(this).attr('id');
+                var msg = d3.select('#'+btnid+'-message')
+                msg.text('');
                 if(!analyse_state){
                     analyse_state = true;
+
+                    msg.text('Processing data...');
 
                     var values = [
                             ['template',true],
@@ -693,6 +731,8 @@ id,name
                                 d3.select('#clean-csv').node().value = csv_str;
 
                             }
+
+                            d3.selectAll('.feedback').text('');
 
                             analyse_state = false;
                         });

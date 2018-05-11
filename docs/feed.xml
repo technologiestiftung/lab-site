@@ -12,11 +12,22 @@
 	<atom:link href="http://lab.technologiestiftung-berlin.de/feed.xml" rel="self" type="application/rss+xml" />
 	<link>http://lab.technologiestiftung-berlin.de</link>
 	<description>Wir erforschen und erproben digitale Werkzeuge um gemeinsam mit Bürger*innen, Verwaltung und Unternehmen die Zukunft Berlins zu gestalten.</description>
-	<lastBuildDate>Fri, 27 Apr 2018 14:26:21  +0100</lastBuildDate>
+	<lastBuildDate>Fri, 11 May 2018 14:55:48  +0100</lastBuildDate>
 	<language>de-DE</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	
+<item>
+<title><![CDATA[CSV-Tool: Ähnliche Texte]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/csv-string-optimization/index.html</link>
+<pubDate>Fri, 11 May 2018 00:00:00  +0100</pubDate>
+<category><![CDATA[Werkzeug]]></category>
+<description><![CDATA[Ein NodeJS, Commandline und Webservice um CSV Dateien von z.B. Tippfehlern zu säubern.]]></description>
+<content:encoded><![CDATA[Ein NodeJS, Commandline und Webservice um CSV Dateien von z.B. Tippfehlern zu säubern.]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/csv-string-optimization/index.html</guid>
+</item>
+
 <item>
 <title><![CDATA[Was bringt Open Data für Städte?]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/od-for-cities/index.html</link>
@@ -40,17 +51,6 @@
 </item>
 
 <item>
-<title><![CDATA[Vertrauen in Zahlen]]></title>
-<link>http://lab.technologiestiftung-berlin.de/projects/trust-in-numbers/index.html</link>
-<pubDate>Thu, 15 Mar 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[Wissen]]></category>
-<description><![CDATA[Daten vermitteln ein Gefühlt von Korrektheit. Dabei gibt es auch viele Gründe diese kritisch zu hinterfragen. Wir geben ein paar Beispiele.]]></description>
-<content:encoded><![CDATA[Daten vermitteln ein Gefühlt von Korrektheit. Dabei gibt es auch viele Gründe diese kritisch zu hinterfragen. Wir geben ein paar Beispiele.]]></content:encoded>
-<dc:creator><![CDATA[undefined]]></dc:creator>
-<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/trust-in-numbers/index.html</guid>
-</item>
-
-<item>
 <title><![CDATA[Breitband Berlin 2017]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/breitband-2017/index.html</link>
 <pubDate>Thu, 15 Mar 2018 00:00:00  +0100</pubDate>
@@ -59,6 +59,17 @@
 <content:encoded><![CDATA[Statistische und visuelle Analyse der offenen Daten zum Berliner Breitbandausbau.]]></content:encoded>
 <dc:creator><![CDATA[undefined]]></dc:creator>
 <guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/breitband-2017/index.html</guid>
+</item>
+
+<item>
+<title><![CDATA[Vertrauen in Zahlen]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/trust-in-numbers/index.html</link>
+<pubDate>Thu, 15 Mar 2018 00:00:00  +0100</pubDate>
+<category><![CDATA[Wissen]]></category>
+<description><![CDATA[Daten vermitteln ein Gefühlt von Korrektheit. Dabei gibt es auch viele Gründe diese kritisch zu hinterfragen. Wir geben ein paar Beispiele.]]></description>
+<content:encoded><![CDATA[Daten vermitteln ein Gefühlt von Korrektheit. Dabei gibt es auch viele Gründe diese kritisch zu hinterfragen. Wir geben ein paar Beispiele.]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/trust-in-numbers/index.html</guid>
 </item>
 
 <item>
