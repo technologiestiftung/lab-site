@@ -64,4 +64,8 @@ npm run boilerplate PROJECT="kitas" AUTHOR="sebastianmeier" TYPE="light" DATE="0
 
 npm run boilerplate PROJECT="GraueDaten" AUTHOR="benjaminseibel" TYPE="light" DATE="30/04/2018" GITHUB_URL="" TAG_DE="Offene Daten" TAG_EN="OpenData" PROJECT_TITLE_DE="Graue Daten" PROJECT_TITLE_EN="Grey Data" SHORT_TITLE_DE="Shades of Grey" SHORT_TITLE_EN="Shades of Grey" SHORT_SUBTITLE_DE="Über die Arbeit mit 'grauen Daten'" SHORT_SUBTITLE_EN="On working with the not-yet-open " PROJECT_DESCRIPTION_DE="Als 'graue Daten' kann man Datensätze der öffentlichen Verwaltung bezeichnen, die zwar im Netz zugänglich, aber bislang noch nicht unter einer freien Lizenz veröffentlicht worden sind." PROJECT_DESCRIPTION_EN="A lot of government datasets are pulished somewhere on the Internet, but have not yet been released with an open licence. We call these datasets 'grey data'. "
 
+## Tori Boilerplate
+
+npm run boilerplate PROJECT="ODIS-Launch" AUTHOR="toridykes" TYPE="light" DATE="18/05/2018" GITHUB_URL="" TAG_DE="Offene Daten" TAG_EN="OpenData" PROJECT_TITLE_DE="ODIS" PROJECT_TITLE_EN="ODIS" SHORT_TITLE_DE="ODIS" SHORT_TITLE_EN="ODIS" SHORT_SUBTITLE_DE="Zum Start der Open Data Informationsstelle" SHORT_SUBTITLE_EN="Launch of ODIS" PROJECT_DESCRIPTION_DE="Ein paar Gedanken zu ODIS" PROJECT_DESCRIPTION_EN="Some thoughts about ODIS"
+
 
