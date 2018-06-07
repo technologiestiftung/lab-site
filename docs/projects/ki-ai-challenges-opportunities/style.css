@@ -1,0 +1,39 @@
+#title {
+	color:#fff;
+    background-color: #fff;
+    background-image: url(./images/top_bg.png);
+    padding-top: 95px;
+}
+
+#title .title-subline a,
+main a,
+p.copy a {
+    color: #57E3FF;
+    font-weight: normal;
+}
+
+main{
+	color:#fff;
+}
+
+#footer {
+    background-image: url(./images/bottom_bg.png);
+ }
+
+ body{
+ 	background-color:#003163;
+ }
+
+ .button.tag {
+    background-color: #57E3FF;
+    color: #003163;
+}
+
+#title .button.tag{
+	margin:0;
+}
+
+#title h1{
+	margin-left:0;
+	padding-left:0;
+}
