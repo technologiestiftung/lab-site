@@ -152,3 +152,63 @@ p.copy.ai-links a {
     font-size: 16px;
     opacity: 0.5;
 }
+
+p.copy.ai-links a:hover {
+    color: white;
+}
+
+@media screen and (max-width: 600px) {
+    p.copy.ai-links a {
+        font-size: 12px;
+        line-height: 18px;
+        opacity: 0.5;
+    }
+
+    .ai-title {
+        font-size: 36px;
+    }
+
+    .title-01 {
+        top: 99px;
+    }
+
+    .title-02 {
+        top: 90px;
+    }
+
+    .mt-06 {
+        padding-top: 338px;
+    }
+
+    .mt-05 {
+        padding-top: 265px;
+    }
+
+    .mt-03 {
+        padding-top: 228px;
+    }
+
+    .mt-02 {
+        padding-top: 377px;
+    }
+
+    .mt-01 {
+        padding-top: 188px;
+    }
+
+    .ki-img-02 {
+        width: auto;
+        height: 300px;
+    }
+
+    .ki-img-01 {
+        width: auto;
+        height: 300px;
+        right: -50px;
+    }
+
+    .wrapper-intro {
+        padding-top: 100px;
+    }
+}
+
