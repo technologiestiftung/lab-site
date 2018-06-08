@@ -29,6 +29,10 @@ p.copy a {
     font-family: 'IBM Plex Sans';
 }
 
+.copy-bold {
+    font-weight: 700;
+}
+
 main{
 	color:#fff;
 }

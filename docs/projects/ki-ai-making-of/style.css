@@ -19,6 +19,10 @@ p.copy {
     line-height: 160%;
 }
 
+p.copy.copy-bold {
+    font-weight: 700;
+}
+
 #title .title-subline a,
 main a,
 p.copy a {
