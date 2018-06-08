@@ -188,6 +188,18 @@ p.copy.ai-links a:hover {
     width: 150px;
 }
 
+#github {
+   background-color: white;
+    
+    opacity: 1;
+}
+
+#github:hover {
+    background-color: white;
+
+}
+
+
 
 @media screen and (max-width: 600px) {
     .table-of-content-wrapper {
