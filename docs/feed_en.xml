@@ -12,11 +12,22 @@
 	<atom:link href="http://lab.technologiestiftung-berlin.de/feed.xml" rel="self" type="application/rss+xml" />
 	<link>http://lab.technologiestiftung-berlin.de</link>
 	<description>We are exploring and prototyping digital tools in order to collaboratively shape Berlin’s future for citizens, the local government and the industry.</description>
-	<lastBuildDate>Tue, 22 May 2018 14:31:31  +0100</lastBuildDate>
+	<lastBuildDate>Tue, 12 Jun 2018 15:30:15  +0100</lastBuildDate>
 	<language>en-us</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	
+<item>
+<title><![CDATA[With the eyes of a machine]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/ki-ai-intro/index_en.html</link>
+<pubDate>Sat, 9 Jun 2018 00:00:00  +0100</pubDate>
+<category><![CDATA[AI]]></category>
+<description><![CDATA[{{DESCRIPTION}}]]></description>
+<content:encoded><![CDATA[{{DESCRIPTION}}]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/ki-ai-intro/index_en.html</guid>
+</item>
+
 <item>
 <title><![CDATA[Berlin's new Open Data Infopoint]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/ODIS-Launch/index_en.html</link>
