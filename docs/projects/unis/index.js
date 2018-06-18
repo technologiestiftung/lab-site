@@ -442,7 +442,6 @@ const brushedTooltip = (_data, _container) => {
             .append('div')
             .attr('class', 'tt-subline')
             .text(`von 2–350 Studiengängen.`)
-
     };
 
     module.update = (selection) => {
@@ -577,6 +576,13 @@ const tooltip = (_data, _container) => {
         ageSubline.text(`#${data.rAge} von 374`)
         studentsSubline.text(`#${data.rStudents} von 374`)
         studiesSubline.text(`#${data.rStudies} von 374`)
+
+        const ttHeadline = document.getElementsByClassName('tt-headline');
+
+        for (let index = 0; index < ttHeadline.length; index++) {
+            const element = ttHeadline[index];
+            element.innerHTML = element.innerHTML.substring(0,75);
+        }
     }
     return module;
 }
@@ -843,6 +849,7 @@ const btnOldest = document.getElementById('filter--oldest');
 const btnDiverse = document.getElementById('filter--diverse');
 const btnSmallest = document.getElementById('filter--countStudents');
 
+
 btnOldest.addEventListener('click', () => {
     const filteredByAge = filterData('year', dataGlobal, 'ascending')
     table_ranking.remove();
@@ -869,3 +876,4 @@ btnDiverse.addEventListener('click', () => {
     buttons.classed('active', false);
     d3.select('#filter--diverse').classed("active", d3.select('#filter--diverse').classed("active") ? false : true);
 });
+
