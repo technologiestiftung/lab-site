@@ -1,12 +1,3 @@
-// TODO:
-// research year for 3 unis and fill dataset
-// uncomment webfonts in style css
-
-// Add link to each University
-// Add Map for Berlin
-// replace germany map
-
-
 let map_chart, bee_chart, tool_tip, table_ranking, brushed_tool_tip, map_chart_berlin, map_chart_berlin_legend, bee_chart_berlin;
 
 const rangeMin = 1,
@@ -18,11 +9,14 @@ scale = d3.scaleLinear()
     .range([rangeMin, rangeMax]);
 
 let dataGlobal;
+const tau = 2 * Math.PI;
 
 projGer = d3.geoMercator()
-.scale(2000)
-.center([11.42, 50.91])
-.translate([500 / 2 + 60, 500 / 2]),
+// .scale(2000)
+.scale(1 / tau)
+// .center([11.42, 50.91])
+.translate([0, 0]);
+// .translate([500 / 2 + 60, 500 / 2]),
 
 projBerlin = d3.geoMercator()
 .scale(35000)
@@ -60,9 +54,21 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
     scale,
     circles,
     mapZoom,
-    svg
+    svg,
+    map_group,
+    map_vector,
+    tile,
+    tiles,
+    image,
+    raster,
+    center
 
-    mapZoom = d3.zoom().on("zoom", freeZoom);
+    center = proj([11.42, 50.91]);
+
+    mapZoom = d3.zoom()
+        .on("zoom", freeZoom)
+        .scaleExtent([1 << 11, 1 << 14])
+        // .translateExtent([[0,0],[width, height]])
 
     svg = container.append('svg')
         .attr('width', width)
@@ -70,25 +76,76 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
         .attr("stroke", "#D3D3D3")
         .attr("stroke-width", "1px")
         .attr("fill", "#FFF")
-        .attr('vector-effect', 'non-scaling-stroke')
         .call(mapZoom)
-        
-        path = d3.geoPath()
-        .projection(proj)
+        .call(mapZoom.transform, d3.zoomIdentity
+            .translate(width / 2, height / 2)
+            .scale(1 << 12)
+            .translate(-center[0], -center[1]));
 
-        svg
+    tile = d3.tile()
+        .size([width, height]);
+        
+    path = d3.geoPath()
+        .projection(proj)
+        
+    map_group = svg
         .append('g')
+
+    map_group
+        .append('rect')
+        .attr('width', 2000)
+        .attr('height', 2000)
+        .attr('transform', 'translate(-1000,-1000)')
+
+    map_vector = map_group
         .append("path")
+        // .scaleExtent([1,8])
         .attr('d', path(topojson.mesh(geojson)))
+    
+    raster = map_group.append("g");
+
+    function stringify(scale, translate) {
+        let k = scale / 256, r = scale % 1 ? Number : Math.round;
+        return "translate(" + r(translate[0] * scale) + "," + r(translate[1] * scale) + ") scale(" + k + ")";
+    }
 
     function freeZoom() {
-        svg.attr("transform", d3.event.transform);
+        map_group
+            .attr("transform", d3.event.transform)   
+            
+        map_vector
+            .style('stroke-width', 1 / d3.event.transform.k);
+
+        tiles = tile
+            .scale(d3.event.transform.k)
+            .translate([d3.event.transform.x, d3.event.transform.y])
+            ();
+      
+        image = raster
+            .attr("transform", stringify(tiles.scale, tiles.translate))
+            .selectAll("image")
+            .data(tiles, function(d) { 
+                return d; });
+      
+        image.exit().remove();
+      
+        image.enter().append("image")
+            .attr("xlink:href", function(d) { 
+                return "http://" + "abc"[d[1] % 3] + ".tile.openstreetmap.org/" + d[2] + "/" + d[0] + "/" + d[1] + ".png"; })
+            .attr("x", function(d) { return d[0] * 256; })
+            .attr("y", function(d) { return d[1] * 256; })
+            .attr("width", 256)
+          
 
         d3.selectAll('.circle__wrapper--circle')
             .attr('r', d => {
                 return calcArea(scale(d.count_students)) / d3.event.transform.k
             })
     }
+
+    d3.select("#reset").on("click", () => {
+        map_group.transition().duration(500).call(mapZoom.transform, d3.zoomIdentity);
+    });
 
     module.init = () => {
         data.forEach( item => {
@@ -100,7 +157,7 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
             .domain([24, 68429])
             .range([rangeMin, rangeMax]);
         
-        circles = svg.selectAll('g')
+        circles = map_group.selectAll('g')
             .data(data)
             .enter()
             .append('g')
