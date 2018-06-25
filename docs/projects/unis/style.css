@@ -153,7 +153,12 @@ font: 10px sans-serif;
 }
 
 .charts-section  #beeChart {
+    position: relative;
     /* border: 2px solid orange; */
+}
+
+#beeChartBerlin {
+    position: relative;
 }
 
 .chart-wrapper {
@@ -355,6 +360,35 @@ button:hover {
 .buttons.grouped .button {
     margin: 0;
     padding: 10px 10px;
+}
+
+.overlay-boarding {
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    padding: 20px;
+    border: rgb(230,230,230) 1px solid;
+    border-radius: 5px;
+    background: rgba(255,255,255,.7);
+    animation: blink 2s infinite;
+}
+
+.overlay-boarding > img{
+    margin-left: 73px;
+    margin-bottom: 10px;
+}
+
+@keyframes blink {
+    0%   { opacity: 0; }
+    40%   { opacity: 1; }
+    60% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+.overlay-boarding > .hint {
+    font-family: 'Barlow', sans-serif;
+    text-align: center;
+    width: 200px;
 }
 
 @media screen and (max-width: 1200px) {

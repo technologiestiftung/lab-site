@@ -240,7 +240,25 @@ const beeChart = (_data, _filterFunction, _filterKey, _container) => {
     gBrush,
     g,
     y,
-    arr = []
+    arr = [],
+    overlay,
+    hint,
+    pointer
+
+    overlay = container.append('div')
+        .attr('class', 'overlay-boarding')
+        .attr('width', 200)
+        .attr('height', 200)
+    
+    pointer = overlay.append('img')
+        .attr('src', 'images/pointer.png')
+        .attr('width', 54)
+        .attr('height', 54)
+    
+    hint = overlay.append('p')
+        .attr('class', 'hint')
+    
+    hint.text("Markiere einen Bereich, \n um mehrere Universitäten \n auszuwählen");
 
     svg = container.append('svg')
         .attr('width', width)
@@ -255,7 +273,9 @@ const beeChart = (_data, _filterFunction, _filterKey, _container) => {
 
         const brush = d3.selectAll('rect').filter(':nth-child(2)');
         brush.attr('fill-opacity', '.075');
-        
+
+        d3.selectAll('.overlay-boarding')
+            .attr('style', 'display: none')        
 
         brush_extent = selection;
         update(selection);
