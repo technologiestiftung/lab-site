@@ -57,14 +57,14 @@ font: 10px sans-serif;
     fill: red; 
 }
 
-.selected--lines {
-    stroke: red;
-    transition: stroke 0.5s;
+.selected--circles {
+    opacity: 0.8;
+    transition: fill 0.5s;
 }
 
-.unselected--lines {
-    stroke: #E5E5E5;
-    transition: stroke 0.5s;
+.unselected--circles {
+    opacity: .1;
+    transition: fill 0.5s;
 }
 
 #brushed-tooltip {
@@ -149,7 +149,11 @@ font: 10px sans-serif;
 }
 
 .charts-section  #mapChart {
-    /* border: 2px solid green; */
+    overflow: hidden;
+}
+
+#mapChartBerlin {
+    overflow: hidden;
 }
 
 .charts-section  #beeChart {

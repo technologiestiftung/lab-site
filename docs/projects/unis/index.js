@@ -39,6 +39,11 @@ let colorScaleInverted = d3.scaleQuantize()
     .domain([domain[0], domain[1]])
     .range(invertedColors)
 
+calcArea = (value) => {
+    var radius = Math.sqrt((value/ Math.PI))
+    return radius;
+} 
+
 const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _container, _proj) {
     let module = {},
     proj = _proj,
@@ -51,20 +56,39 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
     width = 500,
     height = 500,
     rangeMin = 1,
-    rangeMax = 220,
+    rangeMax = 4000,
     scale,
-    lines,
+    circles,
+    mapZoom,
+    svg
+
+    mapZoom = d3.zoom().on("zoom", freeZoom);
+
     svg = container.append('svg')
         .attr('width', width)
         .attr('height', height)
         .attr("stroke", "#D3D3D3")
         .attr("stroke-width", "1px")
         .attr("fill", "#FFF")
-    path = d3.geoPath()
+        .attr('vector-effect', 'non-scaling-stroke')
+        .call(mapZoom)
+        
+        path = d3.geoPath()
         .projection(proj)
-    svg
+
+        svg
+        .append('g')
         .append("path")
         .attr('d', path(topojson.mesh(geojson)))
+
+    function freeZoom() {
+        svg.attr("transform", d3.event.transform);
+
+        d3.selectAll('.circle__wrapper--circle')
+            .attr('r', d => {
+                return calcArea(scale(d.count_students)) / d3.event.transform.k
+            })
+    }
 
     module.init = () => {
         data.forEach( item => {
@@ -76,79 +100,64 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
             .domain([24, 68429])
             .range([rangeMin, rangeMax]);
         
-        lines = svg.selectAll('g')
+        circles = svg.selectAll('g')
             .data(data)
             .enter()
             .append('g')
-            .attr('class', 'line__wrapper')
-            .append('line')
+            .attr('class', 'circle__wrapper')
+            .append('circle')
+            .attr("stroke-width", "0px")
             .attr('id', d => { 
-                return d.id_hochschule })
-            .attr('class', 'line__wrapper--line')
+                return `map_${d.id_hochschule}` })
+            .attr('class', 'circle__wrapper--circle')
             .attr('style', (d) => {
-                return `stroke: #${colorScale(d[filterKey])}; stroke-width: 2`
+                return `fill: #${colorScale(d[filterKey])}; opacity: .4;`
             })
-            .attr("x1", d => { 
+            .attr('r', (d) => {
+                return `${calcArea(scale(d.count_students))}`
+            })
+            .attr("cx", d => { 
                 if(d[filterKey]) {
                     const  lnglat = proj([d.lng, d.lat]);
                     return lnglat[0]
                 } else { return "1px" }
             })
-            .attr("y1", d => { 
+            .attr("cy", d => { 
                 if(d[filterKey]) {
                     const  lnglat = proj([d.lng, d.lat]);
                     return lnglat[1]
                 }
             })
-            .attr("x2", d => { 
-                if(d[filterKey]) {
-                    const  lnglat = proj([d.lng, d.lat]);
-                    return lnglat[0]
-                }
-            })
-            .attr("y2", d => { 
-                if(d[filterKey]) {
-                    const  lnglat = proj([d.lng, d.lat]);
-                    return lnglat[1] - scale(d[filterKey]);
-                } else {
-                    return "1px"
-                }
-            })
             .on('mouseover', function(d) {
-                const lines = d3.selectAll('.line__wrapper--line');
-                lines
+                let t_id = d3.select(this).attr('id');
+                const circles = d3.selectAll('.circle__wrapper--circle');
+
+
+                circles
                     .transition()
                     .duration(100)
-                    .attr('style', function(d) {
-                        return `stroke: #${colorScale(d[filterKey])}; stroke-width: 2px; opacity: 0.25`
+                    .style('opacity', function(d) {
+                        if(`map_${d.id_hochschule}` == t_id){
+                            return 0.8
+                        }
+                        return 0.2
                     })
 
-                d3.select(this)
-                    .transition()
-                    .duration(100)
-                    .attr('style', function(d) {
-                        return `stroke: #${colorScale(d[filterKey])}; stroke-width: 4px; opacity: 1`
-                    })
                 updateTooltip(d, 'map');
 
                 bee_chart.refresh(d3.select(this).attr('id'), 'mouseover');
             })
             .on('mouseout', function(d) {
-
-                const lines = d3.selectAll('.line__wrapper--line');
-                lines
-                    .transition()
-                    .duration(100)
-                    .attr('style', function(d) {
-                        return `stroke: #${colorScale(d[filterKey])}; stroke-width: 2px; opacity: 1`
-                    })
-
-                d3.select(this)
-                    .transition()
-                    .duration(100)
-                    .attr('style', function(d) {
-                        return `stroke: #${colorScale(d[filterKey])}; stroke-width: 2px; opacity: 1`
-                    })
+                let t_id = d3.select(this).attr('id');
+                circles
+                .transition()
+                .duration(100)
+                .style('opacity', function(d) {
+                    if(`map_${d.id_hochschule}` == t_id){
+                        return 0.8
+                    }
+                    return 0.4
+                })
                 
                 bee_chart.refresh(d3.select(this).attr('id'), 'mouseout');
             })
@@ -161,23 +170,23 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
     }
 
     module.refresh = (id, event) => {
-        id = parseInt(id);
-        const selection = d3.selectAll(`line[id="${id}"]`);
-        const lines = d3.selectAll('.line__wrapper--line');
+        id = parseInt(id.slice(4,7));
+        const selection = d3.selectAll(`circle[id="map_${id}"]`);
+        const circles = d3.selectAll('.circle__wrapper--circle');
         event == 'mouseover'
         ?
-        lines
+        circles
             .transition()
             .duration(100)
             .attr('style', function(d) {
-                return `stroke: #${colorScale(d[filterKey])}; stroke-width: 2px; opacity: 0.25`
+                return `fill: #${colorScale(d[filterKey])}; opacity: .1;`
             })
         :
-        lines
+        circles
             .transition()
             .duration(100)
             .attr('style', function(d) {
-                return `stroke: #${colorScale(d[filterKey])}; stroke-width: 2px; opacity: 1`
+                return `fill: #${colorScale(d[filterKey])}; opacity: .2;`
             })
 
 
@@ -187,31 +196,37 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
             .transition()
             .duration(100)
             .attr('style', function(d) {
-                return `stroke: #${colorScale(d[filterKey])}; stroke-width: 4px;`;
+                return `fill: #${colorScale(d[filterKey])}; opacity: 1;`;
             }) 
         : 
         selection
             .transition()
             .duration(100)
             .attr('style', function(d) {
-                return `stroke: #${colorScale(d[filterKey])}; stroke-width: 2px;`;
+                return `fill: #${colorScale(d[filterKey])}; opacity: .1;`;
             }) 
     }
 
     module.update = (selection) => {
-        const lines = d3.selectAll('.line__wrapper--line');
+        const circles = d3.selectAll('.circle__wrapper--circle');
 
-        lines.classed("selected--lines", function(d) {
+        circles.classed("selected--circles", function(d) {
             const condition = selection[1] <= d[filterKey] && d[filterKey] <= selection[0];
             const current = d3.select(this)
-            const y2 = current.attr('y2');
+            current.attr('style', (d) => {
+                return `fill: #${colorScale(d[filterKey])};`
+            });
             return condition; 
         });
 
-        lines.classed("unselected--lines", function(d) {
+        circles.classed("unselected--circles", function(d) {
             const condition = d[filterKey] < selection[1] || d[filterKey] > selection[0];
             const current = d3.select(this)
             const y1 = this.getAttribute('y1')
+
+            current.attr('style', (d) => {
+                return `fill: #${colorScale(d[filterKey])};`
+            });
             
             if (condition) { 
                 current.transition().attr('y2', d => { return y1 - 2; });
@@ -263,6 +278,7 @@ const beeChart = (_data, _filterFunction, _filterKey, _container) => {
     svg = container.append('svg')
         .attr('width', width)
         .attr('height', height)
+        .attr('id', 'bee')
     
     g = svg.append('g')
         .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
@@ -286,7 +302,6 @@ const beeChart = (_data, _filterFunction, _filterKey, _container) => {
                 .ticks(5, ".0s")
                 .tickSize(-width)
             );
-
             g.select(".domain").remove();
 
             g.selectAll('line').style('stroke', '#D8D8D8');
@@ -333,7 +348,7 @@ const beeChart = (_data, _filterFunction, _filterKey, _container) => {
               .append('circle')
                 .attr('class', 'dot')
                 .attr('id', d => { 
-                    return d.datum.id_hochschule })
+                    return `bee_${d.datum.id_hochschule}` })
                 .attr('cx', function(bee) { return bee.x + 20; })
                 .attr('cy', function(bee) { return bee.y; })
                 .attr('r', 2)
@@ -358,8 +373,8 @@ const beeChart = (_data, _filterFunction, _filterKey, _container) => {
     }
 
     module.refresh = (id, event) => {
-        id = parseInt(id);
-        const selection = d3.selectAll(`circle[id="${id}"]`);
+        id = parseInt(id.slice(4,7));
+        const selection = d3.selectAll(`circle[id="bee_${id}"]`);
         radius = event == 'mouseover' ?  selection.transition().duration(100).attr('r', '6px') : selection.transition().duration(100).attr('r', '2px');
     }
 
