@@ -244,6 +244,10 @@ div.charts-section div.chart-wrapper h2 {
     max-width: 700px;
 }
 
+.table-items-berlin {
+    border-top: 2px dotted rgb(85, 85, 85);
+}
+
 .table-item {
     position: relative;
     max-height: 300px;
@@ -259,6 +263,10 @@ div.charts-section div.chart-wrapper h2 {
 .table-item:hover .td-content .td-headline {
     color:#3291D0;
     transition: color .15s;
+}
+
+.table-item:last-child {
+    border-bottom: 0px solid #D8D8D8;
 }
 
 .table-legend {
@@ -334,6 +342,11 @@ button:hover {
     margin-right: 3rem;
 }
 
+.btn-group-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
 .buttons {
     margin-top: 2rem;
     align-items: center;
@@ -359,6 +372,11 @@ button:hover {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
     margin-left: -2px;
+}
+
+.button {
+    margin: 0;
+    padding: 10px 10px;
 }
 
 .buttons.grouped .button {

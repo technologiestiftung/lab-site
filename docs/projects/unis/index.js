@@ -1,4 +1,5 @@
-let map_chart, bee_chart, tool_tip, table_ranking, brushed_tool_tip, map_chart_berlin, map_chart_berlin_legend, bee_chart_berlin;
+let map_chart, bee_chart, tool_tip, table_ranking, brushed_tool_tip, map_chart_berlin, map_chart_berlin_legend, bee_chart_berlin, berlinStudents, berlinStudies, berlinAge,
+rankedByAge, rankedByStudents, rankedByStudies, filterDefault, filterSwitch = 'students', order = 'ascending';
 
 const rangeMin = 1,
 rangeMax = 600,
@@ -718,6 +719,7 @@ const table = () => {
     let module = {},
     tableWrapper,
     tableItems,
+    tableItemsBerlin,
     thead,
     tbody,
     filtered,
@@ -736,13 +738,106 @@ const table = () => {
     module.init = () => {
         tableWrapper = d3.select('#table-wrapper');
         tableItems = tableWrapper.append('div').attr('class', 'table-items');
+        tableItemsBerlin = tableWrapper.append('div').attr('class', 'table-items-berlin');
     }
 
     module.remove = () => {
         d3.selectAll('.table-item').remove();
     }
 
+    module.updateBerlin = (filterCurrent, filteredData) => {
+
+        tableItem = tableItemsBerlin.selectAll('div')
+            .data(filteredData)
+            .enter()
+            .append('div')
+            .attr('class', 'table-item')
+            .on('click', function() {
+                d3.select(this).classed("active", d3.select(this).classed("active") ? false : true);
+            })
+
+            tdIndex = tableItem
+            .append('div')
+            .attr('class', 'td-index')
+            .text((d,i) => {
+                let temp = '';
+                switch (filterCurrent) {
+                    case 'count_students':
+                        temp = d.rStudents;
+                        break;
+                    case 'count_studies':
+                        temp = d.rStudies;
+                        break;
+                    case 'year':
+                        temp = d.rAge;
+                        break;
+                }
+                return temp;
+            })
+        
+        tableContent = tableItem
+            .append('div')
+            .attr('class', 'td-content')
+        
+        tableItemValue = tableItem
+            .append('div')
+            .attr('class', 'td-value')
+            .text((d,i) => {
+                console.log(filterCurrent);
+                return d[filterCurrent];
+            })
+        
+        tableItemHeadline = tableContent
+            .append('div')
+            .attr('class', 'td-headline')
+            .text( d => { return d.name; })
+        
+        tableItemSubline = tableContent
+            .append('div')
+            .attr('class', 'td-subline')
+        
+        col1 = tableItemSubline
+            .append('div')
+            .attr('class', 'table-col col1')
+
+        col2 = tableItemSubline
+            .append('div')
+            .attr('class', 'table-col col2')
+
+        col3 = tableItemSubline
+            .append('div')
+            .attr('class', 'table-col col3')
+        
+        tableItemCounty = col1
+            .append('div')
+            .attr('class', 'td-county')
+            .text( d => { return d.county; })
+                    
+        tableItemStudies = col2
+            .append('div')
+            .attr('class', 'td-studies')
+            .text( d => { return `${d.count_studies} Studiengänge`; })
+                    
+        tableItemYear = col1
+            .append('div')
+            .attr('class', 'td-year')
+            .text( d => { return `${d.year} gegründet`; })
+                    
+        tableItemStudents = col2
+            .append('div')
+            .attr('class', 'td-students')
+            .text( d => { return `${d.count_students} Studenten`; })
+                    
+        tableItemType = col3
+            .append('div')
+            .attr('class', 'td-sponsor')
+            .text( d => { return d.sponsor; })
+    }
+        
+        
+
     module.update = (filterCurrent, filteredData) => {
+
         tableItem = tableItems.selectAll('div')
             .data(filteredData)
             .enter()
@@ -751,7 +846,7 @@ const table = () => {
             .on('click', function() {
                 d3.select(this).classed("active", d3.select(this).classed("active") ? false : true);
             })
-        
+    
         tdIndex = tableItem
             .append('div')
             .attr('class', 'td-index')
@@ -840,7 +935,7 @@ updateTooltip = (data, type) => {
 
 }
 
-filterData = (key, data, order = 'ascending') => {
+filterData = (key, data, order = 'descending') => {
     let sorted;
     if (order == 'ascending') {
         sorted = data.sort((x,y) => {
@@ -860,7 +955,7 @@ filterData = (key, data, order = 'ascending') => {
     return temp;
 };
 
-rankedData = (key, data, order = 'ascending') => {
+rankedData = (key, data, order = 'descending') => {
     let sorted;
     if (order == 'ascending') {
         sorted = data.sort((x,y) => {
@@ -887,6 +982,16 @@ rankedData = (key, data, order = 'ascending') => {
     return temp;
 };
 
+getBerlinUnis = (data) => {
+    let temp = [];
+    data.forEach((uni, index) => {
+        if (uni.county == "Berlin") {
+            temp.push(uni);
+        }
+    })
+    return temp;
+}
+
 d3.queue()
     .defer(d3.json, "./data/unis.json")
     .defer(d3.json, "./data/germany.json")
@@ -894,12 +999,19 @@ d3.queue()
     .await( (error, unis, counties, berlin) => {
         let brush_extent;
         dataGlobal = unis;
-        let rankedByAge = rankedData('year', dataGlobal);
-        let rankedByStudents = rankedData('count_students', dataGlobal, 'descending');
-        let rankedByStudies = rankedData('count_studies', dataGlobal, 'descending');
-        const filterDefault = filterData('count_students', dataGlobal);
+        rankedByAge = rankedData('year', dataGlobal);
+        rankedByStudents = rankedData('count_students', dataGlobal, 'descending');
+        rankedByStudies = rankedData('count_studies', dataGlobal, 'descending');
+        filterDefault = rankedData('count_students', dataGlobal, 'descending').slice(0,9);
+
+        // console.log(rankedByStudies);
+
+        berlinStudents = getBerlinUnis(rankedByStudents).slice(0,9);
+        berlinStudies = getBerlinUnis(rankedByStudies).slice(0,9);
+        berlinAge = getBerlinUnis(rankedByAge).slice(0,9);
 
         dataGlobal = rankedByStudies;
+        
         // let cross_unis = crossfilter(unis);
         
         // count = cross_unis.dimension(function(d) { return d[filter]; });
@@ -934,6 +1046,7 @@ d3.queue()
         table_ranking = table();
         table_ranking.init();
         table_ranking.update('count_students', filterDefault);
+        table_ranking.updateBerlin('count_students', berlinStudents);
     })
 
 round = (value) => {
@@ -949,32 +1062,72 @@ numberFormat = (num) => {
 const btnOldest = document.getElementById('filter--oldest');
 const btnDiverse = document.getElementById('filter--diverse');
 const btnSmallest = document.getElementById('filter--countStudents');
+const btnSortOrder = document.getElementById('filter--sortOrder');
 
+
+btnSortOrder.addEventListener('click', () => {
+    let filtered, filteredBerlin;
+    order = (order == 'ascending') ? 'descending' : 'ascending';
+
+    const translate = {
+        'ascending': 'Sortierung: aufsteigend',
+        'descending': 'Sortierung: absteigend'
+    }
+
+    btnSortOrder.innerHTML = translate[order];
+
+    switch (filterSwitch) {
+        case 'year':
+            filtered = rankedData('year', dataGlobal, order);
+            filteredBerlin = getBerlinUnis(filtered);
+            break;
+        case 'count_studies':
+            filtered = rankedData('count_studies', dataGlobal, order);
+            filteredBerlin = getBerlinUnis(filtered).slice(0,9);
+            break;
+        case 'count_students':
+            filtered = rankedData('count_students', dataGlobal, order);
+            filteredBerlin = getBerlinUnis(filtered).slice(0,9);
+            break;
+        }
+
+    filtered = filtered.slice(0,9);
+    filteredBerlin = filteredBerlin.slice(0,9);
+
+    table_ranking.remove();
+    table_ranking.update(filterSwitch, filtered);
+    table_ranking.updateBerlin(filterSwitch, filteredBerlin);
+});
 
 btnOldest.addEventListener('click', () => {
-    const filteredByAge = filterData('year', dataGlobal, 'ascending')
+    filterSwitch = 'year';
+    const filteredByAge = filterData('year', dataGlobal, 'descending')
     table_ranking.remove();
     table_ranking.update('year', filteredByAge);
+    table_ranking.updateBerlin('year', berlinAge);
     const buttons = d3.selectAll('button');
     buttons.classed('active', false);
     d3.select('#filter--oldest').classed("active", d3.select('#filter--oldest').classed("active") ? false : true);
 });
 
 btnSmallest.addEventListener('click', () => {
-    const filteredByStudents = filterData('count_students', dataGlobal, 'ascending')
+    filterSwitch = 'count_students';
+    const filteredByStudents = filterData('count_students', dataGlobal, 'descending')
     table_ranking.remove();
     table_ranking.update('count_students', filteredByStudents);
+    table_ranking.updateBerlin('count_students', berlinStudents);
     const buttons = d3.selectAll('button');
     buttons.classed('active', false);
     d3.select('#filter--countStudents').classed("active", d3.select('#filter--countStudents').classed("active") ? false : true);
 });
 
 btnDiverse.addEventListener('click', () => {
+    filterSwitch = 'count_studies';
     const filteredByStudies = filterData('count_studies', dataGlobal, 'descending');
     table_ranking.remove();
     table_ranking.update('count_studies', filteredByStudies);
+    table_ranking.updateBerlin('count_studies', berlinStudies);
     const buttons = d3.selectAll('button');
     buttons.classed('active', false);
     d3.select('#filter--diverse').classed("active", d3.select('#filter--diverse').classed("active") ? false : true);
 });
-
