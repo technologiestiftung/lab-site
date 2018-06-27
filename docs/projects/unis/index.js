@@ -45,8 +45,8 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
     data = _data,
     geojson = _geojson,
     container = _container,
-    arr = [],
     filterKey = _filterKey,
+    arr = [],
     extent,
     width = 500,
     height = 500,
@@ -63,14 +63,14 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
     image,
     raster,
     center,
-    vector_group
+    vector_group,
+    contour_vector
 
     center = proj([11.42, 50.91]);
 
     mapZoom = d3.zoom()
         .on("zoom", freeZoom)
         .scaleExtent([1 << 11, 1 << 20])
-        //.translateExtent([[0,0],[width, height]])
 
     svg = container.append('svg')
         .attr('width', width)
@@ -96,13 +96,19 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
 
     raster = map_group.append("g");
 
-    vector_group = map_group.append('g');
+    map_vector = map_group.append('g')
 
-    map_vector = vector_group
-        .append("path")
-        // .scaleExtent([1,8])
-        .attr('d', path(topojson.mesh(geojson)))
-    
+    console.log(topojson.feature(geojson, geojson.objects['germany-merged']).features);
+
+    map_vector.append('g')
+        .selectAll('path')
+        .data(topojson.feature(geojson, geojson.objects['germany-merged']).features)
+        .enter()
+        .append('path')
+        .attr('class', 'contour')
+        .style('stroke', 'red')
+        .style('fill', 'none')
+        .attr('d', path)
 
     function stringify(scale, translate) {
         let k = scale / 256, r = scale % 1 ? Number : Math.round;
@@ -110,7 +116,7 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
     }
 
     function freeZoom() {
-        vector_group
+        map_vector
             .attr("transform", d3.event.transform)   
             
         map_vector
@@ -160,7 +166,7 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
         
         data.sort((a,b)=>b.count_students-a.count_students);
 
-        circles = vector_group.selectAll('g')
+        circles = map_vector.selectAll('g')
             .data(data)
             .enter()
             .append('g')
@@ -192,7 +198,6 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
                 let t_id = d3.select(this).attr('id');
                 const circles = d3.selectAll('.circle__wrapper--circle');
 
-
                 circles
                     .transition()
                     .duration(100)
@@ -218,7 +223,6 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
                     }
                     return 0.4
                 })
-                
                 bee_chart.refresh(d3.select(this).attr('id'), 'mouseout');
             })
 
@@ -710,7 +714,6 @@ const legend = (_container) => {
                 .attr('class', 'bar-metadata')
                 .text(`${(7-i)}0.000`)
         }
-
     }
     return module;
 }
@@ -932,7 +935,6 @@ updateTooltip = (data, type) => {
         tool_tip.update(data);
         tool_tip_berlin.update(data);
     }
-
 }
 
 filterData = (key, data, order = 'descending') => {
@@ -994,7 +996,7 @@ getBerlinUnis = (data) => {
 
 d3.queue()
     .defer(d3.json, "./data/unis.json")
-    .defer(d3.json, "./data/germany.json")
+    .defer(d3.json, "./data/merged.topojson")
     .defer(d3.json, "./data/berlin.topojson")
     .await( (error, unis, counties, berlin) => {
         let brush_extent;
@@ -1003,8 +1005,6 @@ d3.queue()
         rankedByStudents = rankedData('count_students', dataGlobal, 'descending');
         rankedByStudies = rankedData('count_studies', dataGlobal, 'descending');
         filterDefault = rankedData('count_students', dataGlobal, 'descending').slice(0,9);
-
-        // console.log(rankedByStudies);
 
         berlinStudents = getBerlinUnis(rankedByStudents).slice(0,9);
         berlinStudies = getBerlinUnis(rankedByStudies).slice(0,9);
@@ -1032,7 +1032,7 @@ d3.queue()
         brushed_tool_tip = brushedTooltip(unis, d3.select('#brushed-tooltip'));
         brushed_tool_tip.init();
 
-        map_chart_berlin = mapChart(unis, berlin, '', filterKey, d3.select('#mapChartBerlin'), projBerlin);
+        map_chart_berlin = mapChart(unis, counties, '', filterKey, d3.select('#mapChartBerlin'), projBerlin);
         map_chart_berlin.init();
         map_chart_berlin_legend = legend(d3.select('#legend-berlin-bars'));
         map_chart_berlin_legend.init();
