@@ -1121,6 +1121,20 @@ d3.queue()
             
         // });
         unis_berlin = unis.filter(uni => uni.county == 'Berlin');
+
+        let countPrivat = 0;
+        let countPublic = 0;
+        let countkirchlich = 0;
+
+        let privat = unis_berlin.filter(uni => uni.sponsor == 'privat, staatlich anerkannt');
+        let public = unis_berlin.filter(uni => uni.sponsor == 'öffentlich-rechtlich');
+        let kirchlich = unis_berlin.filter(uni => uni.sponsor == 'kirchlich, staatlich anerkannt');
+        privat.forEach(uni => { countPrivat += uni.count_students })
+        public.forEach(uni => { countPublic += uni.count_students })
+        kirchlich.forEach(uni => { countkirchlich += uni.count_students })
+
+        console.log(`kirchlich: ${countkirchlich}, privat: ${countPrivat}, öffentlich: ${countPublic}`);
+
                 
         map_chart = mapChart(unis, counties, '', filterKey, d3.select('#mapChart'), projGer, 'GER');
         map_chart.init();

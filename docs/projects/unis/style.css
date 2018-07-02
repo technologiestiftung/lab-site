@@ -359,6 +359,121 @@ button:hover {
     justify-content: flex-start;
 }
 
+.button > span {
+    font-size: 12px;
+}
+
+.button {
+    font-size: 12px;
+}
+
+.tile-analysis-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 700px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.tile-analysis {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    background: white;
+    font-family: 'Barlow', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 700px;
+    border: rgb(230,230,230) 1px solid;
+}
+
+.icon {
+    width: 80px;
+    height: 80px;
+    margin-right: 30px;
+    margin-top: 7px;
+    margin-left: 5px;
+}
+
+.tile-analysis:hover {
+    border: #1e3791 1px solid;
+}
+
+.tile-analysis--last:hover {
+    border: #1e3791 1px solid;
+}
+
+.tile-analysis--last {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    background: white;
+    font-family: 'Barlow', sans-serif;
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    max-width: 700px;
+    border: rgb(230,230,230) 1px solid;
+}
+
+.tile-analysis--last > div {
+    max-width: 500px;
+}
+
+.tile-analysis--last > div > .tile-analysis-wrapper--last > .tile-analysis--part {
+    width: 219px;
+}
+
+.tile-analysis-wrapper--last {
+    flex-direction: row;
+    display: flex;
+}
+
+.tile-analysis--last {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    background: white;
+    flex-direction: row;
+    font-family: 'Barlow', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 700px;
+    border: rgb(230,230,230) 1px solid;
+}
+
+.tile-analysis--students {
+    color: grey;
+}
+
+.tile-analysis--sub {
+    color: grey;
+}
+
+.tile-analysis--content {
+    display: flex;
+    flex-direction: column;
+}
+
+.tile-analysis--count {
+    color: #1e3791;
+    margin-top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.count-wrapper {
+    margin-top: 10px;
+}
+
+.tile-analysis--part {
+    width: 270px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .buttons.grouped .button:nth-child(2) {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
@@ -454,7 +569,27 @@ button:hover {
     .charts-section {
         flex-direction: column;
         height: auto;
-        width: 80%;
+        width: 90%;
+    }
+
+    .tile-analysis--part {
+        margin-top: 20px;
+    }
+
+    .overlay-boarding-bee {
+        left: 20%;
+    }
+
+    .overlay-boarding-map {
+        left: 20%;
+    }
+
+    .btn-group-wrapper {
+        flex-direction: column;
+    }
+
+    .tt-value {
+        font-size: 18px;
     }
 
     .chart-subline {
@@ -476,5 +611,9 @@ button:hover {
 @media screen and (max-width: 600px) {
     .chart-wrapper {
         padding-right: 0px;
+    }
+
+    .tile-analysis-wrapper--last {
+        flex-direction: column;
     }
 }
