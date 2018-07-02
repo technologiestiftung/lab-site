@@ -152,10 +152,12 @@ font: 10px sans-serif;
 
 .charts-section  #mapChart {
     overflow: hidden;
+    position: relative;
 }
 
 #mapChartBerlin {
     overflow: hidden;
+    position: relative;
 }
 
 .charts-section  #beeChart {
@@ -386,18 +388,23 @@ button:hover {
     padding: 10px 10px;
 }
 
-.overlay-boarding {
+.overlay-boarding-bee, .overlay-boarding-map {
     position: absolute;
     top: 30%;
-    left: 35%;
+    left: 30%;
     padding: 20px;
-    border: rgb(230,230,230) 1px solid;
+    border: rgb(245,245,245) 1px solid;
     border-radius: 5px;
     background: rgba(255,255,255,.7);
-    animation: blink 2s infinite;
+    /* animation: blink 2s infinite; */
 }
 
-.overlay-boarding > img{
+.overlay-boarding-bee > img{
+    margin-left: 73px;
+    margin-bottom: 10px;
+}
+
+.overlay-boarding-map > img{
     margin-left: 73px;
     margin-bottom: 10px;
 }
@@ -409,7 +416,13 @@ button:hover {
     100% { opacity: 0; }
   }
 
-.overlay-boarding > .hint {
+.overlay-boarding-bee > .hint {
+    font-family: 'Barlow', sans-serif;
+    text-align: center;
+    width: 200px;
+}
+
+.overlay-boarding-map > .hint {
     font-family: 'Barlow', sans-serif;
     text-align: center;
     width: 200px;
