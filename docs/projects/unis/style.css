@@ -9,7 +9,7 @@
 }
 
 .bar-wrapper {
-    width: 50px;
+    width: 70px;
     display: flex;
     flex-direction: row;
     font-family: 'Barlow', sans-serif;
@@ -21,9 +21,11 @@ button:focus {
 }
 
 .bar-wrapper .bar {
-    height: 26px;
-    width: 2px;
-    margin-bottom: 3px;
+    height: 6px;
+    width: 6px;
+    border-radius: 100px;
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
 
 .bar-wrapper .bar-metadata {
@@ -456,4 +458,10 @@ button:hover {
         height: auto;
     }
 
+}
+
+@media screen and (max-width: 600px) {
+    .chart-wrapper {
+        padding-right: 0px;
+    }
 }

@@ -1,12 +1,13 @@
 let map_chart, bee_chart, tool_tip, table_ranking, brushed_tool_tip, map_chart_berlin, map_chart_berlin_legend, bee_chart_berlin, berlinStudents, berlinStudies, berlinAge,
-rankedByAge, rankedByStudents, rankedByStudies, filterDefault, filterSwitch = 'students', order = 'ascending';
+rankedByAge, rankedByStudents, rankedByStudies, filterDefault, filterSwitch = 'students', order = 'ascending', unis_berlin;
 
 const rangeMin = 1,
 rangeMax = 600,
+initScale = {scale:50000, x:-312.30765033408386, y:3576.511912314453},
 filterKey = "count_students",
 domain = [24,68429],
 scale = d3.scaleLinear()
-    .domain([24, 68429])
+    .domain([domain[0], domain[1]])
     .range([rangeMin, rangeMax]);
 
 let dataGlobal;
@@ -15,14 +16,10 @@ const tau = 2 * Math.PI;
 projGer = d3.geoMercator()
     .scale(1 / tau)
     .translate([0, 0]);
-// .scale(2000)
-// .center([11.42, 50.91])
-// .translate([500 / 2 + 60, 500 / 2]),
 
 projBerlin = d3.geoMercator()
-.scale(35000)
-.center([13.409, 52.519])
-.translate([500 / 2, 500 / 2])
+    .scale(1 / tau)
+    .translate([0, 0]);
 
 const colors = ['F67060', 'F39072', 'E5CB98', 'D0CEA5', 'B0BAAA', '6892B1', '8FA6AE'];
 const invertedColors = ['F67060', '8FA6AE', '6892B1', 'B0BAAA', 'D0CEA5', 'E5CB98', 'F39072'];
@@ -39,10 +36,11 @@ calcArea = (value) => {
     return radius;
 } 
 
-const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _container, _proj) {
+const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _container, _proj, _type) {
     let module = {},
     proj = _proj,
     data = _data,
+    type = _type,
     geojson = _geojson,
     container = _container,
     filterKey = _filterKey,
@@ -66,11 +64,17 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
     vector_group,
     contour_vector
 
-    center = proj([11.42, 50.91]);
+    if (type == 'BER') {
+        center = proj([13.42, 52.51]);
+    } else if (type == 'GER') {
+        center = proj([10.32, 50.91]);
+    }
 
     mapZoom = d3.zoom()
         .on("zoom", freeZoom)
-        .scaleExtent([1 << 11, 1 << 20])
+        .scaleExtent([6 << 11, 6 << 20])
+    
+   
 
     svg = container.append('svg')
         .attr('width', width)
@@ -98,17 +102,17 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
 
     map_vector = map_group.append('g')
 
-    console.log(topojson.feature(geojson, geojson.objects['germany-merged']).features);
-
     map_vector.append('g')
         .selectAll('path')
         .data(topojson.feature(geojson, geojson.objects['germany-merged']).features)
         .enter()
         .append('path')
         .attr('class', 'contour')
-        .style('stroke', 'red')
+        .style('stroke', 'rgb(150,150,150)')
         .style('fill', 'none')
         .attr('d', path)
+
+        
 
     function stringify(scale, translate) {
         let k = scale / 256, r = scale % 1 ? Number : Math.round;
@@ -116,38 +120,56 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
     }
 
     function freeZoom() {
+        let scaleObj = {scale: d3.event.transform.k, x: d3.event.transform.x, y: d3.event.transform.y}
+        let showMap = (type == 'BER') ? (scaleObj.scale > 350000) : (scaleObj.scale > 60000);
+
+        let toStr = `translate(${scaleObj.x},${scaleObj.y}) scale(${scaleObj.scale})`
+
         map_vector
-            .attr("transform", d3.event.transform)   
-            
-        map_vector
-            .style('stroke-width', 1 / d3.event.transform.k);
+            .attr("transform", toStr)   
+        
+         map_vector
+            .style('stroke-width', 1 / scaleObj.scale);
 
         tiles = tile
-            .scale(d3.event.transform.k)
-            .translate([d3.event.transform.x, d3.event.transform.y])
+            .scale(scaleObj.scale)
+            .translate([scaleObj.x, scaleObj.y])
             ();
       
         image = raster
             .attr("transform", stringify(tiles.scale, tiles.translate))
             .selectAll("image")
             .data(tiles, function(d) { 
-                return d; });
+                return d; 
+            });
       
         image.exit().remove();
-      
+
+
+        if (type == 'BER') {
+            const circles = d3.selectAll('circle__wrapper--circle-ber');
+        } else if (type == 'GER') {
+            const circles = d3.selectAll('circle__wrapper--circle-ger');
+        }
+
+        circles
+            .attr('r', d => {
+                return calcArea(scale(d.count_students)) / scaleObj.scale
+            })
+
+
+        if (showMap) {
         image.enter().append("image")   //tile.openstreetmap.org/
             .attr("xlink:href", function(d) { 
-                //return "http://" + "abc"[d[1] % 3] + ".tiles.wmflabs.org/bw-mapnik/" + d[2] + "/" + d[0] + "/" + d[1] + ".png"; })
-                return "http://" + "maps.wikimedia.org/osm-intl/" + d[2] + "/" + d[0] + "/" + d[1] + ".png"; })
+                return "http://" + "abc"[d[1] % 3] + ".tile.stamen.com/toner/" + d[2] + "/" + d[0] + "/" + d[1] + ".png"; })
+                // http://a.tile.stamen.com/toner/${z}/${x}/${y}.png
+                // return "http://" + "abc"[d[1] % 3] + ".tiles.wmflabs.org/bw-mapnik/" + d[2] + "/" + d[0] + "/" + d[1] + ".png"; })
+                // return "http://" + "maps.wikimedia.org/osm-intl/" + d[2] + "/" + d[0] + "/" + d[1] + ".png"; })
             .attr("x", function(d) { return d[0] * 256; })
             .attr("y", function(d) { return d[1] * 256; })
             .attr("width", 256)
-          
-
-        d3.selectAll('.circle__wrapper--circle')
-            .attr('r', d => {
-                return calcArea(scale(d.count_students)) / d3.event.transform.k
-            })
+            .style('opacity', .5)
+        }
     }
 
     d3.select("#reset").on("click", () => {
@@ -175,7 +197,14 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
             .attr("stroke-width", "0px")
             .attr('id', d => { 
                 return `map_${d.id_hochschule}` })
-            .attr('class', 'circle__wrapper--circle')
+            .attr('class', d => {
+                let classCircle = '';
+                if (type == 'BER') {
+                    classCircle = 'circle__wrapper--circle-ber'
+                } if (type == 'GER') {
+                    classCircle = 'circle__wrapper--circle-ger'
+                }
+            })
             .attr('style', (d) => {
                 return `fill: #${colorScale(d[filterKey])}; opacity: .4;`
             })
@@ -196,7 +225,13 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
             })
             .on('mouseover', function(d) {
                 let t_id = d3.select(this).attr('id');
-                const circles = d3.selectAll('.circle__wrapper--circle');
+
+                if (type == 'BER') {
+                    const circles = d3.selectAll('circle__wrapper--circle-ber');
+                } else if (type == 'GER') {
+                    const circles = d3.selectAll('circle__wrapper--circle-ger');
+                }
+
 
                 circles
                     .transition()
@@ -225,13 +260,20 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
                 })
                 bee_chart.refresh(d3.select(this).attr('id'), 'mouseout');
             })
-
-    svg.call(mapZoom)
-        .call(mapZoom.transform, d3.zoomIdentity
-            .translate(width / 2, height / 2)
-            .scale(1 << 12)
-            .translate(-center[0], -center[1]));
-
+    
+            if (type == 'GER') {
+                svg.call(mapZoom)
+                    .call(mapZoom.transform, d3.zoomIdentity
+                        .translate(width / 2, height / 2)
+                        .scale(13000)
+                        .translate(-center[0], -center[1]));
+            } else if (type == 'BER') {
+                svg.call(mapZoom)
+                    .call(mapZoom.transform, d3.zoomIdentity
+                        .translate(width / 2, height / 2)
+                        .scale(190000)
+                        .translate(-center[0], -center[1]));
+            }
     }
     module.scale = () => {
         scale = d3.scaleLinear()
@@ -243,7 +285,15 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
     module.refresh = (id, event) => {
         id = parseInt(id.slice(4,7));
         const selection = d3.selectAll(`circle[id="map_${id}"]`);
-        const circles = d3.selectAll('.circle__wrapper--circle');
+
+
+
+        if (type == 'BER') {
+            const circles = d3.selectAll('circle__wrapper--circle-ber');
+        } else if (type == 'GER') {
+            const circles = d3.selectAll('circle__wrapper--circle-ger');
+        }
+
         event == 'mouseover'
         ?
         circles
@@ -279,7 +329,13 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
     }
 
     module.update = (selection) => {
-        const circles = d3.selectAll('.circle__wrapper--circle');
+
+
+        if (type == 'BER') {
+            const circles = d3.selectAll('circle__wrapper--circle-ber');
+        } else if (type == 'GER') {
+            const circles = d3.selectAll('circle__wrapper--circle-ger');
+        }
 
         circles.classed("selected--circles", function(d) {
             const condition = selection[1] <= d[filterKey] && d[filterKey] <= selection[0];
@@ -310,9 +366,10 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
     return module;
 }
 
-const beeChart = (_data, _filterFunction, _filterKey, _container) => {
+const beeChart = (_data, _filterFunction, _filterKey, _container, _type) => {
     let module = {},
     width = 500,
+    type = _type,
     height = 500,
     margin = { top: 20, right: 40, bottom: 40, left: 25 },
     innerHeight = height - margin.top - margin.bottom,
@@ -418,8 +475,9 @@ const beeChart = (_data, _filterFunction, _filterKey, _container) => {
             .enter()
               .append('circle')
                 .attr('class', 'dot')
-                .attr('id', d => { 
-                    return `bee_${d.datum.id_hochschule}` })
+                .attr('id', d => {
+                    let idName = type == 'GER' ? `bee_${d.datum.id_hochschule}-ger` : `bee_${d.datum.id_hochschule}-ber`;
+                    return idName })
                 .attr('cx', function(bee) { return bee.x + 20; })
                 .attr('cy', function(bee) { return bee.y; })
                 .attr('r', 2)
@@ -438,14 +496,13 @@ const beeChart = (_data, _filterFunction, _filterKey, _container) => {
                         .transition()
                         .duration(100)
                         .attr('r', `2px`)
-                    
                     map_chart.refresh(d3.select(this).attr('id'), 'mouseout');
                 })
     }
 
     module.refresh = (id, event) => {
         id = parseInt(id.slice(4,7));
-        const selection = d3.selectAll(`circle[id="bee_${id}"]`);
+        const selection = type == 'GER' ? d3.selectAll(`circle[id="bee_${id}-ger"]`) : d3.selectAll(`circle[id="bee_${id}-ber"]`);
         radius = event == 'mouseover' ?  selection.transition().duration(100).attr('r', '6px') : selection.transition().duration(100).attr('r', '2px');
     }
 
@@ -1020,27 +1077,28 @@ d3.queue()
         //     else { return false; }
             
         // });
+        unis_berlin = unis.filter(uni => uni.county == 'Berlin');
                 
-        map_chart = mapChart(unis, counties, '', filterKey, d3.select('#mapChart'), projGer);
+        map_chart = mapChart(unis, counties, '', filterKey, d3.select('#mapChart'), projGer, 'GER');
         map_chart.init();
         map_chart_legend = legend(d3.select('#legend-bars'));
         map_chart_legend.init();
-        bee_chart = beeChart(unis, '', filterKey, d3.select('#beeChart'));
+        bee_chart = beeChart(unis, '', filterKey, d3.select('#beeChart'), 'GER');
         bee_chart.init();
         tool_tip = tooltip(unis, d3.select('#tooltip'));
         tool_tip.init();
         brushed_tool_tip = brushedTooltip(unis, d3.select('#brushed-tooltip'));
         brushed_tool_tip.init();
 
-        map_chart_berlin = mapChart(unis, counties, '', filterKey, d3.select('#mapChartBerlin'), projBerlin);
+        map_chart_berlin = mapChart(unis_berlin, counties, '', filterKey, d3.select('#mapChartBerlin'), projBerlin, 'BER');
         map_chart_berlin.init();
         map_chart_berlin_legend = legend(d3.select('#legend-berlin-bars'));
         map_chart_berlin_legend.init();
-        bee_chart_berlin = beeChart(unis, '', filterKey, d3.select('#beeChartBerlin'));
+        bee_chart_berlin = beeChart(unis_berlin, '', filterKey, d3.select('#beeChartBerlin'), 'BER');
         bee_chart_berlin.init();
-        tool_tip_berlin = tooltip(unis, d3.select('#tooltip-berlin'));
+        tool_tip_berlin = tooltip(unis_berlin, d3.select('#tooltip-berlin'));
         tool_tip_berlin.init();
-        brushed_tool_tip_berlin = brushedTooltip(unis, d3.select('#brushed-tooltip-berlin'));
+        brushed_tool_tip_berlin = brushedTooltip(unis_berlin, d3.select('#brushed-tooltip-berlin'));
         brushed_tool_tip_berlin.init();
 
         table_ranking = table();
@@ -1131,3 +1189,5 @@ btnDiverse.addEventListener('click', () => {
     buttons.classed('active', false);
     d3.select('#filter--diverse').classed("active", d3.select('#filter--diverse').classed("active") ? false : true);
 });
+
+setTimeout(() => {btnOldest.click();}, 1000)
