@@ -234,11 +234,11 @@ div.charts-section div.chart-wrapper h2 {
 }
 
 .chart-legend__unis--oval {
-    height: 10px;
-    width: 10px;
+    height: 6px;
+    width: 6px;
     background: #D8D8D8;
     border-radius: 100px;
-    margin-top: 4px;
+    margin-top: 6px;
     margin-right: 7px;
 }
 
@@ -393,9 +393,9 @@ button:hover {
     top: 30%;
     left: 30%;
     padding: 20px;
-    border: rgb(245,245,245) 1px solid;
+    border: rgb(230,230,230) 1px solid;
     border-radius: 5px;
-    background: rgba(255,255,255,.7);
+    background: rgba(255,255,255,.9);
     /* animation: blink 2s infinite; */
 }
 
