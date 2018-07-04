@@ -550,6 +550,10 @@ button:hover {
     width: 200px;
 }
 
+.charts-section > .chart-wrapper.first {
+    margin-bottom: 100px;
+}
+
 @media screen and (min-width: 1025px) and (max-width: 1400px) {
     .charts-section {
         width: 95%;
@@ -578,9 +582,8 @@ button:hover {
     }
 
     .chart-wrapper {
-        margin-bottom: 100px;
         height: auto;
-        max-width: 500px;
+        max-width: 100%;
         align-self: center;
     }
 
@@ -594,6 +597,10 @@ button:hover {
         flex-direction: column;
         height: auto;
         width: 90%;
+    }
+
+    #brushed-tooltip {
+        height: auto;
     }
 
     .tile-analysis--last > div > span {
@@ -641,8 +648,16 @@ button:hover {
     }
 
     .chart-wrapper {
-        margin-bottom: 100px;
         height: auto;
+    }
+
+    .table-item.active .td-subline {
+        flex-direction: column;
+    }
+
+    .table-col {
+        margin-bottom: 1rem;
+        margin-right: 0rem;
     }
 
 }

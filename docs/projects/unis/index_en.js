@@ -719,6 +719,11 @@ const beeChart = (_data, _filterFunction, _filterKey, _container, _type) => {
             return selection[1] <= d.datum[filterKey] && d.datum[filterKey] <= selection[0]; 
         })
 
+        dots.attr('r', d => {
+            let condition = selection[1] <= d.datum[filterKey] && d.datum[filterKey] <= selection[0];
+            if (condition) { return 3 } else { return 2 }
+        })
+
         const circles = cell.selectAll('circle');
     }
     return module;
