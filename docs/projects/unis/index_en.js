@@ -253,7 +253,7 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
     hint = overlay.append('p')
         .attr('class', 'hint')
 
-    hint.text("Verändere den Bildausschnitt durch scrollen");
+    hint.text("Change the image section by scrolling");
 
     if (type == 'BER') {
         center = proj([13.42, 52.51]);
@@ -602,7 +602,7 @@ const beeChart = (_data, _filterFunction, _filterKey, _container, _type) => {
     hint = overlay.append('p')
         .attr('class', 'hint')
     
-    hint.text("Markiere einen Bereich, \n um mehrere Universitäten \n auszuwählen");
+    hint.text("Select a range, \n to select multiple universities \n");
 
     svg = container.append('svg')
         .attr('width', width)
@@ -764,12 +764,12 @@ const brushedTooltip = (_data, _container, _type) => {
         container1
             .append('div')
             .attr('class', 'tt-subheadline')
-            .text('ø Alter')
+            .text('ø Age')
             
         avgAge = container1
             .append('div')
             .attr('class', 'tt-value')
-            .text(`Bereich auswählen`)
+            .text(`Select area`)
             
         container2 = subWrapper 
             .append('div')
@@ -777,7 +777,7 @@ const brushedTooltip = (_data, _container, _type) => {
             
         container2
             .append('div')
-            .text('Studierende')
+            .text('Students')
             .attr('class', 'tt-subheadline')
 
         container3 = subWrapper 
@@ -787,32 +787,32 @@ const brushedTooltip = (_data, _container, _type) => {
         sumStudentsWrapper = container2
             .append('div')
             .attr('class', 'tt-value')
-            .text(`Bereich auswählen`)
+            .text(`Select area`)
         
         ageSubline = container1
             .append('div')
             .attr('class', 'tt-subline')
-            .text(`für mehr Informationen`)
+            .text(`for more information`)
             
         studentsSubline = container2
             .append('div')
             .attr('class', 'tt-subline')
-            .text(`${0}% von 2.74 Mio. Studierenden.`)
+            .text(`${0}% of 2.74 mio. students.`)
             
         container3
             .append('div')
             .attr('class', 'tt-subheadline')
-            .text('ø Studiengänge')
+            .text('ø Studies')
             
         avgStudiesWrapper = container3
             .append('div')
             .attr('class', 'tt-value')
-            .text(`Bereich auswählen`)
+            .text(`Select area.`)
         
         studiesSubline = container3
             .append('div')
             .attr('class', 'tt-subline')
-            .text(`von 2–350 Studiengängen.`)
+            .text(`of 2–350 studies.`)
     };
 
     module.update = (selection) => {
@@ -839,14 +839,14 @@ const brushedTooltip = (_data, _container, _type) => {
         sumStudentsPercent = round(sumStudents / 2670000) * 100;
 
         ageSubline
-            .text("der markierten Hochschulen.")
+            .text("of selected universities.")
         
 
         studentsSubline
-            .text(`${sumStudentsPercent}% von 2.74 Mio. Studenten.`)
+            .text(`${sumStudentsPercent}% of 2.74 mio. students.`)
 
         headline
-            .text(`${round(selection.length)} von ${countUnis} Hochschulen ausgewählt.`);
+            .text(`${round(selection.length)} of ${countUnis} universities selected.`);
         
         avgAge
             .text(`${round(avgUniAge).toString().replace('.',',')} Jahre`)
@@ -908,56 +908,56 @@ const tooltip = (_data, _container) => {
         ageSubheadline = container1
             .append('div')
             .attr('class', 'tt-subheadline')
-            .text('Gründung')
+            .text('Established')
 
         age = container1
             .append('div')
             .attr('class', 'tt-value')
-            .text('Hochschule auswählen')
+            .text('Select university')
         
         ageSubline = container1
             .append('div')
             .attr('class', 'tt-subline')
-            .text('für mehr Informationen')
+            .text('for more information')
 
         studentsSubheadline = container2
             .append('div')
             .attr('class', 'tt-subheadline')
-            .text('Studierende')
+            .text('Students')
 
         students = container2
             .append('div')
             .attr('class', 'tt-value')
-            .text('Hochschule auswählen')
+            .text('Select university')
         
         studentsSubline = container2
             .append('div')
             .attr('class', 'tt-subline')
-            .text('für mehr Informationen')
+            .text('for more information')
 
         studiesSubheadline = container3
             .append('div')
             .attr('class', 'tt-subheadline')
-            .text('Studiengänge')
+            .text('Studies')
 
         studies = container3
             .append('div')
             .attr('class', 'tt-value')
-            .text('Hochschule auswählen')
+            .text('select university')
         
         studiesSubline = container3
             .append('div')
             .attr('class', 'tt-subline')
-            .text(`#${12} von 374`)
+            .text(`#${12} of 374`)
     }
     module.update = (data) => {
         headline.text(data.name);
         age.text(data.year);
         students.text(numberFormat(data.count_students));
         studies.text(data.count_studies);
-        ageSubline.text(`#${data.rAge} von 374`)
-        studentsSubline.text(`#${data.rStudents} von 374`)
-        studiesSubline.text(`#${data.rStudies} von 374`)
+        ageSubline.text(`#${data.rAge} of 374`)
+        studentsSubline.text(`#${data.rStudents} of 374`)
+        studiesSubline.text(`#${data.rStudies} of 374`)
 
         const ttHeadline = document.getElementsByClassName('tt-headline');
 
@@ -1094,22 +1094,31 @@ const table = () => {
         tableItemStudies = col2
             .append('div')
             .attr('class', 'td-studies')
-            .text( d => { return `${d.count_studies} Studiengänge`; })
+            .text( d => { return `${d.count_studies} studies`; })
                     
         tableItemYear = col1
             .append('div')
             .attr('class', 'td-year')
-            .text( d => { return `${d.year} gegründet`; })
+            .text( d => { return `est. ${d.year}`; })
                     
         tableItemStudents = col2
             .append('div')
             .attr('class', 'td-students')
-            .text( d => { return `${d.count_students} Studenten`; })
+            .text( d => { return `${d.count_students} students`; })
                     
         tableItemType = col3
             .append('div')
             .attr('class', 'td-sponsor')
-            .text( d => { return d.sponsor; })
+            .text( d => { 
+
+                translation = {
+                    'privat, staatlich anerkannt': 'private',
+                    'öffentlich-rechtlich': 'public',
+                    'kirchlich, staatlich anerkannt': 'founded by church'
+                }
+
+                return translation[d.sponsor];
+            })
     }
         
         
@@ -1172,22 +1181,31 @@ const table = () => {
         tableItemStudies = col2
             .append('div')
             .attr('class', 'td-studies')
-            .text( d => { return `${d.count_studies} Studiengänge`; })
+            .text( d => { return `${d.count_studies} studies`; })
                     
         tableItemYear = col1
             .append('div')
             .attr('class', 'td-year')
-            .text( d => { return `${d.year} gegründet`; })
+            .text( d => { return `${d.year} established`; })
                     
         tableItemStudents = col2
             .append('div')
             .attr('class', 'td-students')
-            .text( d => { return `${d.count_students} Studenten`; })
+            .text( d => { return `${d.count_students} students`; })
                     
         tableItemType = col3
             .append('div')
             .attr('class', 'td-sponsor')
-            .text( d => { return d.sponsor; })
+            .text( d => { 
+
+                translation = {
+                    'privat, staatlich anerkannt': 'private',
+                    'öffentlich-rechtlich': 'public',
+                    'kirchlich, staatlich anerkannt': 'founded by church'
+                }
+
+                return translation[d.sponsor];
+            })
     }
     return module;
 }
@@ -1280,8 +1298,8 @@ btnSortOrder.addEventListener('click', () => {
     order = (order == 'ascending') ? 'descending' : 'ascending';
 
     const translate = {
-        'ascending': 'Sortierung: aufsteigend',
-        'descending': 'Sortierung: absteigend'
+        'ascending': 'Sort: ascending',
+        'descending': 'Sort: descending'
     }
 
     btnSortOrder.innerHTML = translate[order];

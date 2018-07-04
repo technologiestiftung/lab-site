@@ -88,7 +88,7 @@ font: 10px sans-serif;
 
 .sub-wrapper {
     margin-top: 1rem;
-    display: flex;
+    display: none;
 }
 
 .metadata {
@@ -141,7 +141,7 @@ font: 10px sans-serif;
 }
 
 .charts-section {
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 20px;
     height: 860px;
     display: flex;
@@ -172,6 +172,9 @@ font: 10px sans-serif;
 .chart-wrapper {
     display: flex;
     flex-direction: column;
+}
+
+.chart-wrapper:first-child {
     padding-right: 80px;
 }
 
@@ -426,6 +429,10 @@ button:hover {
     width: 219px;
 }
 
+.tile-analysis--last > div  {
+    margin-top: 20px;
+}
+
 .tile-analysis-wrapper--last {
     flex-direction: row;
     display: flex;
@@ -543,9 +550,20 @@ button:hover {
     width: 200px;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 1025px) and (max-width: 1400px) {
+    .charts-section {
+        width: 95%;
+    }
+
+    .chart-wrapper {
+        padding-right: 20px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
     .charts-section {
         flex-direction: column;
+        justify-content: space-around;
         height: auto;
         width: 80%;
     }
@@ -562,6 +580,12 @@ button:hover {
     .chart-wrapper {
         margin-bottom: 100px;
         height: auto;
+        max-width: 500px;
+        align-self: center;
+    }
+
+    .chart-wrapper:first-child {
+        padding-right: 0px;
     }
 }
 
@@ -572,16 +596,31 @@ button:hover {
         width: 90%;
     }
 
+    .tile-analysis--last > div > span {
+        display: inline-block;
+        width: 200px;
+    }
+
+    .tile-analysis {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .tile-analysis--last {
+        flex-direction: column;
+        width: 100%;
+    }
+
     .tile-analysis--part {
         margin-top: 20px;
     }
 
     .overlay-boarding-bee {
-        left: 20%;
+        left: 25%;
     }
 
     .overlay-boarding-map {
-        left: 20%;
+        left: 25%;
     }
 
     .btn-group-wrapper {
