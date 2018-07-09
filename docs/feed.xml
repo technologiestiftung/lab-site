@@ -12,7 +12,7 @@
 	<atom:link href="http://lab.technologiestiftung-berlin.de/feed.xml" rel="self" type="application/rss+xml" />
 	<link>http://lab.technologiestiftung-berlin.de</link>
 	<description>Wir erforschen und erproben digitale Werkzeuge um gemeinsam mit Bürger*innen, Verwaltung und Unternehmen die Zukunft Berlins zu gestalten.</description>
-	<lastBuildDate>Wed, 4 Jul 2018 18:05:04  +0100</lastBuildDate>
+	<lastBuildDate>Mon, 9 Jul 2018 16:33:37  +0100</lastBuildDate>
 	<language>de-DE</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
@@ -26,6 +26,17 @@
 <content:encoded><![CDATA[Zusammen mit dem Kompetenzzentrum Wasser (KWB), den Berliner Wasserbetrieben (BWB) und dem LaGeSo haben wir eine moderne datengestützte Anwendungen geschaffen, welche die Berliner Bürger*innen über die aktuelle Gewässerqualität der Berliner Badestellen informiert. ]]></content:encoded>
 <dc:creator><![CDATA[undefined]]></dc:creator>
 <guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/bathing-water/index.html</guid>
+</item>
+
+<item>
+<title><![CDATA[Deutschlands und Berlins Hochschulen im Vergleich]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/unis/index.html</link>
+<pubDate>Mon, 18 Jun 2018 00:00:00  +0100</pubDate>
+<category><![CDATA[Datenvisualisierung]]></category>
+<description><![CDATA[Wo wird in Berlin und Deutschland studiert? Ein Überblick zu Deutschlands Universitäten.]]></description>
+<content:encoded><![CDATA[Wo wird in Berlin und Deutschland studiert? Ein Überblick zu Deutschlands Universitäten.]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/unis/index.html</guid>
 </item>
 
 <item>
@@ -84,17 +95,6 @@
 </item>
 
 <item>
-<title><![CDATA[Vertrauen in Zahlen]]></title>
-<link>http://lab.technologiestiftung-berlin.de/projects/trust-in-numbers/index.html</link>
-<pubDate>Thu, 15 Mar 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[Wissen]]></category>
-<description><![CDATA[Daten vermitteln ein Gefühlt von Korrektheit. Dabei gibt es auch viele Gründe diese kritisch zu hinterfragen. Wir geben ein paar Beispiele.]]></description>
-<content:encoded><![CDATA[Daten vermitteln ein Gefühlt von Korrektheit. Dabei gibt es auch viele Gründe diese kritisch zu hinterfragen. Wir geben ein paar Beispiele.]]></content:encoded>
-<dc:creator><![CDATA[undefined]]></dc:creator>
-<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/trust-in-numbers/index.html</guid>
-</item>
-
-<item>
 <title><![CDATA[Breitband Berlin 2017]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/breitband-2017/index.html</link>
 <pubDate>Thu, 15 Mar 2018 00:00:00  +0100</pubDate>
@@ -103,6 +103,17 @@
 <content:encoded><![CDATA[Statistische und visuelle Analyse der offenen Daten zum Berliner Breitbandausbau.]]></content:encoded>
 <dc:creator><![CDATA[undefined]]></dc:creator>
 <guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/breitband-2017/index.html</guid>
+</item>
+
+<item>
+<title><![CDATA[Vertrauen in Zahlen]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/trust-in-numbers/index.html</link>
+<pubDate>Thu, 15 Mar 2018 00:00:00  +0100</pubDate>
+<category><![CDATA[Wissen]]></category>
+<description><![CDATA[Daten vermitteln ein Gefühlt von Korrektheit. Dabei gibt es auch viele Gründe diese kritisch zu hinterfragen. Wir geben ein paar Beispiele.]]></description>
+<content:encoded><![CDATA[Daten vermitteln ein Gefühlt von Korrektheit. Dabei gibt es auch viele Gründe diese kritisch zu hinterfragen. Wir geben ein paar Beispiele.]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/trust-in-numbers/index.html</guid>
 </item>
 
 <item>
