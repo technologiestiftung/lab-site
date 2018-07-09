@@ -12,11 +12,22 @@
 	<atom:link href="http://lab.technologiestiftung-berlin.de/feed.xml" rel="self" type="application/rss+xml" />
 	<link>http://lab.technologiestiftung-berlin.de</link>
 	<description>We are exploring and prototyping digital tools in order to collaboratively shape Berlin’s future for citizens, the local government and the industry.</description>
-	<lastBuildDate>Mon, 9 Jul 2018 16:33:37  +0100</lastBuildDate>
+	<lastBuildDate>Mon, 9 Jul 2018 16:40:32  +0100</lastBuildDate>
 	<language>en-us</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	
+<item>
+<title><![CDATA[Germany and Berlin's Universities]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/unis/index_en.html</link>
+<pubDate>Mon, 9 Jul 2018 00:00:00  +0100</pubDate>
+<category><![CDATA[DataVis]]></category>
+<description><![CDATA[{Where do people the most people study in Berlin and Germany? How old is your university? The data of all universities and their metadata visualized.]]></description>
+<content:encoded><![CDATA[{Where do people the most people study in Berlin and Germany? How old is your university? The data of all universities and their metadata visualized.]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/unis/index_en.html</guid>
+</item>
+
 <item>
 <title><![CDATA[Bathing Water]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/bathing-water/index_en.html</link>
@@ -26,17 +37,6 @@
 <content:encoded><![CDATA[Together with Kompetenzzentrum Wasser (KWB), Berliner Wasserbetrieben (BWB) and LaGeSo we have create a modern data-driven application, which informs Berlin's citizen on the current water quality for all bathing water locations in Berlin.]]></content:encoded>
 <dc:creator><![CDATA[undefined]]></dc:creator>
 <guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/bathing-water/index_en.html</guid>
-</item>
-
-<item>
-<title><![CDATA[Germany and Berlin's Universities]]></title>
-<link>http://lab.technologiestiftung-berlin.de/projects/unis/index_en.html</link>
-<pubDate>Mon, 18 Jun 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[DataVis]]></category>
-<description><![CDATA[{Where do people the most people study in Berlin and Germany? How old is your university? The data of all universities and their metadata visualized.]]></description>
-<content:encoded><![CDATA[{Where do people the most people study in Berlin and Germany? How old is your university? The data of all universities and their metadata visualized.]]></content:encoded>
-<dc:creator><![CDATA[undefined]]></dc:creator>
-<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/unis/index_en.html</guid>
 </item>
 
 <item>
