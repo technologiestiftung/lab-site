@@ -1,7 +1,20 @@
 .chart-legend {
     z-index: 1000;
     position: absolute;
-    margin-top: 50px;
+    padding-top: 3rem;
+}
+
+body.safari .chart-legend {
+        padding-top: 1.5rem;
+
+}
+
+svg#bee {
+    margin-top: 70px;
+}
+
+.svg-wrapper {
+    transform: translateY(20px);
 }
 
 #legend-bars-berlin {
@@ -150,17 +163,18 @@ font: 10px sans-serif;
     margin-right: auto;
 }
 
-.charts-section  #mapChart {
+.charts-section  #map_Chart {
     overflow: hidden;
     position: relative;
 }
 
 #mapChartBerlin {
+    margin-top: 2rem;
     overflow: hidden;
     position: relative;
 }
 
-.charts-section  #beeChart {
+.charts-section  #bee_Chart {
     position: relative;
     /* border: 2px solid orange; */
 }
@@ -186,7 +200,6 @@ font: 10px sans-serif;
     font-size: 16px;
     display: block;
     max-width: 700px;
-    margin-bottom: 2rem;
     border-bottom: #D8D8D8 1px solid;
     padding-bottom: 10px;
 }
