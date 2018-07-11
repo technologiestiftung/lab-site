@@ -6,7 +6,7 @@
     "DATE": "09/07/2018",
     "EMAIL": "dinklage@technologiestiftung-berlin.de",
     "GITHUB_URL": "{{PROJECT}}",
-    "LIVE": true,
+    "LIVE": false,
     "PROJECT": "unis",
     "PROJECT_DESCRIPTION_DE": "Wo wird in Berlin und Deutschland studiert? Ein Überblick zu Deutschlands Universitäten.",
     "PROJECT_DESCRIPTION_EN": "{Where do people the most people study in Berlin and Germany? How old is your university? The data of all universities and their metadata visualized.",

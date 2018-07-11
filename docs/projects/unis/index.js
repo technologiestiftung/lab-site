@@ -1237,13 +1237,13 @@ d3.queue()
         public.forEach(uni => { countPublic += uni.count_students })
         kirchlich.forEach(uni => { countkirchlich += uni.count_students })
                 
-        map_chart = mapChart(unis, counties, '', filterKey, d3.select('#mapChart'), projGer, 'GER');
+        map_chart = mapChart(unis, counties, '', filterKey, d3.select('#map_Chart'), projGer, 'GER');
         map_chart.init();
         map_chart_legend = legend(d3.select('#legend-bars'));
         map_chart_legend.init();
-        bee_chart = beeChart(unis, '', filterKey, d3.select('#beeChart'), 'GER');
+        bee_chart = beeChart(unis, '', filterKey, d3.select('#beeC_hart'), 'GER');
         bee_chart.init();
-        tool_tip = tooltip(unis, d3.select('#tooltip'));
+        tool_tip = tooltip(unis, d3.select('#_tooltip'));
         tool_tip.init();
         brushed_tool_tip = brushedTooltip(unis, d3.select('#brushed-tooltip'), 'GER');
         brushed_tool_tip.init();
