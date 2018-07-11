@@ -2,6 +2,7 @@ var map_chart, bee_chart, tool_tip, table_ranking, brushed_tool_tip, map_chart_b
 rankedByAge, rankedByStudents, rankedByStudies, filterDefault, filterSwitch = 'students', order = 'ascending', unis_berlin, typeGlobal, zoomTimer = 3;
 
 if (navigator.userAgent.match(/AppleWebKit/) && ! navigator.userAgent.match(/Chrome/)) {
+    if(document)
     document.body.className += ' safari';
  }
 
@@ -421,7 +422,6 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
             .attr("stroke-width", "0px")
             .attr("title", d => d.name)
             .attr('id', d => {
-                console.log(d) 
                 return `map_${d.id_hochschule}` })
             .attr('class', d => {
                 var classCircle = '';
