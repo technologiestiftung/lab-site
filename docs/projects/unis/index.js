@@ -881,13 +881,26 @@ const brushedTooltip = (_data, _container, _type) => {
             .text(`${round(selection.length)} von ${countUnis} Hochschulen ausgewählt.`);
         
         avgAge
-            .text(`${round(avgUniAge).toString().replace('.',',')} Jahre`)
+            .text(d => {
+                let age = round(avgUniAge).toString().replace('.',',');
+                if (age == 'NaN') { return 'keine Auswahl'; }
+                return `${round(avgUniAge).toString().replace('.',',')} Jahre`
+            })
         
         sumStudentsWrapper
-            .text(`${numberFormat(sumStudents)}`)
+            .text(d => {
+                let students = round(sumStudents).toString().replace('.',',');
+                console.log(students);
+                if (students == '0') { return 'keine Auswahl'; }
+                return `${round(sumStudents).toString().replace('.',',')}`
+            })
 
         avgStudiesWrapper
-            .text(`${round(avgStudies).toString().replace('.',',')}`)
+            .text(d => {
+                let studies = round(avgStudies).toString().replace('.',',');
+                if (studies == 'NaN') { return 'keine Auswahl'; }
+                return `${round(avgStudies).toString().replace('.',',')} Jahre`
+            })
 
         
     }

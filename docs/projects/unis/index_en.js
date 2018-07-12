@@ -871,23 +871,36 @@ const brushedTooltip = (_data, _container, _type) => {
         sumStudentsPercent = round(sumStudents / 2670000) * 100;
 
         ageSubline
-            .text("der markierten Hochschulen.")
+            .text("of selected universities.")
         
 
         studentsSubline
             .text(`${sumStudentsPercent}% of 2.74 Mio. students.`)
 
         headline
-            .text(`${round(selection.length)} of ${countUnis} Hochschulen ausgewählt.`);
-        
+            .text(`${round(selection.length)} of ${countUnis} universities selected.`);
+
         avgAge
-            .text(`${round(avgUniAge).toString().replace('.',',')} Jahre`)
+            .text(d => {
+                let age = round(avgUniAge).toString().replace('.',',');
+                if (age == 'NaN') { return 'No selection'; }
+                return `${round(avgUniAge).toString().replace('.',',')} years`
+            })
         
         sumStudentsWrapper
-            .text(`${numberFormat(sumStudents)}`)
+            .text(d => {
+                let students = round(sumStudents).toString().replace('.',',');
+                console.log(students);
+                if (students == '0') { return 'No selection'; }
+                return `${round(sumStudents).toString().replace('.',',')}`
+            })
 
         avgStudiesWrapper
-            .text(`${round(avgStudies).toString().replace('.',',')}`)
+            .text(d => {
+                let studies = round(avgStudies).toString().replace('.',',');
+                if (studies == 'NaN') { return 'No selection'; }
+                return `${round(avgStudies).toString().replace('.',',')}`
+            })
 
         
     }
