@@ -261,10 +261,10 @@
 						return Math.abs(((share / total) * 100).toFixed(decimal));
 					}
 
-					function numberFormat(num) {
-						var y = num.toString().split('.');
-						if(num > 9999) {y[0] = y[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');}
-						return y.join(',');
+					const numberFormat = (x) => {
+						var parts = x.toString().split(".");
+						parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+						return parts.join(".");
 					}
 
 					var Chart = (function(window, d3) {

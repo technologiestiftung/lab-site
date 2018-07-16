@@ -13,6 +13,10 @@ svg#bee {
     margin-top: 70px;
 }
 
+.hide {
+    opacity: 0;
+}
+
 .svg-wrapper {
     transform: translateY(20px);
 }

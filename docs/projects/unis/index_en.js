@@ -291,6 +291,9 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
         .attr('height', height)
         .attr("stroke", "#D3D3D3")
         .attr("stroke-width", "1px")
+        .attr('class', d => {             
+            return (type == 'GER') ? 'map-unis-germany' : 'map-unis-berlin';
+        })
         .attr("fill", "#FFF")
 
     tile = d3.tile()
@@ -332,8 +335,24 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
 
         var scaleObj = {scale: d3.event.transform.k, x: d3.event.transform.x, y: d3.event.transform.y}
         var showMap = (type == 'BER') ? (scaleObj.scale > 350000) : (scaleObj.scale > 60000);
-
         var toStr = `translate(${scaleObj.x},${scaleObj.y}) scale(${scaleObj.scale})`
+
+        var svgMapGer = document.getElementsByClassName('map-unis-germany');
+        var svgMapBer = document.getElementsByClassName('map-unis-berlin');
+
+        if (scaleObj.scale > 50000 && type == 'GER') {
+            // console.log(svgMap);
+            svgMapGer[0].childNodes[0].childNodes[2].childNodes[0].classList.add('hide')
+        } else if (scaleObj.scale < 40000 && type == 'GER') {
+            svgMapGer[0].childNodes[0].childNodes[2].childNodes[0].classList.remove('hide')
+        } 
+
+        if (scaleObj.scale > 350000 && type == 'BER') {
+            svgMapBer[0].childNodes[0].childNodes[2].childNodes[0].classList.add('hide')
+        } else if (scaleObj.scale < 200000 && type == 'BER') {
+            svgMapBer[0].childNodes[0].childNodes[2].childNodes[0].classList.remove('hide')
+        } 
+
 
         proj
             .scale(scaleObj.scale / tau)

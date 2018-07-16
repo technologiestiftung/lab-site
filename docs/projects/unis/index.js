@@ -6,6 +6,12 @@ if (navigator.userAgent.match(/AppleWebKit/) && ! navigator.userAgent.match(/Chr
     document.body.className += ' safari';
  }
 
+function numberFormat(num) {
+    var y = num.toString().split(',');
+    if(num > 9999) {y[0] = y[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');}
+    return y.join('.');
+}
+
 const rangeMin = 1,
 rangeMax = 600,
 initScale = {scale:50000, x:-312.30765033408386, y:3576.511912314453},
@@ -272,6 +278,7 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
             freeZoom();
             zoomTimer -= 1;
 
+
             if (zoomTimer <= 0) {
                 d3.selectAll('.overlay-boarding-map')
                     .attr('style', 'display: none')
@@ -290,6 +297,9 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
         .attr('width', width)
         .attr('height', height)
         .attr("stroke", "#D3D3D3")
+        .attr('class', d => {             
+            return (type == 'GER') ? 'map-unis-germany' : 'map-unis-berlin';
+        })
         .attr("stroke-width", "1px")
         .attr("fill", "#FFF")
 
@@ -332,8 +342,23 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
 
         var scaleObj = {scale: d3.event.transform.k, x: d3.event.transform.x, y: d3.event.transform.y}
         var showMap = (type == 'BER') ? (scaleObj.scale > 350000) : (scaleObj.scale > 60000);
-
         var toStr = `translate(${scaleObj.x},${scaleObj.y}) scale(${scaleObj.scale})`
+        
+        var svgMapGer = document.getElementsByClassName('map-unis-germany');
+        var svgMapBer = document.getElementsByClassName('map-unis-berlin');
+
+        if (scaleObj.scale > 50000 && type == 'GER') {
+            // console.log(svgMap);
+            svgMapGer[0].childNodes[0].childNodes[2].childNodes[0].classList.add('hide')
+        } else if (scaleObj.scale < 40000 && type == 'GER') {
+            svgMapGer[0].childNodes[0].childNodes[2].childNodes[0].classList.remove('hide')
+        } 
+
+        if (scaleObj.scale > 350000 && type == 'BER') {
+            svgMapBer[0].childNodes[0].childNodes[2].childNodes[0].classList.add('hide')
+        } else if (scaleObj.scale < 200000 && type == 'BER') {
+            svgMapBer[0].childNodes[0].childNodes[2].childNodes[0].classList.remove('hide')
+        } 
 
         proj
             .scale(scaleObj.scale / tau)
@@ -875,7 +900,7 @@ const brushedTooltip = (_data, _container, _type) => {
         
 
         studentsSubline
-            .text(`${sumStudentsPercent}% von 2.74 Mio. Studenten.`)
+            .text(`${sumStudentsPercent}% von 2.74 Mio. Studierende.`)
 
         headline
             .text(`${round(selection.length)} von ${countUnis} Hochschulen ausgewählt.`);
@@ -890,9 +915,8 @@ const brushedTooltip = (_data, _container, _type) => {
         sumStudentsWrapper
             .text(d => {
                 let students = round(sumStudents).toString().replace('.',',');
-                console.log(students);
                 if (students == '0') { return 'keine Auswahl'; }
-                return `${round(sumStudents).toString().replace('.',',')}`
+                return `${round(numberFormat(sumStudents)).toString().replace('.',',')}`
             })
 
         avgStudiesWrapper
@@ -1149,7 +1173,7 @@ const table = () => {
         tableItemStudents = col2
             .append('div')
             .attr('class', 'td-students')
-            .text( d => { return `${d.count_students} Studenten`; })
+            .text( d => { return `${d.count_students} Studierende`; })
                     
         tableItemType = col3
             .append('div')
@@ -1227,7 +1251,7 @@ const table = () => {
         tableItemStudents = col2
             .append('div')
             .attr('class', 'td-students')
-            .text( d => { return `${d.count_students} Studenten`; })
+            .text( d => { return `${d.count_students} Studierende`; })
                     
         tableItemType = col3
             .append('div')
