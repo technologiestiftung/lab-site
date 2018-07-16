@@ -6,12 +6,6 @@ if (navigator.userAgent.match(/AppleWebKit/) && ! navigator.userAgent.match(/Chr
     document.body.className += ' safari';
  }
 
-function numberFormat(num) {
-    var y = num.toString().split(',');
-    if(num > 9999) {y[0] = y[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');}
-    return y.join('.');
-}
-
 const rangeMin = 1,
 rangeMax = 600,
 initScale = {scale:50000, x:-312.30765033408386, y:3576.511912314453},
@@ -914,9 +908,10 @@ const brushedTooltip = (_data, _container, _type) => {
         
         sumStudentsWrapper
             .text(d => {
-                let students = round(sumStudents).toString().replace('.',',');
+                let students = numberFormat(sumStudents);
                 if (students == '0') { return 'keine Auswahl'; }
-                return `${round(numberFormat(sumStudents)).toString().replace('.',',')}`
+                // asldkjalskjdlkasdjlkas
+                return `${students}`
             })
 
         avgStudiesWrapper
@@ -1022,8 +1017,8 @@ const tooltip = (_data, _container) => {
     module.update = (data) => {
         headline.text(data.name);
         age.text(data.year);
-        students.text(numberFormat(data.count_students));
-        studies.text(data.count_studies);
+        students.text((numberFormat(data.count_students))).toString().replace('.',',');
+        studies.text(data.count_studies.toString().replace('.',','));
         ageSubline.text(`#${data.rAge} von 374`)
         studentsSubline.text(`#${data.rStudents} von 374`)
         studiesSubline.text(`#${data.rStudies} von 374`)

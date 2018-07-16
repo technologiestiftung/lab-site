@@ -908,10 +908,9 @@ const brushedTooltip = (_data, _container, _type) => {
         
         sumStudentsWrapper
             .text(d => {
-                let students = round(sumStudents).toString().replace('.',',');
-                console.log(students);
+                let students = numberFormat(sumStudents);
                 if (students == '0') { return 'No selection'; }
-                return `${round(sumStudents).toString().replace('.',',')}`
+                return students;
             })
 
         avgStudiesWrapper
