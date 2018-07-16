@@ -353,6 +353,7 @@ button:hover {
 }
 
 .td-content {
+    cursor: pointer;
     padding-top: 1rem;
     padding-left: 50px;
 }
