@@ -64,6 +64,7 @@
 	#introviscontainer hr{
 		display: none;
 	}
+
 }
 
 .annotation-group path,
@@ -102,6 +103,14 @@
 	margin:0 auto;
 }
 
+#histograms svg, #individual svg,
+#stacked_groups_1 svg, 
+#stacked_groups_2 svg,
+#stacked_groups_3 svg, 
+#outliers svg, #newdata svg, #timepatterns svg, #seasonal svg{
+	max-width:100%;
+}
+
 #outliers svg{
 	width:100%;
 }
@@ -121,6 +130,7 @@ p.copy.small-copy{
 }
 
 #histograms, #individual{
+	text-align: center;
 	max-width:1000px;
 	width:100%;
 	margin:0 auto;
@@ -161,4 +171,8 @@ p.copy.small-copy{
 	display: block;
 	font-size:10px;
 	line-height: 14px;
+}
+
+button{
+	outline:none;
 }
