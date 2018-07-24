@@ -272,6 +272,100 @@ const histogram = (params) => {
 
 }
 
+const histodots = (params) => {
+
+  let module = {},
+    container = params.container || d3.select('body'),
+    height = params.height || 250,
+    width = params.width || 500,
+    data = params.data,
+    data_column = params.data_column || 'value',
+    zero_based = params.zero_based || false,
+    colors = params.colors || ['#2e91d2','#E60032'],
+    svg = container.append('svg').attr('width', width).attr('height', height).attr('viewBox',`0 0 ${width} ${height}`).attr('preserveAspectRatio','xMidYMid meet'),
+    margin = params.margin || {top: 20, right: 20, bottom: 30, left: 50},
+    dWidth = width - margin.left - margin.right,
+    dHeight = height - margin.top - margin.bottom,
+    g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`),
+    parseTime = params.parseTime || d3.timeParse("%Y-%m-%d"),
+    isTime = params.isTime || false,
+    equalize = params.equalize || false,
+    values = []
+
+  data.forEach(d=>{
+    if(isTime){
+      if(d[data_column]!='NaN'){
+        values.push(parseTime(d[data_column]))
+      }
+    }else{
+      if(d[data_column]!='NaN'){
+        values.push(+d[data_column])
+      }
+    }
+  })
+
+  let maxValue = params.maxValue || d3.max(values)
+
+  let color = d3.scaleLinear().domain([(zero_based)?0:d3.min(values),maxValue]).range(colors)
+
+  //thresholdScott,thresholdFreedmanDiaconis,thresholdSturges
+  let bin_count = params.bins || d3.thresholdSturges(values, d3.min(values), maxValue)
+
+  let bins = d3.histogram()
+    .thresholds(bin_count)
+    (values)
+
+  let bin_values = []
+
+  bins.forEach(b=>{
+    let e = d3.extent(b)
+    if(isNaN(e[0])||isNaN(e[1])){
+      bin_values.push({count:b.length, label:'-'})
+    }else{
+      if(Math.floor(e[0]) != Math.floor(e[1])){
+        bin_values.push({count:b.length, label:Math.floor(e[0]) + '-' + Math.floor(e[1])})
+      }else{
+        bin_values.push({count:b.length, label:Math.floor(e[0])})
+      }
+    }
+  })
+
+  let dotSize = 3, dotPadding = 1, dotPlus = 0, binPadding = 10
+
+  bin_values.forEach((b,bi)=>{
+    if(b.count>0){
+      let plusSize = (dotSize+dotPadding)*2,
+          perLine = Math.floor(dWidth/plusSize),
+          bin = g.append('g').attr('transform',`translate(0,${dotPlus})`),
+          bb = bin.append('text').text(b.label).style('font-family','sans-serif').style('font-size',10).node().getBoundingClientRect()
+
+      bins[bi] = bins[bi].sort()
+
+      bin.append('line').attr('x1',bb.width+10).attr('y1',0).attr('y2',0).attr('x2',dWidth).style('stroke-dasharray','3,3').style('stroke','black')
+      bin.append('g').attr('transform',`translate(${plusSize/2},${binPadding+plusSize/2})`).selectAll('circle').data(bins[bi]).enter().append('circle')
+        .attr('r',dotSize)
+        .style('fill', d=>color(d))
+        .attr('cy',(d,i)=>Math.floor(i/perLine)*plusSize)
+        .attr('cx',(d,i)=>(i-Math.floor(i/perLine)*perLine)*plusSize)
+
+      dotPlus += binPadding*((bi==bin_values.length-1)?1:3) + Math.ceil(b.count/perLine)*plusSize
+    }
+  })
+
+  height = dotPlus+margin.top+margin.bottom
+
+  svg.attr('height', height)
+    .attr('viewBox', `0 0 ${width} ${height}`)
+
+  module.svg = ()=>svg
+  module.g = ()=>g
+  module.dHeight = ()=>dHeight
+  module.dWidth = ()=>dWidth
+
+  return module
+
+}
+
 const stackedArea = (params) => {
 
   let module = {},
@@ -861,38 +955,58 @@ d3.csv('./output/charts/overtime.csv').then(data=>{
   })
 }).catch(err=>{ throw err; })
 
-  d3.csv('./output/charts/histofull.csv').then(data=>{
-    histogram({
-      container:d3.select('#histograms-1'),
-      data:data,
-      data_column:'all'      
-    })
-    histogram({
-      container:d3.select('#histograms-2'),
-      data:data,
-      data_column:'mean'      
-    })
-    histogram({
-      container:d3.select('#histograms-3'),
-      data:data,
-      data_column:'median'      
-    })
-    histoline({
-      container:d3.select('#histograms-1'),
-      data:data,
-      data_column:'all'      
-    })
-    histoline({
-      container:d3.select('#histograms-2'),
-      data:data,
-      data_column:'mean'      
-    })
-    histoline({
-      container:d3.select('#histograms-3'),
-      data:data,
-      data_column:'median'      
-    })
-  }).catch(err=>{ throw err; })
+d3.csv('./output/charts/histofull.csv').then(data=>{
+  histodots({
+    container:d3.select('#histograms-1'),
+    data:data,
+    data_column:'all'      
+  })
+
+  histodots({
+    container:d3.select('#histograms-2'),
+    data:data,
+    data_column:'mean'
+  })
+
+  histodots({
+    container:d3.select('#histograms-3'),
+    data:data,
+    data_column:'median'
+  })
+
+  /*
+  histogram({
+    container:d3.select('#histograms-1'),
+    data:data,
+    data_column:'all'      
+  })
+  histogram({
+    container:d3.select('#histograms-2'),
+    data:data,
+    data_column:'mean'      
+  })
+  histogram({
+    container:d3.select('#histograms-3'),
+    data:data,
+    data_column:'median'      
+  })
+  histoline({
+    container:d3.select('#histograms-1'),
+    data:data,
+    data_column:'all'      
+  })
+  histoline({
+    container:d3.select('#histograms-2'),
+    data:data,
+    data_column:'mean'      
+  })
+  histoline({
+    container:d3.select('#histograms-3'),
+    data:data,
+    data_column:'median'      
+  })
+  */
+}).catch(err=>{ throw err; })
 
 d3.select('#showhistos').on('click', ()=>{
   let el = d3.select('#individual-histograms'),
