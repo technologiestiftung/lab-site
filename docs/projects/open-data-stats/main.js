@@ -740,27 +740,27 @@ d3.csv('./output/charts/all.csv').then(data=>{
   let story = [
     {
       title:'Zugriffszahlen',
-      copy:'Die Kurve links zeigt die Zugriffszahlen seid April 2013.<br /><br />Klicke auf weiter um mehr zu erfahren.'
+      copy:'Die Kurve links zeigt die Zugriffszahlen seid April 2013. Nach gutem Beginn stagnierte die Zahlen über einen längeren Zeitraum. Seit 2017 ist aber wieder ein deutlicher Anstieg zu verzeichnen. <br /><br />Klicke auf weiter um mehr zu erfahren.'
     },
     {
-      title:'Interne Daten',
-      copy:'Bei einer Überprüfung zeigte sich, dass viele Datensätze nicht (mehr) öffentlich zugänglich sind oder gar nicht existieren. Für die weitere Analyse nutzen wir nur Daten die nach wie vor offen verfügbar sind. Denn nur dort können wir auch weitere Metadaten abgreifen.'
+      title:'Verschwundene Daten',
+      copy:'Eine erste Überprüfung zeigte, dass einige der in der Statistik aufgeführten Datensätze nicht (mehr) öffentlich zugänglich sind oder gar nicht existieren. Für die weitere Analyse nutzen wir nur Daten die nach wie vor offen verfügbar sind.'
     },
     {
       title:'Tests',
-      copy:'Bei genauem Hinschauen zeigte sich auch, dass es eine geringe Zahl Downloads gibt, welche vor dem Veröffentlichungsdatum stattfinden. Dies sind wahrscheinlich die Administratoren die testen ob die Daten korrekt hochgeladen wurden.'
+      copy:'Regelmäßig gibt es eine geringe Zahl an Downloads, die vor dem Veröffentlichungsdatum liegen. Vermutlich handelt es sich um interne Tests.'
     },
     {
       title:'Ausreißer',
-      copy:'Bei Betrachtung der Kurve zeigt sich sofort das es mehrere Ausreißer gibt.'
+      copy:'Bei Betrachtung der Kurve fallen einige Ausreißer auf...'
     },
     {
       title:'VBB Daten',
-      copy:'Im April 2013 stellte die VBB ihre gesamten Fahrplandaten unter eine CreativeCommons Lizenz. Die Daten erfreuten sich in den ersten Monaten großer Beliebtheit. Da die VBB mittlerweile eine API für ihre Daten zur Verfügung stellt sind die Downloadzahlen mittlerweile nicht mehr ganz so hoch.'
+      copy:'Im April 2013 stellte der Verkehrsverbund Berlin Brandenburg (VBB) seine Fahrplandaten unter freie Lizenz. Die Daten erfreuten sich in den ersten Monaten großer Beliebtheit. Da der VBB mittlerweile eine eigene API anbietet, sind die Zugriffe über das Open Data Portal jetzt niedriger.'
     },
     {
       title:'Wahlen',
-      copy:'Während großer Wahlen nehmen die Zugriffszahlen immer zu. Speziell die Datensätze, die die Wahlbezirke definieren werden in diesen Zeiträumen häufig heruntergeladen.'
+      copy:'Die Bundestagswahlen von 2012 und 2017 sind ebenfalls deutlich sichtbar. Speziell die Datensätze, die Wahlbezirke definieren, werden in diesen Zeiträumen häufig heruntergeladen.'
     },
     {
       title:'Beliebte Vornamen',
@@ -876,7 +876,7 @@ d3.csv('./output/charts/bots.csv').then(data=>{
     data:data,
     isTime:true,
     width:700,
-    yLabel:'Anteil der Datensätze mit Klicks in %',
+    yLabel:'Datensätze mit Klicks in %',
     zero_based:true,
     group_column:'type', 
     colors:{
