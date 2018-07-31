@@ -740,11 +740,11 @@ d3.csv('./output/charts/all.csv').then(data=>{
   let story = [
     {
       title:'Zugriffszahlen',
-      copy:'Die Kurve links zeigt die Zugriffszahlen seid April 2013. Nach gutem Beginn stagnierte die Zahlen über einen längeren Zeitraum. Seit 2017 ist aber wieder ein deutlicher Anstieg zu verzeichnen. <br /><br />Klicke auf weiter um mehr zu erfahren.'
+      copy:'Die Kurve links zeigt die Zugriffszahlen seid April 2013. Nach gutem Beginn stagnierte die Entwicklung über einen längeren Zeitraum. Seit 2017 ist wieder ein deutlicher Anstieg zu verzeichnen. <br /><br />Klicke auf weiter um mehr zu erfahren.'
     },
     {
       title:'Verschwundene Daten',
-      copy:'Eine erste Überprüfung zeigte, dass einige der in der Statistik aufgeführten Datensätze nicht (mehr) öffentlich zugänglich sind oder gar nicht existieren. Für die weitere Analyse nutzen wir nur Daten die nach wie vor offen verfügbar sind.'
+      copy:'Einige der in der Statistik aufgeführten Datensätze sind inzwischen nicht mehr auf dem Portal abrufbar. Für die weitere Analyse nutzen wir nur Daten, die nach wie vor offen verfügbar sind.'
     },
     {
       title:'Tests',
@@ -756,15 +756,15 @@ d3.csv('./output/charts/all.csv').then(data=>{
     },
     {
       title:'VBB Daten',
-      copy:'Im April 2013 stellte der Verkehrsverbund Berlin Brandenburg (VBB) seine Fahrplandaten unter freie Lizenz. Die Daten erfreuten sich in den ersten Monaten großer Beliebtheit. Da der VBB mittlerweile eine eigene API anbietet, sind die Zugriffe über das Open Data Portal jetzt niedriger.'
+      copy:'Im April 2013 stellte der Verkehrsverbund Berlin Brandenburg (VBB) seine Fahrplandaten unter freie Lizenz. Die Daten erfreuten sich in den ersten Monaten großer Beliebtheit. Da der VBB mittlerweile eine eigene API anbietet, sind die Zugriffe über das Portal inzwischen niedriger.'
     },
     {
       title:'Wahlen',
-      copy:'Die Bundestagswahlen von 2012 und 2017 sind ebenfalls deutlich sichtbar. Speziell die Datensätze, die Wahlbezirke definieren, werden in diesen Zeiträumen häufig heruntergeladen.'
+      copy:'Die Bundestagswahlen von 2013 und 2017 sind ebenfalls deutlich sichtbar. Speziell die Datensätze, die Wahlbezirke definieren, werden in diesen Zeiträumen häufig heruntergeladen.'
     },
     {
       title:'Beliebte Vornamen',
-      copy:'Ein Thema das jedes Jahr immer wieder von der Presse aufgegriffen wird, sind die beliebtesten Vornamen in Berlin. Dieser Datensatz wird im Frühjahr des Folgejahrs veröffentlicht und führt zu einer vielzahl an Karten und Visualisierungen in der Berliner Presse.'
+      copy:'Alle Jahre wieder ein Lieblingsthema der Medien: Die beliebtesten Vornamen in Berlin. Dieser Datensatz wird im Frühjahr des Folgejahrs veröffentlicht und führt zu einer Vielzahl an Karten und Visualisierungen in der Berliner Presse.'
     },
     {
       title:'Bereinigte Daten',
