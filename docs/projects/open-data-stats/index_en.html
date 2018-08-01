@@ -88,8 +88,7 @@
             <!-- Start editing here -->
 
             <div class="container p-bottom">
-                <p class="copy">During june 2018, BerlinOnline, the operators of Berlin's open data portal, published the <a href="https://daten.berlin.de/datensaetze/zugriffsstatistik-datenberlinde">Download statistics</a> of data sets in the portal. The data sets go back until 2013. The following article presents an analysis of those numbers, giving insight into trends and patterns on <a href="http://daten.berlin.de">daten.berlin.de</a></p>
-                <p class="copy">The statistics are presented as Views and Impressions. Impressions are slightl higher than Views. If users download a data set multiple times, multiple Impressions are being generated, but only one view. Therefore, only views are shown below.</p>
+                <p class="copy"><i>In June of 2018, BerlinOnline, the operators of Berlin's open data portal, published the <a href="https://daten.berlin.de/datensaetze/zugriffsstatistik-datenberlinde">download statistics</a> for the portal's datasets. Given that we are supporting the further development of Berlin's data offeriings through our <a href="http://odis-berlin.de">ODIS</a> initiative, we analyzed these statistics to better understand usage of the portal. In this post, we take a look at how the data portal has developed since 2013 and highlight some of the trends in its usage.</i></p>
             </div>
 
             <div class="special-section" id="intro-section">
@@ -97,7 +96,7 @@
                     <div id="introvis"></div>
                     <div id="introtext">
                         <span id="introtitle">Downloads</span>
-                        <span id="introcopy">Die Kurve links zeigt die Zugriffszahlen seid April 2013.<br /><br />Klicke auf weiter um mehr zu erfahren.</span>
+                        <span id="introcopy">The line chart on left shows the download for data sets in Berlin's OpenData portal since April 2013..<br /><br />Klicke auf weiter um mehr zu erfahren.</span>
                         <button id="introprev">back</button>
                         <button id="intronext">continue</button>
                     </div>
@@ -106,12 +105,24 @@
             </div>
 
             <div class="container p-bottom">
-                <h2>How meaningful are the statistics?</h2>
-                <p class="copy p-bottom">The statistics give us a general overview of the user's interests in the various data sets on the portal. But we have to contextualise the analysis we do and the kind of conclusions we can derive from that:</p>
-                <h3>1. Many roads lead to rome?</h3>
-                <p class="copy p-bottom">daten.berlin.de is only one of Berlin's data portals. In addition there are the <a href="http://fbinter.stadt-berlin.de/fb/index.jsp">FIS Broker</a>, the <a href="http://www.gsi-berlin.info/">Gesundheits- und Sozialinformationssystem (GSI)</a> and the portal of the <a href="https://www.statistik-berlin-brandenburg.de/datenbank/inhalt-datenbank.asp">Amts für Statistik Berlin-Brandenburg</a>. Using those additional sites, users can also download data sets, which will not show up in the statistics discussed here.</p>
-                <h3>2. Many Downloads != Success</h3>
-                <p class="copy p-bottom">Only because a data set is being downloaded many times, does not mean this is an important data set. Many developers are caching data sets on an external server, instead of downloading it many times from the portal. In case of the popular first names, a data set is being used in a public context. In other less visible cases a company might use a data set to optimize their business. Even though the latter might be more beneficial for Berlin's economy it will only show up as one download.</p>
+                <h2>The most important insights</h2>
+
+                <h3>1. The overall development of the portal is positive</h3>
+                <p class="copy p-bottom">As the volume of datasets offered in the portal has grown, so too have the visitor numbers. Thus to little surprise, it can be observed that a more expansive offering leads to increased use of the portal. This positive relationship shows that there is indeed a demand for open government data in Berlin and that citizens are acting on this.</p>
+
+                <h3>2. Most of the downloads cover just a handful of datasets</h3>
+                <p class="copy p-bottom">Although a few datasets had several thousand hits, the majority of datasets in the data portal are rarely accessed by site visitors. It's important to remember, however, that the number of hits a given dataset has is not a perfect indicator of success – a single download of a dataset can be what leads to a useful and/or interesting application of the data. Regardless, the distribution of downloads should call attention to questions of data quality and relevance, since it could also be the case that many of these little-accessed datasets are simply unusable in their current forms.</p>
+
+                <h3>3. The level of interest in a given dataset is highly dependent on outside factors</h3>
+                <p class="copy p-bottom">Unusually high download numbers are almost always tied to outside factors. These factors could be that some online source has linked to the dataset, that a datajournalism project has made use of the data, or that the data are seasonally relevant (e.g., results from a recent election or information or increased interest in swimming locations at the start of summer). Data that has a direct relevance for the everyday lives of citizens will generally see higher visitor counts. This also means that if data publishers want to see higher numbers of downloads for their datasets, they should focus on publishing datasets that are most relevant to citizens.</p>
+
+                <h2>Detailed analysis</h2>
+               
+                <p class="copy p-bottom">Before we dive into the analysis, there is one important consideration to keep in mind: these figures oonly represent downloads occuring via <a href="https://daten.berlin.de">Berlin's Open Data Portal</a>. If users are downloading datasets directly via other portals offered by the state of Berlin (such as the <a href="http://fbinter.stadt-berlin.de/fb/index.jsp">FIS Broker</a>, <a href="http://www.gsi-berlin.info/">GSI</a> or <a href="https://www.statistik-berlin-brandenburg.de/datenbank/inhalt-datenbank.asp">AfS</a>), these downloads will not appear in our statistics. Nevertheless, the following figures offer us an interesting and valuable look into usage of the data portal. If you're interested in learning more about the current status of Open Data in Berlin, we have released a report on <a href="https://www.technologiestiftung-berlin.de/fileadmin/user_upload/Open_Data_in-der-Verwaltung_WEB.pdf">Open Data in the Berlin City Administration</a> (available only in German).
+
+                <h2>Verteilung</h2>
+
+
                 <h2>The outlier</h2>
                 <div id="outliers"></div>
                 <h2 class="p-top">Temporal patterns</h2>
