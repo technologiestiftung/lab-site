@@ -740,35 +740,35 @@ d3.csv('./output/charts/all.csv').then(data=>{
   let story = [
     {
       title:'Downloads',
-      copy:'The line chart on left shows the download for data sets in Berlin\'s OpenData portal since April 2013.<br /><br />Click continue to learn more.'
+      copy:'The line chart on left shows downloads of data sets in Berlin\'s OpenData portal since April 2013.<br /><br />Click continue to learn more.'
     },
     {
       title:'Internal data',
-      copy:'When analysing the data we identified a lot of data sets which are not accessible (anymore) or do not exist at all. For further analysis we are only using data that is still available in the portal. Because for the other sets we cannot access any meta data.'
+      copy:'While analysing the data, we identified a lot of data sets which are no longer accessible or which do not exist at all. For our analysis here, we are only using data that is still available in the portal, because we cannot access any meta data for datasets that no longer exist.'
     },
     {
       title:'Tests',
-      copy:'On closer inspection we found out, that a few downloads happen before the data sets are being published. This is probably due to administrators testing if files were uploaded correctly.'
+      copy:'On closer inspection, we found out that a few downloads happen before the data sets are even published. This is probably due to administrators testing whether files were uploaded correctly.'
     },
     {
-      title:'Outlier',
-      copy:'On first sight it is obvious that there are multiple outliers.'
+      title:'Outliers',
+      copy:'At first glance, it\'s obvious that there are multiple outliers.'
     },
     {
       title:'VBB Data',
-      copy:'During April 2013 the VBB published their timetables and routes under a CreativeCommons license. During the first month those data sets were very popular. By now the VBB offers an API, which is why the VBB data sets are not as popular anymore.'
+      copy:'In April 2013, the VBB published their timetables and routes under a CreativeCommons license. During this first month, those data sets were very popular. Today, the VBB offers an API, which is why the VBB data sets are less popular nowadays.'
     },
     {
       title:'Elections',
-      copy:'During elections the download numbers rise. In particular the datasets for election districts are of interest.'
+      copy:'During elections, the download numbers rise. Datasets for election districts are of particular interest during these times.'
     },
     {
       title:'Favourite first names',
-      copy:'A topic which is of interest for the press every year, are popular first names. Newspapers publish a lot of graphs and maps.'
+      copy:'A beloved press story every year is that of the most popular first names among babies born in Berlin. Newspapers use this data to publish a lot of graphs and maps.'
     },
     {
       title:'Cleaned data',
-      copy:'For further analysis the peaks are removed from the data. Otherwise they would make it hard to detect other kinds of patterns in the data.'
+      copy:'For enable further analysis, we remove the peaks from the data. Otherwise, they would make it hard to detect other kinds of patterns in the data.'
     }
   ], currentStory = 0
 
@@ -843,6 +843,18 @@ d3.json('./output/charts/outlier.json').then(data=>{
 
   data.forEach(o=>{
 
+    if (o.title === 'Liste der häufigen Vornamen 2016') 
+      o.title = 'List of the most common first names 2016';
+
+    if (o.title === 'Geometrien der Wahlbezirke für die Bundestagswahl in Berlin 2017') 
+      o.title = 'Geometries of Berlin voting districts for the federal election in 2017';
+
+    if (o.title === 'VBB-Fahrplan 2013') 
+      o.title = 'VBB Schedule 2013';
+
+    if (o.title === 'Wahllokale zur Bundestagswahl 2013 in Berlin') 
+      o.title = 'Berlin polling locations for the 2013 federal election';
+
     let container = d3.select('#outliers').append('div')
 
     container.append('h3').attr('class', 'p-top').text(o.title)
@@ -853,7 +865,7 @@ d3.json('./output/charts/outlier.json').then(data=>{
 
     lineChart({
       container:container,
-      yLabel:'Zugriffe',
+      yLabel:'Downloads',
       xGrid:true,
       yGrid:true,
       data:o.original_pv,
@@ -1050,7 +1062,7 @@ d3.csv('./output/charts/histotime.csv').then(data=>{
     })
 
     chart.g().append('g').attr('transform', `translate(${chart.dWidth()},0)`)
-      .append('text').attr('text-anchor','end').text(t+' Monate nach Release')
+      .append('text').attr('text-anchor','end').text(t+' months after release')
       .attr('dy',6)
       .style('font-family','sans-serif').style('font-weight','bold').style('font-size',12)
   }
@@ -1079,8 +1091,7 @@ d3.csv('./output/charts/group_author.csv').then(data=>{
 
 }).catch(err=>{ throw err; })
 
-d3.csv('./output/charts/group_group_name.csv').then(data=>{
-
+d3.csv('./output/charts/group_group_name_en.csv').then(data=>{
   let chart = stackedArea({
     container:d3.select('#stacked_groups_1'),
     data:data,
