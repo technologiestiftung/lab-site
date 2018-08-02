@@ -12,13 +12,13 @@
 	<atom:link href="http://lab.technologiestiftung-berlin.de/feed.xml" rel="self" type="application/rss+xml" />
 	<link>http://lab.technologiestiftung-berlin.de</link>
 	<description>We are exploring and prototyping digital tools in order to collaboratively shape Berlin’s future for citizens, the local government and the industry.</description>
-	<lastBuildDate>Thu, 2 Aug 2018 15:28:23  +0100</lastBuildDate>
+	<lastBuildDate>Thu, 2 Aug 2018 15:52:29  +0100</lastBuildDate>
 	<language>en-us</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	
 <item>
-<title><![CDATA[Berlin's Open Data Statistics]]></title>
+<title><![CDATA[Open data in Berlin: Behind the numbers]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/open-data-stats/index_en.html</link>
 <pubDate>Tue, 24 Jul 2018 00:00:00  +0100</pubDate>
 <category><![CDATA[Open Data]]></category>
