@@ -12,7 +12,7 @@
 	<atom:link href="http://lab.technologiestiftung-berlin.de/feed.xml" rel="self" type="application/rss+xml" />
 	<link>http://lab.technologiestiftung-berlin.de</link>
 	<description>Wir erforschen und erproben digitale Werkzeuge um gemeinsam mit Bürger*innen, Verwaltung und Unternehmen die Zukunft Berlins zu gestalten.</description>
-	<lastBuildDate>Thu, 2 Aug 2018 15:52:29  +0100</lastBuildDate>
+	<lastBuildDate>Thu, 2 Aug 2018 15:55:31  +0100</lastBuildDate>
 	<language>de-DE</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
@@ -43,7 +43,7 @@
 <title><![CDATA[Badestellen Berlin]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/bathing-water/index.html</link>
 <pubDate>Wed, 4 Jul 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[OpenData]]></category>
+<category><![CDATA[Offene Daten]]></category>
 <description><![CDATA[Zusammen mit dem Kompetenzzentrum Wasser (KWB), den Berliner Wasserbetrieben (BWB) und dem LaGeSo haben wir eine moderne datengestützte Anwendungen geschaffen, welche die Berliner Bürger*innen über die aktuelle Gewässerqualität der Berliner Badestellen informiert. ]]></description>
 <content:encoded><![CDATA[Zusammen mit dem Kompetenzzentrum Wasser (KWB), den Berliner Wasserbetrieben (BWB) und dem LaGeSo haben wir eine moderne datengestützte Anwendungen geschaffen, welche die Berliner Bürger*innen über die aktuelle Gewässerqualität der Berliner Badestellen informiert. ]]></content:encoded>
 <dc:creator><![CDATA[undefined]]></dc:creator>
