@@ -112,7 +112,7 @@
 
 										Seit dem 01.Juli 2009 werden jährlichen Abständen Förderungsdaten von der Senatsverwaltung für Integration, Arbeit und Soziales für mehr Transparenz online zur Verfügung gestellt. Die Vergabe der Förderungen werden individuell unterschiedlich im Rahmen der zur Verfügung stehenden Hausmittel vergeben. <br><br>
 										
-										 Die Daten enthalten Informationen über die Förderungsvolumen der Projekte sowie Projekttyp, Zeitpunkt und Name der Begünstigten. Diese sind über eine Suchmaske öffentlich <a href="http://www.berlin.de/sen/finanzen/service/zuwendungsdatenbank/">erreichbar.</a> Wir haben alle Förderungsdaten des Zeitraums 2009 bis 2016 gesammelt, aufbereitet und in einem Bubble Chart visualisiert. <br><br>
+										 Die Daten enthalten Informationen über die Förderungsvolumen der Projekte sowie Projekttyp, Zeitpunkt und Name der Begünstigten. Diese sind über eine Suchmaske öffentlich <a href="http://www.berlin.de/sen/finanzen/service/zuwendungsdatenbank/">erreichbar.</a> Wir haben alle Förderungsdaten des Zeitraums 2009 bis 2017 gesammelt, aufbereitet und in einem Bubble Chart visualisiert. <br><br>
 
 								</p>
 						</div>
@@ -269,7 +269,7 @@
 
 					var Chart = (function(window, d3) {
 
-						var svg, chartWrapper, category, circle, values, logValueScale, data, margin, sector, circleGroup, categories, labelsYear, marker, label, countMinMax, svgLegend, labelYear, xAxis, xScale, x, tooltip, swoopyArrow, swoopyText, hoverCircle, clientWidth, radiusLegend,
+						var ready = false, svg, chartWrapper, category, circle, values, logValueScale, data, margin, sector, circleGroup, categories, labelsYear, marker, label, countMinMax, svgLegend, labelYear, xAxis, xScale, x, tooltip, swoopyArrow, swoopyText, hoverCircle, clientWidth, radiusLegend,
 						posX1, posX2, posY1, PosY2,
 
 						once = true,
@@ -284,7 +284,7 @@
 						var idCircle2 = 1;
 						var countY = 0;
 						var countYTemp = 0;
-						var years = [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016];
+						var years = [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017];
 
 						var margin = {
 							top: 50,
@@ -382,6 +382,9 @@
 								maxRad: 16000,
 								minRad: 9
 							},
+                            legend: {
+                                width: 700
+                            },
 							data: {
 								relative: true
 							}
@@ -534,14 +537,14 @@
 								.append('circle')
 								.attr('data-uid', (d,i) => {
 									var uid = `${idCircle2}${i}`;
-									if(i === 7) { idCircle2 += 1 };
+									if(i === 8) { idCircle2 += 1 };
 
 									return uid;
 								})
 								.attr('id', (d,i) => { 
-									if (i < 7) { 
+									if (i < 8) { 
 										return `${idCircle}`; 
-									 } else if(i == 7) { 
+									 } else if(i == 8) { 
 										idCircle += 1 
 										return `${idCircle - 1}`; 
 										 };
@@ -554,6 +557,8 @@
 								.on('mouseover', handleMouseOver)
 								.on('mouseout', handleMouseOut)
 						
+                            ready = true
+
 							render();
 						}
 
@@ -622,7 +627,7 @@
 									.append('svg')
 									.classed('legend-wrapper', true)
 									.attr('height', 120)
-									.attr('width', 700)
+									.attr('width', config.legend.width)
 
 								svgLegend.selectAll('circles')
 									.data(legendPos[view])
@@ -683,10 +688,11 @@
 							var chartSizes = document.getElementById('svg-wrapper').getBoundingClientRect();
 							var chartWrapper = document.getElementById('chart').getBoundingClientRect();
 							var labels = document.querySelector('.labels').getBoundingClientRect();
+                            var legendContainer = document.querySelector('#legend').getBoundingClientRect();
 							var newWidth = chartWrapper.width - labels.width;
 
 							config.svg.width = newWidth;
-							
+							config.legend.width = legendContainer.width
 							
 							updatePositions();
 							renderLegend(swoopyView);
@@ -695,6 +701,7 @@
 						function resize(winWidth) {
 							config.svg.width = winWidth;
 							config.svg.height = 1200 - margin.top - margin.bottom;
+                            config.legend.width
 						}
 
 						function updatePositions() {
@@ -712,7 +719,7 @@
 									return posX;
 								})
 								.attr('cy', (d,i) => { 
-									if (i === 7) { 
+									if (i === 8) { 
 										countYTemp = countY;
 										countY += 1
 										return (((config.svg.height - margin.top - margin.bottom) / 29) * countYTemp)
@@ -1025,20 +1032,23 @@
 
 						window.addEventListener('scroll', (event) => {
 
-							var client = d3.select('.project').node().getBoundingClientRect().top
+                            if(ready){
 
-							if (client < -300 && once ) {
-								once = false;
-								circle
-									.transition()
-									.duration(1000)
-									.attr('r', (d) => {
-										var value = d.money.map(moneyMinMax[0], moneyMinMax[1], config.svg.minRad, config.svg.maxRad);
-										var radius = Math.sqrt((value/ Math.PI))
-										if(d.money === 0) { return 0 };
-										return radius;
-								})
-							}														
+    							var client = d3.select('.project').node().getBoundingClientRect().top
+
+    							if (client < -300 && once ) {
+    								once = false;
+    								circle
+    									.transition()
+    									.duration(1000)
+    									.attr('r', (d) => {
+    										var value = d.money.map(moneyMinMax[0], moneyMinMax[1], config.svg.minRad, config.svg.maxRad);
+    										var radius = Math.sqrt((value/ Math.PI))
+    										if(d.money === 0) { return 0 };
+    										return radius;
+    								})
+    							}
+                            }
 						})
 
 						window.addEventListener('resize', (event) => {
