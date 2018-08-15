@@ -12,11 +12,22 @@
 	<atom:link href="http://lab.technologiestiftung-berlin.de/feed.xml" rel="self" type="application/rss+xml" />
 	<link>http://lab.technologiestiftung-berlin.de</link>
 	<description>We are exploring and prototyping digital tools in order to collaboratively shape Berlin’s future for citizens, the local government and the industry.</description>
-	<lastBuildDate>Mon, 16 Jul 2018 11:01:17  +0100</lastBuildDate>
+	<lastBuildDate>Thu, 2 Aug 2018 16:07:51  +0100</lastBuildDate>
 	<language>en-us</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	
+<item>
+<title><![CDATA[Open data in Berlin: Behind the numbers]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/open-data-stats/index_en.html</link>
+<pubDate>Tue, 24 Jul 2018 00:00:00  +0100</pubDate>
+<category><![CDATA[Open Data]]></category>
+<description><![CDATA[An in depth-analysis of the usage statistics of Berlin's open data portal]]></description>
+<content:encoded><![CDATA[An in depth-analysis of the usage statistics of Berlin's open data portal]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/open-data-stats/index_en.html</guid>
+</item>
+
 <item>
 <title><![CDATA[Germany and Berlin's Universities]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/unis/index_en.html</link>
@@ -29,12 +40,12 @@
 </item>
 
 <item>
-<title><![CDATA[Bathing Water]]></title>
+<title><![CDATA[Berlin's swimming lakes & rivers]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/bathing-water/index_en.html</link>
 <pubDate>Wed, 4 Jul 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[OpenData]]></category>
-<description><![CDATA[Together with Kompetenzzentrum Wasser (KWB), Berliner Wasserbetrieben (BWB) and LaGeSo we have create a modern data-driven application, which informs Berlin's citizen on the current water quality for all bathing water locations in Berlin.]]></description>
-<content:encoded><![CDATA[Together with Kompetenzzentrum Wasser (KWB), Berliner Wasserbetrieben (BWB) and LaGeSo we have create a modern data-driven application, which informs Berlin's citizen on the current water quality for all bathing water locations in Berlin.]]></content:encoded>
+<category><![CDATA[Open Data]]></category>
+<description><![CDATA[Together with Kompetenzzentrum Wasser (KWB), Berliner Wasserbetrieben (BWB) and LaGeSo we have create a modern data-driven application, which informs Berlin's citizen on the current water quality for all outdoor swimming locations in Berlin.]]></description>
+<content:encoded><![CDATA[Together with Kompetenzzentrum Wasser (KWB), Berliner Wasserbetrieben (BWB) and LaGeSo we have create a modern data-driven application, which informs Berlin's citizen on the current water quality for all outdoor swimming locations in Berlin.]]></content:encoded>
 <dc:creator><![CDATA[undefined]]></dc:creator>
 <guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/bathing-water/index_en.html</guid>
 </item>
@@ -54,7 +65,7 @@
 <title><![CDATA[Berlin's new Open Data Infopoint]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/ODIS-Launch/index_en.html</link>
 <pubDate>Tue, 22 May 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[OpenData]]></category>
+<category><![CDATA[Open Data]]></category>
 <description><![CDATA[3 goals and 3 questions for ODIS]]></description>
 <content:encoded><![CDATA[3 goals and 3 questions for ODIS]]></content:encoded>
 <dc:creator><![CDATA[undefined]]></dc:creator>
