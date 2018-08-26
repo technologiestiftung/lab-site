@@ -1,21 +1,3 @@
-
-<!-- 
-  TODO:
-  - add swoopy arrows to visualization [check]
-  - add tooltip: hover (amount, deviation from average) [check]
-  - add switch between absolute and relative values [check]
-  - calculate relative funding / yearwise [check]
-  - check scaling [check]
-  - add highlighting (vertical / horizontal) [check]
-  - add timeline [check]
-
-  - style introduction and reading direction
-  - add legend for circle size (a flexible one) !!!!
-  - make the chart responsive [half-check]
-  - recreate dataset with fuzzy merging
-  - write annotations (check with sebastian)
- -->
-
 <!doctype html>
 <html lang="de" itemscope itemtype="http://schema.org/Article">
     <head>
@@ -269,7 +251,7 @@
 
 					var Chart = (function(window, d3) {
 
-						var ready = false, svg, chartWrapper, category, circle, values, logValueScale, data, margin, sector, circleGroup, categories, labelsYear, marker, label, countMinMax, svgLegend, labelYear, xAxis, xScale, x, tooltip, swoopyArrow, swoopyText, hoverCircle, clientWidth, radiusLegend,
+						var ready = false, svg, chartWrapper, category, circle, values, logValueScale, data, margin, sector, circleGroup, categories, labelsYear, marker, label, countMinMax, svgLegend, svgLegendCanvas, labelYear, xAxis, xScale, x, tooltip, swoopyArrow, swoopyText, hoverCircle, clientWidth, radiusLegend,
 						posX1, posX2, posY1, PosY2,
 
 						once = true,
@@ -297,7 +279,7 @@
 							moneyRelative: [
 								{
 									pos: {
-										start: 152,
+										start: 22,
 										end: 63
 									},
 									content: [
@@ -325,7 +307,7 @@
 										start: 15,
 										end: 75
 									},
-									content: [
+									content:	 [
 										'Mehr als 60% aller Zu-',
 										'wendungen fließen an die ',
 										'BVG und die S-Bahn.'
@@ -347,8 +329,8 @@
 							countRelative: [
 								{
 									pos: {
-										start: 96,
-										end: 174
+										start: 50,
+										end: 142
 									},
 									content: [
 										'Im Sektor Arbeit werden',
@@ -363,13 +345,12 @@
 
                                 {
 									pos: {
-										start: 287,
-										end: 253
+										start: 297,
+										end: 185
 									},
 									content: [
-										'2016 ist das einzige Jahr',
-										'in dem Förderungen im Bereich',
-										'Tierschutz bewilligt wurden.'
+										'2016 wurde die erste Förderung',
+										'im Bereich Tierschutz bewilligt.'
 									]
 								}
 							]
@@ -440,7 +421,6 @@
 						function init(json) {
 							data = json;
 							tooltip = d3.select('#tooltip')
-							tooltip.style('display', 'none');
 
 							var dataAllYears = [];
 
@@ -610,7 +590,7 @@
 										var radius = Math.sqrt((d.pos * total/ Math.PI))
 										return radius;
 									})
-								
+							
 								svgLegend.selectAll('annotations')
 									.data(legendPos[view])
 									.enter()
@@ -640,8 +620,6 @@
 										legendPos[view][i].posY = radius;
 										return radius; 
 									})
-
-								
 								
 								svgLegend.selectAll('lines')
 									.data(legendPos[view])
@@ -750,12 +728,21 @@
 							d3.select(this)
 								.classed('active', false)
 
+							let circles_all = d3.select('svg[id="svg-wrapper"]').selectAll(`circle`);
+							circles_all.style('opacity', 1);
+
 							var id = d3.select(this).attr('id');
 							d3.select(`#label-${id}`).classed('label-active', false);
-							tooltip.style('display', 'none');
+							tooltip.classed('active', false);
 						}
 
 						function handleMouseOver(d, i) {
+							
+							let circles_all = d3.select('svg[id="svg-wrapper"]').selectAll(`circle`);
+							circles_all.style('opacity', .3);
+							let circles_category_current = d3.selectAll(`circle[id="${this.id}"]`);
+							circles_category_current.style('opacity', 1);
+
 							d3.select(this)
 								.classed('active', true)
 
@@ -769,7 +756,8 @@
 						function updateTooltip(d, that) {
 
 							tooltip = d3.select('#tooltip')
-							tooltip.style('display', 'flex');
+							// tooltip.style('display', 'flex');
+							tooltip.classed('active',true);
 							
 							if (clientWidth > 600) {
 
@@ -884,6 +872,7 @@
 
 						function chooseSwoopy(swoopyId) {
 
+							d3.selectAll('.swoopy_canvas').remove();
 							d3.selectAll('.annotation').remove();
 							d3.selectAll('.arrow').remove();
 
@@ -928,13 +917,15 @@
 									.attr('x', posX2 + 10)
 									.attr('dy', (d,i) => { 
 											var lineHeight = 1.2; 
-											return `${lineHeight}rem` ;
+											return `${lineHeight}em` ;
 										})
 							})
 
 						}
 
 						function renderSwoopy(view) {
+
+							let swoopyCanvas;
 							
 							antns[view].forEach( annotation => {
 								
@@ -948,6 +939,16 @@
 									.attr('marker-end', 'url(#arrowhead)')
 									.datum([[posX2, posY2], [posX1 , posY1]])
 									.attr("d", swoopy);
+
+								swoopyCanvas = svg
+									.append('rect')
+									.classed('swoopy_canvas', true)
+									.attr('x', posX2)
+									.attr('y', posY2 + 5)
+									.attr('width', "250px")
+									.attr('height', "85px")
+									.style('fill', '#F2F2F2')
+									.style('opacity', '.9')
 								
 								swoopyText = svg
 									.append("text")
@@ -956,14 +957,14 @@
 									.attr('textLength', 200)
 									.attr('y', posY2 + 10)
 								
-									swoopyText.selectAll('tSpan')
+								swoopyText.selectAll('tSpan')
 									.data(annotation.content)
 									.enter()
 									.append('tspan')
 									.attr('x', posX2 + 10)
 									.attr('dy', (d,i) => { 
 										var lineHeight = 1.2; 
-										return `${lineHeight}rem` ;
+										return `${lineHeight}em` ;
 									})
 									.text( d => { return d })
 								}) 
@@ -977,9 +978,8 @@
 								yValue = function(d) { return d[1]; };
 
 							function render(data) {
-
-							data = data.map(function(d, i) {
-								return [xValue.call(data, d, i), yValue.call(data, d, i)];
+								data = data.map(function(d, i) {
+									return [xValue.call(data, d, i), yValue.call(data, d, i)];
 							});
 
 							// get the chord length ("height" {h}) between points

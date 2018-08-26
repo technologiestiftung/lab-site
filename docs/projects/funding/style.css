@@ -41,14 +41,92 @@ circle {
   flex-direction: column;
   /* display: block; */
   padding: 10px;
+  /* display:none; */
   width: 260px;
   height: 200px;
   border: 1px solid black;
   font-family: 'Barlow', sans-serif;
+  display: block;
+  opacity: 0;
 }
 
+@-webkit-keyframes fadeInFromNone {
+  0% {
+      display: none;
+      opacity: 0;
+  }
+
+  1% {
+      display: block;
+      opacity: 0;
+  }
+
+  100% {
+      display: block;
+      opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeInFromNone {
+  0% {
+      display: none;
+      opacity: 0;
+  }
+
+  1% {
+      display: block;
+      opacity: 0;
+  }
+
+  100% {
+      display: block;
+      opacity: 1;
+  }
+}
+
+@-o-keyframes fadeInFromNone {
+  0% {
+      display: none;
+      opacity: 0;
+  }
+
+  1% {
+      display: block;
+      opacity: 0;
+  }
+
+  100% {
+      display: block;
+      opacity: 1;
+  }
+}
+
+@keyframes fadeInFromNone {
+  0% {
+      display: none;
+      opacity: 0;
+  }
+
+  1% {
+      display: block;
+      opacity: 0;
+  }
+
+  100% {
+      display: block;
+      opacity: 1;
+  }
+}
+
+
 #tooltip .tooltip--title h3 {
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Roboto Mono', monospace;  
+}
+
+
+#tooltip.active {
+  opacity: 1;
+  animation: .25s fadeInFromNone ease;
 }
 
 .tooltip--title span {
@@ -207,7 +285,7 @@ a {
 }
 
 .btn--type {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .btn--type.active {
