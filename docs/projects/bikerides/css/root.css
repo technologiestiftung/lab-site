@@ -1,0 +1,208 @@
+.title-wrapper {
+  text-anchor: middle;
+  fill: black;
+  transform: translateY(125px) translateX(67px); }
+  .title-wrapper .title {
+    font-family: 'Barlow', sans-serif;
+    letter-spacing: .5px;
+    font-size: 11px; }
+
+.charts-wrapper {
+  width: 995px;
+  position: relative;
+  z-index: 1000;
+  display: block;
+  margin: auto; 
+  margin-bottom: 60px; }
+  @media screen and (max-width: 995px) {
+    .charts-wrapper {
+      width: 100%; } }
+  .charts-wrapper .svg-wrapper {
+    z-index: 10000; }
+    @media screen and (max-width: 995px) {
+      .charts-wrapper .svg-wrapper.empty {
+        display: none; } }
+
+.max-circle, .mean-circle {
+  opacity: .25; }
+  .max-circle.highlighted, .mean-circle.highlighted {
+    opacity: 1; }
+
+.ui-wrapper {
+  z-index: 100000;
+  display: flex;
+  flex-direction: row; }
+  .ui-wrapper .custom-select {
+    z-index: 100000; }
+
+text.legend {
+  text-transform: uppercase;
+  font-family: 'Barlow', sans-serif;
+  font-weight: regular;
+  font-size: 8px;
+  letter-spacing: .4px;
+  opacity: .35;
+  animation: 1s opacity ease;
+  cursor: pointer; }
+  text.legend.highlighted {
+    animation: 1s opacity ease;
+    opacity: 1; }
+
+.spree-wrapper {
+  position: absolute; }
+
+.max-area, .mean-area {
+  opacity: .5; }
+
+.river-svg-wrapper {
+  height: 100%;
+  top: 405px;
+  left: -11px;
+  z-index: -1000;
+  width: 100%;
+  position: absolute; }
+  @media screen and (max-width: 995px) {
+    .river-svg-wrapper {
+      display: none; } }
+
+.tooltip-wrapper {
+  border: 1px solid #E4E4E4;
+  background: #FCFCFC;
+  width: 145px;
+  z-index: 100000;
+  padding: 10px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 12px;
+  letter-spacing: .5px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  animation: .25s fadeInFromNone ease;
+  opacity: 1; }
+  .tooltip-wrapper .median, .tooltip-wrapper .max, .tooltip-wrapper .total {
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+
+.value-desc {
+  color: #9B9B9B; }
+
+@keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0; }
+  1% {
+    display: block;
+    opacity: 0; }
+  100% {
+    display: block;
+    opacity: 1; } }
+
+@keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0; }
+  1% {
+    display: block;
+    opacity: 0; } }
+
+.month-wrapper {
+  margin-right: 5px; }
+
+.station-wrapper {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: .5px; }
+
+.time-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  color: black; }
+
+span#total-value {
+  color: black; }
+
+#median-value, #max-value, #total-value {
+  font-weight: 700;
+  letter-spacing: 1px; }
+
+/*the container must be positioned relative:*/
+.custom-select {
+  position: relative;
+  font-family: 'Barlow', sans-serif;
+  letter-spacing: .5px; }
+
+.custom-select select {
+  position: absolute;
+  opacity: 0;
+  top: -100px; }
+
+.select-selected {
+  background-color: #FCFCFC;
+  font-family: 'Barlow', sans-serif; }
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid #9B9B9B;
+  border-color: #9B9B9B transparent transparent transparent; }
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #9B9B9B transparent;
+  top: 7px; }
+
+/*style the items (options), including the selected item:*/
+.select-items div, .select-selected {
+  color: #9B9B9B;
+  padding: 8px 16px;
+  border: 1px solid;
+  border-color: transparent #E4E4E4 #E4E4E4 #E4E4E4;
+  cursor: pointer; }
+
+.select-selected {
+  border-color: #E4E4E4; }
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: #FCFCFC;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99; }
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none; }
+
+.select-items div:hover, .same-as-selected {
+  background-color: #F0F0F0; }
+
+.ui-wrapper {
+  margin: auto;
+  width: 380px;
+  margin-bottom: 40px;
+  margin-top: 60px; }
+  .ui-wrapper .custom-select {
+    margin-right: 10px; }
+
+body {
+  font: 10px sans-serif;
+  margin: 0; }
+
+.line {
+  fill: none;
+  stroke: #666;
+  stroke-width: 1.5px; }
+
+.area {
+  fill: #e7e7e7; }
