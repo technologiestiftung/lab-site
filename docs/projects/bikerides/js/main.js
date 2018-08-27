@@ -4,7 +4,7 @@ const filepath_v2 = "assets/structure.json";
 const values_array = ['Select metric','absolute', 'relative'];
 const years_array = ['Select year', 2017, 2016, 2015, 2014, 2013, 2012];
 const months_array = [0,1,2,3,4,5,6,7,8,9,10,11];
-const types_array = ['Select type', 'month', 'week'];
+const types_array = ['Select type', 'month', 'week', 'day'];
 let year_value = 2017, type_value = 'month', metric_value = 'absolute', radarChart = [], charts_wrapper;
 var x, i, j, selElmnt, a, b, c;
 

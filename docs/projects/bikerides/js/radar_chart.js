@@ -10,7 +10,8 @@ class Radarchart {
         this.max_value = config.max_value;
         this.factor_legend = config.factor_legend;
         this.station_name, this.tooltip, this.month_dict, this.month_dict_long, this.all_axis_week, this.circles = {}, this.updateCount = 0, this.areas = {}, this.category, this.titleName, this.year, this.colorMax, this.colorMean
-        this.days_dict = { 'Sunday': 0, 'Monday': 1, 'Tuesday': 2, 'Wednesday': 3, 'Thursday': 4, 'Friday': 5, 'Saturday': 6 }
+        this.days_dict = { 'Sunday': 0, 'Monday': 1, 'Tuesday': 2, 'Wednesday': 3, 'Thursday': 4, 'Friday': 5, 'Saturday': 6 },
+        this.all_axis_day = [24,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
 
         this.file = file, this.type, this.local_max, this.value_metric;
         this.radians = 2 * Math.PI;
@@ -34,16 +35,27 @@ class Radarchart {
         this.unhighlightMonths = this.unhighlightMonths.bind(this);
         this.highlightAll = this.highlightAll.bind(this);
         this.unhighlightAll = this.unhighlightAll.bind(this);
+        this.extractHours = this.extractHours.bind(this);
     }
 
     init(station_index) {
         this.type = config.type;
-        this.data = this.type == "week" ? this.mergeDays(this.file) : this.file;
+
+        if (this.type == 'week') {
+            this.data = this.mergeDays(this.file);
+        } else if (this.type == 'month') {
+            this.data = this.file;
+        } else if (this.type == 'day') {
+            this.data = this.file[0].hours;
+        }
+
         this.station_name = this.file[0].name;
         this.value_metric = config.value_metric;
         this.all_axis = (this.data.map((i,j) => {return i.month}));
         this.all_axis_week = [0,1,2,3,4,5,6];
         this.year = config.year;
+
+        
         this.total = config.type == 'week' ? this.all_axis_week.length : this.all_axis.length;
         this.colorMax = "#3ce39f";
         this.colorMean = "#2824b2";
@@ -82,6 +94,10 @@ class Radarchart {
         this.createSegments();
         this.createTitle();
         // this.switchData();
+    }
+
+    extractHours(data) {
+        console.log(data);
     }
 
     mergeDays(data) {
