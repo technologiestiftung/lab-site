@@ -265,6 +265,7 @@ let config  = {
     width: 75,
     levels: 5,
     radius: 2,
+    value_metric: 'absolute',
     factor: 1,
     type: "month",
     month: 0,
@@ -426,7 +427,6 @@ function onchange() {
     if (used_selection == 'year') {
         updateChart(filepath, config);
     } else if (used_selection == 'type') {
-        // renderChartOnlyRemove(filepath);
         renderChart(filepath, config);
     } else if (used_selection == 'metric') {
         updateChart(filepath, config);
@@ -491,6 +491,14 @@ function renderChart(file, config_new) {
 
     removeCharts();
     addSVG();
+
+    if (document.querySelector('.select-selected.metric') != null) {
+        let metric = document.querySelector('.select-selected.metric').innerHTML
+        if (metric != 'Select metric') {
+            config.value_metric = metric;
+        }
+    }
+
     
     d3.json(file).then((data) => {
         const files_array = Object.keys(data);

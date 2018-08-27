@@ -40,12 +40,20 @@ class Radarchart {
         this.type = config.type;
         this.data = this.type == "week" ? this.mergeDays(this.file) : this.file;
         this.station_name = this.file[0].name;
+        this.value_metric = config.value_metric;
         this.all_axis = (this.data.map((i,j) => {return i.month}));
         this.all_axis_week = [0,1,2,3,4,5,6];
         this.year = config.year;
         this.total = config.type == 'week' ? this.all_axis_week.length : this.all_axis.length;
-        this.colorMax = "#3ce39f"
-        this.colorMean = "#2824b2"
+        this.colorMax = "#3ce39f";
+        this.colorMean = "#2824b2";
+        this.max_local = this.calcMaxLocal(this.data);
+
+        if (this.value_metric == 'relative') {
+            this.max_value = this.max_local.max;
+        } else if (this.value_metric == 'absolute') {
+            this.max_value = config.max_value;
+        }
 
         this.svg = d3.select(`svg.wrapper-${station_index}`)
             .on('mouseover', (d,i) => {
@@ -215,6 +223,7 @@ class Radarchart {
     createCircles(category, color) {
         this.node_coords[category] = [];
         this.circles[category] = this.nodesWrapper.selectAll(`.${category}-circle`);
+            
         this.updateCircles(category, color);
         this.createAreas(this.node_coords[category], color, category);
     }
@@ -239,7 +248,6 @@ class Radarchart {
     }
 
     updateTooltip(data, index) {
-        console.log(this.data);
 
         let data_current = this.data[data];
 
@@ -255,6 +263,8 @@ class Radarchart {
             d3.select('#median-value').text(data_current.median).style('color', this.colorMean);
             d3.select('#max-value').text(data_current.max).style('color', this.colorMax);
             d3.select('#total-value').text(data_current.sum_days);
+
+            this.data.length == 7 ? d3.select('.total').style('display', 'none') : d3.select('.total').style('display', 'flex');
         }
 
 
@@ -404,12 +414,13 @@ class Radarchart {
                 let polar_coord_x = (this.width / 2) * (d[category] / this.max_value) * this.factor * Math.sin(i*this.radians / this.total);
                 let polar_coord_y = (this.height / 2) * (d[category] / this.max_value) * this.factor * Math.cos(i*this.radians / this.total);
 
-                polar_coord_x = d[category] == 0 ? 0 : polar_coord_x;
-                polar_coord_y = d[category] == 0 ? 0 : polar_coord_y;
+                polar_coord_x = isNaN(polar_coord_x) ? 0 : polar_coord_x;
+                polar_coord_y = isNaN(polar_coord_y) ? 0 : polar_coord_y;
 
                 let single_coord = [];
                 single_coord.push(polar_coord_x);
                 single_coord.push(polar_coord_y);
+
                 this.node_coords[category].push(single_coord);
 
                 return polar_coord_x
