@@ -1,11 +1,11 @@
 const filepath = "assets/all_years.json";
 const filepath_v2 = "assets/structure.json";
 
-const values_array = ['absolute', 'relative'];
-const years_array = [2012, 2013, 2014, 2015, 2016, 2017];
+const values_array = ['Select metric','absolute', 'relative'];
+const years_array = ['Select year', 2017, 2016, 2015, 2014, 2013, 2012];
 const months_array = [0,1,2,3,4,5,6,7,8,9,10,11];
-const types_array = ['month', 'week'];
-let year_value, type_value, metric_value, radarChart = [], charts_wrapper;
+const types_array = ['Select type', 'month', 'week'];
+let year_value = 2017, type_value = 'month', metric_value = 'absolute', radarChart = [], charts_wrapper;
 var x, i, j, selElmnt, a, b, c;
 
 const wrapper_div = '.special-section'
@@ -402,12 +402,12 @@ function create_filter_ui() {
 
 function onchange() {
     
-    let year_value_temp = d3.select('div.select-selected.year').html();
-    let type_value_temp = d3.select('div.select-selected.cycle').html();
-    let value_metric_temp = d3.select('div.select-selected.metric').html();
+    let year_value_temp = d3.select('div.select-selected.year').html() == 'Select year' ? 2017 : d3.select('div.select-selected.year').html();
+    let type_value_temp = d3.select('div.select-selected.cycle').html() == 'Select type' ? 'month' : d3.select('div.select-selected.cycle').html();
+    let value_metric_temp = d3.select('div.select-selected.metric').html() == 'Select metric' ? 'absolute' : d3.select('div.select-selected.metric').html();
+
     let used_selection;
 
-    
     if (year_value_temp != year_value) {
         used_selection = 'year';
         year_value = year_value_temp;
@@ -423,38 +423,34 @@ function onchange() {
     config.value_metric = value_metric_temp;
     config.year = parseInt(year_value);
 
-    console.log(type_value);
-
     if (used_selection == 'year') {
-        updateChart(filepath);
+        updateChart(filepath, config);
     } else if (used_selection == 'type') {
-        renderChart(filepath);
+        // renderChartOnlyRemove(filepath);
+        renderChart(filepath, config);
     } else if (used_selection == 'metric') {
-        updateChart(filepath);
+        updateChart(filepath, config);
     }
 }
 
 function init(file) {
     create_filter_ui();
     createWrapper();
-    addSVG();
     createTooltip();
-    
     renderChart(file, config);
 };
 
 function removeCharts() {
-    while (charts_wrapper.firstChild) {
-        charts_wrapper.removeChild(charts_wrapper.firstChild);
-    }
+    charts_wrapper.selectAll('svg').selectAll('g').remove()
+    charts_wrapper.select('.river-svg-wrapper').remove()
 }
 
-function updateChart(file) {
+function updateChart(file, config_new) {
     d3.json(file).then((data) => {
         const files_array = Object.keys(data);
         files_array.forEach((file,fi) => {
             if (radarChart[fi] != undefined) {
-                radarChart[fi].updateGraphics(data[file][config.year], config);
+                radarChart[fi].updateGraphics(data[file][config_new.year], config_new);
             }
         })
     })
@@ -480,6 +476,9 @@ function createGrid() {
 }
 
 function addSVG() {
+    charts_wrapper.append('div')
+        .classed('river-svg-wrapper', true)
+
     d3.svg("assets/spree.svg").then(svg => {
         var importedNode = document.importNode(svg.documentElement, true);
         d3.select('.river-svg-wrapper').each(function() {
@@ -491,6 +490,7 @@ function addSVG() {
 function renderChart(file, config_new) {
 
     removeCharts();
+    addSVG();
     
     d3.json(file).then((data) => {
         const files_array = Object.keys(data);
@@ -549,6 +549,11 @@ for (i = 0; i < x.length; i++) {
     create a new DIV that will act as an option item:*/
     c = document.createElement("DIV");
     c.innerHTML = selElmnt.options[j].innerHTML;
+
+    if (c.innerHTML == 'month' || c.innerHTML == 2017 || c.innerHTML == 'absolute') {
+        c.setAttribute("class", "same-as-selected");
+    }
+
     c.addEventListener("click", function(e) {
         /*when an item is clicked, update the original select box,
         and the selected item:*/

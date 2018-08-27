@@ -186,12 +186,12 @@ class Radarchart {
         
         this.axis.append('text')
             .text(d => { 
-                // console.log(d);
                 return dict_axis[d]})
             .attr("text-anchor", "middle")
             .attr('class', (d,i) => {
                 return `legend-${i} legend`
             })
+            .attr('id', (d,i) => { return i })
             .attr('x', (d,i) => {
                 return (this.width / 2) * (this.factor * Math.sin(i * this.radians / this.total)) + 13 * (this.factor * Math.sin(i * this.radians / this.total)) + this.margin.left;
             })
@@ -216,7 +216,6 @@ class Radarchart {
         this.node_coords[category] = [];
         this.circles[category] = this.nodesWrapper.selectAll(`.${category}-circle`);
         this.updateCircles(category, color);
-
         this.createAreas(this.node_coords[category], color, category);
     }
 
@@ -240,17 +239,24 @@ class Radarchart {
     }
 
     updateTooltip(data, index) {
+        console.log(this.data);
+
+        let data_current = this.data[data];
+
         let x = d3.event.pageX + 10;
         let y = d3.event.pageY + 10;
 
         this.tooltip = d3.select('#tooltip');
 
-        d3.select('.station-wrapper').text(this.titleName);
-        d3.select('.month-wrapper').text(this.month_dict_long[index]);
-        d3.select('.year-wrapper').text(this.year);
-        d3.select('#median-value').text(this.data[index].median).style('color', this.colorMean);
-        d3.select('#max-value').text(this.data[index].max).style('color', this.colorMax);
-        d3.select('#total-value').text(this.data[index].sum_days);
+        if (data_current != undefined) {
+            d3.select('.station-wrapper').text(this.titleName);
+            d3.select('.month-wrapper').text(this.month_dict_long[index]);
+            d3.select('.year-wrapper').text(this.year);
+            d3.select('#median-value').text(data_current.median).style('color', this.colorMean);
+            d3.select('#max-value').text(data_current.max).style('color', this.colorMax);
+            d3.select('#total-value').text(data_current.sum_days);
+        }
+
 
         this.tooltip
             .attr('style', `left: ${x}px; top: ${y}px; position: absolute`)
@@ -260,7 +266,7 @@ class Radarchart {
     updateGraphics(new_data, config_new) {
         this.type = config_new.type;
         this.value_metric = config_new.value_metric;
-        this.data = new_data;
+        this.data = this.type == "week" ? this.mergeDays(new_data) : new_data;
         this.max_local = this.calcMaxLocal(this.data);
 
         if (this.value_metric == 'relative') {
@@ -268,7 +274,6 @@ class Radarchart {
         } else if (this.value_metric == 'absolute') {
             this.max_value = config.max_value;
         }
-
 
         this.updateCircles('max', '#004466');
         this.updateCircles('mean', '#00ffa2');
@@ -295,8 +300,8 @@ class Radarchart {
         return max_local_object;
     }
 
-    updateAreas(data, color, category, index_current) {
-        this.areas[category] = this.areasWrapper.selectAll(`.${category}-area area ${index_current}-area`)
+    updateAreas(data, color, category) {
+        this.areas[category] = this.areasWrapper.selectAll(`.${category}-area`)
             .data([data])
         
         this.areas[category].exit().remove()
@@ -368,9 +373,8 @@ class Radarchart {
     updateCircles(category, color) {
         this.node_coords = {'mean':[], 'max':[]};
         this.category = category;
-        let index_current
 
-        this.circles[category] = this.nodesWrapper.selectAll(`.${category}-circle`)
+        this.circles[category]  = this.nodesWrapper.selectAll(`.${category}-circle`)
             .data(this.data)
 
         this.circles[category].exit().remove()
@@ -400,6 +404,9 @@ class Radarchart {
                 let polar_coord_x = (this.width / 2) * (d[category] / this.max_value) * this.factor * Math.sin(i*this.radians / this.total);
                 let polar_coord_y = (this.height / 2) * (d[category] / this.max_value) * this.factor * Math.cos(i*this.radians / this.total);
 
+                polar_coord_x = d[category] == 0 ? 0 : polar_coord_x;
+                polar_coord_y = d[category] == 0 ? 0 : polar_coord_y;
+
                 let single_coord = [];
                 single_coord.push(polar_coord_x);
                 single_coord.push(polar_coord_y);
@@ -409,12 +416,13 @@ class Radarchart {
             })
             .attr("cy", (d,i) => {
                 let polar_coord = this.height / 2 * (d[category] / this.max_value)*this.factor* Math.cos(i*this.radians/this.total);
+                // console.log((d[category] / this.max_value));
+                polar_coord = isNaN(polar_coord) ? 0 : polar_coord;
                 return polar_coord;
             })
             .attr('transform', `translate( ${(this.width/2 + this.margin.left) - this.factor}, ${(this.height/2 + this.margin.top)  - this.factor})`)
             
-            
-            this.updateAreas(this.node_coords[category], color, category, index_current);
+            this.updateAreas(this.node_coords[category], color, category);
     }
 
 }
