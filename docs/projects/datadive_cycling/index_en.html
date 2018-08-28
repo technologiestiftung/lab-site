@@ -143,7 +143,7 @@
                 However, many bike infrastructure projects are not carried out by the central government but rather at the Bezirk (borough) level, specifically by each Bezirk’s “Straßen- und Grünflächenamt” (“Department for Streets and Green Spaces”). This means getting a complete picture of planned projects for all of Berlin often requires consulting each Bezirk individually. Further, no Bezirk currently publishes information on planned bike infrastructure projects as machine-readable data, meaning acquiring this information varies from skimming a relevant PDF to sifting through dense layers of webpages in search of the desired information. Several Bezirke, like <a href="https://www.berlin.de/ba-charlottenburg-wilmersdorf/verwaltung/aemter/ordnungsamt/strassenverkehr-parken/artikel.576690.php#IIIb" target="blank">Charlottenburg-Wilmersdorf</a>, <a href="https://www.berlin.de/ba-friedrichshain-kreuzberg/aktuelles/pressemitteilungen/2018/pressemitteilung.670050.php" target="blank">Friedrichshain-Kreuzberg</a>, and <a href="https://www.berlin.de/ba-neukoelln/aktuelles/pressemitteilungen/2017/pressemitteilung.571489.php" target="blank">Neukölln</a> have either websites or PDF reports where they list planned construction projects. However, it’s always unclear what the exact status of these projects are and if they are actually being completed based on the planned schedule; in many cases, these pages or documents are years old. In short: gathering accurate information on planned improvements or additions to bike infrastructure is a painstaking process likely to require direct communication with individual Bezirke themselves to verify the accuracy or current status of information published online (if there even is any information online).</p>
             </div>
              <div class="container p-bottom">
-                                <p class="copy">
+                <p class="copy">
                 An additional source of information on planned bicycle infrastructure projects is budgetary allocations from the central government to the Bezirke to fund such initiatives. It is not the case, however, that all projects singled out as receiving funding in a budget line will actually come to fruition. Moreover the depth of information provided is quite minimal, meaning it would be difficult to form an accurate picture of where exactly in Berlin infrastructure improvements or additions are being planned, and what exactly the nature of these plans are (e.g., will something entirely new be constructed, or will existing routes simply be improved / repaired). A good resource for reviewing what kinds of budget allocations have been made for bicycle infrastructure is <a href="https://kleineanfragen.de/berlin/18/13947-umsetzung-des-massnahmenpakets-zur-verbesserung-der-radinfrastruktur" target="blank">this parliamentary enquiry from March 2018</a>, which includes a list of allocations for 2017 and 2018, broken up by the relevant budgetary chapter.</p>
             </div>
              <div class="container">
@@ -154,8 +154,46 @@
                     <li><a href="https://fbinter.stadt-berlin.de/fb/index.jsp?loginkey=showMap&mapId=k_radausbau@senstadt" target="blank">2012 map of planned bike-related construction projects (FIS-Broker map)</a></li>
                     <li><a href="https://kleineanfragen.de/berlin/18/13947-umsetzung-des-massnahmenpakets-zur-verbesserung-der-radinfrastruktur" target="blank">Parliamentary enquiry on budgetary allocations for planned bicycle infrastructure improvements</a></li>
                 </ul>
+            <div class="container">
+                <p class="copy">
+                CSV files extracted from a <a href="https://kleineanfragen.de/berlin/18/13947-umsetzung-des-massnahmenpakets-zur-verbesserung-der-radinfrastruktur" target="blank">March 2018 parliamentary enquiry</a> listing planned bike infrastructure improvements according to the relevant budgetary title & chapter:</p><br>
+            </div>
+                <div class="container p-bottom">
+                <ul class="download-list">
+                    <li>
+                        <a href="https://raw.githubusercontent.com/technologiestiftung/lab-site/master/docs/projects/datadive_cycling/Data/PlannedRoutes_2017_Titel52108.csv">
+                            <span class="download-icon"></span>
+                            <span class="download-title">Chapter 0730, Title 52108 (2017)</span><br />
+                            <span class="download-subtitle">7 KB, extracted 08/2018</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/technologiestiftung/lab-site/blob/master/docs/projects/datadive_cycling/Data/PlannedRoutes_201819_Titel52108.csv">
+                            <span class="download-icon"></span>
+                            <span class="download-title">Chapter 0730, Title 52108 (2018-19)</span><br />
+                            <span class="download-subtitle">6 KB, 08/2018</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://raw.githubusercontent.com/technologiestiftung/lab-site/master/docs/projects/datadive_cycling/Data/PlannedRoutes_2017_Titel72016.csv">
+                            <span class="download-icon"></span>
+                            <span class="download-title">Chapter 0730, Title 72016 (2017)</span><br />
+                            <span class="download-subtitle">3 KB, 08/2018</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://raw.githubusercontent.com/technologiestiftung/lab-site/master/docs/projects/datadive_cycling/Data/PlannedRoutes_20181920_Titel72016.csv">
+                            <span class="download-icon"></span>
+                            <span class="download-title">Chapter 0730, Title 72016 (2018-19)</span><br />
+                            <span class="download-subtitle">3 KB, 08/2018</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+ 
 
-                <h3 class="p-bottom">Express bike lanes</h3>
+
+                <h3 class="container p-bottom p-top">Express bike lanes</h3>
 
             <div class="container">
                 <p class="copy">
@@ -166,6 +204,7 @@
             <ul class="p-bottom">
                     <li><a href="https://www.berlin.de/senuvk/verkehr/politik_planung/rad/schnellverbindungen/" target="blank">Plans for express bike lanes (website)</a></li>
                 </ul>
+                
 
                 <h2 class="p-bottom">General road infrastructure data</h2>
 
@@ -306,7 +345,24 @@
                     <li><a href="https://kleineanfragen.de/berlin/18/13845-fahrraddiebstahl-in-berlin" target="blank">2017 Parliamentary enquiry on bike theft (PDF)</a></li>
                     <li><a href="https://kleineanfragen.de/berlin/17/17068-reduzierung-und-umstellung-der-fahrrad-codierungen-durch-die-berliner-polizei-ist-das-sinnvoll" target="blank">2015 Parliamentary enquiry on bike theft (PDF)</a></li>
             </ul>
-            <h3 class="p-bottom">Bikesharing</h3>
+            <div class="container">
+                <p class="copy">
+                CSV file extracted from the tables in the above enquiries:</p><br>
+            </div>
+            <div class="container p-bottom">
+                <ul class="download-list">
+                    <li>
+                        <a href="https://raw.githubusercontent.com/technologiestiftung/lab-site/master/docs/projects/datadive_cycling/Data/Theft1517planungsraumHOTSPOTS.csv">
+                            <span class="download-icon"></span>
+                            <span class="download-title">Top 5 bike theft "hot spots" per Planungsraum (2015-2017)</span><br />
+                            <span class="download-subtitle">3 KB, extracted 08/2018</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <h3 class="container p-top p-bottom">Bikesharing</h3>
             <div class="container">
                 <p class="copy">
                 <u>Status: Limited non-open data available</u>
