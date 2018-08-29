@@ -9,7 +9,7 @@ class Radarchart {
         this.margin = config.margin;        
         this.max_value = config.max_value;
         this.factor_legend = config.factor_legend;
-        this.station_name, this.tooltip, this.month_dict, this.month_dict_long, this.all_axis_week, this.circles = {}, this.updateCount = 0, this.areas = {}, this.category, this.titleName, this.year, this.colorMax, this.colorMean
+        this.station_name, this.tooltip, this.month_dict, this.month_dict_long, this.all_axis_week, this.circles = {}, this.updateCount = 0, this.areas = {}, this.category, this.titleName, this.year, this.colorMax, this.colorMean, this.range, this.defs
         this.days_dict = { 'Sunday': 0, 'Monday': 1, 'Tuesday': 2, 'Wednesday': 3, 'Thursday': 4, 'Friday': 5, 'Saturday': 6 },
         this.all_axis_day = [24,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
 
@@ -17,7 +17,7 @@ class Radarchart {
         this.radians = 2 * Math.PI;
         this.segmentsWrapper, this.nodesWrapper, this.areasWrapper
         this.data, this.svg, this.all_axis, this.axis, this.title
-        this.total, this.node_coords = {'mean':[], 'max':[]};
+        this.total, this.node_coords = {'median':[], 'max':[]};
 
         this.init = this.init.bind(this);
         this.createSegments = this.createSegments.bind(this);
@@ -35,19 +35,23 @@ class Radarchart {
         this.unhighlightMonths = this.unhighlightMonths.bind(this);
         this.highlightAll = this.highlightAll.bind(this);
         this.unhighlightAll = this.unhighlightAll.bind(this);
-        this.extractHours = this.extractHours.bind(this);
+        this.mergeHours = this.mergeHours.bind(this);
     }
 
     init(station_index) {
         this.type = config.type;
 
-        if (this.type == 'week') {
+        if(this.type == "week") {
             this.data = this.mergeDays(this.file);
-        } else if (this.type == 'month') {
+            config.max_value = 10000;
+        } else if (this.type == "day") {
+            this.data = this.mergeHours(this.file);
+            config.max_value = 1500;
+        } else {
             this.data = this.file;
-        } else if (this.type == 'day') {
-            this.data = this.file[0].hours;
+            config.max_value = 10000;
         }
+
 
         this.station_name = this.file[0].name;
         this.value_metric = config.value_metric;
@@ -61,32 +65,46 @@ class Radarchart {
         this.colorMean = "#2824b2";
         this.max_local = this.calcMaxLocal(this.data);
 
-        if (this.value_metric == 'relative') {
+        if (this.value_metric == 'relative max') {
             this.max_value = this.max_local.max;
+        } else if (this.value_metric == 'relative median') {
+            this.max_value = this.max_local.median;
         } else if (this.value_metric == 'absolute') {
             this.max_value = config.max_value;
         }
 
         this.svg = d3.select(`svg.wrapper-${station_index}`)
             .on('mouseover', (d,i) => {
-                d3.selectAll('.mean-area').style('opacity', .15);
-                d3.selectAll('.max-area').style('opacity', .15);
-                this.svg.select('.mean-area').style('opacity', 1);
+                d3.selectAll('.median-area').style('opacity', .25);
+                d3.selectAll('.max-area').style('opacity', .25);
+                this.svg.select('.median-area').style('opacity', 1);
                 this.svg.select('.max-area').style('opacity', 1);
             })    
             .on('mouseout', (d,i) => {
-                d3.selectAll('.mean-area').style('opacity', .5);
-                d3.selectAll('.max-area').style('opacity', .5);
-            })    
+                d3.selectAll('.median-area').style('opacity', 1);
+                d3.selectAll('.max-area').style('opacity', 1);
+            })  
+            
+        this.defs = this.svg.append('defs')
+            .append('mask')
+            .attr('id', 'chart_mask')
+        
+        this.defs.append('circle')
+            .attr('cx', config.width / 2 + this.margin.left)
+            .attr('cy', config.height / 2 + this.margin.top)
+            .attr('r', config.width / 2)
+            .style('fill', 'white')
         
         this.segmentsWrapper = this.svg.append('g')
             .classed('segments-wrapper', true)
         
         this.nodesWrapper = this.svg.append('g')
             .classed('nodes-wrapper', true)
+            .attr("mask", "url(#chart_mask)")
         
         this.areasWrapper = this.svg.append('g')
             .classed('areas-wrapper', true)
+            .attr("mask", "url(#chart_mask)")
         
         this.title = this.svg.append('g')
             .classed('title-wrapper', true)
@@ -96,8 +114,12 @@ class Radarchart {
         // this.switchData();
     }
 
-    extractHours(data) {
-        console.log(data);
+    mergeHours(data) {
+        let data_temp = data[0].hours.map((i,j) => {
+            return i[0];
+        })
+
+        return data_temp;
     }
 
     mergeDays(data) {
@@ -174,7 +196,7 @@ class Radarchart {
     }
         
     createAxis() {
-        let data_axis = this.type == 'week' ? this.all_axis_week : this.all_axis;
+        let data_axis, dict_axis;
 
         this.month_dict = {
             0: 'Jan', 1: 'Feb', 2: 'Mar', 3: 'Apr', 4: 'Mai', 5: 'Jun', 6: 'Jul', 7: 'Aug', 8: 'Sep', 9: 'Okt', 10: 'Nov', 11: 'Dec'
@@ -184,9 +206,22 @@ class Radarchart {
             0: 'January', 1: 'February', 2: 'March', 3: 'April', 4: 'May', 5: 'June', 6: 'July', 7: 'August', 8: 'September', 9: 'October', 10: 'November', 11: 'December'
         }
 
+        this.day_dict = { 0: '12', 1: '01', 2: '02', 3: '03', 4: '04', 5: '05', 6: '06', 7: '07', 8: '08', 9: '09', 10: '10', 11: '11', 12: '12', 13: '13', 14: '14', 15: '15', 16: '16', 17: '17', 18: '18', 19: '19', 20: '20', 21: '21', 22: '22', 23: '23', 24: '24' }
+
         this.week_dict = { 0: 'Sun', 1: 'Mon', 2: 'Tue', 3: 'Wed', 4: 'Thu', 5: 'Fri', 6: 'Sat' }
 
-        let dict_axis = this.type == 'week' ? this.week_dict : this.month_dict;
+        if (this.type == 'week') {
+            data_axis = this.all_axis_week;
+            dict_axis = this.week_dict;
+        } else if (this.type == 'month') {
+            data_axis = this.all_axis;
+            dict_axis = this.month_dict;
+        } else if (this.type == 'day') {
+            data_axis = this.all_axis_day;
+            dict_axis = this.day_dict;
+        };
+
+
 
         this.axis = this.segmentsWrapper.selectAll('.axis')
             .data(data_axis)
@@ -209,7 +244,7 @@ class Radarchart {
             .attr('transform', `translate( ${this.width/2 }, ${this.height/2 })`)
         
         this.axis.append('text')
-            .text(d => { 
+            .text((d,i) => { 
                 return dict_axis[d]})
             .attr("text-anchor", "middle")
             .attr('class', (d,i) => {
@@ -251,7 +286,7 @@ class Radarchart {
 
     createGraphics() {
         this.createCircles('max', this.colorMax);
-        this.createCircles('mean', this.colorMean);
+        this.createCircles('median', this.colorMean);
     }
 
     createTitle() {
@@ -265,44 +300,66 @@ class Radarchart {
 
     updateTooltip(data, index) {
 
-        let data_current = this.data[data];
+        if (this.data[data] != undefined) {
 
-        let x = d3.event.pageX + 10;
-        let y = d3.event.pageY + 10;
+            let x = d3.event.pageX + 10;
+            let y = d3.event.pageY + 10;
 
-        this.tooltip = d3.select('#tooltip');
+            let data_timeslot = this.type == 'day' ? `${this.day_dict[index]} Uhr` : this.month_dict_long[index];
 
-        if (data_current != undefined) {
-            d3.select('.station-wrapper').text(this.titleName);
-            d3.select('.month-wrapper').text(this.month_dict_long[index]);
-            d3.select('.year-wrapper').text(this.year);
-            d3.select('#median-value').text(data_current.median).style('color', this.colorMean);
-            d3.select('#max-value').text(data_current.max).style('color', this.colorMax);
-            d3.select('#total-value').text(data_current.sum_days);
+            this.tooltip = d3.select('#tooltip');
 
-            this.data.length == 7 ? d3.select('.total').style('display', 'none') : d3.select('.total').style('display', 'flex');
-        }
+            if (this.data[data] != undefined) {
+                d3.select('.station-wrapper').text(this.titleName);
+                d3.select('.month-wrapper').text(data_timeslot);
+                d3.select('.year-wrapper').text(this.year);
+                d3.select('#median-value').text(this.data[data].median).style('color', this.colorMean);
+                d3.select('#max-value').text(this.data[data].max).style('color', this.colorMax);
+                d3.select('#total-value').text(this.data[data].sum_days);
 
+                if (this.data.length == 7 || this.data.length == 24) {
+                    d3.select('.total').style('display', 'none');
+                } else {
+                    d3.select('.total').style('display', 'flex');
+                }
+            }
 
-        this.tooltip
-            .attr('style', `left: ${x}px; top: ${y}px; position: absolute`)
-            .classed('active', true)
+            if (this.type == 'day') {
+                d3.select('.year-wrapper').style('display', 'none');
+            }
+
+            this.tooltip
+                .attr('style', `left: ${x}px; top: ${y}px; position: absolute`)
+                .classed('active', true)
+            }
     }
 
     updateGraphics(new_data, config_new) {
         this.type = config_new.type;
+        this.range = config_new.range;
         this.value_metric = config_new.value_metric;
-        this.data = this.type == "week" ? this.mergeDays(new_data) : new_data;
+
+        if(this.type == "week") {
+            this.data = this.mergeDays(new_data);
+        } else if (this.type == "day") {
+            this.data = this.mergeHours(new_data);
+        } else {
+            this.data = new_data;
+        }
+
         this.max_local = this.calcMaxLocal(this.data);
 
-        if (this.value_metric == 'relative') {
+        if (this.value_metric == 'relative max') {
             this.max_value = this.max_local.max;
+        } else if (this.value_metric == 'relative median') {
+            this.max_value = this.max_local.median;
         } else if (this.value_metric == 'absolute') {
             this.max_value = config.max_value;
         }
 
+
+        this.updateCircles('median', '#00ffa2');
         this.updateCircles('max', '#004466');
-        this.updateCircles('mean', '#00ffa2');
     }
 
     calcMaxLocal(data_obj) {
@@ -397,7 +454,7 @@ class Radarchart {
     }
 
     updateCircles(category, color) {
-        this.node_coords = {'mean':[], 'max':[]};
+        this.node_coords = {'median':[], 'max':[]};
         this.category = category;
 
         this.circles[category]  = this.nodesWrapper.selectAll(`.${category}-circle`)
@@ -427,27 +484,33 @@ class Radarchart {
             .transition()
             .duration(500)
             .attr('cx', (d,i) => {
-                let polar_coord_x = (this.width / 2) * (d[category] / this.max_value) * this.factor * Math.sin(i*this.radians / this.total);
-                let polar_coord_y = (this.height / 2) * (d[category] / this.max_value) * this.factor * Math.cos(i*this.radians / this.total);
-
-                polar_coord_x = isNaN(polar_coord_x) ? 0 : polar_coord_x;
-                polar_coord_y = isNaN(polar_coord_y) ? 0 : polar_coord_y;
-
-                let single_coord = [];
-                single_coord.push(polar_coord_x);
-                single_coord.push(polar_coord_y);
-
-                this.node_coords[category].push(single_coord);
-
-                return polar_coord_x
+                // console.log(d);
+                if (d != undefined) {
+                    let polar_coord_x = (this.width / 2) * (d[category] / this.max_value) * this.factor * Math.sin(i*this.radians / this.total);
+                    let polar_coord_y = (this.height / 2) * (d[category] / this.max_value) * this.factor * Math.cos(i*this.radians / this.total);
+    
+                    polar_coord_x = isNaN(polar_coord_x) ? 0 : polar_coord_x;
+                    polar_coord_y = isNaN(polar_coord_y) ? 0 : polar_coord_y;
+    
+                    let single_coord = [];
+                    single_coord.push(polar_coord_x);
+                    single_coord.push(polar_coord_y);
+    
+                    this.node_coords[category].push(single_coord);
+    
+                    return polar_coord_x
+                }
             })
             .attr("cy", (d,i) => {
-                let polar_coord = this.height / 2 * (d[category] / this.max_value)*this.factor* Math.cos(i*this.radians/this.total);
-                // console.log((d[category] / this.max_value));
-                polar_coord = isNaN(polar_coord) ? 0 : polar_coord;
-                return polar_coord;
+                if (d != undefined) {
+                    let polar_coord = this.height / 2 * (d[category] / this.max_value)*this.factor* Math.cos(i*this.radians/this.total);
+                    // console.log((d[category] / this.max_value));
+                    polar_coord = isNaN(polar_coord) ? 0 : polar_coord;
+                    return polar_coord;
+                }
             })
             .attr('transform', `translate( ${(this.width/2 + this.margin.left) - this.factor}, ${(this.height/2 + this.margin.top)  - this.factor})`)
+
             
             this.updateAreas(this.node_coords[category], color, category);
     }

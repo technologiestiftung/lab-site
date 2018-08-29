@@ -11,6 +11,7 @@
 
 .select-selected {
   background-color: #FCFCFC;
+  color: black;
   font-family: 'Barlow', sans-serif; }
 
 /*style the arrow inside the select element:*/
@@ -31,7 +32,7 @@
 
 /*style the items (options), including the selected item:*/
 .select-items div, .select-selected {
-  color: #9B9B9B;
+  color: black;
   padding: 8px 16px;
   border: 1px solid;
   border-color: transparent #E4E4E4 #E4E4E4 #E4E4E4;
@@ -62,6 +63,6 @@
   margin-bottom: 40px;
   display: flex;
   flex-direction: row;
-  margin-top: 60px; }
+  margin-top: 40px; }
   .ui-wrapper .custom-select {
     margin-right: 10px; }

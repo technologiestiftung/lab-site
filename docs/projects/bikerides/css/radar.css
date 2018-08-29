@@ -22,7 +22,7 @@
       .charts-wrapper .svg-wrapper.empty {
         display: none; } }
 
-.max-circle, .mean-circle {
+.max-circle, .mean-circle, .median-circle {
   opacity: .25; }
   .max-circle.highlighted, .mean-circle.highlighted {
     opacity: 1; }
@@ -40,7 +40,7 @@ text.legend {
   font-weight: regular;
   font-size: 8px;
   letter-spacing: .4px;
-  opacity: .35;
+  opacity: 1;
   animation: 1s opacity ease;
   cursor: pointer; }
   text.legend.highlighted {
@@ -50,11 +50,11 @@ text.legend {
 .spree-wrapper {
   position: absolute; }
 
-.max-area, .mean-area {
-  opacity: .5; }
+.max-area, .mean-area, .median-area {
+  opacity: .75; }
 
 .river-svg-wrapper {
-  height: 100%;
+  /* height: 100%; */
   top: 405px;
   left: -11px;
   z-index: -1000;

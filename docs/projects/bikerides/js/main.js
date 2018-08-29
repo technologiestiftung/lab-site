@@ -1,7 +1,7 @@
 const filepath = "assets/all_years.json";
 const filepath_v2 = "assets/structure.json";
 
-const values_array = ['Select metric','absolute', 'relative'];
+const values_array = ['Select metric','absolute', 'relative median', 'relative max'];
 const years_array = ['Select year', 2017, 2016, 2015, 2014, 2013, 2012];
 const months_array = [0,1,2,3,4,5,6,7,8,9,10,11];
 const types_array = ['Select type', 'month', 'week', 'day'];
@@ -12,12 +12,12 @@ const wrapper_div = '.special-section'
 
 const grid_dict = [
     {
-        station: 0,
+        station: 2,
         index: 0,
         name: ''
     },
     {
-        station: 0,
+        station: 3,
         index: 1,
         name: ''
     },
@@ -247,12 +247,12 @@ const grid_dict = [
         name: ''
     },
     {
-        station: 0,
+        station: 2,
         index: 47,
         name: ''
     },
     {
-        station: 0,
+        station: 3,
         index: 48,
         name: ''
     },
@@ -345,25 +345,29 @@ function createTooltip() {
             .attr('id', 'total-value')
 }
 
+function createIntroText() {
+    let intro_wrapper = d3.select(wrapper_div).append('div')
+        .classed('intro-wrapper', true)
+    
+    intro_wrapper
+        .append('span')
+        .classed('intro-headline', true)
+        .text('Wie verändert sich der Radverkehr in Berlin? ')
+
+    intro_wrapper
+        .append('span')
+        .classed('intro-text', true)
+        .text('Unterschiedliche Aspekte des Datensatzes durch Auswahl der Filter (z.B. Tages-, Wochen- und Jahresrhythmus):')
+}
+
 function create_filter_ui() {
+
+    createIntroText();
+
     let ui_wrapper = d3.select(wrapper_div)
         .append('div')
         .classed('ui-wrapper', true)
-    
-    let type_select_wrapper = ui_wrapper.append('div')
-        .classed('custom-select', true)
-        .style('width', '120px')
-    
-    let type_select = type_select_wrapper
-        .append('select')
-            .classed('select-type', true)
-    
-    let value_select_wrapper = ui_wrapper.append('div')
-        .classed('custom-select', true)
-        .style('width', '120px')
 
-    let value_select = value_select_wrapper.append('select')
-        .classed('select-value', true)
 
     let select_year_wrapper = ui_wrapper.append('div')
         .classed('custom-select', true)
@@ -371,15 +375,6 @@ function create_filter_ui() {
     
     let select_year = select_year_wrapper.append('select')
         .classed('select-year', true)
-    
-    let type_options = type_select.selectAll('option')
-        .data(types_array)
-        .enter()
-        .append('option')
-        .text(d => { return d })
-        .property('value', d => {
-            return d == "month" ? true : false;
-        })
 
     let year_options = select_year.selectAll('option')
         .data(years_array)
@@ -389,7 +384,33 @@ function create_filter_ui() {
             return d == "2017" ? true : false;
         })
         .text(d => { return d })
+    
 
+    let type_select_wrapper = ui_wrapper.append('div')
+        .classed('custom-select', true)
+        .style('width', '120px')
+    
+    let type_select = type_select_wrapper
+        .append('select')
+        .classed('select-type', true)
+        
+    let type_options = type_select.selectAll('option')
+        .data(types_array)
+        .enter()
+        .append('option')
+        .text(d => { return d })
+        .property('value', d => {
+            return d == "month" ? true : false;
+        })
+
+    
+    let value_select_wrapper = ui_wrapper.append('div')
+        .classed('custom-select', true)
+        .style('width', '120px')
+
+    let value_select = value_select_wrapper.append('select')
+        .classed('select-value', true)
+    
     let value_options = value_select.selectAll('option')
         .data(values_array)
         .enter()
@@ -398,7 +419,6 @@ function create_filter_ui() {
         .property('value', d => {
             return d == 'absolute' ? true : false;
         })
-
 }
 
 function onchange() {
@@ -406,6 +426,7 @@ function onchange() {
     let year_value_temp = d3.select('div.select-selected.year').html() == 'Select year' ? 2017 : d3.select('div.select-selected.year').html();
     let type_value_temp = d3.select('div.select-selected.cycle').html() == 'Select type' ? 'month' : d3.select('div.select-selected.cycle').html();
     let value_metric_temp = d3.select('div.select-selected.metric').html() == 'Select metric' ? 'absolute' : d3.select('div.select-selected.metric').html();
+
 
     let used_selection;
 
@@ -499,7 +520,6 @@ function renderChart(file, config_new) {
         }
     }
 
-    
     d3.json(file).then((data) => {
         const files_array = Object.keys(data);
         files_array.forEach((file,fi) => {
@@ -510,6 +530,14 @@ function renderChart(file, config_new) {
                     radarChart[fi].init(item.index);
                 } else if (item.station == 0) {
                     d3.select(`.wrapper-${item.index}`).classed('empty', true);
+                }
+
+                if (item.station == 2) {
+                    createLegend(item.index);
+                }
+
+                if (item.station == 3) {
+                    createSrc(item.index);
                 }
             })
         })
@@ -534,6 +562,82 @@ function checkSelection(selected_current) {
     }
 }
 
+function createLegend(item_index) {
+    if (d3.select('.legend-wrapper')['_groups'][0][0] == null) {
+        let wrapper = d3.select(`.wrapper-${item_index}`);
+        let legend_wrapper = wrapper.append('g')
+            .classed('legend-wrapper', true) 
+            .attr('width', config.width + config.margin.left + config.margin.right)
+            .attr('height', config.height + config.margin.top + config.margin.bottom)
+        
+        let legend_median_circle = legend_wrapper.append('circle')
+            .classed('legend_median', true)
+            .attr('cx', '5')
+            .attr('cy', '11')
+            .attr('r', 4)
+            .style('fill', '#2824b2')
+        
+        legend_wrapper.append('text')
+            .classed('legend_text', true)
+            .text('Median Wert d.')
+            .style('transform', 'translateX(15px) translateY(15px)')
+        
+        legend_wrapper.append('text')
+            .classed('legend_text', true)
+            .text('Anzahl Fahrradfahrer')
+            .style('transform', 'translateX(15px) translateY(28px)')
+
+        let legend_max_circle = legend_wrapper.append('circle')
+            .classed('legend_median', true)
+            .attr('cx', '5')
+            .attr('cy', '51')
+            .attr('r', 4)
+            .style('fill', '#3ce39f')
+        
+        legend_wrapper.append('text')
+            .classed('legend_text', true)
+            .text('Höchster Wert d.')
+            .style('transform', 'translateX(15px) translateY(55px)')
+        
+        legend_wrapper.append('text')
+            .classed('legend_text', true)
+            .text('Anzahl Fahrradfahrer')
+            .style('transform', 'translateX(15px) translateY(68px)')
+    }
+}
+
+function createSrc(item_index) {
+    if (d3.select('.src-wrapper')['_groups'][0][0] == null) {
+        let wrapper = d3.select(`.wrapper-${item_index}`);
+        let src_wrapper = wrapper.append('g')
+            .classed('src-wrapper', true) 
+            .attr('width', config.width + config.margin.left + config.margin.right)
+            .attr('height', config.height + config.margin.top + config.margin.bottom)
+
+        src_wrapper.append('text')
+            .classed('legend_text', true)
+            .text('Quelle:')
+            .style('transform', 'translateX(15px) translateY(15px)')
+            .style('font-weight', 'bold')
+
+        src_wrapper.append('text')
+            .classed('legend_text', true)
+            .text('Senatsverwaltung')
+            .style('transform', 'translateX(15px) translateY(28px)')
+
+        src_wrapper.append('text')
+            .classed('legend_text', true)
+            .text('für Umwelt und')
+            .style('transform', 'translateX(15px) translateY(41px)')
+
+        src_wrapper.append('text')
+            .classed('legend_text', true)
+            .text('Stadtentwicklung')
+            .style('transform', 'translateX(15px) translateY(53px)')
+    }
+}
+
+
 
 /*look for any elements with the class "custom-select":*/
 x = document.getElementsByClassName("custom-select");
@@ -542,9 +646,11 @@ for (i = 0; i < x.length; i++) {
   /*for each element, create a new DIV that will act as the selected item:*/
   a = document.createElement("DIV");
   
-  if (i == 0) { a.setAttribute("class", "select-selected cycle"); }
-  if (i == 1) { a.setAttribute("class", "select-selected metric"); }
-  if (i == 2) { a.setAttribute("class", "select-selected year"); }
+  if (i == 0) { a.setAttribute("class", "select-selected year"); }
+  if (i == 1) { a.setAttribute("class", "select-selected cycle"); }
+  if (i == 2) { a.setAttribute("class", "select-selected metric"); }
+
+  console.log(a);
 
   a.setAttribute('onclick', "checkSelection(this)")
   a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
