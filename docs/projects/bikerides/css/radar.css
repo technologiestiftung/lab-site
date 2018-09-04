@@ -1,7 +1,7 @@
 .title-wrapper {
   text-anchor: middle;
   fill: black;
-  transform: translateY(125px) translateX(67px); }
+ }
   .title-wrapper .title {
     font-family: 'Barlow', sans-serif;
     letter-spacing: .5px;

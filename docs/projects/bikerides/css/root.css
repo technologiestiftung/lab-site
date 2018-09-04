@@ -1,7 +1,7 @@
 .title-wrapper {
   text-anchor: middle;
   fill: black;
-  transform: translateY(125px) translateX(67px); }
+  }
   .title-wrapper .title {
     font-family: 'Barlow', sans-serif;
     letter-spacing: .5px;
@@ -257,4 +257,69 @@ body {
   text-align: center;
   letter-spacing: .5px;
   letter-spacing: .5px;
+}
+
+.two-col-flex {
+  display: flex; 
+  max-width: 700px; 
+  justify-content: space-between;
+}
+
+.two-col-flex p.copy {
+  margin: 0;
+}
+
+.pb-1 {
+  padding-bottom: 18px;
+}
+
+.wrapper-49 text.legend {
+  font-size: 10px;
+}
+
+.wrapper-49 .line {
+  stroke: rgb(220,220,220) !important;
+}
+
+.wrapper-49 .title {
+  font-size: 14px;
+}
+
+.wrapper-49 {
+  margin-left: 30px;
+  margin-top: 40px;
+}
+
+.wrapper-50 text.legend {
+  font-size: 10px;
+}
+
+.wrapper-50 .line {
+  stroke: rgb(220,220,220) !important;
+}
+
+.wrapper-50 .title {
+  font-size: 14px;
+}
+
+.wrapper-50 {
+  margin-left: 30px;
+  margin-top: 40px;
+}
+
+.wrapper-51 text.legend {
+  font-size: 10px;
+}
+
+.wrapper-51 .line {
+  stroke: rgb(220,220,220) !important;
+}
+
+.wrapper-51 .title {
+  font-size: 14px;
+}
+
+.wrapper-51 {
+  margin-left: 30px;
+  margin-top: 40px;
 }

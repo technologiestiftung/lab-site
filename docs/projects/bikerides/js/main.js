@@ -4,8 +4,8 @@ const filepath_v2 = "assets/structure.json";
 const values_array = ['Select metric','absolute', 'relative median', 'relative max'];
 const years_array = ['Select year', 2017, 2016, 2015, 2014, 2013, 2012];
 const months_array = [0,1,2,3,4,5,6,7,8,9,10,11];
-const types_array = ['Select type', 'month', 'week', 'day'];
-let year_value = 2017, type_value = 'month', metric_value = 'absolute', radarChart = [], charts_wrapper;
+const types_array = ['Select type', 'month', 'week', 'weekdays', 'weekends'];
+let year_value = 2017, type_value = 'month', metric_value = 'absolute', radarChart = [], radar_chart_week = [], charts_wrapper;
 var x, i, j, selElmnt, a, b, c;
 
 const wrapper_div = '.special-section'
@@ -122,7 +122,7 @@ const grid_dict = [
         name: ''
     },
     {
-        station: 0,
+        station: 1,
         index: 22,
         name: '02-MI-JAN-S'
     },
@@ -455,9 +455,78 @@ function onchange() {
 }
 
 function init(file) {
+
+    let config_example  = {
+        year: 2017,
+        height: 150,
+        width: 150,
+        levels: 5,
+        radius: 2,
+        value_metric: 'absolute',
+        factor: 1,
+        type: "weekdays",
+        month: 0,
+        factor_legend: .85,
+        max_value: 10000,
+        margin: {
+            left: 30,
+            right: 30,
+            top: 18,
+            bottom: 42
+        }
+    }
+
+    let config_example_week  = {
+        year: 2017,
+        height: 150,
+        width: 150,
+        levels: 5,
+        radius: 2,
+        value_metric: 'absolute',
+        factor: 1,
+        type: "week",
+        month: 0,
+        factor_legend: .85,
+        max_value: 10000,
+        margin: {
+            left: 30,
+            right: 30,
+            top: 18,
+            bottom: 42
+        }
+    }
+
+    let config_example_month  = {
+        year: 2017,
+        height: 150,
+        width: 150,
+        levels: 5,
+        radius: 2,
+        value_metric: 'absolute',
+        factor: 1,
+        type: "month",
+        month: 0,
+        factor_legend: .85,
+        max_value: 10000,
+        margin: {
+            left: 30,
+            right: 30,
+            top: 18,
+            bottom: 42
+        }
+    }
+
+
     create_filter_ui();
     createWrapper();
     createTooltip();
+
+    // file, year, station, config_current, id
+
+    exampleChart(file, 2017, '05-FK-OBB-W', config_example, 49);
+    exampleChart(file, 2017, '05-FK-OBB-W', config_example_week, 50);
+    exampleChart(file, 2017, '05-FK-OBB-W', config_example_month, 51);
+
     renderChart(file, config);
 };
 
@@ -526,8 +595,9 @@ function renderChart(file, config_new) {
             // change: push all years into radarchart
             grid_dict.forEach(item => {
                 if (item.station == 1 && file == item.name) {
+                    // console.log(data[file][config.year])
                     radarChart[fi] = new Radarchart(data[file][config.year], config);
-                    radarChart[fi].init(item.index);
+                    radarChart[fi].init(item.index, file);
                 } else if (item.station == 0) {
                     d3.select(`.wrapper-${item.index}`).classed('empty', true);
                 }
@@ -543,6 +613,28 @@ function renderChart(file, config_new) {
         })
     })
 };
+
+function exampleChart(file, year, station, config_current, id) {
+
+    let wrapper_width = config_current.width + config_current.margin.left + config_current.margin.right;
+    let wrapper_height = config_current.height + config_current.margin.top + config_current.margin.bottom;
+
+    let week_wrapper = d3.select(`#${config_current.type}-example`);
+
+    let week_svg = week_wrapper.append('svg')
+        .classed(`wrapper-${id}`, true)
+        .classed(' svg-wrapper', true)
+        .attr('width', wrapper_width)
+        .attr('height', wrapper_height)
+    
+    d3.json(file).then(data => {
+        let data_station = data[station][year];
+
+        radar_chart_week[id] = new Radarchart(data_station, config_current);
+        radar_chart_week[id].init(id, station);
+    })
+
+}
 
 init(filepath);
 
@@ -637,8 +729,6 @@ function createSrc(item_index) {
     }
 }
 
-
-
 /*look for any elements with the class "custom-select":*/
 x = document.getElementsByClassName("custom-select");
 for (i = 0; i < x.length; i++) {
@@ -649,8 +739,6 @@ for (i = 0; i < x.length; i++) {
   if (i == 0) { a.setAttribute("class", "select-selected year"); }
   if (i == 1) { a.setAttribute("class", "select-selected cycle"); }
   if (i == 2) { a.setAttribute("class", "select-selected metric"); }
-
-  console.log(a);
 
   a.setAttribute('onclick', "checkSelection(this)")
   a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
