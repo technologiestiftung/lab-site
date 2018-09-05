@@ -312,8 +312,6 @@ class Radarchart {
             let x = d3.event.pageX + 10;
             let y = d3.event.pageY + 10;
 
-            console.log(clientHeight, y);
-
             if(clientWidth - x < 150) { x = d3.event.pageX - 175;};
             if(clientHeight - y < 150) { y = d3.event.pageY - 125;};
 
