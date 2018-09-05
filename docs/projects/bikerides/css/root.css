@@ -81,7 +81,7 @@ text.legend {
   position: absolute; }
 
 .max-area, .mean-area, .median-area {
-  opacity: .75; }
+  opacity: .6; }
 
 .river-svg-wrapper {
   /* height: 100%; */
@@ -295,7 +295,6 @@ body {
 
 .wrapper-49 {
   margin-left: 30px;
-  margin-top: 40px;
 }
 
 .wrapper-50 text.legend {
@@ -332,6 +331,23 @@ body {
   margin-top: 40px;
 }
 
+.wrapper-52 text.legend {
+  font-size: 10px;
+}
+
+.wrapper-52 .line {
+  stroke: rgb(220,220,220) !important;
+}
+
+.wrapper-52 .title {
+  font-size: 14px;
+}
+
+.wrapper-52 {
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
 .color-median {
   color: #2824b2;
   font-weight: bold;
@@ -348,6 +364,12 @@ body {
 @media screen and (max-width: 560px) {
   .two-col-flex {
     flex-direction: column;
+  }
+
+  .wrapper-5 {
+    margin-left: 0;
+    order: 1;
+    margin-top: 20px;
   }
 
   .wrapper-51 {

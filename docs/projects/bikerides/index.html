@@ -97,18 +97,26 @@
 
                 <p class="copy p-bottom">Wir haben die Daten aggregiert und in das maschinenlesbare <a href="https://github.com/technologiestiftung/bike-rides/blob/master/preprocessing/data/all_years.json">JSON</a> Format gebracht. Die Visualisierung veranschaulicht das Verkehrsaufkommen der insgesamt 26 Rad Zählstellen innerhalb Berlins.</p>
 
+                <p class="copy p-bottom"><a href="mailto:dykes@technologiestiftung-berlin.de">Victoria Dykes</a> von der Technologiestiftung veranstaltet am 12.09. ein Meetup zum Thema Fahrradmobilität in Berlin. Bei Interesse nehmt direkt Kontakt mit ihr auf.</p>
+
                 <h2 class="pb-1">Was zeigt die Visualiserung?</h2>
 
                 <p class="copy p-bottom">Die Visualisierung zeigt jährliche, wöchentliche und tägliche Fahrmuster. Das Netz-Diagramm einer Radzählstelle fasst 8760 Einträge zusammen und visualisiert diese. Die Daten von jeder Station lassen sich in drei (+ 1) unterschiedlichen Detailstufen abbilden. In jeder Darstellung lassen sich <span class="color-median">Median-</span> und <span class="color-max">Maximalwerte</span> ablesen. Durch die Darstellung lassen sich stündliche, tägliche und wöchentliche Fahrmuster ablesen.</p>
+
+                <p class="copy p-bottom">Durch hovern über Monate/Tage/Stunden werden absolute Werte zum jeweiligen Zeitpunkt angezeigt.</p>
 
             </div>
 
             <div class="container p-bottom two-col-flex" >
                 <div>
                     <h2 class="pb-1">Tagesansicht (Wochentage / Wochenenden)</h2>
-                    <p class="copy">Während die Anzahl registrierter Fahrräder den morgigen Arbeitsweg zwischen acht und neun ihren Höhepunkt erreicht, verteilt sich die Anzahl der Radfahrer im weiteren Verlauf des Tages. Es kommen Radfahrer abseits des Pendelverkehrs dazu. Zwischen eins und sechs Uhr morgens sind unter der Woche meist kaum Räder unterwegs. Am Wochenende ist die Anzahl der Radfahrer angeglichener und es kommt zu weniger Ausschlägen, da die meisten Berliner ihre Zeit freier gestalten können.</p>
+                    <p class="copy p-bottom">Während die Anzahl registrierter Fahrräder den morgigen Arbeitsweg zwischen neun und elf ihren Höhepunkt erreicht, verteilt sich die Anzahl der Radfahrer im weiteren Verlauf des Tages. Es kommen Radfahrer abseits des Pendelverkehrs dazu. Zwischen eins und sechs Uhr morgens sind unter der Woche meist kaum Räder unterwegs. </p>
+                    <p class="copy">Am Wochenende ist die Anzahl der Radfahrer angeglichener und es kommt zu weniger Ausschlägen, da die meisten Berliner ihre Zeit freier gestalten können.</p>
                 </div>
-                <div class="example-chart-wrapper" id="Wochentage-example"></div>
+                <div class="flex-col">
+                    <div class="example-chart-wrapper" id="Wochentage-example"></div>
+                    <div class="example-chart-wrapper" id="Wochenenden-example"></div>
+                </div>
             </div>
 
             <div class="container p-bottom two-col-flex" >
@@ -122,7 +130,7 @@
             <div class="container p-bottom two-col-flex" >
                 <div>
                     <h2 class="pb-1">Monatsansicht</h2>
-                    <p class="copy pb-1">Das saisonale Muster zeigt, dass die meisten Radfahrer in den Monaten Juni und August unterwegs sind. Im Juli ist meist ein Rückgang zu verzeichnen, da einige Berliner die freie Zeit nutzen um in den Urlaub zu fliegen. Zwischen November und März werden die Radwege nur wenig genutzt.  Durch die Witterung bedingt fahren die wenigsten Radfahrer im Januar.</p>
+                    <p class="copy pb-1">Das saisonale Muster zeigt, dass die meisten Radfahrer in den Monaten Juni und August unterwegs sind. Im Juli ist meist ein Rückgang zu verzeichnen, dies könnte an den Sommerferien liegen die meist in diesen Zeitraum fallen. Zwischen November und März werden die Radwege nur wenig genutzt. Warhscheinlich bedingt durch die Witterung fahren die wenigsten Radfahrer im Januar.</p>
                 </div>
                 <div class="example-chart-wrapper" id="Monat-example"></div>
             </div>
@@ -130,9 +138,9 @@
             <div class="special-section" style="overflow: visible;">
             </div>
 
-            <div class="container p-bottom">
-                <p class="copy">Victoria Dykes veranstaltet am 12.09. ein Meetup zum Thema Fahrradmobilität in Berlin. Bei Interesse nehmt einfach kontatkt auf.</p>
+            <div id="stacked" class="special-section" style="overflow: visible;">
             </div>
+    
 
             <div class="container center">
                 <a id="github" href="https://github.com/technologiestiftung/bike-rides/blob/master/preprocessing/data/all_years.json">

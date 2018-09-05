@@ -458,8 +458,8 @@ function init(file) {
 
     let config_example  = {
         year: 2017,
-        height: 150,
-        width: 150,
+        height: 130,
+        width: 130,
         levels: 5,
         radius: 2,
         value_metric: 'Absolut',
@@ -476,10 +476,30 @@ function init(file) {
         }
     }
 
+    let config_example_weekend  = {
+        year: 2017,
+        height: 130,
+        width: 130,
+        levels: 5,
+        radius: 2,
+        value_metric: 'Absolut',
+        factor: 1,
+        type: "Wochenenden",
+        month: 0,
+        factor_legend: .85,
+        max_value: 10000,
+        margin: {
+            left: 30,
+            right: 30,
+            top: 18,
+            bottom: 42
+        }
+    }
+
     let config_example_week  = {
         year: 2017,
-        height: 150,
-        width: 150,
+        height: 130,
+        width: 130,
         levels: 5,
         radius: 2,
         value_metric: 'Absolut',
@@ -498,8 +518,8 @@ function init(file) {
 
     let config_example_month  = {
         year: 2017,
-        height: 150,
-        width: 150,
+        height: 130,
+        width: 130,
         levels: 5,
         radius: 2,
         value_metric: 'Absolut',
@@ -526,8 +546,10 @@ function init(file) {
     exampleChart(file, 2017, '05-FK-OBB-W', config_example, 49);
     exampleChart(file, 2017, '05-FK-OBB-W', config_example_week, 50);
     exampleChart(file, 2017, '05-FK-OBB-W', config_example_month, 51);
+    exampleChart(file, 2017, '05-FK-OBB-W', config_example_weekend, 52);
 
     renderChart(file, config);
+    createStackedArea(file);
 };
 
 function removeCharts() {
@@ -728,6 +750,208 @@ function createSrc(item_index) {
             .style('transform', 'translateX(15px) translateY(53px)')
     }
 }
+
+function createSumObj(stations_array) {
+    let data_array = [];
+    stations_array.forEach(station => {
+        data_array.push({ 'name': station, '2012': 0, '2013': 0, '2014': 0, '2015': 0, '2016': 0, '2017': 0 });
+    })
+    return data_array;
+}
+
+function createStackedArea(file) {
+
+    
+    let data_temp , station_data, years_array, months_data_array
+    
+    d3.json(file).then(data => {
+        const files_array = Object.keys(data);
+        data_temp = createSumObj(files_array);
+
+        files_array.forEach(station_name => {
+            station_data = data[station_name];
+            years_array = Object.keys(station_data);
+            
+
+            years_array.forEach(year => {
+                if (station_data[year][0] != undefined) {
+                    
+                    months_data_array = station_data[year][0].months;
+                    let sum_year = 0;
+
+                    months_data_array.forEach(month => {
+                        sum_year = sum_year + month.sum;
+                    })
+
+                    // console.log(station_name)
+
+                    data_temp.forEach(station => {
+                        if (station.name == station_name) {
+                            station[year] = sum_year;
+                        }
+                    })
+
+                }
+            })
+        })
+
+        let areaAhart = stackedArea({
+            container:d3.select('#stacked'),
+            data: data_temp,
+            isTime:true,
+            height:600,
+            width:700
+          })
+
+    })
+
+}
+
+const stackedArea = (params) => {
+
+    let module = {},
+      container = params.container || d3.select('body'),
+      height = params.height || 250,
+      width = params.width || 500,
+      data = params.data,
+      date_column = params.date_column || 'date',
+      data_column = params.data_column || 'value',
+      zero_based = params.zero_based || false,
+      colors = params.colors || '#000',
+      svg = container.append('svg').attr('width', width).attr('height', height).attr('viewBox',`0 0 ${width} ${height}`).attr('preserveAspectRatio','xMidYMid meet'),
+      margin = params.margin || {top: 20, right: 20, bottom: 30, left: 50},
+      dWidth = width - margin.left - margin.right,
+      dHeight = height - margin.top - margin.bottom,
+      g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`),
+      parseTime = params.parseTime || d3.timeParse("%Y-%m-%d"),
+      isTime = params.isTime || false,
+      sums = [],
+      maxDateVal = d3.max(data, d => d3.sum(d3.keys(d).map(function(key){ return key !== date_column ? d[key] : 0 })))
+  
+    data.forEach(d=>{
+      let sum = 0
+      for(let key in d){
+        if(isTime && key == date_column){
+          d[key] = parseTime(d[key])
+        }else{
+          d[key] = +d[key]
+          sum += d[key]
+        }
+      }
+      sums.push(sum)
+    })
+  
+    let relData = []
+  
+    data.forEach((d,di)=>{
+      let rel = {}
+      for(let key in d){
+        if(isTime && key == date_column){
+          rel[key] = d[key]
+        }else{
+          rel[key] = d[key]/sums[di]*maxDateVal
+        }
+      }
+      relData.push(rel)
+    })
+  
+    let keys = data.columns.filter(function(key) { return key !== date_column; }),
+        x = d3.scaleTime().range([0, dWidth]).domain(d3.extent(data, function(d) { return d[date_column]; })),
+        y = d3.scaleLinear().range([dHeight, 0]).domain([0, maxDateVal]),
+        color = d3.scaleOrdinal(d3.schemeCategory20).domain(d3.keys(data[0]).filter(function(key) { return key !== date_column; })),
+        xAxis = d3.axisBottom().scale(x),
+        yAxis = d3.axisLeft().scale(y),
+        area = d3.area().x(d=>x(d.data.date)).y0(d=>y(d[0])).y1(d=>y(d[1])),
+        stack = d3.stack().keys(keys).order(d3.stackOrderNone).offset(d3.stackOffsetNone)(data),
+        rStack = d3.stack().keys(keys).order(d3.stackOrderNone).offset(d3.stackOffsetNone)(relData)
+  
+    let browser = g.selectAll('.browser')
+        .data(stack)
+      .enter().append('g')
+        .attr('class', d=>'browser ' + d.key)
+        .attr('fill-opacity', 0.5);
+  
+    let areas = browser.append('path')
+        .attr('class', 'area')
+        .attr('d', area)
+        .style('fill', 'rgba(0,0,0,0.1)')
+        .style('stroke', '#555')
+        .style('stroke-width', '0.1')
+        .on('mouseover', function(d){
+          d3.select(this).style('fill', '#1e3791')
+          tooltip
+            .attr('transform', `translate(${d3.mouse(this)[0]},${d3.mouse(this)[1]})`)
+            .text(d.key)
+            .style('display','block')
+        })
+        .on('mousemove', function(d){
+          tooltip
+            .attr('dx', (d3.mouse(this)[0]<dWidth/2)?10:-10)
+            .attr('text-anchor', (d3.mouse(this)[0]<dWidth/2)?'start':'end')
+            .attr('transform', `translate(${d3.mouse(this)[0]},${d3.mouse(this)[1]})`)
+        })
+        .on('mouseout', function(){
+          d3.select(this).style('fill', 'rgba(0,0,0,0.1)')
+          tooltip.style('display','none')
+        })
+  
+    // browser.append('text')
+    //     .datum(function(d) { return d; })
+    //     .attr('transform', function(d) { return 'translate(' + x(data[13].date) + ',' + y(d[13][1]) + ')'; })
+    //     .attr('x', -6) 
+    //     .attr('dy', '.35em')
+    //     .style("text-anchor", "start")
+    //     .text(function(d) { return d.key; })
+    //     .attr('fill-opacity', 1);
+  
+    g.append('g')
+        .attr('class', 'x axis')
+        .attr('transform', 'translate(0,' + dHeight + ')')
+        .call(xAxis);
+  
+    g.append('g')
+        .attr('class', 'y axis')
+        .call(yAxis);
+  
+    g.append ("text")
+      .attr("dx", 10)
+      .attr("dy", 15)
+      .text("Zugriffszahlen")
+      .style('font-family', 'sans-serif')
+      .style('font-size', 10)
+  
+    let tooltip = g.append('text')
+      .attr('dy',6)
+      .style('text-shadow','0px 0px 3px #fff')
+      .style('fill','#000')
+      .style('font-weight','bold')
+      .style('pointer-events','none')
+      .style('font-family', 'sans-serif')
+      .style('font-size', 10)
+      .style('text-transform','capitalize')
+  
+    let mode = true
+  
+    module.setMode = m => {
+      mode = m
+    }
+  
+    module.mode = () => {
+      return mode
+    }
+  
+    module.update = () => {
+      areas.datum((d,i)=> (mode) ? stack[i] : rStack[i] ).transition().attr('d', area)
+    }
+  
+    module.svg = ()=>svg
+    module.g = ()=>g
+    module.dHeight = ()=>dHeight
+    module.dWidth = ()=>dWidth
+  
+    return module
+  
+  }
 
 /*look for any elements with the class "custom-select":*/
 x = document.getElementsByClassName("custom-select");

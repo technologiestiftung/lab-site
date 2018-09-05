@@ -51,7 +51,7 @@ text.legend {
   position: absolute; }
 
 .max-area, .mean-area, .median-area {
-  opacity: .75; }
+  opacity: .6; }
 
 .river-svg-wrapper {
   /* height: 100%; */
