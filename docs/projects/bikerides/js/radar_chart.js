@@ -48,28 +48,28 @@ class Radarchart {
         
         this.type = this.config.type;
 
-        if(this.type == "week") {
+        if(this.type == 'Woche') {
             if(this.file[0] != undefined) {
                 this.data = this.file[0].days;
             } else {
                 this.data = placeholder_data;
             }
             config.max_value = 10000;
-        } else if (this.type == "weekdays") {
+        } else if (this.type == 'Wochentage') {
             if(this.file[0] != undefined) {
                 this.data = this.file[0].hoursWeekdays;
             } else {
                 this.data = placeholder_data;
             }
             config.max_value = 800;
-        } else if (this.type == "month") {
+        } else if (this.type == 'Monat') {
             if(this.file[0] != undefined) {
                 this.data = this.file[0].months;
             } else {
                 this.data = placeholder_data;
             }
             config.max_value = 10000;
-        } else if (this.type == "weekends") {
+        } else if (this.type == 'Wochenenden') {
             if(this.file[0] != undefined) {
                 this.data = this.file[0].hoursWeekends;
             } else {
@@ -78,8 +78,6 @@ class Radarchart {
             config.max_value = 800;
         }
 
-        console.log(this.data);
-
         this.station_name = name;
         this.value_metric = config.value_metric;
         this.all_axis_month = [0,1,2,3,4,5,6,7,8,9,10,11];
@@ -87,13 +85,13 @@ class Radarchart {
         this.all_axis_hour = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23];
         this.year = config.year;
 
-        if (this.type == 'week') {
+        if (this.type == 'Woche') {
             this.total = this.all_axis_week.length
             this.all_axis = this.all_axis_week;
-        } else if (this.type == 'weekdays' || this.type == 'weekends') {
+        } else if (this.type == 'Wochentage' || this.type == 'Wochenenden') {
             this.total = this.all_axis_hour.length
             this.all_axis = this.all_axis_hour;
-        } else if (this.type == 'month') {
+        } else if (this.type == 'Monat') {
             this.total = this.all_axis_month.length
             this.all_axis = this.all_axis_month;
         }
@@ -103,11 +101,11 @@ class Radarchart {
         
         this.max_local = this.calcMaxLocal(this.data);
 
-        if (this.value_metric == 'relative max') {
+        if (this.value_metric == 'Relativ Max') {
             this.max_value = this.max_local.max;
-        } else if (this.value_metric == 'relative median') {
+        } else if (this.value_metric == 'Relativ Median') {
             this.max_value = this.max_local.median;
-        } else if (this.value_metric == 'absolute') {
+        } else if (this.value_metric == 'Absolut') {
             this.max_value = config.max_value;
         }
         
@@ -202,24 +200,24 @@ class Radarchart {
         let data_axis, dict_axis;
 
         this.month_dict = {
-            0: 'Jan', 1: 'Feb', 2: 'Mar', 3: 'Apr', 4: 'Mai', 5: 'Jun', 6: 'Jul', 7: 'Aug', 8: 'Sep', 9: 'Okt', 10: 'Nov', 11: 'Dec'
+            0: 'Jan', 1: 'Feb', 2: 'Mär', 3: 'Apr', 4: 'Mai', 5: 'Jun', 6: 'Jul', 7: 'Aug', 8: 'Sep', 9: 'Okt', 10: 'Nov', 11: 'Dez'
         }
 
         this.month_dict_long = {
-            0: 'January', 1: 'February', 2: 'March', 3: 'April', 4: 'May', 5: 'June', 6: 'July', 7: 'August', 8: 'September', 9: 'October', 10: 'November', 11: 'December'
+            0: 'Januar', 1: 'Februar', 2: 'März', 3: 'April', 4: 'Mai', 5: 'Juni', 6: 'Juli', 7: 'August', 8: 'September', 9: 'Oktober', 10: 'November', 11: 'Dezember'
         }
 
         this.day_dict = { 0: '24', 1: '01', 2: '02', 3: '03', 4: '04', 5: '05', 6: '06', 7: '07', 8: '08', 9: '09', 10: '10', 11: '11', 12: '12', 13: '13', 14: '14', 15: '15', 16: '16', 17: '17', 18: '18', 19: '19', 20: '20', 21: '21', 22: '22', 23: '23', 24: '24' }
 
-        this.week_dict = { 0: 'Sun', 1: 'Mon', 2: 'Tue', 3: 'Wed', 4: 'Thu', 5: 'Fri', 6: 'Sat' }
+        this.week_dict = { 0: 'So', 1: 'Mo', 2: 'Di', 3: 'Mi', 4: 'Do', 5: 'Fr', 6: 'Sa' }
 
-        if (this.type == 'week') {
+        if (this.type == 'Woche') {
             data_axis = this.all_axis_week;
             dict_axis = this.week_dict;
-        } else if (this.type == 'month') {
+        } else if (this.type == 'Monat') {
             data_axis = this.all_axis;
             dict_axis = this.month_dict;
-        } else if (this.type == 'weekdays' || this.type == 'weekends') {
+        } else if (this.type == 'Wochentage' || this.type == 'Wochenenden') {
             data_axis = this.all_axis_hour;
             dict_axis = this.day_dict;
         };
@@ -311,7 +309,7 @@ class Radarchart {
             let x = d3.event.pageX + 10;
             let y = d3.event.pageY + 10;
 
-            let data_timeslot = (this.type == 'weekdays' || this.type == 'weekends') ? `${this.day_dict[index]} Uhr` : this.month_dict_long[index];
+            let data_timeslot = (this.type == 'Wochentage' || this.type == 'Wochenenden') ? `${this.day_dict[index]} Uhr` : this.month_dict_long[index];
 
             this.tooltip = d3.select('#tooltip');
 
@@ -330,7 +328,7 @@ class Radarchart {
                 }
             }
 
-            if (this.type == 'weekdays' || this.type == 'weekends') {
+            if (this.type == 'Wochentage' || this.type == 'Wochenenden') {
                 d3.select('.year-wrapper').style('display', 'none');
             }
 
@@ -351,28 +349,28 @@ class Radarchart {
             'median': 0
         }]
 
-        if(this.type == "week") {
+        if(this.type == 'Woche') {
             if(new_data[0] != undefined) {
                 this.data = new_data[0].days;
             } else {
                 this.data = placeholder_data;
             }
             config.max_value = 10000;
-        } else if (this.type == "weekdays") {
+        } else if (this.type == 'Wochentage') {
             if(new_data[0] != undefined) {
                 this.data = new_data[0].hoursWeekdays;
             } else {
                 this.data = placeholder_data;
             }
             config.max_value = 800;
-        } else if (this.type == "month") {
+        } else if (this.type == 'Monat') {
             if(new_data[0] != undefined) {
                 this.data = new_data[0].months;
             } else {
                 this.data = placeholder_data;
             }
             config.max_value = 10000;
-        } else if (this.type == "weekends") {
+        } else if (this.type == 'Wochenenden') {
             if(new_data[0] != undefined) {
                 this.data = new_data[0].hoursWeekends;
             } else {
@@ -381,13 +379,15 @@ class Radarchart {
             config.max_value = 800;
         }
 
+        console.log(this.value_metric);
+
         this.max_local = this.calcMaxLocal(this.data);
 
-        if (this.value_metric == 'relative max') {
+        if (this.value_metric == 'Relativ Max') {
             this.max_value = this.max_local.max;
-        } else if (this.value_metric == 'relative median') {
+        } else if (this.value_metric == 'Relativ Median') {
             this.max_value = this.max_local.median;
-        } else if (this.value_metric == 'absolute') {
+        } else if (this.value_metric == 'Absolut') {
             this.max_value = config.max_value;
         }
 

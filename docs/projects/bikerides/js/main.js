@@ -1,11 +1,11 @@
 const filepath = "assets/all_years.json";
 const filepath_v2 = "assets/structure.json";
 
-const values_array = ['Select metric','absolute', 'relative median', 'relative max'];
-const years_array = ['Select year', 2017, 2016, 2015, 2014, 2013, 2012];
+const values_array = ['Skalierung','Absolut', 'Relativ Median', 'Relativ Max'];
+const years_array = ['Jahr', 2017, 2016, 2015, 2014, 2013, 2012];
 const months_array = [0,1,2,3,4,5,6,7,8,9,10,11];
-const types_array = ['Select type', 'month', 'week', 'weekdays', 'weekends'];
-let year_value = 2017, type_value = 'month', metric_value = 'absolute', radarChart = [], radar_chart_week = [], charts_wrapper;
+const types_array = ['Zeitraum', 'Monat', 'Woche', 'Wochentage', 'Wochenenden'];
+let year_value = 2017, type_value = 'Monat', metric_value = 'Absolut', radarChart = [], radar_chart_week = [], charts_wrapper;
 var x, i, j, selElmnt, a, b, c;
 
 const wrapper_div = '.special-section'
@@ -265,9 +265,9 @@ let config  = {
     width: 75,
     levels: 5,
     radius: 2,
-    value_metric: 'absolute',
+    value_metric: 'Absolut',
     factor: 1,
-    type: "month",
+    type: 'Monat',
     month: 0,
     factor_legend: .85,
     max_value: 10000,
@@ -357,7 +357,7 @@ function createIntroText() {
     intro_wrapper
         .append('span')
         .classed('intro-text', true)
-        .text('Unterschiedliche Aspekte des Datensatzes durch Auswahl der Filter (z.B. Tages-, Wochen- und Jahresrhythmus):')
+        .text('Zeige unterschiedliche Rhythmen der Radfahrer im Datensatz durch Auswahl der Filter (z.B. Tages-, Wochen- und Jahresrhythmus):')
 }
 
 function create_filter_ui() {
@@ -400,7 +400,7 @@ function create_filter_ui() {
         .append('option')
         .text(d => { return d })
         .property('value', d => {
-            return d == "month" ? true : false;
+            return d == 'Monat' ? true : false;
         })
 
     
@@ -417,15 +417,15 @@ function create_filter_ui() {
         .append('option')
         .text(d => { return d })
         .property('value', d => {
-            return d == 'absolute' ? true : false;
+            return d == 'Absolut' ? true : false;
         })
 }
 
 function onchange() {
     
-    let year_value_temp = d3.select('div.select-selected.year').html() == 'Select year' ? 2017 : d3.select('div.select-selected.year').html();
-    let type_value_temp = d3.select('div.select-selected.cycle').html() == 'Select type' ? 'month' : d3.select('div.select-selected.cycle').html();
-    let value_metric_temp = d3.select('div.select-selected.metric').html() == 'Select metric' ? 'absolute' : d3.select('div.select-selected.metric').html();
+    let year_value_temp = d3.select('div.select-selected.year').html() == 'Jahr' ? 2017 : d3.select('div.select-selected.year').html();
+    let type_value_temp = d3.select('div.select-selected.cycle').html() == 'Zeitraum' ? 'Monat' : d3.select('div.select-selected.cycle').html();
+    let value_metric_temp = d3.select('div.select-selected.metric').html() == 'Skalierung' ? 'Absolut' : d3.select('div.select-selected.metric').html();
 
 
     let used_selection;
@@ -462,9 +462,9 @@ function init(file) {
         width: 150,
         levels: 5,
         radius: 2,
-        value_metric: 'absolute',
+        value_metric: 'Absolut',
         factor: 1,
-        type: "weekdays",
+        type: "Wochentage",
         month: 0,
         factor_legend: .85,
         max_value: 10000,
@@ -482,9 +482,9 @@ function init(file) {
         width: 150,
         levels: 5,
         radius: 2,
-        value_metric: 'absolute',
+        value_metric: 'Absolut',
         factor: 1,
-        type: "week",
+        type: 'Woche',
         month: 0,
         factor_legend: .85,
         max_value: 10000,
@@ -502,9 +502,9 @@ function init(file) {
         width: 150,
         levels: 5,
         radius: 2,
-        value_metric: 'absolute',
+        value_metric: 'Absolut',
         factor: 1,
-        type: "month",
+        type: 'Monat',
         month: 0,
         factor_legend: .85,
         max_value: 10000,
@@ -638,7 +638,7 @@ function exampleChart(file, year, station, config_current, id) {
 
 init(filepath);
 
-let selects = { year: '2017', type: 'month', value: 'absolute' };
+let selects = { year: '2017', type: 'Monat', value: 'Absolut' };
 
 function checkSelection(selected_current) {
     let content_current = selected_current.innerHTML;
@@ -752,7 +752,7 @@ for (i = 0; i < x.length; i++) {
     c = document.createElement("DIV");
     c.innerHTML = selElmnt.options[j].innerHTML;
 
-    if (c.innerHTML == 'month' || c.innerHTML == 2017 || c.innerHTML == 'absolute') {
+    if (c.innerHTML == 'Monat' || c.innerHTML == 2017 || c.innerHTML == 'Absolut') {
         c.setAttribute("class", "same-as-selected");
     }
 

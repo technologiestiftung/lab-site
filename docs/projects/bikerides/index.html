@@ -93,49 +93,52 @@
             <!-- Start editing here -->
 
             <div class="container p-bottom">
-                <p class="copy">Seit 2015 wird flächendeckend der Radverkehr automatisch mithilfe von Zählstellen erfasst. Die Senatsverwaltung für Stadtentwicklung und Umwelt stellt die aktuellen Daten täglich für jede Stunde in Form einer Excel Tabelle bereit.</p>
+                <p class="copy p-bottom">Seit 2015 wird flächendeckend der Radverkehr automatisch mithilfe von in die Straße eingelassene  <a href="https://www.stadtentwicklung.berlin.de/aktuell/pressebox/archiv_volltext.shtml?arch_1609/nachricht6200.html">Zählstellen</a> erfasst. Die Senatsverwaltung für Stadtentwicklung und Umwelt stellt die aktuellen Daten täglich für jede Stunde in Form einer Excel Tabelle bereit.</p>
 
-                <p class="copy p-bottom">Wir haben die Daten aggregiert und in das maschinenlesbare JSON Format gebracht. Die Visualisierung veranschaulicht das Verkehrsaufkommen der insgesamt 25 Rad Zählstellen innerhalb Berlins.</p>
+                <p class="copy p-bottom">Wir haben die Daten aggregiert und in das maschinenlesbare <a href="https://github.com/technologiestiftung/bike-rides/blob/master/preprocessing/data/all_years.json">JSON</a> Format gebracht. Die Visualisierung veranschaulicht das Verkehrsaufkommen der insgesamt 26 Rad Zählstellen innerhalb Berlins.</p>
 
-                <p class="copy">Ziel der Visualisierung ist es eine Übersicht und eine Sichtbarkeit zu schaffen. So lassen sich jährliche, wöchentliche und tägliche Muster direkt ablesen. Die 8760 Einträge pro Jahr werden in Polar-Charts zusammengefasst.</p>
+                <h2 class="pb-1">Was zeigt die Visualiserung?</h2>
+
+                <p class="copy p-bottom">Die Visualisierung zeigt jährliche, wöchentliche und tägliche Fahrmuster. Das Netz-Diagramm einer Radzählstelle fasst 8760 Einträge zusammen und visualisiert diese. Die Daten von jeder Station lassen sich in drei (+ 1) unterschiedlichen Detailstufen abbilden. In jeder Darstellung lassen sich <span class="color-median">Median-</span> und <span class="color-max">Maximalwerte</span> ablesen. Durch die Darstellung lassen sich stündliche, tägliche und wöchentliche Fahrmuster ablesen.</p>
+
             </div>
 
             <div class="container p-bottom two-col-flex" >
                 <div>
-                    <h2 class="pb-1">24 Stunden</h2>
-                    <p class="copy">Hier beschreibe ich das wöchentliche Muster. Ziel der Visualisierung ist es eine Übersicht und eine Sichtbarkeit zu schaffen. So lassen sich jährliche, wöchentliche und tägliche Muster direkt ablesen. Die 8760 Einträge pro Jahr werden in Polar-Charts zusammengefasst.</p>
+                    <h2 class="pb-1">Tagesansicht (Wochentage / Wochenenden)</h2>
+                    <p class="copy">Während die Anzahl registrierter Fahrräder den morgigen Arbeitsweg zwischen acht und neun ihren Höhepunkt erreicht, verteilt sich die Anzahl der Radfahrer im weiteren Verlauf des Tages. Es kommen Radfahrer abseits des Pendelverkehrs dazu. Zwischen eins und sechs Uhr morgens sind unter der Woche meist kaum Räder unterwegs. Am Wochenende ist die Anzahl der Radfahrer angeglichener und es kommt zu weniger Ausschlägen, da die meisten Berliner ihre Zeit freier gestalten können.</p>
                 </div>
-                <div id="weekdays-example"></div>
+                <div class="example-chart-wrapper" id="Wochentage-example"></div>
             </div>
 
             <div class="container p-bottom two-col-flex" >
                 <div>
-                    <h2 class="pb-1">Wochenrhythmus</h2>
-                    <p class="copy">Hier beschreibe ich das wöchentliche Muster. Ziel der Visualisierung ist es eine Übersicht und eine Sichtbarkeit zu schaffen. So lassen sich jährliche, wöchentliche und tägliche Muster direkt ablesen. Die 8760 Einträge pro Jahr werden in Polar-Charts zusammengefasst.</p>
+                    <h2 class="pb-1">Wochenansicht</h2>
+                    <p class="copy">In der Wochenansicht zeigen die Daten deutlich, dass von Montag bis Freitag durchschnittlich am meisten Räder unterwegs sind und am Wochenende weniger zum Rad gegriffen wird. Die Daten zeigen, dass Montags in den meisten Fällen die Motivation am höchsten zu sein scheint das Rad zu nutzen.</p>
                 </div>
-                <div id="week-example"></div>
+                <div class="example-chart-wrapper" id="Woche-example"></div>
             </div>
 
             <div class="container p-bottom two-col-flex" >
                 <div>
                     <h2 class="pb-1">Monatsansicht</h2>
-                    <p class="copy">Hier beschreibe ich das wöchentliche Muster. Ziel der Visualisierung ist es eine Übersicht und eine Sichtbarkeit zu schaffen. So lassen sich jährliche, wöchentliche und tägliche Muster direkt ablesen. Die 8760 Einträge pro Jahr werden in Polar-Charts zusammengefasst.</p>
+                    <p class="copy pb-1">Das saisonale Muster zeigt, dass die meisten Radfahrer in den Monaten Juni und August unterwegs sind. Im Juli ist meist ein Rückgang zu verzeichnen, da einige Berliner die freie Zeit nutzen um in den Urlaub zu fliegen. Zwischen November und März werden die Radwege nur wenig genutzt.  Durch die Witterung bedingt fahren die wenigsten Radfahrer im Januar.</p>
                 </div>
-                <div id="month-example"></div>
+                <div class="example-chart-wrapper" id="Monat-example"></div>
             </div>
 
             <div class="special-section" style="overflow: visible;">
             </div>
 
             <div class="container p-bottom">
-                <p class="copy">Weitere Informationen zu aktuellen Entwicklungen und Diskursen zum Thema Radverkehr in Berlin wird im von uns organisierten Meetup erarbeitet, zu dem Interessiert eingeladen sind!</p>
+                <p class="copy">Victoria Dykes veranstaltet am 12.09. ein Meetup zum Thema Fahrradmobilität in Berlin. Bei Interesse nehmt einfach kontatkt auf.</p>
             </div>
 
             <div class="container center">
-                <a id="github" href="https://github.com/technologiestiftung/bike-rides">
+                <a id="github" href="https://github.com/technologiestiftung/bike-rides/blob/master/preprocessing/data/all_years.json">
                     <img src="../../images/github.svg" alt="Project on Github" />
-                    <span class="github-title">Radzählstellen in Berlin</span><br />
-                    <span class="github-subline">Projekt auf GitHub</span>
+                    <span class="github-title">Radzählstellen</span><br />
+                    <span class="github-subline">Datensatz auf GitHub</span>
                     <hr class="clear" />
                 </a>
             </div>
