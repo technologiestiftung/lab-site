@@ -304,10 +304,18 @@ class Radarchart {
 
     updateTooltip(data, index) {
 
+        const clientWidth = window.innerWidth;
+        const clientHeight = window.innerHeight;
+
         if (this.data[data] != undefined) {
 
             let x = d3.event.pageX + 10;
             let y = d3.event.pageY + 10;
+
+            console.log(clientHeight, y);
+
+            if(clientWidth - x < 150) { x = d3.event.pageX - 175;};
+            if(clientHeight - y < 150) { y = d3.event.pageY - 125;};
 
             let data_timeslot = (this.type == 'Wochentage' || this.type == 'Wochenenden') ? `${this.day_dict[index]} Uhr` : this.month_dict_long[index];
 
@@ -336,6 +344,8 @@ class Radarchart {
                 .attr('style', `left: ${x}px; top: ${y}px; position: absolute`)
                 .classed('active', true)
             }
+
+
     }
 
     updateGraphics(new_data, config_new) {
