@@ -753,15 +753,23 @@ function createSrc(item_index) {
 
 function createSumObj(stations_array) {
     let data_array = [];
-    stations_array.forEach(station => {
-        data_array.push({ 'name': station, '2012': 0, '2013': 0, '2014': 0, '2015': 0, '2016': 0, '2017': 0 });
+    let years_array = ['2012-01-01', '2013-01-01', '2014-01-01', '2015-01-01', '2016-01-01', '2017-01-01']
+
+    let test_obj = {};
+
+    years_array.forEach(year => {
+        stations_array.forEach(station_id => {
+            test_obj['date'] = year;
+            test_obj[station_id] = 0;
+        })
+        data_array.push(test_obj);
+        test_obj = {};
     })
+
     return data_array;
 }
 
 function createStackedArea(file) {
-
-    
     let data_temp , station_data, years_array, months_data_array
     
     d3.json(file).then(data => {
@@ -783,17 +791,22 @@ function createStackedArea(file) {
                         sum_year = sum_year + month.sum;
                     })
 
-                    // console.log(station_name)
-
-                    data_temp.forEach(station => {
-                        if (station.name == station_name) {
-                            station[year] = sum_year;
+                    data_temp.forEach(year => {
+                        year_transformed = year + '-01-01';
+                        if(year.date == year_transformed) {
+                            year[station_name] = sum_year;
                         }
                     })
-
                 }
             })
         })
+
+        console.log(JSON.parse(JSON.stringify(data_temp)));
+
+        data_temp['columns'] = []
+        for(let key in data_temp[0]){
+            data_temp['columns'].push(key)
+        }
 
         let areaAhart = stackedArea({
             container:d3.select('#stacked'),
@@ -827,7 +840,7 @@ const stackedArea = (params) => {
       isTime = params.isTime || false,
       sums = [],
       maxDateVal = d3.max(data, d => d3.sum(d3.keys(d).map(function(key){ return key !== date_column ? d[key] : 0 })))
-  
+
     data.forEach(d=>{
       let sum = 0
       for(let key in d){
@@ -852,8 +865,10 @@ const stackedArea = (params) => {
           rel[key] = d[key]/sums[di]*maxDateVal
         }
       }
-      relData.push(rel)
+      relData.push(rel);
     })
+
+    
   
     let keys = data.columns.filter(function(key) { return key !== date_column; }),
         x = d3.scaleTime().range([0, dWidth]).domain(d3.extent(data, function(d) { return d[date_column]; })),
