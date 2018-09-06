@@ -758,8 +758,8 @@ function createSumObj(stations_array) {
     let test_obj = {};
 
     years_array.forEach(year => {
+        test_obj['date'] = year;
         stations_array.forEach(station_id => {
-            test_obj['date'] = year;
             test_obj[station_id] = 0;
         })
         data_array.push(test_obj);
@@ -770,7 +770,7 @@ function createSumObj(stations_array) {
 }
 
 function createStackedArea(file) {
-    let data_temp , station_data, years_array, months_data_array
+    let data_temp, station_data, years_array, months_data_array
     
     d3.json(file).then(data => {
         const files_array = Object.keys(data);
@@ -791,32 +791,196 @@ function createStackedArea(file) {
                         sum_year = sum_year + month.sum;
                     })
 
-                    data_temp.forEach(year => {
+                    data_temp.forEach(dyear => {
                         year_transformed = year + '-01-01';
-                        if(year.date == year_transformed) {
-                            year[station_name] = sum_year;
+                        if(dyear.date == year_transformed) {
+                            dyear[station_name] = sum_year;
                         }
                     })
                 }
             })
         })
 
-        console.log(JSON.parse(JSON.stringify(data_temp)));
+        let data_temp_temp = []
+        data_temp.forEach(year=>{
+            for(let key in year){
+                if(key != 'date' && year[key] > 0){
+                    data_temp_temp.push({
+                        date:year.date,
+                        type:key,
+                        value:year[key]
+                    })
+                }
+            }
+        })
 
-        data_temp['columns'] = []
-        for(let key in data_temp[0]){
-            data_temp['columns'].push(key)
-        }
+        console.log(JSON.parse(JSON.stringify(data_temp_temp)))
 
-        let areaAhart = stackedArea({
+
+        data_temp['columns'] = ['date','type','value']
+        // for(let key in data_temp[0]){
+        //     data_temp['columns'].push(key)
+        // }
+
+        let areaAhart = lineChart({
             container:d3.select('#stacked'),
-            data: data_temp,
+            data: data_temp_temp,
+            yLabel:'Radfahrer',
             isTime:true,
             height:600,
-            width:700
+            group_column:'type',
+            zero_based:true,
+            width:900
           })
 
     })
+
+}
+
+const lineChart = (params) => {
+
+  let module = {},
+    container = params.container || d3.select('body'),
+    height = params.height || 250,
+    width = params.width || 500,
+    xTickNum = params.xTickNum || false,
+    data = params.data,
+    xGrid = params.xGrid || false,
+    yGrid = params.yGrid || false,
+    xLabel = params.xLabel || false,
+    yLabel = params.yLabel || false,
+    group_sort = params.group_sort || false,
+    date_column = params.date_column || 'date',
+    data_column = params.data_column || 'value',
+    zero_based = params.zero_based || false,
+    group_column = params.group_column || false,
+    colors = params.colors || '#000',
+    svg = container.append('svg').attr('width', width).attr('height', height).attr('viewBox',`0 0 ${width} ${height}`).attr('preserveAspectRatio','xMidYMid meet'),
+    margin = params.margin || {top: 20, right: 20, bottom: 30, left: 50},
+    dWidth = width - margin.left - margin.right,
+    dHeight = height - margin.top - margin.bottom,
+    g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`),
+    parseTime = params.parseTime || d3.timeParse("%Y-%m-%d"),
+    isTime = params.isTime || false,
+    xTicks = params.xTicks || false
+
+  data.forEach(d=>{
+    if(isTime){
+      d[date_column] = parseTime(d[date_column])
+    }else{
+      d[date_column] = +d[date_column]
+    }
+    d[data_column] = +d[data_column]
+  })
+
+  let x = params.x || (isTime==true) ? d3.scaleTime().rangeRound([0, dWidth]).domain(d3.extent(data, d=>d[date_column])) : d3.scaleLinear().range([0, dWidth]).domain(d3.extent(data, function(d) { return d[date_column]; })),
+    y = params.y || d3.scaleLinear().rangeRound([dHeight, 0]).domain(((zero_based) ? [0,d3.max(data, d=>d[data_column])] : d3.extent(data, d=>d[data_column] ) )),
+    line = params.line || d3.line().x(d=>x(d[date_column])).y(d=>y(d[data_column]))
+
+  //Let's get drawing
+
+  let xAxis = d3.axisBottom(x)
+  if(xTicks) xAxis.tickFormat(xTicks)
+  if(xTickNum) xAxis.ticks(xTickNum)
+
+  if(xGrid){
+    let xGridLines = d3.axisBottom(x)
+
+    if(xTicks) xGridLines.tickFormat(xTicks)
+    if(xTickNum) xGridLines.ticks(xTickNum)
+
+    g.append('g')
+      .attr("transform", `translate(0,${dHeight})`)
+      .attr("class", "gridline")
+      .call(xGridLines
+          .tickSize(-dHeight)
+          .tickFormat("")
+      )
+  }
+
+  if(yGrid){
+    let yGridLines = d3.axisLeft(y)
+
+    g.append('g')
+      .attr("class", "gridline")
+      .call(yGridLines
+          .tickSize(-dWidth)
+          .tickFormat("")
+      )
+  }
+
+  g.append("g")
+    .attr("transform", "translate(0," + dHeight + ")")
+    .call(xAxis)
+
+  g.append("g")
+    .call(d3.axisLeft(y))
+
+  if(group_column){
+    let keys = []
+    if(group_sort){
+      keys = group_sort
+    }else{
+      data.forEach(d=>{ if(keys.indexOf(d[group_column])==-1){ keys.push(d[group_column]); } })
+    }
+
+    keys.forEach((key,ki)=>{
+      g.append("path")
+        .attr('class','path')
+        .attr('id', 'path_'+key)
+        .datum(data.filter(d=>(d[group_column]==key)?true:false))
+        .attr("fill", "none")
+        .attr("stroke", (typeof colors == 'object')?colors[key]:colors)
+        .attr("stroke-linejoin", "round")
+        .attr("stroke-linecap", "round")
+        .attr("stroke-width", 1.5)
+        .attr("d", line);
+    })
+  }else{
+    g.append("path")
+      .datum(data)
+      .attr('class','path')
+      .attr("fill", "none")
+      .attr("stroke", (typeof colors == 'object')?colors[key]:colors)
+      .attr("stroke-linejoin", "round")
+      .attr("stroke-linecap", "round")
+      .attr("stroke-width", 1.5)
+      .attr("d", line);
+  }
+
+  if(xLabel){
+    g.append('g')
+      .attr('transform',`translate(${dWidth},${dHeight+10})`)
+      .append('text')
+        .text(xLabel)
+        .attr('text-anchor','end')
+        .attr("fill", "#000")
+        .style('font-size',10)
+        .style('font-family','sans-serif')
+  } 
+
+  if(yLabel){
+    g.append('g')
+      .append("text")
+        .attr("fill", "#000")
+        .attr("transform", "rotate(-90)")
+        .style('font-size',10)
+        .style('font-family','sans-serif')
+        .attr("y", 6)
+        .attr("dy", "0.71em")
+        .attr("text-anchor", "end")
+        .text(yLabel);
+  }
+
+  module.svg = ()=>svg
+  module.x = (d)=>x(d)
+  module.y = (d)=>y(d)
+  module.g = ()=>g
+  module.dHeight = ()=>dHeight
+  module.dWidth = ()=>dWidth
+  module.parseTime = (d)=>parseTime(d)
+
+  return module
 
 }
 
@@ -931,7 +1095,7 @@ const stackedArea = (params) => {
     g.append ("text")
       .attr("dx", 10)
       .attr("dy", 15)
-      .text("Zugriffszahlen")
+      .text("Radfahrer")
       .style('font-family', 'sans-serif')
       .style('font-size', 10)
   

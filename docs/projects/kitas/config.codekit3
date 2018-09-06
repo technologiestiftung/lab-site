@@ -7,7 +7,7 @@
 		"uuidString": "803F065B-2964-4334-B40A-4F2432DB9DE9"
 		}
 	],
-"creatorBuild": "26330",
+"creatorBuild": "26680",
 "files": {
 	"\/css\/style-min.css": {
 		"aP": 1,
@@ -135,6 +135,7 @@
 	"\/images\/social_media.jpg": {
 		"ft": 16384,
 		"iS": 324306,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/images\/social_media.jpg",
 		"oF": 0,
@@ -197,6 +198,7 @@
 	"\/thumb.jpg": {
 		"ft": 16384,
 		"iS": 21175,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/thumb.jpg",
 		"oF": 0,
@@ -218,6 +220,7 @@
 	"\/thumb@2x.jpg": {
 		"ft": 16384,
 		"iS": 73712,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/thumb@2x.jpg",
 		"oF": 0,
@@ -245,7 +248,8 @@
 	"creationDate": 539535618,
 	"displayValue": "kitas",
 	"displayValueWasSetByUser": 0,
-	"iconImageName": "brackets_purple"
+	"iconImageName": "brackets_purple",
+	"iconImageWasSetByUser": 0
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -2048,6 +2052,7 @@
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
+		"outputFormat": 0,
 		"quality": 100
 		},
 	"languageDefaultsJS": {
