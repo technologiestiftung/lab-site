@@ -6,9 +6,11 @@ const years_array = ['Jahr', 2017, 2016, 2015, 2014, 2013, 2012];
 const months_array = [0,1,2,3,4,5,6,7,8,9,10,11];
 const types_array = ['Zeitraum', 'Monat', 'Woche', 'Wochentage', 'Wochenenden'];
 let year_value = 2017, type_value = 'Monat', metric_value = 'Absolut', radarChart = [], radar_chart_week = [], charts_wrapper;
-var x, i, j, selElmnt, a, b, c;
+var x, i, j, selElmnt, a, b, c, data_line;
 
-const wrapper_div = '.special-section'
+var names_dict;
+
+const wrapper_div = '.polar-chart-wrapper'
 
 const grid_dict = [
     {
@@ -264,8 +266,9 @@ let config  = {
     height: 75,
     width: 75,
     levels: 5,
-    radius: 2,
-    value_metric: 'Absolut',
+    name: '',
+    radius: 1,
+    value_metric: 'Relativ Max',
     factor: 1,
     type: 'Monat',
     month: 0,
@@ -293,6 +296,27 @@ function createWrapper() {
         .classed('charts-wrapper', true)
     
     createGrid();
+}
+
+d3.json('./assets/names_dict.json').then(data => {
+    names_dict = data;
+})
+
+function createTooltipLineChart() {
+    let tooltip = d3.select('.line-chart-wrapper')
+        .append('div')
+        .classed('tooltip-wrapper-line', true)
+        .attr('id', 'tooltip-line-chart')
+        .style('display', 'none')
+    
+    tooltip.append('div')
+        .classed('station-wrapper-line-chart', true)
+    
+    let timeWrapper = tooltip.append('div')
+        .classed('time-wrapper-line-chart', true);
+
+    timeWrapper.append('div').classed('month-wrapper-line-chart', true)
+    timeWrapper.append('div').classed('year-wrapper-line-chart', true)
 }
 
 function createTooltip() {
@@ -360,9 +384,28 @@ function createIntroText() {
         .text('Zeige unterschiedliche Rhythmen der Radfahrer im Datensatz durch Auswahl der Filter (z.B. Tages-, Wochen- und Jahresrhythmus):')
 }
 
+function createIntroTextLineChart() {
+    let intro_wrapper = d3.select('.line-chart-wrapper').append('div')
+        .classed('intro-wrapper', true)
+    let line_chart_wrapper = d3.select('.line-chart-wrapper').append('div')
+        .classed('chart-wrapper-line', true)
+        .attr('id', 'stacked')
+    
+    intro_wrapper
+        .append('span')
+        .classed('intro-headline', true)
+        .text('Alle Radzählstellen im Vergleich')
+
+    intro_wrapper
+        .append('span')
+        .classed('intro-text', true)
+        .text('Entdecke welche in welchem Jahr die Radzählstellen in Betrieb genommen worden sind und wie sich das jährliche Verkehrsaufkommen der Zählstellen verändert.')
+}
+
 function create_filter_ui() {
 
     createIntroText();
+    createIntroTextLineChart();
 
     let ui_wrapper = d3.select(wrapper_div)
         .append('div')
@@ -425,7 +468,7 @@ function onchange() {
     
     let year_value_temp = d3.select('div.select-selected.year').html() == 'Jahr' ? 2017 : d3.select('div.select-selected.year').html();
     let type_value_temp = d3.select('div.select-selected.cycle').html() == 'Zeitraum' ? 'Monat' : d3.select('div.select-selected.cycle').html();
-    let value_metric_temp = d3.select('div.select-selected.metric').html() == 'Skalierung' ? 'Absolut' : d3.select('div.select-selected.metric').html();
+    let value_metric_temp = d3.select('div.select-selected.metric').html() == 'Skalierung' ? 'Relativ Max' : d3.select('div.select-selected.metric').html();
 
 
     let used_selection;
@@ -461,7 +504,7 @@ function init(file) {
         height: 130,
         width: 130,
         levels: 5,
-        radius: 2,
+        radius: 1,
         value_metric: 'Absolut',
         factor: 1,
         type: "Wochentage",
@@ -481,7 +524,7 @@ function init(file) {
         height: 130,
         width: 130,
         levels: 5,
-        radius: 2,
+        radius: 1,
         value_metric: 'Absolut',
         factor: 1,
         type: "Wochenenden",
@@ -501,7 +544,7 @@ function init(file) {
         height: 130,
         width: 130,
         levels: 5,
-        radius: 2,
+        radius: 1,
         value_metric: 'Absolut',
         factor: 1,
         type: 'Woche',
@@ -521,7 +564,7 @@ function init(file) {
         height: 130,
         width: 130,
         levels: 5,
-        radius: 2,
+        radius: 1,
         value_metric: 'Absolut',
         factor: 1,
         type: 'Monat',
@@ -540,6 +583,7 @@ function init(file) {
     create_filter_ui();
     createWrapper();
     createTooltip();
+    createTooltipLineChart();
 
     // file, year, station, config_current, id
 
@@ -561,6 +605,7 @@ function updateChart(file, config_new) {
     d3.json(file).then((data) => {
         const files_array = Object.keys(data);
         files_array.forEach((file,fi) => {
+            config_new.name = file;
             if (radarChart[fi] != undefined) {
                 radarChart[fi].updateGraphics(data[file][config_new.year], config_new);
             }
@@ -801,7 +846,7 @@ function createStackedArea(file) {
             })
         })
 
-        let data_temp_temp = []
+        let data_temp_temp = [];
         data_temp.forEach(year=>{
             for(let key in year){
                 if(key != 'date' && year[key] > 0){
@@ -814,27 +859,24 @@ function createStackedArea(file) {
             }
         })
 
-        console.log(JSON.parse(JSON.stringify(data_temp_temp)))
-
-
         data_temp['columns'] = ['date','type','value']
-        // for(let key in data_temp[0]){
-        //     data_temp['columns'].push(key)
-        // }
+
+        data_line =  data_temp_temp;
+
+        var chartWrapper = document.querySelector('#stacked').getBoundingClientRect();
+        let wrapper_width = chartWrapper.width > 700 ? 700 : chartWrapper.width;
 
         let areaAhart = lineChart({
             container:d3.select('#stacked'),
             data: data_temp_temp,
             yLabel:'Radfahrer',
             isTime:true,
-            height:600,
+            height:400,
             group_column:'type',
             zero_based:true,
-            width:900
+            width:wrapper_width
           })
-
     })
-
 }
 
 const lineChart = (params) => {
@@ -856,7 +898,7 @@ const lineChart = (params) => {
     group_column = params.group_column || false,
     colors = params.colors || '#000',
     svg = container.append('svg').attr('width', width).attr('height', height).attr('viewBox',`0 0 ${width} ${height}`).attr('preserveAspectRatio','xMidYMid meet'),
-    margin = params.margin || {top: 20, right: 20, bottom: 30, left: 50},
+    margin = params.margin || {top: 20, right: 20, bottom: 30, left: 65},
     dWidth = width - margin.left - margin.right,
     dHeight = height - margin.top - margin.bottom,
     g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`),
@@ -864,20 +906,34 @@ const lineChart = (params) => {
     isTime = params.isTime || false,
     xTicks = params.xTicks || false
 
-  data.forEach(d=>{
-    if(isTime){
-      d[date_column] = parseTime(d[date_column])
-    }else{
-      d[date_column] = +d[date_column]
-    }
-    d[data_column] = +d[data_column]
-  })
+    console.log(data);
 
-  let x = params.x || (isTime==true) ? d3.scaleTime().rangeRound([0, dWidth]).domain(d3.extent(data, d=>d[date_column])) : d3.scaleLinear().range([0, dWidth]).domain(d3.extent(data, function(d) { return d[date_column]; })),
-    y = params.y || d3.scaleLinear().rangeRound([dHeight, 0]).domain(((zero_based) ? [0,d3.max(data, d=>d[data_column])] : d3.extent(data, d=>d[data_column] ) )),
-    line = params.line || d3.line().x(d=>x(d[date_column])).y(d=>y(d[data_column]))
+    data.forEach(d=>{
+        if(isTime){
+        d[date_column] = parseTime(d[date_column])
+        }else{
+        d[date_column] = +d[date_column]
+        }
+        d[data_column] = +d[data_column]
+    })
 
-  //Let's get drawing
+    var xValue = function(d) { return d.date;},            // data -> value
+    xScale = d3.scaleLinear().range([0, width]),           // value -> display
+    xMap = function(d) { return xScale(xValue(d));}        // data -> display
+
+    // setup y
+    var yValue = function(d) { return d.value;},           // data -> value
+    yScale = d3.scaleLinear().range([height, 0]),          // value -> display
+    yMap = function(d) { return yScale(yValue(d));}        // data -> display
+
+    xScale.domain([d3.min(data, xValue), d3.max(data, xValue)]);
+    yScale.domain([d3.min(data, yValue), d3.max(data, yValue)]);
+
+    let x = params.x || (isTime==true) ? d3.scaleTime().rangeRound([0, dWidth]).domain(d3.extent(data, d=>d[date_column])) : d3.scaleLinear().range([0, dWidth]).domain(d3.extent(data, function(d) { return d[date_column]; })),
+        y = params.y || d3.scaleLinear().rangeRound([dHeight, 0]).domain(((zero_based) ? [0,d3.max(data, d=>d[data_column])] : d3.extent(data, d=>d[data_column] ) )),
+        line = params.line || d3.line().x(d=>x(d[date_column])).y(d=>y(d[data_column]))
+
+    //Let's get drawing
 
   let xAxis = d3.axisBottom(x)
   if(xTicks) xAxis.tickFormat(xTicks)
@@ -891,7 +947,7 @@ const lineChart = (params) => {
 
     g.append('g')
       .attr("transform", `translate(0,${dHeight})`)
-      .attr("class", "gridline")
+      .attr("class", "axis-line-chart")
       .call(xGridLines
           .tickSize(-dHeight)
           .tickFormat("")
@@ -909,11 +965,49 @@ const lineChart = (params) => {
       )
   }
 
+  function highlightLine(data, element) {
+      let hovered_line_id = `#path_${data[0].type}`;
+      let hovered_line_node = d3.select(hovered_line_id);
+
+      d3.selectAll('.path').classed('inactive', true);
+
+      hovered_line_node.classed('active', true).classed('inactive', false);
+  }
+
+  function unhighlightLine() {
+      d3.selectAll('.path').classed('inactive', false).classed('active', false);
+  }
+
+  function updateTooltipLineChart(data) {
+    let tooltip;
+
+    const clientWidth = window.innerWidth;
+    const clientHeight = window.innerHeight;
+
+    let x = d3.event.pageX + 10;
+    let y = d3.event.pageY + 10;
+
+
+    if(clientWidth - x < 150) { x = d3.event.pageX - 125;};
+    
+    tooltip = d3.select('#tooltip-line-chart');
+    
+    if (data[0].type != undefined) {
+        tooltip.select('.station-wrapper-line-chart').text(names_dict[data[0].type]);
+
+        tooltip
+            .attr('style', `left: ${x}px; top: ${y}px; position: absolute`)
+            .classed('active', true)
+    }
+}
+
   g.append("g")
     .attr("transform", "translate(0," + dHeight + ")")
+    .attr("class", "axis-line-chart")
     .call(xAxis)
 
   g.append("g")
+    .attr("class", "axis-line-chart")
     .call(d3.axisLeft(y))
 
   if(group_column){
@@ -930,11 +1024,20 @@ const lineChart = (params) => {
         .attr('id', 'path_'+key)
         .datum(data.filter(d=>(d[group_column]==key)?true:false))
         .attr("fill", "none")
-        .attr("stroke", (typeof colors == 'object')?colors[key]:colors)
+        .attr("stroke", '#50ABE3')
         .attr("stroke-linejoin", "round")
         .attr("stroke-linecap", "round")
-        .attr("stroke-width", 1.5)
-        .attr("d", line);
+        .attr("stroke-width", 2)
+        .attr("d", line)
+        .on('mouseover', (d,i) => {
+            updateTooltipLineChart(d);
+            highlightLine(d);
+        })
+        .on('mouseout', (d,i) => {
+            d3.select('#tooltip-line-chart')
+                .attr('style', 'display: none')
+            unhighlightLine();
+        });
     })
   }else{
     g.append("path")
@@ -954,9 +1057,11 @@ const lineChart = (params) => {
       .append('text')
         .text(xLabel)
         .attr('text-anchor','end')
+        .attr('class', 'legend-tick')
         .attr("fill", "#000")
         .style('font-size',10)
         .style('font-family','sans-serif')
+        .style('letter-spacing', '2px')
   } 
 
   if(yLabel){
@@ -966,6 +1071,7 @@ const lineChart = (params) => {
         .attr("transform", "rotate(-90)")
         .style('font-size',10)
         .style('font-family','sans-serif')
+        .attr('class', 'legend-tick')
         .attr("y", 6)
         .attr("dy", "0.71em")
         .attr("text-anchor", "end")
@@ -983,154 +1089,6 @@ const lineChart = (params) => {
   return module
 
 }
-
-const stackedArea = (params) => {
-
-    let module = {},
-      container = params.container || d3.select('body'),
-      height = params.height || 250,
-      width = params.width || 500,
-      data = params.data,
-      date_column = params.date_column || 'date',
-      data_column = params.data_column || 'value',
-      zero_based = params.zero_based || false,
-      colors = params.colors || '#000',
-      svg = container.append('svg').attr('width', width).attr('height', height).attr('viewBox',`0 0 ${width} ${height}`).attr('preserveAspectRatio','xMidYMid meet'),
-      margin = params.margin || {top: 20, right: 20, bottom: 30, left: 50},
-      dWidth = width - margin.left - margin.right,
-      dHeight = height - margin.top - margin.bottom,
-      g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`),
-      parseTime = params.parseTime || d3.timeParse("%Y-%m-%d"),
-      isTime = params.isTime || false,
-      sums = [],
-      maxDateVal = d3.max(data, d => d3.sum(d3.keys(d).map(function(key){ return key !== date_column ? d[key] : 0 })))
-
-    data.forEach(d=>{
-      let sum = 0
-      for(let key in d){
-        if(isTime && key == date_column){
-          d[key] = parseTime(d[key])
-        }else{
-          d[key] = +d[key]
-          sum += d[key]
-        }
-      }
-      sums.push(sum)
-    })
-  
-    let relData = []
-  
-    data.forEach((d,di)=>{
-      let rel = {}
-      for(let key in d){
-        if(isTime && key == date_column){
-          rel[key] = d[key]
-        }else{
-          rel[key] = d[key]/sums[di]*maxDateVal
-        }
-      }
-      relData.push(rel);
-    })
-
-    
-  
-    let keys = data.columns.filter(function(key) { return key !== date_column; }),
-        x = d3.scaleTime().range([0, dWidth]).domain(d3.extent(data, function(d) { return d[date_column]; })),
-        y = d3.scaleLinear().range([dHeight, 0]).domain([0, maxDateVal]),
-        color = d3.scaleOrdinal(d3.schemeCategory20).domain(d3.keys(data[0]).filter(function(key) { return key !== date_column; })),
-        xAxis = d3.axisBottom().scale(x),
-        yAxis = d3.axisLeft().scale(y),
-        area = d3.area().x(d=>x(d.data.date)).y0(d=>y(d[0])).y1(d=>y(d[1])),
-        stack = d3.stack().keys(keys).order(d3.stackOrderNone).offset(d3.stackOffsetNone)(data),
-        rStack = d3.stack().keys(keys).order(d3.stackOrderNone).offset(d3.stackOffsetNone)(relData)
-  
-    let browser = g.selectAll('.browser')
-        .data(stack)
-      .enter().append('g')
-        .attr('class', d=>'browser ' + d.key)
-        .attr('fill-opacity', 0.5);
-  
-    let areas = browser.append('path')
-        .attr('class', 'area')
-        .attr('d', area)
-        .style('fill', 'rgba(0,0,0,0.1)')
-        .style('stroke', '#555')
-        .style('stroke-width', '0.1')
-        .on('mouseover', function(d){
-          d3.select(this).style('fill', '#1e3791')
-          tooltip
-            .attr('transform', `translate(${d3.mouse(this)[0]},${d3.mouse(this)[1]})`)
-            .text(d.key)
-            .style('display','block')
-        })
-        .on('mousemove', function(d){
-          tooltip
-            .attr('dx', (d3.mouse(this)[0]<dWidth/2)?10:-10)
-            .attr('text-anchor', (d3.mouse(this)[0]<dWidth/2)?'start':'end')
-            .attr('transform', `translate(${d3.mouse(this)[0]},${d3.mouse(this)[1]})`)
-        })
-        .on('mouseout', function(){
-          d3.select(this).style('fill', 'rgba(0,0,0,0.1)')
-          tooltip.style('display','none')
-        })
-  
-    // browser.append('text')
-    //     .datum(function(d) { return d; })
-    //     .attr('transform', function(d) { return 'translate(' + x(data[13].date) + ',' + y(d[13][1]) + ')'; })
-    //     .attr('x', -6) 
-    //     .attr('dy', '.35em')
-    //     .style("text-anchor", "start")
-    //     .text(function(d) { return d.key; })
-    //     .attr('fill-opacity', 1);
-  
-    g.append('g')
-        .attr('class', 'x axis')
-        .attr('transform', 'translate(0,' + dHeight + ')')
-        .call(xAxis);
-  
-    g.append('g')
-        .attr('class', 'y axis')
-        .call(yAxis);
-  
-    g.append ("text")
-      .attr("dx", 10)
-      .attr("dy", 15)
-      .text("Radfahrer")
-      .style('font-family', 'sans-serif')
-      .style('font-size', 10)
-  
-    let tooltip = g.append('text')
-      .attr('dy',6)
-      .style('text-shadow','0px 0px 3px #fff')
-      .style('fill','#000')
-      .style('font-weight','bold')
-      .style('pointer-events','none')
-      .style('font-family', 'sans-serif')
-      .style('font-size', 10)
-      .style('text-transform','capitalize')
-  
-    let mode = true
-  
-    module.setMode = m => {
-      mode = m
-    }
-  
-    module.mode = () => {
-      return mode
-    }
-  
-    module.update = () => {
-      areas.datum((d,i)=> (mode) ? stack[i] : rStack[i] ).transition().attr('d', area)
-    }
-  
-    module.svg = ()=>svg
-    module.g = ()=>g
-    module.dHeight = ()=>dHeight
-    module.dWidth = ()=>dWidth
-  
-    return module
-  
-  }
 
 /*look for any elements with the class "custom-select":*/
 x = document.getElementsByClassName("custom-select");
@@ -1155,7 +1113,7 @@ for (i = 0; i < x.length; i++) {
     c = document.createElement("DIV");
     c.innerHTML = selElmnt.options[j].innerHTML;
 
-    if (c.innerHTML == 'Monat' || c.innerHTML == 2017 || c.innerHTML == 'Absolut') {
+    if (c.innerHTML == 'Monat' || c.innerHTML == 2017 || c.innerHTML == 'Relativ Max') {
         c.setAttribute("class", "same-as-selected");
     }
 

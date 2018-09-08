@@ -23,7 +23,7 @@
         display: none; } }
 
 .max-circle, .mean-circle, .median-circle {
-  opacity: .25; }
+  opacity: 1; }
   .max-circle.highlighted, .mean-circle.highlighted {
     opacity: 1; }
 

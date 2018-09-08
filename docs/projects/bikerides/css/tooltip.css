@@ -22,6 +22,28 @@
 .value-desc {
   color: #9B9B9B; }
 
+.tooltip-wrapper-line {
+  border: 1px solid #E4E4E4;
+  background: #FCFCFC;
+  width: 145px;
+  height: 60px;
+  z-index: 100000;
+  padding: 10px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 12px;
+  letter-spacing: .5px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  animation: .25s fadeInFromNone ease;
+  opacity: 1;
+}
+
+
+.value-desc {
+  color: #9B9B9B; }
+
 @keyframes fadeInFromNone {
   0% {
     display: none;

@@ -112,14 +112,16 @@ class Radarchart {
 
         this.svg = d3.select(`svg.wrapper-${station_index}`)
             .on('mouseover', (d,i) => {
-                d3.selectAll('.median-area').style('opacity', .25);
-                d3.selectAll('.max-area').style('opacity', .25);
-                this.svg.select('.median-area').style('opacity', .8);
-                this.svg.select('.max-area').style('opacity', .8);
+                d3.selectAll('.median-area').style('opacity', .8);
+                d3.selectAll('.max-area').style('opacity', .8);
+                d3.selectAll('.median-circle').style('opacity', 1);
+                d3.selectAll('.max-circle').style('opacity', 1);
             })    
             .on('mouseout', (d,i) => {
                 d3.selectAll('.median-area').style('opacity', .8);
                 d3.selectAll('.max-area').style('opacity', .8);
+                d3.selectAll('.median-circle').style('opacity', 1);
+                d3.selectAll('.max-circle').style('opacity', 1);
             })  
             
         this.defs = this.svg.append('defs')
@@ -137,12 +139,12 @@ class Radarchart {
         this.segmentsWrapper = this.svg.append('g')
             .classed('segments-wrapper', true)
         
-        this.nodesWrapper = this.svg.append('g')
-            .classed('nodes-wrapper', true)
-            .attr("mask", `url(#chart_mask-${station_index})`)
-        
         this.areasWrapper = this.svg.append('g')
             .classed('areas-wrapper', true)
+            .attr("mask", `url(#chart_mask-${station_index})`)
+        
+        this.nodesWrapper = this.svg.append('g')
+            .classed('nodes-wrapper', true)
             .attr("mask", `url(#chart_mask-${station_index})`)
         
         this.title = this.svg.append('g')
@@ -188,7 +190,7 @@ class Radarchart {
                     return polar_coord
                  })
                 .attr("class", "line")
-                .style('stroke', '#E8E8E8')
+                .style('stroke', '#E0E0E0')
                 .style("stroke-opacity", "1px")
                 .style("stroke-width", "1px")
                 .attr('transform', `translate( ${this.width/2 + this.margin.left}, ${this.height/2  + this.margin.top})`)
@@ -238,7 +240,7 @@ class Radarchart {
                 return (this.height / 2) * (this.factor * Math.cos (i * this.radians / this.total + Math.PI)) + this.margin.top;
             })
             .attr("class", "line")
-            .style('stroke', '#E8E8E8')
+            .style('stroke', '#E0E0E0')
             .style("stroke-width", "1px")
             .attr('transform', `translate( ${this.width/2 }, ${this.height/2 })`)
         
@@ -387,8 +389,6 @@ class Radarchart {
             config.max_value = 800;
         }
 
-        console.log(this.value_metric);
-
         this.max_local = this.calcMaxLocal(this.data);
 
         if (this.value_metric == 'Relativ Max') {
@@ -435,8 +435,10 @@ class Radarchart {
             .enter()
             .append('polygon')
             .classed(`${category}-area`, true)
-            .style("stroke-width", "2px")
+            .style("stroke-width", "1px")
+            .style("stroke", color)
             .style('fill', color)
+            .style('fill-opacity', .75)
             .merge(this.areas[category]);
 
         this.areas[category]
@@ -496,6 +498,7 @@ class Radarchart {
     }
 
     updateCircles(category, color) {
+
         this.node_coords = {'median':[], 'max':[]};
         this.category = category;
 
@@ -553,6 +556,8 @@ class Radarchart {
 
             
             this.updateAreas(this.node_coords[category], color, category);
+
+            
     }
 
 }
