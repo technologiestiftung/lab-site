@@ -241,8 +241,6 @@ span#total-value {
   width: 380px;
   margin-bottom: 40px;
   margin-top: 40px; }
-  .ui-wrapper .custom-select {
-    margin-right: 10px; }
 
 body {
   font: 10px sans-serif;
@@ -386,6 +384,10 @@ body {
     flex-direction: column;
   }
 
+  .p-bottom {
+    padding-bottom: 20px;
+  }
+
   .wrapper-5 {
     margin-left: 0;
     order: 1;
@@ -410,6 +412,12 @@ body {
     margin-top: 20px;
   }
 
+  .wrapper-52 {
+    margin-left: 0;
+    order: 1;
+    margin-top: 20px;
+  }
+
   .example-chart-wrapper {
     display: flex;
     justify-content: space-around;
@@ -423,7 +431,7 @@ body {
 
   .ui-wrapper {
     width: 100%;
-    justify-content: space-around;
+    justify-content: center;
   }
 
   .intro-headline {
