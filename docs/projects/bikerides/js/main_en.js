@@ -587,10 +587,10 @@ function init(file) {
 
     // file, year, station, config_current, id
 
-    exampleChart(file, 2017, '05-FK-OBB-W', config_example, 49);
-    exampleChart(file, 2017, '05-FK-OBB-W', config_example_week, 50);
-    exampleChart(file, 2017, '05-FK-OBB-W', config_example_month, 51);
-    exampleChart(file, 2017, '05-FK-OBB-W', config_example_weekend, 52);
+    exampleChart(file, 2017, '05-FK-OBB-O', config_example, 49);
+    exampleChart(file, 2017, '05-FK-OBB-O', config_example_week, 50);
+    exampleChart(file, 2017, '05-FK-OBB-O', config_example_month, 51);
+    exampleChart(file, 2017, '05-FK-OBB-O', config_example_weekend, 52);
 
     renderChart(file, config);
     createStackedArea(file);
