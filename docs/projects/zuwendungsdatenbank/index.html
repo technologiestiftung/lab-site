@@ -51,6 +51,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,300i|Barlow:400,400i,700,700i" rel="stylesheet">
         <meta name="theme-color" content="#1e3791">
         <link rel="stylesheet" href="../../css/style.css">
+        <link rel="stylesheet" href="./css/main.css">
     </head>
     <body class="project">
         <header id="page-head">
@@ -91,7 +92,60 @@
             </div>
 
             <div class="special-section" id="vis">
-                
+                <div id="loader">
+                    <span id="loader-icon"></span><br />
+                    <span id="loader-text">Zuwendungen seid 2009 werden geladen:</span><br />
+                    <span id="loader-funds"></span>
+                </div>
+                <div id="container">
+                    <div id="sumChart"></div> 
+                    <div id="intro">
+                        <img src="images/main_legend.svg" alt="" /><br />
+                        <button id="reset">&olarr;&nbsp;Filter zurücksetzen</button>      
+                    </div>
+                    <div id="yearChart"><h5>Jährliche Summen (€ / Anzahl)</h5></div>
+                    <div id="mapChart"><h5>Räumliche Verteilung</h5></div>
+                    <div id="geberChart"></div>
+                    <div id="artChart"></div>
+                    <div id="maprow">
+                    </div>
+                    <input type="text" class="search" id="search" placeholder="Namens-Suche" />
+                    <input type="text" class="search" id="search_zweck" placeholder="Zweck-Suche" />
+                    <div  id="pagination" class="pagination">
+                        <a class="prev">&laquo; zurück</a>
+                        <span>x von y Förderungen</span>
+                        <a class="next">weiter &raquo;</a>
+                    </div>
+                    <table id="preview">
+                        <thead>
+                            <tr>
+                                <th data-key="jahr" class="th-label th-jahr">Jahr</th>
+                                <th data-key="name" class="th-label th-name">Name</th>
+                                <th data-key="politikbereich" class="th-label th-politikbereich">Bereich</th>
+                                <th data-key="geber" class="th-label th-geber">Geber</th>
+                                <th data-key="zweck" class="th-label th-zweck">Zweck</th>
+                                <th data-key="betrag" class="th-label th-betrag betrag">Summe</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th data-key="jahr" class="th-label th-jahr">Jahr</th>
+                                <th data-key="name" class="th-label th-name">Name</th>
+                                <th data-key="politikbereich" class="th-label th-politikbereich">Bereich</th>
+                                <th data-key="geber" class="th-label th-geber">Geber</th>
+                                <th data-key="zweck" class="th-label th-zweck">Zweck</th>
+                                <th data-key="betrag" class="th-label th-betrag betrag">Summe</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <div class="pagination">
+                        <a class="prev">&laquo; zurück</a>
+                        <span>x von y Förderungen</span>
+                        <a class="next">weiter &raquo;</a>
+                    </div>
+                </div>
             </div>
 
             <div class="container p-top">
@@ -155,20 +209,391 @@
                 </div>
             </div>
         </footer>
-        <script src="https://d3js.org/d3.v4.min.js"></script>
-        <script type="text/javascript" src="../../js/min/script.min.js"></script>
-        <script type="text/javascript" src="./js/script.js"></script>
-        <script type="text/javascript">
-            var _loader = loader(d3.select('#vis'), 12554692972, 7514845*3);
-            _loader.init();
-            _loader.load([
-                'http://localhost:8888/zuwendungsdatenbank@github/data/min.csv',
-                'http://localhost:8888/zuwendungsdatenbank@github/data/min.csv',
-                'http://localhost:8888/zuwendungsdatenbank@github/data/min.csv'
-            ], function(files){
-                console.log('done');
-            });
-        </script>
+        <script src="js/topojson-client.min.js"></script>
+        <script src="js/d3.v4.min.js"></script>
+        <script src="js/d3-history/d3-history.min.js"></script>
+        <script src="js/event.js"></script>
+        <script src="js/crossfilter/crossfilter.min.js"></script>
+        <script src="js/utils.js"></script>
+        <script src="js/mapChart.js"></script>
+        <script src="js/matrixChart.js"></script>
+        <script src="js/preview.js"></script>
+        <script src="js/sumChart.js"></script>
+        <script src="js/yearChart.js"></script>
+        <script src="js/tooltip.js"></script>
+
+<script>
+
+let tip = tooltip();
+
+  // ACTIONS FROM THE UI
+
+function updateUI(){
+  updateCharts();
+}
+
+//Predefined Filters
+
+//Create a global object that contains dimensions and groups, etc.
+
+var state = {}, dates_count, fund, all, all_groups, date, dates, names, postcode, postcodes, politikbereich, politikbereichs, geber, gebers, geber_jahre, gebers_jahre, politikbereich_jahre, politikbereichs_jahre, postcodeYears, filter, sum_chart, art_chart, year_chart, map_chart, map_chart_years, table;
+
+function updateFilter(){
+  var changed = false;
+  for(var key in state){
+    if(key in filter && state[key].length>=1){
+      state[key].forEach(function(s){
+        if(filter[key].indexOf(s)==-1){
+          filterFunction(key, s, true);
+          changed = true;
+        }
+      });
+    }
+  }
+  if(changed){
+    dispatcher.call('action', this, createURL());
+  }
+}
+
+var filterFunction = function(key, value, silent){
+  //console.log('filterFunction', key, value, silent)
+  //fix bug with double zero digits
+  value = cleanId(value);
+
+  if(filter[key].indexOf(value)>-1){
+    filter[key].splice(filter[key].indexOf(value), 1);
+  }else{
+    filter[key].push(value);
+  }
+
+  var dimension = null;
+  switch(key){
+    case 'date':
+      dimension = date;
+    break;
+    case 'postcode':
+      dimension = postcode;
+    break;
+    case 'politikbereich':
+      dimension = politikbereich;
+    break;
+    case 'geber':
+      dimension = geber;
+    break;
+  }
+
+  if(filter[key].length == 0){
+
+    dimension.filterAll();
+
+  }else{
+
+    dimension.filter(function(d){
+      if(filter[key].indexOf(d)>-1){
+        return true;
+      }
+      return false;
+    });
+
+  }
+
+  if(!silent || silent == undefined){
+    for(var key in filter){
+      state[key] = filter[key].join(',');
+    }
+
+    dispatcher.call('action', this, createURL());
+  }
+};
+
+d3.select('#reset').on('click', function(){
+  for(var key in state){
+    var states = state[key]
+
+    if(!Array.isArray(states)) states = states.split(',')
+
+    if(state[key].length>0){
+      states.forEach(s=>{
+        filterFunction(key, s, true);
+      })
+    }
+
+    state[key] = [];
+  }
+
+  dispatcher.call('action', this, createURL());
+});
+
+let extension = '-2017-ckan'
+
+let fileLoads = {}
+
+let callbackLoad = (type, file, loadID, size, callback) => {
+  d3[type](file, callback)
+    .on('progress', evt=>{
+      if(!(loadID in fileLoads)) fileLoads[loadID] = {total:size, loaded:evt.loaded}
+      fileLoads[loadID].loaded = evt.loaded
+      updateProgress()
+    })
+}
+
+let updateProgress = ()=>{
+  let total = 0, loaded = 0
+  for(let loadID in fileLoads){
+    total += fileLoads[loadID].total
+    loaded += fileLoads[loadID].loaded
+  }
+
+  loaderFunds.html(currency(Math.round(loadScale(loaded/total))));
+  foreground.attr('d', d=>{
+    d.endAngle = loadCoinScale(loaded/total)
+    return arc(d);
+  });
+  
+}
+
+//d3.select('#container').style('display','none')
+
+var icon = d3.select('#loader-icon').append('svg').attr('width',100).attr('height',100).append('g').attr('transform', 'translate(50,50)'),
+  loadScale = d3.scaleLinear().range([0,14145702625]).domain([0,1]),
+  loadCoinScale = d3.scaleLinear().range([0,Math.PI*2]).domain([0,1]),
+  loaderFunds = d3.select('#loader-funds'),
+  arcBG = d3.arc()
+      .innerRadius(42)
+      .outerRadius(48)
+      .startAngle(0),
+  arc = d3.arc()
+      .innerRadius(43)
+      .outerRadius(47)
+      .startAngle(0),
+  background = icon.append('path')
+    .datum({endAngle: Math.PI*2})
+      .style("fill", "#ddd")
+      .attr("d", arcBG),
+  foreground = icon.append("path")
+      .datum({endAngle: 0})
+      .style("fill", "#777")
+      .attr("d", arc);
+
+icon.append('text').attr('text-anchor','middle').style('fill','#777').style('font-size',72).text('€').attr('dy',24);
+
+function arcTween(newAngle) {
+  return function(d) {
+    var interpolate = d3.interpolate(d.endAngle, newAngle);
+    return function(t) {
+      d.endAngle = interpolate(t);
+      return arc(d);
+    };
+  };
+}
+
+d3.queue()
+  .defer(callbackLoad, 'json', "./data/plz.topojson","plz",333505)
+  .defer(callbackLoad, 'csv', "./data/min"+extension+".csv","min",2846095)
+  .defer(callbackLoad, 'csv', "./data/dict_geber"+extension+".csv","dict_geber",1897)
+  .defer(callbackLoad, 'csv', "./data/dict_name"+extension+".csv","dict_name",376613)
+  .defer(callbackLoad, 'csv', "./data/dict_zweck"+extension+".csv","dict_zweck",2614485)
+  .defer(callbackLoad, 'csv', "./data/dict_plz"+extension+".csv","dict_plz",6635)
+  .defer(callbackLoad, 'csv', "./data/dict_politikbereich"+extension+".csv","dict_politikbereich",500)
+  .await(function(error, plz, funds, dict_geber, dict_name, dict_zweck, dict_plz, dict_politikbereich){
+
+  loaderFunds.html(currency(Math.round(loadScale(1))));
+  foreground.attr('d', d=>{
+    d.endAngle = Math.PI*2
+    return arc(d);
+  });
+
+  d3.select('#loader').transition().duration(300).style('display','none')
+  d3.select('#container').style('display','block')
+
+  let name_keys = {}
+  dict_name.forEach((d,di)=>{
+    name_keys[d.id] = di
+  })
+
+  let zweck_keys = {}
+  dict_zweck.forEach((d,di)=>{
+    zweck_keys[d.id] = di
+  })
+
+  plz = topojson.feature(plz, plz.objects.plz);
+
+  // A little coercion, since the CSV is untyped.
+  funds.forEach(function(d, i) {
+    d.index = i;
+    d.date = new Date(d.jahr);
+    d.betrag = +d.betrag;
+
+    // if((d.name in dict_name)){
+    //   d.name = dict_name[d.name].label
+    // }
+
+    // if((d.zweck in dict_zweck)){
+    //   d.zweck = dict_zweck[d.zweck].label
+    // }
+
+  });
+
+  //id;name;geber;art;jahr;anschrift;politikbereich;zweck;betrag;empfaengerid;plz;city;street
+
+  // Create the crossfilter for the relevant dimensions and groups.
+  fund = crossfilter(funds);
+  all = fund.groupAll().reduceSum(function(d){return d.betrag; });
+  all_groups = fund.groupAll().reduceCount();
+
+  // date = fund.dimension(function(d) { return d.date; }),
+  // dates = date.group(d3.timeYear).reduceSum(function(d) { return d.betrag; }),
+
+  date = fund.dimension(function(d) { return d.jahr; });
+  dates = date.group().reduceSum(function(d) { return d.betrag; });
+  dates_count = date.group().reduceCount();
+
+  names = fund.dimension(function(d) { return dict_name[name_keys[d.name]].label.toLowerCase(); });
+  zwecke = fund.dimension(function(d) { return dict_zweck[zweck_keys[d.zweck]].label.toLowerCase(); });
+
+  postcode = fund.dimension(function(d) { return d.plz; });
+  postcodes = postcode.group().reduceSum(function(d) { return d.betrag; });
+  postcodes_count = postcode.group().reduceCount();
+
+  politikbereich = fund.dimension(function(d) { return d.politikbereich; });
+  politikbereichs = politikbereich.group().reduceSum(function(d) { return d.betrag; });
+  politikbereichs_count = politikbereich.group().reduceCount();
+
+  //for the labels
+  geber = fund.dimension(function(d) { return d.geber; });
+  gebers = geber.group().reduceSum(function(d) { return d.betrag; });
+  gebers_count = geber.group().reduceCount();
+
+  geber_jahre = fund.dimension(function(d) { return ((d.geber < 10)?'0':'') +d.geber + '_' + d.jahr; });
+  gebers_jahre = geber_jahre.group().reduceSum(function(d) { return d.betrag; });
+  gebers_jahre_count = geber_jahre.group().reduceCount();
+
+  politikbereich_jahre = fund.dimension(function(d) { return ((d.politikbereich < 10)?'0':'') +d.politikbereich + '_' + d.jahr; });
+  politikbereichs_jahre = politikbereich_jahre.group().reduceSum(function(d) { return d.betrag; });
+  politikbereichs_jahre_count = politikbereich_jahre.group().reduceCount();
+
+  postcodeYears = {};
+  postcodeYears_count = {};
+
+  //for(var i = 2009; i<=2016; i++){
+  postcodeYears[2009] = postcode.group().reduceSum(function(d) { return ((d.jahr == 2009)?d.betrag:0); });
+  postcodeYears[2010] = postcode.group().reduceSum(function(d) { return ((d.jahr == 2010)?d.betrag:0); });
+  postcodeYears[2011] = postcode.group().reduceSum(function(d) { return ((d.jahr == 2011)?d.betrag:0); });
+  postcodeYears[2012] = postcode.group().reduceSum(function(d) { return ((d.jahr == 2012)?d.betrag:0); });
+  postcodeYears[2013] = postcode.group().reduceSum(function(d) { return ((d.jahr == 2013)?d.betrag:0); });
+  postcodeYears[2014] = postcode.group().reduceSum(function(d) { return ((d.jahr == 2014)?d.betrag:0); });
+  postcodeYears[2015] = postcode.group().reduceSum(function(d) { return ((d.jahr == 2015)?d.betrag:0); });
+  postcodeYears[2016] = postcode.group().reduceSum(function(d) { return ((d.jahr == 2016)?d.betrag:0); });
+  postcodeYears[2017] = postcode.group().reduceSum(function(d) { return ((d.jahr == 2017)?d.betrag:0); });
+
+  postcodeYears_count[2009] = postcode.group().reduceCount(function(d) { return ((d.jahr == 2009)?d.betrag:0); });
+  postcodeYears_count[2010] = postcode.group().reduceCount(function(d) { return ((d.jahr == 2010)?d.betrag:0); });
+  postcodeYears_count[2011] = postcode.group().reduceCount(function(d) { return ((d.jahr == 2011)?d.betrag:0); });
+  postcodeYears_count[2012] = postcode.group().reduceCount(function(d) { return ((d.jahr == 2012)?d.betrag:0); });
+  postcodeYears_count[2013] = postcode.group().reduceCount(function(d) { return ((d.jahr == 2013)?d.betrag:0); });
+  postcodeYears_count[2014] = postcode.group().reduceCount(function(d) { return ((d.jahr == 2014)?d.betrag:0); });
+  postcodeYears_count[2015] = postcode.group().reduceCount(function(d) { return ((d.jahr == 2015)?d.betrag:0); });
+  postcodeYears_count[2016] = postcode.group().reduceCount(function(d) { return ((d.jahr == 2016)?d.betrag:0); });
+  postcodeYears_count[2017] = postcode.group().reduceCount(function(d) { return ((d.jahr == 2017)?d.betrag:0); });
+  //}
+
+  filter = {date:[],politikbereich:[],geber:[],postcode:[]};
+
+  sum_chart = sumChart(d3.select('#sumChart'), all);
+  sum_chart.init();
+
+  geber_chart = matrixChart(d3.select('#geberChart'), gebers, gebers_jahre, dict_geber, gebers_jahre_count, filterFunction, 'geber');
+  geber_chart.init();
+
+  art_chart = matrixChart(d3.select('#artChart'), politikbereichs, politikbereichs_jahre, dict_politikbereich, politikbereichs_jahre_count, filterFunction, 'politikbereich');
+  art_chart.init();
+
+  year_chart = yearChart(d3.select('#yearChart'), dates, dates_count, filterFunction, 'date', tip);
+  year_chart.init();
+
+  map_chart = mapChart(d3.select('#mapChart'), plz, postcodes, postcodes_count, dict_plz, filterFunction, 'postcode', tip);
+    map_chart.init();
+
+  map_chart_years = [];
+  for(var i = 2009; i<=2017; i++){
+    var container = d3.select('#maprow').append('div').attr('id', 'map'+i);
+    container.append('span').classed('year-title',true).text(i);
+    map_chart_years[i] = mapChart(container, plz, postcodeYears[i], postcodeYears_count[i], dict_plz, filterFunction, 'postcode', tip);
+    map_chart_years[i].init();
+  }
+
+  table = preview(d3.select('#preview tbody'), fund, {zweck:dict_zweck, name:dict_name, geber:dict_geber, politikbereich:dict_politikbereich });
+  table.init();
+  d3.selectAll('.next').on('click', function(){ table.next(); });
+  d3.selectAll('.prev').on('click', function(){ table.prev(); });
+  d3.selectAll('#preview th').on('click', function(){
+    table.setSort(d3.select(this).attr('data-key'))
+  })
+
+  d3.select('#search').on('keyup', debouncer(function(e){
+      var v = d3.select('#search').property('value');
+      if(v.length > 2){
+        names.filter(function(d){
+          if(d.indexOf(v.toLowerCase())>-1){
+            return true;
+          }
+          return false;
+        });
+      }else{
+        names.filterAll();
+      }
+
+      updateCharts();
+  }, 200));
+
+  d3.select('#search_zweck').on('keyup', debouncer(function(e){
+      var v = d3.select('#search_zweck').property('value');
+      if(v.length > 2){
+        zwecke.filter(function(d){
+          if(d.indexOf(v.toLowerCase())>-1){
+            return true;
+          }
+          return false;
+        });
+      }else{
+        zwecke.filterAll();
+      }
+
+      updateCharts();
+  }, 200));
+
+
+  d3.select(window).on('resize', debouncer(function(e){
+    year_chart.resize();
+    geber_chart.resize();
+    art_chart.resize();
+    map_chart.resize();
+    for(var year in map_chart_years){
+      map_chart_years[year].resize();
+    }
+  }), 200);
+
+  retrieveUrl();
+
+});
+
+function updateCharts(){
+  geber_chart.data(gebers_jahre, gebers, gebers_jahre_count, filter['geber'], filter['date']);
+  art_chart.data(politikbereichs_jahre, politikbereichs, politikbereichs_jahre_count, filter['politikbereich'], filter['date']);
+  year_chart.data(dates, dates_count, filter['date']);
+  table.data(fund);
+  sum_chart.data(all);
+  map_chart.data(postcodes, postcodes_count, filter['postcode']);
+
+  for(var year in map_chart_years){
+    map_chart_years[year].data(postcodeYears[year], postcodeYears_count[year], filter['postcode']);
+  }
+}
+
+
+
+</script>
+
 <!-- Piwik -->
 <script type="text/javascript">
   var _paq = _paq || [];

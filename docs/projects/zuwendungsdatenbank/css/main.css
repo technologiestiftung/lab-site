@@ -1,0 +1,454 @@
+#vis{
+  font-family:Helvetica, Arial, sans-serif; 
+  font-size:12px;
+}
+
+#loader{
+  position: absolute;
+  top:50%;
+  left:50%;
+  width:150px;
+  margin-left:-75px;
+  margin-top:-75px;
+  text-align:center;
+}
+
+#loader-funds{
+  font-size:24px;
+}
+
+#geberChart{
+  width:50%;
+  float:left;
+}
+
+#artChart{
+  width:50%;
+  float:left;
+}
+
+#yearChart,
+#mapChart{
+  margin:0;
+  padding:0;
+  float:left;
+  height:400px;
+  width:50%;
+  margin-bottom:50px;
+}
+
+#mapChart{
+  text-align: center;
+}
+
+#mapChart svg{
+  max-width:100%;
+}
+
+.mapChart .toggle:hover,
+.mapChart.sum .toggle.sum,
+.mapChart.ratio .toggle.ratio,
+.mapChart.count .toggle.count{
+  fill:rgba(45,145,210,1);
+  cursor: pointer;
+}
+
+.dateChart .tick line{
+  stroke:rgba(0,0,0,0.5);
+}
+
+.dateChart .right .tick:first-of-type line{
+  display: none;
+}
+
+.dateChart .right .tick line{
+  stroke-dasharray: 3,3;
+}
+
+.dateChart .xaxis text{
+  text-anchor: middle;
+}
+
+.dateChart .xaxis path,
+.dateChart .xaxis line{
+  display: none;
+}
+
+.dateChart .yaxis path{
+  display: none;
+}
+
+text{
+  font-size:10px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+rect.sumbg, rect.bg, rect.bars{
+  fill:rgba(0,0,0,0.1);
+}
+
+#preview{
+  clear:both;
+}
+
+table, td, tr, th, tfoot, tbody, thead{
+  margin:0;
+  padding:0;
+  border:0;
+}
+
+table{
+  width:100%;
+}
+
+td, th{padding: 4px 10px 4px 0; text-align:left;}
+td.betrag,
+th.betrag{
+  text-align:right;
+}
+
+thead th{
+  border-bottom:2px solid #000;
+}
+
+tfoot th{
+  border-top:2px solid #000;
+}
+
+tbody tr:nth-child(even){
+  background-color:rgba(0,0,0,0.05);
+}
+
+tbody tr:hover{
+  color:rgba(45,145,210,1);
+}
+
+td{
+  padding: 4px 4px;
+}
+
+th.ASC, th.DESC{
+  color:rgba(45,145,210,1); 
+}
+
+th.ASC::before{
+  content:'↑';
+}
+
+th.DESC::before{
+  content:'↓';
+}
+
+.pagination{
+  clear:both;
+  float:left;
+  width:100%;
+  text-align: center;
+  padding:20px 0 50px 0;
+}
+
+#pagination{
+  padding-bottom:20px;
+}
+
+.pagination{
+  clear:both;
+}
+
+.pagination a{
+  cursor: pointer;
+}
+
+.pagination a:hover{
+  color:#3974FF;
+}
+
+.next{
+  padding-left:15px;
+  font-weight:bold;
+}
+
+.prev{
+  padding-right:15px;
+  font-weight:bold;
+}
+
+.search{
+  clear:both;
+  font-size:24px;
+  width:100%;
+  padding:5px 0;
+  text-indent: 10px;
+  background-size:40px 26px;
+  background-position: right;
+  background-image:url('../images/search@2x.png');
+  background-repeat: no-repeat;
+  border:1px solid rgba(0,0,0,0.3);
+  outline: none;
+}
+
+#sumChart{
+  clear:both;
+  width:100%;
+  text-align:center;
+  font-size:36px;
+  font-family: 'ClanOT-Medium', Helvetica, sans-serif;
+  font-weight:700;
+  padding:40px 0 20px 0;
+}
+
+#sumChart span span{
+  font-family:Helvetica, Arial, sans-serif; 
+  font-size:12px;
+  font-weight:normal;
+}
+
+#container{
+  width:90%;
+  margin:0 auto;
+  max-width:1280px;
+}
+
+#maprow{
+  clear:both;
+  width:100%;
+}
+
+#maprow>div{
+  width:33%;
+  float:left;
+  height:300px;
+}
+
+#maprow>div svg{
+  width:100%;
+  height:100%;
+}
+
+.year-title{
+  display: block;
+  width:100%;
+  text-align: center;
+}
+
+.dateChart rect{
+  fill:#000;
+}
+
+.dateChart.hasSelection rect{
+  fill:#AAA;
+}
+
+.mapChart path.overlays{
+  stroke:transparent;
+  -webkit-transition: stroke 0.2s;
+  transition: stroke 0.2s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.dateChart rect{  
+  -webkit-transition: fill 0.2s;
+  transition: fill 0.2s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.dateChart .dategroup:hover rect,
+.dateChart .dategroup.selected rect{
+  -webkit-transition: fill 0s;
+  transition: fill 0s;
+  fill:rgba(45,145,210,1);
+  cursor: pointer;
+}
+
+.dateChart rect.counts{
+  fill:rgb(155,155,155); /*url("#texture");*/
+  /*stroke:#000;
+  stroke-width:1px;*/
+}
+
+.dateChart.hasSelection rect.counts{
+  fill:rgb(200,200,200); /*url("#texture_grey");*/
+  /*stroke:#AAA;*/
+}
+
+.dateChart .dategroup.selected rect.counts,
+.dateChart .dategroup:hover rect.counts{
+  fill: rgb(119,188,232); /*url("#texture_blue");*/
+  /*stroke:rgba(45,145,210,1);*/
+}
+
+.dateChart pattern rect{
+  fill:#fff !important;
+}
+
+.mapChart path.overlays:hover,
+.mapChart path.overlays.selected{
+  -webkit-transition: stroke 0s;
+  transition: stroke 0s;
+  stroke:rgba(45,145,210,1) !important;
+  cursor: pointer;
+}
+
+g.matrixGroup.selected rect.bg,
+g.matrixGroup:hover rect.bg,
+g.matrixGroup.selected rect.sumbg,
+g.matrixGroup:hover rect.sumbg{ 
+  fill:rgba(45,145,210,0.3);
+}
+
+g.matrixGroup rect.count{ 
+  fill:rgb(155,155,155); /*url("#texture");*/
+  /*stroke:#000;
+  stroke-width:1px;*/
+}
+
+svg.hasSelection g.matrixGroup.selected rect.count,
+svg.hasSelection g.matrixGroup:hover rect.count,
+g.matrixGroup.selected rect.count,
+g.matrixGroup:hover rect.count{ 
+  fill:rgb(119,188,232); /* url("#texture_blue");*/
+  /*stroke:rgba(45,145,210,1);*/
+}
+
+g.matrixGroup.selected rect.bar,
+g.matrixGroup:hover rect.bar{ 
+  fill:rgba(45,145,210,1); 
+}
+
+g.matrixGroup.selected rect.sumbar,
+g.matrixGroup:hover rect.sumbar{
+  fill:rgba(45,145,210,1);
+}
+
+svg.hasSelection rect.sumbar,
+svg.hasSelection rect.bar{
+  fill:#AAA;
+}
+
+svg.hasSelection g.matrixGroup rect.count{
+  fill:rgb(200,200,200); /*url("#texture_grey");*/
+  /*stroke:#AAA;*/
+}
+
+g.matrixGroup.selected text,
+g.matrixGroup:hover text{
+  fill:rgba(45,145,210,1);
+}
+
+.matrixChart rect.button{
+  cursor: pointer;
+  fill:transparent;
+  stroke:transparent;
+}
+
+.sort-d-count, .sort-d-icount,
+.sort-d-label, .sort-d-ilabel,
+.sort-d-sum, .sort-d-isum{
+  display: none;
+}
+
+.matrixChart.icount .sort-d-icount,
+.matrixChart.count .sort-d-count,
+.matrixChart.isum .sort-d-isum,
+.matrixChart.sum .sort-d-sum,
+.matrixChart.ilabel .sort-d-ilabel,
+.matrixChart.label .sort-d-label{
+  fill:rgba(45,145,210,1);
+  display: block;
+  font-weight: bold;
+}
+
+.matrixChart.count .sort-count,
+.matrixChart.icount .sort-count,
+.matrixChart.label .sort-label,
+.matrixChart.ilabel .sort-label,
+.matrixChart.isum .sort-sum,
+.matrixChart.sum .sort-sum{
+  fill:rgba(45,145,210,1);
+}
+
+/*.matrixChart g:hover rect{
+  stroke:red !important;
+}
+*/
+
+#intro{
+  clear:both;
+  width:100%;
+  text-align: center;
+  padding-bottom:100px;
+}
+
+#intro img{
+  margin-bottom:25px;
+}
+
+#intro button{
+  font-size:16px;
+  border:1px solid rgb(155,155,155);
+  padding:5px 10px;
+  cursor: pointer;
+  border-radius:4px;
+  outline:none;
+}
+
+#intro button:hover{
+  border-color:rgba(45,145,210,1);
+  background-color:rgba(45,145,210,1);
+  color:#fff;
+}
+
+h5{
+  text-align: center;
+  font-family: 'ClanOT-Medium', Helvetica, sans-serif;
+  font-size:16px;  
+  padding-bottom:20px;
+  margin-top:-50px;
+}
+
+#tooltip {
+  pointer-events: none;
+  position: absolute;
+  top:0;
+  left:0;   
+  max-width:300px;
+  display:none;
+}
+
+#tooltip td,
+#tooltip tr,
+#tooltip table{
+  border:none;
+  background-color:transparent;
+}
+
+#tooltip i{
+  font-size:16px;
+}
+
+.tooltip-title{
+  color:#fff;
+  font-family: 'ClanOT-Medium', Helvetica, sans-serif;
+  font-size:14px; 
+}
+
+.tooltip-body{
+  font-family:'Barlow', sans-serif;
+  font-size:12px;
+}
+
+.tooltip-body:hover{
+  color:#000;
+}
+
+.tp-tl{ background-repeat: no-repeat; background-size:29px 39px; width:29px; height:39px; background-image:url(../images/t-l@2x.png); }
+.tp-tm{ height:39px; background-repeat: repeat-x; background-image:url(../images/t-m@2x.png); background-size:3px 39px; }
+.tp-tr{ width:9px; height:39px; background-repeat: no-repeat; background-size:9px 39px; background-image:url(../images/t-r@2x.png); }
+.tp-ml{ background-repeat: repeat-y; background-size:29px 14px; width:29px; background-image:url(../images/m-l@2x.png);}
+.tp-mm{ background-repeat: repeat; background-image:url(../images/m-m@2x.png); background-size:3px 3px;}
+.tp-mr{ width:9px; background-repeat: repeat-y; background-size:9px 14px; background-image:url(../images/m-r@2x.png);}
+.tp-bl{ background-repeat: no-repeat; background-size:29px 14px; width:29px; height:14px; background-image:url(../images/b-l@2x.png);}
+.tp-bm{ height:14px; background-repeat: repeat-x; background-image:url(../images/b-m@2x.png); background-size:3px 14px;}
+.tp-br{ width:9px; height:14px; background-repeat: no-repeat; background-size:9px 14px; background-image:url(../images/b-r@2x.png);}
