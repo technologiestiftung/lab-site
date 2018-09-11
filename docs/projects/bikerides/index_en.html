@@ -105,17 +105,17 @@
 
                 <h2 class="pb-1">What does the Visualization show?</h2>
 
-                <p class="copy p-bottom">The visualization shows annual, weekly and daily driving patterns. The network diagram of a wheel counting station summarizes 8760 entries and visualizes them. The data from each station can be displayed in three (+ 1) different levels of detail. <span class="color-median">Median-</span> and <span class="color-max">maximum</span> values can be read off in each display. This allows hourly, daily and weekly driving patterns to be read.</p>
+                <p class="copy p-bottom">The visualization shows annual, weekly and daily driving patterns. The "web chart" (also called radar charts) of a given bike counting station summarizes 8760 entries per year (representing each hour of each day) and visualizes them. The data from each station can be displayed in four different levels of detail: weekdays, weekends, whole weeks, and whole months. <span class="color-median">Median-</span> and <span class="color-max">maximum</span> values can be read off in each display. This allows hourly, daily and weekly driving patterns to be read.</p>
 
-                <p class="copy p-bottom">By <b>hovering</b> over individual <b>months/days/hours</b>, absolute values are displayed in a tooltip at the respective time.</p>
+                <p class="copy p-bottom">By <b>hovering</b> over individual <b>months/days/hours</b>, absolute values are displayed in a tooltip corresponding to the chosen time.</p>
 
             </div>
 
             <div class="container p-bottom two-col-flex" >
                 <div>
                     <h2 class="pb-1">Hourly view (weekdays / weekends)</h2>
-                    <p class="copy p-bottom">While the number of registered bicycles reaches its peak tomorrow on the way to work between nine and eleven, the number of cyclists is distributed over the rest of the day. Bicyclists are added off the beaten track. Between one and six o'clock in the morning there are usually hardly any bicycles on the road during the week. By selecting a scale based on the individual maximum values, the patterns can be even more clearly distinguished.</p>
-                    <p class="copy">On weekends the number of cyclists is more balanced and there are fewer rashes, as most Berliners can organise their time more freely.</p>
+                    <p class="copy p-bottom">During weekdays, the number of bike riders tends to peak during the morning commute, roughly between nine and eleven. For the remainder of the day, the number of cyclists is more evenly distributed. On weekdays between one and six o'clock in the morning, there are usually hardly any bicycles on the road. By selecting a scale based on the individual maximum values, the patterns can be even more clearly distinguished.</p>
+                    <p class="copy">On weekends the number of cyclists is more balanced and there are fewer spikes in the volume of traffic, as most Berliners have the flexibility to organise their time more freely.</p>
                 </div>
                 <div class="flex-col">
                     <div class="example-chart-wrapper" id="weekdays-example"></div>
@@ -126,7 +126,7 @@
             <div class="container p-bottom two-col-flex" >
                 <div>
                     <h2 class="pb-1">Weekly view</h2>
-                    <p class="copy">In the weekly view, the data clearly show that on average the most bikes are on the road from Monday to Friday and that there is less use of the bike on weekends. The data show that in most cases the motivation to use the bike seems to be highest on Mondays.</p>
+                    <p class="copy">In the weekly view, the data clearly show that on average the most bikes are on the road from Monday to Friday and that there is less use of bikes on weekends. The data shows that in most cases the motivation to use the bike seems to be highest on Tuesdays.</p>
                 </div>
                 <div class="example-chart-wrapper" id="week-example"></div>
             </div>
@@ -134,7 +134,7 @@
             <div class="container p-bottom two-col-flex" >
                 <div>
                     <h2 class="pb-1">Monthly view</h2>
-                    <p class="copy pb-1">The seasonal pattern shows that most cyclists are on the move in June and August. In July there is usually a decline, this could be due to the summer holidays which usually fall in this period. Between November and March the cycle paths are used only little. Probably due to the weather the fewest cyclists ride in January.</p>
+                    <p class="copy pb-1">The seasonal pattern shows that most cyclists are on the move in June and August. In July there is usually a decline; this could be due to the summer holidays, which usually fall in this period. Between November and March the cycle paths are used only little. The fewest cyclists ride in January, presumably due to the weather.</p>
                 </div>
                 <div class="example-chart-wrapper" id="month-example"></div>
             </div>
