@@ -57,6 +57,7 @@
         <link rel="stylesheet" href="css/tooltip.css">
         <link rel="stylesheet" href="css/root.css">
     </head>
+    
     <body class="project">
         <header id="page-head">
             <div class="container">
@@ -85,7 +86,7 @@
                 <div class="container">
                     <span class="button tag">DataVis</span>
                     <h1>The rhythm of the road: Monitoring bike traffic across the city</h1>
-                    <span class="title-subline">Fabian Dinklage (<a href="https://twitter.com/fdnklg">@fdnklg</a>) | 27/08/2018</span>
+                    <span class="title-subline">Fabian Dinklage (<a href="https://twitter.com/fdnklg">@fdnklg</a>) | 11/09/2018</span>
                 </div>
             </div>
 
@@ -99,7 +100,8 @@
                 <p class="copy p-bottom">We aggregated the data and converted it into the machine-readable <a href="https://github.com/technologiestiftung/bike-rides/blob/master/preprocessing/data/all_years.json">JSON</a> format. The visualization illustrates the traffic volume of the 26 bicycle counting stations within Berlin.</p>
             </div>
 
-            <div class="special-section line-chart-wrapper" style="overflow: visible;"></div>
+            <div class="special-section polar-chart-wrapper" style="overflow: visible;">
+            </div>
 
             <div class="container p-bottom">
 
@@ -110,6 +112,7 @@
                 <p class="copy p-bottom">By <b>hovering</b> over individual <b>months/days/hours</b>, absolute values are displayed in a tooltip corresponding to the chosen time.</p>
 
             </div>
+
 
             <div class="container p-bottom two-col-flex" >
                 <div>
@@ -139,12 +142,10 @@
                 <div class="example-chart-wrapper" id="month-example"></div>
             </div>
 
-            <div class="special-section polar-chart-wrapper" style="overflow: visible;">
-            </div>
-
-
                 
             </div>
+
+            <div class="special-section line-chart-wrapper" style="overflow: visible;"></div>
 
             <div class="container center">
                 <a id="github" href="https://github.com/technologiestiftung/bike-rides/blob/master/preprocessing/data/all_years.json">

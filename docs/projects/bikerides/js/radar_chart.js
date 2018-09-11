@@ -11,7 +11,7 @@ class Radarchart {
         this.margin = config.margin;        
         this.max_value = config.max_value;
         this.factor_legend = config.factor_legend;
-        this.station_name, this.tooltip, this.month_dict, this.month_dict_long, this.all_axis_week, this.circles = {}, this.updateCount = 0, this.areas = {}, this.category, this.titleName, this.year, this.colorMax, this.colorMean, this.range, this.defs
+        this.station_name, this.tooltip, this.month_dict, this.month_dict_long, this.all_axis_week, this.circles = {}, this.updateCount = 0, this.areas = {}, this.category, this.titleName, this.year, this.colorMax, this.colorMean, this.range, this.defs, this.week_dict_long
         this.days_dict = { 'Sunday': 0, 'Monday': 1, 'Tuesday': 2, 'Wednesday': 3, 'Thursday': 4, 'Friday': 5, 'Saturday': 6 },
 
         this.file = file, this.local_max, this.value_metric;
@@ -213,6 +213,8 @@ class Radarchart {
 
         this.week_dict = { 0: 'So', 1: 'Mo', 2: 'Di', 3: 'Mi', 4: 'Do', 5: 'Fr', 6: 'Sa' }
 
+        this.week_dict_long = { 0: 'Sonntage', 1: 'Montage', 2: 'Dienstage', 3: 'Mittwoche', 4: 'Donnerstage', 5: 'Freitage', 6: 'Samstage' }
+
         if (this.type == 'Woche') {
             data_axis = this.all_axis_week;
             dict_axis = this.week_dict;
@@ -317,7 +319,17 @@ class Radarchart {
             if(clientWidth - x < 150) { x = d3.event.pageX - 175;};
             if(clientHeight - y < 150) { y = d3.event.pageY - 125;};
 
-            let data_timeslot = (this.type == 'Wochentage' || this.type == 'Wochenenden') ? `${this.day_dict[index]} Uhr` : this.month_dict_long[index];
+            let data_timeslot;
+
+            console.log(this.type);
+
+            if (this.type == 'Wochentage' || this.type == 'Wochenenden') {
+                data_timeslot = this.day_dict[index] + ' Uhr';
+            } else if (this.type == 'Woche') {
+                data_timeslot = this.week_dict_long[index];
+            } else {
+                data_timeslot = this.month_dict_long[index];
+            }
 
             this.tooltip = d3.select('#tooltip');
 
