@@ -14,10 +14,10 @@
   "TAG_EN": "DataVis",
   "PROJECT_DESCRIPTION_DE": "Berlin mit dem Fahrrad: Wie entwickelt sich der Berliner Radverkehr? Täglich wird der Radverkehr durch 26 Radzählstellen dokumentiert. Die Visualierung untersucht die Daten der Zählstellen und zeigt Muster in einem täglichen, wöchentlichen und monatlichen Rhythmus auf.",
   "PROJECT_DESCRIPTION_EN": "Berlin by bike. How does the amount of cyclists evolve? Everyday the bicycle traffic is monitored through 26 bike counting stations. The Visulization explores the cycling patterns and reveals habits in a daily, weekly and month based rhythm.",
-  "PROJECT_TITLE_DE": "Radfahren in Berlin visualisiert",
-  "PROJECT_TITLE_EN": "Cycling in Berlin visualised",
-  "SHORT_TITLE_DE": "Radfahren in Berlin",
+  "PROJECT_TITLE_DE": "So radelt Berlin",
+  "PROJECT_TITLE_EN": "Cycling in Berlin",
+  "SHORT_TITLE_DE": "Visualisierung der Fahrrad-Zählstellen",
   "SHORT_TITLE_EN": "Cycling in Berlin",
-  "SHORT_SUBTITLE_DE": "Die Daten von Berlins Radzählstellen visualisiert",
+  "SHORT_SUBTITLE_DE": "Visualisierung der Fahrrad-Zählstellen",
   "SHORT_SUBTITLE_EN": "Explore cycling patterns in Berlin"
 }
