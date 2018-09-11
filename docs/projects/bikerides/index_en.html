@@ -24,9 +24,9 @@
         <meta property="fb:app_id" content="487094758334595">
         <meta property="og:url" content="http://lab.technologiestiftung-berlin.de/projects/bikerides/index_en.html">
         <meta property="og:type" content="website">
-        <meta property="og:title" content="Cycling in Berlin visualised">
+        <meta property="og:title" content="Cycling rhythms in Berlin">
         <meta property="og:image" content="http://lab.technologiestiftung-berlin.de/projects/bikerides/images/social_media.jpg">
-        <meta property="og:description" content="{{PROJECT_DESCRIPTION_EN}}">
+        <meta property="og:description" content="How has the volume of cyclists evolved over time? Bicycle traffic is regularly monitored through 26 bike counting stations. This visulization explores the cycling patterns and reveals daily, weekly and monthly trends.">
         <meta property="og:site_name" content="Ideation &amp; Prototyping Lab">
         <meta property="article:author" content="Fabian Dinklage">
 
@@ -35,13 +35,13 @@
         <meta name="twitter:site" content="@TSBBerlin">
         <meta name="twitter:creator" content="fdnklg">
         <meta name="twitter:url" content="http://lab.technologiestiftung-berlin.de/projects/bikerides/index_en.html">
-        <meta name="twitter:title" content="Cycling in Berlin visualised">
-        <meta name="twitter:description" content="{{PROJECT_DESCRIPTION_EN}}">
+        <meta name="twitter:title" content="Cycling rhythms in Berlin">
+        <meta name="twitter:description" content="How has the volume of cyclists evolved over time? Bicycle traffic is regularly monitored through 26 bike counting stations. This visulization explores the cycling patterns and reveals daily, weekly and monthly trends.">
         <meta name="twitter:image" content="http://lab.technologiestiftung-berlin.de/projects/bikerides/images/social_media.jpg">
 
         <!-- GOOGLE+/SCHEMA.ORG -->
-        <meta itemprop="name" content="Cycling in Berlin visualised">
-        <meta itemprop="description" content="{{PROJECT_DESCRIPTION_EN}}">
+        <meta itemprop="name" content="Cycling rhythms in Berlin">
+        <meta itemprop="description" content="How has the volume of cyclists evolved over time? Bicycle traffic is regularly monitored through 26 bike counting stations. This visulization explores the cycling patterns and reveals daily, weekly and monthly trends.">
         <meta itemprop="image" content="http://lab.technologiestiftung-berlin.de/projects/bikerides/images/social_media.jpg">
 
         <!-- CANONICAL URL -->
@@ -57,6 +57,7 @@
         <link rel="stylesheet" href="css/tooltip.css">
         <link rel="stylesheet" href="css/root.css">
     </head>
+    
     <body class="project">
         <header id="page-head">
             <div class="container">
@@ -84,8 +85,8 @@
             <div id="title">
                 <div class="container">
                     <span class="button tag">DataVis</span>
-                    <h1>Cycling in Berlin visualised</h1>
-                    <span class="title-subline">Fabian Dinklage (<a href="https://twitter.com/fdnklg">@fdnklg</a>) | 27/08/2018</span>
+                    <h1>The rhythm of the road: Monitoring bike traffic across the city</h1>
+                    <span class="title-subline">Fabian Dinklage (<a href="https://twitter.com/fdnklg">@fdnklg</a>) | 11/09/2018</span>
                 </div>
             </div>
 
@@ -97,28 +98,27 @@
                 <p class="copy p-bottom">Since 2015, cycle traffic has been recorded automatically throughout the city with the aid of <a href="https://www.stadtentwicklung.berlin.de/aktuell/pressebox/archiv_volltext.shtml?arch_1609/nachricht6200.html">counting stations</a> embedded in the road. The Senate Department for Urban Development and the Environment provides the current data daily for each hour in the form of an Excel table.</p>
 
                 <p class="copy p-bottom">We aggregated the data and converted it into the machine-readable <a href="https://github.com/technologiestiftung/bike-rides/blob/master/preprocessing/data/all_years.json">JSON</a> format. The visualization illustrates the traffic volume of the 26 bicycle counting stations within Berlin.</p>
-
-                <p class="copy p-bottom"><a href="mailto:dykes@technologiestiftung-berlin.de">Victoria Dykes</a> is holding a Meetup on bicycle mobility in Berlin on September 12. If you are interested, please contact her.</p>
-
             </div>
 
-            <div class="special-section line-chart-wrapper" style="overflow: visible;"></div>
+            <div class="special-section polar-chart-wrapper" style="overflow: visible;">
+            </div>
 
             <div class="container p-bottom">
 
                 <h2 class="pb-1">What does the Visualization show?</h2>
 
-                <p class="copy p-bottom">The visualization shows annual, weekly and daily driving patterns. The network diagram of a wheel counting station summarizes 8760 entries and visualizes them. The data from each station can be displayed in three (+ 1) different levels of detail. <span class="color-median">Median-</span> and <span class="color-max">maximum</span> values can be read off in each display. This allows hourly, daily and weekly driving patterns to be read.</p>
+                <p class="copy p-bottom">The visualization shows annual, weekly and daily driving patterns. The "web chart" (also called radar charts) of a given bike counting station summarizes 8760 entries per year (representing each hour of each day) and visualizes them. The data from each station can be displayed in four different levels of detail: weekdays, weekends, whole weeks, and whole months. <span class="color-median">Median-</span> and <span class="color-max">maximum</span> values can be read off in each display. This allows hourly, daily and weekly driving patterns to be read.</p>
 
-                <p class="copy p-bottom">By <b>hovering</b> over individual <b>months/days/hours</b>, absolute values are displayed in a tooltip at the respective time.</p>
+                <p class="copy p-bottom">By <b>hovering</b> over individual <b>months/days/hours</b>, absolute values are displayed in a tooltip corresponding to the chosen time.</p>
 
             </div>
 
+
             <div class="container p-bottom two-col-flex" >
                 <div>
-                    <h2 class="pb-1">Daily view (weekdays / weekends)</h2>
-                    <p class="copy p-bottom">While the number of registered bicycles reaches its peak tomorrow on the way to work between nine and eleven, the number of cyclists is distributed over the rest of the day. Bicyclists are added off the beaten track. Between one and six o'clock in the morning there are usually hardly any bicycles on the road during the week. By selecting a scale based on the individual maximum values, the patterns can be even more clearly distinguished.</p>
-                    <p class="copy">On weekends the number of cyclists is more balanced and there are fewer rashes, as most Berliners can organise their time more freely.</p>
+                    <h2 class="pb-1">Hourly view (weekdays / weekends)</h2>
+                    <p class="copy p-bottom">During weekdays, the number of bike riders tends to peak during the morning commute, roughly between nine and eleven. For the remainder of the day, the number of cyclists is more evenly distributed. On weekdays between one and six o'clock in the morning, there are usually hardly any bicycles on the road. By selecting a scale based on the individual maximum values, the patterns can be even more clearly distinguished.</p>
+                    <p class="copy">On weekends the number of cyclists is more balanced and there are fewer spikes in the volume of traffic, as most Berliners have the flexibility to organise their time more freely.</p>
                 </div>
                 <div class="flex-col">
                     <div class="example-chart-wrapper" id="weekdays-example"></div>
@@ -129,7 +129,7 @@
             <div class="container p-bottom two-col-flex" >
                 <div>
                     <h2 class="pb-1">Weekly view</h2>
-                    <p class="copy">In the weekly view, the data clearly show that on average the most bikes are on the road from Monday to Friday and that there is less use of the bike on weekends. The data show that in most cases the motivation to use the bike seems to be highest on Mondays.</p>
+                    <p class="copy">In the weekly view, the data clearly show that on average the most bikes are on the road from Monday to Friday and that there is less use of bikes on weekends. The data shows that in most cases the motivation to use the bike seems to be highest on Tuesdays.</p>
                 </div>
                 <div class="example-chart-wrapper" id="week-example"></div>
             </div>
@@ -137,17 +137,15 @@
             <div class="container p-bottom two-col-flex" >
                 <div>
                     <h2 class="pb-1">Monthly view</h2>
-                    <p class="copy pb-1">The seasonal pattern shows that most cyclists are on the move in June and August. In July there is usually a decline, this could be due to the summer holidays which usually fall in this period. Between November and March the cycle paths are used only little. Probably due to the weather the fewest cyclists ride in January.</p>
+                    <p class="copy pb-1">The seasonal pattern shows that most cyclists are on the move in June and August. In July there is usually a decline; this could be due to the summer holidays, which usually fall in this period. Between November and March the cycle paths are used only little. The fewest cyclists ride in January, presumably due to the weather.</p>
                 </div>
                 <div class="example-chart-wrapper" id="month-example"></div>
             </div>
 
-            <div class="special-section polar-chart-wrapper" style="overflow: visible;">
-            </div>
-
-
                 
             </div>
+
+            <div class="special-section line-chart-wrapper" style="overflow: visible;"></div>
 
             <div class="container center">
                 <a id="github" href="https://github.com/technologiestiftung/bike-rides/blob/master/preprocessing/data/all_years.json">

@@ -381,7 +381,7 @@ function createIntroText() {
     intro_wrapper
         .append('span')
         .classed('intro-text', true)
-        .text('Show different rhythms of the cyclists in the data set by selecting the filters (e.g. daily, weekly and yearly rhythm):')
+        .text('Explore the various rhythms present in the data set by using the filters below (e.g. daily, weekly and yearly rhythm):')
 }
 
 function createIntroTextLineChart() {
@@ -394,12 +394,12 @@ function createIntroTextLineChart() {
     intro_wrapper
         .append('span')
         .classed('intro-headline', true)
-        .text('Compare all bikecycle counting stations')
+        .text('Compare all bicycle counting stations')
 
     intro_wrapper
         .append('span')
         .classed('intro-text', true)
-        .text('Discover which wheel counting stations were put into operation in which year and how the annual traffic volume of the counting stations changes.')
+        .text('Discover which bike counting stations were put into operation in which year and how the annual traffic volume for each station changes.')
 }
 
 function create_filter_ui() {
@@ -587,10 +587,10 @@ function init(file) {
 
     // file, year, station, config_current, id
 
-    exampleChart(file, 2017, '05-FK-OBB-W', config_example, 49);
-    exampleChart(file, 2017, '05-FK-OBB-W', config_example_week, 50);
-    exampleChart(file, 2017, '05-FK-OBB-W', config_example_month, 51);
-    exampleChart(file, 2017, '05-FK-OBB-W', config_example_weekend, 52);
+    exampleChart(file, 2017, '05-FK-OBB-O', config_example, 49);
+    exampleChart(file, 2017, '05-FK-OBB-O', config_example_week, 50);
+    exampleChart(file, 2017, '05-FK-OBB-O', config_example_month, 51);
+    exampleChart(file, 2017, '05-FK-OBB-O', config_example_weekend, 52);
 
     renderChart(file, config);
     createStackedArea(file);

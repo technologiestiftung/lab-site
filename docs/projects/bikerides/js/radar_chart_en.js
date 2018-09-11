@@ -17,7 +17,7 @@ class Radarchart {
         this.file = file, this.local_max, this.value_metric;
         this.radians = -2 * Math.PI;
         this.segmentsWrapper, this.nodesWrapper, this.areasWrapper
-        this.data, this.svg, this.all_axis_month, this.all_axis_week, this.all_axis_hour, this.axis, this.title
+        this.data, this.svg, this.all_axis_month, this.all_axis_week, this.all_axis_hour, this.axis, this.title, this.week_dict_long
         this.total, this.node_coords = {'median':[], 'max':[]};
 
         this.init = this.init.bind(this);
@@ -214,6 +214,7 @@ class Radarchart {
         this.day_dict = { 0: '24', 1: '01', 2: '02', 3: '03', 4: '04', 5: '05', 6: '06', 7: '07', 8: '08', 9: '09', 10: '10', 11: '11', 12: '12', 13: '13', 14: '14', 15: '15', 16: '16', 17: '17', 18: '18', 19: '19', 20: '20', 21: '21', 22: '22', 23: '23', 24: '24' }
 
         this.week_dict = { 0: 'Sun', 1: 'Mon', 2: 'Tue', 3: 'Wed', 4: 'Thu', 5: 'Fri', 6: 'Sat' }
+        this.week_dict_long = { 0: 'Sundays', 1: 'Mondays', 2: 'Tuesdays', 3: 'Wednesdays', 4: 'Thursdays', 5: 'Fridays', 6: 'Saturdays' }
 
         if (this.type == 'week') {
             data_axis = this.all_axis_week;
@@ -319,7 +320,15 @@ class Radarchart {
             if(clientWidth - x < 150) { x = d3.event.pageX - 175;};
             if(clientHeight - y < 150) { y = d3.event.pageY - 125;};
 
-            let data_timeslot = (this.type == 'weekdays' || this.type == 'weekends') ? `${this.day_dict[index]} Uhr` : this.month_dict_long[index];
+            let data_timeslot;
+
+            if (this.type == 'weekdays' || this.type == 'weekends') {
+                data_timeslot = this.day_dict[index];
+            } else if (this.type == 'week') {
+                data_timeslot = this.week_dict_long[index];
+            } else {
+                data_timeslot = this.month_dict_long[index];
+            }
 
             this.tooltip = d3.select('#tooltip');
 

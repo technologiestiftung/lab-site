@@ -12,11 +12,22 @@
 	<atom:link href="http://lab.technologiestiftung-berlin.de/feed.xml" rel="self" type="application/rss+xml" />
 	<link>http://lab.technologiestiftung-berlin.de</link>
 	<description>We are exploring and prototyping digital tools in order to collaboratively shape Berlin’s future for citizens, the local government and the industry.</description>
-	<lastBuildDate>Sat, 8 Sep 2018 15:04:28  +0100</lastBuildDate>
+	<lastBuildDate>Tue, 11 Sep 2018 17:04:16  +0100</lastBuildDate>
 	<language>en-us</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	
+<item>
+<title><![CDATA[Exploring cycling rhythms in Berlin]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/bikerides/index_en.html</link>
+<pubDate>Sat, 8 Sep 2018 00:00:00  +0100</pubDate>
+<category><![CDATA[DataVis]]></category>
+<description><![CDATA[How has the volume of cyclists evolved over time? Bicycle traffic is regularly monitored through 26 bike counting stations. This visulization explores the cycling patterns and reveals daily, weekly and monthly trends.]]></description>
+<content:encoded><![CDATA[How has the volume of cyclists evolved over time? Bicycle traffic is regularly monitored through 26 bike counting stations. This visulization explores the cycling patterns and reveals daily, weekly and monthly trends.]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/bikerides/index_en.html</guid>
+</item>
+
 <item>
 <title><![CDATA[Open data in Berlin: Behind the numbers]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/open-data-stats/index_en.html</link>
