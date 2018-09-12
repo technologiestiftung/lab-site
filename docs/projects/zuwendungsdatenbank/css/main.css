@@ -49,7 +49,7 @@
 .mapChart.sum .toggle.sum,
 .mapChart.ratio .toggle.ratio,
 .mapChart.count .toggle.count{
-  fill:rgba(45,145,210,1);
+  fill:#E70433;
   cursor: pointer;
 }
 
@@ -120,7 +120,7 @@ tbody tr:nth-child(even){
 }
 
 tbody tr:hover{
-  color:rgba(45,145,210,1);
+  background-color:#FFBBC9;
 }
 
 td{
@@ -128,7 +128,12 @@ td{
 }
 
 th.ASC, th.DESC{
-  color:rgba(45,145,210,1); 
+  color:#E70433; 
+}
+
+th:hover{
+  cursor:pointer;
+  color:#E70433;
 }
 
 th.ASC::before{
@@ -160,7 +165,7 @@ th.DESC::before{
 }
 
 .pagination a:hover{
-  color:#3974FF;
+  color:#E70433;
 }
 
 .next{
@@ -232,7 +237,7 @@ th.DESC::before{
 }
 
 .dateChart rect{
-  fill:#000;
+  fill:#0B8ADD;
 }
 
 .dateChart.hasSelection rect{
@@ -258,12 +263,12 @@ th.DESC::before{
 .dateChart .dategroup.selected rect{
   -webkit-transition: fill 0s;
   transition: fill 0s;
-  fill:rgba(45,145,210,1);
+  fill:#E70433;
   cursor: pointer;
 }
 
 .dateChart rect.counts{
-  fill:rgb(155,155,155); /*url("#texture");*/
+  fill:#66BEF7; /*url("#texture");*/
   /*stroke:#000;
   stroke-width:1px;*/
 }
@@ -275,8 +280,8 @@ th.DESC::before{
 
 .dateChart .dategroup.selected rect.counts,
 .dateChart .dategroup:hover rect.counts{
-  fill: rgb(119,188,232); /*url("#texture_blue");*/
-  /*stroke:rgba(45,145,210,1);*/
+  fill: #FF6484; /*url("#texture_blue");*/
+  /*stroke:#E70433;*/
 }
 
 .dateChart pattern rect{
@@ -287,7 +292,7 @@ th.DESC::before{
 .mapChart path.overlays.selected{
   -webkit-transition: stroke 0s;
   transition: stroke 0s;
-  stroke:rgba(45,145,210,1) !important;
+  stroke:#E70433 !important;
   cursor: pointer;
 }
 
@@ -295,11 +300,11 @@ g.matrixGroup.selected rect.bg,
 g.matrixGroup:hover rect.bg,
 g.matrixGroup.selected rect.sumbg,
 g.matrixGroup:hover rect.sumbg{ 
-  fill:rgba(45,145,210,0.3);
+  fill:#FFBBC9;
 }
 
 g.matrixGroup rect.count{ 
-  fill:rgb(155,155,155); /*url("#texture");*/
+  fill:#66BEF7; /*url("#texture");*/
   /*stroke:#000;
   stroke-width:1px;*/
 }
@@ -308,18 +313,20 @@ svg.hasSelection g.matrixGroup.selected rect.count,
 svg.hasSelection g.matrixGroup:hover rect.count,
 g.matrixGroup.selected rect.count,
 g.matrixGroup:hover rect.count{ 
-  fill:rgb(119,188,232); /* url("#texture_blue");*/
-  /*stroke:rgba(45,145,210,1);*/
+  fill:#FF6484; /* url("#texture_blue");*/
+  /*stroke:#E70433;*/
+}
+
+g.matrixGroup rect.bar,
+g.matrixGroup rect.sumbar{
+  fill:#0B8ADD;
 }
 
 g.matrixGroup.selected rect.bar,
-g.matrixGroup:hover rect.bar{ 
-  fill:rgba(45,145,210,1); 
-}
-
+g.matrixGroup:hover rect.bar,
 g.matrixGroup.selected rect.sumbar,
 g.matrixGroup:hover rect.sumbar{
-  fill:rgba(45,145,210,1);
+  fill:#E70433;
 }
 
 svg.hasSelection rect.sumbar,
@@ -334,7 +341,7 @@ svg.hasSelection g.matrixGroup rect.count{
 
 g.matrixGroup.selected text,
 g.matrixGroup:hover text{
-  fill:rgba(45,145,210,1);
+  fill:#E70433;
 }
 
 .matrixChart rect.button{
@@ -355,7 +362,7 @@ g.matrixGroup:hover text{
 .matrixChart.sum .sort-d-sum,
 .matrixChart.ilabel .sort-d-ilabel,
 .matrixChart.label .sort-d-label{
-  fill:rgba(45,145,210,1);
+  fill:#E70433;
   display: block;
   font-weight: bold;
 }
@@ -366,7 +373,7 @@ g.matrixGroup:hover text{
 .matrixChart.ilabel .sort-label,
 .matrixChart.isum .sort-sum,
 .matrixChart.sum .sort-sum{
-  fill:rgba(45,145,210,1);
+  fill:#E70433;
 }
 
 /*.matrixChart g:hover rect{
@@ -385,18 +392,18 @@ g.matrixGroup:hover text{
   margin-bottom:25px;
 }
 
-#intro button{
+#maprow button, #intro button{
   font-size:16px;
-  border:1px solid rgb(155,155,155);
+  border:1px solid #000;
   padding:5px 10px;
   cursor: pointer;
   border-radius:4px;
   outline:none;
 }
 
-#intro button:hover{
-  border-color:rgba(45,145,210,1);
-  background-color:rgba(45,145,210,1);
+#maprow button:hover, #intro button:hover{
+  border-color:#E70433;
+  background-color:#E70433;
   color:#fff;
 }
 

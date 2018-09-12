@@ -21,15 +21,14 @@ var mapChart = function(_container, _geojson, _data, _count_data, _dict, _filter
       .attr("viewBox", "0 0 "+width+" "+height)
       .attr("preserveAspectRatio", "xMidYMid meet"),
     defs = svg.append('defs').html('<linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">'+
-      '<stop offset="0%" style="stop-color:rgba(0,0,0,0.1);stop-opacity:1" />'+
-      '<stop offset="100%" style="stop-color:rgba(0,0,0,1);stop-opacity:1" />'+
+      '<stop offset="0%" style="stop-color:rgba(11,138,221,0.1);stop-opacity:1" />'+
+      '<stop offset="100%" style="stop-color:rgba(11,138,221,1);stop-opacity:1" />'+
     '</linearGradient>'),
     map = svg.append('g'),
     mapOverlay = svg.append('g'),
     legend = svg.append('g'),
-    legend_rect = legend.append('rect')
-      .style('fill', 'url(#grad1)')
-      .attr('height',10),
+    legend_rect = legend.append('path')
+      .style('fill', 'url(#grad1)'),
     legend_txt1 = legend.append('text')
       .text('0 €')
       .attr('dy',22)
@@ -64,8 +63,8 @@ var mapChart = function(_container, _geojson, _data, _count_data, _dict, _filter
           .center([13.41, 52.51])
           .scale(35000)
           .translate([width/2, height/2]),
-    color_sum = d3.scaleLinear().domain([0, Math.pow(data.top(1)[0].value, root)]).range(['rgba(0,0,0,0.1)','rgba(0,0,0,1)']),
-    color_count = d3.scaleLinear().domain([0, Math.pow(count_data.top(1)[0].value, root)]).range(['rgba(0,0,0,0.1)','rgba(0,0,0,1)']),
+    color_sum = d3.scaleLinear().domain([0, Math.pow(data.top(1)[0].value, root)]).range(['rgba(11,138,221,0.1)','rgba(11,138,221,1)']),
+    color_count = d3.scaleLinear().domain([0, Math.pow(count_data.top(1)[0].value, root)]).range(['rgba(11,138,221,0.1)','rgba(11,138,221,1)']),
     color_ratio = d3.scaleLinear().domain([0, Math.pow(d3.max(data.all(), (d,di)=>{ return d.value / count_data.all()[di].value; }), root)]).range(['rgba(0,0,0,0.1)','rgba(0,0,0,1)']),
     path = d3.geoPath().projection(projection);
 
@@ -98,20 +97,31 @@ var mapChart = function(_container, _geojson, _data, _count_data, _dict, _filter
           return path(geokeys[dict_keys[d.key]]);
         }
         return '';
-      }).on('click', function(d){
+      }).on('click', function(d,di){
         filterFunction(filterKey, d.key);
+        module.updateToolTip(d3.event.pageX, d3.event.pageY, d, di)
       })
-      .on('mousemove', d=>{ tooltip.move({x:d3.event.pageX,y:d3.event.pageY}); }).on('mouseover', (d,di)=>{
-        tooltip.show({
-          title:`PLZ-${dict_keys[d.key]}`,
-          body:`Summe in €:<br /><i>${currency(d.value)}</i><br /><br />Anzahl Förderprojekte:<br /><i>${count_data.all()[di].value}</i><br /><br />Anteil an Gesamtsumme:<br /><i>${(d.value/all.value()*100).toFixed(2)}%</i>`,
-          x:d3.event.pageX,
-          y:d3.event.pageY
-        })
+      .on('mousemove', d=>{ tooltip.move({x:d3.event.pageX,y:d3.event.pageY}); })
+      .on('mouseover', (d,di)=>{
+        module.updateToolTip(d3.event.pageX, d3.event.pageY, d, di)
       }).on('mouseout', d=>{ tooltip.hide(); });
 
       module.resize();
   };
+
+  module.updateToolTip = (x,y,d,di)=>{
+    let showPercentage = false;
+    if(filters.length == 0 || filters.indexOf(d.key)>-1){
+      showPercentage = true;
+    }
+
+    tooltip.show({
+      title:`PLZ-${dict_keys[d.key]}`,
+      body: `Summe in €:<br /><i>${currency(d.value)}` + ((showPercentage) ? `&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;${(d.value/all.value()*100).toFixed(2)}%`: '') + `</i><br /><br />Anzahl Förderprojekte:<br /><i>${count_data.all()[di].value}`+ ((showPercentage)? `&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;${(count_data.all()[di].value/all_groups.value()*100).toFixed(2)}%` : '') + `</i>`,
+      x:x,
+      y:y
+    })
+  }
 
   module.update = function(){
     svg.classed('count',false)
@@ -169,7 +179,7 @@ var mapChart = function(_container, _geojson, _data, _count_data, _dict, _filter
     legend.attr('transform', `translate(${width*0.25},${height-50})`)
 
     legend_rect
-      .attr('width', width*0.5)
+      .attr('d', `M0,4L${width*0.5},0L${width*0.5},10L0,6Z`)
 
     legend_txt2.attr('dx', width*0.5)
 

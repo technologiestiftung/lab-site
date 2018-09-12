@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="436px" height="61px" viewBox="0 0 436 61" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
     <title>main_legend</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <polygon id="Rectangle-7" fill="#9B9B9B" fill-rule="nonzero" points="225.488196 6.94554094 241.01123 6.94554094 241.01123 25.1724035 225.488196 35.1724035"></polygon>
-        <polygon id="Rectangle-7-Copy" fill="#77BCE8" fill-rule="nonzero" points="225.488196 36.273517 241.01123 26.273517 241.01123 54.5003795 225.488196 54.5003795"></polygon>
-        <polygon id="Rectangle-7" fill="#000000" fill-rule="nonzero" points="208.449707 6.94554094 223.972741 6.94554094 223.972741 25.1724035 208.449707 35.1724035"></polygon>
-        <polygon id="Rectangle-7-Copy-2" fill="#2D91D2" fill-rule="nonzero" points="208.449707 36.273517 223.972741 26.273517 223.972741 54.5003795 208.449707 54.5003795"></polygon>
-        <text id="Anzahl-geförderter-P" font-family="ArialMT, Arial" font-size="12" font-weight="normal" fill="#696969">
-            <tspan x="280.649414" y="25.7304688">Anzahl geförderter Projekte</tspan>
-        </text>
         <path d="M237.960938,21.4537048 L273.960938,21.4537048" id="Line" stroke="#9B9B9B" stroke-linecap="square" fill-rule="nonzero"></path>
         <g id="Group-2" transform="translate(194.000000, 21.328125) scale(-1, 1) translate(-194.000000, -21.328125) translate(175.000000, 20.828125)" fill-rule="nonzero" stroke="#000000" stroke-linecap="square">
             <path d="M0.693359375,0.625579834 L36.6933594,0.625579834" id="Line"></path>
         </g>
+        <polygon id="Rectangle-7" fill="#66BEF7" fill-rule="nonzero" points="225.488196 6.94554094 241.01123 6.94554094 241.01123 25.1724035 225.488196 35.1724035"></polygon>
+        <polygon id="Rectangle-7-Copy" fill="#FF6484" fill-rule="nonzero" points="225.488196 36.273517 241.01123 26.273517 241.01123 54.5003795 225.488196 54.5003795"></polygon>
+        <polygon id="Rectangle-7" fill="#0B8ADD" fill-rule="nonzero" points="208.449707 6.94554094 223.972741 6.94554094 223.972741 25.1724035 208.449707 35.1724035"></polygon>
+        <polygon id="Rectangle-7-Copy-2" fill="#E70433" fill-rule="nonzero" points="208.449707 36.273517 223.972741 26.273517 223.972741 54.5003795 208.449707 54.5003795"></polygon>
+        <text id="Anzahl-geförderter-P" font-family="ArialMT, Arial" font-size="12" font-weight="normal" fill="#696969">
+            <tspan x="280.649414" y="25.7304688">Anzahl geförderter Projekte</tspan>
+        </text>
         <text id="Fördersumme-der-Proj" font-family="ArialMT, Arial" font-size="12" font-weight="normal" fill="#000000">
             <tspan x="9.06347656" y="25.7304688">Fördersumme der Projekte (€)</tspan>
         </text>

@@ -55,9 +55,7 @@ var yearChart = function(_container, _dates, _counts, _filterFunction, _filterKe
         tooltip.move({x:d3.event.pageX,y:d3.event.pageY}); 
       })
       .on('mouseover', d=>{
-        if(filters.length == 0 || filters.indexOf(d.date.key)>-1){
-          updateToolTip(d3.event.pageX,d3.event.pageY,d);
-        }
+        updateToolTip(d3.event.pageX,d3.event.pageY,d);
       }).on('mouseout', d=>{ 
         tooltip.hide(); 
       }),
@@ -67,9 +65,14 @@ var yearChart = function(_container, _dates, _counts, _filterFunction, _filterKe
     chart_counts = chart.append('rect').classed('counts',true);
 
   function updateToolTip(x,y,d){
+    let showPercentage = false;
+    if(filters.length == 0 || filters.indexOf(d.date.key)>-1){
+      showPercentage = true;
+    }
+
     tooltip.show({
       title:d.count.key,
-      body:`Summe in €:<br /><i>${currency(d.date.value)}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;${(d.date.value/all.value()*100).toFixed(2)}%</i><br><br />Anzahl Förderprojekte:<br /><i>${d.count.value}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;${(d.count.value/all_groups.value()*100).toFixed(2)}%</i>`,
+      body:`Summe in €:<br /><i>${currency(d.date.value)}`+ ((showPercentage)? `&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;${(d.date.value/all.value()*100).toFixed(2)}%`: '') + `</i><br><br />Anzahl Förderprojekte:<br /><i>${d.count.value}`+ ((showPercentage)? `&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;${(d.count.value/all_groups.value()*100).toFixed(2)}%`: '') + `</i>`,
       x:x,
       y:y
     });
