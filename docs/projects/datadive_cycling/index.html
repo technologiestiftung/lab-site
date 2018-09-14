@@ -87,107 +87,321 @@
 
             <!-- Start editing here -->
 
-            <div class="container p-bottom">
-                <p class="copy">Lorem ipsum dolor sit <i>amet</i>, <strong>consectetuer</strong> adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. <a href="#">Cum sociis natoque penatibus</a> et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
+            <div class="container p-bottom" style="text-align: center;">
+                <img src="images/overview.png" alt="A map of bike traffic measuring stations in Berlin" />
+                <p class="caption">Fahrradzählstelle in Berlin</a></p>
             </div>
-
-            <div class="special-section" style="height:400px; line-height: 400px; text-align: center;">
-                Custom Vis Section
-                <!-- You do what ever you want in here. Remove custom style above. -->
-            </div>
+            <h2 class="p-bottom">Vorstellung: Data-Dives</h2>
 
             <div class="container p-bottom">
-                <p class="copy">Lorem ipsum dolor sit <i>amet</i>, <strong>consectetuer</strong> adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. <a href="#">Cum sociis natoque penatibus</a> et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
-                <blockquote>
-                    <p>
-                        Open Data ist schon ne richtig feine Sache.
-                    </p>
-                    <span class="author">Sagt der Ben</span>
-                </blockquote>
-                <p class="copy">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
-                <hr class="divider small" />
-                <h2 class="p-top">Für die Struktur</h2>
-                <h3>Noch ein paar Headlines</h3>
-                <ul class="p-top">
-                    <li>Und eine Liste Warum nicht</li>
-                </ul>
-                <ol class="p-top p-bottom">
-                    <li>Und eine mit Zahlen</li>
-                </ol>
-                <p class="copy">Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
+                <p class="copy"><i>Dieser Beitrag ist der erste von (hoffentlich) vielen "Data-Dives", die die Technologiestiftung im Rahmen der <a href="http://odis-berlin.de/" target="blank">Open Data Informationsstelle</a> durchführt. Ein Data-Dive ist eine ausführliche Analyse von einem spezifischen Thema aus einer datenzentrierten Perspektive. Diese Themen sollen für die breite Öffentlichkeit relevant sein. In diesen Beträge wollen wir zwei Hauptfragen bewerten: erstens, was für Daten sind nützlich – oder auch erforderlich – um ein umfassendes Verständnis für dieses Thema zu entwickeln? Zweitens, was ist die Verfügbarkeiten von diesen Daten – z.B., sind die Daten als offene Daten, nicht maschinenlesbare Daten, oder "geschlossene" Daten verfügbar? Oder ist es nicht mal gewusst, ob die Daten irgendwo existieren? Diese Data-Dives erfüllen gleichzeitig zwei Zwecke: die machen es leichter, die passenden Ressourcen zu finden indem alle relevante Datenquellen in einem Ort aufgelistet sind, und die zeigen auch wo es einen klaren Bedarf an mehr und besseren Datenquellen gibt.</i></p>
             </div>
 
-            <div class="container small p-bottom">
-                <img class="responsive" src="images/mindcraft.jpg" alt="Berlin in Mindcraft" />
-                <p class="caption">Berlin in Mindcraft, Technologiestiftung Berlin 2017</p>
+            <h2 class="p-bottom">Diving into bicycle-related data</h2>
+
+
+            <div class="container p-bottom">
+                <p class="copy">Als erstes Thema für diese Serie haben wir uns für Radverkehrsdaten entscheiden. Radverkehr ist seit lange ein beliebtes Thema in Berlin, wo die Nachfrage für mehr und verbesserte Radinfrastruktur stets steigt. Zulezt hat das Berliner Abgeordnetenhaus im Juni ein Mobilitätsgesetz verabschiedet, das die Ausbau der Radinfrakstruktur der Stadt erfordert (unter anderen Maßnahmen).</p></div>
+            
+            <div class="container p-bottom">
+                <p class="copy">In den nachfolgenden Abschnitten, versuchen wir immer die wesentliche Datensätze für ein Thema zu nennen und (wo möglich) verlinken. Viele von diesen Datensätze stammen aus dem FIS-Broker, das Hauptportal für räumliche Daten aus Berlin. Theoretisch sind die meisten von den Datensätze im FIS-Broker für alle frei zugänglich. In der Praxis ist aber die Plattform extrem nutzerunfreundlich und Daten aus der Plattform zu extrahieren ist nicht leicht. Um die Weiterverwendung dieser Daten besser abzusichern, haben wir einigen von den wesentlichen Datensätze, die in diesem Beitrag erwähnt werden, aus dem FIS-Broker extrahiert und nochmal in unser <a href="https://data.technologiestiftung-berlin.de" target="blank">Datenportal</a> in häufig verwendeten Datenformaten (GeoJSON, KML, usw.) hochgeladen. Das Lab arbeitet auch an einem Werkzeug, das die Extrahierung und Weiterverwendung von FIS-Broker-Daten erleichtern soll.</p></div>
+
+            <div class="container p-bottom">
+               <p class="copy">Falls Sie bemerken, dass die Informationen hier falsch sind, oder Sie wissen von anderen relevanten Datenquellen, die in diesem Beitrag nicht erwähnt wurden, können Sie gerne eine Mail an <a href="mailto:dykes@technologiestiftung-berlin.de" target="_top">dykes@technologestiftung-berlin.de</a> mit Korrekturen oder Ergänzungsvorschläge schicken.</p>
             </div>
 
-            <div class="container small embed">
-                <iframe width="854" height="480" src="https://www.youtube.com/embed/T4tYKGnm2ZI" frameborder="0" allowfullscreen></iframe>
+            <h2 class="p-bottom">Radinfrastrukturdaten</h2>
+
+             <div class="container p-bottom" style="text-align: center;">
+                <img src="images/radverkehrsanlagen.png" alt="A map of existing bike lanes" />
+                <p class="caption">Existing bike traffic infrastructure in Berlin</a></p>
             </div>
+
+            <h3 class="p-bottom">Radwege – existierende</h3>
 
             <div class="container">
-                <pre><code class="language-css">p { color: red; }</code></pre>
+                <p class="copy">
+                <u>Status: Offene Daten verfügbar</u>
+                <br>Räumliche Daten für existierende Radwege sind in dem FIS-Broker zu finden. Die aktuelle Karte wurde zuletzt in April 2017 aktualisiert; keine Informationen zu dem Aktualisierungsrhythmus sind vorhanden. Die Karte bezeichnet Radwege, Radfahrstreifen, Schutzstreifen und Bussonderfahrstreifen.</p><br>
             </div>
-
-            <div class="container small">
-                <pre><code class="language-css">p { color: red; }</code></pre>
-            </div>
-
-            <div class="container small">
-                <ul class="gallery lghtbx">
-                    <li><a title="Image Title 1" href="images/mindcraft.jpg"><img src="images/mindcraft_thumb.jpg" alt="Thumbnail 1" /></a></li>
-                    <li><a title="Image Title 2" href="images/mindcraft.jpg"><img src="images/mindcraft_thumb.jpg" alt="Thumbnail 2" /></a></li>
-                    <li><a title="Image Title 3" href="images/mindcraft.jpg"><img src="images/mindcraft_thumb.jpg" alt="Thumbnail 3" /></a></li>
-                    <li><a title="Image Title 4" href="images/mindcraft.jpg"><img src="images/mindcraft_thumb.jpg" alt="Thumbnail 4" /></a></li>
-                    <li><a title="Image Title 5" href="images/mindcraft.jpg"><img src="images/mindcraft_thumb.jpg" alt="Thumbnail 5" /></a></li>
+              <ul class="p-bottom">
+                    <li><a href="https://fbinter.stadt-berlin.de/fb/index.jsp?loginkey=zoomStart&mapId=wmsk_radverkehrsanlagen@senstadt&bbox=383204,5818380,393456,5824453" target="blank">Radverkehrsanlagen (FIS-Broker-Karte)</a></li>
                 </ul>
-            </div>
 
-            <div class="container small center">
-                <a class="lghtbx" title="Image Title 5" href="images/mindcraft.jpg"><img src="images/mindcraft_thumb.jpg" alt="Thumbnail 5" /></a>
-            </div>
-
-            <div class="container p-top">
+                <div class="container p-bottom">
                 <ul class="download-list">
                     <li>
-                        <a href="#">
+                        <a href="https://data.technologiestiftung-berlin.de/dataset/Radverkehrszeichen">
                             <span class="download-icon"></span>
-                            <span class="download-title">Datei XY Integer tincidunt. Cras dapibus. Vivamus elementum.</span><br />
-                            <span class="download-subtitle">20 MB, 10/2017</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="download-icon"></span>
-                            <span class="download-title">Datei XY</span><br />
-                            <span class="download-subtitle">20 MB, 10/2017</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="download-icon"></span>
-                            <span class="download-title">Datei XY</span><br />
-                            <span class="download-subtitle">20 MB, 10/2017</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="download-icon"></span>
-                            <span class="download-title">Datei XY</span><br />
-                            <span class="download-subtitle">20 MB, 10/2017</span>
+                            <span class="download-title">Geodaten zu Radverkehrsanlagen (Lab-Datenportal)</span><br />
                         </a>
                     </li>
                 </ul>
             </div>
 
-            <div class="container center">
-                <a id="github" href="https://github.com/technologiestiftung/">
-                    <img src="../../images/github.svg" alt="Project on Github" />
-                    <span class="github-title"></span><br />
-                    <span class="github-subline">Projekt auf GitHub</span>
-                    <hr class="clear" />
-                </a>
+                  <h3 class="container p-top p-bottom">Radwege – geplant</h3>
+
+            <div class="container p-bottom">
+                <p class="copy">
+                <u>Status: Begrenzte nichtoffene Daten verfügbar</u>
+                <br>Eine Übersicht von geplanten Baumaßnahmen für Radinfrastruktur ist leider schwierig zu formulieren. Eine weitreichende Initiative für die Verbesserung von Radinfrastruktur quer durch die Stadt wurde in 2011 angekündigt, und <a href="https://fbinter.stadt-berlin.de/fb/index.jsp?loginkey=showMap&mapId=k_radausbau@senstadt" target="blank">eine Karte von den Maßnahmen</a> ist in dem FIS-Broker zu finden. Es gibt aber kaum Informationen dazu, ob diese Maßnahmen wie geplant umgesetzt wurden. <a href="https://www.berlin.de/senuvk/verkehr/politik_planung/rad/strategie/de/m_strassen.shtml" target="blank">Eine Webseite von der Senatsverwaltung für Umwelt, Verkehr und Klima</a>sagt zum Beispiel nur dass das Fahrradrouten-Hauptnetz "bis 2017 in gut befahrbarer Qualität fertig gestellt und ausgeschildert werden" soll – ob das wirklich passiert ist, gibt die Seite nicht zu.</p>
+            </div>
+            <div class="container p-bottom">
+                <p class="copy">Viele Baumaßnahmen werden aber von den einzelnen Bezirksämtern durchgeführt. Das heißt, einen umfassenden Überblick von allen geplanten Projekte zu bekommen, oft erfordert, dass man bei jedem Bezirk direkt fragen muss. Weiterhin veröffentlicht keiner von den 12 Bezirken Informationen zu geplanten Radinfrastrukturmaßnahmen als maschinenlesbare Daten. Stattdessen muss man entweder durch zahlreiche PDFs oder Webseiten schauen, um die gewünschte Informationen (hoffentlich) zu finden. Einige Bezirke, wie <a href="https://www.berlin.de/ba-charlottenburg-wilmersdorf/verwaltung/aemter/ordnungsamt/strassenverkehr-parken/artikel.576690.php#IIIb" target="blank">Charlottenburg-Wilmersdorf</a>, <a href="https://www.berlin.de/ba-friedrichshain-kreuzberg/aktuelles/pressemitteilungen/2018/pressemitteilung.670050.php" target="blank">Friedrichshain-Kreuzberg</a>, and <a href="https://www.berlin.de/ba-neukoelln/aktuelles/pressemitteilungen/2017/pressemitteilung.571489.php" target="blank">Neukölln</a> haben entweder PDF-Berichte oder Webseiten wo geplante Radinfrastrukturmaßnahmen veröffentlicht werden. Es ist aber oft unklar, was der Status dieser Projekte ist und ob die nach Plan verlaufen (oder ob es Verzögerungen oder andere Haken gibt). Oft wurde diese Seiten oder Berichte vor einigen Jahren veröffentlicht und nicht aktualisiert. Kurzum: die Sammlung von Informationen zu geplante Maßnahmen ist ein mühevoller Prozess, und der einzige Weg, die Genauigkeit oder Status von veröffentlichten Informationen zu prüfen, ist die Bezirke direkt zu fragen. </p>
+            </div>
+             <div class="container p-bottom">
+                <p class="copy">Eine weitere Informationsquelle zu geplanten Radinfrastrukturmaßnahmen ist der Zuteilung von Haushaltsmitteln aus der Hauptverwaltung an den Bezirken. Dadurch bekommt man keinen ausführlichen Überblick von geplanten Projekten – nur weil eine Maßnahme in einem Budget steht heißt natürlich nicht, dass das Projekt komplett umgesetzt wird. Und die Informationen über die Maßnahmen ist sehr gering (man weißt, um welche Straße es geht, aber nicht genau was geplant wird). Trotzdem kann man in dem Budget mindestens ein Einstiegspunkt finden. Eine gute Quelle für welche Haushaltsmitteln zugeteilet werden (oder wurden) sind die schriftliche Anfragen aus dem Abgeordnetenhaus. <a href="https://kleineanfragen.de/berlin/18/13947-umsetzung-des-massnahmenpakets-zur-verbesserung-der-radinfrastruktur" target="blank">Eine Antwort von März 2018</a> beinhaltet sogar Tabellen für Zuteilungen für 2017 und 2018.</p>
+            </div>
+             <div class="container">
+                <p class="copy">Der Tagesspiegel hat vor einigen Monaten versucht, Informationen zu allen existierenden und geplanten Radwege in Berlin zu sammeln. Ihre Ergebnisse haben sie als <a href="http://digitalpresent.tagesspiegel.de/hier-plant-berlin-neue-radwege" target="blank">eine interaktive Karte</a> veröffentlicht. Aber auch der Tagesspiegel gibt zu, dass es doch viele Lücken und Ungenauigkeiten in der Karte gibt aufgrund veralteten und inkorrekten Informationen aus den Bezirken. 
+                </p><br>
+            </div>
+              <ul class="p-bottom">
+                    <li><a href="https://fbinter.stadt-berlin.de/fb/index.jsp?loginkey=showMap&mapId=k_radausbau@senstadt" target="blank">Baumaßnahmen zur Verbesserung der Radverkehrsinfrastruktur 2012 (FIS-Broker-Karte)</a></li>
+                    <li><a href="https://kleineanfragen.de/berlin/18/13947-umsetzung-des-massnahmenpakets-zur-verbesserung-der-radinfrastruktur" target="blank">Schriftliche Anfrage zur Umsetzung des Maßnahmenpakets zur Verbesserung der Radinfrastruktur</a></li>
+                </ul>
+            <div class="container">
+                <p class="copy">
+                CSV-Dateien aus der oben gennanten schriftlichen Anfrage mit geplanten Maßnahmen zur Verbesserung der Radinfrastruktur, aufgeteilt nach Kapitel und Titel:</p><br>
+            </div>
+                <div class="container p-bottom">
+                <ul class="download-list">
+                    <li>
+                        <a href="https://raw.githubusercontent.com/technologiestiftung/lab-site/master/docs/projects/datadive_cycling/Data/PlannedRoutes_2017_Titel52108.csv">
+                            <span class="download-icon"></span>
+                            <span class="download-title">Kapitel 0730, Titel 52108 (2017)</span><br />
+                            <span class="download-subtitle">7 KB, extrahiert 08/2018</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/technologiestiftung/lab-site/blob/master/docs/projects/datadive_cycling/Data/PlannedRoutes_201819_Titel52108.csv">
+                            <span class="download-icon"></span>
+                            <span class="download-title">Kapitel 0730, Titel 52108 (2018-19)</span><br />
+                            <span class="download-subtitle">6 KB, extrahiert 08/2018</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://raw.githubusercontent.com/technologiestiftung/lab-site/master/docs/projects/datadive_cycling/Data/PlannedRoutes_2017_Titel72016.csv">
+                            <span class="download-icon"></span>
+                            <span class="download-title">Kapitel 0730, Titel 72016 (2017)</span><br />
+                            <span class="download-subtitle">3 KB, extrahiert 08/2018</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://raw.githubusercontent.com/technologiestiftung/lab-site/master/docs/projects/datadive_cycling/Data/PlannedRoutes_20181920_Titel72016.csv">
+                            <span class="download-icon"></span>
+                            <span class="download-title">Kapitel 0730, Titel 72016 (2018-19)</span><br />
+                            <span class="download-subtitle">3 KB, extrahiert 08/2018</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+ 
+
+
+                <h3 class="container p-bottom p-top">Radschnellwege</h3>
+
+            <div class="container">
+                <p class="copy">
+                <u>Status: Begrenzte nichtoffene Daten verfügbar</u>
+                <br>
+                Radschnellwege sind eine besondere Art von Radinfrastruktur: die bieten Fahrradfahrer eine möglichst effiziente Strecke (mit zum Beispiel wenige Lichtsignalanlagen für Radfahrer) an, die von Autos und Fußgänger meistens geschützt ist. Die Senatsverwaltung für Umwelt, Klima und Verkehr hat dieses Jahr Pläne für mehrere neue Radschnellwege in Berlin angekündigt. Diese Pläne wurden aber bisher nur als PDF-Karten und Textbeschreibungen veröffentlicht. </p><br>
+            </div>
+            <ul class="p-bottom">
+                    <li><a href="https://www.berlin.de/senuvk/verkehr/politik_planung/rad/schnellverbindungen/" target="blank">Radschnellverbindungen im Berliner Stadtgebiet (Webseite)</a></li>
+                </ul>
+                
+
+                <h2 class="p-bottom">Allgemeine Daten zur Straßeninfrastruktur</h2>
+
+        <div class="container p-bottom" style="text-align: center;">
+                <img src="images/trafficinfo.png" alt="A map of current traffic and construction alerts in Berlin" />
+                <p class="caption">Aktuelle Verkehrsmeldungen in Berlin von der VIZ</a></p>
+            </div>
+
+            <h3 class="p-bottom">Berlins Straßennetz</h3>
+
+
+            <div class="container">
+                <p class="copy">
+                <u>Status: Offene Daten verfügbar</u>
+                <br>
+                Natürlich sind Daten zum Berliner Straßennetz relevant für Diskussionen von Radinfrastruktur, egal ob die Straßen besondere Anlagen für Radfahrer anbieten. Es gibt zwei ähnliche räumliche Datensätze im FIS-Broker für das Straßennetz Berlins. Eins ist das Übergeordnetes Straßennetz; dieser Datensatz inkludiert alle Hauptstraßen in Berlin. Der zweite Datensatz ist das Detailnetz, das alle Straßen (nicht nur Haptstraßen) sowie Tunnel und Brücke zeichnet.</p><br>
+            </div>
+              <ul class="p-bottom">
+                    <li><a href="https://fbinter.stadt-berlin.de/fb/index.jsp?loginkey=showMap&mapId=verkehr_strnetz@senstadt" target="blank">Übergeordnetes Straßennetz (FIS-Broker-Karte)</a></li>
+                     <li><a href="https://fbinter.stadt-berlin.de/fb/index.jsp?loginkey=zoomStart&mapId=k_vms_detailnetz_wms_spatial@senstadt" target="blank"> Detailnetz Berlin (FIS-Broker-Karte)</a></li>
+                </ul>
+
+                <h3 class="p-bottom">Straßenbau</h3>
+            <div class="container">
+                <p class="copy">
+                <u>Status: Begrenzte nichtoffene Daten verfügbar</u>
+                <br>
+                Baumaßnahmen haben eine große Wirkung auf Bewegungen durch die Stadt, egal ob man Rad, Auto oder mit öffentlichen fährt. Informationen über Straßenbaumaßnahmen ist zurzeit nicht als offene Daten in Berlin verfügbar. Die Verkehrsinformationszentrale Berlin verwaltet eine Webseite mit einer Verkehrslagekarte, die die aktuelle Verkerhslage zeigt (inklusive Baumaßnahmen). Aber keine rohe Daten werden geliefert, nur die Karte und eine HTML-Liste von allen Meldungen. Weiterhin werden nur Informationen für Hauptstraßen gezeigt; für Informationen über lokaliserte Sperrungen, muss man sich wieder an einzelnen Beizrken wenden. Wie mit geplanten Radinfrastrukturprojekten, online Informationen sind oft nicht aktuell.</p><br>
+            </div>
+              <ul class="p-bottom">
+                    <li><a href="https://viz.berlin.de/2?p_p_id=vizmap_WAR_vizmapportlet_INSTANCE_Ds4N&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_vizmap_WAR_vizmapportlet_INSTANCE_Ds4N_cmd=traffic&_vizmap_WAR_vizmapportlet_INSTANCE_Ds4N_submenu=traffic_default" target="blank">Verkehrslagekarte (Webseite)</a></li>
+                     <li><a href="https://viz.berlin.de/2?p_p_id=vizmap_WAR_vizmapportlet_INSTANCE_Ds4N&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_vizmap_WAR_vizmapportlet_INSTANCE_Ds4N_cmd=traffic&_vizmap_WAR_vizmapportlet_INSTANCE_Ds4N_submenu=traffic_construction" target="blank">Verkehrsmeldungen (Webseite)</a></li>
+                </ul>
+
+                <h3 class="p-bottom">Straßen- und Wegeschaden</h3>
+            <div class="container">
+                <p class="copy">
+                <u>Status: Begrenzte nichtoffene Daten verfügbar</u>
+                <br>
+                Wie mit Baumaßnahmen, Straßen- und Wegeschaden führen zu Herausforderungen für Rad- und Autofahrer. Im Voraus zu wissen, wo es Schaden gibt, hilft Fahrer, um die beste Routen zu planen. Es gibt ein zentrales Ordungsamt Online-Portal, wo Bürger Straßenschaden (unter anderen Anliegen) melden können. Obwohl die Meldungen selbst <a href="https://ordnungsamt.berlin.de/frontend/dynamic/#!meldungAktuell" target="blank">öffentlich sind</a>, das Portal trägt sie nicht auf einer Karte, und die Meldungen können auch nicht als strukturierte Daten exportiert werden. Deshalb ist das eher schwierig, mit diesem Portal eine Überblick von Straßen- und Wegequalität in Berlin zu erhalten.</p><br>
+            </div>
+            <div class="container">
+                <p class="copy">
+                    Viele Bezirke haben ihre eigene Feedback-Systeme für die Meldung von Straßenschaden. Die Meisten davon veröffentlichen aber die empfangenen Meldungen nicht, also Fahrradfahrer haben geringe Möglichkeit, sich über beschädigte Wege zu informieren. <a href="http://pardok.parlament-berlin.de/starweb/adis/citat/VT/18/SchrAnfr/S18-15676.pdf">Eine Antwort auf einer schriftlichen Anfrage von Juli 2018</a> erklärte, wie die Bezirke Radwegeschaden beheben und welche Pläne es gibt, diese Wege zu sanieren.
+
+               </p><br>
+            </div>
+              <ul class="p-bottom">
+                    <li><a href="https://ordnungsamt.berlin.de/frontend/dynamic/#!meldungAktuell" target="blank">Aktuelle Ordnungsamt Meldungen (Webseite)</a></li>
+
+                </ul>
+
+                <h3 class="p-bottom">Standort von Lichtsignalanlagen</h3>
+            <div class="container">
+                <p class="copy">
+                <u>Status: Offene Daten verfügbar</u>
+                <br>
+                Fahrradfahrer, die die effizienteste Route bevorzugen, wollen eventuell Straßen mit vielen Lichtsignalanlagen vermeiden. Eine Karte aus dem FIS-Broker zeigt die Standorte von Lichtsignale in der Stadt.</p><br>
+            </div>
+              <ul class="p-bottom">
+                    <li><a href="https://fbinter.stadt-berlin.de/fb/index.jsp?loginkey=zoomStart&mapId=lsa@senstadt&bbox=384259,5817306,395263,5823841" target="blank">Lichtsignalanlagen (FIS-Broker-Karte)</a></li>
+                </ul>
+
+                 <div class="container p-bottom">
+                <ul class="download-list">
+                    <li>
+                        <a href="https://data.technologiestiftung-berlin.de/dataset/lichtsignalanlagen">
+                            <span class="download-icon"></span>
+                            <span class="download-title">Geodaten zu Lichtsignalanlagen (Lab-Datenportal)</span><br />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+
+                <h3 class="container p-top p-bottom">Standorte und Anzahl von Fahrradabstellplätze</h3>
+            <div class="container p-bottom">
+                <p class="copy">
+                <u>Status: Keine bekannte Datenquellen verfügbar</u>
+                <br>
+            Ob und wie viele Fahrradabstellplätze ein Ort (zum Beispiel, ein Bahnhof) hat hilft man entscheiden, ob es machbar ist, dein Fahrrad da sicher abzustellen (und deshalb, ob es sich überhaupt lohnt, dahin mit dem Fahrrad zu fahren). Leider scheinen diese Informationen nicht systematisch gesammelt und abgespeichert zu werden. Eine Antwort auf einer schriftlichen Anfrage, zum Beispiel, erklärte, dass die Hauptverwaltung keine Informationen über Fahrradabstellplätze besitzt. Möglicherweise haben die einzelne Bezirke Daten dazu, aber es gibt keine bekannte Datenquellen dafür.</p>
+            </div>
+            <div class="container">
+                <p class="copy">
+                Open Street Maps beinhaltet Markierungen für Fahrradabstellplätze. Ob die Standorte und Anzahl der Plätze stimmen können nicht von uns bewertet werden, aber das ist mindestens eine alternative Datenquelle für solche Informationen. </p><br>
+            </div>
+              <ul class="p-bottom">
+                    <li><a href="https://kleineanfragen.de/berlin/18/15500-bike-and-ride" target="blank">Schriftliche Anfrage zu Fahrradabstellanlagen (PDF)</a></li>
+                </ul>
+
+            <h2 class="p-bottom">Nutzung von Radinfrastruktur</h2>
+
+            <div class="container p-bottom" style="text-align: center;">
+                <img src="images/autovolume.png" alt="A map showing the volume of road usage in Berlin" />
+                <p class="caption">Eine Karte von der Verkehrsbelastung von Straßen in Berlin</a></p>
+            </div>
+
+            <h3 class="p-bottom">Fahrradunfälle</h3>
+
+            <div class="container">
+                <p class="copy p-bottom">
+                <u>Status: Begrenzte nichtoffene Daten verfügbar</u>
+                <br>
+                Daten über wo, wann und wie oft Fahrradunfälle passieren wird nicht als offene Daten veröffentlicht. Der Berliner Polizei veröffentlicht einen jährlichen Bericht über Verkehrsunfälle wo ein Fahrradfahrer involviert wurde, aber diese Berichte sind nur als PDFs vorbereitet. Die Daten sind zwar tabellarisch strukturiert, also theoretisch kann man die extrahieren und in eine maschinenlesbare Form umgewandelt werden (siehe nächster Absatz), aber man bekommt keine genaue Beschreibung von wo die Unfälle passieren – höchstens wird eine Straßenkreuzung benannt. </p>
+            </div>
+            <div class="container">
+                <p class="copy">
+                    Für die Coders, gibt es dank Stephan Wehrmeyer ein Parser für diese PDF-Berichte, das <a href="https://github.com/stefanw/verkehrsunfallstatistik" target="blank">auf GitHub verfügbar ist</a>. Das ist keine perfekte Lösung, da wie gesagt, die Genauigkeit der Daten nicht ausreichend ist, aber trotzdem ist das ein hilfreicher Schritt in Richtung nützlicher Daten. </p><br>
+            </div>
+              <ul class="p-bottom">
+                    <li><a href="https://www.berlin.de/polizei/aufgaben/verkehrssicherheit/verkehrsunfallstatistik/#radfahrer" target="blank">Jährliche Berichte – Verkehrsunfälle mit Radfahrern (PDFs)</a></li>
+                </ul>
+
+        <h3 class="p-bottom">Menge von Fahrradfahrer</h3>
+            <div class="container p-bottom">
+                <p class="copy">
+                <u>Status: Offene Daten verfügbar</u>
+                <br>
+                Die Verkehrslenkung Berlin sammelt Daten von 26 vershiedenen Sensoren in 17 Standorten, die automatisch die Menge von Fahrradfahrer in diesen Orten messen. Die Daten können entweder als eine interaktive Karte angeschaut werden, oder als eine Excel-Datei heruntergeladen (beides sind <a href="https://www.berlin.de/senuvk/verkehr/lenkung/vlb/de/radzaehlungen.shtml" target="blank">hier</a> zu finden). Die Excel-Datei hat stündliche Daten ab 2012, aber zwischen 2012 udn 2014 gab es nur eine Messestation. Die Datei ist noch nicht im Berliner Datenportal, aber sie kann bei der Verkerhslenkung-Webseite heruntergeladen werden. Für spezifische Fragen über wie die Daten erhebt werden, gibt es eine <a href="https://www.berlin.de/senuvk/verkehr/lenkung/vlb/de/radzaehlungen_faq.shtml">FAQ-Seite.</a> Zusätzlich zu diesem Datensatz, veröffentlicht die Senatsverwaltung für Umwelt, Verkehr und Klimaschutz einen jährlichen Bericht zu Fahrradverkehr-Pegelzählungen. Diese Berichte haben historische Daten von 1982 an, aber nur als ein PDF. Die Berichte findet man <a href="https://www.berlin.de/senuvk/verkehr/lenkung/vlb/de/erhebungen.shtml" target="blank">hier</a> (rechte Spalte, Download, "Fahrradverkehr-Pegelzählungen").
+
+                </p>
+            </div>
+            <div class="container">
+                <p class="copy">
+                    Eine weitere Methode, um die Anzahl von Fahrradfahrer in der Stadt zu messen wäre die Daten über Verkäufe von Fahrrad-Fahrausweise für die öffentliche Verkehrsmitteln. <a href="https://kleineanfragen.de/berlin/17/12050-verknuepfung-der-verkehrstraeger-oepnv-und-fahrrad" target="blank">Eine Antwort auf einer schriftlichen Anfrage in 2013</a> hat die Figuren für 2008 bis 2012 aufgedeckt. Aktuellere Zahlen haben wir nicht gefunden.</p><br>
+            </div>
+              <ul class="p-bottom">
+                    <li><a href="https://www.berlin.de/senuvk/verkehr/lenkung/vlb/de/karte.shtml" target="blank">Karte für Radfahrer-Zählung (Webseite)</a></li>
+                    <li><a href="https://www.berlin.de/senuvk/verkehr/lenkung/vlb/download/radzaehlung/Gesamtdatei_Stundenwerte_2014_2017.xlsx" target="blank">Tabelle von Radfahrer-Zählungen, 2012-2017 (Excel-Datei)</a></li>
+                </ul>
+
+        <h3 class="p-bottom">Menge von Autoverkehr</h3>
+            <div class="container">
+                <p class="copy">
+                <u>Status: Offene Daten verfügbar</u>
+                <br>
+                Die Menge von Autverkehr auf einer Straße hat eine Auswirkung auf ob die Straße für das Radfahren wirklich geeignet ist – viele Fahrradfahrer würden wahrscheinlich lieber wenig von Autos gefahrenen Straßen nutzen, mindestens wenn sie diese Entscheidung treffen können ohne dass die Effizienz beeinträchtigt wird. Der FIS-Broker hat eine Karte, die die Verkehrsmengen von Kraftfahrzeugen auf dem Straßennetz zeigt. Die aktuelle Karte wurde in 2017 veröffentlich, die Daten stammen aber eigentlich aus 2014. <a href="https://www.stadtentwicklung.berlin.de/umwelt/umweltatlas/id701.htm">Ein Bericht</a> von der Senatsverwaltung für Umwelt, Verkehr und Klimaschutz erklärt wie die Daten erhebt und aufbereitet werden. 
+                </p><br> 
+            </div>
+            <ul class="p-bottom">
+                    <li><a href="https://fbinter.stadt-berlin.de/fb/index.jsp?loginkey=zoomStart&mapId=wmsk_07_01verkmeng2014@senstadt&bbox=388207,5818680,395085,5822381" target="blank">Verkehrsmengen 2014 (FIS-Broker-Karte)</a></li>
+            </ul>
+
+            <div class="container p-bottom">
+                <ul class="download-list">
+                    <li>
+                        <a href="https://data.technologiestiftung-berlin.de/dataset/verkehrsmengen">
+                            <span class="download-icon"></span>
+                            <span class="download-title">Geodaten zu Verkehrsmengen (Lab-Datenportal)</span><br />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <h2 class="container p-top p-bottom">Sonstiges</h2>
+            <h3 class="p-bottom">Fahrraddiebstahl</h3>
+            <div class="container">
+                <p class="copy">
+                <u>Status: Begrenzte nichtoffene Daten verfügbar</u>
+                <br>
+                Wo in Berlin sollen Fahrradfahrer am vorsichtigsten mit ihren Fahrräder sein? Natürlich existiert Fahrraddiebstahl überall in dieser Stadt. Es gibt aber Stadtteile mit signifikant höhere Kriminalitätsraten. Daten zu Fahrraddiebstahl, wie andere Kriminalitätsstatistiken, sind aktuell nicht als offene Daten verfügbar. Durch eine Antwort auf eine schriftliche Anfrage von 2018 wurden Zahlen für die sogenannte "Hotspots" (das heißt, die 5 Orte mit den meisten angezeigten Diebstahlfällen) tabellarisch in einem PDF für 2015 bis 2017 veröffentlicht. Die Daten sind nach Bezirk und Planungsraum aufgeteilt. Eine ähnliche Anfrage von 2015 hat Zahlen für 2010 bis 2015 offenbart, aber nur für ganze Bezirke. 
+                </p><br> 
+            </div>
+            <ul class="p-bottom">
+                    <li><a href="https://kleineanfragen.de/berlin/18/13845-fahrraddiebstahl-in-berlin" target="blank">2018 Schriftliche Anfrage zu Fahrraddiebstahl in Berlin (PDF)</a></li>
+                    <li><a href="https://kleineanfragen.de/berlin/17/17068-reduzierung-und-umstellung-der-fahrrad-codierungen-durch-die-berliner-polizei-ist-das-sinnvoll" target="blank">2015 Schriftliche Anfrage zu Fahrraddiebstahl in Berlin (PDF)</a></li>
+            </ul>
+            <div class="container">
+                <p class="copy">
+                CSV-Datei extrahiert aus der Anfrage von 2018:</p><br>
+            </div>
+            <div class="container p-bottom">
+                <ul class="download-list">
+                    <li>
+                        <a href="https://raw.githubusercontent.com/technologiestiftung/lab-site/master/docs/projects/datadive_cycling/Data/Theft1517planungsraumHOTSPOTS.csv">
+                            <span class="download-icon"></span>
+                            <span class="download-title">Fahrraddiebstahl Hotspots nach Planungsraum (2015-2017)</span><br />
+                            <span class="download-subtitle">3 KB, extrahiert 08/2018</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <h3 class="container p-top p-bottom">Bikesharing</h3>
+            <div class="container">
+                <p class="copy">
+                <u>Status: Begrenzte nichtoffene Daten verfügbar</u>
+                <br>
+                Im letzten Jahr hat die Anzahl von Leihfahrräder in Berlin explodiert. Es ist einfach, mit den eigenen Augen zu sehen, wie viel Bikesharing-Firmen in Berlin tätig sind (obwohl die Zahlen jetzt schwinden), aber genaue Zahlen zu Firmen oder Fahrräder, die auf der Straße aktiv sind, sind schwieriger zu finden. <a href="https://kleineanfragen.de/berlin/18/13328-leihfahrraeder-in-berlin" target="blank">Eine Antwort auf eine schriftliche Anfrage in Februar 2018</a> hat Zahlen für nur eine Firma angeboten (Deezer Nextbike); für 6 andere bekannte Firmen, gab es nur grobe Zahlen. <a href="https://kleineanfragen.de/berlin/18/15312-leihfahrraeder-in-berlin-iienquiry" target="blank">Eine Antwort auf eine zweite Anfrage von Juni 2018</a> hat immer noch keine genaue Zahlen angeboten.
+    </p><br> 
             </div>
 
             <div id="author" class="container small p-top">

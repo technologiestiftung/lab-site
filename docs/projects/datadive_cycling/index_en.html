@@ -105,10 +105,10 @@
                 <p class="copy">To begin this series, we have decided to look at the subject of bicycle-related data. This has always been a popular topic in Berlin, where demand for more and improved bike infrastructure continues to mount. Most recently, a “mobility law” (Mobilitätsgesetz) was passed at the end of June of this year; it included specific provisions for how bicycle infrastructure should be expanded in the city. </p></div>
             
             <div class="container p-bottom">
-                <p class="copy">In the below sections, we list the key datasets needed to form a comprehensive overview of what the status quo of cycling in Berlin is. One general note: several of the datasets below exist in the FIS-Broker, Berlin’s main repository for geospatial data. In theory most data in the FIS-Broker is open data that can be downloaded and reused via a WFS server; in practice, the platform is extremely challenging and unintuitive to use and extracting data out of it is not trivial. The Lab at the Technologiestiftung is working on tools to make it easier for FIS-Broker data to be extracted and used, but for now, we understand that data being available in the FIS-Broker does not actually mean that it is truly accessible.</p></div>
+                <p class="copy">In the below sections, we list the key datasets needed to form a comprehensive overview of what the status quo of cycling in Berlin is. One general note: several of the datasets below exist in the FIS-Broker, Berlin’s main repository for geospatial data. In theory most data in the FIS-Broker is open data that can be downloaded and reused via a WFS server; in practice, the platform is extremely challenging and unintuitive to use and extracting data out of it is not trivial. To better enable the re-use of this open data, the Technologiestiftung Lab has extracted some of the core geospatial datasets mentioned here and made them available via our <a href="https://data.technologiestiftung-berlin.de/en" target="blank">data portal</a> in a variety of common data formats (e.g., GeoJSON, KML, etc.) The Lab is also working on tools to make it easier for FIS-Broker data to be extracted and used.</p></div>
 
             <div class="container p-bottom">
-               <p class="copy"> If you notice information here that seems to be incorrect, or if you are aware of relevant data sources that we did not identify, please feel free to reach out to <a href="mailto:dykes@technologiestiftung-berlin.de" target="_top">dykes@technologestiftung-berlin.de</a> with corrections or updates.</p>
+               <p class="copy"> If you notice information here that seems to be incorrect, or if you are aware of relevant data sources that we did not identify, please feel free to reach out to <a href="mailto:dykes@technologiestiftung-berlin.de" target="_top">dykes@technologestiftung-berlin.de</a> with corrections or suggested updates.</p>
             </div>
 
             <h2 class="p-bottom">Bike infrastructure data</h2>
@@ -133,7 +133,7 @@
                 <div class="container p-bottom">
                 <ul class="download-list">
                     <li>
-                        <a href="https://data.technologiestiftung-berlin.de/dataset/Radverkehrszeichen">
+                        <a href="https://data.technologiestiftung-berlin.de/dataset/radverkehrsanlagen">
                             <span class="download-icon"></span>
                             <span class="download-title">Geospatial data available for download via the Lab data portal</span><br />
                         </a>
@@ -277,10 +277,21 @@
                     <li><a href="https://fbinter.stadt-berlin.de/fb/index.jsp?loginkey=zoomStart&mapId=lsa@senstadt&bbox=384259,5817306,395263,5823841" target="blank">Location of traffic lights (FIS-Broker map)</a></li>
                 </ul>
 
-                <h3 class="p-bottom">Location and quantity of bike standss</h3>
+                <div class="container p-bottom">
+                <ul class="download-list">
+                    <li>
+                        <a href="https://data.technologiestiftung-berlin.de/dataset/lichtsignalanlagen/en">
+                            <span class="download-icon"></span>
+                            <span class="download-title">Geospatial data available for download via the Lab data portal</span><br />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+                <h3 class="container p-top p-bottom">Location and quantity of bike stands</h3>
             <div class="container p-bottom">
                 <p class="copy">
-                <u>Status: Status: No (known) data available</u>
+                <u>Status: No (known) data available</u>
                 <br>
                 Knowing whether and how many bike stands a given location (such as a train station, for example) has can give you an idea of how feasible it is to park your bike safely there (and thus whether it’s worth it at all to bike there). However, this information does not appear to be collected and stored in any systematic way. A parliamentary enquiry from June 2018, for example, indicated that the central city administration does not have information on how many bike stands are available at public transportation stops; this information would be held by individual Bezirke, none of whom currently make this information available (assuming they have it in a structured form to begin with).</p>
             </div>
@@ -324,7 +335,7 @@
             </div>
             <div class="container">
                 <p class="copy">
-               A related metric for gauging ridership is data on the number of bicycle tickets purchased within Berlin’s public transportation system. <a hreef="https://kleineanfragen.de/berlin/17/12050-verknuepfung-der-verkehrstraeger-oepnv-und-fahrrad" target="blank">A 2013 parliamentary enquiry</a> revealed specific numbers for 2008 to 2012.</p><br>
+               A related metric for gauging ridership is data on the number of bicycle tickets purchased within Berlin’s public transportation system. <a href="https://kleineanfragen.de/berlin/17/12050-verknuepfung-der-verkehrstraeger-oepnv-und-fahrrad" target="blank">A 2013 parliamentary enquiry</a> revealed specific numbers for 2008 to 2012.</p><br>
             </div>
               <ul class="p-bottom">
                     <li><a href="https://www.berlin.de/senuvk/verkehr/lenkung/vlb/de/karte.shtml" target="blank">Map of current volume of cycling traffic (website)</a></li>
@@ -343,22 +354,33 @@
                     <li><a href="https://fbinter.stadt-berlin.de/fb/index.jsp?loginkey=zoomStart&mapId=wmsk_07_01verkmeng2014@senstadt&bbox=388207,5818680,395085,5822381" target="blank">Map of motorized traffic volume (FIS-Broker map)</a></li>
             </ul>
 
-            <h2 class="p-bottom">Miscellaneous</h2>
+            <div class="container p-bottom">
+                <ul class="download-list">
+                    <li>
+                        <a href="https://data.technologiestiftung-berlin.de/dataset/verkehrsmengen">
+                            <span class="download-icon"></span>
+                            <span class="download-title">Geospatial data available for download via the Lab data portal</span><br />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <h2 class="container p-top p-bottom">Miscellaneous</h2>
             <h3 class="p-bottom">Bicycle thefts</h3>
             <div class="container">
                 <p class="copy">
                 <u>Status: Limited non-open data available</u>
                 <br>
-                Where in Berlin should bike riders take the most caution with securing bikes? Of course, no part of the city is safe from bike theft, but there are parts of the city with significantly higher rates of the crime. This data (like other crime-related data, such as bike-involved accidents) is not currently released as open data. A 2017 parliamentary enquiry, however, at least saw the data for “hotspots” (e.g., areas with the most reported thefts) released in tabular form for the years 2015-2017, albeit within a PDF. The data is broken down by Bezirk and Planungsraum (a Planungsraum is one of the many sub-units a Bezirk can be broken into; more information on these sub-units can be found in <a href="https://lab.technologiestiftung-berlin.de/projects/spatial-units/index_en.html" target="blank">this Lab blog post</a>). Only the top five Planungsräume with the most reported thefts are shown. A similar enquiry from 2015 revealed yearly data on bicycle thefts per Bezirk for the time period of 2010 to September 2015.  
+                Where in Berlin should bike riders take the most caution with securing bikes? Of course, no part of the city is safe from bike theft, but there are parts of the city with significantly higher rates of the crime. This data (like other crime-related data, such as bike-involved accidents) is not currently released as open data. A 2018 parliamentary enquiry, however, at least saw the data for “hotspots” (e.g., areas with the most reported thefts) released in tabular form for the years 2015-2017, albeit within a PDF. The data is broken down by Bezirk and Planungsraum (a Planungsraum is one of the many sub-units a Bezirk can be broken into; more information on these sub-units can be found in <a href="https://lab.technologiestiftung-berlin.de/projects/spatial-units/index_en.html" target="blank">this Lab blog post</a>). Only the top five Planungsräume with the most reported thefts are shown. A similar enquiry from 2015 revealed yearly data on bicycle thefts per Bezirk for the time period of 2010 to September 2015.  
                 </p><br> 
             </div>
             <ul class="p-bottom">
-                    <li><a href="https://kleineanfragen.de/berlin/18/13845-fahrraddiebstahl-in-berlin" target="blank">2017 Parliamentary enquiry on bike theft (PDF)</a></li>
+                    <li><a href="https://kleineanfragen.de/berlin/18/13845-fahrraddiebstahl-in-berlin" target="blank">2018 Parliamentary enquiry on bike theft (PDF)</a></li>
                     <li><a href="https://kleineanfragen.de/berlin/17/17068-reduzierung-und-umstellung-der-fahrrad-codierungen-durch-die-berliner-polizei-ist-das-sinnvoll" target="blank">2015 Parliamentary enquiry on bike theft (PDF)</a></li>
             </ul>
             <div class="container">
                 <p class="copy">
-                CSV file extracted from the tables in the above enquiries:</p><br>
+                CSV file extracted from the tables in the 2018 enquiry:</p><br>
             </div>
             <div class="container p-bottom">
                 <ul class="download-list">
