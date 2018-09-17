@@ -12,11 +12,22 @@
 	<atom:link href="http://lab.technologiestiftung-berlin.de/feed.xml" rel="self" type="application/rss+xml" />
 	<link>http://lab.technologiestiftung-berlin.de</link>
 	<description>Wir erforschen und erproben digitale Werkzeuge um gemeinsam mit Bürger*innen, Verwaltung und Unternehmen die Zukunft Berlins zu gestalten.</description>
-	<lastBuildDate>Tue, 11 Sep 2018 17:04:16  +0100</lastBuildDate>
+	<lastBuildDate>Mon, 17 Sep 2018 12:34:28  +0100</lastBuildDate>
 	<language>de-DE</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	
+<item>
+<title><![CDATA[Data Dive - Radverkehrsdaten in Berlin]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/datadive_cycling/index.html</link>
+<pubDate>Mon, 17 Sep 2018 00:00:00  +0100</pubDate>
+<category><![CDATA[Offene Daten]]></category>
+<description><![CDATA[Was für Radverkehrsdaten existieren, und wo findet man sie?]]></description>
+<content:encoded><![CDATA[Was für Radverkehrsdaten existieren, und wo findet man sie?]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/datadive_cycling/index.html</guid>
+</item>
+
 <item>
 <title><![CDATA[So radelt Berlin]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/bikerides/index.html</link>
