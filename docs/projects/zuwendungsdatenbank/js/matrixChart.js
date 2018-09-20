@@ -220,7 +220,7 @@ var matrixChart = function(_container, _labels, _data, _dict, _count, _filterFun
     xLabels.transition()
       .duration((init)?0:500)
       .attr('x', function(d,i){
-        return (blockWidth+padding) * i + blockWidth/2;
+        return (blockWidth+(padding-((i==years.length)?0:1))) * i + blockWidth/2;
       });
 
     bgs.data(function(d){return d.years;}).transition()
@@ -229,7 +229,7 @@ var matrixChart = function(_container, _labels, _data, _dict, _count, _filterFun
       .attr('height', blockHeight)
       .style('fill', function(d){ return (filterYears.indexOf(d.key)>-1)?'rgba(45,145,210,0.3)':''; })
       .attr('x', function(d){
-        return (blockWidth+padding) * years.indexOf(d.key);
+        return (blockWidth+(padding-1)) * years.indexOf(d.key);
       });
 
     buttons
@@ -300,7 +300,7 @@ var matrixChart = function(_container, _labels, _data, _dict, _count, _filterFun
         return y(Math.pow(d.value, root));
       })
       .attr('x', function(d){
-        return (blockWidth+padding) * years.indexOf(d.key);
+        return (blockWidth+(padding-1)) * years.indexOf(d.key);
       })
       .attr('y', function(d){
         return blockHeight - y(Math.pow(d.value, root));
@@ -313,7 +313,7 @@ var matrixChart = function(_container, _labels, _data, _dict, _count, _filterFun
         return y_count(Math.pow(d.count, root));
       })
       .attr('x', function(d){
-        return (blockWidth+padding) * years.indexOf(d.key) + blockWidth/2;
+        return (blockWidth+(padding-1)) * years.indexOf(d.key) + blockWidth/2;
       })
       .attr('y', function(d){
         return blockHeight - y_count(Math.pow(d.count, root));

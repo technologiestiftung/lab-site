@@ -4,17 +4,8 @@
 }
 
 #loader{
-  position: absolute;
-  top:50%;
-  left:50%;
-  width:150px;
-  margin-left:-75px;
-  margin-top:-75px;
+  height:185px;
   text-align:center;
-}
-
-#loader-funds{
-  font-size:24px;
 }
 
 #geberChart{
@@ -137,11 +128,15 @@ th:hover{
 }
 
 th.ASC::before{
+  display:inline-block;
   content:'↑';
+  padding-right:3px;
 }
 
 th.DESC::before{
+  display:inline-block;
   content:'↓';
+  padding-right:3px;
 }
 
 .pagination{
@@ -181,7 +176,7 @@ th.DESC::before{
 .search{
   clear:both;
   font-size:24px;
-  width:100%;
+  width:48%;
   padding:5px 0;
   text-indent: 10px;
   background-size:40px 26px;
@@ -190,16 +185,67 @@ th.DESC::before{
   background-repeat: no-repeat;
   border:1px solid rgba(0,0,0,0.3);
   outline: none;
+  float:left;
+}
+
+#search_zweck.search{
+  float:right;
+  clear:none;
+}
+
+@-webkit-keyframes spinner {
+  from { -webkit-transform: rotateY(0deg);    }
+  to   { -webkit-transform: rotateY(-360deg); }
+}
+
+/* all other browsers */
+@keyframes spinner {
+  from {
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+  to {
+    -moz-transform: rotateY(-360deg);
+    -ms-transform: rotateY(-360deg);
+    transform: rotateY(-360deg);
+  }
+}
+
+#euro-sign{
+  -webkit-animation-name: spinner;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 2s;
+
+  animation-name: spinner;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+#loader-funds{
+  display: inline-block;
+  font-size:36px;
+  font-family: 'ClanOT-Medium', Helvetica, sans-serif;
+  font-weight:700;
+  padding:5px 0 20px 0;
 }
 
 #sumChart{
+  display: none;
   clear:both;
   width:100%;
+  padding:80px 0 20px 0;
   text-align:center;
   font-size:36px;
   font-family: 'ClanOT-Medium', Helvetica, sans-serif;
   font-weight:700;
-  padding:40px 0 20px 0;
 }
 
 #sumChart span span{
@@ -217,6 +263,7 @@ th.DESC::before{
 #maprow{
   clear:both;
   width:100%;
+  text-align:center;
 }
 
 #maprow>div{
@@ -350,6 +397,14 @@ g.matrixGroup:hover text{
   stroke:transparent;
 }
 
+.matrixChart tspan{
+  cursor:pointer;
+}
+
+.matrixChart tspan:hover{
+  fill:#E70433;
+}
+
 .sort-d-count, .sort-d-icount,
 .sort-d-label, .sort-d-ilabel,
 .sort-d-sum, .sort-d-isum{
@@ -399,6 +454,10 @@ g.matrixGroup:hover text{
   cursor: pointer;
   border-radius:4px;
   outline:none;
+}
+
+#maprow button{
+  margin:30px 0;
 }
 
 #maprow button:hover, #intro button:hover{
@@ -459,3 +518,13 @@ h5{
 .tp-bl{ background-repeat: no-repeat; background-size:29px 14px; width:29px; height:14px; background-image:url(../images/b-l@2x.png);}
 .tp-bm{ height:14px; background-repeat: repeat-x; background-image:url(../images/b-m@2x.png); background-size:3px 14px;}
 .tp-br{ width:9px; height:14px; background-repeat: no-repeat; background-size:9px 14px; background-image:url(../images/b-r@2x.png);}
+
+.mirror .tp-tl{ background-image:url(../images/t-r-r@2x.png); width:9px; height:39px; background-repeat: no-repeat; background-size:9px 39px; }
+.mirror .tp-tm{ background-image:url(../images/t-m-r@2x.png); height:39px; background-repeat: repeat-x; background-size:3px 39px; }
+.mirror .tp-tr{ background-image:url(../images/t-l-r@2x.png); background-repeat: no-repeat; background-size:29px 39px; width:29px; height:39px; }
+.mirror .tp-ml{ background-image:url(../images/m-r-r@2x.png); width:9px; background-repeat: repeat-y; background-size:9px 14px; }
+.mirror .tp-mm{ background-image:url(../images/m-m-r@2x.png); background-repeat: repeat; background-size:3px 3px;}
+.mirror .tp-mr{ background-image:url(../images/m-l-r@2x.png); background-repeat: repeat-y; background-size:29px 14px; width:29px;}
+.mirror .tp-bl{ background-image:url(../images/b-r-r@2x.png); width:9px; height:14px; background-repeat: no-repeat; background-size:9px 14px; }
+.mirror .tp-bm{ background-image:url(../images/b-m-r@2x.png); height:14px; background-repeat: repeat-x; background-size:3px 14px;}
+.mirror .tp-br{ background-image:url(../images/b-l-r@2x.png); background-repeat: no-repeat; background-size:29px 14px; width:29px; height:14px; }

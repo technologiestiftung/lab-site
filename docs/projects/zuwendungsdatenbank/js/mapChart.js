@@ -1,6 +1,8 @@
-var mapChart = function(_container, _geojson, _data, _count_data, _dict, _filterFunction, _filterKey,_tooltip){
+var mapChart = function(_container, _geojson, _data, _count_data, _dict, _filterFunction, _filterKey, _tooltip, _isMini, _theYear){
 
   var module = {},
+    theYear = _theYear,
+    isMini = _isMini,
     tooltip = _tooltip,
     container = _container,
     data = _data,
@@ -65,8 +67,16 @@ var mapChart = function(_container, _geojson, _data, _count_data, _dict, _filter
           .translate([width/2, height/2]),
     color_sum = d3.scaleLinear().domain([0, Math.pow(data.top(1)[0].value, root)]).range(['rgba(11,138,221,0.1)','rgba(11,138,221,1)']),
     color_count = d3.scaleLinear().domain([0, Math.pow(count_data.top(1)[0].value, root)]).range(['rgba(11,138,221,0.1)','rgba(11,138,221,1)']),
-    color_ratio = d3.scaleLinear().domain([0, Math.pow(d3.max(data.all(), (d,di)=>{ return d.value / count_data.all()[di].value; }), root)]).range(['rgba(0,0,0,0.1)','rgba(0,0,0,1)']),
+    color_ratio = d3.scaleLinear().domain([0, Math.pow(d3.max(data.all(), (d,di)=>{ 
+      if(count_data.all()[di].value == 0 || d.value == 0) return 0;
+      return d.value / count_data.all()[di].value; 
+    }), root)]).range(['rgba(11,138,221,0.1)','rgba(11,138,221,1)']),
     path = d3.geoPath().projection(projection);
+
+  if(isMini){
+    toggle.remove()
+    svg.append('text').text(theYear).attr('transform', 'translate(15,20)').style('font-weight','bold').style('font-size','14px')
+  }
 
   module.init = function(){
 
@@ -116,7 +126,7 @@ var mapChart = function(_container, _geojson, _data, _count_data, _dict, _filter
     }
 
     tooltip.show({
-      title:`PLZ-${dict_keys[d.key]}`,
+      title:(dict_keys[d.key]==9999999)?`Außerhalb von Berlin`:`PLZ-${dict_keys[d.key]}`,
       body: `Summe in €:<br /><i>${currency(d.value)}` + ((showPercentage) ? `&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;${(d.value/all.value()*100).toFixed(2)}%`: '') + `</i><br /><br />Anzahl Förderprojekte:<br /><i>${count_data.all()[di].value}`+ ((showPercentage)? `&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;${(count_data.all()[di].value/all_groups.value()*100).toFixed(2)}%` : '') + `</i>`,
       x:x,
       y:y
@@ -140,7 +150,9 @@ var mapChart = function(_container, _geojson, _data, _count_data, _dict, _filter
             return color_sum(Math.pow(d.value, root));
           break;
           case 'ratio':
-            return color_ratio(Math.pow(d.value / count_data.all()[i].value, root));
+            let val = 0
+            if(d.value > 0 && count_data.all()[i].value > 0) val = d.value/count_data.all()[i].value
+            return color_ratio(Math.pow(val, root));
           break;
         }
       });
@@ -165,7 +177,10 @@ var mapChart = function(_container, _geojson, _data, _count_data, _dict, _filter
       break;
       case 'ratio':
         legend_txt1.text('0 €')
-        legend_txt2.text(currency(Math.floor(d3.max(data.all(), (d,di)=>{ return d.value / count_data.all()[di].value; }))).replace('&nbsp;',' '))
+        legend_txt2.text(currency(Math.floor(d3.max(data.all(), (d,di)=>{ 
+          if(count_data.all()[di].value == 0 || d.value == 0) return 0;
+          return d.value / count_data.all()[di].value; 
+        }))).replace('&nbsp;',' '))
       break;
     }
     
@@ -192,10 +207,16 @@ var mapChart = function(_container, _geojson, _data, _count_data, _dict, _filter
     filters = _filters;
     color_sum.domain([0, Math.pow(data.top(1)[0].value, root)]);
     color_count.domain([0, Math.pow(count_data.top(1)[0].value, root)]);
-    color_ratio.domain([0, Math.pow(d3.max(data.all(), (d,di)=>{ return d.value / count_data.all()[di].value; }), root)]);
+    color_ratio.domain([0, Math.pow(d3.max(data.all(), (d,di)=>{ 
+      if(count_data.all()[di].value == 0 || d.value == 0) return 0;
+      return d.value / count_data.all()[di].value; 
+    }), root)]);
 
     module.update();
   };
+
+  module.hide = ()=>{ container.style('display','none'); }
+  module.show = ()=>{ container.style('display','block'); }
 
   return module;
 };

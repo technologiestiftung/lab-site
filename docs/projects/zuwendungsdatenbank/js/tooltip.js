@@ -16,14 +16,22 @@ let tooltip = function(){
   	title.html(obj.title)
   	body.html(obj.body)
 
-  	module.move(obj)
+    tip.classed('mirror', (obj.x > window.innerWidth/2)?true:false)
 
-  	tip.style('display','block')
+    tip.style('display','block')
+
+  	module.move(obj)
   }
 
   module.move = obj => {
-  	tip.style("left", (obj.x+3) + "px")		
-       .style("top", (obj.y-20) + "px")	
+    if(obj.x > window.innerWidth/2){
+      let bb = tip.node().getBoundingClientRect()
+    	tip.style("left", (obj.x-bb.width-5) + "px")	
+         .style("top", (obj.y-20) + "px")
+    }else{
+      tip.style("left", (obj.x+3) + "px")  
+         .style("top", (obj.y-20) + "px")
+    }
   }
 
   return module

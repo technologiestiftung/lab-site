@@ -44,6 +44,7 @@ var loader = (function(_container, _amount, _fullSize){
         .attr("d", arc);
 
     icon.append('text')
+      .attr('id', 'euro-sign')
       .attr('text-anchor','middle')
       .style('fill','#777')
       .style('font-size',72)
