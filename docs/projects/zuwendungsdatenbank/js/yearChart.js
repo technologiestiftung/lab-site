@@ -70,6 +70,7 @@ var yearChart = function(_container, _dates, _counts, _filterFunction, _filterKe
       showPercentage = true;
     }
 
+    tooltip.direction('horizontal')
     tooltip.show({
       title:d.count.key,
       body:`Summe in €:<br /><i>${currency(d.date.value)}`+ ((showPercentage)? `&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;${(d.date.value/all.value()*100).toFixed(2)}%`: '') + `</i><br><br />Anzahl Förderprojekte:<br /><i>${d.count.value}`+ ((showPercentage)? `&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;${(d.count.value/all_groups.value()*100).toFixed(2)}%`: '') + `</i>`,

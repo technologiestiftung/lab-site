@@ -1,4 +1,4 @@
-var matrixChart = function(_container, _labels, _data, _dict, _count, _filterFunction, _filterKey){
+var matrixChart = function(_container, _labels, _data, _dict, _count, _filterFunction, _filterKey, _tooltip){
 
   //ADD SUM
 
@@ -11,6 +11,7 @@ var matrixChart = function(_container, _labels, _data, _dict, _count, _filterFun
     });
 
     var init = true,
+    tooltip = _tooltip,
     filterFunction = _filterFunction,
     filterKey = _filterKey,
     container = _container,
@@ -49,9 +50,20 @@ var matrixChart = function(_container, _labels, _data, _dict, _count, _filterFun
     sumbars = sumg.selectAll('rect.sumbar').data(function(d){ return [d]; }).enter().append('rect').attr('height',blockHeight/2).classed('sumbar', true),
     sumbars_count = sumg.selectAll('rect.count').data(function(d){ return [d]; }).enter().append('rect').attr('x',0).attr('height',blockHeight/2).attr('y',blockHeight/2).classed('count', true),
 
-    buttons = groups.append('rect').attr('x', -xOffset).classed('button',true).on('click', function(d){
+    buttons = groups.append('rect').attr('x', -xOffset).classed('button',true).on('click', function(d,di){
       filterFunction(filterKey, d.key);
-    });
+      if(d.sum > 0){
+        module.updateToolTip(d3.event.pageX, d3.event.pageY, d, di)
+      }
+    })
+    .on('mousemove', d=>{ 
+      tooltip.move({x:d3.event.pageX,y:d3.event.pageY}); 
+    })
+    .on('mouseover', (d,di)=>{
+      if(d.sum > 0){
+        module.updateToolTip(d3.event.pageX, d3.event.pageY, d, di)
+      }
+    }).on('mouseout', d=>{ tooltip.hide(); });
 
     var defs = svg.append('defs');
 
@@ -64,6 +76,28 @@ var matrixChart = function(_container, _labels, _data, _dict, _count, _filterFun
         .attr('xlink:href', function(d){return './images/'+d+'.png'; })
         .attr('width',5)
         .attr('height',5);
+
+  module.updateToolTip = (x,y,d) => {
+
+    let showPercentage = false;
+    if(filters.length == 0 || filters.indexOf(d.key.substr(1))>-1){
+      showPercentage = true;
+    }
+
+    let tableStr = '<tr><th>Jahr</th><th>Summe</th><th>Anzahl</th></tr>'
+
+    d.years.forEach(y=>{
+      tableStr += `<tr><td>${y.key}</td><td>${currency(y.value)}</td><td>${y.count}</td></tr>`
+    })
+
+    tooltip.direction('vertical')
+    tooltip.show({
+      title:d.label,
+      body:`Summe in (€):<br /><i>${currency(d.sum)}`+ ((showPercentage)? `&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;${(d.sum/all.value()*100).toFixed(2)}%`: '') + `</i><br><br />Anzahl Förderprojekte:<br /><i>${d.count}`+ ((showPercentage)? `&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;${(d.count/all_groups.value()*100).toFixed(2)}%`: '') + `</i><br /><br /><table>${tableStr}</table>`,
+      x:x,
+      y:y
+    });
+  }
 
   function splitData(_data, _count, _labels){
     var ndata = [], nkeys = {};
@@ -276,6 +310,8 @@ var matrixChart = function(_container, _labels, _data, _dict, _count, _filterFun
     //ToDo only update and animate what really needs animating (resize, data change, init)
 
     groups.data(d3Data);
+
+    buttons.data(d3Data);
 
     sumg.data(function(d){ return [d]; });
 

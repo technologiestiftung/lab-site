@@ -75,7 +75,7 @@ var mapChart = function(_container, _geojson, _data, _count_data, _dict, _filter
 
   if(isMini){
     toggle.remove()
-    svg.append('text').text(theYear).attr('transform', 'translate(15,20)').style('font-weight','bold').style('font-size','14px')
+    svg.append('text').text(theYear).attr('transform', 'translate(75,65)').style('font-weight','bold').style('font-size','14px')
   }
 
   module.init = function(){
@@ -119,12 +119,18 @@ var mapChart = function(_container, _geojson, _data, _count_data, _dict, _filter
       module.resize();
   };
 
+  module.switchDisplayMode = _display_mode => {
+    display_mode = _display_mode
+    module.update();
+  }
+
   module.updateToolTip = (x,y,d,di)=>{
     let showPercentage = false;
     if(filters.length == 0 || filters.indexOf(d.key)>-1){
       showPercentage = true;
     }
 
+    tooltip.direction('horizontal')
     tooltip.show({
       title:(dict_keys[d.key]==9999999)?`Außerhalb von Berlin`:`PLZ-${dict_keys[d.key]}`,
       body: `Summe in €:<br /><i>${currency(d.value)}` + ((showPercentage) ? `&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;${(d.value/all.value()*100).toFixed(2)}%`: '') + `</i><br /><br />Anzahl Förderprojekte:<br /><i>${count_data.all()[di].value}`+ ((showPercentage)? `&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;${(count_data.all()[di].value/all_groups.value()*100).toFixed(2)}%` : '') + `</i>`,
@@ -204,6 +210,7 @@ var mapChart = function(_container, _geojson, _data, _count_data, _dict, _filter
   module.data = function(_data, _count_data, _filters){
     data = _data;
     count_data = _count_data;
+    console.log(count_data.top(1)[0].value)
     filters = _filters;
     color_sum.domain([0, Math.pow(data.top(1)[0].value, root)]);
     color_count.domain([0, Math.pow(count_data.top(1)[0].value, root)]);
