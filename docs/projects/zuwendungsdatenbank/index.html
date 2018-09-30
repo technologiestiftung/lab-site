@@ -107,7 +107,11 @@
                     <div id="mapChart"><h5>Räumliche Verteilung</h5></div>
                     <div id="geberChart"></div>
                     <div id="artChart"></div>
-                    <div id="binChart"></div>
+                    <hr class="clear" />
+                    <div class="binChart" id="binChart-1"></div>
+                    <div class="binChart" id="binChart-2"></div>
+                    <div class="binChart" id="binChart-3"></div>
+                    <hr class="clear" />
                     <div id="maprow">
                         <button id="showMiniMap">&#10225;&nbsp;Jahreskarten anzeigen</button><br />
                         <div id="minimap-buttons" class="sum"><span id="mmb-sum">Summe (€)</span> / <span id="mmb-count">Anzahl</span> / <span id="mmb-ratio">Verhältnis Summe/Anzahl</span></div>
@@ -240,7 +244,7 @@ function updateUI(){
 
 //Create a global object that contains dimensions and groups, etc.
 
-var state = {}, searchterm_name = '', searchterm_zweck = '', bins, bin_groups, dates_count, fund, all, all_groups, date, dates, names, postcode, postcodes, politikbereich, politikbereichs, geber, gebers, geber_jahre, gebers_jahre, politikbereich_jahre, politikbereichs_jahre, postcodeYears, postcodeYears_count, filter, sum_chart, art_chart, year_chart, map_chart, map_chart_years, table;
+var state = {}, searchterm_name = '', searchterm_zweck = '', bin_borders, bin_count_borders, bin_sum_borders, dates_count, fund, all, all_groups, date, dates, names, names_sum, names_count, postcode, postcodes, politikbereich, politikbereichs, geber, gebers, geber_jahre, gebers_jahre, politikbereich_jahre, politikbereichs_jahre, postcodeYears, postcodeYears_count, filter, sum_chart, art_chart, year_chart, map_chart, map_chart_years, table;
 
 function updateFilter(){
   var changed = false;
@@ -369,6 +373,10 @@ d3.select('#reset').on('click', function(){
     }
 
     state[key] = [];
+    if(key == 'searchterm_name' || key == 'searchterm_zweck'){
+        state[key] = ''
+        filterFunction(key, '', true);
+    }
   }
 
   searchterm_name = ''
@@ -473,16 +481,11 @@ d3.queue()
 
   plz = topojson.feature(plz, plz.objects.plz);
 
-  let funds_min = Number.MAX_VALUE, funds_max = 0;
-
   // A little coercion, since the CSV is untyped.
   funds.forEach(function(d, i) {
     d.index = i;
     d.date = new Date(d.jahr);
     d.betrag = +d.betrag;
-
-    if(d.betrag > funds_max) funds_max = d.betrag
-    if(d.betrag < funds_min) funds_min = d.betrag
 
     // if((d.name in dict_name)){
     //   d.name = dict_name[d.name].label
@@ -494,33 +497,12 @@ d3.queue()
 
   });
 
-  funds.sort((a,b)=>{
-    return a.betrag - b.betrag
-  })
-
-  let bin_count = 10, bin_border = []
-
-  for(let i = 0; i<=bin_count; i++){
-    let id = Math.round(i*(funds.length/bin_count))
-    bin_border.push(funds[((id == funds.length)?(id-1):id)].betrag)
-  }
-
   //id;name;geber;art;jahr;anschrift;politikbereich;zweck;betrag;empfaengerid;plz;city;street
 
   // Create the crossfilter for the relevant dimensions and groups.
   fund = crossfilter(funds);
   all = fund.groupAll().reduceSum(function(d){return d.betrag; });
   all_groups = fund.groupAll().reduceCount();
-
-  bins = fund.dimension(function(d) { 
-    for(let i = 0; i<bin_count; i++){
-        if(d.betrag > bin_border[i] && d.betrag < bin_border[i+1]){
-            return i
-        }
-    }
-    return bin_count
-  })
-  bin_groups = bins.group().reduceCount()
 
   // date = fund.dimension(function(d) { return d.date; }),
   // dates = date.group(d3.timeYear).reduceSum(function(d) { return d.betrag; }),
@@ -530,6 +512,8 @@ d3.queue()
   dates_count = date.group().reduceCount();
 
   names = fund.dimension(function(d) { return dict_name[name_keys[d.name]].label.toLowerCase(); });
+  names_sum = names.group().reduceSum(function(d) { return d.betrag; });
+  names_count = names.group().reduceCount();
   zwecke = fund.dimension(function(d) { return dict_zweck[zweck_keys[d.zweck]].label.toLowerCase(); });
 
   postcode = fund.dimension(function(d) { return d.plz; });
@@ -583,9 +567,19 @@ d3.queue()
   sum_chart = sumChart(d3.select('#sumChart'), all);
   sum_chart.init();
 
-  bin_chart = binChart(d3.select('#binChart'), bin_groups, funds_min, funds_max, bin_border, filterFunction, 'bins');
+  bin_borders = calcBinBorders(fund, 'betrag')
+  bin_count_borders = calcBinBorders(names_sum, 'value')
+  bin_sum_borders = calcBinBorders(names_count, 'value')
+
+  bin_chart = binChart(d3.select('#binChart-1'), calcBins(fund, bin_borders, 'betrag'), filterFunction, 'bin');
   bin_chart.init();
 
+  bin_sum_chart = binChart(d3.select('#binChart-2'), calcBins(names_sum, bin_count_borders, 'value'), filterFunction, 'bin_sum');
+  bin_sum_chart.init();
+
+  bin_count_chart = binChart(d3.select('#binChart-3'), calcBins(names_count, bin_sum_borders, 'value'), filterFunction, 'bin_count');
+  bin_count_chart.init();
+  
   geber_chart = matrixChart(d3.select('#geberChart'), gebers, gebers_jahre, dict_geber, gebers_jahre_count, filterFunction, 'geber', tip);
   geber_chart.init();
 
@@ -656,6 +650,78 @@ d3.queue()
   retrieveUrl();
 
 });
+
+function calcBinBorders (group, key) {
+    let bin_count = 10, 
+        bin_border = [],
+        data
+
+    if (typeof group.allFiltered === "function") { 
+        data = group.allFiltered()
+    }else{
+        data = group.all()
+    }
+
+    data.sort((a,b)=>{
+        return a[key]-b[key]
+    })
+
+    for(let i = 0; i<bin_count; i++){
+        let id = Math.round(i*(data.length/bin_count))
+        if(id>=data.length) id = data.length-1
+        bin_border.push(data[id][key])
+    }
+
+    for(let i = bin_border.length-1; i>0; i--){
+        if(bin_border[i] == bin_border[i-1]) bin_border.splice(i,1)
+    }
+
+    bin_border.sort((a,b)=>{ return a-b; })
+
+    return bin_border
+}
+
+function calcBins (group, bin_border, key){
+    let data, bins = []
+
+    if (typeof group.allFiltered === "function") { 
+        data = group.allFiltered()
+    }else{
+        data = group.all()
+    }
+
+    for(let i = 0; i<bin_border.length; i++){
+        bins[i] = 0;
+    }
+
+    data.forEach(d=>{
+        let found = false
+        for(let i = 0; i<bin_border.length; i++){
+            if(d[key] >= bin_border[i] && d[key] < bin_border[i+1]){
+                bins[i]++
+                found = true
+            }
+        }
+
+        if(!found){
+            if(d[key]<=bin_border[0]){
+                bins[0]++
+            }else{
+                bins[bin_border.length-1]++
+            }
+        }
+    })
+
+    bins.forEach((b,bi)=>{
+        bins[bi] = {
+            value:b,
+            from:bin_border[bi],
+            to:( (bi < bins.length-1) ? (bin_border[bi+1]-1) : data[data.length-1][key] )
+        }
+    })
+
+    return bins
+}
 
 function switchMaps(mode){
     d3.select('#minimap-buttons').classed('sum',false).classed('ratio',false).classed('count',false).classed(mode,true)

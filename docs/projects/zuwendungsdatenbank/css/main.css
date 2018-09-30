@@ -18,13 +18,9 @@
   float:left;
 }
 
-#binChart{
-  height:400px;
-  clear:both;
-  width:100%;
-  margin-bottom:50px;
-}
-
+#binChart-1,
+#binChart-2,
+#binChart-3,
 #yearChart,
 #mapChart{
   margin:0;
@@ -33,6 +29,12 @@
   height:400px;
   width:50%;
   margin-bottom:50px;
+}
+
+#binChart-1,
+#binChart-2,
+#binChart-3{
+  width:33.33%;
 }
 
 #mapChart{
