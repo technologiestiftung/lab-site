@@ -18,9 +18,7 @@
   float:left;
 }
 
-#binChart-1,
-#binChart-2,
-#binChart-3,
+.binChart,
 #yearChart,
 #mapChart{
   margin:0;
@@ -31,10 +29,42 @@
   margin-bottom:50px;
 }
 
-#binChart-1,
-#binChart-2,
-#binChart-3{
+.binChart{
+  margin-top:75px;
   width:33.33%;
+  height:auto;
+}
+
+.binChart h5{
+  margin-top:0;
+  padding-bottom:0;
+}
+
+.binChart-container{
+  width:100%;
+  height:400px;
+}
+
+.binGs:hover{
+  cursor: pointer;
+}
+
+.binGs.selected .text{
+  fill:#E70433;
+}
+
+.binGs.selected .blue-rect,
+.binGs:hover .blue-rect{
+  display: none;
+}
+
+.binGs .red-rect{
+  display: none;
+}
+
+.binGs.selected .red-rect,
+.binGs:hover .red-rect{
+  display: block;
 }
 
 #mapChart{

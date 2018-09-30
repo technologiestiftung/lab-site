@@ -9,7 +9,16 @@ var debouncer = function ( func , _timeout ) {
   };
 };
 
-function currency(d){
+function guid() {
+  function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
+  }
+  return s4();
+}
+
+function currency(d,text){
   var d = (d+'').split(''), c = '', j = 0;
   for(var i = d.length-1; i>=0; i--){
     c = d[i] + c;
@@ -19,7 +28,7 @@ function currency(d){
     }
     j++;
   }
-  return c + '&nbsp;€';
+  return c + ((text)?' ':'&nbsp;') + '€';
 }
 
 function createURL(){

@@ -108,16 +108,27 @@
                     <div id="geberChart"></div>
                     <div id="artChart"></div>
                     <hr class="clear" />
-                    <div class="binChart" id="binChart-1"></div>
-                    <div class="binChart" id="binChart-2"></div>
-                    <div class="binChart" id="binChart-3"></div>
+                    <div class="binChart">
+                        <h5>Höhe der Förderbeträge</h5>
+                        <div class="binChart-container" id="binChart-1"></div>
+                    </div>
+                    <div class="binChart">
+                        <h5>Summe der Förderungen pro Empfänger</h5>
+                        <div class="binChart-container" id="binChart-2"></div>
+                    </div>
+                    <div class="binChart">
+                        <h5>Anzahl der Förderungen pro Empfänger</h5>
+                        <div class="binChart-container" id="binChart-3"></div>
+                    </div>
                     <hr class="clear" />
                     <div id="maprow">
                         <button id="showMiniMap">&#10225;&nbsp;Jahreskarten anzeigen</button><br />
                         <div id="minimap-buttons" class="sum"><span id="mmb-sum">Summe (€)</span> / <span id="mmb-count">Anzahl</span> / <span id="mmb-ratio">Verhältnis Summe/Anzahl</span></div>
                     </div>
+                    <hr class="clear" style="height:50px;" />
                     <input type="text" class="search" id="search" placeholder="Namens-Suche" />
                     <input type="text" class="search" id="search_zweck" placeholder="Zweck-Suche" />
+                    <hr class="clear" style="height:25px;" />
                     <div  id="pagination" class="pagination">
                         <a class="prev">&laquo; zurück</a>
                         <span>x von y Förderungen</span>
@@ -244,7 +255,7 @@ function updateUI(){
 
 //Create a global object that contains dimensions and groups, etc.
 
-var state = {}, searchterm_name = '', searchterm_zweck = '', bin_borders, bin_count_borders, bin_sum_borders, dates_count, fund, all, all_groups, date, dates, names, names_sum, names_count, postcode, postcodes, politikbereich, politikbereichs, geber, gebers, geber_jahre, gebers_jahre, politikbereich_jahre, politikbereichs_jahre, postcodeYears, postcodeYears_count, filter, sum_chart, art_chart, year_chart, map_chart, map_chart_years, table;
+var state = {}, searchterm_name = '', empfaenger, organisations_a, organisations, searchterm_zweck = '', overall_count, overall_sum, amount, bin_borders, bin_count_borders, bin_sum_borders, dates_count, fund, all, all_groups, date, dates, names, names_sum, names_count, postcode, postcodes, politikbereich, politikbereichs, geber, gebers, geber_jahre, gebers_jahre, politikbereich_jahre, politikbereichs_jahre, postcodeYears, postcodeYears_count, filter, sum_chart, art_chart, year_chart, map_chart, map_chart_years, table;
 
 function updateFilter(){
   var changed = false;
@@ -269,7 +280,7 @@ function updateFilter(){
 }
 
 var filterFunction = function(key, value, silent){
-  //console.log('filterFunction', key, value, silent)
+  console.log('filterFunction', key, value, silent)
   //fix bug with double zero digits
   value = cleanId(value);
 
@@ -287,7 +298,7 @@ var filterFunction = function(key, value, silent){
 
   }
 
-  var dimension = null;
+  var dimension = null, borders = null;
   switch(key){
     case 'date':
       dimension = date;
@@ -300,6 +311,18 @@ var filterFunction = function(key, value, silent){
     break;
     case 'geber':
       dimension = geber;
+    break;
+    case 'bin':
+      dimension = amount;
+      borders = bin_borders;
+    break;
+    case 'bin_sum':
+      dimension = overall_sum;
+      borders = bin_sum_borders;
+    break;
+    case 'bin_count':
+      dimension = overall_count;
+      borders = bin_count_borders;
     break;
   }
 
@@ -319,15 +342,49 @@ var filterFunction = function(key, value, silent){
   }else if(key == 'searchterm_zweck'){
 
         if(filter[key].length > 2){
+
             zwecke.filter(function(d){
                 if(d.indexOf(filter[key].toLowerCase())>-1){
                     return true;
                 }
                 return false;
             });
+
         }else{
+
             zwecke.filterAll();
+
         }
+
+  }else if(key == 'bin' || key == 'bin_count' || key == 'bin_sum'){
+
+    if(filter[key].length == 0){
+
+        dimension.filterAll();
+
+    }else{
+
+        filter[key].forEach((f,fi)=>{
+            filter[key][fi] = parseInt(filter[key][fi])
+        })
+
+        dimension.filter(d=>{
+            let inside = false
+            for(let b = 0; b<borders.length; b++){
+                if(filter[key].indexOf(b)>-1){
+                    if(b == borders.length-1){
+                        if(d >= borders[b]){
+                            inside = true
+                        }
+                    }else if(d >= borders[b] && d < borders[b+1]){
+                        inside = true
+                    }
+                }
+            }
+            return inside;
+        })
+
+    }
 
   }else{
 
@@ -481,21 +538,36 @@ d3.queue()
 
   plz = topojson.feature(plz, plz.objects.plz);
 
+  organisations = {}
+  organisations_a = []
+
   // A little coercion, since the CSV is untyped.
   funds.forEach(function(d, i) {
     d.index = i;
     d.date = new Date(d.jahr);
     d.betrag = +d.betrag;
 
-    // if((d.name in dict_name)){
-    //   d.name = dict_name[d.name].label
-    // }
+    if(!(d.empfaengerid in organisations)) organisations[d.empfaengerid] = {count:0, sum:0, id:[], empfaengerid:d.empfaengerid}
 
-    // if((d.zweck in dict_zweck)){
-    //   d.zweck = dict_zweck[d.zweck].label
-    // }
+    organisations[d.empfaengerid].id.push(i)
+    organisations[d.empfaengerid].count++
+    organisations[d.empfaengerid].sum += d.betrag
 
   });
+
+  for(let o_key in organisations){
+    organisations_a.push({
+        id:o_key,
+        empfaengerid:organisations[o_key].empfaengerid,
+        count:organisations[o_key].count,
+        sum:organisations[o_key].sum
+    })
+  }
+
+  funds.forEach(f=>{
+    f['overall_count'] = organisations[f.empfaengerid].count
+    f['overall_sum'] = organisations[f.empfaengerid].sum
+  })
 
   //id;name;geber;art;jahr;anschrift;politikbereich;zweck;betrag;empfaengerid;plz;city;street
 
@@ -506,6 +578,11 @@ d3.queue()
 
   // date = fund.dimension(function(d) { return d.date; }),
   // dates = date.group(d3.timeYear).reduceSum(function(d) { return d.betrag; }),
+
+  empfaenger = fund.dimension(function(d) { return d.empfaengerid; }).group();
+  amount = fund.dimension(function(d) { return d.betrag; });
+  overall_count = fund.dimension(function(d) { return d.overall_count; });
+  overall_sum = fund.dimension(function(d) { return d.overall_sum; });
 
   date = fund.dimension(function(d) { return d.jahr; });
   dates = date.group().reduceSum(function(d) { return d.betrag; });
@@ -562,22 +639,24 @@ d3.queue()
   postcodeYears_count[2017] = postcode.group().reduceSum(function(d) { return ((d.jahr == 2017)?1:0); });
   //}
 
-  filter = {date:[],politikbereich:[],geber:[],postcode:[],searchterm_name:'',searchterm_zweck:''};
+  filter = {bin:[],bin_sum:[],bin_count:[],date:[],politikbereich:[],geber:[],postcode:[],searchterm_name:'',searchterm_zweck:''};
 
   sum_chart = sumChart(d3.select('#sumChart'), all);
   sum_chart.init();
 
-  bin_borders = calcBinBorders(fund, 'betrag')
-  bin_count_borders = calcBinBorders(names_sum, 'value')
-  bin_sum_borders = calcBinBorders(names_count, 'value')
+  bin_borders =         calcBinBorders(amount, 'betrag')
+  bin_sum_borders =     calcBinBordersSpecial(names_sum, 'value')
+  bin_count_borders =   calcBinBordersSpecial(names_count, 'value')
 
-  bin_chart = binChart(d3.select('#binChart-1'), calcBins(fund, bin_borders, 'betrag'), filterFunction, 'bin');
+  let organisations_t = buildOrganisation()
+
+  bin_chart = binChart(d3.select('#binChart-1'), calcBins(amount, bin_borders, 'betrag'), 'Förderungen', filterFunction, 'bin');
   bin_chart.init();
 
-  bin_sum_chart = binChart(d3.select('#binChart-2'), calcBins(names_sum, bin_count_borders, 'value'), filterFunction, 'bin_sum');
+  bin_sum_chart = binChart(d3.select('#binChart-2'), calcBinsSpecial(organisations_t, bin_sum_borders, 'sum'), 'Empfänger mit Summen', filterFunction, 'bin_sum');
   bin_sum_chart.init();
 
-  bin_count_chart = binChart(d3.select('#binChart-3'), calcBins(names_count, bin_sum_borders, 'value'), filterFunction, 'bin_count');
+  bin_count_chart = binChart(d3.select('#binChart-3'), calcBinsSpecial(organisations_t, bin_count_borders, 'count'), 'Empfänger', filterFunction, 'bin_count');
   bin_count_chart.init();
   
   geber_chart = matrixChart(d3.select('#geberChart'), gebers, gebers_jahre, dict_geber, gebers_jahre_count, filterFunction, 'geber', tip);
@@ -654,13 +733,31 @@ d3.queue()
 function calcBinBorders (group, key) {
     let bin_count = 10, 
         bin_border = [],
-        data
+        data = group.top(Infinity)
 
-    if (typeof group.allFiltered === "function") { 
-        data = group.allFiltered()
-    }else{
-        data = group.all()
+    data.sort((a,b)=>{
+        return a[key]-b[key]
+    })
+
+    for(let i = 0; i<bin_count; i++){
+        let id = Math.round(i*(data.length/bin_count))
+        if(id>=data.length) id = data.length-1
+        bin_border.push(data[id][key])
     }
+
+    for(let i = bin_border.length-1; i>0; i--){
+        if(bin_border[i] == bin_border[i-1]) bin_border.splice(i,1)
+    }
+
+    bin_border.sort((a,b)=>{ return a-b; })
+
+    return bin_border
+}
+
+function calcBinBordersSpecial (group, key) {
+    let bin_count = 10, 
+        bin_border = [],
+        data = group.top(Infinity)
 
     data.sort((a,b)=>{
         return a[key]-b[key]
@@ -682,13 +779,11 @@ function calcBinBorders (group, key) {
 }
 
 function calcBins (group, bin_border, key){
-    let data, bins = []
+    let data = group.top(Infinity), bins = []
 
-    if (typeof group.allFiltered === "function") { 
-        data = group.allFiltered()
-    }else{
-        data = group.all()
-    }
+    data.sort((a,b)=>{
+        return a[key]-b[key]
+    })
 
     for(let i = 0; i<bin_border.length; i++){
         bins[i] = 0;
@@ -723,6 +818,51 @@ function calcBins (group, bin_border, key){
     return bins
 }
 
+function calcBinsSpecial (group, bin_border, key){
+    let bins = []
+
+    group.sort((a,b)=>{
+        return a[key]-b[key]
+    })
+
+    for(let i = 0; i<bin_border.length; i++){
+        bins[i] = 0;
+    }
+
+    group.forEach(d=>{
+        let found = false
+        for(let i = 0; i<bin_border.length; i++){
+            if(d[key] >= bin_border[i] && d[key] < bin_border[i+1]){
+                bins[i]++
+                found = true
+            }
+        }
+
+        if(!found){
+            if(d[key]<=bin_border[0]){
+                bins[0]++
+            }else{
+                bins[bin_border.length-1]++
+            }
+        }
+    })
+
+    bins.forEach((b,bi)=>{
+        bins[bi] = {
+            value:b,
+            from:bin_border[bi],
+            to:( (bi < bins.length-1) ? (bin_border[bi+1]-1) : ((group.length==0)?0:group[group.length-1][key]) )
+        }
+    })
+
+    return bins
+}
+
+function buildOrganisation(){
+    let filtered = empfaenger.all()
+    return filtered.filter(d=>d.value>0).map(d=>organisations[d.key])
+}
+
 function switchMaps(mode){
     d3.select('#minimap-buttons').classed('sum',false).classed('ratio',false).classed('count',false).classed(mode,true)
     for(var i = 2009; i<=2017; i++){
@@ -731,6 +871,12 @@ function switchMaps(mode){
 }
 
 function updateCharts(){
+    let organisations_t = buildOrganisation()
+
+  bin_chart.data(calcBins(amount, bin_borders, 'betrag'), filter['bin'])
+  bin_sum_chart.data(calcBinsSpecial(organisations_t, bin_sum_borders, 'sum'), filter['bin_sum'])
+  bin_count_chart.data(calcBinsSpecial(organisations_t, bin_count_borders, 'count'), filter['bin_count'])
+
   geber_chart.data(gebers_jahre, gebers, gebers_jahre_count, filter['geber'], filter['date']);
   art_chart.data(politikbereichs_jahre, politikbereichs, politikbereichs_jahre_count, filter['politikbereich'], filter['date']);
   year_chart.data(dates, dates_count, filter['date']);

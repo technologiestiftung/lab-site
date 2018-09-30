@@ -210,7 +210,6 @@ var mapChart = function(_container, _geojson, _data, _count_data, _dict, _filter
   module.data = function(_data, _count_data, _filters){
     data = _data;
     count_data = _count_data;
-    console.log(count_data.top(1)[0].value)
     filters = _filters;
     color_sum.domain([0, Math.pow(data.top(1)[0].value, root)]);
     color_count.domain([0, Math.pow(count_data.top(1)[0].value, root)]);
