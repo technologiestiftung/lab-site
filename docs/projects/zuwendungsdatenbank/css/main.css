@@ -486,7 +486,7 @@ g.matrixGroup:hover text{
   margin-bottom:25px;
 }
 
-#maprow button, #intro button{
+#maprow button, #intro button, .link-button, #switchTables{
   font-size:16px;
   border:1px solid #000;
   padding:5px 10px;
@@ -495,14 +495,20 @@ g.matrixGroup:hover text{
   outline:none;
 }
 
+.link-button{
+  display: inline-block;
+  margin:0 auto;
+}
+
 #maprow button{
   margin:30px 0;
 }
 
-#maprow button:hover, #intro button:hover{
+#maprow button:hover, #intro button:hover, .link-button:hover, #switchTables:hover{
   border-color:#E70433;
   background-color:#E70433;
   color:#fff;
+  text-decoration: none !important;
 }
 
 h5{
