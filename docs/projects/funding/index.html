@@ -82,7 +82,7 @@
             <div id="title">
                 <div class="container">
                     <span class="button tag">Datenvisualisierung</span>
-                    <h1>Die Förderungsdaten Berlins visualisiert</h1>
+                    <h1>Fördergelder in Berlin: Eine Übersicht</h1>
                     <span class="title-subline">Fabian Dinklage (<a href="https://twitter.com/fdnklg">@fdnklg</a>) | 02/2018</span>
                 </div>
             </div>
@@ -90,18 +90,17 @@
             <!-- Start editing here -->
 
             <div class="container p-bottom">
-                <p class="copy">
+                <p class="copy">							
 
-										Seit dem 01.Juli 2009 werden jährlichen Abständen Förderungsdaten von der Senatsverwaltung für Integration, Arbeit und Soziales für mehr Transparenz online zur Verfügung gestellt. Die Vergabe der Förderungen werden individuell unterschiedlich im Rahmen der zur Verfügung stehenden Hausmittel vergeben. <br><br>
-										
-										 Die Daten enthalten Informationen über die Förderungsvolumen der Projekte sowie Projekttyp, Zeitpunkt und Name der Begünstigten. Diese sind über eine Suchmaske öffentlich <a href="http://www.berlin.de/sen/finanzen/service/zuwendungsdatenbank/">erreichbar.</a> Wir haben alle Förderungsdaten des Zeitraums 2009 bis 2017 gesammelt, aufbereitet und in einem Bubble Chart visualisiert. <br><br>
+										Die Berliner <a href="https://www.berlin.de/sen/finanzen/">Senatsverwaltung für Finanzen</a> veröffentlicht regelmäßig Daten über finanzielle Zuwendungen aus Landesmitteln. In einer <a href="http://www.berlin.de/sen/finanzen/service/zuwendungsdatenbank/">Zuwendungsdatenbank</a> lässt sich abfragen, wer öffentliche Förderungen in welcher Höhe erhalten hat. Diese Daten sind in vielfacher Hinsicht interessant – unter Transparenzgesichtspunkten, aber auch für weiterführende Analysen der Berliner Förderlandschaft.<br><br>
 
+										Wir haben uns in den letzten Monaten intensiv mit den Berliner Zuwendungsdaten beschäftigt. Herausgekommen ist ein umfassendes <a href="https://lab.technologiestiftung-berlin.de/projects/zuwendungsdatenbank/">Recherchetool</a>, das es erlaubt, die Zuwendungsdaten von 2009 bis 2017 nach vielfältigen Kriterien zu filtern und auszuwerten. Zusätzlich zeigen wir hier in  einer einführenden Übersicht, in welche Bereiche die Landesmittel fließen.
 								</p>
 						</div>
 
 						<div class="container p-top">
-							<h2>Zuwendungen der Stadt Berlin:</h2>
-							<p class="copy">Filtere den Datensatz folgenden Kriterien: Geldvolumen pro Jahr oder Anzahl der Zuwendungen im Jahr.</p>
+							<h2>Zuwendungen des Landes Berlin:</h2>
+							<p class="copy">Filtern nach Volumen oder Anzahl der Zuwendungen pro Jahr.</p>
 
 						</div>
 
@@ -173,11 +172,7 @@
 
             <div class="container p-bottom">
                 <p class="copy">
-									Die Visualisierung fasst mehr als 5.700 Förderungen der letzten 7 Jahre aufgeteilt nach den Förderungsbereichen zusammen. Bei Diesem Datensatz sind 3 Parameter besonders interessant. Der zeitliche Verlauf (X-Achse), die Projektbereiche (Y-Achse), und die Förderungssummen (Kreisradius). Mit einem Bubble Chart lassen sich die Parameter direkt miteinander in Verbindung bringen. Es wird deutlich welche Bereiche am meisten gefördert werden und wie die unterschiedlichen Bereiche zueinander stehen. Außerdem lassen sich Entwicklungen und Trends der Förderungen in Berlin innerhalb der letzen Jahre direkt ablesen. <br><br>
-
-									Diese Visualisierung summiert alle Einzelförderungen jährlich zusammen. Die einzelne Förderung wird so vernachlässigt und lässt sich nicht isoliert betrachten. Möchte man diese Daten zeigen, ist ein anderer Visualisierungstyp notwendig. Etwa eine <a href="https://infovis-wiki.net/wiki/treemap">Treemap</a>, eine rechteckige Visualisierung, in der die Daten nach ihren Kategorien den Anteil des Raumes einnehmen und so die Visualisierung ausfüllen. Oder den vom Treemap inspirierten <a href="https://infovis-wiki.net/wiki/Circle_Packing">Circle Packing Chart</a>, in dem die Einzelförderungen in Form von Kreisen visualisiert werden und so den nächste größeren Kreis ausfüllen. Dieser Typ is etwas weniger effizient, was die Nutzung des Raumes betrifft. Die Hierachien sind allerdings etwas besser visuell nachzuvollziehen. Aufgrund der hohen Anzahl an Einträgen haben wir davon abgesehen, und die Einträge auf den entsprechende Kategorie reduziert.
-									
-									
+									Die Visualisierung fasst mehr als 5.700 Förderungen der letzten 7 Jahre aufgeteilt nach den Förderungsbereichen zusammen. Wir haben uns zur Visualisierung für ein sogenanntes Bubble Chart entschieden, da so die drei entscheidenden Parameter (Zeit, Projektbereich, Fördersumme) übersichtlich in Verbindung gebracht werden können. Wer einen tiefergehenden Blick in die Zuwendungsdaten werfen möchte, dem empfehlen wir unser Recherchetool.		
 								</p>
             </div>
 
@@ -372,7 +367,7 @@
 						}
 
 						var legendTitle = {
-							moneyAbsolute: 'Kreisfläche: Volumen aller Zuwenungen in Euro',
+							moneyAbsolute: 'Kreisfläche: Volumen aller Zuwendungen in Euro',
 							moneyRelative: 'Kreisfläche: Volumen in % pro Jahr',
 							countRelative: 'Kreisfläche: Anzahl in % pro Jahr',
 							countAbsolute: 'Kreisfläche: Anzahl d. Zuwendungen pro Jahr.'
