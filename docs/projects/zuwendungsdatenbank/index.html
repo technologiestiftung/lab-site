@@ -171,6 +171,9 @@
                     <input type="text" class="search" id="search" placeholder="Namens-Suche" />
                     <input type="text" class="search" id="search_zweck" placeholder="Zweck-Suche" />
                     <hr class="clear" style="height:25px;" />
+                    <div style="text-align: center;">
+                        <button id="switchTables">&harrw;&nbsp;Tabelle nach Empfängern gruppieren</button><br />
+                    </div>
                     <div id="preview">
                         <div class="pagination">
                             <a class="prev">&laquo; zurück</a>
@@ -207,7 +210,7 @@
                             <a class="next">weiter &raquo;</a>
                         </div>
                     </div>
-                    <div id="preview_group">
+                    <div id="preview_group" style="display:none;">
                         <div class="pagination">
                             <a class="prev">&laquo; zurück</a>
                             <span>x von y Förderungen</span>
@@ -319,6 +322,21 @@
 <script>
 
 let tip = tooltip();
+
+let table_mode = false
+d3.select('#switchTables').on('click',d=>{
+    if(!table_mode){
+        d3.select('#preview').style('display','none')
+        d3.select('#preview_group').style('display','block')
+        d3.select('#switchTables').html('&harrw;&nbsp;zurück zur detaillierten Tabelle')
+        table_mode = true
+    }else{
+        d3.select('#preview').style('display','block')
+        d3.select('#preview_group').style('display','none')
+        d3.select('#switchTables').html('&harrw;&nbsp;Tabelle nach Empfängern gruppieren')
+        table_mode = false
+    }
+})
 
   // ACTIONS FROM THE UI
 
