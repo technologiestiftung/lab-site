@@ -4,8 +4,8 @@
 				
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Berlin's Funding Data Revealed | Ideation &amp; Prototyping Lab</title>
-        <meta name="description" content="{{PROJECT_DESCRIPTION_EN}}">
+        <title>Berlin's Funding Data — An Overview | Ideation &amp; Prototyping Lab</title>
+        <meta name="description" content="A visualisation provides insights into Berlin's funding data">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
 
         <link type="text/plain" rel="author" href="../../humans.txt" />
@@ -25,9 +25,9 @@
         <meta property="fb:app_id" content="487094758334595">
         <meta property="og:url" content="http://lab.technologiestiftung-berlin.de/projects/funding/index.html">
         <meta property="og:type" content="website">
-        <meta property="og:title" content="{{PROJECT_TITLE_EN}}">
+        <meta property="og:title" content="Berlin's Funding Data — An Overview">
         <meta property="og:image" content="http://lab.technologiestiftung-berlin.de/projects/funding/images/social_media.jpg">
-        <meta property="og:description" content="{{PROJECT_DESCRIPTION_EN}}">
+        <meta property="og:description" content="A visualisation provides insights into Berlin's funding data">
         <meta property="og:site_name" content="Ideation &amp; Prototyping Lab">
         <meta property="article:author" content="Fabian Dinklage">
 
@@ -36,13 +36,13 @@
         <meta name="twitter:site" content="@TSBBerlin">
         <meta name="twitter:creator" content="fdnklg">
         <meta name="twitter:url" content="http://lab.technologiestiftung-berlin.de/projects/funding/index.html">
-        <meta name="twitter:title" content="{{PROJECT_TITLE_EN}}">
-        <meta name="twitter:description" content="{{PROJECT_DESCRIPTION_EN}}">
+        <meta name="twitter:title" content="Berlin's Funding Data — An Overview">
+        <meta name="twitter:description" content="A visualisation provides insights into Berlin's funding data">
         <meta name="twitter:image" content="http://lab.technologiestiftung-berlin.de/projects/funding/images/social_media.jpg">
 
         <!-- GOOGLE+/SCHEMA.ORG -->
-        <meta itemprop="name" content="{{PROJECT_TITLE_EN}}">
-        <meta itemprop="description" content="{{PROJECT_DESCRIPTION_EN}}">
+        <meta itemprop="name" content="Berlin's Funding Data — An Overview">
+        <meta itemprop="description" content="A visualisation provides insights into Berlin's funding data">
         <meta itemprop="image" content="http://lab.technologiestiftung-berlin.de/projects/funding/images/social_media.jpg">
 
         <!-- CANONICAL URL -->
@@ -71,8 +71,8 @@
                 <div class="right">
                     <nav id="page-nav">
                         <ul>
-                            <li><a href="http://lab.technologiestiftung-berlin.de">Zurück zum Lab</a>&nbsp;<span class="arrow">&#8614;</span></li>
-                            <li class="lang"><a href="http://lab.technologiestiftung-berlin.de/projects/funding/index_en.html">English</a></li>
+                            <li><a href="http://lab.technologiestiftung-berlin.de">back to the Lab</a>&nbsp;<span class="arrow">&#8614;</span></li>
+                            <li class="lang"><a href="http://lab.technologiestiftung-berlin.de/projects/funding/index.html">Deutsch</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -82,7 +82,7 @@
             <div id="title">
                 <div class="container">
                     <span class="button tag">DataVis</span>
-                    <h1>Visualizing grant awards in Berlin</h1>
+                    <h1>Berlin's Funding Data — An Overview</h1>
                     <span class="title-subline">Fabian Dinklage (<a href="https://twitter.com/fdnklg">@fdnklg</a>) | 02/2018</span>
                 </div>
             </div>
@@ -92,11 +92,9 @@
             <div class="container p-bottom">
                 <p class="copy">
 
-                        Since 1 July 2009, the Senate Administration for Integration, Labour and Social Affairs has made yearly funding data available online to promote greater transparency. The circumstances under which an individual grant is awarded varies based on how much is being awarded and out of what budgetary source the money originates. 
-                        
-                        <br><br>
-                        
-                        The data containsinformation on the funding volume of the projects as well as the project type, date and name of the beneficiaries. This information is publicly <a href="http://www.berlin.de/sen/finanzen/service/zuwendungsdatenbank/">available.</a> via a search template. We have collected all funding data for the period of 2009 to 2017, cleaned and processed it and visualised it in a bubble chart. 
+                        In regular intervals, Berlin's <a href="https://www.berlin.de/sen/finanzen/">senate department for finance</a> publishes data on how the state of Berlin is funding Berlin institutions. The data is accessible through an online <a href="http://www.berlin.de/sen/finanzen/service/zuwendungsdatenbank/">database</a>. Users can query who received funding and of what size. The data provides more transparency on Berlin's funding infrastructure and allows for further analysis and exploration.<br><br>
+
+                        Over the last few month we have been digging through more than 73.000 individual fundings. The result is a <a href="https://lab.technologiestiftung-berlin.de/projects/zuwendungsdatenbank/">tool</a> for visual exploratory data analysis, which allows users to filter along multiple categories and explore fundings from 2009 to 2017. In addition, we have build a quick overview, showing which topics received most of the funding and further trends over time.
 
                         <br><br>
 
@@ -177,11 +175,9 @@
 
             <div class="container p-bottom">
                 <p class="copy">
-                        The visualization summarizes more than 5,700 grants from the last nine years, with the data broken up by funding areas. With this dataset, three parameters are particularly interesting: the trends over time (X-axis), the projects' thematic areas (Y-axis), and the funding totals (circle radius). With a bubble chart, the parameters can be directly connected to each other. This choice of visualization makes it easy to see which areas receive the most funding and how the different areas relate to each other. Moreover, we can use the chart to identify broad developments and trends with respect to funding awards in Berlin over the past few years.
-                        
-                        <br><br>
+                    We have chosen a so called bubble chart, in order to show the dimensions time, topic and sum in correlation to one another. For those who want a more detailed view of the data, you can use our data exploration <a href="https://lab.technologiestiftung-berlin.de/projects/zuwendungsdatenbank/">tool</a>.
 
-                        This visualization sums up all individual grants annually. This means it's not possible (with this chart) to explore individual funding recipients. If you want to show this data, a different visualization type is necessary. One possibility could be a <a href="http://www.infovis-wiki.net/index.php?title=Treemap">Treemap</a>, which is a rectangular visualization in which the data takes up the proportion of space according to its categories and thus fills the visualization. Another possibility is the <a href="http://www.infovis-wiki.net/index.php/Circle_Packing">Circle Packing Chart</a>, inspired by the Treemap, in which the individual grants are visualized in the form of circles and thus fill the next larger circle. This type is a little less efficient when it comes to the use of space. However, the hierarchies are somewhat more visually understandable. Due to the high number of entries, we have refrained from this and reduced the entries to their thematic area.
+                    
                 </p>
             </div>
 
@@ -992,7 +988,7 @@
 									.append("text")
 									.classed('annotation', true)
 									.attr('x', posX2 + 10)
-									.attr('textLength', 200)
+									//.attr('textLength', 200)
 									.attr('y', posY2 + 10)
 								
 								swoopyText.selectAll('tSpan')
