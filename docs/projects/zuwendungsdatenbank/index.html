@@ -81,15 +81,56 @@
                 <div class="container">
                     <span class="button tag">Offene Daten</span>
                     <h1>Berliner Zuwendungsdaten</h1>
-                    <span class="title-subline">Sebastian Meier (<a href="https://twitter.com/seb_meier">@seb_meier</a>) | 01/03/2018</span>
+                    <span class="title-subline">Sebastian Meier (<a href="https://twitter.com/seb_meier">@seb_meier</a>) | 01/10/2018</span>
                 </div>
             </div>
 
             <!-- Start editing here -->
 
             <div class="container p-bottom">
-                <p class="copy">Abkürzungen: SK > Senatskanzlei, BA > Bezirksamt, SV > Senatsverwaltung.</p>
-                <p class="copy"><a id="bvg-search">BVG Search</a></p>
+                <p style="padding-bottom:50px;" class="copy">Die Senatsverwaltung für Finanzen, stellt auf Ihren Internetseiten die Zuwendungsdaten des Lands Berlin als <a href="https://www.berlin.de/sen/finanzen/service/zuwendungsdatenbank/">Download</a> zur Verfügung. Wir haben uns die Daten genauer angeschaut und in Form eines interaktiven Explorers visualisiert. Die Anwendung zeigt 73436 Förderungen aus den Jahren 2009 bis 2017. Neben dieser komplexen Anwendungen, bieten wir auch eine schnellen Übersicht in einer zusammenfassenden <a href="https://lab.technologiestiftung-berlin.de/projects/funding/">Visualisierung</a>.</p>
+                <p class="copy p-bottom" style="text-align: center;"><a class="link-button" href="#vis">&darr;&nbsp;Direkt zur Anwendung</a>      </p>
+                <h3>Abkürzungen in Text und Visualisierung:</h3>
+                <p class="copy p-bottom">SV: Senatsverwaltung, BA: Bezirksamt, SK: Senatskanzlei</p>
+                <p style="text-align:center;">
+                    <a href="https://lab.technologiestiftung-berlin.de/projects/funding/"><img style="margin:0 auto; max-width:700px; width:100%;" src="images/funding-overview.jpg" alt="Zuwendungsdaten Übersicht" /></a>
+                </p>
+                <p class="copy" style="text-align:center; font-size:12px;">Abbildung: Zusammenfassende <a href="https://lab.technologiestiftung-berlin.de/projects/funding/">Übersichts-Visualisierung</a></p>
+                    <!--Abkürzungen: SK > Senatskanzlei, BA > Bezirksamt, SV > Senatsverwaltung.</p>-->
+                <h3 class="p-top">Einblicke in die Anwendung</h3>
+                <p class="copy p-bottom">
+                    Über die verschiedenen Filtermöglichkeiten, können Nutzer*innen den großen Datensatz schnell erschließen und interessante Aspekte explorieren. Als Einstieg zeigen wir drei exemplarische Erkenntnisse unserer Exploration: 
+                </p>
+                <h3>Veränderungen in der Verwaltung</h3>
+                <p class="copy p-bottom">
+                    Mit dem politischen Wandel in Berlin kommen oft auch Veränderungen in der Organisation Berlins einher. In den Daten zeigt sich schnell, wie z.B. Verantwortungen für bestimmte Förderbereiche sich zwischen Senatsverwaltungen verschieben oder Senatsverwaltungen aufgelöst und neu gegründet werden. In der Abbildung unten zeigt sich z.B. wie sich die Bereiche Gesundheit und Bildung über die Jahre verändert haben.
+                </p>
+                <p style="text-align:center;">
+                    <img src="images/verwaltungen.jpg" style="margin:0 auto; max-width:700px; width:100%;" alt="Veränderungen in der Verwaltung" />
+                </p>
+                <p class="copy p-bottom" style="text-align:center; font-size:12px;">Abbildung, oben: Verschiebung im Bereich Gesundheit, unten: Verschiebung im Bereich Bildung</p>
+                <h3>Thematischer Fokus: Antidiskriminierung</h3>
+                <p class="copy p-bottom">
+                    Auch inhaltlich lassen sich Trends aufzeigen. Beispielhaft zeigt sich beim Thema Antidiskriminierung, wie die Zuwendungen von knapp einer Millionen in 2009 zu über 6 Millionen in 2017 angewachsen sind. Darüber hinaus hat sich auch der räumliche Fokus von Antidiskriminierungsprojekten vergrößert (siehe Abbildung). 
+                    <br /><a id="anti-search">Antidiskriminierung in der Visualisierung anzeigen &raquo;</a>
+                </p>
+                <p style="text-align:center;">
+                    <img src="images/anti.jpg" style="margin:0 auto; max-width:700px; width:100%;" alt="BVG Förderungen" />
+                </p>
+                <p class="copy p-bottom" style="text-align:center; font-size:12px;">Abbildung: Veränderung der räumlichen Verteilung beim Thema Antidiskriminierung</p>
+                <h3>Der größte Empfänger, die BVG</h3>
+                <p class="copy p-bottom">
+                    Die BVG bekommt die meisten Zuwendungen und auch insgesamt das meiste Geld. Insgesamt 4.012.014.851&nbsp;€ zwischen 2009 und 2017. Dieses Geld wird z.B. genutzt um neue Züge zu erwerben oder Sanierungsarbeiten vorzunehmen.
+                    <br /><a id="bvg-search">BVG in der Visualisierung anzeigen &raquo;</a>
+                </p>
+                <p style="text-align:center;">
+                    <img src="images/bvg.jpg" style="margin:0 auto; max-width:500px; width:100%;" alt="BVG Förderungen" />
+                </p>
+                <p class="copy" style="text-align:center; font-size:12px;">Abbildung: Förderungen an die BVG über Jahre</p>
+
+                
+                    
+
             </div>
 
             <div class="special-section" id="vis">
@@ -286,6 +327,7 @@ function updateUI(){
 }
 
 function doFilters(_filters){
+    document.getElementById('vis').scrollIntoView();
     reset();
     for(let key in _filters){
         state[key] = _filters[key];
@@ -296,6 +338,12 @@ function doFilters(_filters){
 d3.select('#bvg-search').on('click', d=>{
     doFilters({
         searchterm_name:['bvg']
+    })
+})
+
+d3.select('#anti-search').on('click', d=>{
+    doFilters({
+        politikbereich:['01']
     })
 })
 
@@ -948,7 +996,7 @@ function calcBins (group, bin_border, key){
         bins[bi] = {
             value:b,
             from:bin_border[bi],
-            to:( (bi < bins.length-1) ? (bin_border[bi+1]-1) : data[data.length-1][key] )
+            to:( (bi < bins.length-1) ? (bin_border[bi+1]-1) : ((data.length==0)?0:data[data.length-1][key]) )
         }
     })
 
