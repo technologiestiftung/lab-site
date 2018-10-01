@@ -117,7 +117,8 @@ rect.sumbg, rect.bg, rect.bars{
   fill:rgba(0,0,0,0.1);
 }
 
-#preview{
+#preview,
+#preview table{
   clear:both;
 }
 
@@ -133,6 +134,8 @@ table{
 
 td, th{padding: 4px 10px 4px 0; text-align:left;}
 td.betrag,
+td.sum,
+th.sum,
 th.betrag{
   text-align:right;
 }
@@ -184,9 +187,6 @@ th.DESC::before{
   width:100%;
   text-align: center;
   padding:20px 0 50px 0;
-}
-
-#pagination{
   padding-bottom:20px;
 }
 

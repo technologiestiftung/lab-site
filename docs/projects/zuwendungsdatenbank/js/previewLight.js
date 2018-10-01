@@ -1,4 +1,4 @@
-var preview = function(_container, _data, _dicts, _columns, _table_root){
+var previewLight = function(_container, _data, _dicts, _columns, _table_root){
 
   var module = {},
     table_root = _table_root,
@@ -6,33 +6,25 @@ var preview = function(_container, _data, _dicts, _columns, _table_root){
     container = _container,
     sortKey = 'betrag',
     sortDirection = 'ASC',
-    data = _data.allFiltered(),
+    data = _data,
     dicts = _dicts,
     page = 0,
     perpage = 40;
 
   module.init = function(){
     module.sortData();
-
-    for(var key in dicts){
-      var tdict = {};
-      dicts[key].forEach(function(d){
-        tdict[d.id] = d.label;
-      });
-      dicts[key] = tdict;
-    }
-
     module.update();
   };
 
   module.data = function(_data){
-    data = _data.allFiltered();
+    data = _data;
     module.sortData();
     page = 0;
     module.update();
   };
 
   module.sortData = function(){
+    console.log(sortDirection, sortKey)
     data.sort(function(a,b){
       var aa = a, bb = b;
       if(sortDirection == 'DESC'){
@@ -40,9 +32,18 @@ var preview = function(_container, _data, _dicts, _columns, _table_root){
         bb = a;
       }
 
-      if(bb[sortKey]==aa[sortKey]) return bb['jahr']-aa['jahr']
+      if(bb[sortKey]==aa[sortKey]){
+        //sortKey = 'name'
+      }
 
-      return bb[sortKey]-aa[sortKey];
+      if(sortKey == 'name'){
+        if(bb[sortKey] < aa[sortKey]) return -1;
+        if(bb[sortKey] > aa[sortKey]) return 1;
+        return 0;
+      }else{
+        return bb[sortKey] - aa[sortKey]
+      }
+
     });
   };
 
@@ -86,10 +87,11 @@ var preview = function(_container, _data, _dicts, _columns, _table_root){
 
     columns.forEach(function(c){
       rows.append('td').attr('class',c).datum(function(d){ return d[c]; }).html(function(d){
+        console.log()
         if(c in dicts){
           return dicts[c][d];
         }
-        if(c == 'betrag'){
+        if(c == 'betrag' || c == 'sum'){
           return currency(d);
         }
         return d;

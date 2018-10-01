@@ -89,6 +89,7 @@
 
             <div class="container p-bottom">
                 <p class="copy">Abkürzungen: SK > Senatskanzlei, BA > Bezirksamt, SV > Senatsverwaltung.</p>
+                <p class="copy"><a id="bvg-search">BVG Search</a></p>
             </div>
 
             <div class="special-section" id="vis">
@@ -129,39 +130,71 @@
                     <input type="text" class="search" id="search" placeholder="Namens-Suche" />
                     <input type="text" class="search" id="search_zweck" placeholder="Zweck-Suche" />
                     <hr class="clear" style="height:25px;" />
-                    <div  id="pagination" class="pagination">
-                        <a class="prev">&laquo; zurück</a>
-                        <span>x von y Förderungen</span>
-                        <a class="next">weiter &raquo;</a>
+                    <div id="preview">
+                        <div class="pagination">
+                            <a class="prev">&laquo; zurück</a>
+                            <span>x von y Förderungen</span>
+                            <a class="next">weiter &raquo;</a>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th data-key="jahr" class="th-label th-jahr">Jahr</th>
+                                    <th data-key="name" class="th-label th-name">Name</th>
+                                    <th data-key="politikbereich" class="th-label th-politikbereich">Bereich</th>
+                                    <th data-key="geber" class="th-label th-geber">Geber</th>
+                                    <th data-key="zweck" class="th-label th-zweck">Zweck</th>
+                                    <th data-key="betrag" class="th-label th-betrag betrag">Summe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th data-key="jahr" class="th-label th-jahr">Jahr</th>
+                                    <th data-key="name" class="th-label th-name">Name</th>
+                                    <th data-key="politikbereich" class="th-label th-politikbereich">Bereich</th>
+                                    <th data-key="geber" class="th-label th-geber">Geber</th>
+                                    <th data-key="zweck" class="th-label th-zweck">Zweck</th>
+                                    <th data-key="betrag" class="th-label th-betrag betrag">Summe</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <div class="pagination">
+                            <a class="prev">&laquo; zurück</a>
+                            <span>x von y Förderungen</span>
+                            <a class="next">weiter &raquo;</a>
+                        </div>
                     </div>
-                    <table id="preview">
-                        <thead>
-                            <tr>
-                                <th data-key="jahr" class="th-label th-jahr">Jahr</th>
-                                <th data-key="name" class="th-label th-name">Name</th>
-                                <th data-key="politikbereich" class="th-label th-politikbereich">Bereich</th>
-                                <th data-key="geber" class="th-label th-geber">Geber</th>
-                                <th data-key="zweck" class="th-label th-zweck">Zweck</th>
-                                <th data-key="betrag" class="th-label th-betrag betrag">Summe</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th data-key="jahr" class="th-label th-jahr">Jahr</th>
-                                <th data-key="name" class="th-label th-name">Name</th>
-                                <th data-key="politikbereich" class="th-label th-politikbereich">Bereich</th>
-                                <th data-key="geber" class="th-label th-geber">Geber</th>
-                                <th data-key="zweck" class="th-label th-zweck">Zweck</th>
-                                <th data-key="betrag" class="th-label th-betrag betrag">Summe</th>
-                            </tr>
-                        </tfoot>
-                    </table>
-                    <div class="pagination">
-                        <a class="prev">&laquo; zurück</a>
-                        <span>x von y Förderungen</span>
-                        <a class="next">weiter &raquo;</a>
+                    <div id="preview_group">
+                        <div class="pagination">
+                            <a class="prev">&laquo; zurück</a>
+                            <span>x von y Förderungen</span>
+                            <a class="next">weiter &raquo;</a>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th data-key="name" class="th-label th-name">Name</th>
+                                    <th data-key="count" class="th-label th-count">Anzahl</th>
+                                    <th data-key="sum" class="th-label th-sum sum">Summe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th data-key="name" class="th-label th-name">Name</th>
+                                    <th data-key="count" class="th-label th-count">Anzahl</th>
+                                    <th data-key="sum" class="th-label th-sum sum">Summe</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <div class="pagination">
+                            <a class="prev">&laquo; zurück</a>
+                            <span>x von y Förderungen</span>
+                            <a class="next">weiter &raquo;</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -236,6 +269,7 @@
         <script src="js/mapChart.js"></script>
         <script src="js/matrixChart.js"></script>
         <script src="js/preview.js"></script>
+        <script src="js/previewLight.js"></script>
         <script src="js/sumChart.js"></script>
         <script src="js/binChart.js"></script>
         <script src="js/yearChart.js"></script>
@@ -251,11 +285,25 @@ function updateUI(){
   updateCharts();
 }
 
+function doFilters(_filters){
+    reset();
+    for(let key in _filters){
+        state[key] = _filters[key];
+    }
+    updateFilter();
+}
+
+d3.select('#bvg-search').on('click', d=>{
+    doFilters({
+        searchterm_name:['bvg']
+    })
+})
+
 //Predefined Filters
 
 //Create a global object that contains dimensions and groups, etc.
 
-var state = {}, searchterm_name = '', empfaenger, organisations_a, organisations, searchterm_zweck = '', overall_count, overall_sum, amount, bin_borders, bin_count_borders, bin_sum_borders, dates_count, fund, all, all_groups, date, dates, names, names_sum, names_count, postcode, postcodes, politikbereich, politikbereichs, geber, gebers, geber_jahre, gebers_jahre, politikbereich_jahre, politikbereichs_jahre, postcodeYears, postcodeYears_count, filter, sum_chart, art_chart, year_chart, map_chart, map_chart_years, table;
+var state = {}, searchterm_name = '', empfaenger, organisations_a, organisations, organisations_keys, searchterm_zweck = '', overall_count, overall_sum, amount, bin_borders, bin_count_borders, bin_sum_borders, dates_count, fund, all, all_groups, date, dates, names, names_sum, names_count, postcode, postcodes, politikbereich, politikbereichs, geber, gebers, geber_jahre, gebers_jahre, politikbereich_jahre, politikbereichs_jahre, postcodeYears, postcodeYears_count, filter, sum_chart, art_chart, year_chart, map_chart, map_chart_years, table;
 
 function updateFilter(){
   var changed = false;
@@ -418,6 +466,10 @@ var filterFunction = function(key, value, silent){
 };
 
 d3.select('#reset').on('click', function(){
+  reset()
+});
+
+function reset(){
   for(var key in state){
     var states = state[key]
 
@@ -442,7 +494,7 @@ d3.select('#reset').on('click', function(){
   d3.selectAll('#search, #search_zweck').property('value', '')
 
   dispatcher.call('action', this, createURL());
-});
+}
 
 let extension = '-2017-ckan'
 
@@ -540,6 +592,7 @@ d3.queue()
 
   organisations = {}
   organisations_a = []
+  organisations_keys = {}
 
   // A little coercion, since the CSV is untyped.
   funds.forEach(function(d, i) {
@@ -552,6 +605,10 @@ d3.queue()
     organisations[d.empfaengerid].id.push(i)
     organisations[d.empfaengerid].count++
     organisations[d.empfaengerid].sum += d.betrag
+
+    if(organisations[d.empfaengerid].count > 8000) console.log(d.empfaengerid)
+
+    organisations_keys[d.empfaengerid] = dict_name[name_keys[d.name]].label
 
   });
 
@@ -579,7 +636,11 @@ d3.queue()
   // date = fund.dimension(function(d) { return d.date; }),
   // dates = date.group(d3.timeYear).reduceSum(function(d) { return d.betrag; }),
 
-  empfaenger = fund.dimension(function(d) { return d.empfaengerid; }).group();
+  empfaenger_root = fund.dimension(function(d) { return d.empfaengerid; });
+  empfaenger = empfaenger_root.group();
+  names_sum = empfaenger_root.group().reduceSum(function(d) { return d.betrag; });
+  names_count = empfaenger_root.group().reduceCount();
+
   amount = fund.dimension(function(d) { return d.betrag; });
   overall_count = fund.dimension(function(d) { return d.overall_count; });
   overall_sum = fund.dimension(function(d) { return d.overall_sum; });
@@ -589,8 +650,6 @@ d3.queue()
   dates_count = date.group().reduceCount();
 
   names = fund.dimension(function(d) { return dict_name[name_keys[d.name]].label.toLowerCase(); });
-  names_sum = names.group().reduceSum(function(d) { return d.betrag; });
-  names_count = names.group().reduceCount();
   zwecke = fund.dimension(function(d) { return dict_zweck[zweck_keys[d.zweck]].label.toLowerCase(); });
 
   postcode = fund.dimension(function(d) { return d.plz; });
@@ -648,10 +707,10 @@ d3.queue()
   bin_sum_borders =     calcBinBordersSpecial(names_sum, 'value')
   bin_count_borders =   calcBinBordersSpecial(names_count, 'value')
 
-  let organisations_t = buildOrganisation()
-
   bin_chart = binChart(d3.select('#binChart-1'), calcBins(amount, bin_borders, 'betrag'), 'Förderungen', filterFunction, 'bin');
   bin_chart.init();
+
+  let organisations_t = buildOrganisation()
 
   bin_sum_chart = binChart(d3.select('#binChart-2'), calcBinsSpecial(organisations_t, bin_sum_borders, 'sum'), 'Empfänger mit Summen', filterFunction, 'bin_sum');
   bin_sum_chart.init();
@@ -697,12 +756,22 @@ d3.queue()
     minimapstate = !minimapstate
   })
 
-  table = preview(d3.select('#preview tbody'), fund, {zweck:dict_zweck, name:dict_name, geber:dict_geber, politikbereich:dict_politikbereich });
+  table = preview(d3.select('#preview tbody'), fund, {zweck:dict_zweck, name:dict_name, geber:dict_geber, politikbereich:dict_politikbereich }, ['jahr','name','politikbereich','geber','zweck','betrag'], d3.select('#preview'));
   table.init();
-  d3.selectAll('.next').on('click', function(){ table.next(); });
-  d3.selectAll('.prev').on('click', function(){ table.prev(); });
+
+  grouped_table = previewLight(d3.select('#preview_group tbody'), buildGrouping(), {}, ['name','count','sum'], d3.select('#preview_group'));
+  grouped_table.init();
+
+  d3.selectAll('#preview .next').on('click', function(){ table.next(); });
+  d3.selectAll('#preview .prev').on('click', function(){ table.prev(); });
   d3.selectAll('#preview th').on('click', function(){
     table.setSort(d3.select(this).attr('data-key'))
+  })
+
+  d3.selectAll('#preview_group .next').on('click', function(){ grouped_table.next(); });
+  d3.selectAll('#preview_group .prev').on('click', function(){ grouped_table.prev(); });
+  d3.selectAll('#preview_group th').on('click', function(){
+    grouped_table.setSort(d3.select(this).attr('data-key'))
   })
 
   d3.select('#search').on('keyup', debouncer(function(e){
@@ -729,6 +798,18 @@ d3.queue()
   retrieveUrl();
 
 });
+
+function buildGrouping (){
+    let t_names_sum = names_sum.all(),
+        t_names_count = names_count.all()
+    
+    return t_names_sum.map((d,i)=>{
+        return {
+            name:organisations_keys[d.key],
+            sum:d.value,
+            count:t_names_count[i].value
+    };}).filter(d=>d.sum>0)
+}
 
 function calcBinBorders (group, key) {
     let bin_count = 10, 
@@ -881,6 +962,7 @@ function updateCharts(){
   art_chart.data(politikbereichs_jahre, politikbereichs, politikbereichs_jahre_count, filter['politikbereich'], filter['date']);
   year_chart.data(dates, dates_count, filter['date']);
   table.data(fund);
+  grouped_table.data(buildGrouping());
   sum_chart.data(all);
   map_chart.data(postcodes, postcodes_count, filter['postcode']);
 
