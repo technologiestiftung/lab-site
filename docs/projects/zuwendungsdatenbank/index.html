@@ -559,6 +559,8 @@ function arcTween(newAngle) {
   };
 }
 
+let crossfilter_build = 0, funds, plz, dict_geber, dict_name, dict_zweck, dict_plz, zweck_keys, dict_politikbereich, name_keys
+
 d3.queue()
   .defer(callbackLoad, 'json', "./data/plz.topojson","plz",333505)
   .defer(callbackLoad, 'csv', "./data/min"+extension+".csv","min",2846095)
@@ -567,7 +569,15 @@ d3.queue()
   .defer(callbackLoad, 'csv', "./data/dict_zweck"+extension+".csv","dict_zweck",2614485)
   .defer(callbackLoad, 'csv', "./data/dict_plz"+extension+".csv","dict_plz",6635)
   .defer(callbackLoad, 'csv', "./data/dict_politikbereich"+extension+".csv","dict_politikbereich",500)
-  .await(function(error, plz, funds, dict_geber, dict_name, dict_zweck, dict_plz, dict_politikbereich){
+  .await(function(error, _plz, _funds, _dict_geber, _dict_name, _dict_zweck, _dict_plz, _dict_politikbereich){
+
+    plz = _plz
+    funds = _funds
+    dict_geber = _dict_geber
+    dict_name = _dict_name
+    dict_zweck = _dict_zweck
+    dict_plz = _dict_plz
+    dict_politikbereich = _dict_politikbereich
 
   loaderFunds.html(currency(Math.round(loadScale(1))));
   foreground.attr('d', d=>{
@@ -578,12 +588,12 @@ d3.queue()
   d3.select('#loader').style('display','none')
   d3.select('#sumChart').style('display','block')
 
-  let name_keys = {}
+  name_keys = {}
   dict_name.forEach((d,di)=>{
     name_keys[d.id] = di
   })
 
-  let zweck_keys = {}
+  zweck_keys = {}
   dict_zweck.forEach((d,di)=>{
     zweck_keys[d.id] = di
   })
@@ -628,51 +638,97 @@ d3.queue()
 
   //id;name;geber;art;jahr;anschrift;politikbereich;zweck;betrag;empfaengerid;plz;city;street
 
-  // Create the crossfilter for the relevant dimensions and groups.
-  fund = crossfilter(funds);
-  all = fund.groupAll().reduceSum(function(d){return d.betrag; });
-  all_groups = fund.groupAll().reduceCount();
+  buildCrossFilter()
+});
 
-  // date = fund.dimension(function(d) { return d.date; }),
-  // dates = date.group(d3.timeYear).reduceSum(function(d) { return d.betrag; }),
+function buildCrossFilter() {
 
-  empfaenger_root = fund.dimension(function(d) { return d.empfaengerid; });
-  empfaenger = empfaenger_root.group();
-  names_sum = empfaenger_root.group().reduceSum(function(d) { return d.betrag; });
-  names_count = empfaenger_root.group().reduceCount();
+    switch(crossfilter_build){
+          // Create the crossfilter for the relevant dimensions and groups.
 
-  amount = fund.dimension(function(d) { return d.betrag; });
-  overall_count = fund.dimension(function(d) { return d.overall_count; });
-  overall_sum = fund.dimension(function(d) { return d.overall_sum; });
+        case 1:
 
-  date = fund.dimension(function(d) { return d.jahr; });
-  dates = date.group().reduceSum(function(d) { return d.betrag; });
-  dates_count = date.group().reduceCount();
+          fund = crossfilter(funds);
+          all = fund.groupAll().reduceSum(function(d){return d.betrag; });
+          all_groups = fund.groupAll().reduceCount();
 
-  names = fund.dimension(function(d) { return dict_name[name_keys[d.name]].label.toLowerCase(); });
-  zwecke = fund.dimension(function(d) { return dict_zweck[zweck_keys[d.zweck]].label.toLowerCase(); });
+        break;
 
-  postcode = fund.dimension(function(d) { return d.plz; });
-  postcodes = postcode.group().reduceSum(function(d) { return d.betrag; });
-  postcodes_count = postcode.group().reduceCount();
+        case 2:
 
-  politikbereich = fund.dimension(function(d) { return d.politikbereich; });
-  politikbereichs = politikbereich.group().reduceSum(function(d) { return d.betrag; });
-  politikbereichs_count = politikbereich.group().reduceCount();
+          empfaenger_root = fund.dimension(function(d) { return d.empfaengerid; });
+          empfaenger = empfaenger_root.group();
+          names_sum = empfaenger_root.group().reduceSum(function(d) { return d.betrag; });
+          names_count = empfaenger_root.group().reduceCount();
 
-  //for the labels
-  geber = fund.dimension(function(d) { return d.geber; });
-  gebers = geber.group().reduceSum(function(d) { return d.betrag; });
-  gebers_count = geber.group().reduceCount();
+        break;
+        case 3:
 
-  geber_jahre = fund.dimension(function(d) { return ((d.geber < 10)?'0':'') +d.geber + '_' + d.jahr; });
-  gebers_jahre = geber_jahre.group().reduceSum(function(d) { return d.betrag; });
-  gebers_jahre_count = geber_jahre.group().reduceCount();
+          amount = fund.dimension(function(d) { return d.betrag; });
+          overall_count = fund.dimension(function(d) { return d.overall_count; });
+          overall_sum = fund.dimension(function(d) { return d.overall_sum; });
 
-  politikbereich_jahre = fund.dimension(function(d) { return ((d.politikbereich < 10)?'0':'') +d.politikbereich + '_' + d.jahr; });
-  politikbereichs_jahre = politikbereich_jahre.group().reduceSum(function(d) { return d.betrag; });
-  politikbereichs_jahre_count = politikbereich_jahre.group().reduceCount();
+        break;
+        case 4:
 
+          date = fund.dimension(function(d) { return d.jahr; });
+          dates = date.group().reduceSum(function(d) { return d.betrag; });
+          dates_count = date.group().reduceCount();
+
+        break;
+        case 5:
+
+          names = fund.dimension(function(d) { return dict_name[name_keys[d.name]].label.toLowerCase(); });
+          zwecke = fund.dimension(function(d) { return dict_zweck[zweck_keys[d.zweck]].label.toLowerCase(); });
+
+        break;
+        case 6:
+
+          postcode = fund.dimension(function(d) { return d.plz; });
+          postcodes = postcode.group().reduceSum(function(d) { return d.betrag; });
+          postcodes_count = postcode.group().reduceCount();
+
+        break;
+        case 7:
+
+          politikbereich = fund.dimension(function(d) { return d.politikbereich; });
+          politikbereichs = politikbereich.group().reduceSum(function(d) { return d.betrag; });
+          politikbereichs_count = politikbereich.group().reduceCount();
+
+        break;
+        case 8:
+
+          //for the labels
+          geber = fund.dimension(function(d) { return d.geber; });
+          gebers = geber.group().reduceSum(function(d) { return d.betrag; });
+          gebers_count = geber.group().reduceCount();
+
+        break;
+        case 9:
+
+          geber_jahre = fund.dimension(function(d) { return ((d.geber < 10)?'0':'') +d.geber + '_' + d.jahr; });
+          gebers_jahre = geber_jahre.group().reduceSum(function(d) { return d.betrag; });
+          gebers_jahre_count = geber_jahre.group().reduceCount();
+
+        break;
+        case 10:
+
+          politikbereich_jahre = fund.dimension(function(d) { return ((d.politikbereich < 10)?'0':'') +d.politikbereich + '_' + d.jahr; });
+          politikbereichs_jahre = politikbereich_jahre.group().reduceSum(function(d) { return d.betrag; });
+          politikbereichs_jahre_count = politikbereich_jahre.group().reduceCount();
+        break;
+    }
+
+    crossfilter_build++
+
+    if(crossfilter_build<=10){
+        buildCrossFilter()
+    }else{
+        buildVis()
+    }
+}
+
+function buildVis(){
   postcodeYears = {};
   postcodeYears_count = {};
 
@@ -797,7 +853,7 @@ d3.queue()
 
   retrieveUrl();
 
-});
+}
 
 function buildGrouping (){
     let t_names_sum = names_sum.all(),
