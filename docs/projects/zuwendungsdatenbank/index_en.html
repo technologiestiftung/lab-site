@@ -90,8 +90,6 @@
             <div class="container p-bottom">
                 <p style="padding-bottom:50px;" class="copy">Each year, the city of Berlin disburses more than 1 billion Euros in the form of grants to individual institutions in the city, ranging from NGOs and research institutions to public and private companies; the projects that receive this money are expected to be in the general interest of the city (though of course, what that entails can be broadly defined). Berlin's senate department for finance makes this funding data available to <a href="https://www.berlin.de/sen/finanzen/service/zuwendungsdatenbank/">download</a> on their website. We have taken a closer look at this data and developed an interactive data explorer to enable citizens and government officials alike to better understand where this money is going. The application visualises 73,436 grants from 2009 to 2017. In addition to this complex explorer, we have also created an overview <a href="https://lab.technologiestiftung-berlin.de/projects/funding/">visualisation</a> to help people quickly understand what areas are receiving what amount of money.</p>
                 <p class="copy p-bottom" style="text-align: center;"><a class="link-button" href="#vis">&darr;&nbsp;Go directly to the explorer</a>      </p>
-                <h3>Abbreviations in text und visualisation:</h3>
-                <p class="copy p-bottom">SV: senate department (German: <i>Senatsverwaltung</i>), BA: district office (German: <i>Bezirksamt</i>), SK: senate chancellery (German: <i>Senatskanzlei</i>)</p>
                 <p style="text-align:center;">
                     <a href="https://lab.technologiestiftung-berlin.de/projects/funding/"><img style="margin:0 auto; max-width:700px; width:100%;" src="images/funding-overview.jpg" alt="Funding data overview" /></a>
                 </p>
@@ -126,13 +124,15 @@
                     <img src="images/bvg.jpg" style="margin:0 auto; max-width:500px; width:100%;" alt="BVG grants" />
                 </p>
                 <p class="copy" style="text-align:center; font-size:12px;">Figure: BVG grants over the years</p>
-
-                
-                    
-
+                <h3 class="p-top" style="text-align: center;">Abbreviations in text und visualisation:</h3>
+                <p class="copy p-bottom" style="text-align: center;">SV: senate department (German: <i>Senatsverwaltung</i>), BA: district office (German: <i>Bezirksamt</i>), SK: senate chancellery (German: <i>Senatskanzlei</i>)</p>
             </div>
 
             <div class="special-section" id="vis">
+                <div id="mobile">
+                    <p class="copy">Sadly, this site only works on tablets and desktop machines. But, our <a href="https://lab.technologiestiftung-berlin.de/projects/funding/">overview visualisation</a> is mobile-friendly.</p>
+                    <img src="./images/mobile.jpg" alt="Placeholder mobile" />
+                </div>
                 <div id="loader">
                     <span id="loader-icon"></span><br />
                     <span id="loader-text">Grants are being processed:</span><br />
@@ -141,7 +141,8 @@
                 <div id="container">
                     <div id="sumChart"></div> 
                     <div id="intro">
-                        <img src="images/main_legend_en.svg" alt="" /><br />
+                        <img src="images/main_legend_en.svg" alt="Legend" /><br />
+                        <p class="copy" style="max-width:450px;"><img src="images/pointer.png" style="margin-bottom:0; margin-left:15px;" width="50px" alt="Mouse pointer" /><br /><span style="color:#66BEF7;">Blue</span> and <span style="color:#E70433;">red</span> elements are interactive.<br /><span style="font-size:15px;">You can combine filters, like years, domains or names, to narrow down the results.</span><br /></p><br />
                         <button id="reset">&olarr;&nbsp;Reset filters</button>      
                     </div>
                     <div id="yearChart"><h5 style="text-align: left; padding-left:150px;">Annual Sums (€) / Count</h5></div>
@@ -344,12 +345,14 @@ function updateUI(){
 }
 
 function doFilters(_filters){
-    document.getElementById('vis').scrollIntoView();
-    reset();
-    for(let key in _filters){
-        state[key] = _filters[key];
+    if(initialised){
+        document.getElementById('vis').scrollIntoView();
+        reset();
+        for(let key in _filters){
+            state[key] = _filters[key];
+        }
+        updateFilter();
     }
-    updateFilter();
 }
 
 d3.select('#bvg-search').on('click', d=>{
@@ -368,7 +371,7 @@ d3.select('#anti-search').on('click', d=>{
 
 //Create a global object that contains dimensions and groups, etc.
 
-var state = {}, searchterm_name = '', empfaenger, organisations_a, organisations, organisations_keys, searchterm_zweck = '', overall_count, overall_sum, amount, bin_borders, bin_count_borders, bin_sum_borders, dates_count, fund, all, all_groups, date, dates, names, names_sum, names_count, postcode, postcodes, politikbereich, politikbereichs, geber, gebers, geber_jahre, gebers_jahre, politikbereich_jahre, politikbereichs_jahre, postcodeYears, postcodeYears_count, filter, sum_chart, art_chart, year_chart, map_chart, map_chart_years, table;
+var state = {}, initialised = false, searchterm_name = '', empfaenger, organisations_a, organisations, organisations_keys, searchterm_zweck = '', overall_count, overall_sum, amount, bin_borders, bin_count_borders, bin_sum_borders, dates_count, fund, all, all_groups, date, dates, names, names_sum, names_count, postcode, postcodes, politikbereich, politikbereichs, geber, gebers, geber_jahre, gebers_jahre, politikbereich_jahre, politikbereichs_jahre, postcodeYears, postcodeYears_count, filter, sum_chart, art_chart, year_chart, map_chart, map_chart_years, table;
 
 function updateFilter(){
   var changed = false;
@@ -626,85 +629,92 @@ function arcTween(newAngle) {
 
 let crossfilter_build = 0, funds, plz, dict_geber, dict_name, dict_zweck, dict_plz, zweck_keys, dict_politikbereich, name_keys
 
-d3.queue()
-  .defer(callbackLoad, 'json', "./data/plz.topojson","plz",333505)
-  .defer(callbackLoad, 'csv', "./data/min"+extension+".csv","min",2846095)
-  .defer(callbackLoad, 'csv', "./data/dict_geber"+extension+".csv","dict_geber",1897)
-  .defer(callbackLoad, 'csv', "./data/dict_name"+extension+".csv","dict_name",376613)
-  .defer(callbackLoad, 'csv', "./data/dict_zweck"+extension+".csv","dict_zweck",2614485)
-  .defer(callbackLoad, 'csv', "./data/dict_plz"+extension+".csv","dict_plz",6635)
-  .defer(callbackLoad, 'csv', "./data/dict_politikbereich"+extension+".csv","dict_politikbereich",500)
-  .await(function(error, _plz, _funds, _dict_geber, _dict_name, _dict_zweck, _dict_plz, _dict_politikbereich){
+if(window.innerWidth >= 1024){
+    initialised = true
+    initialiseThis()
+}
 
-    plz = _plz
-    funds = _funds
-    dict_geber = _dict_geber
-    dict_name = _dict_name
-    dict_zweck = _dict_zweck
-    dict_plz = _dict_plz
-    dict_politikbereich = _dict_politikbereich
+function initialiseThis(){
+    d3.queue()
+      .defer(callbackLoad, 'json', "./data/plz.topojson","plz",333505)
+      .defer(callbackLoad, 'csv', "./data/min"+extension+".csv","min",2846095)
+      .defer(callbackLoad, 'csv', "./data/dict_geber"+extension+".csv","dict_geber",1897)
+      .defer(callbackLoad, 'csv', "./data/dict_name"+extension+".csv","dict_name",376613)
+      .defer(callbackLoad, 'csv', "./data/dict_zweck"+extension+".csv","dict_zweck",2614485)
+      .defer(callbackLoad, 'csv', "./data/dict_plz"+extension+".csv","dict_plz",6635)
+      .defer(callbackLoad, 'csv', "./data/dict_politikbereich"+extension+".csv","dict_politikbereich",500)
+      .await(function(error, _plz, _funds, _dict_geber, _dict_name, _dict_zweck, _dict_plz, _dict_politikbereich){
 
-  loaderFunds.html(currency(Math.round(loadScale(1))));
-  foreground.attr('d', d=>{
-    d.endAngle = Math.PI*2
-    return arc(d);
-  });
+        plz = _plz
+        funds = _funds
+        dict_geber = _dict_geber
+        dict_name = _dict_name
+        dict_zweck = _dict_zweck
+        dict_plz = _dict_plz
+        dict_politikbereich = _dict_politikbereich
 
-  d3.select('#loader').style('display','none')
-  d3.select('#sumChart').style('display','block')
+      loaderFunds.html(currency(Math.round(loadScale(1))));
+      foreground.attr('d', d=>{
+        d.endAngle = Math.PI*2
+        return arc(d);
+      });
 
-  name_keys = {}
-  dict_name.forEach((d,di)=>{
-    name_keys[d.id] = di
-  })
+      d3.select('#loader').style('display','none')
+      d3.select('#sumChart').style('display','block')
 
-  zweck_keys = {}
-  dict_zweck.forEach((d,di)=>{
-    zweck_keys[d.id] = di
-  })
+      name_keys = {}
+      dict_name.forEach((d,di)=>{
+        name_keys[d.id] = di
+      })
 
-  plz = topojson.feature(plz, plz.objects.plz);
+      zweck_keys = {}
+      dict_zweck.forEach((d,di)=>{
+        zweck_keys[d.id] = di
+      })
 
-  organisations = {}
-  organisations_a = []
-  organisations_keys = {}
+      plz = topojson.feature(plz, plz.objects.plz);
 
-  // A little coercion, since the CSV is untyped.
-  funds.forEach(function(d, i) {
-    d.index = i;
-    d.date = new Date(d.jahr);
-    d.betrag = +d.betrag;
+      organisations = {}
+      organisations_a = []
+      organisations_keys = {}
 
-    if(!(d.empfaengerid in organisations)) organisations[d.empfaengerid] = {count:0, sum:0, id:[], empfaengerid:d.empfaengerid}
+      // A little coercion, since the CSV is untyped.
+      funds.forEach(function(d, i) {
+        d.index = i;
+        d.date = new Date(d.jahr);
+        d.betrag = +d.betrag;
 
-    organisations[d.empfaengerid].id.push(i)
-    organisations[d.empfaengerid].count++
-    organisations[d.empfaengerid].sum += d.betrag
+        if(!(d.empfaengerid in organisations)) organisations[d.empfaengerid] = {count:0, sum:0, id:[], empfaengerid:d.empfaengerid}
 
-    if(organisations[d.empfaengerid].count > 8000) console.log(d.empfaengerid)
+        organisations[d.empfaengerid].id.push(i)
+        organisations[d.empfaengerid].count++
+        organisations[d.empfaengerid].sum += d.betrag
 
-    organisations_keys[d.empfaengerid] = dict_name[name_keys[d.name]].label
+        if(organisations[d.empfaengerid].count > 8000) console.log(d.empfaengerid)
 
-  });
+        organisations_keys[d.empfaengerid] = dict_name[name_keys[d.name]].label
 
-  for(let o_key in organisations){
-    organisations_a.push({
-        id:o_key,
-        empfaengerid:organisations[o_key].empfaengerid,
-        count:organisations[o_key].count,
-        sum:organisations[o_key].sum
-    })
+      });
+
+      for(let o_key in organisations){
+        organisations_a.push({
+            id:o_key,
+            empfaengerid:organisations[o_key].empfaengerid,
+            count:organisations[o_key].count,
+            sum:organisations[o_key].sum
+        })
+      }
+
+      funds.forEach(f=>{
+        f['overall_count'] = organisations[f.empfaengerid].count
+        f['overall_sum'] = organisations[f.empfaengerid].sum
+      })
+
+      //id;name;geber;art;jahr;anschrift;politikbereich;zweck;betrag;empfaengerid;plz;city;street
+
+      buildCrossFilter()
+    });
   }
-
-  funds.forEach(f=>{
-    f['overall_count'] = organisations[f.empfaengerid].count
-    f['overall_sum'] = organisations[f.empfaengerid].sum
-  })
-
-  //id;name;geber;art;jahr;anschrift;politikbereich;zweck;betrag;empfaengerid;plz;city;street
-
-  buildCrossFilter()
-});
 
 function buildCrossFilter() {
 
@@ -921,6 +931,13 @@ function buildVis(){
   retrieveUrl();
 
 }
+
+d3.select(window).on('resize', debouncer(function(e){
+    if(window.innerWidth >= 1024 && !initialised){
+        initialised = true;
+        initialiseThis()
+    }
+}), 200);
 
 function buildGrouping (){
     let t_names_sum = names_sum.all(),

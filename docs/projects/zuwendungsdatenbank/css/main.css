@@ -3,6 +3,29 @@
   font-size:12px;
 }
 
+#vis>*{
+  display: none;
+}
+
+#vis #mobile{
+  display: block;
+  padding:0 20px;
+}
+
+#mobile, #mobile a{
+  color:#E70433;
+}
+
+@media (min-width: 1024px) {
+  #vis>*{
+    display: block;
+  }
+
+  #vis #mobile{
+    display: none;
+  }
+}
+
 #loader{
   height:185px;
   text-align:center;
