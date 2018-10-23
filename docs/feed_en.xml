@@ -12,11 +12,33 @@
 	<atom:link href="http://lab.technologiestiftung-berlin.de/feed.xml" rel="self" type="application/rss+xml" />
 	<link>http://lab.technologiestiftung-berlin.de</link>
 	<description>We are exploring and prototyping digital tools in order to collaboratively shape Berlin’s future for citizens, the local government and the industry.</description>
-	<lastBuildDate>Tue, 16 Oct 2018 15:46:57  +0100</lastBuildDate>
+	<lastBuildDate>Tue, 23 Oct 2018 09:49:33  +0100</lastBuildDate>
 	<language>en-us</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	
+<item>
+<title><![CDATA[Berlin's Funding Data — An Overview]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/funding/index_en.html</link>
+<pubDate>Tue, 23 Oct 2018 00:00:00  +0100</pubDate>
+<category><![CDATA[Data Visualization]]></category>
+<description><![CDATA[A visualisation providing insights into Berlin's funding data.]]></description>
+<content:encoded><![CDATA[A visualisation providing insights into Berlin's funding data.]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/funding/index_en.html</guid>
+</item>
+
+<item>
+<title><![CDATA[Funding data — A tool for investigation]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/zuwendungsdatenbank/index_en.html</link>
+<pubDate>Mon, 22 Oct 2018 00:00:00  +0100</pubDate>
+<category><![CDATA[Open Data]]></category>
+<description><![CDATA[Discover Berlin's funding data through an exploratory visualisation and gather new insights from the data.]]></description>
+<content:encoded><![CDATA[Discover Berlin's funding data through an exploratory visualisation and gather new insights from the data.]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/zuwendungsdatenbank/index_en.html</guid>
+</item>
+
 <item>
 <title><![CDATA[ODIS in Buenos Aires]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/iodc-recap/index_en.html</link>
@@ -32,7 +54,7 @@
 <title><![CDATA[Data Dive - Cycling data in Berlin]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/datadive_cycling/index_en.html</link>
 <pubDate>Mon, 17 Sep 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[OpenData]]></category>
+<category><![CDATA[Open Data]]></category>
 <description><![CDATA[What types of data exist, and where can they be found?]]></description>
 <content:encoded><![CDATA[What types of data exist, and where can they be found?]]></content:encoded>
 <dc:creator><![CDATA[undefined]]></dc:creator>
@@ -43,7 +65,7 @@
 <title><![CDATA[Exploring cycling rhythms in Berlin]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/bikerides/index_en.html</link>
 <pubDate>Sat, 8 Sep 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[DataVis]]></category>
+<category><![CDATA[Data Visualization]]></category>
 <description><![CDATA[How has the volume of cyclists evolved over time? Bicycle traffic is regularly monitored through 26 bike counting stations. This visulization explores the cycling patterns and reveals daily, weekly and monthly trends.]]></description>
 <content:encoded><![CDATA[How has the volume of cyclists evolved over time? Bicycle traffic is regularly monitored through 26 bike counting stations. This visulization explores the cycling patterns and reveals daily, weekly and monthly trends.]]></content:encoded>
 <dc:creator><![CDATA[undefined]]></dc:creator>
@@ -65,7 +87,7 @@
 <title><![CDATA[Germany and Berlin's Universities]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/unis/index_en.html</link>
 <pubDate>Wed, 11 Jul 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[DataVis]]></category>
+<category><![CDATA[Data Visualization]]></category>
 <description><![CDATA[{Where do people the most people study in Berlin and Germany? How old is your university? The data of all universities and their metadata visualized.]]></description>
 <content:encoded><![CDATA[{Where do people the most people study in Berlin and Germany? How old is your university? The data of all universities and their metadata visualized.]]></content:encoded>
 <dc:creator><![CDATA[undefined]]></dc:creator>

@@ -12,11 +12,33 @@
 	<atom:link href="http://lab.technologiestiftung-berlin.de/feed.xml" rel="self" type="application/rss+xml" />
 	<link>http://lab.technologiestiftung-berlin.de</link>
 	<description>Wir erforschen und erproben digitale Werkzeuge um gemeinsam mit Bürger*innen, Verwaltung und Unternehmen die Zukunft Berlins zu gestalten.</description>
-	<lastBuildDate>Tue, 16 Oct 2018 15:46:57  +0100</lastBuildDate>
+	<lastBuildDate>Tue, 23 Oct 2018 09:49:33  +0100</lastBuildDate>
 	<language>de-DE</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	
+<item>
+<title><![CDATA[Fördergelder in Berlin: Eine Übersicht]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/funding/index.html</link>
+<pubDate>Tue, 23 Oct 2018 00:00:00  +0100</pubDate>
+<category><![CDATA[Datenvisualisierung]]></category>
+<description><![CDATA[Visualisierung der Berliner Förderdaten nach Bereichen.]]></description>
+<content:encoded><![CDATA[Visualisierung der Berliner Förderdaten nach Bereichen.]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/funding/index.html</guid>
+</item>
+
+<item>
+<title><![CDATA[Recherchetool: Berliner Förderdaten im Detail]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/zuwendungsdatenbank/index.html</link>
+<pubDate>Mon, 22 Oct 2018 00:00:00  +0100</pubDate>
+<category><![CDATA[Offene Daten]]></category>
+<description><![CDATA[Erkunden Sie Berlins Förderdatenbank durch eine explorative Visualisierung und entdecken Sie Zusammenhänge in den Daten.]]></description>
+<content:encoded><![CDATA[Erkunden Sie Berlins Förderdatenbank durch eine explorative Visualisierung und entdecken Sie Zusammenhänge in den Daten.]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/zuwendungsdatenbank/index.html</guid>
+</item>
+
 <item>
 <title><![CDATA[ODIS in Buenos Aires]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/iodc-recap/index.html</link>
