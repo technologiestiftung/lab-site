@@ -22,7 +22,7 @@ module.exports = function(grunt) {
                 files: [
                     {
                         expand: true,
-                        cwd: 'docs/css',
+                        cwd: 'docs/styles/',
                         src: ['*.scss'],
                         dest: 'docs/css',
                         ext: '.css'
@@ -39,13 +39,20 @@ module.exports = function(grunt) {
                 files: ['docs/js/*.js', 'docs/projects/**/*.js'],
                 tasks: ['uglify']
             },
-            sass: { files: ['docs/css/*.scss'], tasks: ['sass'] }
+            sass: { files: ['docs/styles/**/*.scss'], tasks: ['sass'] }
         },
 
         browserSync: {
             dev: {
                 bsFiles: {
-                    src: ['docs/css/*.css', 'docs/js/*.js', 'docs/*.html']
+                    src: [
+                        'docs/css/*.css',
+                        'docs/js/*.js',
+                        'docs/*.html',
+                        'docs/projects/**/*.html',
+                        'docs/projects/**/css/*.css',
+                        'docs/projects/**/js/*.js'
+                    ]
                 },
                 options: {
                     watchTask: true,
