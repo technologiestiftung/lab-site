@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'plex-sans';
+    src: url('../../assets/fonts/IBM-Plex-Sans/IBMPlexSans-Regular');
+    src: url('../../assets/fonts/IBM-Plex-Sans/IBMPlexSans-Regular?#iefix')
+            format('embedded-opentype'),
+        url('../../assets/fonts/IBM-Plex-Sans/woff/IBMPlexSans-Regular.woff')
+            format('woff'),
+        url('../../assets/fonts/IBM-Plex-Sans/ttf/IBMPlexSans-Regular.ttf')
+            format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'plex-sans';
+    src: url('../../assets/fonts/IBM-Plex-Sans/IBMPlexSans-Bold');
+    src: url('../../assets/fonts/IBM-Plex-Sans/IBMPlexSans-Bold?#iefix')
+            format('embedded-opentype'),
+        url('../../assets/fonts/IBM-Plex-Sans/woff/IBMPlexSans-Bold.woff')
+            format('woff'),
+        url('../../assets/fonts/IBM-Plex-Sans/ttf/IBMPlexSans-Bold.ttf')
+            format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'plex-mono';
+    src: url('../../assets/fonts/IBM-Plex-Mono/IBMPlexMono-Medium');
+    src: url('../../assets/fonts/IBM-Plex-Mono/IBMPlexMono-Medium?#iefix')
+            format('embedded-opentype'),
+        url('../../assets/fonts/IBM-Plex-Mono/woff/IBMPlexMono-Medium.woff')
+            format('woff'),
+        url('../../assets/fonts/IBM-Plex-Mono/ttf/IBMPlexMono-Medium.ttf')
+            format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

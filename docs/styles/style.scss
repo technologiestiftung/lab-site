@@ -1,7 +1,10 @@
 // General styling
 @import 'general/normalize';
+@import 'general/fonts';
+@import 'general/variables';
 @import 'general/base';
+@import 'general/inputs';
 
-// Modules
-@import 'modules/navigation';
-@import 'modules/feature-projects';
+// Sections
+@import 'sections/navigation';
+@import 'sections/feature-projects';

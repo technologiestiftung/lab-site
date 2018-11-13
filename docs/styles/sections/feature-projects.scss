@@ -1,0 +1,77 @@
+.featured {
+    border: 2px solid orange;
+    position: relative;
+
+    &-title {
+        border: 2px solid yellow;
+    }
+    &-list {
+        border: 2px solid yellow;
+        display: flex;
+        flex-direction: column;
+
+        &__project {
+            align-self: flex-start;
+            border: 2px solid yellow;
+
+            &-link {
+                padding: 0 30px 0 0;
+                position: relative;
+                transition: color 0.5s;
+
+                &::after {
+                    content: '→';
+                    opacity: 0;
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    transition: opacity 0.5s, transform 0.5s;
+                    user-select: none;
+                }
+
+                &:hover {
+                    &::after {
+                        opacity: 1;
+                        transform: translate(0, -50%);
+                    }
+
+                    &.publication {
+                        color: blue;
+                    }
+                    &.prototype {
+                        color: green;
+                    }
+                    &.workshop {
+                        color: yellow;
+                    }
+                    &.dataset {
+                        color: red;
+                    }
+                }
+            }
+
+            &-image {
+                backface-visibility: hidden;
+                bottom: 0;
+                display: block;
+                height: auto;
+                left: 50%;
+                opacity: 0;
+                pointer-events: none;
+                position: absolute;
+                transform: translate3d(-50%, 20%, 0);
+                transition: opacity 0.5s, transform 0.5s;
+                width: 60%;
+                z-index: -1;
+            }
+
+            &:hover {
+                .featured-list__project-image {
+                    opacity: 1;
+                    transform: translate(-50%, 0);
+                }
+            }
+        }
+    }
+}

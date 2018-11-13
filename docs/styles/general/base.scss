@@ -1,6 +1,9 @@
 body {
     border: 2px solid red;
+    font-family: 'plex-sans';
     font-size: 16px;
+    font-weight: normal;
+    overflow: hidden;
 }
 
 h1,
@@ -8,12 +11,12 @@ h2,
 h3,
 p {
     font-size: 16px;
+    font-weight: normal;
     margin: 0;
 }
 
 h2 {
-    color: gray;
-    font-weight: normal;
+    color: $gray;
     text-transform: uppercase;
 }
 
@@ -23,6 +26,11 @@ ul {
     padding: 0;
 
     li {
-        display: block;
+        list-style-type: none;
     }
+}
+
+a {
+    color: $black;
+    text-decoration: none;
 }
