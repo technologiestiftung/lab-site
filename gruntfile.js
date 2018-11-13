@@ -39,7 +39,17 @@ module.exports = function(grunt) {
                 files: ['docs/js/*.js', 'docs/projects/**/*.js'],
                 tasks: ['uglify']
             },
-            sass: { files: ['docs/styles/**/*.scss'], tasks: ['sass'] }
+            sass: {
+                files: [
+                    'docs/styles/**/*.scss',
+                    'docs/projects/**/dev/styles/*.scss'
+                ],
+                tasks: ['sass:dist']
+            },
+            html: {
+                files: ['docs/projects/**/dev/*.html'],
+                tasks: ['htmlbuild']
+            }
         },
 
         browserSync: {
@@ -61,6 +71,31 @@ module.exports = function(grunt) {
                     }
                 }
             }
+        },
+
+        htmlbuild: {
+            dist: {
+                src: 'layout/index.html',
+                dest: 'docs/projects/test-project/index.html',
+                options: {
+                    beautify: true,
+                    livereload: true,
+                    relative: true,
+                    basePath: false,
+                    sections: {
+                        layout: {
+                            head: 'layout/head.html',
+                            footer: 'layout/footer.html',
+                            projectTitle: 'layout/projectTitle.html',
+                            project:
+                                'docs/projects/test-project/dev/project.html'
+                        }
+                    }
+                },
+                data: {
+                    title: 'test titleeeeeeee'
+                }
+            }
         }
     });
 
@@ -69,7 +104,8 @@ module.exports = function(grunt) {
         'grunt-contrib-watch',
         'grunt-contrib-uglify',
         'grunt-contrib-sass',
-        'grunt-browser-sync'
+        'grunt-browser-sync',
+        'grunt-html-build'
     ];
     plugins.forEach(grunt.loadNpmTasks);
 

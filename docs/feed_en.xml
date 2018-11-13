@@ -12,22 +12,11 @@
 	<atom:link href="http://lab.technologiestiftung-berlin.de/feed.xml" rel="self" type="application/rss+xml" />
 	<link>http://lab.technologiestiftung-berlin.de</link>
 	<description>We are exploring and prototyping digital tools in order to collaboratively shape Berlin’s future for citizens, the local government and the industry.</description>
-	<lastBuildDate>Tue, 23 Oct 2018 09:49:33  +0100</lastBuildDate>
+	<lastBuildDate>Fri, 9 Nov 2018 12:53:28  +0100</lastBuildDate>
 	<language>en-us</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	
-<item>
-<title><![CDATA[Berlin's Funding Data — An Overview]]></title>
-<link>http://lab.technologiestiftung-berlin.de/projects/funding/index_en.html</link>
-<pubDate>Tue, 23 Oct 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[Data Visualization]]></category>
-<description><![CDATA[A visualisation providing insights into Berlin's funding data.]]></description>
-<content:encoded><![CDATA[A visualisation providing insights into Berlin's funding data.]]></content:encoded>
-<dc:creator><![CDATA[undefined]]></dc:creator>
-<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/funding/index_en.html</guid>
-</item>
-
 <item>
 <title><![CDATA[Funding data — A tool for investigation]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/zuwendungsdatenbank/index_en.html</link>
@@ -40,124 +29,14 @@
 </item>
 
 <item>
-<title><![CDATA[ODIS in Buenos Aires]]></title>
-<link>http://lab.technologiestiftung-berlin.de/projects/iodc-recap/index_en.html</link>
-<pubDate>Tue, 16 Oct 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[Open Data]]></category>
-<description><![CDATA[Highlights from the International Open Data Conference 2018]]></description>
-<content:encoded><![CDATA[Highlights from the International Open Data Conference 2018]]></content:encoded>
+<title><![CDATA[Test project]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/test-project/index_en.html</link>
+<pubDate>Mon, 30 Apr 2018 00:00:00  +0100</pubDate>
+<category><![CDATA[OpenData]]></category>
+<description><![CDATA[Test description]]></description>
+<content:encoded><![CDATA[Test description]]></content:encoded>
 <dc:creator><![CDATA[undefined]]></dc:creator>
-<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/iodc-recap/index_en.html</guid>
-</item>
-
-<item>
-<title><![CDATA[Data Dive - Cycling data in Berlin]]></title>
-<link>http://lab.technologiestiftung-berlin.de/projects/datadive_cycling/index_en.html</link>
-<pubDate>Mon, 17 Sep 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[Open Data]]></category>
-<description><![CDATA[What types of data exist, and where can they be found?]]></description>
-<content:encoded><![CDATA[What types of data exist, and where can they be found?]]></content:encoded>
-<dc:creator><![CDATA[undefined]]></dc:creator>
-<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/datadive_cycling/index_en.html</guid>
-</item>
-
-<item>
-<title><![CDATA[Exploring cycling rhythms in Berlin]]></title>
-<link>http://lab.technologiestiftung-berlin.de/projects/bikerides/index_en.html</link>
-<pubDate>Sat, 8 Sep 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[Data Visualization]]></category>
-<description><![CDATA[How has the volume of cyclists evolved over time? Bicycle traffic is regularly monitored through 26 bike counting stations. This visulization explores the cycling patterns and reveals daily, weekly and monthly trends.]]></description>
-<content:encoded><![CDATA[How has the volume of cyclists evolved over time? Bicycle traffic is regularly monitored through 26 bike counting stations. This visulization explores the cycling patterns and reveals daily, weekly and monthly trends.]]></content:encoded>
-<dc:creator><![CDATA[undefined]]></dc:creator>
-<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/bikerides/index_en.html</guid>
-</item>
-
-<item>
-<title><![CDATA[Open data in Berlin: Behind the numbers]]></title>
-<link>http://lab.technologiestiftung-berlin.de/projects/open-data-stats/index_en.html</link>
-<pubDate>Tue, 24 Jul 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[Open Data]]></category>
-<description><![CDATA[An in depth-analysis of the usage statistics of Berlin's open data portal]]></description>
-<content:encoded><![CDATA[An in depth-analysis of the usage statistics of Berlin's open data portal]]></content:encoded>
-<dc:creator><![CDATA[undefined]]></dc:creator>
-<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/open-data-stats/index_en.html</guid>
-</item>
-
-<item>
-<title><![CDATA[Germany and Berlin's Universities]]></title>
-<link>http://lab.technologiestiftung-berlin.de/projects/unis/index_en.html</link>
-<pubDate>Wed, 11 Jul 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[Data Visualization]]></category>
-<description><![CDATA[{Where do people the most people study in Berlin and Germany? How old is your university? The data of all universities and their metadata visualized.]]></description>
-<content:encoded><![CDATA[{Where do people the most people study in Berlin and Germany? How old is your university? The data of all universities and their metadata visualized.]]></content:encoded>
-<dc:creator><![CDATA[undefined]]></dc:creator>
-<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/unis/index_en.html</guid>
-</item>
-
-<item>
-<title><![CDATA[Berlin's swimming lakes & rivers]]></title>
-<link>http://lab.technologiestiftung-berlin.de/projects/bathing-water/index_en.html</link>
-<pubDate>Wed, 4 Jul 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[Open Data]]></category>
-<description><![CDATA[Together with Kompetenzzentrum Wasser (KWB), Berliner Wasserbetrieben (BWB) and LaGeSo we have create a modern data-driven application, which informs Berlin's citizen on the current water quality for all outdoor swimming locations in Berlin.]]></description>
-<content:encoded><![CDATA[Together with Kompetenzzentrum Wasser (KWB), Berliner Wasserbetrieben (BWB) and LaGeSo we have create a modern data-driven application, which informs Berlin's citizen on the current water quality for all outdoor swimming locations in Berlin.]]></content:encoded>
-<dc:creator><![CDATA[undefined]]></dc:creator>
-<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/bathing-water/index_en.html</guid>
-</item>
-
-<item>
-<title><![CDATA[With the eyes of a machine]]></title>
-<link>http://lab.technologiestiftung-berlin.de/projects/ki-ai-intro/index_en.html</link>
-<pubDate>Sat, 9 Jun 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[AI]]></category>
-<description><![CDATA[{{DESCRIPTION}}]]></description>
-<content:encoded><![CDATA[{{DESCRIPTION}}]]></content:encoded>
-<dc:creator><![CDATA[undefined]]></dc:creator>
-<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/ki-ai-intro/index_en.html</guid>
-</item>
-
-<item>
-<title><![CDATA[Berlin's new Open Data Infopoint]]></title>
-<link>http://lab.technologiestiftung-berlin.de/projects/ODIS-Launch/index_en.html</link>
-<pubDate>Tue, 22 May 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[Open Data]]></category>
-<description><![CDATA[3 goals and 3 questions for ODIS]]></description>
-<content:encoded><![CDATA[3 goals and 3 questions for ODIS]]></content:encoded>
-<dc:creator><![CDATA[undefined]]></dc:creator>
-<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/ODIS-Launch/index_en.html</guid>
-</item>
-
-<item>
-<title><![CDATA[CSV-Tool: Similar Strings]]></title>
-<link>http://lab.technologiestiftung-berlin.de/projects/csv-string-optimization/index_en.html</link>
-<pubDate>Fri, 11 May 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[Tool]]></category>
-<description><![CDATA[NodeJS, Commandline and Webservice for cleaning CSV files and reducing similar strings.]]></description>
-<content:encoded><![CDATA[NodeJS, Commandline and Webservice for cleaning CSV files and reducing similar strings.]]></content:encoded>
-<dc:creator><![CDATA[undefined]]></dc:creator>
-<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/csv-string-optimization/index_en.html</guid>
-</item>
-
-<item>
-<title><![CDATA[The benefits of Open Data for cities]]></title>
-<link>http://lab.technologiestiftung-berlin.de/projects/od-for-cities/index_en.html</link>
-<pubDate>Thu, 19 Apr 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[Open Data]]></category>
-<description><![CDATA[Three ways cities can profit from Open Data]]></description>
-<content:encoded><![CDATA[Three ways cities can profit from Open Data]]></content:encoded>
-<dc:creator><![CDATA[undefined]]></dc:creator>
-<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/od-for-cities/index_en.html</guid>
-</item>
-
-<item>
-<title><![CDATA[Introducing Victoria Dykes]]></title>
-<link>http://lab.technologiestiftung-berlin.de/projects/tori-intro/index_en.html</link>
-<pubDate>Mon, 19 Mar 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[Open Data, News]]></category>
-<description><![CDATA[Meet Victoria Dykes, the newest member of the Ideation & Prototyping Lab team.]]></description>
-<content:encoded><![CDATA[Meet Victoria Dykes, the newest member of the Ideation & Prototyping Lab team.]]></content:encoded>
-<dc:creator><![CDATA[undefined]]></dc:creator>
-<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/tori-intro/index_en.html</guid>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/test-project/index_en.html</guid>
 </item>
 
 <item>
@@ -169,94 +48,6 @@
 <content:encoded><![CDATA[Data inherits an aura of truth. But there are many reasons to critically question data. We are giving a couple of examples to get started.]]></content:encoded>
 <dc:creator><![CDATA[undefined]]></dc:creator>
 <guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/trust-in-numbers/index_en.html</guid>
-</item>
-
-<item>
-<title><![CDATA[Broadband Berlin 2017]]></title>
-<link>http://lab.technologiestiftung-berlin.de/projects/breitband-2017/index_en.html</link>
-<pubDate>Thu, 15 Mar 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[Open Data]]></category>
-<description><![CDATA[Statistical and visual analysis of Berlin's broadband expansion's open data sets]]></description>
-<content:encoded><![CDATA[Statistical and visual analysis of Berlin's broadband expansion's open data sets]]></content:encoded>
-<dc:creator><![CDATA[undefined]]></dc:creator>
-<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/breitband-2017/index_en.html</guid>
-</item>
-
-<item>
-<title><![CDATA[Mirror, Mirror]]></title>
-<link>http://lab.technologiestiftung-berlin.de/projects/MagicMirror/index_en.html</link>
-<pubDate>Sat, 10 Mar 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[Open Data, Hardware]]></category>
-<description><![CDATA[How can open data be made more accessible? One way is through new interfaces, such as our Magic Open Mirror]]></description>
-<content:encoded><![CDATA[How can open data be made more accessible? One way is through new interfaces, such as our Magic Open Mirror]]></content:encoded>
-<dc:creator><![CDATA[undefined]]></dc:creator>
-<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/MagicMirror/index_en.html</guid>
-</item>
-
-<item>
-<title><![CDATA[OpenData and Metadata]]></title>
-<link>http://lab.technologiestiftung-berlin.de/projects/opendata-metadata-dcat-ap/index_en.html</link>
-<pubDate>Mon, 26 Feb 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[Knowledge]]></category>
-<description><![CDATA[With the implementation of new laws and regulations for fostering the publication of open data in Germany the number of open data sets is steadly growing. In order to create sustainable data management structures and for increasing the data's machinereadability, accessability and findability good meta data is required. The new German standard for meta data DCAT-AP.de is a first step in the right direction.]]></description>
-<content:encoded><![CDATA[With the implementation of new laws and regulations for fostering the publication of open data in Germany the number of open data sets is steadly growing. In order to create sustainable data management structures and for increasing the data's machinereadability, accessability and findability good meta data is required. The new German standard for meta data DCAT-AP.de is a first step in the right direction.]]></content:encoded>
-<dc:creator><![CDATA[undefined]]></dc:creator>
-<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/opendata-metadata-dcat-ap/index_en.html</guid>
-</item>
-
-<item>
-<title><![CDATA[Berlin's spatial units]]></title>
-<link>http://lab.technologiestiftung-berlin.de/projects/spatial-units/index_en.html</link>
-<pubDate>Wed, 14 Feb 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[Open Data]]></category>
-<description><![CDATA[The city of Berlin is organised in various spatial units, from political district boundaries, to statistical life-world related spaces (LOR), to buildings.]]></description>
-<content:encoded><![CDATA[The city of Berlin is organised in various spatial units, from political district boundaries, to statistical life-world related spaces (LOR), to buildings.]]></content:encoded>
-<dc:creator><![CDATA[undefined]]></dc:creator>
-<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/spatial-units/index_en.html</guid>
-</item>
-
-<item>
-<title><![CDATA[Berlin's Kitas]]></title>
-<link>http://lab.technologiestiftung-berlin.de/projects/kitas/index_en.html</link>
-<pubDate>Mon, 5 Feb 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[Open Data]]></category>
-<description><![CDATA[Kita-Suche should support parents to find the best Kita for their children. The innovative search- and filter-functionality as well as the map-based representation are driven by data from the city of Berlin. Through examples like this, the ideation and prototyping labs hopes to promote the benefits of open data for citizens and the city itself.]]></description>
-<content:encoded><![CDATA[Kita-Suche should support parents to find the best Kita for their children. The innovative search- and filter-functionality as well as the map-based representation are driven by data from the city of Berlin. Through examples like this, the ideation and prototyping labs hopes to promote the benefits of open data for citizens and the city itself.]]></content:encoded>
-<dc:creator><![CDATA[undefined]]></dc:creator>
-<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/kitas/index_en.html</guid>
-</item>
-
-<item>
-<title><![CDATA[New LoRa nodes are go!]]></title>
-<link>http://lab.technologiestiftung-berlin.de/projects/LORANODES/index_en.html</link>
-<pubDate>Wed, 10 Jan 2018 00:00:00  +0100</pubDate>
-<category><![CDATA[LoRaWAN]]></category>
-<description><![CDATA[No byte will be wasted]]></description>
-<content:encoded><![CDATA[No byte will be wasted]]></content:encoded>
-<dc:creator><![CDATA[undefined]]></dc:creator>
-<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/LORANODES/index_en.html</guid>
-</item>
-
-<item>
-<title><![CDATA[Mobile Air Pollution Sensor]]></title>
-<link>http://lab.technologiestiftung-berlin.de/projects/sense10/index_en.html</link>
-<pubDate>Fri, 20 Oct 2017 00:00:00  +0100</pubDate>
-<category><![CDATA[Citizen Science, LoRaWAN]]></category>
-<description><![CDATA[Sense10 is a fully functional mobile prototype that measures air quality. The idea was to combine the Airrohr from the Luftdaten.info initiative with the LoRaWAN technology. We now sending the exact location of the LoRa Node in combination with the measurement data from the NovaPM10 sensor. This then gets visualized on a map to enable people to watch where a people on the streets can get problems in terms of air quality.]]></description>
-<content:encoded><![CDATA[Sense10 is a fully functional mobile prototype that measures air quality. The idea was to combine the Airrohr from the Luftdaten.info initiative with the LoRaWAN technology. We now sending the exact location of the LoRa Node in combination with the measurement data from the NovaPM10 sensor. This then gets visualized on a map to enable people to watch where a people on the streets can get problems in terms of air quality.]]></content:encoded>
-<dc:creator><![CDATA[undefined]]></dc:creator>
-<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/sense10/index_en.html</guid>
-</item>
-
-<item>
-<title><![CDATA[H3LL0 W0RLD!]]></title>
-<link>http://lab.technologiestiftung-berlin.de/projects/H3LL0W0RLD/index_en.html</link>
-<pubDate>Sun, 1 Oct 2017 00:00:00  +0100</pubDate>
-<category><![CDATA[News]]></category>
-<description><![CDATA[Welcome at the Technology Foundation's Ideation & Prototyping Lab]]></description>
-<content:encoded><![CDATA[Welcome at the Technology Foundation's Ideation & Prototyping Lab]]></content:encoded>
-<dc:creator><![CDATA[undefined]]></dc:creator>
-<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/H3LL0W0RLD/index_en.html</guid>
 </item>
 
 	</channel>

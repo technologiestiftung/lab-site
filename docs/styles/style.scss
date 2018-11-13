@@ -1,5 +1,7 @@
 // General styling
+@import 'general/normalize';
 @import 'general/base';
 
 // Modules
-@import 'modules/test';
+@import 'modules/navigation';
+@import 'modules/feature-projects';
