@@ -6,6 +6,7 @@
     &-logo {
         border: 2px solid gray;
         display: inline-block;
+        text-transform: uppercase;
 
         &__line {
             display: block;
@@ -18,6 +19,10 @@
 
         &__item {
             border: 2px solid yellow;
+
+            &--nav {
+                font-weight: bold;
+            }
         }
     }
 }

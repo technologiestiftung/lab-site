@@ -1,8 +1,15 @@
 .link {
     &--button {
+        background: rgba($black, 0);
         border: 1px solid $black;
-        border-radius: 5px;
+        border-radius: 6px;
         display: inline-block;
         padding: 10px;
+        transition: background 0.5s, color 0.5s;
+
+        &:hover {
+            background: rgba($black, 1);
+            color: $white;
+        }
     }
 }

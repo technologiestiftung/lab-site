@@ -1,8 +1,10 @@
 body {
     border: 2px solid red;
+    box-sizing: border-box;
     font-family: 'plex-sans';
-    font-size: 16px;
+    font-size: $font-size-m;
     font-weight: normal;
+    min-height: 100vh;
     overflow: hidden;
 }
 
@@ -10,13 +12,14 @@ h1,
 h2,
 h3,
 p {
-    font-size: 16px;
+    font-size: $font-size-m;
     font-weight: normal;
     margin: 0;
 }
 
 h2 {
     color: $gray;
+    font-size: $font-size-s;
     text-transform: uppercase;
 }
 
