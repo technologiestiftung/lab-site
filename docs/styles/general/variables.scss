@@ -1,14 +1,19 @@
 // Colors
 $white: #ffffff;
 $black: #000000;
-$gray: #666666;
+$gray: #adadad;
 
-$color--publication: #2d91d2;
-$color--prototype: #41b496;
-$color--workshop: #dcc82d;
-$color--dataset: #e60032;
+$color-publication: #2d91d2;
+$color-prototype: #41b496;
+$color-workshop: #dcc82d;
+$color-dataset: #e60032;
 
 // Font sizes
+$font-size-xs: 12px;
 $font-size-s: 14px;
 $font-size-m: 16px;
-$font-size-l: 32px;
+$font-size-l: 20px;
+$font-size-xl: 32px;
+
+// Spacing
+$spacing-normal: 30px;

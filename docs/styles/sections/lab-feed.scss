@@ -1,0 +1,37 @@
+.feed {
+    border: 2px solid orange;
+    &-headline {
+        border: 2px solid yellow;
+        font-size: $font-size-xl;
+        font-weight: bold;
+    }
+    &-list {
+        border: 2px solid red;
+        display: flex;
+
+        &__project {
+            border: 2px solid yellow;
+            flex: 1;
+            margin-right: $spacing-normal;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+
+            &-image {
+                display: block;
+                width: 100%;
+            }
+            &-date {
+                color: $gray;
+                font-size: $font-size-xs;
+                font-family: 'plex-mono';
+                text-transform: uppercase;
+            }
+            &-title {
+                display: block;
+                font-size: $font-size-l;
+            }
+        }
+    }
+}

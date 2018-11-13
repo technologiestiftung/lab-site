@@ -18,7 +18,7 @@
                 border: 2px solid orange;
                 box-sizing: content-box;
                 display: inline-block;
-                font-size: $font-size-l;
+                font-size: $font-size-xl;
                 font-weight: bold;
                 padding: 0 60px 0 0;
                 position: relative;
@@ -44,16 +44,16 @@
                     }
 
                     &.publication {
-                        color: $color--publication;
+                        color: $color-publication;
                     }
                     &.prototype {
-                        color: $color--prototype;
+                        color: $color-prototype;
                     }
                     &.workshop {
-                        color: $color--workshop;
+                        color: $color-workshop;
                     }
                     &.dataset {
-                        color: $color--dataset;
+                        color: $color-dataset;
                     }
                 }
             }
