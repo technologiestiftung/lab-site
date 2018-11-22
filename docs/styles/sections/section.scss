@@ -1,0 +1,10 @@
+section {
+    border: 4px solid aquamarine;
+}
+
+.section {
+    &-headline {
+        font-size: $font-size-xl;
+        font-weight: bold;
+    }
+}

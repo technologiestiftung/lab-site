@@ -1,9 +1,6 @@
 .feed {
-    border: 2px solid orange;
     &-headline {
         border: 2px solid yellow;
-        font-size: $font-size-xl;
-        font-weight: bold;
     }
     &-list {
         border: 2px solid red;
