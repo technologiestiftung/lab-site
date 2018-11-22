@@ -28,7 +28,7 @@
                 .featured-list__project {
                     &-title {
                         &::after {
-                            // transform: translate(0, -50%);
+                            transform: translate(0, -50%);
                         }
 
                         &.publication {
@@ -72,7 +72,6 @@
                     top: 50%;
                     transform: translate(-15%, -50%);
                     transition: opacity 0.5s, transform 0.5s;
-                    transition-delay: 0.5s;
                     user-select: none;
                 }
             }
@@ -83,6 +82,7 @@
                 font-size: $font-size-m;
                 left: 0;
                 opacity: 0;
+                pointer-events: none;
                 position: absolute;
                 transition: 0.5s;
             }

@@ -85,6 +85,7 @@ module.exports = function(grunt) {
                     sections: {
                         layout: {
                             head: 'layout/head.html',
+                            navigation: 'layout/navigation.html',
                             footer: 'layout/footer.html',
                             projectTitle: 'layout/projectTitle.html',
                             project:
