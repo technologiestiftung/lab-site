@@ -27,8 +27,7 @@
                 &::after {
                     border: 2px solid yellow;
                     content: '→';
-                    font-size: 50px;
-                    opacity: 0;
+                    opacity: 1;
                     position: absolute;
                     right: 0;
                     top: 50%;
@@ -69,7 +68,7 @@
                 position: absolute;
                 transform: translate3d(-50%, 20%, 0);
                 transition: opacity 0.5s, transform 0.5s;
-                width: 60%;
+                width: 100%;
                 z-index: -1;
             }
 
