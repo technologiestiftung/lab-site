@@ -2,33 +2,35 @@
     position: relative;
 
     &-title {
-        border: 2px solid yellow;
+        // border: 2px solid yellow;
     }
     &-list {
-        border: 2px solid yellow;
+        // border: 2px solid yellow;
         display: flex;
         flex-basis: auto;
-        flex-direction: column;
+        flex-direction: row;
         height: 300px;
         justify-content: flex-start;
         position: relative;
+        margin-top: $spacing-s;
 
         &__project {
             align-self: flex-start;
-            border: 2px solid blue;
+            // border: 2px solid blue;
             flex-grow: 0;
             flex-shrink: 1;
             flex-basis: auto;
-            transition: flex-grow 0.5s;
+            transition: flex-grow $time-s;
+            margin: $spacing-xs;
 
             &:hover {
-                border: 2px solid red;
+                // border: 2px solid red;
                 flex-grow: 0;
 
                 .featured-list__project {
                     &-title {
                         &::after {
-                            transform: translate(0, -50%);
+                            // transform: translate(0, -50%);
                         }
 
                         &.publication {
@@ -48,30 +50,31 @@
                         opacity: 1;
                     }
                     &-image {
-                        opacity: 0.5;
-                        transform: translate3D(-50%, 0, 0);
+                        opacity: 1;
+                        transform: translate3d(-25%, 0%, 0);
                     }
                 }
             }
 
             &-title {
                 // align-self: flex-end;
-                border: 2px solid orange;
+                // border: 2px solid orange;
                 box-sizing: content-box;
                 font-size: $font-size-xl;
-                font-weight: bold;
+                font-weight: regular;
                 padding: 0 60px 0 0;
                 position: relative;
-                transition: color 0.5s;
+                transition: color $time-s;
 
                 &::after {
-                    border: 2px solid yellow;
+                    // border: 2px solid yellow;
                     content: '→';
-                    position: absolute;
+                    // position: absolute;
                     right: 0;
                     top: 50%;
+                    margin-left: $spacing-s;
                     transform: translate(-15%, -50%);
-                    transition: opacity 0.5s, transform 0.5s;
+                    transition: opacity $time-s, transform $time-s;
                     user-select: none;
                 }
             }
@@ -83,8 +86,8 @@
                 left: 0;
                 opacity: 0;
                 pointer-events: none;
-                position: absolute;
-                transition: 0.5s;
+                // position: absolute;
+                transition: $time-s;
             }
 
             &-image {
@@ -96,8 +99,8 @@
                 opacity: 0;
                 pointer-events: none;
                 position: absolute;
-                transform: translate3d(-50%, 20%, 0);
-                transition: opacity 0.5s, transform 0.5s;
+                transform: translate3d(-22%, 0%, 0);
+                transition: opacity $time-normal, transform $time-normal;
                 width: 100%;
                 z-index: -1;
             }

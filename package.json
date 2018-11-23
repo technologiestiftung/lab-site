@@ -13,7 +13,6 @@
     "fs": "0.0.1-security",
     "grunt": "^1.0.1",
     "grunt-browser-sync": "^2.2.0",
-    "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^3.1.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-html-build": "^0.7.1",
@@ -21,6 +20,7 @@
   },
   "author": "Sebastian Meier @seb_meier",
   "dependencies": {
+    "grunt-contrib-sass": "^1.0.0",
     "moment": "^2.20.1",
     "normalize-scss": "^7.0.1"
   }
