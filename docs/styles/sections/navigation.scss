@@ -1,13 +1,15 @@
 .navigation {
-    margin-top: $spacing-normal;
-    border: 2px solid blue;
+    margin-top: $spacing-xl;
+    // border: 2px solid blue;
     display: flex;
     justify-content: space-between;
 
     &-logo {
-        border: 2px solid gray;
+        // border: 2px solid gray;
+        font-family: 'plex-sans';
         display: inline-block;
         text-transform: uppercase;
+        letter-spacing: 2px;
 
         &__line {
             display: block;
@@ -15,14 +17,16 @@
     }
 
     &-list {
-        border: 2px solid orange;
+        // border: 2px solid orange;
         display: flex;
 
         &__item {
-            border: 2px solid yellow;
+            // border: 2px solid yellow;
+            margin-right: $spacing-s;
 
             &--nav {
                 font-weight: bold;
+                margin-right: $spacing-normal;
             }
         }
     }

@@ -1,13 +1,14 @@
 .feed {
     &-headline {
-        border: 2px solid yellow;
+        // border: 2px solid yellow;
+        margin-bottom: $spacing-normal;
     }
     &-list {
-        border: 2px solid red;
+        // border: 2px solid red;
         display: flex;
 
         &__project {
-            border: 2px solid yellow;
+            // border: 2px solid yellow;
             flex: 1;
             margin-right: $spacing-normal;
 
@@ -18,12 +19,14 @@
             &-image {
                 display: block;
                 width: 100%;
+                margin-bottom: $spacing-s;
             }
             &-date {
-                color: $gray;
-                font-size: $font-size-xs;
+                color: black;
+                font-size: $font-size-s;
                 font-family: 'plex-mono';
                 text-transform: uppercase;
+                margin-bottom: $spacing-xs;
             }
             &-title {
                 display: block;
