@@ -1,10 +1,7 @@
 console.log('image slider');
 
-var sliderImages = document.getElementsByClassName('slider');
-console.log(sliderImages);
-
 var slider = tns({
-    container: '.project-slider',
+    container: '.slider',
     items: 1,
     lazyload: true,
     mouseDrag: true,
@@ -17,3 +14,5 @@ var slider = tns({
     swipeAngle: false,
     speed: 400
 });
+
+console.log(slider);

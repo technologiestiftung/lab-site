@@ -85,30 +85,29 @@
         display: flex;
         flex-direction: row;
 
-        img {
-            align-self: flex-start;
-            border: 2px solid green;
-            max-height: 100%;
-            max-width: 50%;
-            padding: 0 $spacing-column--half 0 0;
-        }
-
-        div {
-            border: 2px solid red;
-            padding: 0 0 0 $spacing-column--half;
-            width: 50%;
+        &:not(.slider) {
+            & > div {
+                border: 2px solid red;
+                padding: 0 0 0 $spacing-column--half;
+                width: 50%;
+            }
+            & > img {
+                align-self: flex-start;
+                border: 2px solid green;
+                max-height: 100%;
+                max-width: 50%;
+            }
         }
 
         &.reversed {
             flex-direction: row-reverse;
 
-            img {
-                padding: 0 0 0 $spacing-column--half;
-            }
-            div {
-                border: 2px solid red;
-                padding: 0 $spacing-column--half 0 0;
-                width: 50%;
+            &:not(.slider) {
+                & > div {
+                    border: 2px solid red;
+                    padding: 0 $spacing-column--half 0 0;
+                    width: 50%;
+                }
             }
         }
     }
