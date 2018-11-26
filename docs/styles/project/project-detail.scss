@@ -9,7 +9,6 @@
             &-image {
                 border: 2px solid gray;
                 display: block;
-                height: 100%;
                 margin: 0 auto;
                 max-height: 75vh;
                 max-width: 100%;
@@ -26,6 +25,7 @@
         &__title {
             border: 2px solid green;
             display: flex;
+            flex-direction: row;
 
             &--main {
                 border: 2px solid yellow;
@@ -228,7 +228,6 @@
     h2,
     h3 {
         color: $black;
-        line-height: $line-height-title;
         font-family: 'plex-sans';
         text-transform: none;
     }
@@ -237,5 +236,16 @@
         font-size: $font-size-ll;
         font-weight: bold;
         margin: 0 0 $spacing-normal 0;
+    }
+
+    blockquote {
+        border: 2px solid yellow;
+        font-size: $font-size-s;
+        margin: 0;
+
+        p {
+            font-size: $font-size-ll;
+            margin-bottom: $spacing-small;
+        }
     }
 }
