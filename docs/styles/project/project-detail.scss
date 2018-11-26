@@ -9,8 +9,11 @@
             &-image {
                 border: 2px solid gray;
                 display: block;
+                height: 100%;
+                margin: 0 auto;
+                max-height: 75vh;
                 max-width: 100%;
-                width: 100%;
+                width: auto;
             }
 
             .link--button {
@@ -23,16 +26,17 @@
         &__title {
             border: 2px solid green;
             display: flex;
-            font-size: $font-size-xl;
 
             &--main {
                 border: 2px solid yellow;
                 flex: 1;
+                font-size: $font-size-xl;
                 font-weight: bold;
             }
             &--sub {
                 border: 2px solid orange;
                 flex: 1;
+                font-size: $font-size-ll;
             }
         }
         &__meta {
@@ -114,6 +118,49 @@
                 }
             }
         }
+
+        &.columns {
+            h3 {
+                padding-right: $spacing-column--half;
+                width: 50%;
+            }
+            p {
+                column-count: 2;
+                column-gap: $spacing-column;
+            }
+        }
+    }
+
+    &-columns {
+        display: flex;
+        flex-direction: row;
+
+        img {
+            align-self: flex-start;
+            border: 2px solid green;
+            max-height: 100%;
+            max-width: 50%;
+            padding: 0 $spacing-column--half 0 0;
+        }
+
+        div {
+            border: 2px solid red;
+            padding: 0 0 0 $spacing-column--half;
+            width: 50%;
+        }
+
+        &.reversed {
+            flex-direction: row-reverse;
+
+            img {
+                padding: 0 0 0 $spacing-column--half;
+            }
+            div {
+                border: 2px solid red;
+                padding: 0 $spacing-column--half 0 0;
+                width: 50%;
+            }
+        }
     }
 
     &--publication {
@@ -175,5 +222,20 @@
                 background-color: $color-dataset;
             }
         }
+    }
+
+    h1,
+    h2,
+    h3 {
+        color: $black;
+        line-height: $line-height-title;
+        font-family: 'plex-sans';
+        text-transform: none;
+    }
+
+    h3 {
+        font-size: $font-size-ll;
+        font-weight: bold;
+        margin: 0 0 $spacing-normal 0;
     }
 }
