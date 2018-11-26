@@ -54,71 +54,21 @@
                     font-weight: bold;
                 }
                 &__item {
+                    border: 2px solid red;
                     align-self: flex-start;
 
                     &:last-of-type {
                         margin-bottom: 0;
                     }
                 }
-
-                &--researchers,
-                &--materials {
-                    .project-header__meta-column__item {
-                        border: 2px solid red;
-                        position: relative;
-                        transition: color 0.5s;
-
-                        &::after {
-                            background-color: $gray;
-                            bottom: 2px;
-                            content: '';
-                            height: 1px;
-                            left: 0;
-                            position: absolute;
-                            transform: scaleX(1);
-                            transform-origin: left;
-                            transition: transform 0.5s;
-                            width: 100%;
-                        }
-
-                        &:hover {
-                            &::after {
-                                transform: scaleX(0.85);
-                            }
-                        }
-                    }
+                a::after {
+                    margin-bottom: 2px;
                 }
             }
         }
     }
 
     &-text {
-        a {
-            line-height: $line-height-text;
-            position: relative;
-            padding-bottom: 3px;
-            transition: color 0.5s;
-
-            &::after {
-                background-color: $gray;
-                bottom: 0;
-                content: '';
-                height: 1px;
-                left: 0;
-                position: absolute;
-                transform: scaleX(1);
-                transform-origin: left;
-                transition: transform 0.5s;
-                width: 100%;
-            }
-
-            &:hover {
-                &::after {
-                    transform: scaleX(0.85);
-                }
-            }
-        }
-
         &.columns {
             h3 {
                 padding-right: $spacing-column--half;
@@ -164,7 +114,7 @@
     }
 
     &--publication {
-        a {
+        a:not(.link--button) {
             &::after {
                 background-color: $color-publication;
             }
@@ -179,7 +129,7 @@
         }
     }
     &--prototype {
-        a {
+        a:not(.link--button) {
             &::after {
                 background-color: $color-prototype;
             }
@@ -194,7 +144,7 @@
         }
     }
     &--workshop {
-        a {
+        a:not(.link--button) {
             &::after {
                 background-color: $color-workshop;
             }
@@ -209,7 +159,7 @@
         }
     }
     &--dataset {
-        a {
+        a:not(.link--button) {
             &::after {
                 background-color: $color-dataset;
             }
@@ -220,6 +170,31 @@
         .project-header__meta-column__item {
             &::after {
                 background-color: $color-dataset;
+            }
+        }
+    }
+
+    a:not(.link--button) {
+        line-height: $line-height-text;
+        position: relative;
+        padding-bottom: 3px;
+        transition: color 0.5s;
+
+        &::after {
+            bottom: 0;
+            content: '';
+            height: 1px;
+            left: 0;
+            position: absolute;
+            transform: scaleX(1);
+            transform-origin: left;
+            transition: transform 0.5s;
+            width: 100%;
+        }
+
+        &:hover {
+            &::after {
+                transform: scaleX(0.85);
             }
         }
     }
@@ -240,12 +215,28 @@
 
     blockquote {
         border: 2px solid yellow;
-        font-size: $font-size-s;
         margin: 0;
 
         p {
             font-size: $font-size-ll;
             margin-bottom: $spacing-small;
+        }
+    }
+
+    figure {
+        border: 2px solid yellow;
+        margin: 0;
+        text-align: center;
+
+        figcaption {
+            margin-top: $spacing-small;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            max-height: 75vh;
+            max-width: 100%;
         }
     }
 }
