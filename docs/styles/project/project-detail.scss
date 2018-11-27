@@ -110,8 +110,11 @@
             &-controls {
                 border: 2px solid red;
                 bottom: 0;
+                left: 50%;
+                outline: none;
+                padding: 0 0 0 $spacing-column--half;
                 position: absolute;
-                right: $spacing-page-m;
+                user-select: none;
 
                 button {
                     color: $black;
@@ -137,6 +140,7 @@
             .tns {
                 &-controls {
                     left: $spacing-page-m;
+                    padding: 0;
                     right: auto;
                 }
             }

@@ -16,6 +16,7 @@
         text-transform: uppercase;
         letter-spacing: 2px;
         line-height: 1.5em;
+        margin-left: -75px;
         overflow: visible;
         padding: 0 0 0 75px;
         user-select: none;
@@ -30,17 +31,28 @@
         align-self: flex-start;
         display: flex;
 
+        a {
+            border: 2px solid blue;
+            display: flex;
+            padding: 0 $spacing-xs;
+        }
+
         &__item {
             border: 2px solid yellow;
-            margin-right: $spacing-s;
+            display: flex;
 
             &:last-of-type {
                 margin-right: 0;
             }
-
             &--nav {
                 font-weight: bold;
-                margin-right: $spacing-m;
+            }
+            &--lang {
+                margin: 0 $spacing-l;
+            }
+
+            img {
+                align-self: center;
             }
         }
     }

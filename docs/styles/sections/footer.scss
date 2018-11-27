@@ -13,10 +13,10 @@
 
         &__item {
             border: 2px solid yellow;
-            margin-right: $spacing-s;
+            padding-right: $spacing-s;
 
             &:last-of-type {
-                margin-right: 0;
+                padding-right: 0;
             }
         }
     }

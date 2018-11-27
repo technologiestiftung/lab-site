@@ -17,27 +17,29 @@
 
         &__project {
             border: 2px solid blue;
+            cursor: default;
             display: flex;
-            cursor: pointer;
             flex-direction: column;
 
             &-title {
-                align-self: flex-start;
                 border: 2px solid orange;
                 font-size: $font-size-xl;
                 position: relative;
-                transition: color $time-m;
 
-                &::after {
-                    border: 2px solid yellow;
-                    content: '→';
-                    // position: absolute;
-                    right: 0;
-                    top: 50%;
-                    margin-left: $spacing-s;
-                    transform: translate(-15%, -50%);
-                    // transition: opacity $time-m, transform $time-m;
-                    user-select: none;
+                a {
+                    border: 2px solid green;
+                    display: inline-block;
+                    // margin: 0 $spacing-xl 0 0;
+                    transition: color $time-m;
+                    width: 100%;
+
+                    &::after {
+                        border: 2px solid yellow;
+                        content: '→';
+                        margin-left: $spacing-s;
+                        pointer-events: none;
+                        user-select: none;
+                    }
                 }
 
                 &:hover {
@@ -56,16 +58,16 @@
                         }
                     }
 
-                    &.publication {
+                    &.publication a {
                         color: $color-publication;
                     }
-                    &.prototype {
+                    &.prototype a {
                         color: $color-prototype;
                     }
-                    &.workshop {
+                    &.workshop a {
                         color: $color-workshop;
                     }
-                    &.dataset {
+                    &.dataset a {
                         color: $color-dataset;
                     }
                 }
