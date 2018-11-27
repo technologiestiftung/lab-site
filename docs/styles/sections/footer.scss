@@ -1,19 +1,22 @@
 .footer {
-    margin-top: $spacing-xl;
-    margin-bottom: $spacing-xl;
-    // border: 2px solid yellow;
+    border: 2px solid yellow;
     display: flex;
     justify-content: space-between;
 
     &-copy {
-        // border: 2px solid yellow;
+        border: 2px solid yellow;
     }
     &-list {
-        // border: 2px solid yellow;
+        border: 2px solid yellow;
         display: flex;
 
         &__item {
-            // border: 2px solid yellow;
+            border: 2px solid yellow;
+            margin-right: $spacing-s;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
         }
     }
 }

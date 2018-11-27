@@ -1,3 +1,4 @@
+// Plex Sans – Regular
 @font-face {
     font-family: 'plex-sans';
     src: url('../../assets/fonts/IBM-Plex-Sans/IBMPlexSans-Regular');
@@ -11,6 +12,21 @@
     font-style: normal;
 }
 
+// Plex Sans – Italic
+@font-face {
+    font-family: 'plex-sans';
+    src: url('../../assets/fonts/IBM-Plex-Sans/IBMPlexSans-Italic');
+    src: url('../../assets/fonts/IBM-Plex-Sans/IBMPlexSans-Italic?#iefix')
+            format('embedded-opentype'),
+        url('../../assets/fonts/IBM-Plex-Sans/woff/IBMPlexSans-Italic.woff')
+            format('woff'),
+        url('../../assets/fonts/IBM-Plex-Sans/ttf/IBMPlexSans-Italic.ttf')
+            format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+// Plex Sans – Bold
 @font-face {
     font-family: 'plex-sans';
     src: url('../../assets/fonts/IBM-Plex-Sans/IBMPlexSans-Bold');
@@ -24,6 +40,7 @@
     font-style: normal;
 }
 
+// Plex Mono – Regular
 @font-face {
     font-family: 'plex-mono';
     src: url('../../assets/fonts/IBM-Plex-Mono/IBMPlexMono-Regular');

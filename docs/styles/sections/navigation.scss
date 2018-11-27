@@ -1,11 +1,11 @@
 .navigation {
-    margin-top: $spacing-xl;
-    // border: 2px solid blue;
+    border: 2px solid blue;
     display: flex;
     justify-content: space-between;
+    padding: 0 $spacing-page-m;
 
     &-logo {
-        // border: 2px solid gray;
+        border: 2px solid gray;
         font-family: 'plex-sans';
         display: inline-block;
         text-transform: uppercase;
@@ -17,16 +17,21 @@
     }
 
     &-list {
-        // border: 2px solid orange;
+        border: 2px solid orange;
+        align-self: flex-start;
         display: flex;
 
         &__item {
-            // border: 2px solid yellow;
+            border: 2px solid yellow;
             margin-right: $spacing-s;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
 
             &--nav {
                 font-weight: bold;
-                margin-right: $spacing-normal;
+                margin-right: $spacing-m;
             }
         }
     }

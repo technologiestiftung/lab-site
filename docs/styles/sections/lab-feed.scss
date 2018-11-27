@@ -1,16 +1,21 @@
 .feed {
+    &-title {
+        color: $gray;
+        font-family: 'plex-mono';
+        font-size: $font-size-s;
+        text-transform: uppercase;
+    }
     &-headline {
-        // border: 2px solid yellow;
-        margin-bottom: $spacing-normal;
+        border: 2px solid yellow;
     }
     &-list {
-        // border: 2px solid red;
+        border: 2px solid red;
         display: flex;
 
         &__project {
-            // border: 2px solid yellow;
+            border: 2px solid yellow;
             flex: 1;
-            margin-right: $spacing-normal;
+            margin-right: $spacing-m;
 
             &:last-of-type {
                 margin-right: 0;

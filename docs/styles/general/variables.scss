@@ -1,28 +1,61 @@
-// Colors
+/*
+ * Colors
+ */
+
+// Basic
 $white: #ffffff;
 $black: #000000;
 $gray: #adadad;
 
+// Categories
 $color-publication: #2d91d2;
 $color-prototype: #41b496;
 $color-workshop: #dcc82d;
 $color-dataset: #e60032;
+
+/*
+ * Font styling
+ */
 
 // Font sizes
 $font-size-xs: 12px;
 $font-size-s: 14px;
 $font-size-m: 16px;
 $font-size-l: 20px;
+$font-size-ll: 24px;
 $font-size-xl: 32px;
 
-// Spacing
+// Line Heights
+$line-height-title: 1.5em;
+$line-height-text: 1.8em;
+$line-height-list: 2em;
+
+/*
+ * Spacing
+ */
+
+// vertical spacing
 $spacing-xs: 5px;
 $spacing-s: 15px;
-$spacing-normal: 30px;
+$spacing-m: 30px;
 $spacing-xl: 60px;
 $spacing-xxl: 100px;
 
-// Time
-$time-s: 0.25s;
-$time-normal: 0.5s;
+// spacing for for horizontal page layout
+$spacing-page-s: 2.5vw;
+$spacing-page-m: 15vw;
+$spacing-page-l: 22.5vw;
+$spacing-page-xl: 35vw;
 
+// spacing for double column layout
+$spacing-column: 50px;
+$spacing-column--half: ($spacing-column / 2);
+
+/*
+ * Time variables
+ */
+
+// Transitions
+$time-s: 0.25s;
+$time-m: 0.5s;
+$time-l: 0.75s;
