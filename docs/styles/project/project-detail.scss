@@ -4,15 +4,18 @@
 
         &__hero {
             border: 2px solid red;
+            overflow: hidden;
             position: relative;
+            height: 75vh;
 
             &-image {
                 border: 2px solid gray;
                 display: block;
-                margin: 0 auto;
-                max-height: 75vh;
+                left: 50%;
                 max-width: 100%;
-                width: auto;
+                position: absolute;
+                top: 50%;
+                transform: translate(-50%, -50%);
             }
 
             .link--button {
@@ -74,6 +77,8 @@
         padding: 0 $spacing-page-l;
 
         &.columns {
+            padding: 0 $spacing-page-m;
+
             h3 {
                 padding-right: $spacing-column--half;
                 width: 50%;
@@ -93,7 +98,7 @@
         &:not(.slider) {
             & > div {
                 border: 2px solid red;
-                padding: 0 0 0 $spacing-column--half;
+                padding: 0 $spacing-page-m 0 $spacing-column--half;
                 width: 50%;
             }
             & > img {
@@ -109,14 +114,13 @@
                 border: 2px solid red;
                 bottom: 0;
                 position: absolute;
-                right: 0;
+                right: $spacing-page-m;
 
                 button {
                     color: $black;
                     background: none;
                     border: none;
                     font-size: $font-size-ll;
-                    // font-weight: bold;
                     transition: color 0.5s;
                 }
             }
@@ -128,14 +132,14 @@
             &:not(.slider) {
                 & > div {
                     border: 2px solid red;
-                    padding: 0 $spacing-column--half 0 0;
+                    padding: 0 $spacing-column--half 0 $spacing-page-m;
                     width: 50%;
                 }
             }
 
             .tns {
                 &-controls {
-                    left: 0;
+                    left: $spacing-page-m;
                     right: auto;
                 }
             }
@@ -165,6 +169,10 @@
                 }
             }
         }
+
+        ::selection {
+            background: rgba($color-publication, 0.25);
+        }
     }
     &--prototype {
         a:not(.link--button) {
@@ -188,6 +196,10 @@
                     }
                 }
             }
+        }
+
+        ::selection {
+            background: rgba($color-prototype, 0.25);
         }
     }
     &--workshop {
@@ -213,6 +225,10 @@
                 }
             }
         }
+
+        ::selection {
+            background: rgba($color-workshop, 0.25);
+        }
     }
     &--dataset {
         a:not(.link--button) {
@@ -236,6 +252,10 @@
                     }
                 }
             }
+        }
+
+        ::selection {
+            background: rgba($color-dataset, 0.25);
         }
     }
 
@@ -280,7 +300,9 @@
 
     blockquote {
         border: 2px solid yellow;
+        font-size: $font-size-s;
         margin: 0;
+        padding: 0 $spacing-page-m;
 
         p {
             font-size: $font-size-ll;
