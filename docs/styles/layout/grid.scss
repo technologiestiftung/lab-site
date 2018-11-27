@@ -1,0 +1,15 @@
+.grid {
+    // TODO: Remove, just for dev
+    & > a {
+        border: 2px solid red;
+    }
+
+    display: grid;
+    grid-gap: $spacing-column--half $spacing-column--half;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    img {
+        display: block;
+        width: 100%;
+    }
+}

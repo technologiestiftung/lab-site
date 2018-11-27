@@ -5,6 +5,9 @@
 @import 'general/base';
 @import 'general/inputs';
 
+// Layout
+@import 'layout/grid';
+
 // Sections
 @import 'sections/section';
 @import 'sections/navigation';
@@ -14,7 +17,7 @@
 @import 'sections/lab-feed';
 
 // Pages
-@import 'pages/start';
+@import 'pages/index';
 
 // Projects
 @import 'project/project-detail';

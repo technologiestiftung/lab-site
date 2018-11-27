@@ -5,11 +5,20 @@
     padding: 0 $spacing-page-s;
 
     &-logo {
+        background-image: url('../../assets/icons/lab-logo.svg');
+        background-position: left center;
+        background-repeat: no-repeat;
+        background-size: 60px;
         border: 2px solid gray;
         font-family: 'plex-sans';
+        font-size: $font-size-xs;
         display: inline-block;
         text-transform: uppercase;
         letter-spacing: 2px;
+        line-height: 1.5em;
+        overflow: visible;
+        padding: 0 0 0 75px;
+        user-select: none;
 
         &__line {
             display: block;

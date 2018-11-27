@@ -10,21 +10,11 @@
     }
     &-list {
         border: 2px solid red;
-        display: flex;
 
         &__project {
             border: 2px solid yellow;
-            flex: 1;
-            margin-right: $spacing-m;
-
-            &:last-of-type {
-                margin-right: 0;
-            }
 
             &-image {
-                display: block;
-                width: 100%;
-                margin-bottom: $spacing-s;
             }
             &-date {
                 color: $gray;

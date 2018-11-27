@@ -79,7 +79,7 @@
                 left: 0;
                 opacity: 0;
                 pointer-events: none;
-                transform: translate3d(0, 5%, 0);
+                transform: translate3d(2.5%, 0, 0);
                 transition: opacity $time-s, transform $time-m;
             }
 
