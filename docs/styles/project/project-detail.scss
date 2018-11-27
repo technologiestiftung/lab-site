@@ -17,7 +17,7 @@
 
             .link--button {
                 bottom: 0;
-                left: 0;
+                left: $spacing-page-m;
                 position: absolute;
             }
         }
@@ -26,6 +26,7 @@
             border: 2px solid green;
             display: flex;
             flex-direction: row;
+            padding: 0 $spacing-page-m;
 
             &--main {
                 border: 2px solid yellow;
@@ -42,6 +43,7 @@
         &__meta {
             border: 2px solid green;
             display: flex;
+            padding: 0 $spacing-page-m;
 
             &-column {
                 border: 2px solid orange;
@@ -69,6 +71,8 @@
     }
 
     &-text {
+        padding: 0 $spacing-page-l;
+
         &.columns {
             h3 {
                 padding-right: $spacing-column--half;
@@ -84,6 +88,7 @@
     &-columns {
         display: flex;
         flex-direction: row;
+        position: relative;
 
         &:not(.slider) {
             & > div {
@@ -99,6 +104,24 @@
             }
         }
 
+        .tns {
+            &-controls {
+                border: 2px solid red;
+                bottom: 0;
+                position: absolute;
+                right: 0;
+
+                button {
+                    color: $black;
+                    background: none;
+                    border: none;
+                    font-size: $font-size-ll;
+                    // font-weight: bold;
+                    transition: color 0.5s;
+                }
+            }
+        }
+
         &.reversed {
             flex-direction: row-reverse;
 
@@ -107,6 +130,13 @@
                     border: 2px solid red;
                     padding: 0 $spacing-column--half 0 0;
                     width: 50%;
+                }
+            }
+
+            .tns {
+                &-controls {
+                    left: 0;
+                    right: auto;
                 }
             }
         }
@@ -126,6 +156,15 @@
                 background-color: $color-publication;
             }
         }
+        .tns {
+            &-controls {
+                button {
+                    &:hover {
+                        color: $color-publication;
+                    }
+                }
+            }
+        }
     }
     &--prototype {
         a:not(.link--button) {
@@ -139,6 +178,15 @@
         .project-header__meta-column__item {
             &::after {
                 background-color: $color-prototype;
+            }
+        }
+        .tns {
+            &-controls {
+                button {
+                    &:hover {
+                        color: $color-prototype;
+                    }
+                }
             }
         }
     }
@@ -156,6 +204,15 @@
                 background-color: $color-workshop;
             }
         }
+        .tns {
+            &-controls {
+                button {
+                    &:hover {
+                        color: $color-workshop;
+                    }
+                }
+            }
+        }
     }
     &--dataset {
         a:not(.link--button) {
@@ -171,18 +228,27 @@
                 background-color: $color-dataset;
             }
         }
+        .tns {
+            &-controls {
+                button {
+                    &:hover {
+                        color: $color-dataset;
+                    }
+                }
+            }
+        }
     }
 
     a:not(.link--button) {
         line-height: $line-height-text;
         position: relative;
-        padding-bottom: 3px;
+        padding-bottom: 4px;
         transition: color 0.5s;
 
         &::after {
             bottom: 0;
             content: '';
-            height: 1px;
+            height: 2px;
             left: 0;
             position: absolute;
             transform: scaleX(1);
@@ -218,6 +284,7 @@
 
         p {
             font-size: $font-size-ll;
+            font-style: italic;
             margin-bottom: $spacing-small;
         }
     }

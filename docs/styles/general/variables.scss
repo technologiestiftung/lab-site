@@ -24,5 +24,9 @@ $line-height-list: 2em;
 // Spacing
 $spacing-small: 15px;
 $spacing-normal: 30px;
-$spacing-column: 40px;
-$spacing-column--half: 20px;
+$spacing-column: 50px;
+$spacing-column--half: ($spacing-column / 2);
+
+$spacing-page-s: 2.5vw;
+$spacing-page-m: 15vw;
+$spacing-page-l: 22.5vw;

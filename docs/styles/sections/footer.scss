@@ -12,6 +12,11 @@
 
         &__item {
             border: 2px solid yellow;
+            margin-right: $spacing-small;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
         }
     }
 }

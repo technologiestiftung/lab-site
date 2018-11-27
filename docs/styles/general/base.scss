@@ -11,7 +11,7 @@ body {
     letter-spacing: 0.005em;
     line-height: $line-height-text;
     min-height: 100vh;
-    padding: 0 15vw;
+    padding: 0 $spacing-page-s;
 
     h1,
     h2,
@@ -43,5 +43,12 @@ body {
     a {
         color: $black;
         text-decoration: none;
+    }
+
+    textarea,
+    select,
+    input,
+    button {
+        outline: none;
     }
 }
