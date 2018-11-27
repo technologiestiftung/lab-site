@@ -11,9 +11,8 @@
     &-list {
         border: 2px solid yellow;
         display: grid;
-        grid-gap: 0 0;
-        grid-template-columns: 1fr 1fr;
-        padding: 0 $spacing-page-l 0 0;
+        grid-gap: 0 $spacing-column--half;
+        grid-template-columns: max-content max-content;
         position: relative;
 
         &__project {
