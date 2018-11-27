@@ -1,5 +1,9 @@
 .intro {
     &-title {
+        color: $gray;
+        font-family: 'plex-mono';
+        font-size: $font-size-s;
+        text-transform: uppercase;
     }
     &-text {
         font-size: $font-size-xl;

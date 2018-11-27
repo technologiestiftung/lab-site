@@ -34,20 +34,21 @@ $line-height-list: 2em;
  * Spacing
  */
 
-// vertical spacing
+// Vertical spacing
 $spacing-xs: 5px;
 $spacing-s: 15px;
 $spacing-m: 30px;
 $spacing-xl: 60px;
 $spacing-xxl: 100px;
 
-// spacing for for horizontal page layout
-$spacing-page-s: 2.5vw;
+// Horizontal page layout
+$spacing-page-xs: 2.5vw;
+$spacing-page-s: 5vw;
 $spacing-page-m: 15vw;
 $spacing-page-l: 22.5vw;
 $spacing-page-xl: 35vw;
 
-// spacing for double column layout
+// Column spacing
 $spacing-column: 50px;
 $spacing-column--half: ($spacing-column / 2);
 

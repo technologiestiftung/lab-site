@@ -13,7 +13,7 @@
         display: grid;
         grid-gap: 0 0;
         grid-template-columns: 1fr 1fr;
-        padding: 0 $spacing-page-xl 0 0;
+        padding: 0 $spacing-page-l 0 0;
         position: relative;
 
         &__project {
@@ -46,20 +46,7 @@
 
                     & ~ .featured-list__project {
                         opacity: 1;
-                        &-title {
-                            &.publication {
-                                color: $color-publication;
-                            }
-                            &.prototype {
-                                color: $color-prototype;
-                            }
-                            &.workshop {
-                                color: $color-workshop;
-                            }
-                            &.dataset {
-                                color: $color-dataset;
-                            }
-                        }
+
                         &-subtext {
                             opacity: 1;
                             transform: translate3d(0, 0, 0);
@@ -68,6 +55,19 @@
                             opacity: 1;
                             transform: translate3d(50%, 0, 0);
                         }
+                    }
+
+                    &.publication {
+                        color: $color-publication;
+                    }
+                    &.prototype {
+                        color: $color-prototype;
+                    }
+                    &.workshop {
+                        color: $color-workshop;
+                    }
+                    &.dataset {
+                        color: $color-dataset;
                     }
                 }
             }
@@ -81,7 +81,7 @@
                 opacity: 0;
                 pointer-events: none;
                 transform: translate3d(0, 5%, 0);
-                transition: opacity $time-s, transform $time-s;
+                transition: opacity $time-s, transform $time-m;
             }
 
             &-image {
