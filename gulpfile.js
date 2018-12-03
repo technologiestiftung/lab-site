@@ -1,12 +1,26 @@
 const gulp = require('gulp');
-const fs = require('fs');
-const sass = require('gulp-sass');
-const sourcemaps = require('gulp-sourcemaps');
-const autoprefixer = require('gulp-autoprefixer');
-const nunjucksRender = require('gulp-nunjucks-render');
-const gulpData = require('gulp-data');
-const mergeStream = require('merge-stream');
 const browserSync = require('browser-sync').create();
+const nunjucksRender = require('gulp-nunjucks-render');
+
+// Style plugins
+const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+
+// Script plugins
+const uglify = require('gulp-uglify');
+const babelify = require('babelify');
+const browserify = require('browserify');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
+
+// Utility plugins
+const rename = require('gulp-rename');
+const sourcemaps = require('gulp-sourcemaps');
+const mergeStream = require('merge-stream');
+const fs = require('fs');
+
+// Project specific
+const gulpData = require('gulp-data');
 
 const languages = ['de', 'en'];
 const dirs = {
@@ -34,7 +48,8 @@ gulp.task('browser-sync', ['sass'], function() {
         port: process.env.PORT || 3000,
         ui: {
             port: 3001
-        }
+        },
+        startPath: '/de'
     });
 });
 
@@ -55,10 +70,36 @@ gulp.task('sass', function() {
         .src(entry)
         .pipe(sourcemaps.init())
         .pipe(sass(options).on('error', sass.logError))
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(autoprefixer())
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(output))
         .pipe(browserSync.reload({ stream: true }));
+});
+
+/**
+ * JS Tasks
+ */
+const jsSrc = './src/js/';
+const jsMain = 'index.js';
+var jsFiles = [jsMain];
+var jsURL = './dist/js/';
+
+gulp.task('js', function() {
+    jsFiles.map(function(entry) {
+        return browserify({
+            entries: [`${jsSrc}${entry}`]
+        })
+            .transform(babelify, { presets: ['@babel/env'] })
+            .bundle()
+            .pipe(source(entry))
+            .pipe(buffer())
+            .pipe(sourcemaps.init({ loadMaps: true }))
+            .pipe(uglify())
+            .pipe(sourcemaps.write('.'))
+            .pipe(gulp.dest(jsURL))
+            .pipe(browserSync.reload({ stream: true }));
+    });
 });
 
 /**
@@ -66,12 +107,14 @@ gulp.task('sass', function() {
  */
 const watchTasksConfig = {
     sass: `${dirs.dev.entry}/styles/**/*`,
+    scripts: `${dirs.dev.entry}/js/**/*`,
     nunjucks: `${dirs.dev.entry}/templates/**/*.html`,
     data: `${dirs.dev.entry}/data/**/*.json`
 };
 gulp.task('watch', ['browser-sync'], function() {
-    const { sass, nunjucks, data } = watchTasksConfig;
+    const { sass, scripts, nunjucks, data } = watchTasksConfig;
     gulp.watch(sass, ['sass']);
+    gulp.watch(scripts, ['js']);
     gulp.watch(nunjucks, ['nunjucks', browserSync.reload]);
     gulp.watch(data, ['nunjucks', browserSync.reload]);
 });
@@ -81,12 +124,8 @@ gulp.task('watch', ['browser-sync'], function() {
 function getDataForFile(file, language) {
     console.info(`→ Loaded JSON data for ${file.relative}`);
 
-    const dataPath =
-        language === 'en'
-            ? './src/data/en/website.json'
-            : './src/data/de/website.json';
+    const dataPath = `./src/data/${language}/website.json`;
     const dataJSON = fs.readFileSync(dataPath, 'utf8');
-
     return JSON.parse(dataJSON);
 }
 
@@ -110,4 +149,4 @@ gulp.task('nunjucks', function() {
     return mergeStream(websiteStreams);
 });
 
-gulp.task('default', ['nunjucks', 'watch']);
+gulp.task('default', ['nunjucks', 'js', 'watch']);
