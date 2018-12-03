@@ -26,6 +26,9 @@ function getDataForFile(file) {
     };
 }
 
+/**
+ * BrowserSync
+ */
 gulp.task('browser-sync', ['sass'], function() {
     browserSync.init({
         server: {
@@ -33,7 +36,7 @@ gulp.task('browser-sync', ['sass'], function() {
         },
         injectChanges: true,
         notify: true,
-        open: true,
+        open: false,
         port: process.env.PORT || 3000,
         ui: {
             port: 3001
@@ -41,6 +44,9 @@ gulp.task('browser-sync', ['sass'], function() {
     });
 });
 
+/**
+ * Sass Tasks
+ */
 const sassConfig = {
     options: {
         errLogToConsole: true,
@@ -61,26 +67,32 @@ gulp.task('sass', function() {
         .pipe(browserSync.reload({ stream: true }));
 });
 
+/**
+ * Watch Tasks
+ */
+const watchTasksConfig = {
+    sassPath: `${dirs.dev.entry}/styles/**/*`,
+    nunjucksPath: `${dirs.dev.entry}/templates/**/*.html`
+};
 gulp.task('watch', ['browser-sync'], function() {
-    gulp.watch(`${dirs.dev.entry}/styles/**/*`, ['sass']);
-    gulp.watch(`${dirs.dev.entry}/templates/**/*`, [
-        'nunjucks',
-        browserSync.reload
-    ]);
+    const { sassPath, nunjucksPath } = watchTasksConfig;
+    gulp.watch(sassPath, ['sass']);
+    gulp.watch(nunjucksPath, ['nunjucks', browserSync.reload]);
 });
 
+/**
+ * Nunjucks Tasks
+ */
 gulp.task('nunjucks', function() {
     return gulp
-        .src(`${dirs.dev.entry}/templates/**/*.html`)
+        .src(`${dirs.dev.entry}/templates/pages/**/*.html`)
         .pipe(data(getDataForFile))
         .pipe(
             nunjucksRender({
-                path: `${dirs.dev.output}/templates`
+                path: `${dirs.dev.entry}/templates`
             })
         )
         .pipe(gulp.dest('dist'));
 });
 
-// https://github.com/carlosl/gulp-nunjucks-render
-const nunjucksConfig = {};
-gulp.task('default', ['watch', 'nunjucks']);
+gulp.task('default', ['nunjucks', 'watch']);
