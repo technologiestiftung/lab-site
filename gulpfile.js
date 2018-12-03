@@ -1,9 +1,10 @@
+const path = require('path');
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const nunjucksRender = require('gulp-nunjucks-render');
-const data = require('gulp-data');
+const gulpData = require('gulp-data');
 const browserSync = require('browser-sync').create();
 
 const languages = ['de', 'en'];
@@ -20,10 +21,30 @@ const dirs = {
     }
 };
 
-function getDataForFile(file) {
-    return {
-        example: 'data loaded for ' + file.relative
+function getDataForFile(file, language) {
+    console.info(`→ Loaded JSON data for ${file.relative}`);
+
+    const dataDe = {
+        cssPath: './styles/index.css',
+        navigationItems: [
+            { name: 'Item 1', type: 'green' },
+            { name: 'Item 2', type: 'blue' },
+            { name: 'Item 3', type: 'blue' }
+        ]
     };
+
+    const dataEn = {
+        cssPath: './styles/index.css',
+        navigationItems: [
+            { name: 'Item 1 English', type: 'green' },
+            { name: 'Item 2 English', type: 'blue' },
+            { name: 'Item 3 English', type: 'blue' }
+        ]
+    };
+
+    const dataLang = language === 'en' ? dataEn : dataDe;
+
+    return dataLang;
 }
 
 /**
@@ -82,11 +103,12 @@ gulp.task('watch', ['browser-sync'], function() {
 
 /**
  * Nunjucks Tasks
+ * https://github.com/carlosl/gulp-nunjucks-render
  */
 gulp.task('nunjucks', function() {
     return gulp
         .src(`${dirs.dev.entry}/templates/pages/**/*.html`)
-        .pipe(data(getDataForFile))
+        .pipe(gulpData(file => getDataForFile(file, 'de')))
         .pipe(
             nunjucksRender({
                 path: `${dirs.dev.entry}/templates`
