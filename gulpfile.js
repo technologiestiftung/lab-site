@@ -1,15 +1,14 @@
-const path = require('path');
 const gulp = require('gulp');
+const fs = require('fs');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const nunjucksRender = require('gulp-nunjucks-render');
 const gulpData = require('gulp-data');
+const mergeStream = require('merge-stream');
 const browserSync = require('browser-sync').create();
 
 const languages = ['de', 'en'];
-
-const isProd = process.env.NODE_ENV === 'production';
 const dirs = {
     dev: {
         entry: 'src',
@@ -20,32 +19,6 @@ const dirs = {
         output: 'build'
     }
 };
-
-function getDataForFile(file, language) {
-    console.info(`→ Loaded JSON data for ${file.relative}`);
-
-    const dataDe = {
-        cssPath: './styles/index.css',
-        navigationItems: [
-            { name: 'Item 1', type: 'green' },
-            { name: 'Item 2', type: 'blue' },
-            { name: 'Item 3', type: 'blue' }
-        ]
-    };
-
-    const dataEn = {
-        cssPath: './styles/index.css',
-        navigationItems: [
-            { name: 'Item 1 English', type: 'green' },
-            { name: 'Item 2 English', type: 'blue' },
-            { name: 'Item 3 English', type: 'blue' }
-        ]
-    };
-
-    const dataLang = language === 'en' ? dataEn : dataDe;
-
-    return dataLang;
-}
 
 /**
  * BrowserSync
@@ -92,29 +65,49 @@ gulp.task('sass', function() {
  * Watch Tasks
  */
 const watchTasksConfig = {
-    sassPath: `${dirs.dev.entry}/styles/**/*`,
-    nunjucksPath: `${dirs.dev.entry}/templates/**/*.html`
+    sass: `${dirs.dev.entry}/styles/**/*`,
+    nunjucks: `${dirs.dev.entry}/templates/**/*.html`,
+    data: `${dirs.dev.entry}/data/**/*.json`
 };
 gulp.task('watch', ['browser-sync'], function() {
-    const { sassPath, nunjucksPath } = watchTasksConfig;
-    gulp.watch(sassPath, ['sass']);
-    gulp.watch(nunjucksPath, ['nunjucks', browserSync.reload]);
+    const { sass, nunjucks, data } = watchTasksConfig;
+    gulp.watch(sass, ['sass']);
+    gulp.watch(nunjucks, ['nunjucks', browserSync.reload]);
+    gulp.watch(data, ['nunjucks', browserSync.reload]);
 });
+
+// TODO: How to handle project generation form JSON?
+// Get data from JSON files
+function getDataForFile(file, language) {
+    console.info(`→ Loaded JSON data for ${file.relative}`);
+
+    const dataPath =
+        language === 'en'
+            ? './src/data/en/website.json'
+            : './src/data/de/website.json';
+    const dataJSON = fs.readFileSync(dataPath, 'utf8');
+
+    return JSON.parse(dataJSON);
+}
 
 /**
  * Nunjucks Tasks
  * https://github.com/carlosl/gulp-nunjucks-render
  */
 gulp.task('nunjucks', function() {
-    return gulp
-        .src(`${dirs.dev.entry}/templates/pages/**/*.html`)
-        .pipe(gulpData(file => getDataForFile(file, 'de')))
-        .pipe(
-            nunjucksRender({
-                path: `${dirs.dev.entry}/templates`
-            })
-        )
-        .pipe(gulp.dest('dist'));
+    const websiteStreams = languages.map(language =>
+        gulp
+            .src(`${dirs.dev.entry}/templates/pages/**/*.html`)
+            .pipe(gulpData(file => getDataForFile(file, language)))
+            .pipe(
+                nunjucksRender({
+                    path: `${dirs.dev.entry}/templates`
+                })
+            )
+            .pipe(gulp.dest(`dist/${language}`))
+    );
+
+    return mergeStream(websiteStreams);
 });
 
 gulp.task('default', ['nunjucks', 'watch']);

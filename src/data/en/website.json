@@ -1,0 +1,9 @@
+{
+    "title": "Lab Site | EN",
+    "cssPath": "../styles/index.css",
+    "navigationItems": [
+        { "name": "Item 1", "type": "green" },
+        { "name": "Item 2", "type": "blue" },
+        { "name": "Item 3", "type": "blue" }
+    ]
+}
