@@ -14,15 +14,31 @@ const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 
 // Utility plugins
-const rename = require('gulp-rename');
+const { readFileSync, lstatSync, readdirSync } = require('fs');
+const { basename, resolve, join } = require('path');
 const sourcemaps = require('gulp-sourcemaps');
 const mergeStream = require('merge-stream');
-const fs = require('fs');
 
 // Project specific
 const gulpData = require('gulp-data');
 
-const languages = ['de', 'en'];
+const isDirectory = source => lstatSync(source).isDirectory();
+const getDirectories = source =>
+    readdirSync(source)
+        .map(name => join(source, name))
+        .filter(isDirectory);
+
+// Get languages from the data directory
+function getLanguagesFromData(dataPath) {
+    const languagePaths = getDirectories(dataPath);
+    const languages = languagePaths.map(languagePath => basename(languagePath));
+
+    return languages;
+}
+
+const absoluteDataPath = resolve(__dirname, './src/data/');
+const languages = getLanguagesFromData(absoluteDataPath);
+
 const dirs = {
     dev: {
         entry: 'src',
@@ -115,17 +131,16 @@ gulp.task('watch', ['browser-sync'], function() {
     const { sass, scripts, nunjucks, data } = watchTasksConfig;
     gulp.watch(sass, ['sass']);
     gulp.watch(scripts, ['js']);
-    gulp.watch(nunjucks, ['nunjucks', browserSync.reload]);
-    gulp.watch(data, ['nunjucks', browserSync.reload]);
+    gulp.watch([nunjucks, data], ['nunjucks', browserSync.reload]);
 });
 
 // TODO: How to handle project generation form JSON?
 // Get data from JSON files
 function getDataForFile(file, language) {
-    console.info(`→ Loaded JSON data for ${file.relative}`);
+    console.log(`→ Loaded JSON data for: ./${language}/${file.relative}`);
 
     const dataPath = `./src/data/${language}/website.json`;
-    const dataJSON = fs.readFileSync(dataPath, 'utf8');
+    const dataJSON = readFileSync(dataPath, 'utf8');
     return JSON.parse(dataJSON);
 }
 
