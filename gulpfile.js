@@ -160,7 +160,10 @@ function getDataForFile(file, language) {
  * https://github.com/carlosl/gulp-nunjucks-render
  */
 const nunjucksConfig = {
-    templatesSrc: `${entryPath}/templates/pages/**/*.html`,
+    templatesSrc: [
+        `${entryPath}/templates/pages/**/*.html`,
+        `${entryPath}/projects/**/*.html`
+    ],
     renderPath: `${entryPath}/templates`,
     envOptions: {
         throwOnUndefined: false, // TODO: Set to true after dev
