@@ -1,18 +1,93 @@
 {
-    "title": "Lab Site | EN",
-    "cssPath": "../styles/index.css",
-    "navigationItems": [
-        { "name": "Item 1", "type": "green" },
-        { "name": "Item 2", "type": "blue" },
-        { "name": "Item 3", "type": "blue" }
+    "title": "Title: Ideation & Prototyping Lab",
+    "navigation": [
+        { "name": "About us", "type": "green" },
+        { "name": "Projects", "type": "blue" },
+        { "name": "Data", "type": "blue" }
     ],
-    "page": {
-        "index.html": {
-            "title": "Index Page",
-            "test": "Index Test"
+    "pages": {
+        "start": {
+            "title": "Index Page"
         },
-        "about.html": {
+        "about": {
             "title": "About Page"
+        },
+        "projects": {
+            "title": "Projects Page"
+        },
+        "data": {
+            "title": "Data Page"
         }
-    }
+    },
+    "projects": [
+        {
+            "title": "Bicycle Data Dive",
+            "subtitle": "What data is available?",
+            "date": "2012-04-23T18:25:43.511Z",
+            "description": "Description 1",
+            "poster": "../../assets/images/datadive.jpg",
+            "author": "author 1",
+            "type": "dataset",
+            "isFeatured": true
+        },
+        {
+            "title": "Children Daycare Finder",
+            "subtitle": "Find nurseries for your own childs needs.",
+            "date": "2012-04-23T18:25:43.511Z",
+            "description": "Description 2",
+            "poster": "../../assets/images/kita-explorer.jpg",
+            "author": "author 2",
+            "type": "workshop",
+            "isFeatured": true
+        },
+        {
+            "title": "Funding Data",
+            "subtitle": "Explore Berlin’s fundings through shared data.",
+            "date": "2012-04-23T18:25:43.511Z",
+            "description": "Description 3",
+            "poster": "../../assets/images/funding.jpg",
+            "author": "author 3",
+            "type": "publication",
+            "isFeatured": true
+        },
+        {
+            "title": "Spatial Units",
+            "subtitle": "Introduction and overview of Berlin.",
+            "date": "2012-04-23T18:25:43.511Z",
+            "description": "Description 4",
+            "poster": "../../assets/images/spatial-units.jpg",
+            "author": "author 4",
+            "type": "prototype",
+            "isFeatured": true
+        },
+        {
+            "title": "The rhythm of cycling",
+            "subtitle": "Cyclist patterns revealed.",
+            "date": "2012-04-23T18:25:43.511Z",
+            "description": "Description 5",
+            "poster": "../../assets/images/bike-rides.jpg",
+            "author": "author 5",
+            "type": "dataset",
+            "isFeatured": true
+        },
+        {
+            "title": "Test project 1",
+            "subtitle": "Subtitle project 1",
+            "date": "2012-04-23T18:25:43.511Z",
+            "description": "Description 1",
+            "poster": "../../assets/images/bike-rides.jpg",
+            "author": "author 5",
+            "type": "dataset",
+            "isFeatured": false
+        },
+        {
+            "title": "Test project 2",
+            "subtitle": "Subtitle project 2",
+            "date": "2012-04-23T18:25:43.511Z",
+            "description": "Description 2",
+            "poster": "../../assets/images/bike-rides.jpg",
+            "author": "author 5",
+            "type": "publication"
+        }
+    ]
 }

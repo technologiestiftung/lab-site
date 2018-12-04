@@ -1,17 +1,22 @@
 {
-    "title": "Ideation & Prototyping Lab",
-    "cssPath": "../styles/index.css",
-    "navigationItems": [
-        { "name": "Item 1 DE", "type": "green" },
-        { "name": "Item 2 DE", "type": "blue" },
-        { "name": "Item 3 DE", "type": "blue" }
+    "title": "Titel: Ideation & Prototyping Lab",
+    "navigation": [
+        { "name": "Über uns", "type": "green" },
+        { "name": "Projekte", "type": "blue" },
+        { "name": "Daten", "type": "blue" }
     ],
     "pages": {
         "start": {
-            "title": "Index Page"
+            "title": "Index Seite"
         },
         "about": {
-            "title": "About Page"
+            "title": "Über uns Seite"
+        },
+        "projects": {
+            "title": "Projekte Seite"
+        },
+        "data": {
+            "title": "Daten Seiten"
         }
     }
 }

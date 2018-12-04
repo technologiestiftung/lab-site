@@ -163,7 +163,7 @@ const nunjucksConfig = {
     templatesSrc: `${entryPath}/templates/pages/**/*.html`,
     renderPath: `${entryPath}/templates`,
     envOptions: {
-        throwOnUndefined: true,
+        throwOnUndefined: false, // TODO: Set to true after dev
         lstripBlocks: true,
         trimBlocks: true
     }

@@ -54,7 +54,7 @@
                         }
                         &-image {
                             opacity: 1;
-                            transform: translate3d(50%, 0, 0);
+                            transform: translate3d(-5%, 0, 0);
                         }
                     }
 
@@ -91,11 +91,11 @@
                 bottom: 0;
                 display: block;
                 height: auto;
-                left: 0;
                 opacity: 0;
                 pointer-events: none;
                 position: absolute;
-                transform: translate3d(55%, 0, 0);
+                right: 0;
+                transform: translate3d(0, 0, 0);
                 transition: opacity $time-m, transform $time-m;
                 width: 75%;
                 z-index: -1;
