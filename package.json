@@ -10,14 +10,14 @@
   },
   "devDependencies": {
     "fs": "0.0.1-security",
-    "grunt": "^1.0.1",
-    "grunt-contrib-sass": "^1.0.0",
+    "grunt": "^1.0.3",
     "grunt-contrib-uglify": "^3.1.0",
-    "grunt-contrib-watch": "^1.0.0",
+    "grunt-contrib-watch": "^1.1.0",
     "ncp": "^2.0.0"
   },
   "author": "Sebastian Meier @seb_meier",
   "dependencies": {
+    "grunt-contrib-sass": "^1.0.0",
     "moment": "^2.20.1"
   }
 }
