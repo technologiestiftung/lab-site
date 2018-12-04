@@ -1,0 +1,32 @@
+.feed {
+    &-title {
+        color: $gray;
+        font-family: 'plex-mono';
+        font-size: $font-size-s;
+        text-transform: uppercase;
+    }
+    &-headline {
+        border: 2px solid yellow;
+    }
+    &-list {
+        border: 2px solid red;
+
+        &__project {
+            border: 2px solid yellow;
+
+            &-image {
+            }
+            &-date {
+                color: $gray;
+                font-size: $font-size-s;
+                font-family: 'plex-mono';
+                text-transform: uppercase;
+                margin-bottom: $spacing-xs;
+            }
+            &-title {
+                display: block;
+                font-size: $font-size-l;
+            }
+        }
+    }
+}

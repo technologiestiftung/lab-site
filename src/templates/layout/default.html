@@ -8,8 +8,15 @@
         <link rel="stylesheet" href="{{ cssPath }}" />
     </head>
     <body>
+        {# Navigation #}
         {% include "partials/navigation.html" %}
+
+        {# Page specific content #}
         {% block header %} {% endblock %}
+        {% block main %} {% endblock %}
+
+        {# Footer #}
+        {% include "partials/footer.html" %}
 
         <script src="../js/index.js"></script>
     </body>

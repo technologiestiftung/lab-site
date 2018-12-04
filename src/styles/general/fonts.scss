@@ -1,0 +1,55 @@
+// Plex Sans – Regular
+@font-face {
+    font-family: 'plex-sans';
+    src: url('../../assets/fonts/IBM-Plex-Sans/IBMPlexSans-Regular');
+    src: url('../../assets/fonts/IBM-Plex-Sans/IBMPlexSans-Regular?#iefix')
+            format('embedded-opentype'),
+        url('../../assets/fonts/IBM-Plex-Sans/woff/IBMPlexSans-Regular.woff')
+            format('woff'),
+        url('../../assets/fonts/IBM-Plex-Sans/ttf/IBMPlexSans-Regular.ttf')
+            format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Plex Sans – Italic
+@font-face {
+    font-family: 'plex-sans';
+    src: url('../../assets/fonts/IBM-Plex-Sans/IBMPlexSans-Italic');
+    src: url('../../assets/fonts/IBM-Plex-Sans/IBMPlexSans-Italic?#iefix')
+            format('embedded-opentype'),
+        url('../../assets/fonts/IBM-Plex-Sans/woff/IBMPlexSans-Italic.woff')
+            format('woff'),
+        url('../../assets/fonts/IBM-Plex-Sans/ttf/IBMPlexSans-Italic.ttf')
+            format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+// Plex Sans – Bold
+@font-face {
+    font-family: 'plex-sans';
+    src: url('../../assets/fonts/IBM-Plex-Sans/IBMPlexSans-Bold');
+    src: url('../../assets/fonts/IBM-Plex-Sans/IBMPlexSans-Bold?#iefix')
+            format('embedded-opentype'),
+        url('../../assets/fonts/IBM-Plex-Sans/woff/IBMPlexSans-Bold.woff')
+            format('woff'),
+        url('../../assets/fonts/IBM-Plex-Sans/ttf/IBMPlexSans-Bold.ttf')
+            format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+// Plex Mono – Regular
+@font-face {
+    font-family: 'plex-mono';
+    src: url('../../assets/fonts/IBM-Plex-Mono/IBMPlexMono-Regular');
+    src: url('../../assets/fonts/IBM-Plex-Mono/IBMPlexMono-Regular?#iefix')
+            format('embedded-opentype'),
+        url('../../assets/fonts/IBM-Plex-Mono/woff/IBMPlexMono-Regular.woff')
+            format('woff'),
+        url('../../assets/fonts/IBM-Plex-Mono/ttf/IBMPlexMono-Regular.ttf')
+            format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -1,0 +1,8 @@
+.page {
+    &-start,
+    &-team {
+        section {
+            padding: 0 $spacing-page-s;
+        }
+    }
+}

@@ -1,5 +1,23 @@
-// General
-@import './general/base.scss';
+// General styling
+@import 'general/normalize';
+@import 'general/fonts';
+@import 'general/variables';
+@import 'general/base';
+@import 'general/inputs';
 
-// Templates
-@import './templates/test.scss';
+// Layout
+@import 'layout/grid';
+
+// Sections
+// @import 'sections/section';
+@import 'sections/navigation';
+@import 'sections/footer';
+@import 'sections/intro';
+@import 'sections/feature-projects';
+@import 'sections/lab-feed';
+
+// Pages
+@import 'pages/index';
+
+// Projects
+@import 'project/project-detail';

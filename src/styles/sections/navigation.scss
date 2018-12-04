@@ -1,0 +1,59 @@
+.navigation {
+    border: 2px solid blue;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 $spacing-page-s;
+
+    &-logo {
+        background-image: url('../../assets/icons/lab-logo.svg');
+        background-position: left center;
+        background-repeat: no-repeat;
+        background-size: 60px;
+        border: 2px solid gray;
+        font-family: 'plex-sans';
+        font-size: $font-size-xs;
+        display: inline-block;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        line-height: 1.5em;
+        margin-left: -75px;
+        overflow: visible;
+        padding: 0 0 0 75px;
+        user-select: none;
+
+        &__line {
+            display: block;
+        }
+    }
+
+    &-list {
+        border: 2px solid orange;
+        align-self: flex-start;
+        display: flex;
+
+        a {
+            border: 2px solid blue;
+            display: flex;
+            padding: 0 $spacing-xs;
+        }
+
+        &__item {
+            border: 2px solid yellow;
+            display: flex;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+            &--nav {
+                font-weight: bold;
+            }
+            &--lang {
+                margin: 0 $spacing-l;
+            }
+
+            img {
+                align-self: center;
+            }
+        }
+    }
+}

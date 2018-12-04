@@ -5,3 +5,145 @@
 {% block header %}
     {{ title }}
 {% endblock %}
+
+{% block main %}
+<main>
+    <section class="intro">
+        <div class="intro-title">What we do?</div>
+        <p class="intro-text">
+            We are working at the intersection of the urban & science. We collaborate, ideate and develop. 
+        </p>
+        <a class="link--button" href="#">
+            More about us
+        </a>
+    </section>
+    <section class="featured">
+        <div class="featured-title">What we are proud of</div>
+        <h2 class="featured-headline section-headline">Featured Projects</h2>
+
+        <ul class="featured-list">
+            <li class="featured-list__project">
+                <h3 class="featured-list__project-title publication">
+                        <a href="#">Bicycle Data Dive</a>
+                </h3>
+                <span class="featured-list__project-subtext">
+                        What data is available?
+                </span>
+                <img
+                    class="featured-list__project-image"
+                    src="./assets/images/datadive.jpg"
+                    alt=""
+                />
+            </li>
+            <li class="featured-list__project">
+                <h3 class="featured-list__project-title prototype">
+                        <a href="#">Children Daycare Finder</a>
+                </h3>
+                <span class="featured-list__project-subtext">
+                    Find nurseries for your own childs needs.
+                </span>
+                <img
+                    class="featured-list__project-image"
+                    src="./assets/images/kita-explorer.jpg"
+                    alt=""
+                />
+            </li>
+            <li class="featured-list__project">
+                <h3 class="featured-list__project-title workshop">
+                        <a href="#">Funding Data</a>
+                </h3>
+                <span class="featured-list__project-subtext">
+                    Explore Berlin’s fundings through shared data.
+                </span>
+                <img
+                    class="featured-list__project-image"
+                    src="./assets/images/funding.jpg"
+                    alt=""
+                />
+            </li>
+            <li class="featured-list__project">
+                <h3 class="featured-list__project-title dataset">
+                        <a href="#">Spatial Units</a>
+                </h3>
+                <span class="featured-list__project-subtext">
+                    Introduction and overview of Berlin.
+                </span>
+                <img
+                    class="featured-list__project-image"
+                    src="./assets/images/spatial-units.jpg"
+                    alt=""
+                />
+            </li>
+            <li class="featured-list__project">
+                <h3 class="featured-list__project-title publication">
+                        <a href="#">The rhythm of cycling</a>
+                </h3>
+                <span class="featured-list__project-subtext">
+                    Cyclist patterns revealed.
+                </span>
+                <img
+                    class="featured-list__project-image"
+                    src="./assets/images/bike-rides.jpg"
+                    alt=""
+                />
+            </li>  
+        </ul>
+
+        <a class="link--button" href="#">
+            All projects
+        </a>
+    </section>
+
+    <section class="feed">
+        <div class="feed-title">Lab Feed</div>
+        <h2 class="feed-headline section-headline">From the lab</h2>
+
+        <ul class="grid feed-list">
+            <li class="feed-list__project">
+                <a href="#">
+                    <img class="feed-list__project-image" src="https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png" alt="project">
+                    <div class="feed-list__project-date">
+                        12 Oct 2018
+                    </div>
+                    <div class="feed-list__project-title">
+                        Berlin’s Funding Data – An Overview
+                    </div>
+                </a>
+            </li>
+            <li class="feed-list__project">
+                <a href="#">
+                    <img class="feed-list__project-image" src="https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png" alt="project">
+                    <div class="feed-list__project-date">
+                        12 Oct 2018
+                    </div>
+                    <div class="feed-list__project-title">
+                        Berlin’s Funding Data – A tool for investigation
+                    </div>
+                </a>
+            </li>
+            <li class="feed-list__project">
+                <a href="#">
+                    <img class="feed-list__project-image" src="https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png" alt="project">
+                    <div class="feed-list__project-date">
+                        12 Oct 2018
+                    </div>
+                    <div class="feed-list__project-title">
+                        ODIS in Buenos Aires
+                    </div>
+                </a>
+            </li>
+            <li class="feed-list__project">
+                <a href="#">
+                    <img class="feed-list__project-image" src="https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png" alt="project">
+                    <div class="feed-list__project-date">
+                        12 Oct 2018
+                    </div>
+                    <div class="feed-list__project-title">
+                        Data Dive – Cycling data in Berlin
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </section>
+</main>
+{% endblock %}
