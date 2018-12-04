@@ -1,24 +1,29 @@
 {
     "title": "Title: Ideation & Prototyping Lab",
-    "navigation": [
-        { "name": "About us", "type": "green" },
-        { "name": "Projects", "type": "blue" },
-        { "name": "Data", "type": "blue" }
-    ],
-    "pages": {
-        "start": {
+    "pages": [
+        {
+            "name": "start",
             "title": "Index Page"
         },
-        "about": {
-            "title": "About Page"
+        {
+            "name": "about",
+            "title": "About Page",
+            "navigationTitle": "About us",
+            "url": "./about.html"
         },
-        "projects": {
-            "title": "Projects Page"
+        {
+            "name": "projects",
+            "title": "Projects Page",
+            "navigationTitle": "Projects",
+            "url": "./projects.html"
         },
-        "data": {
-            "title": "Data Page"
+        {
+            "name": "data",
+            "title": "Data Page",
+            "navigationTitle": "Data",
+            "url": "./data.html"
         }
-    },
+    ],
     "projects": [
         {
             "title": "Bicycle Data Dive",
@@ -26,8 +31,10 @@
             "date": "2012-04-23T18:25:43.511Z",
             "description": "Description 1",
             "poster": "../../assets/images/datadive.jpg",
+            "thumbnail": "../../assets/images/datadive.jpg",
             "author": "author 1",
             "type": "dataset",
+            "featuredImage": "../../assets/images/datadive.jpg",
             "isFeatured": true
         },
         {
@@ -36,8 +43,10 @@
             "date": "2012-04-23T18:25:43.511Z",
             "description": "Description 2",
             "poster": "../../assets/images/kita-explorer.jpg",
+            "thumbnail": "../../assets/images/kita-explorer.jpg",
             "author": "author 2",
             "type": "workshop",
+            "featuredImage": "../../assets/images/kita-explorer.jpg",
             "isFeatured": true
         },
         {
@@ -46,8 +55,10 @@
             "date": "2012-04-23T18:25:43.511Z",
             "description": "Description 3",
             "poster": "../../assets/images/funding.jpg",
+            "thumbnail": "../../assets/images/funding.jpg",
             "author": "author 3",
             "type": "publication",
+            "featuredImage": "../../assets/images/funding.jpg",
             "isFeatured": true
         },
         {
@@ -56,8 +67,10 @@
             "date": "2012-04-23T18:25:43.511Z",
             "description": "Description 4",
             "poster": "../../assets/images/spatial-units.jpg",
+            "thumbnail": "../../assets/images/spatial-units.jpg",
             "author": "author 4",
             "type": "prototype",
+            "featuredImage": "../../assets/images/spatial-units.jpg",
             "isFeatured": true
         },
         {
@@ -66,8 +79,10 @@
             "date": "2012-04-23T18:25:43.511Z",
             "description": "Description 5",
             "poster": "../../assets/images/bike-rides.jpg",
+            "thumbnail": "../../assets/images/bike-rides.jpg",
             "author": "author 5",
             "type": "dataset",
+            "featuredImage": "../../assets/images/bike-rides.jpg",
             "isFeatured": true
         },
         {
@@ -76,8 +91,10 @@
             "date": "2012-04-23T18:25:43.511Z",
             "description": "Description 1",
             "poster": "../../assets/images/bike-rides.jpg",
+            "thumbnail": "../../assets/images/bike-rides.jpg",
             "author": "author 5",
             "type": "dataset",
+            "featuredImage": "../../assets/images/bike-rides.jpg",
             "isFeatured": false
         },
         {
@@ -86,8 +103,10 @@
             "date": "2012-04-23T18:25:43.511Z",
             "description": "Description 2",
             "poster": "../../assets/images/bike-rides.jpg",
+            "thumbnail": "../../assets/images/bike-rides.jpg",
             "author": "author 5",
-            "type": "publication"
+            "type": "publication",
+            "featuredImage": "../../assets/images/bike-rides.jpg"
         }
     ]
 }
