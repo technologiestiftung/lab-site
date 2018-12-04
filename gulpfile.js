@@ -115,18 +115,34 @@ gulp.task('js', function() {
 });
 
 /**
+ * Copy assets to /dist
+ */
+gulp.task('copy-assets', function() {
+    return gulp.src(['./src/assets/**/*']).pipe(gulp.dest('./dist/assets'));
+});
+
+/**
  * Watch Tasks
  */
 const watchConfig = {
     sassPath: `${entryPath}/styles/**/*`,
     scriptsPath: `${entryPath}/js/**/*`,
     nunjucksPath: `${entryPath}/templates/**/*.html`,
+    assetsPath: `${entryPath}/assets/**/*`,
     dataPath: `${entryPath}/data/**/*.json`
 };
 gulp.task('watch', ['browser-sync'], function() {
-    const { sassPath, scriptsPath, nunjucksPath, dataPath } = watchConfig;
+    const {
+        sassPath,
+        scriptsPath,
+        nunjucksPath,
+        dataPath,
+        assetsPath
+    } = watchConfig;
+
     gulp.watch(sassPath, ['sass']);
     gulp.watch(scriptsPath, ['js']);
+    gulp.watch(assetsPath, ['copy-assets', 'nunjucks', browserSync.reload]);
     gulp.watch([nunjucksPath, dataPath], ['nunjucks', browserSync.reload]);
 });
 
@@ -170,4 +186,4 @@ gulp.task('nunjucks', function() {
     return mergeStream(websiteStreams);
 });
 
-gulp.task('default', ['nunjucks', 'js', 'watch']);
+gulp.task('default', ['nunjucks', 'copy-assets', 'js', 'watch']);
