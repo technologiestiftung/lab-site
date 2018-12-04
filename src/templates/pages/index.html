@@ -21,6 +21,12 @@
         <div class="featured-title">What we are proud of</div>
         <h2 class="featured-headline section-headline">Featured Projects</h2>
 
+        <ul>
+            {% for navItem in navigationItems %}
+            <li>{{ navItem.name }}</li>
+            {% endfor %}
+        </ul>
+
         <ul class="featured-list">
             <li class="featured-list__project">
                 <h3 class="featured-list__project-title publication">

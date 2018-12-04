@@ -54,7 +54,7 @@ gulp.task('browser-sync', ['sass'], function() {
             baseDir: outputPath
         },
         injectChanges: true,
-        notify: true,
+        notify: false,
         open: false,
         port: process.env.PORT || 3000,
         ui: {
