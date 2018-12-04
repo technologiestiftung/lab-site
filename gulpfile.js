@@ -55,7 +55,7 @@ gulp.task('browser-sync', ['sass'], function() {
         },
         injectChanges: true,
         notify: true,
-        open: true,
+        open: false,
         port: process.env.PORT || 3000,
         ui: {
             port: 3001
@@ -145,17 +145,23 @@ function getDataForFile(file, language) {
  */
 const nunjucksConfig = {
     templatesSrc: `${entryPath}/templates/pages/**/*.html`,
-    renderPath: `${entryPath}/templates`
+    renderPath: `${entryPath}/templates`,
+    envOptions: {
+        throwOnUndefined: true,
+        lstripBlocks: true,
+        trimBlocks: true
+    }
 };
 gulp.task('nunjucks', function() {
-    const { templatesSrc, renderPath } = nunjucksConfig;
+    const { templatesSrc, renderPath, envOptions } = nunjucksConfig;
     const websiteStreams = languages.map(language =>
         gulp
             .src(templatesSrc)
             .pipe(gulpData(file => getDataForFile(file, language)))
             .pipe(
                 nunjucksRender({
-                    path: renderPath
+                    path: renderPath,
+                    envOptions
                 })
             )
             .pipe(gulp.dest(`dist/${language}`))

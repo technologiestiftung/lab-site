@@ -1,9 +1,17 @@
 {
-    "title": "Lab Webseite | DE",
+    "title": "Ideation & Prototyping Lab",
     "cssPath": "../styles/index.css",
     "navigationItems": [
         { "name": "Item 1 DE", "type": "green" },
         { "name": "Item 2 DE", "type": "blue" },
         { "name": "Item 3 DE", "type": "blue" }
-    ]
+    ],
+    "pages": {
+        "start": {
+            "title": "Index Page"
+        },
+        "about": {
+            "title": "About Page"
+        }
+    }
 }

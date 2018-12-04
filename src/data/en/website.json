@@ -5,5 +5,14 @@
         { "name": "Item 1", "type": "green" },
         { "name": "Item 2", "type": "blue" },
         { "name": "Item 3", "type": "blue" }
-    ]
+    ],
+    "page": {
+        "index.html": {
+            "title": "Index Page",
+            "test": "Index Test"
+        },
+        "about.html": {
+            "title": "About Page"
+        }
+    }
 }
