@@ -73,7 +73,7 @@ const sassConfig = {
         outputStyle: 'compressed'
     },
     entry: `${entryPath}/styles/index.scss`,
-    projectEntries: `${entryPath}/projects/**/styles/index.scss`,
+    projectEntries: `./projects/**/styles/index.scss`,
     output: `${outputPath}/styles`
 };
 gulp.task('sass', function() {
@@ -139,7 +139,7 @@ const watchConfig = {
     sassProjectsPath: `${entryPath}/projects/**/styles/**/*`,
     scriptsPath: `${entryPath}/js/**/*`,
     nunjucksPath: `${entryPath}/templates/**/*.html`,
-    projectsPath: `${entryPath}/projects/**/*.html`,
+    projectsPath: `./projects/**/*.html`,
     assetsPath: `${entryPath}/assets/**/*`,
     dataPath: `${entryPath}/data/**/*.json`
 };
@@ -182,7 +182,7 @@ function getDataForFile(file, language) {
  */
 const nunjucksConfig = {
     templatesSrc: `${entryPath}/templates/pages/**/*.html`,
-    projectsSrc: `${entryPath}/projects/**/*.html`,
+    projectsSrc: `./projects/**/*.html`,
     renderPath: `${entryPath}/templates`,
     envOptions: {
         throwOnUndefined: false, // TODO: Set to true after dev
