@@ -73,19 +73,29 @@ const sassConfig = {
         outputStyle: 'compressed'
     },
     entry: `${entryPath}/styles/index.scss`,
+    projectEntries: `${entryPath}/projects/**/styles/index.scss`,
     output: `${outputPath}/styles`
 };
 gulp.task('sass', function() {
-    const { options, entry, output } = sassConfig;
-    return gulp
-        .src(entry)
-        .pipe(sourcemaps.init())
-        .pipe(sass(options).on('error', sass.logError))
-        .pipe(sourcemaps.init({ loadMaps: true }))
-        .pipe(autoprefixer())
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(output))
-        .pipe(browserSync.reload({ stream: true }));
+    const { options, entry, projectEntries, output } = sassConfig;
+    const styleDirs = [
+        { src: entry, dest: output },
+        { src: projectEntries, dest: output }
+    ];
+    const sassTasks = styleDirs.map(function(styleDir) {
+        const { src, dest } = styleDir;
+        return gulp
+            .src(src)
+            .pipe(sourcemaps.init())
+            .pipe(sass(options).on('error', sass.logError))
+            .pipe(sourcemaps.init({ loadMaps: true }))
+            .pipe(autoprefixer())
+            .pipe(sourcemaps.write('.'))
+            .pipe(gulp.dest(dest))
+            .pipe(browserSync.reload({ stream: true }));
+    });
+
+    return mergeStream(sassTasks);
 });
 
 /**
@@ -115,9 +125,9 @@ gulp.task('js', function() {
 });
 
 /**
- * Copy assets to /dist
+ * Copy website assets directory
  */
-gulp.task('copy-assets', function() {
+gulp.task('copy-website-assets', function() {
     return gulp.src(['./src/assets/**/*']).pipe(gulp.dest('./dist/assets'));
 });
 
@@ -126,24 +136,35 @@ gulp.task('copy-assets', function() {
  */
 const watchConfig = {
     sassPath: `${entryPath}/styles/**/*`,
+    sassProjectsPath: `${entryPath}/projects/**/styles/**/*`,
     scriptsPath: `${entryPath}/js/**/*`,
     nunjucksPath: `${entryPath}/templates/**/*.html`,
+    projectsPath: `${entryPath}/projects/**/*.html`,
     assetsPath: `${entryPath}/assets/**/*`,
     dataPath: `${entryPath}/data/**/*.json`
 };
 gulp.task('watch', ['browser-sync'], function() {
     const {
         sassPath,
+        sassProjectsPath,
         scriptsPath,
         nunjucksPath,
+        projectsPath,
         dataPath,
         assetsPath
     } = watchConfig;
 
-    gulp.watch(sassPath, ['sass']);
+    gulp.watch([sassPath, sassProjectsPath], ['sass']);
     gulp.watch(scriptsPath, ['js']);
-    gulp.watch(assetsPath, ['copy-assets', 'nunjucks', browserSync.reload]);
-    gulp.watch([nunjucksPath, dataPath], ['nunjucks', browserSync.reload]);
+    gulp.watch(assetsPath, [
+        'copy-website-assets',
+        'nunjucks',
+        browserSync.reload
+    ]);
+    gulp.watch(
+        [nunjucksPath, projectsPath, dataPath],
+        ['nunjucks', browserSync.reload]
+    );
 });
 
 // Data will be available in templates
@@ -160,10 +181,8 @@ function getDataForFile(file, language) {
  * https://github.com/carlosl/gulp-nunjucks-render
  */
 const nunjucksConfig = {
-    templatesSrc: [
-        `${entryPath}/templates/pages/**/*.html`,
-        `${entryPath}/projects/**/*.html`
-    ],
+    templatesSrc: `${entryPath}/templates/pages/**/*.html`,
+    projectsSrc: `${entryPath}/projects/**/*.html`,
     renderPath: `${entryPath}/templates`,
     envOptions: {
         throwOnUndefined: false, // TODO: Set to true after dev
@@ -172,10 +191,15 @@ const nunjucksConfig = {
     }
 };
 gulp.task('nunjucks', function() {
-    const { templatesSrc, renderPath, envOptions } = nunjucksConfig;
+    const {
+        templatesSrc,
+        projectsSrc,
+        renderPath,
+        envOptions
+    } = nunjucksConfig;
     const websiteStreams = languages.map(language =>
         gulp
-            .src(templatesSrc)
+            .src([templatesSrc, projectsSrc])
             .pipe(gulpData(file => getDataForFile(file, language)))
             .pipe(
                 nunjucksRender({
@@ -189,4 +213,4 @@ gulp.task('nunjucks', function() {
     return mergeStream(websiteStreams);
 });
 
-gulp.task('default', ['nunjucks', 'copy-assets', 'js', 'watch']);
+gulp.task('default', ['nunjucks', 'copy-website-assets', 'js', 'watch']);
