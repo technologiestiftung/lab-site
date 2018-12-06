@@ -1,10 +1,8 @@
 {% extends "layout/project.html" %}
 {% set pagename = "test" %}
 
-{% block header %}
-    Project: {{ pagename }}
-{% endblock %}
-
-{% block main %}
-    <div>Main content of a project</div>
+{% block projectContent %}
+<div>
+    Main content of project: <strong>{{ pagename }}</strong>
+</div>
 {% endblock %}

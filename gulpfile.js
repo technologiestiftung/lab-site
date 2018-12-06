@@ -136,7 +136,7 @@ gulp.task('copy-website-assets', function() {
  */
 const watchConfig = {
     sassPath: `${entryPath}/styles/**/*`,
-    sassProjectsPath: `${entryPath}/projects/**/styles/**/*`,
+    sassProjectsPath: `./projects/**/styles/**/*`,
     scriptsPath: `${entryPath}/js/**/*`,
     nunjucksPath: `${entryPath}/templates/**/*.html`,
     projectsPath: `./projects/**/*.html`,

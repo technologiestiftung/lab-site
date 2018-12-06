@@ -1,0 +1,51 @@
+<header class="project-header">
+    <div class="project-header__hero">
+        <img class="project-header__hero-image" src="{{ project }}" alt="{{ project.title }}" />
+        <a class="link--button" href="#">Launch Project</a>
+    </div>
+
+    <div class="project-header__title">
+        <h1 class="project-header__title--main">
+            {{ project.title }}
+
+        </h1>
+        <h2 class="project-header__title--sub">
+            {{ project.subtitle }}
+        </h2>
+    </div>
+
+    <div class="project-header__meta">
+        <div class="project-header__meta-column project-header__meta-column--researchers">
+            <div class="project-header__meta-column__header">
+                Researchers
+            </div>
+            {% for author in project.authors %}
+            <a href="#" class="project-header__meta-column__item">
+                {{ author }}
+            </a>
+            {% endfor %}
+        </div>
+        <div class="project-header__meta-column project-header__meta-column--status">
+            <div class="project-header__meta-column__header">
+                Current Status
+            </div>
+            <div class="project-header__meta-column__item">
+                {{ project.currentStatus }}
+            </div>
+        </div>
+        <div class="project-header__meta-column project-header__meta-column--date">
+            <div class="project-header__meta-column__header">Date</div>
+            <div class="project-header__meta-column__item">
+                {{ project.date }}
+            </div>
+        </div>
+        <div class="project-header__meta-column project-header__meta-column--materials">
+            <div class="project-header__meta-column__header">Materials</div>
+            {% for materialIncluded in project.materialsIncluded %}
+            <a href="#" class="project-header__meta-column__item">
+                {{ materialIncluded }}
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</header>

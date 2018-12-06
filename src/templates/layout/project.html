@@ -14,9 +14,20 @@
         {# Navigation #}
         {% include "partials/navigation.html" %}
 
-        {# Page specific content #}
-        {% block header %} {% endblock %}
-        {% block main %} {% endblock %}
+        {% for project in projects %}
+        {% if pagename === project.title %}
+
+        <main class="project project--{{ project.type }}">
+
+        {# Project header #}
+        {% include "partials/project/header.html" %}
+        {# Project content #}
+        {% block projectContent %} {% endblock %}
+
+        </main>
+
+        {% endif %}
+        {% endfor %}
 
         {# Footer #}
         {% include "partials/footer.html" %}

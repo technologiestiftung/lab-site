@@ -30,10 +30,17 @@
             "subtitle": "What data is available?",
             "date": "2012-04-23T18:25:43.511Z",
             "description": "Description 1",
-            "poster": "../../assets/images/datadive.jpg",
+            "heroImage": "../../assets/images/datadive.jpg",
             "thumbnail": "../../assets/images/datadive.jpg",
-            "author": "author 1",
+            "authors": ["Victoria Dykes", "Benjamin Seibel", "Sebastian Meier"],
             "type": "dataset",
+            "currentStatus": "ongoing",
+            "materialsIncluded": [
+                "images",
+                "video",
+                "press text",
+                "Source Code"
+            ],
             "featuredImage": "../../assets/images/datadive.jpg",
             "isFeatured": true
         },
@@ -42,10 +49,17 @@
             "subtitle": "Find nurseries for your own childs needs.",
             "date": "2012-04-23T18:25:43.511Z",
             "description": "Description 2",
-            "poster": "../../assets/images/kita-explorer.jpg",
+            "heroImage": "../../assets/images/kita-explorer.jpg",
             "thumbnail": "../../assets/images/kita-explorer.jpg",
-            "author": "author 2",
+            "authors": ["Victoria Dykes", "Benjamin Seibel", "Sebastian Meier"],
             "type": "workshop",
+            "currentStatus": "ongoing",
+            "materialsIncluded": [
+                "images",
+                "video",
+                "press text",
+                "Source Code"
+            ],
             "featuredImage": "../../assets/images/kita-explorer.jpg",
             "isFeatured": true
         },
@@ -54,10 +68,17 @@
             "subtitle": "Explore Berlin’s fundings through shared data.",
             "date": "2012-04-23T18:25:43.511Z",
             "description": "Description 3",
-            "poster": "../../assets/images/funding.jpg",
+            "heroImage": "../../assets/images/funding.jpg",
             "thumbnail": "../../assets/images/funding.jpg",
-            "author": "author 3",
+            "authors": ["Victoria Dykes", "Benjamin Seibel", "Sebastian Meier"],
             "type": "publication",
+            "currentStatus": "ongoing",
+            "materialsIncluded": [
+                "images",
+                "video",
+                "press text",
+                "Source Code"
+            ],
             "featuredImage": "../../assets/images/funding.jpg",
             "isFeatured": true
         },
@@ -66,10 +87,17 @@
             "subtitle": "Introduction and overview of Berlin.",
             "date": "2012-04-23T18:25:43.511Z",
             "description": "Description 4",
-            "poster": "../../assets/images/spatial-units.jpg",
+            "heroImage": "../../assets/images/spatial-units.jpg",
             "thumbnail": "../../assets/images/spatial-units.jpg",
-            "author": "author 4",
+            "authors": ["Victoria Dykes", "Benjamin Seibel", "Sebastian Meier"],
             "type": "prototype",
+            "currentStatus": "ongoing",
+            "materialsIncluded": [
+                "images",
+                "video",
+                "press text",
+                "Source Code"
+            ],
             "featuredImage": "../../assets/images/spatial-units.jpg",
             "isFeatured": true
         },
@@ -78,10 +106,17 @@
             "subtitle": "Cyclist patterns revealed.",
             "date": "2012-04-23T18:25:43.511Z",
             "description": "Description 5",
-            "poster": "../../assets/images/bike-rides.jpg",
+            "heroImage": "../../assets/images/bike-rides.jpg",
             "thumbnail": "../../assets/images/bike-rides.jpg",
-            "author": "author 5",
+            "authors": ["Victoria Dykes", "Benjamin Seibel", "Sebastian Meier"],
             "type": "dataset",
+            "currentStatus": "ongoing",
+            "materialsIncluded": [
+                "images",
+                "video",
+                "press text",
+                "Source Code"
+            ],
             "featuredImage": "../../assets/images/bike-rides.jpg",
             "isFeatured": true
         },
@@ -90,10 +125,17 @@
             "subtitle": "Subtitle project 1",
             "date": "2012-04-23T18:25:43.511Z",
             "description": "Description 1",
-            "poster": "../../assets/images/bike-rides.jpg",
+            "heroImage": "../../assets/images/bike-rides.jpg",
             "thumbnail": "../../assets/images/bike-rides.jpg",
-            "author": "author 5",
+            "authors": ["Victoria Dykes", "Benjamin Seibel", "Sebastian Meier"],
             "type": "dataset",
+            "currentStatus": "ongoing",
+            "materialsIncluded": [
+                "images",
+                "video",
+                "press text",
+                "Source Code"
+            ],
             "featuredImage": "../../assets/images/bike-rides.jpg",
             "isFeatured": false
         },
@@ -102,10 +144,35 @@
             "subtitle": "Subtitle project 2",
             "date": "2012-04-23T18:25:43.511Z",
             "description": "Description 2",
-            "poster": "../../assets/images/bike-rides.jpg",
+            "heroImage": "../../assets/images/bike-rides.jpg",
             "thumbnail": "../../assets/images/bike-rides.jpg",
-            "author": "author 5",
+            "authors": ["Victoria Dykes", "Benjamin Seibel", "Sebastian Meier"],
             "type": "publication",
+            "currentStatus": "ongoing",
+            "materialsIncluded": [
+                "images",
+                "video",
+                "press text",
+                "Source Code"
+            ],
+            "featuredImage": "../../assets/images/bike-rides.jpg"
+        },
+        {
+            "title": "test",
+            "subtitle": "Test subtitle",
+            "date": "2012-04-23T18:25:43.511Z",
+            "description": "Description 2",
+            "heroImage": "../../assets/images/bike-rides.jpg",
+            "thumbnail": "../../assets/images/bike-rides.jpg",
+            "authors": ["Victoria Dykes", "Benjamin Seibel", "Sebastian Meier"],
+            "type": "publication",
+            "currentStatus": "ongoing",
+            "materialsIncluded": [
+                "images",
+                "video",
+                "press text",
+                "Source Code"
+            ],
             "featuredImage": "../../assets/images/bike-rides.jpg"
         }
     ]
