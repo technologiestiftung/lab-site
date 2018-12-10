@@ -13,16 +13,12 @@
 {% endmacro %}
 
 
-{% macro imageColumn(title, textContent, imageUrl, imageAlt, reversed) %}
+{% macro imageColumn(title, textContent, images, reversed) %}
 <section class="project-columns {{ "reversed" if reversed }}">
     <div>
         <h3>{{ title }}</h3>
         <p>{{ textContent | safe }}</p>
     </div>
-    <img src="{{ imageUrl }}" alt="{{ imageAlt }}" />
+    {{ images | safe }}
 </section>
-{% endmacro %}
-
-{% macro link(linkText, href) %}
-<a href="{{ href }}">{{ linkText }}</a>
 {% endmacro %}
