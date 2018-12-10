@@ -12,7 +12,7 @@
                 border: 2px solid gray;
                 display: block;
                 left: 50%;
-                max-width: 100%;
+                max-width: 50%;
                 position: absolute;
                 top: 50%;
                 transform: translate(-50%, -50%);
@@ -47,6 +47,7 @@
             border: 2px solid green;
             display: flex;
             padding: 0 $spacing-page-m;
+            text-transform: capitalize;
 
             &-column {
                 border: 2px solid orange;
@@ -59,7 +60,7 @@
                     font-weight: bold;
                 }
                 &__item {
-                    // border: 2px solid red;
+                    border: 2px solid red;
                     align-self: flex-start;
 
                     &:last-of-type {
@@ -110,9 +111,10 @@
             &-controls {
                 border: 2px solid red;
                 bottom: 0;
-                left: 50%;
+                left: 0;
+                margin-left: $spacing-column--half;
                 outline: none;
-                padding: 0 0 0 $spacing-column--half;
+                padding: 0;
                 position: absolute;
                 user-select: none;
 
@@ -140,6 +142,7 @@
             .tns {
                 &-controls {
                     left: $spacing-page-m;
+                    margin: 0 0 0 50vw;
                     padding: 0;
                     right: auto;
                 }

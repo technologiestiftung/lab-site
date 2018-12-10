@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% from "macros/utils.html" import link, image %}
-{% from "macros/projectMacros.html" import text, textColumn, imageColumn %}
+{% from "macros/projectMacros.html" import text, textColumn, imageColumn, blockquote %}
 
 <html lang="en">
     <head>
@@ -13,12 +13,10 @@
         {# Project specific styles #}
         <link rel="stylesheet" href="../../styles/{{ pagename }}/styles/index.css" />
 
-
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.8/tiny-slider.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.8/min/tiny-slider.js"></script>
     </head>
     <body>
-
         {# Navigation #}
         {% include "partials/navigation.html" %}
 
@@ -29,7 +27,9 @@
 
         {# Project header #}
         {% include "partials/project/header.html" %}
+
         {# Project content #}
+        Main content of project: <strong>{{ pagename }}</strong>
         {% block projectContent %} {% endblock %}
 
         </main>

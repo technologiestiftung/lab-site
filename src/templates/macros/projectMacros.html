@@ -24,3 +24,13 @@
     </div>
 </section>
 {% endmacro %}
+
+{% macro blockquote(quoteText, quoteInfo) %}
+{# TODO: Automatic quotation marks depending on language #}
+<blockquote>
+    <p>
+        {{ quoteText }}
+    </p>
+    – {{ quoteInfo }}
+</blockquote>
+{% endmacro %}

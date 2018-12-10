@@ -2,60 +2,66 @@
 {% set pagename = "test" %}
 
 {% block projectContent %}
-<div>
-    Main content of project: <strong>{{ pagename }}</strong>
 
-    {# Intro – start #}
-    {% set textFirst %}
-        This week we launched our new app Badestellen Berlin. This was a joint effort of Kompetenzzentrum Wasser, {{ link("#", "Berliner Wasserbetriebe") }} and the LaGeSo. The new application allows citizens to get up to date information on bathing water quality. Besides water quality information the site provides additional info on each site, for example, accessibility features or availability of toilets and parking lots. A link to a routing service and the local public transport service allow you to conveniently plan your next trip.
-    {% endset %}
+{# Intro – start #}
+{% set textFirst %}
+    This week we launched our new app Badestellen Berlin. This was a joint effort of Kompetenzzentrum Wasser, {{ link("#", "Berliner Wasserbetriebe") }} and the LaGeSo. The new application allows citizens to get up to date information on bathing water quality. Besides water quality information the site provides additional info on each site, for example, accessibility features or availability of toilets and parking lots. A link to a routing service and the local public transport service allow you to conveniently plan your next trip.
+{% endset %}
 
-    {{ text(textFirst) }}
-    {# Intro – end #}
+{{ text(textFirst) }}
+{# Intro – end #}
 
 
-    {# Text columns – start #}
-    {% set titleSecond = "Up-to-date water quality information through shared data." %}
+{# Text columns – start #}
+{% set titleSecond = "Up-to-date water quality information through shared data." %}
 
-    {% set textSecond %}
-        This week we launched our new app Badestellen Berlin. This was a joint effort of Kompetenzzentrum Wasser, Berliner Wasserbetriebe and the LaGeSo. The new application allows citizens to get up to date information on bathing water quality. Besides water quality information the site provides additional info on each site, for example. This week we launched our new app Badestellen Berlin. This was a joint effort of Kompetenzzentrum Wasser, Berliner Wasserbetriebe and the LaGeSo. The new application allows citizens to get up to date information on bathing water quality. Besides water quality information the site provides additional info on each site, for example.
-    {% endset %}
+{% set textSecond %}
+    This week we launched our new app Badestellen Berlin. This was a joint effort of Kompetenzzentrum Wasser, Berliner Wasserbetriebe and the LaGeSo. The new application allows citizens to get up to date information on bathing water quality. Besides water quality information the site provides additional info on each site, for example. This week we launched our new app Badestellen Berlin. This was a joint effort of Kompetenzzentrum Wasser, Berliner Wasserbetriebe and the LaGeSo. The new application allows citizens to get up to date information on bathing water quality. Besides water quality information the site provides additional info on each site, for example.
+{% endset %}
 
-    {{ textColumn(titleSecond, textSecond) }}
-    {# Text columns – end #}
-
-
-    {# Image(s)/Text – start #}
-    {% set titleThird = "Up-to-date water quality information." %}
-
-    {% set textThird %}
-        This week we launched our new app Badestellen Berlin. This was a joint effort of Kompetenzzentrum Wasser, Berliner Wasserbetriebe and the LaGeSo. The new application allows citizens to get up to date information on bathing water quality. Besides water quality information the site provides additional info on each site, for example, accessibility features or availability of toilets and parking lots. A link to a routing service and the local public transport service allow you to conveniently plan your next trip.
-    {% endset %}
-
-    {% set sliderImages %}
-        {{ image("https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png", "alt text")}}
-        {{ image("https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png", "alt text")}}
-        {{ image("https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png", "alt text")}}
-    {% endset %}
-
-    {{ imageColumn(titleThird, textThird, sliderImages) }}
-    {# Image(s)/Text – end #}
+{{ textColumn(titleSecond, textSecond) }}
+{# Text columns – end #}
 
 
-    {# Image(s)/Text reversed – start #}
-    {% set titleFourth = "Up-to-date water quality information." %}
+{# Image(s)/Text – start #}
+{% set titleThird = "Up-to-date water quality information." %}
 
-    {% set textFourth %}
-        This week we launched our new app Badestellen Berlin. This was a joint effort of Kompetenzzentrum Wasser, Berliner Wasserbetriebe and the LaGeSo. The new application allows citizens to get up to date information on bathing water quality. Besides water quality information the site provides additional info on each site, for example, accessibility features or availability of toilets and parking lots. A link to a routing service and the local public transport service allow you to conveniently plan your next trip.
-    {% endset %}
+{% set textThird %}
+    This week we launched our new app Badestellen Berlin. This was a joint effort of Kompetenzzentrum Wasser, Berliner Wasserbetriebe and the LaGeSo. The new application allows citizens to get up to date information on bathing water quality. Besides water quality information the site provides additional info on each site, for example, accessibility features or availability of toilets and parking lots. A link to a routing service and the local public transport service allow you to conveniently plan your next trip.
+{% endset %}
 
-    {% set sliderImages %}
-        {{ image("https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png", "alt text")}}
-    {% endset %}
+{% set sliderImages %}
+    {{ image("https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png", "alt text")}}
+    {{ image("https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png", "alt text")}}
+{% endset %}
 
-    {{ imageColumn(titleFourth, textFourth, sliderImages, true) }}
-    {# Image(s)/Text reversed – end #}
+{{ imageColumn(titleThird, textThird, sliderImages) }}
+{# Image(s)/Text – end #}
+
+
+{# Image(s)/Text reversed – start #}
+{% set titleFourth = "Up-to-date water quality information." %}
+
+{% set textFourth %}
+    This week we launched our new app Badestellen Berlin. This was a joint effort of Kompetenzzentrum Wasser, Berliner Wasserbetriebe and the LaGeSo. The new application allows citizens to get up to date information on bathing water quality. Besides water quality information the site provides additional info on each site, for example, accessibility features or availability of toilets and parking lots. A link to a routing service and the local public transport service allow you to conveniently plan your next trip.
+{% endset %}
+
+{% set sliderImages %}
+    {{ image("https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png", "alt text")}}
+    {{ image("https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png", "alt text")}}
+    {{ image("https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png", "alt text")}}
+{% endset %}
+
+{{ imageColumn(titleFourth, textFourth, sliderImages, true) }}
+{# Image(s)/Text reversed – end #}
+
+{# Blockquote – start #}
+{% set quoteText = "“We are working at the intersection of the urban & science. We collaborate, ideate and develop. This week we launched our new app Badestellen Berlin.”" %}
+
+{% set quoteAuthor = "Author Name, publication date" %}
+
+{{ blockquote(quoteText, quoteAuthor) }}
+{# Blockquote – end #}
     
-</div>
 {% endblock %}
 
