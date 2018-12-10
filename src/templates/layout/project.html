@@ -21,7 +21,7 @@
         {% include "partials/navigation.html" %}
 
         {% for project in projects %}
-        {% if pagename === project.title %}
+        {% if pagename | lower === project.title | lower %}
 
         <main class="project project--{{ project.type }}">
 

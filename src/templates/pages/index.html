@@ -25,7 +25,7 @@
                 {% if project.isFeatured %}
                 <li class="featured-list__project">
                     <h3 class="featured-list__project-title {{ project.type }}">
-                        <a href="#">{{ project.title }}</a>
+                        <a href="./{{ project.title | lower}}">{{ project.title }}</a>
                     </h3>
                     <span class="featured-list__project-subtext">
                         {{ project.subtitle }}

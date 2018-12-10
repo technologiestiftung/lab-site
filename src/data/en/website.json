@@ -158,7 +158,7 @@
             "featuredImage": "../../assets/images/bike-rides.jpg"
         },
         {
-            "title": "test",
+            "title": "Test",
             "subtitle": "Test subtitle",
             "date": "2012-04-23T18:25:43.511Z",
             "description": "Description 2",
@@ -173,7 +173,8 @@
                 "press text",
                 "Source Code"
             ],
-            "featuredImage": "../../assets/images/bike-rides.jpg"
+            "featuredImage": "../../assets/images/bike-rides.jpg",
+            "isFeatured": true
         }
     ]
 }
