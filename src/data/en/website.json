@@ -24,6 +24,84 @@
             "url": "/en/data.html"
         }
     ],
+    "team": [
+        {
+            "name": "team friend 1",
+            "position": "cool position",
+            "image": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
+            "type": "data"
+        },
+        {
+            "name": "team friend 2",
+            "position": "better position",
+            "image": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
+            "type": "data"
+        },
+        {
+            "name": "team friend 3",
+            "position": "best position",
+            "image": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
+            "type": "data"
+        },
+        {
+            "name": "team friend 4",
+            "position": "bestest position",
+            "image": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
+            "type": "data"
+        }
+    ],
+    "alumnis": [
+        {
+            "name": "alumni friend 1",
+            "position": "had cool position"
+        },
+        {
+            "name": "alumni friend 2",
+            "position": "had better position"
+        },
+        {
+            "name": "alumni friend 3",
+            "position": "had best position"
+        },
+        {
+            "name": "alumni friend 4",
+            "position": "had bestest position"
+        },
+        {
+            "name": "alumni friend 5",
+            "position": "had better position"
+        },
+        {
+            "name": "alumni friend 6",
+            "position": "had best position"
+        },
+        {
+            "name": "alumni friend 7",
+            "position": "had bestest position"
+        }
+    ],
+    "partners": [
+        {
+            "name": "partner 1",
+            "image": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
+            "description": "cool partner cool partner cool partner cool partner "
+        },
+        {
+            "name": "partner 2",
+            "image": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
+            "description": "better partner better partner better partner better partner "
+        },
+        {
+            "name": "partner 3",
+            "image": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
+            "description": "best partner best partner best partner best partner "
+        },
+        {
+            "name": "partner 4",
+            "image": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
+            "description": "bestest partner bestest partner bestest partner bestest partner "
+        }
+    ],
     "projects": [
         {
             "title": "Bicycle Data Dive",

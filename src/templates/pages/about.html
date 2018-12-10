@@ -5,3 +5,61 @@
     {{ title }}
 {% endblock %}
 
+{% block main %}  
+<section class="feed">
+    <h2 class="feed-headline section-headline">Team</h2>
+    <ul class="grid feed-list">
+        {% for teamFriend in team %}
+        <li class="feed-list__project">
+            <a href="#">
+                <img class="feed-list__project-image" src="{{ teamFriend.image }}" alt="{{ teamFriend.name }}">
+                <div class="feed-list__project-title">
+                    {{ teamFriend.name }}
+                </div>
+                <div class="feed-list__project-date">
+                    {{ teamFriend.position }}
+                </div>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+
+<section class="feed">
+    <h2 class="feed-headline section-headline">Alumnis</h2>
+    <ul class="grid feed-list">
+        {% for alumniFriend in alumnis %}
+        <li class="feed-list__project">
+            <a href="#">
+                <div class="feed-list__project-title">
+                    {{ alumniFriend.name }}
+                </div>
+                <div class="feed-list__project-date">
+                    {{ alumniFriend.position }}
+                </div>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+
+<section class="feed">
+    <h2 class="feed-headline section-headline">Partners</h2>
+    <ul class="grid feed-list">
+        {% for partner in partners %}
+        <li class="feed-list__project">
+            <a href="#">
+                <img class="feed-list__project-image" src="{{ partner.image }}" alt="{{ partner.name }}">
+                <div class="feed-list__project-title">
+                    {{ partner.name }}
+                </div>
+                <div>
+                    {{ partner.description }}
+                </div>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}
+
