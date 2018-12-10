@@ -1,16 +1,22 @@
 <!DOCTYPE html>
+{% from "macros/projectMacros.html" import text, textColumn, imageColumn, link %}
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>{{ pagename }}</title>
+        <title>{{ pagename | capitalize }}</title>
         {# Global styles #}
         <link rel="stylesheet" href="../../styles/index.css" />
         {# Project specific styles #}
         <link rel="stylesheet" href="../../styles/{{ pagename }}/styles/index.css" />
+
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.8/tiny-slider.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.8/min/tiny-slider.js"></script>
     </head>
     <body>
+
         {# Navigation #}
         {% include "partials/navigation.html" %}
 
@@ -32,6 +38,9 @@
         {# Footer #}
         {% include "partials/footer.html" %}
 
+        {# Main script #}
         <script src="../js/index.js"></script>
+        {# Project specific script #}
+        <script src="../../js/{{ pagename }}/index.js"></script>
     </body>
 </html>

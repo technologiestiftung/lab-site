@@ -1,0 +1,28 @@
+{% macro text(textContent) %}
+<section class="project-text">
+    {{ textContent | safe }}
+</section>
+{% endmacro %}
+
+
+{% macro textColumn(title, textContent) %}
+<section class="project-text columns">
+    <h3>{{ title }}</h3>
+    <p>{{ textContent | safe }}</p>
+</section>
+{% endmacro %}
+
+
+{% macro imageColumn(title, textContent, imageUrl, imageAlt, reversed) %}
+<section class="project-columns {{ "reversed" if reversed }}">
+    <div>
+        <h3>{{ title }}</h3>
+        <p>{{ textContent | safe }}</p>
+    </div>
+    <img src="{{ imageUrl }}" alt="{{ imageAlt }}" />
+</section>
+{% endmacro %}
+
+{% macro link(linkText, href) %}
+<a href="{{ href }}">{{ linkText }}</a>
+{% endmacro %}

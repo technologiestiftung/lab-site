@@ -4,5 +4,15 @@
 {% block projectContent %}
 <div>
     Main content of project: <strong>{{ pagename }}</strong>
+
+    {% set testText = 'test „text“ <div>div</div> <a href="#">lonk</a>' %}
+    {{ text(testText) }}
+
+    {{ textColumn() }}
+    
+    {{ imageColumn("title", "textContent", "./", "image alt", false) }}
+    {{ imageColumn("title", "textContent", "./", "image alt", true) }}
+    
 </div>
 {% endblock %}
+
