@@ -19,6 +19,8 @@
         <h3>{{ title }}</h3>
         <p>{{ textContent | safe }}</p>
     </div>
-    {{ images | safe }}
+    <div class="image-slider">
+        {{ images | safe }}
+    </div>
 </section>
 {% endmacro %}
