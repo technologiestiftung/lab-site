@@ -3,7 +3,8 @@
     "pages": [
         {
             "name": "start",
-            "title": "Index Page"
+            "title": "Index Page",
+            "url": "/en/"
         },
         {
             "name": "about",
@@ -29,25 +30,29 @@
             "name": "team friend 1",
             "position": "cool position",
             "image": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
-            "type": "data"
+            "type": "data",
+            "description": "Hello hello hello"
         },
         {
             "name": "team friend 2",
             "position": "better position",
             "image": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
-            "type": "data"
+            "type": "data",
+            "description": "Hello hello hello"
         },
         {
             "name": "team friend 3",
             "position": "best position",
             "image": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
-            "type": "data"
+            "type": "data",
+            "description": "Hello hello hello"
         },
         {
             "name": "team friend 4",
             "position": "bestest position",
             "image": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
-            "type": "data"
+            "type": "data",
+            "description": "Hello hello hello"
         }
     ],
     "alumnis": [
@@ -240,7 +245,7 @@
             "subtitle": "Test subtitle",
             "date": "2012-04-23T18:25:43.511Z",
             "description": "Description 2",
-            "heroImage": "../../assets/images/bike-rides.jpg",
+            "heroImage": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
             "thumbnail": "../../assets/images/bike-rides.jpg",
             "authors": ["Victoria Dykes", "Benjamin Seibel", "Sebastian Meier"],
             "type": "publication",

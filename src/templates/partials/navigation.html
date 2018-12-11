@@ -1,7 +1,7 @@
 {% from "macros/navigationItem.html" import navigationItem %}
 
 <nav class="navigation">
-    <a class="navigation-logo" href="./">
+    <a class="navigation-logo" href="{{ pages[0].url }}">
         <span class="navigation-logo__line">Ideation & Prototyping Lab</span>
         <span class="navigation-logo__line">Technologiestiftung Berlin</span>
     </a>
@@ -13,15 +13,15 @@
         {% endfor %}
 
         <li class="navigation-list__item navigation-list__item--lang">
-            <a class="navigation-language" href="index.html">Deutsch</a>
+            <a class="navigation-language" href="/de">Deutsch</a>
         </li>
         <li class="navigation-list__item">
-            <a href="#">
+            <a href="https://twitter.com/tsbberlin" target="_blank">
                 <img src="../../assets/icons/twitter-icon.svg" alt="Twitter" />
             </a>
         </li>
         <li class="navigation-list__item">
-            <a href="#">
+            <a href="https://github.com/technologiestiftung" target="_blank">
                 <img src="../../assets/icons/github-icon.svg" alt="Github" />
             </a>
         </li>

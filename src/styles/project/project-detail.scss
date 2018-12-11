@@ -12,7 +12,7 @@
                 border: 2px solid gray;
                 display: block;
                 left: 50%;
-                max-width: 50%;
+                max-width: 100%;
                 position: absolute;
                 top: 50%;
                 transform: translate(-50%, -50%);
@@ -72,10 +72,10 @@
     }
 
     &-text {
-        padding: 0 $spacing-page-l;
+        padding: 0 $spacing-page-m;
 
         &.columns {
-            padding: 0 $spacing-page-m;
+            padding: 0;
 
             h3 {
                 padding-right: $spacing-column--half;
@@ -91,13 +91,19 @@
     &-columns {
         display: flex;
         flex-direction: row;
+        margin: 0 0 0 0;
         position: relative;
 
         &:not(.slider) {
             & > div {
                 border: 2px solid red;
-                padding: 0 $spacing-page-m 0 $spacing-column--half;
+                // padding: 0 $spacing-page-m 0 $spacing-column--half;
                 width: 50%;
+
+                &:first-of-type {
+                    border: 2px solid green;
+                    margin: 0 0 0 0;
+                }
             }
             & > img {
                 align-self: flex-start;
@@ -117,6 +123,7 @@
                 padding: 0;
                 position: absolute;
                 user-select: none;
+                white-space: nowrap;
 
                 button {
                     color: $black;
@@ -134,8 +141,13 @@
             &:not(.slider) {
                 & > div {
                     border: 2px solid red;
-                    padding: 0 $spacing-column--half 0 $spacing-page-m;
+                    // padding: 0 $spacing-column--half 0 $spacing-page-m;
                     width: 50%;
+
+                    &:first-of-type {
+                        border: 2px solid green;
+                        margin: 0 0 0 0;
+                    }
                 }
             }
 

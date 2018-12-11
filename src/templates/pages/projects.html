@@ -11,7 +11,7 @@
     <ul class="grid feed-list">
         {% for project in projects %}
         <li class="feed-list__project">
-            <a href="#">
+            <a href="/en/{{ project.title | lower }}">
                 <img class="feed-list__project-image" src="{{ project.thumbnail }}" alt="{{ project.title }}">
                 <div class="feed-list__project-title">
                     {{ project.title }}
