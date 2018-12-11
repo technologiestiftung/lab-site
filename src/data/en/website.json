@@ -254,5 +254,71 @@
             "featuredImage": "../../assets/images/bike-rides.jpg",
             "isFeatured": true
         }
+    ],
+    "data": [
+        {
+            "name": "Bike traffic signs",
+            "resolution": "Districts",
+            "keywords": "geo, mobility, line",
+            "formats": [
+                {
+                    "name": "GeoJSON",
+                    "size": "1.54 Mb"
+                },
+                {
+                    "name": "XML",
+                    "size": "1.32 Mb"
+                }
+            ],
+            "thumbnail": "./"
+        },
+        {
+            "name": "Dataset 2",
+            "resolution": "Districts",
+            "keywords": "geo, mobility, line",
+            "formats": [
+                {
+                    "name": "GeoJSON",
+                    "size": "1.54 Mb"
+                },
+                {
+                    "name": "XML",
+                    "size": "1.32 Mb"
+                }
+            ],
+            "thumbnail": "./"
+        },
+        {
+            "name": "Dataset 3",
+            "resolution": "Districts",
+            "keywords": "geo, mobility, line",
+            "formats": [
+                {
+                    "name": "GeoJSON",
+                    "size": "1.54 Mb"
+                },
+                {
+                    "name": "XML",
+                    "size": "1.32 Mb"
+                }
+            ],
+            "thumbnail": "./"
+        },
+        {
+            "name": "Dataset 4",
+            "resolution": "Districts",
+            "keywords": "geo, mobility, line",
+            "formats": [
+                {
+                    "name": "GeoJSON",
+                    "size": "1.54 Mb"
+                },
+                {
+                    "name": "XML",
+                    "size": "1.32 Mb"
+                }
+            ],
+            "thumbnail": "./"
+        }
     ]
 }

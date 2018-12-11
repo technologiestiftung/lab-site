@@ -1,0 +1,41 @@
+.data-table {
+    border: 2px solid red;
+    display: flex;
+    font-size: $font-size-s;
+    flex-direction: column;
+
+    &__row {
+        border: 2px solid yellow;
+        // border-bottom: 1px solid $light-gray;
+        color: $black;
+        display: flex;
+        flex-direction: row;
+        padding: 0 $spacing-page-m;
+        text-align: left;
+        vertical-align: center;
+
+        &-cell {
+            border: 2px solid blue;
+            flex: 1;
+            padding: $spacing-s 0;
+
+            &:first-of-type {
+                font-size: $font-size-l;
+                font-weight: bold;
+            }
+        }
+
+        &--header {
+            .data-table__row-cell {
+                color: $gray;
+                padding: $spacing-xs 0;
+                text-transform: capitalize;
+
+                &:first-of-type {
+                    font-size: $font-size-s;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+}
