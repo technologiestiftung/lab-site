@@ -20,6 +20,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const mergeStream = require('merge-stream');
 const gulpData = require('gulp-data');
 const jsonCombine = require('gulp-jsoncombine');
+const highlight = require('gulp-prism');
 
 /**
  * Variables
@@ -223,6 +224,7 @@ gulp.task('nunjucks', function() {
                     envOptions
                 })
             )
+            .pipe(highlight())
             .pipe(gulp.dest(`dist/${language}`))
     );
 
