@@ -19,6 +19,7 @@ const { basename, resolve, join } = require('path');
 const sourcemaps = require('gulp-sourcemaps');
 const mergeStream = require('merge-stream');
 const gulpData = require('gulp-data');
+const gulpRename = require('gulp-rename');
 const jsonCombine = require('gulp-jsoncombine');
 const highlight = require('gulp-prism');
 
@@ -207,7 +208,48 @@ const nunjucksConfig = {
         trimBlocks: true
     }
 };
-gulp.task('nunjucks', function() {
+
+gulp.task('create-team', () => {
+    const { envOptions } = nunjucksConfig;
+
+    const dataTeam = [
+        {
+            name: 'henlo'
+        },
+        {
+            name: 'rofl'
+        }
+    ];
+
+    const teamFriends = languages.map(language => {
+        const team = dataTeam.map(d =>
+            gulp
+                .src(`${nunjucksConfig.renderPath}/layout/team-detail.html`)
+                .pipe(gulpRename(`${d.name}.html`))
+                .pipe(
+                    gulpData(file => {
+                        return {
+                            name: d.name,
+                            language
+                        };
+                    })
+                )
+                .pipe(
+                    nunjucksRender({
+                        path: `${nunjucksConfig.renderPath}/layout/`,
+                        envOptions
+                    })
+                )
+                .pipe(gulp.dest(`${outputPath}/${language}/team/`))
+        );
+
+        return team;
+    });
+
+    return mergeStream(teamFriends);
+});
+
+gulp.task('nunjucks', ['create-team'], function() {
     const {
         templatesSrc,
         projectsSrc,
