@@ -1,0 +1,14 @@
+{
+    "title": "Test project",
+    "subtitle": "test subtitle",
+    "date": "2012-04-23T18:25:43.511Z",
+    "description": "Description 2",
+    "heroImage": "../../assets/images/kita-explorer.jpg",
+    "thumbnail": "../../assets/images/kita-explorer.jpg",
+    "authors": ["Victoria Dykes", "Benjamin Seibel", "Sebastian Meier"],
+    "type": "workshop",
+    "currentStatus": "ongoing",
+    "materialsIncluded": ["images", "video", "press text", "Source Code"],
+    "featuredImage": "../../assets/images/kita-explorer.jpg",
+    "isFeatured": true
+}

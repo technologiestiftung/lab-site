@@ -1,0 +1,27 @@
+{% extends "layout/default.html" %}
+{% set pagename = "projects" %}
+
+{% block header %}
+    {{ title }} – {{ pagename }}
+{% endblock %}
+
+{% block main %}  
+<section class="feed">
+    <h2 class="feed-headline section-headline">Projects</h2>
+    <ul class="grid feed-list">
+        {% for project in projects %}
+        <li class="feed-list__project">
+            <a href="#">
+                <img class="feed-list__project-image" src="{{ project.thumbnail }}" alt="{{ project.title }}">
+                <div class="feed-list__project-title">
+                    {{ project.title }}
+                </div>
+                <div class="feed-list__project-date">
+                    {{ project.subtitle }}
+                </div>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

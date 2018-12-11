@@ -19,6 +19,7 @@ const { basename, resolve, join } = require('path');
 const sourcemaps = require('gulp-sourcemaps');
 const mergeStream = require('merge-stream');
 const gulpData = require('gulp-data');
+const jsonCombine = require('gulp-jsoncombine');
 
 /**
  * Variables
@@ -165,6 +166,21 @@ gulp.task('watch', ['browser-sync'], function() {
         [nunjucksPath, projectsPath, dataPath],
         ['nunjucks', browserSync.reload]
     );
+});
+
+/**
+ * Merge JSONs
+ */
+gulp.task('combine-json', function() {
+    return gulp
+        .src('./projects/**/project.json')
+        .pipe(
+            jsonCombine('combined.json', data => {
+                const dataArray = Object.keys(data).map(key => data[key]);
+                return new Buffer(JSON.stringify(dataArray));
+            })
+        )
+        .pipe(gulp.dest(outputPath));
 });
 
 // Data will be available in templates
