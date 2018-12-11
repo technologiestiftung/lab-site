@@ -9,4 +9,20 @@ section {
         font-size: $font-size-xl;
         font-weight: bold;
     }
+
+    &--code {
+        background-color: $light-gray--lighter;
+
+        pre {
+            font-size: $font-size-s;
+            font-family: 'plex-mono';
+            line-height: $line-height-title;
+            margin: 0;
+            padding: $spacing-s $spacing-column--half;
+
+            code {
+                font-family: 'plex-mono';
+            }
+        }
+    }
 }

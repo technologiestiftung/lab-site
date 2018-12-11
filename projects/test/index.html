@@ -63,9 +63,30 @@
 {{ blockquote(quoteText, quoteAuthor) }}
 {# Blockquote – end #}
 
-<pre><code class="language-html">&lt;div&gt;
-    This will be highlighted!
-&lt;div&gt;</code></pre>
+{# Code snippet – start #}
+{% set awesomeCode %}
+const create_csv_events = async() => {
+    let csv_content = "group; name;
+    let json = await helper.read_json('./events_urls_berlin.json');
+
+    await helper.async_for_each_two(json['events'], async (event_url) => {
+        
+        let event_data = await helper.read_json(event_url);
+        await helper.async_for_each_two(event_data, async (single_event) => {
+
+            if(single_event != undefined && single_event.name != undefined) {
+                let new_row = `${single_event.group.name}; ${single_event.name};
+                csv_content = csv_content.concat(new_row);
+            }
+        })
+    })
+
+    await helper.write_file(csv_content, 'events_frequencies_berlin.csv');
+}
+{% endset %}
+
+{{ codeSnippet(awesomeCode, "javascript") }}
+{# Code snippet – end #}
     
 {% endblock %}
 

@@ -5,3 +5,9 @@
 {% macro image(imageSrc, imageAlt) %}
 <img src="{{ imageSrc }}" alt="{{ imageAlt }}">
 {% endmacro %}
+
+{% macro codeSnippet(code, language="javascript") %}
+<section class="section--code">
+    <pre><code class="language-{{ language }}">{{ code | safe }}</code></pre>
+</section>
+{% endmacro %}

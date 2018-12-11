@@ -1,0 +1,71 @@
+.prism {
+    .token.comment,
+    .token.prolog,
+    .token.doctype,
+    .token.cdata {
+        color: light;
+    }
+
+    .token.punctuation {
+        color: $black;
+    }
+
+    .namespace {
+        opacity: 0.7;
+    }
+
+    .token.property,
+    .token.tag,
+    .token.boolean,
+    .token.number,
+    .token.constant,
+    .token.symbol,
+    .token.deleted {
+        color: $color-dataset;
+    }
+
+    .token.selector,
+    .token.attr-name,
+    .token.string,
+    .token.char,
+    .token.builtin,
+    .token.inserted {
+        color: $color-prototype;
+    }
+
+    .token.operator,
+    .token.entity,
+    .token.url,
+    .language-css .token.string,
+    .style .token.string {
+        color: $black;
+    }
+
+    .token.atrule,
+    .token.attr-value,
+    .token.keyword {
+        color: $color-publication;
+    }
+
+    .token.function {
+        color: $color-dataset;
+    }
+
+    .token.regex,
+    .token.important,
+    .token.variable {
+        color: $color-workshop;
+    }
+
+    .token.important,
+    .token.bold {
+        font-weight: bold;
+    }
+    .token.italic {
+        font-style: italic;
+    }
+
+    .token.entity {
+        cursor: help;
+    }
+}
