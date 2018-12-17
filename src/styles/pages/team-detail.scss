@@ -1,0 +1,25 @@
+.team-detail {
+    display: flex;
+    flex-direction: row;
+
+    &__image {
+        flex: 1;
+        margin-right: $spacing-column--half;
+
+        img {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+    &__description {
+        flex: 1;
+        margin-left: $spacing-column--half;
+
+        &--name {
+        }
+        &--position {
+        }
+        &--text {
+        }
+    }
+}

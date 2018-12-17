@@ -8,23 +8,42 @@
         {# Global styles #}
         <link rel="stylesheet" type="text/css" href="../../styles/index.css" />
         {# Project specific styles #}
-        <link rel="stylesheet" type="text/css" href="../../styles/{{ pagename }}/styles/index.css" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="../../styles/{{ pagename }}/styles/index.css"
+        />
 
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.8/tiny-slider.css" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.8/tiny-slider.css"
+        />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.8/min/tiny-slider.js"></script>
     </head>
     <body>
-        {# Navigation #}
-        {% include "partials/navigation.html" %}
+        {# Navigation #} {% include "partials/navigation.html" %}
 
-        Helloooo I'm {{ name }} 
+        <main class="loading">
+            <section class="team-detail">
+                <div class="team-detail__image">
+                    <img src="{{ image }}" alt="{{ name }}" />
+                    <div>{{ mail }}</div>
+                </div>
+                <div class="team-detail__description">
+                    Helloooo I'm {{ type }}
+                    <div class="team-detail__description--name">{{ name }}</div>
+                    <div class="team-detail__description--position">
+                        {{ position }}
+                    </div>
+                    <div class="team-detail__description--text">
+                        {{ description }}
+                    </div>
+                </div>
+            </section>
+        </main>
 
-        <img src="{{ image }}" alt="{{ name }}">
-
-        {# Footer #}
-        {% include "partials/footer.html" %}
-
-        {# Main script #}
+        {# Footer #} {% include "partials/footer.html" %} {# Main script #}
         <script src="../../js/index.js"></script>
         {# Project specific script #}
         <script src="../../js/{{ pagename }}/index.js"></script>

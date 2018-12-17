@@ -32,28 +32,32 @@
             "position": "cool position",
             "image": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
             "type": "data",
-            "description": "Hello hello hello"
+            "description": "Hello hello hello",
+            "mail": "hello@technologiestiftung-berlin.de"
         },
         {
             "name": "team friend 2",
             "position": "better position",
             "image": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
             "type": "data",
-            "description": "Hello hello hello"
+            "description": "Hello hello hello",
+            "mail": "hello@technologiestiftung-berlin.de"
         },
         {
             "name": "team friend 3",
             "position": "best position",
             "image": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
             "type": "data",
-            "description": "Hello hello hello"
+            "description": "Hello hello hello",
+            "mail": "hello@technologiestiftung-berlin.de"
         },
         {
             "name": "team friend 4",
             "position": "bestest position",
             "image": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
             "type": "data",
-            "description": "Hello hello hello"
+            "description": "Hello hello hello",
+            "mail": "hello@technologiestiftung-berlin.de"
         }
     ],
     "alumnis": [
