@@ -1,7 +1,10 @@
-import Test from './modules/Test.js';
+import handleOnload from './modules/handleOnload.js';
 import ImageSlider from './modules/ImageSlider.js';
 
-new Test();
+/**
+ * Handle onload interactions
+ */
+handleOnload();
 
 /**
  * Initialize image sliders by classname

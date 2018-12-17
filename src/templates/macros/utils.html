@@ -1,5 +1,5 @@
-{% macro link(linkHref, linkContent) %}
-<a href="{{ linkHref }}">{{ linkContent }}</a>
+{% macro link(linkHref, linkContent, linkType) %}
+<a class="link--normal {{ linkType }}" href="{{ linkHref }}">{{ linkContent }}</a>
 {% endmacro %}
 
 {% macro image(imageSrc, imageAlt) %}

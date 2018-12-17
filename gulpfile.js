@@ -157,7 +157,8 @@ gulp.task('watch', ['browser-sync'], function() {
         assetsPath
     } = watchConfig;
 
-    gulp.watch([sassPath, sassProjectsPath], ['sass']);
+    gulp.watch(sassPath, ['sass']);
+    gulp.watch(sassProjectsPath, ['sass']);
     gulp.watch(scriptsPath, ['js']);
     gulp.watch(assetsPath, [
         'copy-website-assets',
@@ -210,7 +211,7 @@ const nunjucksConfig = {
 };
 
 gulp.task('create-team', () => {
-    const { envOptions } = nunjucksConfig;
+    const { templatesSrc, renderPath, envOptions } = nunjucksConfig;
 
     const dataTeam = [
         {
@@ -224,7 +225,7 @@ gulp.task('create-team', () => {
     const teamFriends = languages.map(language => {
         const team = dataTeam.map(d =>
             gulp
-                .src(`${nunjucksConfig.renderPath}/layout/team-detail.html`)
+                .src([templatesSrc, `${renderPath}/layout/team-detail.html`])
                 .pipe(gulpRename(`${d.name}.html`))
                 .pipe(
                     gulpData(file => {
@@ -236,7 +237,7 @@ gulp.task('create-team', () => {
                 )
                 .pipe(
                     nunjucksRender({
-                        path: `${nunjucksConfig.renderPath}/layout/`,
+                        path: `${renderPath}`,
                         envOptions
                     })
                 )

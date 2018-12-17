@@ -1,5 +1,6 @@
 {
     "title": "Ideation & Prototyping Lab",
+    "language": "en",
     "pages": [
         {
             "name": "start",
@@ -209,7 +210,7 @@
             "date": "2012-04-23T18:25:43.511Z",
             "description": "Description 1",
             "heroImage": "../../assets/images/bike-rides.jpg",
-            "thumbnail": "../../assets/images/bike-rides.jpg",
+            "thumbnail": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
             "authors": ["Victoria Dykes", "Benjamin Seibel", "Sebastian Meier"],
             "type": "dataset",
             "currentStatus": "ongoing",
@@ -275,7 +276,7 @@
                     "size": "1.32 Mb"
                 }
             ],
-            "thumbnail": "./"
+            "thumbnail": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png"
         },
         {
             "name": "Dataset 2",

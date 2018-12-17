@@ -13,7 +13,9 @@
 
         {# Page specific content #}
         {% block header %} {% endblock %}
+        <main class="loading">
         {% block main %} {% endblock %}
+        </main>
 
         {# Footer #}
         {% include "partials/footer.html" %}

@@ -1,8 +1,12 @@
 .footer {
     border: 2px solid yellow;
+    bottom: 0;
     display: flex;
     justify-content: space-between;
+    left: 0;
     padding: 0 $spacing-page-m;
+    position: absolute;
+    width: 100%;
 
     &-copy {
         border: 2px solid yellow;

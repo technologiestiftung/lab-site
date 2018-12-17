@@ -1,5 +1,6 @@
 {
     "title": "Titel: Ideation & Prototyping Lab",
+    "language": "de",
     "navigation": [
         { "name": "Über uns", "type": "green" },
         { "name": "Projekte", "type": "blue" },

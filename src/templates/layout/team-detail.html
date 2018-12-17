@@ -15,16 +15,16 @@
     </head>
     <body>
         {# Navigation #}
-        {# {% include "partials/navigation.html" %} #}
+        {% include "partials/navigation.html" %}
 
         Helloooo I'm {{ name }} {{ language }}
 
         {# Footer #}
-        {# {% include "partials/footer.html" %} #}
+        {% include "partials/footer.html" %}
 
         {# Main script #}
         <script src="../../js/index.js"></script>
         {# Project specific script #}
-        {# <script src="../../js/{{ pagename }}/index.js"></script> #}
+        <script src="../../js/{{ pagename }}/index.js"></script>
     </body>
 </html>

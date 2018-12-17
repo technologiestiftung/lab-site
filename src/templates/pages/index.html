@@ -6,71 +6,69 @@
 {% endblock %}
 
 {% block main %}
-<main>
-    <section class="intro">
-        <div class="intro-title">What we do?</div>
-        <p class="intro-text">
-            We are working at the intersection of the urban & science. We collaborate, ideate and develop. 
-        </p>
-        <a class="link--button" href="about.html">
-            More about us
-        </a>
-    </section>
-    <section class="featured">
-        <div class="featured-title">What we are proud of</div>
-        <h2 class="featured-headline section-headline">Featured Projects</h2>
+<section class="intro">
+    <div class="intro-title">What we do?</div>
+    <p class="intro-text">
+        We are working at the intersection of the urban & science. We collaborate, ideate and develop. 
+    </p>
+    <a class="link--button" href="about.html">
+        More about us
+    </a>
+</section>
+<section class="featured">
+    <div class="featured-title">What we are proud of</div>
+    <h2 class="featured-headline section-headline">Featured Projects</h2>
 
-        <ul class="featured-list">
-            {% for project in projects %}
-                {% if project.isFeatured %}
-                <li class="featured-list__project">
-                    <h3 class="featured-list__project-title {{ project.type }}">
-                        <a href="./{{ project.title | lower}}">{{ project.title }}</a>
-                    </h3>
-                    <span class="featured-list__project-subtext">
-                        {{ project.subtitle }}
-                    </span>
-                    <img
-                        class="featured-list__project-image"
-                        src="{{ project.featuredImage }}"
-                        alt="{{ project.title }}"
-                    />
-                </li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-
-        <a class="link--button" href="#">
-            All projects
-        </a>
-    </section>
-
-    <section class="feed">
-        <div class="feed-title">Lab Feed</div>
-        <h2 class="feed-headline section-headline">From the lab</h2>
-
-        
-
-        <ul class="grid feed-list">
-            {% for project in projects %}
-            {% set loopIndex = loop.index0 %}
-            {% if loopIndex < 4 %}
-
-            <li class="feed-list__project">
-                <a href="#">
-                    <img class="feed-list__project-image" src="https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png" alt="{{ project.title }}">
-                    <div class="feed-list__project-date">
-                        {{ project.date }}
-                    </div>
-                    <div class="feed-list__project-title">
-                        {{ project.title }}
-                    </div>
-                </a>
+    <ul class="featured-list">
+        {% for project in projects %}
+            {% if project.isFeatured %}
+            <li class="featured-list__project">
+                <h3 class="featured-list__project-title {{ project.type }}">
+                    <a href="./{{ project.title | lower}}">{{ project.title }}</a>
+                </h3>
+                <span class="featured-list__project-subtext">
+                    {{ project.subtitle }}
+                </span>
+                <img
+                    class="featured-list__project-image"
+                    src="{{ project.featuredImage }}"
+                    alt="{{ project.title }}"
+                />
             </li>
-
             {% endif %}
-            {% endfor %}
-        </ul>
-    </section>
-</main>
+        {% endfor %}
+    </ul>
+
+    <a class="link--button" href="#">
+        All projects
+    </a>
+</section>
+
+<section class="feed">
+    <div class="feed-title">Lab Feed</div>
+    <h2 class="feed-headline section-headline">From the lab</h2>
+
+    
+
+    <ul class="grid feed-list">
+        {% for project in projects %}
+        {% set loopIndex = loop.index0 %}
+        {% if loopIndex < 4 %}
+
+        <li class="feed-list__project">
+            <a href="#">
+                <img class="feed-list__project-image" src="https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png" alt="{{ project.title }}">
+                <div class="feed-list__project-date">
+                    {{ project.date }}
+                </div>
+                <div class="feed-list__project-title">
+                    {{ project.title }}
+                </div>
+            </a>
+        </li>
+
+        {% endif %}
+        {% endfor %}
+    </ul>
+</section>
 {% endblock %}

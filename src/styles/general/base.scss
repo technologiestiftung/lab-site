@@ -11,6 +11,7 @@ body {
     letter-spacing: 0.005em;
     line-height: $line-height-text;
     min-height: 100vh;
+    position: relative;
 
     h1,
     h2,
@@ -51,5 +52,17 @@ body {
     input,
     button {
         outline: none;
+    }
+
+    main {
+        margin-bottom: $spacing-xxl;
+        opacity: 1;
+        overflow: visible;
+        transition: opacity $time-l;
+        overflow: hidden;
+
+        &.loading {
+            opacity: 0;
+        }
     }
 }

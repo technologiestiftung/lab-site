@@ -23,7 +23,7 @@
         {% for project in projects %}
         {% if pagename | lower === project.title | lower %}
 
-        <main class="project project--{{ project.type }}">
+        <main class="project project--{{ project.type }} loading">
 
         {# Project header #}
         {% include "partials/project/header.html" %}
