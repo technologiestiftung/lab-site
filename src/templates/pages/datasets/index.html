@@ -1,7 +1,7 @@
-{% extends "layout/default.html" %}
+{% extends "layout/projects.html" %}
 {% from "macros/utils.html" import link, image %}
 
-{% set pagename = "data" %}
+{% set pagename = "datasets" %}
 
 {% block header %}
     {{ title }} – {{ pagename }}
@@ -18,7 +18,7 @@
     </section>
 
     <div class="data-table">
-        <div class="data-table__row data-table__row--header" href="#">
+        <div class="data-table__row data-table__row--header">
             <span class="data-table__row-cell">name</span>
             <span class="data-table__row-cell">resolution</span> 
             <span class="data-table__row-cell">keywords</span>
@@ -26,7 +26,7 @@
             <span class="data-table__row-cell"></span>
         </div>
         {% for datum in data %}
-        <a class="data-table__row" href="#">
+        <a class="data-table__row" href="{{ datum.name | lower | replace(" ", "-") }}">
             <span class="data-table__row-cell">{{ datum.name }}</span>
             <span class="data-table__row-cell">{{ datum.resolution }}</span> 
             <span class="data-table__row-cell">{{ datum.keywords }}</span>

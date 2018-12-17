@@ -221,15 +221,21 @@ gulp.task('create-team', () => {
         const dataJSON = readFileSync(dataPath, 'utf8');
         const data = JSON.parse(dataJSON);
 
-        const team = data.team.map(d =>
-            gulp
+        const team = data.team.map(d => {
+            const { name } = d;
+            const formattedName = name
+                .toLowerCase()
+                .split(' ')
+                .join('-');
+            console.log(formattedName);
+
+            return gulp
                 .src([templatesSrc, `${renderPath}/layout/team-detail.html`])
-                .pipe(gulpRename(`${d.name}.html`))
+                .pipe(gulpRename(`${formattedName}.html`))
                 .pipe(
                     gulpData(file => {
                         return {
-                            name: d.name,
-                            language
+                            ...d
                         };
                     })
                 )
@@ -239,8 +245,8 @@ gulp.task('create-team', () => {
                         envOptions
                     })
                 )
-                .pipe(gulp.dest(`${outputPath}/${language}/team/`))
-        );
+                .pipe(gulp.dest(`${outputPath}/${language}/team/`));
+        });
 
         return team;
     });

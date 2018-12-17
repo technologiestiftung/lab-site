@@ -15,6 +15,9 @@
         {% block header %} {% endblock %}
         <main class="loading">
         {% block main %} {% endblock %}
+
+        {# Project feed #}
+        {% include "partials/project/feed.html" %}
         </main>
 
         {# Footer #}

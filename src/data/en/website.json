@@ -20,10 +20,10 @@
             "url": "/en/projects"
         },
         {
-            "name": "data",
+            "name": "datasets",
             "title": "Data Page",
             "navigationTitle": "Data",
-            "url": "/en/data"
+            "url": "/en/datasets"
         }
     ],
     "team": [
