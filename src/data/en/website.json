@@ -11,19 +11,19 @@
             "name": "about",
             "title": "About Page",
             "navigationTitle": "About us",
-            "url": "/en/about.html"
+            "url": "/en/about"
         },
         {
             "name": "projects",
             "title": "Projects Page",
             "navigationTitle": "Projects",
-            "url": "/en/projects.html"
+            "url": "/en/projects"
         },
         {
             "name": "data",
             "title": "Data Page",
             "navigationTitle": "Data",
-            "url": "/en/data.html"
+            "url": "/en/data"
         }
     ],
     "team": [

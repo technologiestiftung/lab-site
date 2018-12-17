@@ -54,7 +54,10 @@ const languages = getLanguagesFromData(absoluteDataPath);
 gulp.task('browser-sync', ['sass'], function() {
     browserSync.init({
         server: {
-            baseDir: outputPath
+            baseDir: outputPath,
+            serveStaticOptions: {
+                extensions: ['html']
+            }
         },
         injectChanges: true,
         notify: false,
@@ -213,17 +216,12 @@ const nunjucksConfig = {
 gulp.task('create-team', () => {
     const { templatesSrc, renderPath, envOptions } = nunjucksConfig;
 
-    const dataTeam = [
-        {
-            name: 'henlo'
-        },
-        {
-            name: 'rofl'
-        }
-    ];
-
     const teamFriends = languages.map(language => {
-        const team = dataTeam.map(d =>
+        const dataPath = `./src/data/${language}/website.json`;
+        const dataJSON = readFileSync(dataPath, 'utf8');
+        const data = JSON.parse(dataJSON);
+
+        const team = data.team.map(d =>
             gulp
                 .src([templatesSrc, `${renderPath}/layout/team-detail.html`])
                 .pipe(gulpRename(`${d.name}.html`))
@@ -257,9 +255,9 @@ gulp.task('nunjucks', ['create-team'], function() {
         renderPath,
         envOptions
     } = nunjucksConfig;
-    const websiteStreams = languages.map(language =>
-        gulp
-            .src([templatesSrc, projectsSrc])
+    const websiteStreams = languages.map(language => {
+        const templateStream = gulp
+            .src(templatesSrc)
             .pipe(gulpData(file => getDataForFile(file, language)))
             .pipe(
                 nunjucksRender({
@@ -268,8 +266,22 @@ gulp.task('nunjucks', ['create-team'], function() {
                 })
             )
             .pipe(highlight())
-            .pipe(gulp.dest(`dist/${language}`))
-    );
+            .pipe(gulp.dest(`dist/${language}`));
+
+        const projectStream = gulp
+            .src(projectsSrc)
+            .pipe(gulpData(file => getDataForFile(file, language)))
+            .pipe(
+                nunjucksRender({
+                    path: renderPath,
+                    envOptions
+                })
+            )
+            .pipe(highlight())
+            .pipe(gulp.dest(`dist/${language}/projects/`));
+
+        return mergeStream(templateStream, projectStream);
+    });
 
     return mergeStream(websiteStreams);
 });

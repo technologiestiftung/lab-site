@@ -11,7 +11,7 @@
     &-list {
         border: 2px solid yellow;
         display: grid;
-        grid-gap: 0 $spacing-column--half;
+        grid-gap: 0 $spacing-column;
         grid-template-columns: max-content max-content;
         position: relative;
 
@@ -38,6 +38,10 @@
                         content: '→';
                         margin-left: $spacing-s;
                         pointer-events: none;
+                        position: absolute;
+                        top: 0;
+                        transform: translate(0, 0);
+                        transition: transform $time-m;
                         user-select: none;
                     }
                 }
@@ -55,6 +59,12 @@
                         &-image {
                             opacity: 1;
                             transform: translate3d($spacing-page-m, 0, 0);
+                        }
+                    }
+
+                    a {
+                        &::after {
+                            transform: translate(15%, 0);
                         }
                     }
 
@@ -81,7 +91,7 @@
                 left: 0;
                 opacity: 0;
                 pointer-events: none;
-                transform: translate3d(2.5%, 0, 0);
+                transform: translate3d(0, 2.5%, 0);
                 transition: opacity $time-s, transform $time-m;
             }
 
