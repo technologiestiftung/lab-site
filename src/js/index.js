@@ -1,10 +1,12 @@
 import handleOnload from './modules/handleOnload.js';
+import languageSwitch from './modules/languageSwitch.js';
 import ImageSlider from './modules/ImageSlider.js';
 
 /**
- * Handle onload interactions
+ * Initialize functions
  */
 handleOnload();
+languageSwitch();
 
 /**
  * Initialize image sliders by classname

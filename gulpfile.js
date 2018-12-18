@@ -1,5 +1,4 @@
 const gulp = require('gulp');
-const fs = require('fs');
 const browserSync = require('browser-sync').create();
 const nunjucksRender = require('gulp-nunjucks-render');
 
@@ -23,6 +22,8 @@ const gulpData = require('gulp-data');
 const gulpRename = require('gulp-rename');
 const highlight = require('gulp-prism');
 const map = require('map-stream');
+const dateFilter = require('nunjucks-date-filter');
+
 const getProjectPrompts = require('./getProjectPrompts.js');
 
 /**
@@ -270,6 +271,21 @@ const nunjucksConfig = {
     }
 };
 
+// Manage nunjucks environment with hook
+const manageEnvironment = function(environment) {
+    // Slug filter
+    environment.addFilter('slug', function(str) {
+        return str && str.replace(/\s/g, '-', str).toLowerCase(); // TODO: Use slugs where it's hacky
+    });
+
+    // Date filter
+    environment.addFilter('date', dateFilter);
+    dateFilter.setDefaultFormat('DD MMM YYYY');
+
+    // Define global variables
+    environment.addGlobal('currentDate', new Date());
+};
+
 gulp.task('create-team', () => {
     const { templatesSrc, renderPath, envOptions } = nunjucksConfig;
 
@@ -298,7 +314,8 @@ gulp.task('create-team', () => {
                 .pipe(
                     nunjucksRender({
                         path: `${renderPath}`,
-                        envOptions
+                        envOptions,
+                        manageEnv: manageEnvironment
                     })
                 )
                 .pipe(gulp.dest(`${outputPath}/${language}/team/`));
@@ -324,7 +341,8 @@ gulp.task('nunjucks', ['create-team'], function() {
             .pipe(
                 nunjucksRender({
                     path: renderPath,
-                    envOptions
+                    envOptions,
+                    manageEnv: manageEnvironment
                 })
             )
             .pipe(highlight())
@@ -349,7 +367,8 @@ gulp.task('nunjucks', ['create-team'], function() {
             .pipe(
                 nunjucksRender({
                     path: renderPath,
-                    envOptions
+                    envOptions,
+                    manageEnv: manageEnvironment
                 })
             )
             .pipe(highlight())

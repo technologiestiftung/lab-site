@@ -13,7 +13,7 @@
         {% endfor %}
 
         <li class="navigation-list__item navigation-list__item--lang">
-            <a class="navigation-language" href="/{% if language === "en" %}de{% else %}en{% endif %}">
+            <a id="language-switch" class="navigation-language" href="/{% if language === "en" %}de{% else %}en{% endif %}">
                 {% if language === "en" %}
                     Deutsch
                 {% else %}
