@@ -22,6 +22,7 @@ const gulpData = require('gulp-data');
 const gulpRename = require('gulp-rename');
 const jsonCombine = require('gulp-jsoncombine');
 const highlight = require('gulp-prism');
+const getProjectPrompts = require('./getProjectPrompts.js');
 
 /**
  * Variables
@@ -47,6 +48,36 @@ function getLanguagesFromData(dataPath) {
 
 const absoluteDataPath = resolve(__dirname, './src/data/');
 const languages = getLanguagesFromData(absoluteDataPath);
+
+/**
+ * Create new Project
+ *
+ * Uses the project `test` as template for new projects and
+ * prompted infos from the console
+ */
+gulp.task('create-project', async function() {
+    // const projectInfo = await getProjectPrompts();
+    // console.log(projectInfo);
+
+    // const { name } = projectInfo;
+    const name = 'lol';
+    const formattedName = name
+        .toLowerCase()
+        .split(' ')
+        .join('-');
+
+    const fileContent = fs.readFileSync(
+        './projects/example-project/project.json',
+        'utf8'
+    );
+
+    return gulp
+        .src(['./projects/example-project/**/*'])
+        .pipe(() => {
+            console.log(fileContent);
+        })
+        .pipe(gulp.dest(`./projects/${formattedName}/`));
+});
 
 /**
  * BrowserSync
@@ -227,7 +258,6 @@ gulp.task('create-team', () => {
                 .toLowerCase()
                 .split(' ')
                 .join('-');
-            console.log(formattedName);
 
             return gulp
                 .src([templatesSrc, `${renderPath}/layout/team-detail.html`])
