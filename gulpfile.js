@@ -21,7 +21,6 @@ const sourcemaps = require('gulp-sourcemaps');
 const mergeStream = require('merge-stream');
 const gulpData = require('gulp-data');
 const gulpRename = require('gulp-rename');
-const jsonCombine = require('gulp-jsoncombine');
 const highlight = require('gulp-prism');
 const map = require('map-stream');
 const getProjectPrompts = require('./getProjectPrompts.js');
@@ -48,6 +47,17 @@ function getLanguagesFromData(dataPath) {
     return languages;
 }
 
+function getProjectsData() {
+    const projectDirPaths = getDirectories('./projects');
+    return projectDirPaths.map(projectDirPath => {
+        const projectDataJSON = readFileSync(
+            `${projectDirPath}/project.json`,
+            'utf8'
+        );
+        return JSON.parse(projectDataJSON);
+    });
+}
+
 const absoluteDataPath = resolve(__dirname, './src/data/');
 const languages = getLanguagesFromData(absoluteDataPath);
 
@@ -65,6 +75,7 @@ function isJSONString(string) {
     }
     return true;
 }
+// TODO: Create project data for de and en page
 gulp.task('create-project', async function() {
     const projectInfo = await getProjectPrompts();
     const { title, confirmation } = projectInfo;
@@ -227,27 +238,20 @@ gulp.task('watch', ['browser-sync'], function() {
 });
 
 /**
- * Merge JSONs
+ * Create website data JSON
  */
-gulp.task('combine-json', function() {
-    return gulp
-        .src('./projects/**/project.json')
-        .pipe(
-            jsonCombine('combined.json', data => {
-                const dataArray = Object.keys(data).map(key => data[key]);
-                return new Buffer(JSON.stringify(dataArray));
-            })
-        )
-        .pipe(gulp.dest(outputPath));
-});
+gulp.task('create-website-data', function() {});
 
 // Data will be available in templates
-function getDataForFile(file, language) {
+function getWebsiteDataForFile(file, language) {
     console.log(`→ Loaded JSON data for: ./${language}/${file.relative}`);
 
-    const dataPath = `./src/data/${language}/website.json`;
-    const dataJSON = readFileSync(dataPath, 'utf8');
-    return JSON.parse(dataJSON);
+    const websiteDataPath = `./src/data/${language}/website.json`;
+    const websiteDataJSON = readFileSync(websiteDataPath, 'utf8');
+    const parsedWebsiteDataJSON = JSON.parse(websiteDataJSON);
+    const projectsData = getProjectsData();
+
+    return { ...parsedWebsiteDataJSON, projects: projectsData };
 }
 
 /**
@@ -315,7 +319,7 @@ gulp.task('nunjucks', ['create-team'], function() {
     const websiteStreams = languages.map(language => {
         const templateStream = gulp
             .src(templatesSrc)
-            .pipe(gulpData(file => getDataForFile(file, language)))
+            .pipe(gulpData(file => getWebsiteDataForFile(file, language)))
             .pipe(
                 nunjucksRender({
                     path: renderPath,
@@ -327,7 +331,7 @@ gulp.task('nunjucks', ['create-team'], function() {
 
         const projectStream = gulp
             .src(projectsSrc)
-            .pipe(gulpData(file => getDataForFile(file, language)))
+            .pipe(gulpData(file => getWebsiteDataForFile(file, language)))
             .pipe(
                 nunjucksRender({
                     path: renderPath,
