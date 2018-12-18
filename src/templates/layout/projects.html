@@ -11,13 +11,11 @@
         {# Navigation #}
         {% include "partials/navigation.html" %}
 
-        {# Page specific content #}
         {% block header %} {% endblock %}
-        <main class="loading">
-        {% block main %} {% endblock %}
 
-        {# Project feed #}
-        {% include "partials/project/feed.html" %}
+        <main class="loading">
+        {# Page specific content #}
+        {% block main %} {% endblock %}
         </main>
 
         {# Footer #}

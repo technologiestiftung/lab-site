@@ -3,7 +3,7 @@
     <h2 class="feed-headline section-headline">From the lab</h2>
 
     <ul class="grid feed-list">
-        {% for project in projects %}
+        {% for project in projects | sort(true, true, 'date') %}
         {% set loopIndex = loop.index0 %}
         {% if loopIndex < 4 %}
 

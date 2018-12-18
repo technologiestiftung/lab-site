@@ -9,7 +9,7 @@
 <section class="feed">
     <h2 class="feed-headline section-headline">Team</h2>
     <ul class="grid feed-list">
-        {% for teamFriend in team %}
+        {% for teamFriend in team.current %}
         <li class="feed-list__project">
             <a href="/{{ language }}/team/{{ teamFriend.name | lower | replace(" ", "-") }}">
                 <img class="feed-list__project-image" src="{{ teamFriend.image }}" alt="{{ teamFriend.name }}">
@@ -28,7 +28,7 @@
 <section class="feed">
     <h2 class="feed-headline section-headline">Alumnis</h2>
     <ul class="grid feed-list">
-        {% for alumniFriend in alumnis %}
+        {% for alumniFriend in team.alumnis %}
         <li class="feed-list__project">
             <a href="#">
                 <div class="feed-list__project-title">

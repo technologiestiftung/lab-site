@@ -11,7 +11,7 @@
     &-list {
         border: 2px solid yellow;
         display: grid;
-        grid-gap: 0 $spacing-column;
+        grid-gap: 0 $spacing-column--double;
         grid-template-columns: max-content max-content;
         position: relative;
 

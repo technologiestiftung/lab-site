@@ -278,7 +278,7 @@ gulp.task('create-team', () => {
         const dataJSON = readFileSync(dataPath, 'utf8');
         const data = JSON.parse(dataJSON);
 
-        const team = data.team.map(d => {
+        const team = data.team.current.map(d => {
             const { name } = d;
             const formattedName = name
                 .toLowerCase()
