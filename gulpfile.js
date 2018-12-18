@@ -330,6 +330,8 @@ gulp.task('nunjucks', ['create-team'], function() {
             .pipe(highlight())
             .pipe(gulp.dest(`dist/${language}`));
 
+        // projectIndexHelper is used in `src/templates/layout/project` in order to
+        // get the correct project data for the template
         let projectIndexHelper = -1;
         const projectStream = gulp
             .src(projectsSrc)
@@ -341,7 +343,6 @@ gulp.task('nunjucks', ['create-team'], function() {
                         language,
                         true
                     );
-                    console.log(projectIndexHelper);
                     return { ...websiteData, projectIndexHelper };
                 })
             )
