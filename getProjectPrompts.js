@@ -4,7 +4,7 @@ async function getProjectPrompts() {
     const projectQuestions = [
         {
             type: 'text',
-            name: 'name',
+            name: 'title',
             message: 'What is the new projects name?',
             validate: value =>
                 value.length > 0 ? true : 'Please enter a project name'
@@ -14,7 +14,7 @@ async function getProjectPrompts() {
             name: 'authors',
             message: 'Who are the authors?',
             choices: [
-                { title: 'Author 1', value: 'author-one' },
+                { title: 'Author 1', value: 'author-one', selected: true },
                 { title: 'Author 2', value: 'author-two' },
                 { title: 'Author 3', value: 'author-three' }
             ]

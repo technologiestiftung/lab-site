@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const fs = require('fs');
 const browserSync = require('browser-sync').create();
 const nunjucksRender = require('gulp-nunjucks-render');
 
@@ -22,6 +23,7 @@ const gulpData = require('gulp-data');
 const gulpRename = require('gulp-rename');
 const jsonCombine = require('gulp-jsoncombine');
 const highlight = require('gulp-prism');
+const map = require('map-stream');
 const getProjectPrompts = require('./getProjectPrompts.js');
 
 /**
@@ -55,28 +57,47 @@ const languages = getLanguagesFromData(absoluteDataPath);
  * Uses the project `test` as template for new projects and
  * prompted infos from the console
  */
+function isJSONString(string) {
+    try {
+        JSON.parse(string);
+    } catch (e) {
+        return false;
+    }
+    return true;
+}
 gulp.task('create-project', async function() {
-    // const projectInfo = await getProjectPrompts();
-    // console.log(projectInfo);
+    const projectInfo = await getProjectPrompts();
+    const { title, confirmation } = projectInfo;
 
-    // const { name } = projectInfo;
-    const name = 'lol';
-    const formattedName = name
+    if (!title || !confirmation) {
+        console.log('Project creation was aborted!');
+        process.exit(0);
+    }
+
+    const formattedTitle = title
         .toLowerCase()
         .split(' ')
         .join('-');
 
-    const fileContent = fs.readFileSync(
-        './projects/example-project/project.json',
-        'utf8'
-    );
-
     return gulp
         .src(['./projects/example-project/**/*'])
-        .pipe(() => {
-            console.log(fileContent);
-        })
-        .pipe(gulp.dest(`./projects/${formattedName}/`));
+        .pipe(
+            map(function(file, done) {
+                const fileContent = file.contents || '';
+                const fileString = fileContent.toString();
+                const isJSON = isJSONString(fileString);
+
+                if (isJSON) {
+                    const parsedJSON = JSON.parse(fileString);
+                    const modifiedJSON = { ...parsedJSON, ...projectInfo };
+
+                    file.contents = new Buffer(JSON.stringify(modifiedJSON));
+                }
+
+                done(null, file);
+            })
+        )
+        .pipe(gulp.dest(`./projects/${formattedTitle}/`));
 });
 
 /**
