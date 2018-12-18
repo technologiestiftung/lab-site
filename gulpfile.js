@@ -47,7 +47,8 @@ function getLanguagesFromData(dataPath) {
     return languages;
 }
 
-function getProjectsData() {
+// TODO: Get data for languages
+function getProjectsData(language) {
     const projectDirPaths = getDirectories('./projects');
     return projectDirPaths.map(projectDirPath => {
         const projectDataJSON = readFileSync(
@@ -249,7 +250,7 @@ function getWebsiteDataForFile(file, language) {
     const websiteDataPath = `./src/data/${language}/website.json`;
     const websiteDataJSON = readFileSync(websiteDataPath, 'utf8');
     const parsedWebsiteDataJSON = JSON.parse(websiteDataJSON);
-    const projectsData = getProjectsData();
+    const projectsData = getProjectsData(language);
 
     return { ...parsedWebsiteDataJSON, projects: projectsData };
 }
@@ -329,9 +330,21 @@ gulp.task('nunjucks', ['create-team'], function() {
             .pipe(highlight())
             .pipe(gulp.dest(`dist/${language}`));
 
+        let projectIndexHelper = -1;
         const projectStream = gulp
             .src(projectsSrc)
-            .pipe(gulpData(file => getWebsiteDataForFile(file, language)))
+            .pipe(
+                gulpData(file => {
+                    projectIndexHelper += 1;
+                    const websiteData = getWebsiteDataForFile(
+                        file,
+                        language,
+                        true
+                    );
+                    console.log(projectIndexHelper);
+                    return { ...websiteData, projectIndexHelper };
+                })
+            )
             .pipe(
                 nunjucksRender({
                     path: renderPath,

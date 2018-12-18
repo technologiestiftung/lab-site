@@ -2,12 +2,14 @@
 {% from "macros/utils.html" import link, image, codeSnippet %}
 {% from "macros/projectMacros.html" import text, textColumn, imageColumn, blockquote %}
 
+{% set pagename = projects[projectIndexHelper].title %}
+
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>{{ pagename | capitalize }}</title>
+        <title>{{ pagename | title }}</title>
         {# Global styles #}
         <link rel="stylesheet" type="text/css" type="text/css" href="../../../styles/index.css" />
         {# Project specific styles #}
