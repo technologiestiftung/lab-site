@@ -1,8 +1,14 @@
 .navigation {
+    background: linear-gradient($white, rgba($white, 0.85));
     border: 2px solid blue;
     display: flex;
     justify-content: space-between;
     padding: 0 $spacing-page-m;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 999;
 
     &-logo {
         background-image: url('../../assets/icons/lab-logo.svg');

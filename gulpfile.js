@@ -119,8 +119,9 @@ gulp.task('create-project', async function () {
                         }
                     };
 
-                    console.log('Created project data:');
-                    console.log(modifiedJSON);
+                    // TODO: Remove debug log
+                    // console.log('Created project data:');
+                    // console.log(modifiedJSON);
 
                     file.contents = new Buffer(JSON.stringify(modifiedJSON));
                 }
@@ -371,6 +372,7 @@ gulp.task('nunjucks', ['create-team'], function () {
         // projectIndexHelper is used in `src/templates/layout/project` in order to
         // get the correct project data for the template
         let projectIndexHelper = -1;
+        // TODO: Remove deleted projects from dist/build (+ watch-task)
         const projectStream = gulp
             .src(projectsSrc)
             .pipe(
