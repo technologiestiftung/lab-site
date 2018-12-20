@@ -1,5 +1,4 @@
 const languageSwitch = () => {
-    console.log('language switch');
     const languageSwitchElement = document.getElementById('language-switch');
     languageSwitchElement.addEventListener('click', event => {
         event.preventDefault();

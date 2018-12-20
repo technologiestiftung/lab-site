@@ -40,6 +40,8 @@
         &__item {
             border: 2px solid yellow;
             display: flex;
+            user-select: none;
+            white-space: nowrap;
 
             &:last-of-type {
                 margin-right: 0;

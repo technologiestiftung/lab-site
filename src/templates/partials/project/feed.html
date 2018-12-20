@@ -8,7 +8,7 @@
         {% if loopIndex < 4 %}
 
         <li class="feed-list__project">
-            <a href="./projects/{{ project.title | lower | replace(" ", "-") }}">
+            <a href="./projects/{{ project.title | slug }}">
                 <img class="feed-list__project-image" src="https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png" alt="{{ project.title }}">
                 <div class="feed-list__project-date">
                     {{ project.date | date }}
