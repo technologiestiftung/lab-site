@@ -2,7 +2,7 @@
 {% from "macros/utils.html" import link, image, codeSnippet %}
 {% from "macros/projectMacros.html" import text, textColumn, imageColumn, blockquote %}
 
-{% set pagename = projects[projectIndexHelper].title %}
+{% set pagename = projects[projectIndexHelper][language].title %}
 
 <html lang="{{ language }}">
     <head>
@@ -23,9 +23,9 @@
         {% include "partials/navigation.html" %}
 
         {% for project in projects %}
-        {% if pagename | lower === project.title | lower %}
+        {% if pagename | lower === project[language].title | lower %}
 
-        <main class="project project--{{ project.type }} loading">
+        <main class="project project--{{ project[language].type }} loading">
 
         {# Project header #}
         {% include "partials/project/header.html" %}

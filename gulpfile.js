@@ -77,7 +77,7 @@ function isJSONString(string) {
     }
     return true;
 }
-// TODO: Create project data for de and en page
+
 gulp.task('create-project', async function () {
     const projectInfo = await getProjectPrompts();
     const { title, confirmation } = projectInfo;
@@ -102,7 +102,25 @@ gulp.task('create-project', async function () {
 
                 if (isJSON) {
                     const parsedJSON = JSON.parse(fileString);
-                    const modifiedJSON = { ...parsedJSON, ...projectInfo };
+                    const modifiedJSON = {
+                        'en': {
+                            ...parsedJSON.en,
+                            ...projectInfo,
+                            'date': new Date()
+                        },
+                        'de': {
+                            ...parsedJSON.de,
+                            'title': projectInfo.title,
+                            'authors': projectInfo.authors,
+                            'type': projectInfo.type,
+                            'currentStatus': projectInfo.currentStatus,
+                            'isFeatured': projectInfo.isFeatured,
+                            'date': new Date()
+                        }
+                    };
+
+                    console.log('Created project data:');
+                    console.log(modifiedJSON);
 
                     file.contents = new Buffer(JSON.stringify(modifiedJSON));
                 }
@@ -252,8 +270,9 @@ function getWebsiteDataForFile(file, language) {
     const websiteDataJSON = readFileSync(websiteDataPath, 'utf8');
     const parsedWebsiteDataJSON = JSON.parse(websiteDataJSON);
     const projectsData = getProjectsData(language);
+    const sortedProjectsDataByDate = projectsData.sort((a, b) => (a.en.date < b.en.date));
 
-    return { ...parsedWebsiteDataJSON, projects: projectsData };
+    return { ...parsedWebsiteDataJSON, projects: sortedProjectsDataByDate };
 }
 
 /**

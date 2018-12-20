@@ -1,17 +1,15 @@
 {
     "en": {
-        "title": "Test project",
-        "subtitle": "test subtitle",
-        "date": "2012-04-23T18:25:43.511Z",
-        "description": "Description 2",
+        "title": "Second project",
+        "subtitle": "Subtitle of the project",
+        "date": "2018-12-20T15:44:09.519Z",
+        "description": "This is the best project ever and here is why …",
         "heroImage": "../../assets/images/kita-explorer.jpg",
         "thumbnail": "../../assets/images/kita-explorer.jpg",
         "authors": [
-            "Victoria Dykes",
-            "Benjamin Seibel",
-            "Sebastian Meier"
+            "author-two"
         ],
-        "type": "workshop",
+        "type": "publication",
         "currentStatus": "ongoing",
         "materialsIncluded": [
             "images",
@@ -20,29 +18,26 @@
             "Source Code"
         ],
         "featuredImage": "../../assets/images/kita-explorer.jpg",
-        "isFeatured": true
+        "isFeatured": true,
+        "confirmation": true
     },
     "de": {
-        "title": "Test project",
-        "subtitle": "test subtitle",
-        "date": "2012-04-23T18:25:43.511Z",
-        "description": "Description 2",
+        "title": "Second project",
+        "subtitle": "Projekt wurde noch nicht übersetzt",
+        "date": "2018-12-20T15:44:09.519Z",
+        "description": "Dies ist das beste Projekt jemals, denn …",
         "heroImage": "../../assets/images/kita-explorer.jpg",
         "thumbnail": "../../assets/images/kita-explorer.jpg",
         "authors": [
-            "Victoria Dykes",
-            "Benjamin Seibel",
-            "Sebastian Meier"
+            "author-two"
         ],
-        "type": "workshop",
-        "currentStatus": "ongoing",
+        "type": "publication",
         "materialsIncluded": [
             "images",
             "video",
             "press text",
             "Source Code"
         ],
-        "featuredImage": "../../assets/images/kita-explorer.jpg",
-        "isFeatured": true
+        "featuredImage": "../../assets/images/kita-explorer.jpg"
     }
 }

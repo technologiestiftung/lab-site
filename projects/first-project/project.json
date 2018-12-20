@@ -1,17 +1,16 @@
 {
     "en": {
-        "title": "lol",
+        "title": "First project",
         "subtitle": "Subtitle of the project",
-        "date": "2012-04-20T18:25:43.511Z",
+        "date": "2018-12-20T15:36:11.902Z",
         "description": "This is the best project ever and here is why …",
         "heroImage": "../../assets/images/kita-explorer.jpg",
         "thumbnail": "../../assets/images/kita-explorer.jpg",
         "authors": [
             "author-one",
-            "author-two",
             "author-three"
         ],
-        "type": "dataset",
+        "type": "workshop",
         "currentStatus": "ongoing",
         "materialsIncluded": [
             "images",
@@ -24,27 +23,23 @@
         "confirmation": true
     },
     "de": {
-        "title": "lol",
-        "subtitle": "Untertitle",
-        "date": "2012-04-20T18:25:43.511Z",
-        "description": "This is the best project ever and here is why …",
+        "title": "First project",
+        "subtitle": "Projekt wurde noch nicht übersetzt",
+        "date": "2018-12-20T15:36:11.902Z",
+        "description": "Dies ist das beste Projekt jemals, denn …",
         "heroImage": "../../assets/images/kita-explorer.jpg",
         "thumbnail": "../../assets/images/kita-explorer.jpg",
         "authors": [
             "author-one",
-            "author-two",
             "author-three"
         ],
-        "type": "dataset",
-        "currentStatus": "ongoing",
+        "type": "workshop",
         "materialsIncluded": [
             "images",
             "video",
             "press text",
             "Source Code"
         ],
-        "featuredImage": "../../assets/images/kita-explorer.jpg",
-        "isFeatured": true,
-        "confirmation": true
+        "featuredImage": "../../assets/images/kita-explorer.jpg"
     }
 }

@@ -19,24 +19,24 @@ async function getProjectPrompts() {
                 { title: 'Author 3', value: 'author-three' }
             ]
         },
-        // {
-        //     type: 'select',
-        //     name: 'type',
-        //     message: 'Is this a featured project?',
-        //     choices: [
-        //         { title: 'Non-featured project', value: 'non-featured' },
-        //         { title: 'Featured project', value: 'featured' },
-        //     ]
-        // },
-        // {
-        //     type: 'select',
-        //     name: 'type',
-        //     message: 'What is the status of the project?',
-        //     choices: [
-        //         { title: 'Project is ongoing', value: 'ongoing' },
-        //         { title: 'Already finished', value: 'finished' },
-        //     ]
-        // },
+        {
+            type: 'select',
+            name: 'type',
+            message: 'Is this a featured project?',
+            choices: [
+                { title: 'Non-featured project', value: 'non-featured' },
+                { title: 'Featured project', value: 'featured' },
+            ]
+        },
+        {
+            type: 'select',
+            name: 'type',
+            message: 'What is the status of the project?',
+            choices: [
+                { title: 'Project is ongoing', value: 'ongoing' },
+                { title: 'Already finished', value: 'finished' },
+            ]
+        },
         {
             type: 'select',
             name: 'type',
@@ -51,7 +51,7 @@ async function getProjectPrompts() {
         {
             type: 'confirm',
             name: 'confirmation',
-            message: (prev, values) => `Create new project: ${values.name}?`
+            message: (prev, values) => `Create new project: ${values.titleEn}?`
         }
     ];
 

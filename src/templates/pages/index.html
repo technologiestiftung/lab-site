@@ -21,18 +21,18 @@
 
     <ul class="featured-list">
         {% for project in projects %}
-            {% if project.isFeatured %}
+            {% if project[language].isFeatured %}
             <li class="featured-list__project">
-                <h3 class="featured-list__project-title {{ project.type }}">
-                    <a href="./projects/{{ project.title | slug }}">{{ project.title }}</a>
+                <h3 class="featured-list__project-title {{ project[language].type }}">
+                    <a href="./projects/{{ project[language].title | slug }}">{{ project[language].title }}</a>
                 </h3>
                 <span class="featured-list__project-subtext">
-                    {{ project.subtitle }}
+                    {{ project[language].subtitle }}
                 </span>
                 <img
                     class="featured-list__project-image"
-                    src="{{ project.featuredImage }}"
-                    alt="{{ project.title }}"
+                    src="{{ project[language].featuredImage }}"
+                    alt="{{ project[language].title }}"
                 />
             </li>
             {% endif %}
