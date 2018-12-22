@@ -25,7 +25,7 @@ async function getProjectPrompts() {
             message: 'Is this a featured project?',
             choices: [
                 { title: 'Non-featured project', value: 'non-featured' },
-                { title: 'Featured project', value: 'featured' },
+                { title: 'Featured project', value: 'featured' }
             ]
         },
         {
@@ -34,7 +34,7 @@ async function getProjectPrompts() {
             message: 'What is the status of the project?',
             choices: [
                 { title: 'Project is ongoing', value: 'ongoing' },
-                { title: 'Already finished', value: 'finished' },
+                { title: 'Already finished', value: 'finished' }
             ]
         },
         {
@@ -51,7 +51,7 @@ async function getProjectPrompts() {
         {
             type: 'confirm',
             name: 'confirmation',
-            message: (prev, values) => `Create new project: ${values.titleEn}?`
+            message: (prev, values) => `Create new project: ${values.title}?`
         }
     ];
 

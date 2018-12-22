@@ -20,7 +20,7 @@
     <h2 class="featured-headline section-headline">Featured Projects</h2>
 
     <ul class="featured-list">
-        {% for project in projects %}
+        {% for project in projects | sortProjectsByDate %}
             {% if project[language].isFeatured %}
             <li class="featured-list__project">
                 <h3 class="featured-list__project-title {{ project[language].type }}">

@@ -147,7 +147,7 @@ gulp.task('browser-sync', ['sass'], function() {
         },
         injectChanges: true,
         notify: false,
-        open: true,
+        open: false,
         port: process.env.PORT || 3000,
         ui: {
             port: 3001
@@ -299,11 +299,8 @@ function getWebsiteDataForFile(file, language) {
     const websiteDataJSON = readFileSync(websiteDataPath, 'utf8');
     const parsedWebsiteDataJSON = JSON.parse(websiteDataJSON);
     const projectsData = getProjectsData(language);
-    const sortedProjectsDataByDate = projectsData.sort(
-        (a, b) => a.en.date < b.en.date
-    );
 
-    return { ...parsedWebsiteDataJSON, projects: sortedProjectsDataByDate };
+    return { ...parsedWebsiteDataJSON, projects: projectsData };
 }
 
 /**
@@ -331,6 +328,16 @@ const manageEnvironment = function(environment) {
     // Date filter
     environment.addFilter('date', dateFilter);
     dateFilter.setDefaultFormat('DD MMM YYYY');
+
+    // Sort projects by date
+    environment.addFilter('sortProjectsByDate', function(data) {
+        if (data) {
+            const sortedProjectDataByDate = data.sort(
+                (a, b) => a.en.date < b.en.date
+            );
+            return sortedProjectDataByDate;
+        }
+    });
 
     // Define global variables
     environment.addGlobal('currentDate', new Date());
@@ -408,11 +415,7 @@ gulp.task('nunjucks', ['create-team'], function() {
             .pipe(
                 gulpData(file => {
                     projectIndexHelper += 1;
-                    const websiteData = getWebsiteDataForFile(
-                        file,
-                        language,
-                        true
-                    );
+                    const websiteData = getWebsiteDataForFile(file, language);
                     return { ...websiteData, projectIndexHelper };
                 })
             )

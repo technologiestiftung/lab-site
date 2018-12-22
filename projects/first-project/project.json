@@ -1,0 +1,29 @@
+{
+    "en": {
+        "title": "First project",
+        "subtitle": "Subtitle of the project",
+        "date": "2018-12-22T19:08:29.067Z",
+        "description": "This is the best project ever and here is why …",
+        "heroImage": "../../assets/images/kita-explorer.jpg",
+        "thumbnail": "../../assets/images/kita-explorer.jpg",
+        "authors": ["author-one", "author-two"],
+        "type": "publication",
+        "currentStatus": "ongoing",
+        "materialsIncluded": ["images", "video", "press text", "Source Code"],
+        "featuredImage": "../../assets/images/kita-explorer.jpg",
+        "isFeatured": true,
+        "confirmation": true
+    },
+    "de": {
+        "title": "First project",
+        "subtitle": "Projekt wurde noch nicht übersetzt",
+        "date": "2018-12-22T19:08:29.067Z",
+        "description": "Dies ist das beste Projekt jemals, denn …",
+        "heroImage": "../../assets/images/kita-explorer.jpg",
+        "thumbnail": "../../assets/images/kita-explorer.jpg",
+        "authors": ["author-one", "author-two"],
+        "type": "publication",
+        "materialsIncluded": ["images", "video", "press text", "Source Code"],
+        "featuredImage": "../../assets/images/kita-explorer.jpg"
+    }
+}
