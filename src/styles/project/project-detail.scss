@@ -1,4 +1,6 @@
 .project {
+    margin-top: 0;
+
     &-header {
         border: 2px solid palevioletred;
 
@@ -131,6 +133,10 @@
                     border: none;
                     font-size: $font-size-ll;
                     transition: color $time-s;
+                }
+
+                &-counter {
+                    border: 2px solid blue;
                 }
             }
         }

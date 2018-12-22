@@ -1,4 +1,5 @@
 import handleOnload from './modules/handleOnload.js';
+import navigationHandler from './modules/navigationHandler.js';
 import languageSwitch from './modules/languageSwitch.js';
 import ImageSlider from './modules/ImageSlider.js';
 
@@ -6,6 +7,7 @@ import ImageSlider from './modules/ImageSlider.js';
  * Initialize functions
  */
 handleOnload();
+navigationHandler();
 languageSwitch();
 
 /**

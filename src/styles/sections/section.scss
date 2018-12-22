@@ -12,6 +12,7 @@ section {
 
     &--code {
         background-color: $light-gray--lighter;
+        border-radius: 3px;
 
         pre {
             font-size: $font-size-s;
