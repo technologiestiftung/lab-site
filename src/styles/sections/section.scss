@@ -1,7 +1,10 @@
 section {
     border: 4px solid aquamarine;
 
-    margin: 0 $spacing-page-m;
+    margin: 0 $spacing-page-m $spacing-xl $spacing-page-m;
+    &:last-of-type {
+        margin: 0 $spacing-page-m 0 $spacing-page-m;
+    }
 }
 
 .section {
