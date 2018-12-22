@@ -55,7 +55,7 @@ body {
     }
 
     main {
-        margin-bottom: $spacing-xxl;
+        margin: $spacing-xxl 0;
         opacity: 1;
         overflow: visible;
         transition: opacity $time-l;

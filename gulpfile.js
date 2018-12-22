@@ -78,7 +78,7 @@ function isJSONString(string) {
     return true;
 }
 
-gulp.task('create-project', async function () {
+gulp.task('create-project', async function() {
     const projectInfo = await getProjectPrompts();
     const { title, confirmation } = projectInfo;
 
@@ -95,7 +95,7 @@ gulp.task('create-project', async function () {
     return gulp
         .src(['./projects/example-project/**/*'])
         .pipe(
-            map(function (file, done) {
+            map(function(file, done) {
                 const fileContent = file.contents || '';
                 const fileString = fileContent.toString();
                 const isJSON = isJSONString(fileString);
@@ -103,19 +103,19 @@ gulp.task('create-project', async function () {
                 if (isJSON) {
                     const parsedJSON = JSON.parse(fileString);
                     const modifiedJSON = {
-                        'en': {
+                        en: {
                             ...parsedJSON.en,
                             ...projectInfo,
-                            'date': new Date()
+                            date: new Date()
                         },
-                        'de': {
+                        de: {
                             ...parsedJSON.de,
-                            'title': projectInfo.title,
-                            'authors': projectInfo.authors,
-                            'type': projectInfo.type,
-                            'currentStatus': projectInfo.currentStatus,
-                            'isFeatured': projectInfo.isFeatured,
-                            'date': new Date()
+                            title: projectInfo.title,
+                            authors: projectInfo.authors,
+                            type: projectInfo.type,
+                            currentStatus: projectInfo.currentStatus,
+                            isFeatured: projectInfo.isFeatured,
+                            date: new Date()
                         }
                     };
 
@@ -135,7 +135,7 @@ gulp.task('create-project', async function () {
 /**
  * BrowserSync
  */
-gulp.task('browser-sync', ['sass'], function () {
+gulp.task('browser-sync', ['sass'], function() {
     browserSync.init({
         server: {
             baseDir: outputPath,
@@ -145,7 +145,7 @@ gulp.task('browser-sync', ['sass'], function () {
         },
         injectChanges: true,
         notify: false,
-        open: false,
+        open: true,
         port: process.env.PORT || 3000,
         ui: {
             port: 3001
@@ -166,13 +166,13 @@ const sassConfig = {
     projectEntries: `./projects/**/styles/index.scss`,
     output: `${outputPath}/styles`
 };
-gulp.task('sass', function () {
+gulp.task('sass', function() {
     const { options, entry, projectEntries, output } = sassConfig;
     const styleDirs = [
         { src: entry, dest: output },
         { src: projectEntries, dest: output }
     ];
-    const sassTasks = styleDirs.map(function (styleDir) {
+    const sassTasks = styleDirs.map(function(styleDir) {
         const { src, dest } = styleDir;
         return gulp
             .src(src)
@@ -196,9 +196,9 @@ const jsConfig = {
     jsEntryPath: `${entryPath}/js/`,
     jsOutputPath: `${outputPath}/js/`
 };
-gulp.task('js', function () {
+gulp.task('js', function() {
     const { jsFiles, jsEntryPath, jsOutputPath } = jsConfig;
-    jsFiles.map(function (entry) {
+    jsFiles.map(function(entry) {
         return browserify({
             entries: [jsEntryPath]
         })
@@ -217,7 +217,7 @@ gulp.task('js', function () {
 /**
  * Copy website assets directory
  */
-gulp.task('copy-website-assets', function () {
+gulp.task('copy-website-assets', function() {
     return gulp.src(['./src/assets/**/*']).pipe(gulp.dest('./dist/assets'));
 });
 
@@ -233,7 +233,7 @@ const watchConfig = {
     assetsPath: `${entryPath}/assets/**/*`,
     dataPath: `${entryPath}/data/**/*.json`
 };
-gulp.task('watch', ['browser-sync'], function () {
+gulp.task('watch', ['browser-sync'], function() {
     const {
         sassPath,
         sassProjectsPath,
@@ -261,7 +261,7 @@ gulp.task('watch', ['browser-sync'], function () {
 /**
  * Create website data JSON
  */
-gulp.task('create-website-data', function () { });
+gulp.task('create-website-data', function() {});
 
 // Data will be available in templates
 function getWebsiteDataForFile(file, language) {
@@ -271,7 +271,9 @@ function getWebsiteDataForFile(file, language) {
     const websiteDataJSON = readFileSync(websiteDataPath, 'utf8');
     const parsedWebsiteDataJSON = JSON.parse(websiteDataJSON);
     const projectsData = getProjectsData(language);
-    const sortedProjectsDataByDate = projectsData.sort((a, b) => (a.en.date < b.en.date));
+    const sortedProjectsDataByDate = projectsData.sort(
+        (a, b) => a.en.date < b.en.date
+    );
 
     return { ...parsedWebsiteDataJSON, projects: sortedProjectsDataByDate };
 }
@@ -292,9 +294,9 @@ const nunjucksConfig = {
 };
 
 // Manage nunjucks environment with hook
-const manageEnvironment = function (environment) {
+const manageEnvironment = function(environment) {
     // Slug filter
-    environment.addFilter('slug', function (str) {
+    environment.addFilter('slug', function(str) {
         return str && str.replace(/\s/g, '-', str).toLowerCase(); // TODO: Use slugs where it's hacky
     });
 
@@ -348,7 +350,7 @@ gulp.task('create-team', () => {
     return mergeStream(teamFriends);
 });
 
-gulp.task('nunjucks', ['create-team'], function () {
+gulp.task('nunjucks', ['create-team'], function() {
     const {
         templatesSrc,
         projectsSrc,
