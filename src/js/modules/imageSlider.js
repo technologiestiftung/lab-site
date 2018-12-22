@@ -7,7 +7,7 @@ class ImageSlider {
             mouseDrag: true,
             nav: false,
             onInit: function() {
-                console.log('init slider');
+                // console.log('init slider');
             },
             controlsPosition: 'bottom',
             controlsText: ['←', '→'],

@@ -1,1 +1,1 @@
-console.log('henlo from project');
+console.log('Hello from the custom project script!');

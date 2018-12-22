@@ -41,6 +41,8 @@ const getDirectories = source =>
         .map(name => join(source, name))
         .filter(isDirectory);
 
+const getDirectoryNames = source => readdirSync(source).map(name => name);
+
 function getLanguagesFromData(dataPath) {
     const languagePaths = getDirectories(dataPath);
     const languages = languagePaths.map(languagePath => basename(languagePath));
@@ -150,7 +152,7 @@ gulp.task('browser-sync', ['sass'], function() {
         ui: {
             port: 3001
         },
-        startPath: '/de'
+        startPath: '/en'
     });
 });
 
@@ -196,7 +198,7 @@ const jsConfig = {
     jsEntryPath: `${entryPath}/js/`,
     jsOutputPath: `${outputPath}/js/`
 };
-gulp.task('js', function() {
+gulp.task('js', ['js-projects'], function() {
     const { jsFiles, jsEntryPath, jsOutputPath } = jsConfig;
     jsFiles.map(function(entry) {
         return browserify({
@@ -210,6 +212,29 @@ gulp.task('js', function() {
             .pipe(uglify())
             .pipe(sourcemaps.write('.'))
             .pipe(gulp.dest(jsOutputPath))
+            .pipe(browserSync.reload({ stream: true }));
+    });
+});
+
+/**
+ * JS Projects Tasks
+ */
+
+gulp.task('js-projects', function() {
+    const projectDirNames = getDirectoryNames('./projects');
+
+    projectDirNames.map(projectDirName => {
+        return browserify({
+            entries: [`./projects/${projectDirName}/js`]
+        })
+            .transform(babelify, { presets: ['@babel/env'] })
+            .bundle()
+            .pipe(source('index.js'))
+            .pipe(buffer())
+            .pipe(sourcemaps.init({ loadMaps: true }))
+            .pipe(uglify())
+            .pipe(sourcemaps.write('.'))
+            .pipe(gulp.dest(`dist/js/${projectDirName}/`))
             .pipe(browserSync.reload({ stream: true }));
     });
 });
@@ -230,6 +255,7 @@ const watchConfig = {
     scriptsPath: `${entryPath}/js/**/*`,
     nunjucksPath: `${entryPath}/templates/**/*.html`,
     projectsPath: `./projects/**/*.html`,
+    projectsScriptPaths: `./projects/**/js/*.js`,
     assetsPath: `${entryPath}/assets/**/*`,
     dataPath: `${entryPath}/data/**/*.json`
 };
@@ -240,6 +266,7 @@ gulp.task('watch', ['browser-sync'], function() {
         scriptsPath,
         nunjucksPath,
         projectsPath,
+        projectsScriptPaths,
         dataPath,
         assetsPath
     } = watchConfig;
@@ -247,6 +274,7 @@ gulp.task('watch', ['browser-sync'], function() {
     gulp.watch(sassPath, ['sass']);
     gulp.watch(sassProjectsPath, ['sass']);
     gulp.watch(scriptsPath, ['js']);
+    gulp.watch(projectsScriptPaths, ['js-projects']);
     gulp.watch(assetsPath, [
         'copy-website-assets',
         'nunjucks',

@@ -13,7 +13,7 @@
         {# Global styles #}
         <link rel="stylesheet" type="text/css" type="text/css" href="../../../styles/index.css" />
         {# Project specific styles #}
-        <link rel="stylesheet" type="text/css" type="text/css" href="../../../styles/{{ pagename }}/styles/index.css" />
+        <link rel="stylesheet" type="text/css" type="text/css" href="../../../styles/{{ pagename | slug }}/styles/index.css" />
 
         <link rel="stylesheet" type="text/css" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.8/tiny-slider.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.8/min/tiny-slider.js"></script>
@@ -45,6 +45,6 @@
         {# Main script #}
         <script src="../../../js/index.js"></script>
         {# Project specific script #}
-        {# <script src="../../js/{{ pagename }}/index.js"></script> #}
+        <script src="../../../js/{{ pagename | slug }}/index.js"></script>
     </body>
 </html>
