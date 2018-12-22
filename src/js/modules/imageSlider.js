@@ -40,13 +40,13 @@ class ImageSlider {
         controlsContainer.appendChild(this.divCounter);
     }
     updateIndexCounter() {
-        setTimeout(() => {
-            const { displayIndex, slideCount } = this.slider.getInfo();
+        const { displayIndex, slideCount } = this.slider.getInfo();
 
-            const currentCounter = `${displayIndex}/${slideCount}`;
-            console.log(currentCounter);
-            this.divCounter.innerHTML = currentCounter;
-        }, 500);
+        const nextCounterIndex =
+            displayIndex < slideCount ? displayIndex + 1 : 1;
+        const currentCounter = `${nextCounterIndex}/${slideCount}`;
+        console.log(currentCounter);
+        this.divCounter.innerHTML = currentCounter;
     }
 }
 

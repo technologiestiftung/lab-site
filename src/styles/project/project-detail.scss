@@ -137,6 +137,13 @@
 
                 &-counter {
                     border: 2px solid blue;
+                    height: 100%;
+                    letter-spacing: 0.1em;
+                    line-height: 1.5em;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    transform: translateX(150%);
                 }
             }
         }
