@@ -4,6 +4,7 @@
         border: 1px solid $black;
         border-radius: 6px;
         display: inline-block;
+        margin-top: $spacing-m;
         padding: 10px 12px 9px 12px;
         transition: background $time-s, color $time-s;
         user-select: none;
@@ -15,7 +16,7 @@
     }
 
     &--normal {
-        // border: 2px solid yellow;
+        border: 2px solid yellow;
         display: inline-block;
         line-height: 1.8em;
         position: relative;

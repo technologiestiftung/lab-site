@@ -121,12 +121,12 @@
             "keywords": "keyword, another keyword",
             "formats": [
                 {
-                    "name": "jpg",
+                    "name": "Geo JSON",
                     "size": "1.54 Mb"
                 },
                 {
-                    "name": "png",
-                    "size": "0.97 Mb"
+                    "name": "XML",
+                    "size": "1.48 Mb"
                 }
             ],
             "metadata": [

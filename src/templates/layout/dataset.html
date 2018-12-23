@@ -12,8 +12,10 @@
         {# Navigation #}
         {% include "partials/navigation.html" %}
 
-        <main class="loading">
-            <img src="../../../assets/icons/twitter-icon.svg" alt="Twitter" />
+        <main class="dataset loading">
+            <section class="dataset-header">
+                <img src="{{ thumbnail }}" alt="{{ name }}" />
+            </section>
 
             <section class="project-text">
                 <h3>{{ name }}</h3>
@@ -22,24 +24,27 @@
 
             <section class="project-text">
                 <h3>Downloads</h3>
+                <div class="dataset-downloads">
                 {% for format in formats %}
-                <div>
-                    <img src="../../../assets/icons/twitter-icon.svg" alt="Twitter" />
-                    <div>
-                        <span>{{ format.name }}</span>
-                        <span>{{ format.size }}</span>
+                    <div class="dataset-downloads__item">
+                        <img class="dataset-downloads__item--image" src="../../../assets/icons/download-icon.svg" alt="Download" />
+                        <span class="dataset-downloads__item--name">{{ format.name }}</span>
+                        <span class="dataset-downloads__item--size">{{ format.size }}</span>
                     </div>
-                </div>
                 {% endfor %}
+                </div>
             </section>
 
-            <section class="data-table section--data">
-                {% for metadatum in metadata %}
-                <div class="data-table__row">
-                    <span class="data-table__row-cell">{{ metadatum.name }}</span>
-                    <span class="data-table__row-cell">{{ metadatum.value }}</span> 
+            <section class="section--data">
+                <h3>Metadata</h3>
+                <div class="data-table">
+                    {% for metadatum in metadata %}
+                    <div class="data-table__row">
+                        <span class="data-table__row-cell">{{ metadatum.name }}</span>
+                        <span class="data-table__row-cell">{{ metadatum.value }}</span> 
+                    </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
             </section>
         </main>
 
