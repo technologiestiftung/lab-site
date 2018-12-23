@@ -13,12 +13,40 @@
         {% include "partials/navigation.html" %}
 
         <main class="loading">
-            <section class="">
-               dataset page
+            <img src="../../../assets/icons/twitter-icon.svg" alt="Twitter" />
+
+            <section class="project-text">
+                <h3>{{ name }}</h3>
+                <p>This week we launched our new app Badestellen Berlin. This was a joint effort of Kompetenzzentrum Wasser, Berliner Wasserbetriebe and the LaGeSo. The new application allows citizens to get up to date information on bathing water quality. Besides water quality information the site provides additional info on each site, for example, accessibility features or availability of toilets and parking lots. A link to a routing service and the local public transport service allow you to conveniently plan your next trip.</p>
+            </section>
+
+            <section class="project-text">
+                <h3>Downloads</h3>
+                {% for format in formats %}
+                <div>
+                    <img src="../../../assets/icons/twitter-icon.svg" alt="Twitter" />
+                    <div>
+                        <span>{{ format.name }}</span>
+                        <span>{{ format.size }}</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </section>
+
+            <section class="data-table section--data">
+                {% for metadatum in metadata %}
+                <div class="data-table__row">
+                    <span class="data-table__row-cell">{{ metadatum.name }}</span>
+                    <span class="data-table__row-cell">{{ metadatum.value }}</span> 
+                </div>
+                {% endfor %}
             </section>
         </main>
 
-        {# Footer #} {% include "partials/footer.html" %} {# Main script #}
+        {# Footer #}
+        {% include "partials/footer.html" %}
+
+        {# Main script #}
         <script src="../../js/index.js"></script>
     </body>
 </html>

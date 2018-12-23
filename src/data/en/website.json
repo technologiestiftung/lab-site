@@ -129,6 +129,20 @@
                     "size": "0.97 Mb"
                 }
             ],
+            "metadata": [
+                {
+                    "name": "Last modified",
+                    "value": "2018-09-10"
+                },
+                {
+                    "name": "Provider",
+                    "value": "Geoportal Berlin"
+                },
+                {
+                    "name": "Keywords",
+                    "value": "Nutzungsbedingungen: Für die Verwendung der Daten gelten folgende Nutzungsbestimmungen: http://www.stadtentwicklung.berlin.de/geoinformation/download/nutzIII.pdf - Der Quellenvermerk gemäß §2 lautet „Geoportal Berlin / [Titel des Datensatzes]“. Es sind die datenschutzrechtlichen Bestimmungen, insbesondere das Bundesdatenschutzgesetz, zu beachten."
+                }
+            ],
             "thumbnail": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png"
         }
     ]
