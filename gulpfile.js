@@ -385,7 +385,49 @@ gulp.task('create-team', () => {
     return mergeStream(teamFriends);
 });
 
-gulp.task('nunjucks', ['create-team'], function() {
+gulp.task('create-datasets', () => {
+    const { templatesSrc, renderPath, envOptions } = nunjucksConfig;
+
+    const datasets = languages.map(language => {
+        const dataPath = `./src/data/${language}/website.json`;
+        const dataJSON = readFileSync(dataPath, 'utf8');
+        const data = JSON.parse(dataJSON);
+
+        const dataset = data.data.map(d => {
+            const { name } = d;
+            const formattedName = name
+                .toLowerCase()
+                .split(' ')
+                .join('-');
+
+            return gulp
+                .src([templatesSrc, `${renderPath}/layout/dataset.html`])
+                .pipe(gulpRename(`${formattedName}.html`))
+                .pipe(
+                    gulpData(file => {
+                        return {
+                            ...d,
+                            language
+                        };
+                    })
+                )
+                .pipe(
+                    nunjucksRender({
+                        path: `${renderPath}`,
+                        envOptions,
+                        manageEnv: manageEnvironment
+                    })
+                )
+                .pipe(gulp.dest(`${outputPath}/${language}/datasets/`));
+        });
+
+        return dataset;
+    });
+
+    return mergeStream(datasets);
+});
+
+gulp.task('nunjucks', ['create-team', 'create-datasets'], function() {
     const {
         templatesSrc,
         projectsSrc,

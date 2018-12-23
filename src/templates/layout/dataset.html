@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{ language }}">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>{{ pagename | capitalize }}</title>
+        {# Global styles #}
+        <link rel="stylesheet" type="text/css" href="../../styles/index.css" />
+    </head>
+    <body>
+        {# Navigation #}
+        {% include "partials/navigation.html" %}
+
+        <main class="loading">
+            <section class="">
+               dataset page
+            </section>
+        </main>
+
+        {# Footer #} {% include "partials/footer.html" %} {# Main script #}
+        <script src="../../js/index.js"></script>
+    </body>
+</html>

@@ -130,38 +130,6 @@
                 }
             ],
             "thumbnail": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png"
-        },
-        {
-            "name": "this is a dataset",
-            "resolution": "high",
-            "keywords": "keyword, another keyword",
-            "formats": [
-                {
-                    "name": "jpg",
-                    "size": "1.54 Mb"
-                },
-                {
-                    "name": "png",
-                    "size": "0.97 Mb"
-                }
-            ],
-            "thumbnail": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png"
-        },
-        {
-            "name": "this is a dataset",
-            "resolution": "high",
-            "keywords": "keyword, another keyword",
-            "formats": [
-                {
-                    "name": "jpg",
-                    "size": "1.54 Mb"
-                },
-                {
-                    "name": "png",
-                    "size": "0.97 Mb"
-                }
-            ],
-            "thumbnail": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png"
         }
     ]
 }
