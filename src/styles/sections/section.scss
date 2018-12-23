@@ -29,4 +29,10 @@ section {
             }
         }
     }
+    &--blockquote {
+        margin: 0 0 $spacing-xl 0;
+    }
+    &--columns {
+        margin: 0 0 $spacing-xl 0;
+    }
 }

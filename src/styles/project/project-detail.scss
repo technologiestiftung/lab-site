@@ -3,9 +3,11 @@
 
     &-header {
         border: 2px solid palevioletred;
+        margin: 0 0 $spacing-xl 0;
 
         &__hero {
             border: 2px solid red;
+            margin: 0 0 $spacing-m 0;
             overflow: hidden;
             position: relative;
             height: 75vh;
@@ -91,27 +93,26 @@
     }
 
     &-columns {
-        display: flex;
-        flex-direction: row;
-        margin: 0 0 0 0;
+        display: grid;
+        grid-gap: $spacing-column;
+        grid-template-columns: 1fr 1fr;
         position: relative;
 
         &:not(.slider) {
             & > div {
                 border: 2px solid red;
-                // padding: 0 $spacing-page-m 0 $spacing-column--half;
-                width: 50%;
+                order: 2;
 
                 &:first-of-type {
                     border: 2px solid green;
-                    margin: 0 0 0 0;
+                    order: 1;
+                    padding: 0 0 0 $spacing-page-m;
                 }
             }
             & > img {
                 align-self: flex-start;
                 border: 2px solid green;
                 max-height: 100%;
-                max-width: 50%;
             }
         }
 
@@ -119,8 +120,8 @@
             &-controls {
                 border: 2px solid red;
                 bottom: 0;
-                left: 0;
-                margin-left: $spacing-column--half;
+                left: $spacing-page-m;
+                // margin-left: $spacing-column--half;
                 outline: none;
                 padding: 0;
                 position: absolute;
@@ -149,25 +150,25 @@
         }
 
         &.reversed {
-            flex-direction: row-reverse;
-
             &:not(.slider) {
                 & > div {
                     border: 2px solid red;
+                    order: 1;
                     // padding: 0 $spacing-column--half 0 $spacing-page-m;
-                    width: 50%;
 
                     &:first-of-type {
                         border: 2px solid green;
                         margin: 0 0 0 0;
+                        order: 2;
+                        padding: 0 $spacing-page-m 0 0;
                     }
                 }
             }
 
             .tns {
                 &-controls {
-                    left: $spacing-page-m;
-                    margin: 0 0 0 50vw;
+                    left: $spacing-column--half;
+                    margin: 0 0 0 50%;
                     padding: 0;
                     right: auto;
                 }

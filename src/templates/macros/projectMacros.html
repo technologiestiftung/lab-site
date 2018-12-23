@@ -14,7 +14,7 @@
 
 
 {% macro imageColumn(title, textContent, images, reversed) %}
-<section class="project-columns {{ "reversed" if reversed }}">
+<section class="project-columns section--columns {{ "reversed" if reversed }}">
     <div>
         <h3>{{ title }}</h3>
         <p>{{ textContent | safe }}</p>
@@ -27,10 +27,12 @@
 
 {% macro blockquote(quoteText, quoteInfo) %}
 {# TODO: Automatic quotation marks depending on language #}
-<blockquote>
-    <p>
-        {{ quoteText }}
-    </p>
-    – {{ quoteInfo }}
-</blockquote>
+<section class="section--blockquote">
+    <blockquote>
+        <p>
+            {{ quoteText }}
+        </p>
+        – {{ quoteInfo }}
+    </blockquote>
+</section>
 {% endmacro %}
