@@ -35,4 +35,7 @@ section {
     &--columns {
         margin: 0 0 $spacing-xl 0;
     }
+    &--data {
+        margin: 0 0 $spacing-xl 0 !important; // TODO: Shouldn't be necessary
+    }
 }

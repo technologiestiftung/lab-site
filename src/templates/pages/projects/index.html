@@ -7,7 +7,6 @@
     <ul class="grid feed-list">
         {% for project in projects | sortProjectsByDate %}
         <li class="feed-list__project">
-            {{ project[language].date }}
             <a href="/{{ language }}/projects/{{ project[language].title | slug }}">
                 <img class="feed-list__project-image" src="{{ project[language].thumbnail }}" alt="{{ project[language].title }}">
                 <div class="feed-list__project-date">
