@@ -25,6 +25,15 @@
 </section>
 {% endmacro %}
 
+{% macro imageSection(imageSrc, subtitle) %}
+<section class="project-image">
+    <img src="{{ imageSrc }}" alt="{{ subtitle }}">
+    <div>
+        {{ subtitle }}
+    </div>
+</section>
+{% endmacro %}
+
 {% macro blockquote(quoteText, quoteInfo) %}
 {# TODO: Automatic quotation marks depending on language #}
 <section class="section--blockquote">

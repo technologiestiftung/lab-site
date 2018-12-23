@@ -41,7 +41,10 @@ const getDirectories = source =>
         .map(name => join(source, name))
         .filter(isDirectory);
 
-const getDirectoryNames = source => readdirSync(source).map(name => name);
+const getDirectoryNames = source =>
+    readdirSync(source)
+        .filter(item => !/(^|\/)\.[^\/\.]/g.test(item))
+        .map(name => name);
 
 function getLanguagesFromData(dataPath) {
     const languagePaths = getDirectories(dataPath);
@@ -137,23 +140,33 @@ gulp.task('create-project', async function() {
 /**
  * BrowserSync
  */
+const content404 = readFileSync(join(__dirname, '404.html'));
 gulp.task('browser-sync', ['sass'], function() {
-    browserSync.init({
-        server: {
-            baseDir: outputPath,
-            serveStaticOptions: {
-                extensions: ['html']
-            }
+    browserSync.init(
+        {
+            server: {
+                baseDir: outputPath,
+                serveStaticOptions: {
+                    extensions: ['html']
+                }
+            },
+            injectChanges: true,
+            notify: false,
+            open: false,
+            port: process.env.PORT || 3000,
+            ui: {
+                port: 3001
+            },
+            startPath: '/en'
         },
-        injectChanges: true,
-        notify: false,
-        open: false,
-        port: process.env.PORT || 3000,
-        ui: {
-            port: 3001
-        },
-        startPath: '/en'
-    });
+        function(err, bs) {
+            bs.addMiddleware('*', (req, res) => {
+                // Provides 404 content without redirect
+                res.write(content404);
+                res.end();
+            });
+        }
+    );
 });
 
 /**
@@ -219,7 +232,6 @@ gulp.task('js', ['js-projects'], function() {
 /**
  * JS Projects Tasks
  */
-
 gulp.task('js-projects', function() {
     const projectDirNames = getDirectoryNames('./projects');
 
