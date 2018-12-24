@@ -9,7 +9,7 @@
 
         <li class="feed-list__project">
             <a href="./projects/{{ project[language].title | slug }}">
-                <img class="feed-list__project-image" src="https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png" alt="{{ project[language].title }}">
+                <img class="feed-list__project-image" src="{{ project[language].thumbnail }}" alt="{{ project[language].title }}">
                 <div class="feed-list__project-date">
                     {{ project[language].date | date }}
                 </div>

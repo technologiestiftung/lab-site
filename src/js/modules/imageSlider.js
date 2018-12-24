@@ -26,7 +26,6 @@ class ImageSlider {
         nextButton.onclick = () => this.updateIndexCounter();
     }
     createIndexCounter() {
-        console.log(this.slider.getInfo());
         const {
             controlsContainer,
             slideCount,
@@ -45,7 +44,6 @@ class ImageSlider {
         const nextCounterIndex =
             displayIndex < slideCount ? displayIndex + 1 : 1;
         const currentCounter = `${nextCounterIndex}/${slideCount}`;
-        console.log(currentCounter);
         this.divCounter.innerHTML = currentCounter;
     }
 }

@@ -5,7 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>{{ pagename | capitalize }} | {{ title }}</title>
-        <link rel="stylesheet" type="text/css" href="../../../styles/index.css" />
+        {# Favicon #}
+        {% include "partials/favicon-links.html" %}
+        <link rel="stylesheet" type="text/css" href="../../../styles/index.css" />{# Favicon #}
     </head>
     <body>
         {# Navigation #}

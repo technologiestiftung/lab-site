@@ -1,6 +1,6 @@
 .navigation {
-    background: $white;
-    border: 2px solid blue;
+    background: rgba($white, 0);
+    // border: 2px solid blue;
     box-shadow: none;
     display: flex;
     justify-content: space-between;
@@ -8,25 +8,25 @@
     position: fixed;
     right: 0;
     top: 0;
-    transition: box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: background 0.2s, box-shadow 0.3s;
     width: 100%;
     z-index: 999;
 
     &-logo {
         background-image: url('../../assets/icons/lab-logo.svg');
-        background-position: left center;
+        background-position: left 4px;
         background-repeat: no-repeat;
-        background-size: 60px;
-        border: 2px solid gray;
+        background-size: 46px;
+        // border: 2px solid gray;
         font-family: 'plex-sans';
         font-size: $font-size-xs;
         display: inline-block;
         text-transform: uppercase;
         letter-spacing: 2px;
         line-height: 1.5em;
-        margin-left: -75px;
+        margin-left: -60px;
         overflow: visible;
-        padding: 0 0 0 75px;
+        padding: 11px 0 10px 60px;
         user-select: none;
 
         &__line {
@@ -35,18 +35,18 @@
     }
 
     &-list {
-        border: 2px solid orange;
-        align-self: flex-start;
+        // border: 2px solid orange;
+        align-self: center;
         display: flex;
 
         a {
-            border: 2px solid blue;
+            // border: 2px solid blue;
             display: flex;
             padding: 0 $spacing-xs;
         }
 
         &__item {
-            border: 2px solid yellow;
+            // border: 2px solid yellow;
             display: flex;
             user-select: none;
             white-space: nowrap;
@@ -68,6 +68,7 @@
     }
 
     &--hasShadow {
+        background: rgba($white, 1);
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     }
 }
