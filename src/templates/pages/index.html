@@ -3,7 +3,7 @@
 
 {% block main %}
 <section class="intro">
-    <div class="intro-title">What we do?</div>
+    <div class="intro-title headline--uppercase">What we do?</div>
     <p class="intro-text">
         We are working at the intersection of the urban & science. We collaborate, ideate and develop. 
     </p>
@@ -12,8 +12,8 @@
     </a>
 </section>
 <section class="featured">
-    <div class="featured-title">What we are proud of</div>
-    <h2 class="featured-headline section-headline">Featured Projects</h2>
+    <div class="headline--uppercase featured-title">What we are proud of</div>
+    <h2 class="featured-headline section-headline headline--bold">Featured Projects</h2>
 
     <ul class="featured-list">
         {% for project in projects | sortProjectsByDate %}

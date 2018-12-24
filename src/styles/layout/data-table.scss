@@ -1,12 +1,12 @@
 .data-table {
-    border: 2px solid red;
+    border: $border-width solid red;
     display: flex;
     font-size: $font-size-s;
     flex-direction: column;
 
     &__row {
         background-color: $white;
-        border: 2px solid yellow;
+        border: $border-width solid yellow;
         border-bottom: 1px solid $light-gray;
         color: $black;
         display: flex;
@@ -21,7 +21,7 @@
         }
 
         &-cell {
-            border: 2px solid blue;
+            border: $border-width solid blue;
             align-items: center;
             display: inline-flex;
             flex: 1;

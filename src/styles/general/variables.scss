@@ -30,7 +30,7 @@ $font-size-xl: 32px;
 // Line Heights
 $line-height-title: 1.5em;
 $line-height-text: 1.8em;
-$line-height-code: 1.4em;
+$line-height-code: 1.6em;
 $line-height-list: 2em;
 
 /*
@@ -57,11 +57,25 @@ $spacing-column: 50px;
 $spacing-column--half: ($spacing-column / 2);
 $spacing-column--double: ($spacing-column * 2);
 
+// Letter spacing
+$letter-spacing-title: 0.05em;
+$letter-spacing-text: 0.008em;
+$letter-spacing-uppercase: 0.07em;
+$letter-spacing-bold: 0.02em;
+
 /*
  * Time variables
  */
 
 // Transitions
+$time-xs: 0.1s;
 $time-s: 0.25s;
 $time-m: 0.5s;
 $time-l: 0.75s;
+
+/*
+ * Strokes
+ */
+
+$border-width: 0px;
+$link-stroke-width: 1px;

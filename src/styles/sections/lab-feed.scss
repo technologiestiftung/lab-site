@@ -6,13 +6,13 @@
         text-transform: uppercase;
     }
     &-headline {
-        border: 2px solid yellow;
+        border: $border-width solid yellow;
     }
     &-list {
-        border: 2px solid red;
+        border: $border-width solid red;
 
         &__project {
-            border: 2px solid yellow;
+            border: $border-width solid yellow;
 
             &-image {
             }

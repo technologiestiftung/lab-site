@@ -1,5 +1,5 @@
 .dataset {
-    border: 2px solid red;
+    border: $border-width solid red;
     margin-top: 0;
 
     &-header {
@@ -11,11 +11,11 @@
     }
 
     &-downloads {
-        border: 2px solid red;
+        border: $border-width solid red;
         display: flex;
 
         &__item {
-            border: 2px solid green;
+            border: $border-width solid green;
             display: flex;
             flex-direction: column;
             margin: 0 $spacing-m 0 0;
@@ -27,17 +27,17 @@
             }
 
             &--image {
-                border: 2px solid blue;
+                border: $border-width solid blue;
                 left: 0;
                 position: absolute;
                 top: 0;
                 width: 35px;
             }
             &--name {
-                border: 2px solid blue;
+                border: $border-width solid blue;
             }
             &--size {
-                border: 2px solid blue;
+                border: $border-width solid blue;
             }
         }
     }

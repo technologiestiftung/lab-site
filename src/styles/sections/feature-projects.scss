@@ -2,39 +2,39 @@
     position: relative;
 
     &-title {
-        border: 2px solid yellow;
+        border: $border-width solid yellow;
         color: $gray;
         font-family: 'plex-mono';
         font-size: $font-size-s;
         text-transform: uppercase;
     }
     &-list {
-        border: 2px solid yellow;
+        border: $border-width solid yellow;
         display: grid;
         grid-gap: 0 $spacing-column--double;
         grid-template-columns: max-content max-content;
         position: relative;
 
         &__project {
-            border: 2px solid blue;
+            border: $border-width solid blue;
             cursor: default;
             display: flex;
             flex-direction: column;
 
             &-title {
-                border: 2px solid orange;
+                border: $border-width solid orange;
                 font-size: $font-size-xl;
                 position: relative;
 
                 a {
-                    border: 2px solid green;
+                    border: $border-width solid green;
                     display: inline-block;
                     // margin: 0 $spacing-xl 0 0;
                     transition: color $time-m;
                     width: 100%;
 
                     &::after {
-                        border: 2px solid yellow;
+                        border: $border-width solid yellow;
                         content: '→';
                         margin-left: $spacing-s;
                         pointer-events: none;
@@ -47,7 +47,7 @@
                 }
 
                 &:hover {
-                    border: 2px solid red;
+                    border: $border-width solid red;
 
                     & ~ .featured-list__project {
                         opacity: 1;
@@ -84,7 +84,7 @@
             }
 
             &-subtext {
-                border: 2px solid yellow;
+                border: $border-width solid yellow;
                 bottom: 0;
                 display: block;
                 font-size: $font-size-m;
@@ -96,7 +96,7 @@
             }
 
             &-image {
-                border: 2px solid greenyellow;
+                border: $border-width solid greenyellow;
                 backface-visibility: hidden;
                 bottom: 0;
                 display: block;

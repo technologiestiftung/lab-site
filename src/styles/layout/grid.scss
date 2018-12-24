@@ -1,7 +1,7 @@
 .grid {
     // TODO: Remove, just for dev
     & > a {
-        border: 2px solid red;
+        border: $border-width solid red;
     }
 
     display: grid;

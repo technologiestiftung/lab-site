@@ -1,0 +1,8 @@
+.headline {
+    &--uppercase {
+        letter-spacing: $letter-spacing-uppercase;
+    }
+    &--bold {
+        letter-spacing: $letter-spacing-bold;
+    }
+}

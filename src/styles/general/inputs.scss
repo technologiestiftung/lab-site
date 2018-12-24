@@ -27,7 +27,7 @@
             backface-visibility: hidden;
             bottom: 0;
             content: '';
-            height: 1px;
+            height: $link-stroke-width;
             left: 0;
             position: absolute;
             transform: scaleX(1) translateZ(0);

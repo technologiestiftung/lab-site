@@ -1,6 +1,6 @@
 .navigation {
     background: rgba($white, 0);
-    // border: 2px solid blue;
+    // border: $border-width solid blue;
     box-shadow: none;
     display: flex;
     justify-content: space-between;
@@ -8,26 +8,26 @@
     position: fixed;
     right: 0;
     top: 0;
-    transition: background 0.2s, box-shadow 0.3s;
+    transition: background $time-xs, box-shadow $time-s;
     width: 100%;
     z-index: 999;
 
     &-logo {
+        // border: $border-width solid gray;
         background-image: url('../../assets/icons/lab-logo.svg');
         background-position: left 4px;
         background-repeat: no-repeat;
         background-size: 46px;
-        // border: 2px solid gray;
+        display: inline-block;
         font-family: 'plex-sans';
         font-size: $font-size-xs;
-        display: inline-block;
-        text-transform: uppercase;
-        letter-spacing: 2px;
+        letter-spacing: 0.1em;
         line-height: 1.5em;
         margin-left: -60px;
         overflow: visible;
         padding: 11px 0 10px 60px;
         user-select: none;
+        text-transform: uppercase;
 
         &__line {
             display: block;
@@ -35,18 +35,18 @@
     }
 
     &-list {
-        // border: 2px solid orange;
+        // border: $border-width solid orange;
         align-self: center;
         display: flex;
 
         a {
-            // border: 2px solid blue;
+            // border: $border-width solid blue;
             display: flex;
-            padding: 0 $spacing-xs;
+            padding: 0 $spacing-s;
         }
 
         &__item {
-            // border: 2px solid yellow;
+            // border: $border-width solid yellow;
             display: flex;
             user-select: none;
             white-space: nowrap;
@@ -64,6 +64,13 @@
             img {
                 align-self: center;
             }
+        }
+    }
+
+    &-icon {
+        &--twitter,
+        &--github {
+            margin-bottom: 1px;
         }
     }
 
