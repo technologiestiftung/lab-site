@@ -53,7 +53,7 @@ function getLanguagesFromData(dataPath) {
     return languages;
 }
 
-// TODO: Get data for languages
+// TODO: Get data for languages in order to remove logic from templates
 function getProjectsData(language) {
     const projectDirPaths = getDirectories('./projects');
     return projectDirPaths.map(projectDirPath => {
@@ -334,7 +334,7 @@ const nunjucksConfig = {
 const manageEnvironment = function(environment) {
     // Slug filter
     environment.addFilter('slug', function(str) {
-        return str && str.replace(/\s/g, '-', str).toLowerCase(); // TODO: Use slugs where it's hacky
+        return str && str.replace(/\s/g, '-', str).toLowerCase();
     });
 
     // Date filter
@@ -344,6 +344,7 @@ const manageEnvironment = function(environment) {
     // Sort projects by date
     environment.addFilter('sortProjectsByDate', function(data) {
         if (data) {
+            // TODO: Too specific
             const sortedProjectDataByDate = data.sort(
                 (a, b) => a.en.date < b.en.date
             );

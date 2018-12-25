@@ -1,6 +1,7 @@
 const prompts = require('prompts');
 
 async function getProjectPrompts() {
+    // TODO: Alternative project title for url?
     const projectQuestions = [
         {
             type: 'text',

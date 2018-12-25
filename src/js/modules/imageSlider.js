@@ -15,7 +15,7 @@ class ImageSlider {
         this.init();
     }
     init() {
-        this.slider = tns(this.sliderOptions); // TODO: Import tns without script tag
+        this.slider = tns(this.sliderOptions); // TODO: Replace import of tns over script tag in html
 
         this.createIndexCounter();
         this.addEvents();
