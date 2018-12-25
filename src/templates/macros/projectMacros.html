@@ -27,8 +27,8 @@
 
 {% macro imageSection(imageSrc, subtitle) %}
 <section class="project-image">
-    <img src="{{ imageSrc }}" alt="{{ subtitle }}">
-    <div>
+    <img src="../../../assets/images/{{ imageSrc }}" alt="{{ subtitle }}">
+    <div class="project-image__subtitle">
         {{ subtitle }}
     </div>
 </section>

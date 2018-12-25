@@ -18,8 +18,8 @@
             border: $border-width solid green;
             display: flex;
             flex-direction: column;
-            margin: 0 $spacing-m 0 0;
-            padding: 0 0 0 $spacing-l;
+            margin: 0 $spacing-l 0 0;
+            padding: 0 0 0 36px;
             position: relative;
 
             &:last-of-type {
@@ -31,13 +31,16 @@
                 left: 0;
                 position: absolute;
                 top: 0;
-                width: 35px;
+                width: 25px;
             }
             &--name {
                 border: $border-width solid blue;
+                line-height: $line-height-min;
             }
             &--size {
                 border: $border-width solid blue;
+                color: $gray;
+                font-size: $font-size-s;
             }
         }
     }

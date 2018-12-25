@@ -1,5 +1,6 @@
 .feed {
     &-title {
+        border: $border-width solid red;
         color: $gray;
         font-family: 'plex-mono';
         font-size: $font-size-s;
@@ -15,15 +16,19 @@
             border: $border-width solid yellow;
 
             &-image {
+                border: $border-width solid orange;
             }
             &-date {
+                border: $border-width solid blue;
                 color: $gray;
                 font-size: $font-size-s;
                 font-family: 'plex-mono';
+                line-height: $line-height-min;
                 text-transform: uppercase;
-                margin-bottom: $spacing-xs;
+                margin-top: $spacing-xs;
             }
             &-title {
+                border: $border-width solid red;
                 display: block;
                 font-size: $font-size-l;
             }

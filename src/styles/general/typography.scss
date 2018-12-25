@@ -1,8 +1,12 @@
 .headline {
     &--uppercase {
         letter-spacing: $letter-spacing-uppercase;
+        line-height: $line-height-min;
     }
     &--bold {
+        font-size: 24px;
+        font-weight: bold;
         letter-spacing: $letter-spacing-bold;
+        margin: 0 0 30px 0;
     }
 }

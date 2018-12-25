@@ -34,6 +34,7 @@
             border: $border-width solid green;
             display: flex;
             flex-direction: row;
+            margin: $spacing-m 0;
             padding: 0 $spacing-page-m;
 
             &--main {
@@ -44,8 +45,10 @@
             }
             &--sub {
                 border: $border-width solid orange;
+                align-self: flex-start;
                 flex: 1;
                 font-size: $font-size-ll;
+                margin-top: 8px;
             }
         }
         &__meta {
@@ -99,6 +102,14 @@
             max-width: 100%;
             width: 100%;
         }
+
+        &__subtitle {
+            border: $border-width solid red;
+            color: $gray;
+            font-style: italic;
+            margin-top: $spacing-xs;
+            text-align: center;
+        }
     }
 
     &-columns {
@@ -149,7 +160,6 @@
                     border: $border-width solid blue;
                     height: 100%;
                     letter-spacing: 0.1em;
-                    line-height: 1.5em;
                     position: absolute;
                     right: 0;
                     top: 0;

@@ -1,0 +1,29 @@
+{
+    "en": {
+        "title": "Data Dive – Cycling data in Berlin",
+        "subtitle": "Subtitle of the project",
+        "date": "2018-12-25T01:41:08.442Z",
+        "description": "This is the best project ever and here is why …",
+        "heroImage": "../../../assets/images/placeholder-rect.png",
+        "thumbnail": "../../../assets/images/data-dive-thumb.png",
+        "authors": ["author-one"],
+        "type": "publication",
+        "currentStatus": "ongoing",
+        "materialsIncluded": ["images", "video", "press text", "Source Code"],
+        "featuredImage": "../../../assets/images/lakes.jpg",
+        "isFeatured": false,
+        "confirmation": true
+    },
+    "de": {
+        "title": "Data Dive – Cycling data in Berlin",
+        "subtitle": "Projekt wurde noch nicht übersetzt",
+        "date": "2018-12-25T01:41:08.442Z",
+        "description": "Dies ist das beste Projekt jemals, denn …",
+        "heroImage": "../../../assets/images/placeholder-rect.png",
+        "thumbnail": "../../../assets/images/data-dive-thumb.png",
+        "authors": ["author-one"],
+        "type": "publication",
+        "materialsIncluded": ["images", "video", "press text", "Source Code"],
+        "featuredImage": "../../../assets/images/lakes.jpg"
+    }
+}

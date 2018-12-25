@@ -1,0 +1,28 @@
+.partner {
+    border: $border-width solid red;
+    &-list {
+        border: $border-width solid red;
+        &__project {
+            border: $border-width solid red;
+            &-image {
+                background: $light-gray;
+                border: $border-width solid red;
+                height: 120px;
+                position: relative;
+
+                &-logo {
+                    left: 50%;
+                    max-height: 50%;
+                    max-width: 50%;
+                    position: absolute;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+
+                    &--open-data-informationsstelle {
+                        max-width: 75%;
+                    }
+                }
+            }
+        }
+    }
+}

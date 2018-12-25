@@ -1,11 +1,31 @@
 {
-    "title": "Titel: Ideation & Prototyping Lab",
+    "title": "Ideation & Prototyping Lab",
     "siteUrl": "http://localhost:3000",
     "language": "de",
-    "navigation": [
-        { "name": "Über uns", "type": "green" },
-        { "name": "Projekte", "type": "blue" },
-        { "name": "Daten", "type": "blue" }
+    "pages": [
+        {
+            "name": "start",
+            "title": "Index Page",
+            "url": "/de/"
+        },
+        {
+            "name": "about",
+            "title": "About Page",
+            "navigationTitle": "Über uns",
+            "url": "/de/about"
+        },
+        {
+            "name": "projects",
+            "title": "Projects Page",
+            "navigationTitle": "Projekte",
+            "url": "/de/projects"
+        },
+        {
+            "name": "datasets",
+            "title": "Data Page",
+            "navigationTitle": "Daten",
+            "url": "/de/datasets"
+        }
     ],
     "team": {
         "current": [
@@ -72,20 +92,6 @@
                 "position": "had bestest position"
             }
         ]
-    },
-    "pages": {
-        "start": {
-            "title": "Index Seite"
-        },
-        "about": {
-            "title": "Über uns Seite"
-        },
-        "projects": {
-            "title": "Projekte Seite"
-        },
-        "data": {
-            "title": "Daten Seiten"
-        }
     },
     "data": [
         {

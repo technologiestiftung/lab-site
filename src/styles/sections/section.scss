@@ -18,8 +18,8 @@ section {
         border-radius: 3px;
 
         pre {
-            font-size: $font-size-s;
             font-family: 'plex-mono';
+            font-size: $font-size-code;
             line-height: $line-height-code;
             margin: 0;
             padding: $spacing-m $spacing-column;

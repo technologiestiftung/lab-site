@@ -21,17 +21,20 @@ $color-dataset: #e60032;
 
 // Font sizes
 $font-size-xs: 10px;
-$font-size-s: 14px;
+$font-size-s: 12px;
 $font-size-m: 16px;
 $font-size-l: 20px;
 $font-size-ll: 24px;
 $font-size-xl: 32px;
+
+$font-size-code: 14px;
 
 // Line Heights
 $line-height-title: 1.5em;
 $line-height-text: 1.8em;
 $line-height-code: 1.6em;
 $line-height-list: 2em;
+$line-height-min: 1.2em;
 
 /*
  * Spacing
@@ -41,9 +44,9 @@ $line-height-list: 2em;
 $spacing-xs: 5px;
 $spacing-s: 15px;
 $spacing-m: 30px;
-$spacing-l: 45px;
-$spacing-xl: 60px;
-$spacing-xxl: 100px;
+$spacing-l: 50px;
+$spacing-xl: 80px;
+$spacing-xxl: 175px;
 
 // Horizontal page layout
 $spacing-page-xs: 2.5vw;

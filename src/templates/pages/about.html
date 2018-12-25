@@ -29,9 +29,9 @@
             <a href="#">
                 <div class="feed-list__project-title">
                     {{ alumniFriend.name }}
-                </div>
                 <div class="feed-list__project-date">
                     {{ alumniFriend.position }}
+                </div>
                 </div>
             </a>
         </li>
@@ -39,14 +39,16 @@
     </ul>
 </section>
 
-<section class="feed">
-    <h2 class="feed-headline section-headline">Partners</h2>
-    <ul class="grid feed-list">
+<section class="partner">
+    <h2 class="partner-headline section-headline">Partners</h2>
+    <ul class="grid partner-list">
         {% for partner in partners %}
-        <li class="feed-list__project">
+        <li class="partner-list__project">
             <a href="#">
-                <img class="feed-list__project-image" src="{{ partner.image }}" alt="{{ partner.name }}">
-                <div class="feed-list__project-title">
+                <div class="partner-list__project-image">
+                    <img class="partner-list__project-image-logo partner-list__project-image-logo--{{ partner.name | slug }}" src="{{ partner.image }}" alt="{{ partner.name }}">
+                </div>
+                <div class="partner-list__project-title">
                     {{ partner.name }}
                 </div>
                 <div>

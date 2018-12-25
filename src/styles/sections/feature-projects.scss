@@ -89,6 +89,7 @@
                 display: block;
                 font-size: $font-size-m;
                 left: 0;
+                line-height: $line-height-min;
                 opacity: 0;
                 pointer-events: none;
                 transform: translate3d(0, 2.5%, 0);
@@ -115,5 +116,9 @@
                 z-index: -1;
             }
         }
+    }
+
+    .link--button {
+        margin-top: $spacing-s;
     }
 }

@@ -30,33 +30,33 @@
     "team": {
         "current": [
             {
-                "name": "team friend 1",
-                "position": "cool position",
-                "image": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
+                "name": "Benjamin Seibel",
+                "position": "Head of lab",
+                "image": "../../assets/images/benjamin.png",
                 "type": "data",
                 "description": "Hello hello hello",
                 "mail": "hello@technologiestiftung-berlin.de"
             },
             {
-                "name": "team friend 2",
-                "position": "better position",
-                "image": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
+                "name": "Sebastian Meier",
+                "position": "Lead data scientist",
+                "image": "../../assets/images/sebastian.png",
                 "type": "data",
                 "description": "Hello hello hello",
                 "mail": "hello@technologiestiftung-berlin.de"
             },
             {
-                "name": "team friend 3",
-                "position": "best position",
-                "image": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
+                "name": "Victoria Dykes",
+                "position": "Open data referent",
+                "image": "../../assets/images/tori.png",
                 "type": "data",
                 "description": "Hello hello hello",
                 "mail": "hello@technologiestiftung-berlin.de"
             },
             {
-                "name": "team friend 4",
-                "position": "bestest position",
-                "image": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
+                "name": "Fabian Dinklage",
+                "position": "Visualization & Prototyping",
+                "image": "../../assets/images/fabian.png",
                 "type": "data",
                 "description": "Hello hello hello",
                 "mail": "hello@technologiestiftung-berlin.de"
@@ -95,39 +95,46 @@
     },
     "partners": [
         {
-            "name": "partner 1",
-            "image": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
+            "name": "Open Data Informationsstelle",
+            "image": "../../assets/images/partner-open-data.svg",
             "description": "cool partner cool partner cool partner cool partner "
         },
         {
-            "name": "partner 2",
-            "image": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
+            "name": "CityVis Exhibition",
+            "image": "../../assets/images/partner-city-vis.svg",
             "description": "better partner better partner better partner better partner "
         },
         {
-            "name": "partner 3",
-            "image": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
-            "description": "best partner best partner best partner best partner "
-        },
-        {
-            "name": "partner 4",
-            "image": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
+            "name": "Open Data Berlin",
+            "image": "../../assets/images/partner-open-data-berlin.svg",
             "description": "bestest partner bestest partner bestest partner bestest partner "
         }
     ],
     "data": [
         {
-            "name": "this is a dataset",
-            "resolution": "high",
-            "keywords": "keyword, another keyword",
+            "name": "Bike traffic signs",
+            "resolution": "Districts",
+            "keywords": "geo, mobility, line",
             "formats": [
                 {
-                    "name": "Geo JSON",
-                    "size": "1.54 Mb"
+                    "name": "GeoJSON",
+                    "size": "1.54 Mb",
+                    "link": "#"
+                },
+                {
+                    "name": "gml",
+                    "size": "1.48 Mb",
+                    "link": "#"
+                },
+                {
+                    "name": "kml",
+                    "size": "1.48 Mb",
+                    "link": "#"
                 },
                 {
                     "name": "XML",
-                    "size": "1.48 Mb"
+                    "size": "1.48 Mb",
+                    "link": "#"
                 }
             ],
             "metadata": [
@@ -144,7 +151,7 @@
                     "value": "Nutzungsbedingungen: Für die Verwendung der Daten gelten folgende Nutzungsbestimmungen: http://www.stadtentwicklung.berlin.de/geoinformation/download/nutzIII.pdf - Der Quellenvermerk gemäß §2 lautet „Geoportal Berlin / [Titel des Datensatzes]“. Es sind die datenschutzrechtlichen Bestimmungen, insbesondere das Bundesdatenschutzgesetz, zu beachten."
                 }
             ],
-            "thumbnail": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png"
+            "thumbnail": "../../assets/images/bike-traffic-thumbnail.png"
         }
     ]
 }

@@ -377,7 +377,8 @@ gulp.task('create-team', () => {
                     gulpData(file => {
                         return {
                             ...d,
-                            language
+                            language,
+                            pages: data.pages
                         };
                     })
                 )
@@ -419,7 +420,8 @@ gulp.task('create-datasets', () => {
                     gulpData(file => {
                         return {
                             ...d,
-                            language
+                            language,
+                            pages: data.pages
                         };
                     })
                 )
