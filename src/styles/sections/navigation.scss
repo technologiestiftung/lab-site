@@ -15,17 +15,17 @@
     &-logo {
         // border: $border-width solid gray;
         background-image: url('../../assets/icons/lab-logo.svg');
-        background-position: left 4px;
+        background-position: left 1px;
         background-repeat: no-repeat;
-        background-size: 46px;
+        background-size: 50px;
         display: inline-block;
         font-family: 'plex-sans';
-        font-size: $font-size-xs;
+        font-size: $font-size-s;
         letter-spacing: 0.1em;
         line-height: 1.5em;
-        margin-left: -60px;
+        margin-left: -65px;
         overflow: visible;
-        padding: 11px 0 10px 60px;
+        padding: 8px 0 7px 65px;
         user-select: none;
         text-transform: uppercase;
         white-space: nowrap;
@@ -60,6 +60,11 @@
             }
             &--lang {
                 margin: 0 $spacing-l;
+            }
+            &--icon {
+                a {
+                    padding: 0 $spacing-xs;
+                }
             }
 
             img {

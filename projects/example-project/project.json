@@ -9,7 +9,12 @@
         "authors": ["Victoria Dykes", "Benjamin Seibel", "Sebastian Meier"],
         "type": "workshop",
         "currentStatus": "ongoing",
-        "materialsIncluded": ["images", "video", "press text", "Source Code"],
+        "materialsIncluded": [
+            { "name": "images", "link": "#" },
+            { "name": "video", "link": "#" },
+            { "name": "press text", "link": "#" },
+            { "name": "Source Code", "link": "#" }
+        ],
         "featuredImage": "../../../assets/images/lakes.jpg",
         "isFeatured": true
     },
@@ -23,7 +28,12 @@
         "authors": ["Victoria Dykes", "Benjamin Seibel", "Sebastian Meier"],
         "type": "workshop",
         "currentStatus": "ongoing",
-        "materialsIncluded": ["images", "video", "press text", "Source Code"],
+        "materialsIncluded": [
+            { "name": "images", "link": "#" },
+            { "name": "video", "link": "#" },
+            { "name": "press text", "link": "#" },
+            { "name": "Source Code", "link": "#" }
+        ],
         "featuredImage": "../../../assets/images/lakes.jpg",
         "isFeatured": true
     }

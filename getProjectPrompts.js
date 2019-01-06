@@ -15,9 +15,14 @@ async function getProjectPrompts() {
             name: 'authors',
             message: 'Who are the authors?',
             choices: [
-                { title: 'Author 1', value: 'author-one', selected: true },
-                { title: 'Author 2', value: 'author-two' },
-                { title: 'Author 3', value: 'author-three' }
+                {
+                    title: 'Benjamin',
+                    value: 'Benjamin Seibel',
+                    selected: true
+                },
+                { title: 'Sebabstian', value: 'Sebastian Meier' },
+                { title: 'Tori', value: 'Victoria Dykes' },
+                { title: 'Fabian', value: 'Fabian Dinklage' }
             ]
         },
         {

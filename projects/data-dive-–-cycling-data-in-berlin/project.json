@@ -6,10 +6,15 @@
         "description": "This is the best project ever and here is why …",
         "heroImage": "../../../assets/images/placeholder-rect.png",
         "thumbnail": "../../../assets/images/data-dive-thumb.png",
-        "authors": ["author-one"],
+        "authors": ["Sebastian Meier"],
         "type": "publication",
         "currentStatus": "ongoing",
-        "materialsIncluded": ["images", "video", "press text", "Source Code"],
+        "materialsIncluded": [
+            { "name": "images", "link": "#" },
+            { "name": "video", "link": "#" },
+            { "name": "press text", "link": "#" },
+            { "name": "Source Code", "link": "#" }
+        ],
         "featuredImage": "../../../assets/images/lakes.jpg",
         "isFeatured": false,
         "confirmation": true
@@ -21,9 +26,14 @@
         "description": "Dies ist das beste Projekt jemals, denn …",
         "heroImage": "../../../assets/images/placeholder-rect.png",
         "thumbnail": "../../../assets/images/data-dive-thumb.png",
-        "authors": ["author-one"],
+        "authors": ["Sebastian Meier"],
         "type": "publication",
-        "materialsIncluded": ["images", "video", "press text", "Source Code"],
+        "materialsIncluded": [
+            { "name": "images", "link": "#" },
+            { "name": "video", "link": "#" },
+            { "name": "press text", "link": "#" },
+            { "name": "Source Code", "link": "#" }
+        ],
         "featuredImage": "../../../assets/images/lakes.jpg"
     }
 }

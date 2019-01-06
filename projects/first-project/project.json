@@ -6,10 +6,15 @@
         "description": "This is the best project ever and here is why …",
         "heroImage": "../../../assets/images/kita-explorer.jpg",
         "thumbnail": "../../../assets/images/placeholder-rect.png",
-        "authors": ["author-one", "author-two"],
+        "authors": ["Benjamin Seibel", "Victoria Dykes"],
         "type": "publication",
         "currentStatus": "ongoing",
-        "materialsIncluded": ["images", "video", "press text", "Source Code"],
+        "materialsIncluded": [
+            { "name": "images", "link": "#" },
+            { "name": "video", "link": "#" },
+            { "name": "press text", "link": "#" },
+            { "name": "Source Code", "link": "#" }
+        ],
         "featuredImage": "../../../assets/images/kita-explorer.jpg",
         "isFeatured": true,
         "confirmation": true
@@ -21,9 +26,16 @@
         "description": "Dies ist das beste Projekt jemals, denn …",
         "heroImage": "../../../assets/images/kita-explorer.jpg",
         "thumbnail": "../../../assets/images/placeholder-rect.png",
-        "authors": ["author-one", "author-two"],
+        "authors": ["Benjamin Seibel", "Victoria Dykes"],
         "type": "publication",
-        "materialsIncluded": ["images", "video", "press text", "Source Code"],
-        "featuredImage": "../../../assets/images/kita-explorer.jpg"
+        "materialsIncluded": [
+            { "name": "images", "link": "#" },
+            { "name": "video", "link": "#" },
+            { "name": "press text", "link": "#" },
+            { "name": "Source Code", "link": "#" }
+        ],
+        "featuredImage": "../../../assets/images/kita-explorer.jpg",
+        "isFeatured": true,
+        "confirmation": true
     }
 }

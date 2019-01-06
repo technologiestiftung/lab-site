@@ -64,7 +64,7 @@
 
                     a {
                         &::after {
-                            transform: translate(15%, 0);
+                            transform: translate(10%, 0);
                         }
                     }
 
@@ -106,7 +106,7 @@
                 pointer-events: none;
                 position: absolute;
                 right: 0;
-                transform: translate3d($spacing-page-l, 0, 0);
+                transform: translate3d($spacing-page-m, $spacing-s, 0);
                 transition: opacity $time-m, transform $time-m;
                 width: 75%;
                 z-index: -1;
