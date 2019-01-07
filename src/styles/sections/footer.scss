@@ -1,5 +1,4 @@
 .footer {
-    border: $border-width solid yellow;
     bottom: 0;
     display: flex;
     justify-content: space-between;
@@ -10,14 +9,11 @@
     width: 100%;
 
     &-copy {
-        border: $border-width solid yellow;
     }
     &-list {
-        border: $border-width solid yellow;
         display: flex;
 
         &__item {
-            border: $border-width solid yellow;
             padding: 0 $spacing-s;
 
             &:last-of-type {

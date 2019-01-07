@@ -1,5 +1,4 @@
 .dataset {
-    border: $border-width solid red;
     margin-top: 0;
 
     &-header {
@@ -11,11 +10,9 @@
     }
 
     &-downloads {
-        border: $border-width solid red;
         display: flex;
 
         &__item {
-            border: $border-width solid green;
             display: flex;
             flex-direction: column;
             margin: 0 $spacing-l 0 0;
@@ -27,18 +24,15 @@
             }
 
             &--image {
-                border: $border-width solid blue;
                 left: 0;
                 position: absolute;
                 top: 0;
                 width: 25px;
             }
             &--name {
-                border: $border-width solid blue;
                 line-height: $line-height-min;
             }
             &--size {
-                border: $border-width solid blue;
                 color: $gray;
                 font-size: $font-size-s;
             }

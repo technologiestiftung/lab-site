@@ -2,39 +2,33 @@
     position: relative;
 
     &-title {
-        border: $border-width solid yellow;
         color: $gray;
         font-family: 'plex-mono';
         font-size: $font-size-s;
         text-transform: uppercase;
     }
     &-list {
-        border: $border-width solid yellow;
         display: grid;
         grid-gap: 0 $spacing-column--double;
         grid-template-columns: max-content max-content;
         position: relative;
 
         &__project {
-            border: $border-width solid blue;
             cursor: default;
             display: flex;
             flex-direction: column;
 
             &-title {
-                border: $border-width solid orange;
                 font-size: $font-size-xl;
                 position: relative;
 
                 a {
-                    border: $border-width solid green;
                     display: inline-block;
                     // margin: 0 $spacing-xl 0 0;
                     transition: color $time-m;
                     width: 100%;
 
                     &::after {
-                        border: $border-width solid yellow;
                         content: '→';
                         margin-left: $spacing-s;
                         pointer-events: none;
@@ -47,7 +41,6 @@
                 }
 
                 &:hover {
-                    border: $border-width solid red;
 
                     & ~ .featured-list__project {
                         opacity: 1;
@@ -84,7 +77,6 @@
             }
 
             &-subtext {
-                border: $border-width solid yellow;
                 bottom: 0;
                 display: block;
                 font-size: $font-size-m;
@@ -97,7 +89,6 @@
             }
 
             &-image {
-                border: $border-width solid greenyellow;
                 backface-visibility: hidden;
                 bottom: 0;
                 display: block;

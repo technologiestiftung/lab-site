@@ -152,7 +152,7 @@ gulp.task('browser-sync', ['sass'], function() {
             },
             injectChanges: true,
             notify: false,
-            open: false,
+            open: true,
             port: process.env.PORT || 3000,
             ui: {
                 port: 3001
@@ -297,11 +297,6 @@ gulp.task('watch', ['browser-sync'], function() {
         ['nunjucks', browserSync.reload]
     );
 });
-
-/**
- * Create website data JSON
- */
-gulp.task('create-website-data', function() {});
 
 // Data will be available in templates
 function getWebsiteDataForFile(file, language) {
@@ -466,7 +461,7 @@ gulp.task('nunjucks', ['create-team', 'create-datasets'], function() {
         // projectIndexHelper is used in `src/templates/layout/project` in order to
         // get the correct project data for the template
         let projectIndexHelper = -1;
-        // TODO: Remove deleted projects from dist/build (+ watch-task)
+        // TODO: Remove deleted projects from dist (+ watch-task)
         const projectStream = gulp
             .src(projectsSrc)
             .pipe(

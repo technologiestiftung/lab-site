@@ -17,7 +17,7 @@
 
     <ul class="featured-list">
         {% for project in projects | sortProjectsByDate %}
-            {% if project[language].isFeatured %}
+            {% if project[language].isFeatured and project[language].visible %}
             <li class="featured-list__project">
                 <h3 class="featured-list__project-title {{ project[language].type }}">
                     <a href="./projects/{{ project[language].title | slug }}">{{ project[language].title }}</a>

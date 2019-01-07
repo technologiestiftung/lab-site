@@ -16,6 +16,7 @@
             { "name": "Source Code", "link": "#" }
         ],
         "featuredImage": "../../../assets/images/lakes.jpg",
+        "visible": true,
         "isFeatured": false,
         "confirmation": true
     },
@@ -34,6 +35,9 @@
             { "name": "press text", "link": "#" },
             { "name": "Source Code", "link": "#" }
         ],
-        "featuredImage": "../../../assets/images/lakes.jpg"
+        "featuredImage": "../../../assets/images/lakes.jpg",
+        "visible": true,
+        "isFeatured": false,
+        "confirmation": true
     }
 }

@@ -1,9 +1,4 @@
 .grid {
-    // TODO: Remove, just for dev
-    & > a {
-        border: $border-width solid red;
-    }
-
     display: grid;
     grid-gap: $spacing-column--half $spacing-column--half;
     grid-template-columns: 1fr 1fr 1fr 1fr;

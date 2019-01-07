@@ -2,18 +2,15 @@
     margin-top: 0;
 
     &-header {
-        border: $border-width solid palevioletred;
         margin: 0 0 $spacing-xl 0;
 
         &__hero {
-            border: $border-width solid red;
             margin: 0 0 $spacing-m 0;
             overflow: hidden;
             position: relative;
             height: 75vh;
 
             &-image {
-                border: $border-width solid gray;
                 display: block;
                 max-height: 100%;
                 height: 100%;
@@ -31,20 +28,17 @@
         }
 
         &__title {
-            border: $border-width solid green;
             display: flex;
             flex-direction: row;
             margin: $spacing-m 0;
             padding: 0 $spacing-page-m;
 
             &--main {
-                border: $border-width solid yellow;
                 flex: 1;
                 font-size: $font-size-xl;
                 font-weight: bold;
             }
             &--sub {
-                border: $border-width solid orange;
                 align-self: flex-start;
                 flex: 1;
                 font-size: $font-size-ll;
@@ -52,13 +46,11 @@
             }
         }
         &__meta {
-            border: $border-width solid green;
             display: flex;
             padding: 0 $spacing-page-m;
             text-transform: capitalize;
 
             &-column {
-                border: $border-width solid orange;
                 display: flex;
                 line-height: $line-height-list;
                 flex: 1;
@@ -68,7 +60,6 @@
                     font-weight: bold;
                 }
                 &__item {
-                    border: $border-width solid red;
                     align-self: flex-start;
 
                     &:last-of-type {
@@ -104,7 +95,6 @@
         }
 
         &__subtitle {
-            border: $border-width solid red;
             color: $gray;
             font-style: italic;
             margin-top: $spacing-xs;
@@ -120,25 +110,21 @@
 
         &:not(.slider) {
             & > div {
-                border: $border-width solid red;
                 order: 2;
 
                 &:first-of-type {
-                    border: $border-width solid green;
                     order: 1;
                     padding: 0 0 0 $spacing-page-m;
                 }
             }
             & > img {
                 align-self: flex-start;
-                border: $border-width solid green;
                 max-height: 100%;
             }
         }
 
         .tns {
             &-controls {
-                border: $border-width solid red;
                 bottom: 0;
                 left: $spacing-page-m;
                 // margin-left: $spacing-column--half;
@@ -157,7 +143,6 @@
                 }
 
                 &-counter {
-                    border: $border-width solid blue;
                     height: 100%;
                     letter-spacing: 0.1em;
                     position: absolute;
@@ -171,12 +156,10 @@
         &.reversed {
             &:not(.slider) {
                 & > div {
-                    border: $border-width solid red;
                     order: 1;
                     // padding: 0 $spacing-column--half 0 $spacing-page-m;
 
                     &:first-of-type {
-                        border: $border-width solid green;
                         margin: 0 0 0 0;
                         order: 2;
                         padding: 0 $spacing-page-m 0 0;
@@ -309,7 +292,6 @@
     }
 
     a:not(.link--button) {
-        border: $border-width solid yellow;
         display: inline-block;
         line-height: $line-height-text;
         position: relative;
@@ -350,7 +332,6 @@
     }
 
     blockquote {
-        border: $border-width solid yellow;
         font-size: $font-size-s;
         margin: 0;
         padding: 0 $spacing-page-m;
@@ -363,7 +344,6 @@
     }
 
     figure {
-        border: $border-width solid yellow;
         margin: 0;
         text-align: center;
 

@@ -3,7 +3,7 @@
 
 {% block main %}  
 <section class="feed">
-    <h2 class="feed-headline section-headline">Team</h2>
+    <h2 class="feed-headline section-headline headline--bold">Team</h2>
     <ul class="grid feed-list">
         {% for teamFriend in team.current %}
         <li class="feed-list__project">
@@ -22,7 +22,7 @@
 </section>
 
 <section class="feed">
-    <h2 class="feed-headline section-headline">Alumnis</h2>
+    <h2 class="feed-headline section-headline headline--bold">Alumnis</h2>
     <ul class="grid feed-list">
         {% for alumniFriend in team.alumnis %}
         <li class="feed-list__project">
@@ -40,7 +40,7 @@
 </section>
 
 <section class="partner">
-    <h2 class="partner-headline section-headline">Partners</h2>
+    <h2 class="partner-headline section-headline headline--bold">Partners</h2>
     <ul class="grid partner-list">
         {% for partner in partners %}
         <li class="partner-list__project">

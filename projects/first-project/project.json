@@ -17,6 +17,7 @@
         ],
         "featuredImage": "../../../assets/images/kita-explorer.jpg",
         "isFeatured": true,
+        "visible": true,
         "confirmation": true
     },
     "de": {
@@ -36,6 +37,7 @@
         ],
         "featuredImage": "../../../assets/images/kita-explorer.jpg",
         "isFeatured": true,
+        "visible": true,
         "confirmation": true
     }
 }

@@ -5,7 +5,7 @@
     <ul class="grid feed-list">
         {% for project in projects | sortProjectsByDate %}
         {% set loopIndex = loop.index0 %}
-        {% if loopIndex < 4 %}
+        {% if (loopIndex < 4) and project[language].visible %}
 
         <li class="feed-list__project">
             <a href="./projects/{{ project[language].title | slug }}">

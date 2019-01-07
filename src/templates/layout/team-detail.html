@@ -18,10 +18,23 @@
             <section class="team-detail">
                 <div class="team-detail__image">
                     <img src="{{ image }}" alt="{{ name }}" />
-                    <div>{{ mail }}</div>
+                    
+                    <div class="team-detail__social">
+                        {% if twitter %}
+                         <a class="team-detail__social--twitter" href="{{ twitter }}" target="_blank">
+                            <img class="navigation-icon--twitter" src="../../../assets/icons/twitter-icon.svg" alt="Twitter" />
+                        </a>
+                        {% endif %}
+                        {% if github %}
+                        <a class="team-detail__social--github" href="{{ github }}" target="_blank">
+                            <img class="navigation-icon--github" src="../../../assets/icons/github-icon.svg" alt="Github" />
+                        </a>
+                        {% endif %}
+                       
+                        <a class="team-detail__social--mail" href="mailto:{{ mail }}">{{ mail }}</a>
+                    </div>
                 </div>
                 <div class="team-detail__description">
-                    Helloooo I'm {{ type }}
                     <div class="team-detail__description--name">{{ name }}</div>
                     <div class="team-detail__description--position">
                         {{ position }}
