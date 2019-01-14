@@ -8,7 +8,7 @@
         {% for teamFriend in team.current %}
         <li class="feed-list__project">
             <a href="/{{ language }}/team/{{ teamFriend.name | slug }}">
-                <img class="feed-list__project-image" src="{{ teamFriend.image }}" alt="{{ teamFriend.name }}">
+                <img class="feed-list__project-image" src="{{siteUrl}}{{ teamFriend.image }}" alt="{{ teamFriend.name }}">
                 <div class="feed-list__project-title">
                     {{ teamFriend.name }}
                 </div>

@@ -481,7 +481,29 @@ gulp.task('nunjucks', ['create-team', 'create-datasets'], function() {
             .pipe(highlight())
             .pipe(gulp.dest(`dist/${language}/projects/`));
 
-        return mergeStream(templateStream, projectStream);
+        let pageStream = mergeStream(templateStream, projectStream);
+
+        //Create the default (language) homepage, located in the root of the dist folder
+        if(language == 'de'){
+            const defaultHomeStream = gulp
+                .src(`${entryPath}/templates/pages/index.html`)
+                .pipe(gulpData(file => getWebsiteDataForFile(file, language)))
+                .pipe(
+                    nunjucksRender({
+                        path: renderPath,
+                        envOptions,
+                        manageEnv: manageEnvironment
+                    })
+                )
+                .pipe(highlight())
+                .pipe(gulp.dest(`dist/`));
+
+            console.log('index')
+
+            pageStream = mergeStream(pageStream, defaultHomeStream)
+        }
+
+        return pageStream
     });
 
     return mergeStream(websiteStreams);

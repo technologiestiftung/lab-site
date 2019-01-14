@@ -8,7 +8,7 @@
         {# Favicon #}
         {% include "partials/favicon-links.html" %}
         {# Global styles #}
-        <link rel="stylesheet" type="text/css" href="../../styles/index.css" />
+        <link rel="stylesheet" type="text/css" href="{{ siteUrl }}/styles/index.css" />
     </head>
     <body>
         {# Navigation #}
@@ -17,17 +17,17 @@
         <main class="loading">
             <section class="team-detail">
                 <div class="team-detail__image">
-                    <img src="{{ image }}" alt="{{ name }}" />
+                    <img src="{{siteUrl}}{{ image }}" alt="{{ name }}" />
                     
                     <div class="team-detail__social">
                         {% if twitter %}
                          <a class="team-detail__social--twitter" href="{{ twitter }}" target="_blank">
-                            <img class="navigation-icon--twitter" src="../../../assets/icons/twitter-icon.svg" alt="Twitter" />
+                            <img class="navigation-icon--twitter" src="{{ siteUrl }}/assets/icons/twitter-icon.svg" alt="Twitter" />
                         </a>
                         {% endif %}
                         {% if github %}
                         <a class="team-detail__social--github" href="{{ github }}" target="_blank">
-                            <img class="navigation-icon--github" src="../../../assets/icons/github-icon.svg" alt="Github" />
+                            <img class="navigation-icon--github" src="{{ siteUrl }}/assets/icons/github-icon.svg" alt="Github" />
                         </a>
                         {% endif %}
                        
@@ -50,6 +50,6 @@
         {% include "partials/footer.html" %}
 
         {# Main script #}
-        <script src="../../js/index.js"></script>
+        <script src="{{ siteUrl }}/js/index.js"></script>
     </body>
 </html>

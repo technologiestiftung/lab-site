@@ -8,7 +8,7 @@
         {# Favicon #}
         {% include "partials/favicon-links.html" %}
         {# Global styles #}
-        <link rel="stylesheet" type="text/css" href="../../styles/index.css" />
+        <link rel="stylesheet" type="text/css" href="{{ siteUrl }}/styles/index.css" />
     </head>
     <body>
         {# Navigation #}
@@ -29,7 +29,7 @@
                 <div class="dataset-downloads">
                 {% for format in formats %}
                     <a class="dataset-downloads__item" href="{{ format.link }}">
-                        <img class="dataset-downloads__item--image" src="../../../assets/icons/download-icon.svg" alt="Download" />
+                        <img class="dataset-downloads__item--image" src="{{ siteUrl }}/assets/icons/download-icon.svg" alt="Download" />
                         <span class="dataset-downloads__item--name">{{ format.name }}</span>
                         <span class="dataset-downloads__item--size">{{ format.size }}</span>
                     </a>
@@ -54,6 +54,6 @@
         {% include "partials/footer.html" %}
 
         {# Main script #}
-        <script src="../../js/index.js"></script>
+        <script src="{{ siteUrl }}/js/index.js"></script>
     </body>
 </html>

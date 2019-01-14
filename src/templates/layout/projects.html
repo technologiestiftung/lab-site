@@ -7,7 +7,7 @@
         <title>{{ pagename | capitalize }} | {{ title }}</title>
         {# Favicon #}
         {% include "partials/favicon-links.html" %}
-        <link rel="stylesheet" type="text/css" href="../../../styles/index.css" />{# Favicon #}
+        <link rel="stylesheet" type="text/css" href="{{ siteUrl }}/styles/index.css" />{# Favicon #}
     </head>
     <body>
         {# Navigation #}
@@ -21,6 +21,6 @@
         {# Footer #}
         {% include "partials/footer.html" %}
 
-        <script src="../../../js/index.js"></script>
+        <script src="{{ siteUrl }}/js/index.js"></script>
     </body>
 </html>

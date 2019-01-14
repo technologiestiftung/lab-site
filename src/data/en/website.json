@@ -1,6 +1,6 @@
 {
     "title": "Ideation & Prototyping Lab",
-    "siteUrl": "http://localhost:3000",
+    "siteUrl": "https://pedantic-mirzakhani-1841cc.netlify.com/",
     "language": "en",
     "pages": [
         {
@@ -32,7 +32,7 @@
             {
                 "name": "Benjamin Seibel",
                 "position": "Head of lab",
-                "image": "../../assets/images/benjamin.png",
+                "image": "assets/images/benjamin.png",
                 "type": "data",
                 "description": "Hello hello hello",
                 "mail": "hello@technologiestiftung-berlin.de",
@@ -42,7 +42,7 @@
             {
                 "name": "Sebastian Meier",
                 "position": "Lead data scientist",
-                "image": "../../assets/images/sebastian.png",
+                "image": "assets/images/sebastian.png",
                 "type": "data",
                 "description": "Hello hello hello",
                 "mail": "hello@technologiestiftung-berlin.de",
@@ -52,7 +52,7 @@
             {
                 "name": "Victoria Dykes",
                 "position": "Open data referent",
-                "image": "../../assets/images/tori.png",
+                "image": "assets/images/tori.png",
                 "type": "data",
                 "description": "This week we launched our new app Badestellen Berlin. This was a joint effort of Kompetenzzentrum Wasser, Berliner Wasserbetriebe and the LaGeSo. The new application allows citizens to get up to date information on bathing water quality. Besides water quality information the site provides additional info on each site, for example, accessibility features or availability of toilets and parking lots. A link to a routing service and the local public transport service allow you to conveniently plan your next trip.",
                 "mail": "dykes@technologiestiftung-berlin.de",
@@ -61,7 +61,7 @@
             {
                 "name": "Fabian Dinklage",
                 "position": "Visualization & Prototyping",
-                "image": "../../assets/images/fabian.png",
+                "image": "assets/images/fabian.png",
                 "type": "data",
                 "description": "Hello hello hello",
                 "mail": "hello@technologiestiftung-berlin.de",
@@ -103,17 +103,17 @@
     "partners": [
         {
             "name": "Open Data Informationsstelle",
-            "image": "../../assets/images/partner-open-data.svg",
+            "image": "assets/images/partner-open-data.svg",
             "description": "cool partner cool partner cool partner cool partner "
         },
         {
             "name": "CityVis Exhibition",
-            "image": "../../assets/images/partner-city-vis.svg",
+            "image": "assets/images/partner-city-vis.svg",
             "description": "better partner better partner better partner better partner "
         },
         {
             "name": "Open Data Berlin",
-            "image": "../../assets/images/partner-open-data-berlin.svg",
+            "image": "assets/images/partner-open-data-berlin.svg",
             "description": "bestest partner bestest partner bestest partner bestest partner "
         }
     ],
@@ -158,7 +158,7 @@
                     "value": "Nutzungsbedingungen: Für die Verwendung der Daten gelten folgende Nutzungsbestimmungen: http://www.stadtentwicklung.berlin.de/geoinformation/download/nutzIII.pdf - Der Quellenvermerk gemäß §2 lautet „Geoportal Berlin / [Titel des Datensatzes]“. Es sind die datenschutzrechtlichen Bestimmungen, insbesondere das Bundesdatenschutzgesetz, zu beachten."
                 }
             ],
-            "thumbnail": "../../assets/images/bike-traffic-thumbnail.png"
+            "thumbnail": "{{siteUrl}}/assets/images/bike-traffic-thumbnail.png"
         }
     ]
 }
