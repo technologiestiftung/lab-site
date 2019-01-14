@@ -488,3 +488,5 @@ gulp.task('nunjucks', ['create-team', 'create-datasets'], function() {
 });
 
 gulp.task('default', ['nunjucks', 'copy-website-assets', 'js', 'watch']);
+
+gulp.task('build', ['nunjucks', 'copy-website-assets', 'js']);
