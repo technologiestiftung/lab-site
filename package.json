@@ -18,6 +18,6 @@
   "author": "Sebastian Meier @seb_meier",
   "dependencies": {
     "grunt-contrib-sass": "^1.0.0",
-    "moment": "^2.20.1"
+    "moment": "^2.23.0"
   }
 }
