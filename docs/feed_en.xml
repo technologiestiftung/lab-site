@@ -12,11 +12,22 @@
 	<atom:link href="http://lab.technologiestiftung-berlin.de/feed.xml" rel="self" type="application/rss+xml" />
 	<link>http://lab.technologiestiftung-berlin.de</link>
 	<description>We are exploring and prototyping digital tools in order to collaboratively shape Berlin’s future for citizens, the local government and the industry.</description>
-	<lastBuildDate>Thu, 3 Jan 2019 10:18:35  +0100</lastBuildDate>
+	<lastBuildDate>Mon, 28 Jan 2019 14:15:30  +0100</lastBuildDate>
 	<language>en-us</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	
+<item>
+<title><![CDATA[New Team Members]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/Zuwachs/index_en.html</link>
+<pubDate>Thu, 24 Jan 2019 00:00:00  +0100</pubDate>
+<category><![CDATA[News]]></category>
+<description><![CDATA[The Ideation und Prototyping Lab is Growing]]></description>
+<content:encoded><![CDATA[The Ideation und Prototyping Lab is Growing]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/Zuwachs/index_en.html</guid>
+</item>
+
 <item>
 <title><![CDATA[Publishing sensitive data: Best practices from Berlin's Crime Atlas]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/crime-atlas/index_en.html</link>
