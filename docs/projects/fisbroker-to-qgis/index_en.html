@@ -81,7 +81,7 @@
                 <div class="container">
                     <span class="button tag">Open Data</span>
                     <span class="button tag">Knowledge</span>
-                    <h1>HOW TO: Downloads from the geo spatial data portal FIS-Broker</h1>
+                    <h1>HOW TO: Downloading data Berlin's geospatial data portal</h1>
                     <span class="title-subline">Alexandra Kapp (<a href="https://twitter.com/lxndrkp">@lxndrkp</a>) | | 31/01/2019</span>
                 </div>
             </div>
@@ -89,19 +89,18 @@
             <!-- Start editing here -->
             <div class="container p-bottom">
                 <p class="copy">The <a href="https://www.stadtentwicklung.berlin.de/geoinformation/fis-broker/">FIS-Broker</a> 
-                is the geo spatial data portal of Berlin. All publicly available data sets with spatial reference are published here, e.g. bicycle lanes, school locations 
+                is Berlin's geospatial data portal. All publicly available, spatially-oriented datasets are published here, e.g. bicycle lanes, school locations 
                 or living and green spaces. The data is visualized with maps and corresponding information is provided as a table. However, often there is
-                the need to further process the data for other needs. The download is not possible via button click to obtain a geoJson or csv file. Instead, only a URL for a WFS server is provided.
-                The following article provides instructions on how to download the data with the WFS server URL.     
+                the need to further process the data (for example, to filter it to only specific regions or data of interest), or maybe you want to combine the spatial data with other types of data. Unfortunately, it isn't possible simply click a button and obtain a GeoJson or CSV file via the FIS-Broker (something many would-be users of the data look for and are confused when they can't find it). Instead, the FIS-Broker provides a URL for a WFS server.
+                The following article provides instructions on how to download the data via the WFS server URL, allowing users to convert the data into more familiar data formats for further use.     
                 </p>
 
                    
                     <h2 class="p-top">Data download with QGIS</h2>
-                    <p class="copy">There are various possibilities to download data from a WMS/WFS server. We recommend to
-                        use the open source software <a href= https://www.qgis.org/en/site>QGIS</a> that can be downloaded <a href="https://www.qgis.org/en/site/forusers/download.html">here</a> free of charge.
-                        Subsequently, the data can be used for own maps in QGIS or it can be exported as geoJson, shape-File, gml or csv. 
+                    <p class="copy">There are various possibilities to download data from a WMS/WFS server. We recommend using the open source software <a href= https://www.qgis.org/en/site>QGIS</a>, which can be downloaded <a href="https://www.qgis.org/en/site/forusers/download.html">here</a> free of charge.
+                        Subsequently, the data can be used for creating custom maps in QGIS, or it can be exported as GeoJson, shapefile, GML or CSV. 
                         <br> 
-                        <br><b>A step by step instruction:</b>
+                        <br><b>Step by step instructions:</b>
                         <br>
                         <br>
                     </p>
@@ -110,33 +109,33 @@
                         
                         <div class="container small p-top p-bottom">
                             <img class="responsive" src="images/new_wfs_layer.png" alt="add new WFS-Layer" />
-                            <p class="caption">add new WFS-Layer</p>
+                            <p class="caption">Add new WFS-Layer</p>
                         </div>
                     </p>
-                    <p class="copy">A new windows with the existing sever connections will open. Create a new server connection.
+                    <p class="copy">A new window with the existing sever connections will open. Create a new server connection.
                         <div class="container small p-top p-bottom">
                             <img class="responsive" src="images/neue_verbindung.png" alt="add new server connection" />
-                            <p class="caption">add new server connection</p>
+                            <p class="caption">Add new server connection</p>
                         </div>
                     </p>
-                    <p class="copy">A new window opens that asks for the server URL.
+                    <p class="copy">A new window will open that asks for the server URL.
                         Search within the FIS-Broker for the desired data set. 
-                        In this example we use the data set of the school locations. 
-                        Click in the right menu bar of the FIS-Broker below the heading <i>"Datenbereitstellung"</i> on <i>"zum Downloaddienst(WFS)"</i>.
+                        In this example, we're using a dataset of school locations. 
+                        In the right-hand menu bar of the FIS-Broker, below the heading <i>"Datenbereitstellung"</i>, click on <i>"zum Downloaddienst (WFS)"</i>.
                         It is important to select the WFS Link because the WMS Link only leads to a raster graphic without vector data or additional attributes. 
                             <div class="container small p-top p-bottom">
                                 <img class="responsive" src="images/schulen.png" alt="data set in the FIS-Broker" />
-                                <p class="caption">data set in the FIS-Broker</p>
+                                <p class="caption">Dataset in the FIS-Broker</p>
                             </div>
                         </p>
-                        <p class="copy">The link opens a new window with the information about the WFS server. We need the URL located at <i>"Rechneradresse"</i>.
+                        <p class="copy">Clicking this link opens a new window with the information about the WFS server. We need the URL located at <i>"Rechneradresse"</i>.
                                     <div class="container small p-top p-bottom">
                                         <img class="responsive" src="images/get_link.png" alt="download details in the FIS-Broker" />
-                                        <p class="caption">download details in the FIS-Broker</p>
+                                        <p class="caption">Download details in the FIS-Broker</p>
                                     </div>
                         </p>
                         <p class="copy">Copy the <i>"Rechneradresse"</i> into the URL field of the previously opened window <i>"Connection Details"</i> in QGIS.
-                            The name can be chosen arbitrarily and the other fields can remain empty.
+                            The name can be chosen arbitrarily, and the other fields can remain empty.
                             Then, confirm with <i>"OK"</i>. 
                             <div class="container small p-top p-bottom">
                                 <img class="responsive" src="images/server_benennen.png" alt="insert connection details" />
@@ -146,25 +145,24 @@
                         <p class="copy">Click on <i>"Connect"</i> to connect to the server. The name of the data set should appear in the table below. Add the data with a button click on <i>"Add"</i>.
                             <div class="container small p-top p-bottom">
                                 <img class="responsive" src="images/verbinden.png" alt="connect to server" />
-                                <p class="caption">connect to server</p>
+                                <p class="caption">Connect to server</p>
                             </div>
                         </p>
-                        <p class="copy">In case the data set is not shown, <i>"refresh"</i> the Browser Panel with a click on the arrow symbol.
+                        <p class="copy">In case the dataset is not shown, <i>"refresh"</i> the browser panel by clicking on the arrow symbol.
                             <div class="container small p-top p-bottom">
                                 <img class="responsive" src="images/aktualisieren.png" alt="refresh Browser Panel" />
-                                <p class="caption">refresh Browser Panel</p>
+                                <p class="caption">Refresh browser panel</p>
                             </div>
                         </p>
-                        <p class="copy">The Layer of the data set should now be visible in the Browser Panel within the <i>"WFS"</i> tab.
+                        <p class="copy">The layer of the dataset should now be visible in the browser panel within the <i>"WFS"</i> tab.
                             <div class="container small p-top p-bottom">
                                 <img class="responsive" src="images/aktualisiert.png" alt="refreshed Browser Panel" />
-                                <p class="caption">refreshed Browser Panel</p>
+                                <p class="caption">Refreshed browser panel</p>
                             </div>
                         </p>
                         <p class="copy">With a double click or drag and drop of the data set into the Layer Panel the data should appear in the map view. 
-                            In this example we can now see all schools of Berlin. With QGIS the appearance can be adapted at will. E.g., a map can be laid underneath, 
-                            the visualization of the data points can be edited or another layer can be added (e.g. the district borders).
-                            Sebastian Meier created <a href=https://drive.google.com/file/d/1EB9rbJBm41Gv8rQ1N7wHTpDcx6Bq5X7W/view> an elaborate script of a QGIS introduction </a> that can be 
+                            In this example we can now see all schools in Berlin. QGIS offers various options to edit or enhance the appearance of your map. For example, a map can be laid underneath the existing map, the visualization of the data points can be edited, or another layer can be added (e.g., the district borders). For a more detailed guide on what you can do with QGIS,
+                            Sebastian Meier (member of the Ideation & Prototyping Lab team) created <a href=https://drive.google.com/file/d/1EB9rbJBm41Gv8rQ1N7wHTpDcx6Bq5X7W/view> an elaborate QGIS introductory guide </a> (available only in German) that can be 
                             downloaded for free.
                                 <br>
                                 <br>The attributes of the data can be viewed directly in QGIS 
@@ -172,20 +170,20 @@
                     
                             <div class="container small p-top p-bottom">
                                 <img class="responsive" src="images/go_to_table.png" alt="Open Attribute Table" />
-                                <p class="caption">Open Attribute Table</p>
+                                <p class="caption">Open attribute table</p>
                                 <br>
                                 <img class="responsive" src="images/attributtabelle.png" alt="AAttribute Table" />
-                                <p class="caption">Open Attribute Table</p>
+                                <p class="caption">Viewing an attribute table</p>
                             </div>
                         </p>
-                        <p class="copy">With a right click on the Layer and selecting "save as ..." the data can be saved in the desired format (shape-File, geoJson, gml, csv, etc.).
+                        <p class="copy">With a right click on the layer and selecting "Save as ...", the data can be saved in various other formats (shapefile, GeoJson, GML, CSV, etc.).
                     
                             <div class="container small p-top p-bottom">
                                 <img class="responsive" src="images/go_to_save.png" alt="save Layer as ..." />
-                                <p class="caption">save Layer as ...</p>
+                                <p class="caption">Save layer as ...</p>
                                 <br>
                                 <img class="responsive" src="images/save.png" alt="formats" />
-                                <p class="caption">save in desired format</p>
+                                <p class="caption">Save in desired format</p>
                             </div>
                         </p>
             </div>
