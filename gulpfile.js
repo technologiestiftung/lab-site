@@ -134,7 +134,7 @@ gulp.task('create-project', async function() {
                 done(null, file);
             })
         )
-        .pipe(gulp.dest(`./projects/${formattedTitle}/`));
+        .pipe(gulp.dest(`./projects/**/`));
 });
 
 /**
@@ -255,7 +255,10 @@ gulp.task('js-projects', function() {
  * Copy website assets directory
  */
 gulp.task('copy-website-assets', function() {
-    return gulp.src(['./src/assets/**/*']).pipe(gulp.dest('./dist/assets'));
+    let globalAssetsPath = './src/assets/**/*';
+    let assetsPath = `${entryPath}/projects/**/assets/*`;
+
+    return gulp.src([globalAssetsPath]).pipe(gulp.dest('./dist/assets'));
 });
 
 /**

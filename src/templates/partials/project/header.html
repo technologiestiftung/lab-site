@@ -1,17 +1,21 @@
-<header class="project-header">
+<header class="project-header {{ project[language].colorMode }}">
     <div class="project-header__hero">
-        <img class="project-header__hero-image" src="{{ project[language].heroImage }}" alt="{{ project[language].title }}" />
-        <a class="link--button" href="#">Launch Project</a>
+        <div class="gradient-overlay"></div>
+        <img class="project-header__hero-image" src="{{ project[language].heroImage }}" alt="{{ project[language].title }}"/>
     </div>
 
     <div class="project-header__title">
-        <h1 class="project-header__title--main headline--bold">
-            {{ project[language].title }}
+        <a class="link--button" href="#">Launch Project</a>
 
-        </h1>
-        <h2 class="project-header__title--sub">
-            {{ project[language].subtitle }}
-        </h2>
+        <div class="flex-row">
+            <h1 class="project-header__title--main headline--bold">
+                {{ project[language].title }}
+            </h1>
+            <h2 class="project-header__title--sub">
+                {{ project[language].subtitle }}
+            </h2>
+        </div>
+
     </div>
 
     <div class="project-header__meta">

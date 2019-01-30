@@ -5,9 +5,10 @@
 // Basic
 $white: #ffffff;
 $black: #000000;
-$gray: #adadad;
-$light-gray: #e8e8e8;
-$light-gray--lighter: rgba(#e8e8e8, 0.3);
+$grey: #adadad;
+$dark-grey: rgb(94, 94, 94);
+$light-grey: #e8e8e8;
+$light-grey--lighter: rgba(#e8e8e8, 0.3);
 
 // Categories
 $color-publication: #2d91d2;
@@ -51,8 +52,8 @@ $spacing-xxl: 175px;
 // Horizontal page layout
 $spacing-page-xs: 2.5vw;
 $spacing-page-s: 5vw;
-$spacing-page-m: 15vw;
-$spacing-page-l: 22.5vw;
+$spacing-page-m: 12vw;
+$spacing-page-l: 17.5vw;
 $spacing-page-xl: 35vw;
 
 // Column spacing
@@ -79,5 +80,15 @@ $time-l: 0.75s;
 /*
  * Strokes
  */
+ 
+ $link-stroke-width: 1px;
+ 
+ /*
+  * Screen width
+  */
 
-$link-stroke-width: 1px;
+  $screen-xs: 320px;
+  $screen-s: 520px;
+  $screen-m: 768px;
+  $screen-l: 1024px;
+  $screen-xl: 1200px;

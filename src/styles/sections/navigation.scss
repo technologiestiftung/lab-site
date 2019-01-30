@@ -3,33 +3,50 @@
     box-shadow: none;
     display: flex;
     justify-content: space-between;
-    padding: 0 $spacing-page-m;
+    padding: $spacing-s $spacing-page-m;
     position: fixed;
     right: 0;
     top: 0;
-    transition: background $time-xs, box-shadow $time-s;
+    background: white;
+    // transition: all $time-s;
     width: 100%;
     z-index: 999;
+
+    @media only screen and (max-width: $screen-m) {
+        padding: $spacing-s $spacing-page-xs;
+    }
 
     &-logo {
         background-image: url('../../assets/icons/lab-logo.svg');
         background-position: left 1px;
         background-repeat: no-repeat;
-        background-size: 50px;
+        background-size: 65px;
         display: inline-block;
         font-family: 'plex-sans';
         font-size: $font-size-s;
         letter-spacing: 0.1em;
         line-height: 1.5em;
-        margin-left: -65px;
         overflow: visible;
-        padding: 8px 0 7px 65px;
+        padding: 8px 0 7px 85px;
         user-select: none;
         text-transform: uppercase;
         white-space: nowrap;
 
+        @media only screen and (max-width: $screen-l) {
+            background-size: 37px;
+        }
+
+        
         &__line {
             display: block;
+
+            @media only screen and (max-width: $screen-l) {
+                display: none
+            }
+
+            .bold {
+                font-weight: bold;
+            }
         }
     }
 
@@ -55,6 +72,10 @@
             }
             &--lang {
                 margin: 0 $spacing-l;
+
+                @media only screen and (max-width: $screen-m) {
+                    margin: 0 $spacing-m;
+                }
             }
             &--icon {
                 a {
@@ -77,6 +98,7 @@
 
     &--hasShadow {
         background: rgba($white, 1);
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        // box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        border-bottom: 1px solid $light-grey;
     }
 }

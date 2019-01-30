@@ -16,14 +16,13 @@
     }
 
     &--normal {
-        border: 2px solid yellow;
         display: inline-block;
         line-height: 1.8em;
         position: relative;
         transition: color 0.25s;
 
         &::after {
-            background-color: $gray;
+            background-color: $grey;
             backface-visibility: hidden;
             bottom: 0;
             content: '';
@@ -37,7 +36,7 @@
         }
 
         &:hover {
-            color: $gray;
+            color: $grey;
             &::after {
                 transform: scaleX(0.9) translateZ(0);
             }

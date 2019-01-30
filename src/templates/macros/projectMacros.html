@@ -8,7 +8,7 @@
 {% macro textColumn(title, textContent) %}
 <section class="project-text columns">
     <h3 class="headline--bold">{{ title }}</h3>
-    <p>{{ textContent | safe }}</p>
+    <p class="">{{ textContent | safe }}</p>
 </section>
 {% endmacro %}
 
@@ -17,7 +17,7 @@
 <section class="project-columns section--columns {{ "reversed" if reversed }}">
     <div>
         <h3 class="headline--bold">{{ title }}</h3>
-        <p>{{ textContent | safe }}</p>
+        <p class="image-text">{{ textContent | safe }}</p>
     </div>
     <div class="image-slider">
         {{ images | safe }}

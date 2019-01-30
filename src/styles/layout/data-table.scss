@@ -5,7 +5,7 @@
 
     &__row {
         background-color: $white;
-        border-bottom: 1px solid $light-gray;
+        border-bottom: 1px solid $light-grey;
         color: $black;
         display: flex;
         flex-direction: row;
@@ -15,7 +15,7 @@
         transition: background-color $time-s;
 
         &:hover {
-            background-color: $light-gray--lighter;
+            background-color: $light-grey--lighter;
         }
 
         &-cell {
@@ -44,7 +44,7 @@
             pointer-events: none;
 
             .data-table__row-cell {
-                color: $gray;
+                color: $grey;
                 padding: $spacing-xs 0;
                 text-transform: capitalize;
 

@@ -1,18 +1,29 @@
 section {
     margin: 0 $spacing-page-m $spacing-xl $spacing-page-m;
+
+
+    @media only screen and (max-width: $screen-m) {
+        margin: 0 $spacing-page-xs $spacing-xl $spacing-page-xs;
+    }
+
     &:last-of-type {
         margin: 0 $spacing-page-m 0 $spacing-page-m;
     }
 }
 
 .section {
+
     &-headline {
         font-size: $font-size-xl;
         font-weight: bold;
     }
 
+    @media only screen and (max-width: $screen-l) {
+        margin: 0 $spacing-page-m;
+    }
+
     &--code {
-        background-color: $light-gray--lighter;
+        background-color: $light-grey--lighter;
         border-radius: 3px;
 
         pre {
@@ -25,6 +36,7 @@ section {
             code {
                 font-family: 'plex-mono';
             }
+
         }
     }
     &--blockquote {
