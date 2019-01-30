@@ -89,27 +89,29 @@
             <!-- Start editing here -->
 
             <div class="container p-bottom">
+                <p class="copy p-bottom"><i>Der <a href="https://www.stadtentwicklung.berlin.de/geoinformation/fis-broker/">FIS-Broker</a> 
+                    ist eine wahre Goldgrube wenn es um offene Geodaten aus Berlin geht. Allerdings ist die Datenplattform gerade für Ungeübte nicht ganz einfach zu bedienen. Zumindest erreichen uns bei <a href="http://odis-berlin.de">ODIS</a> immer wieder Anfragen, wie man an die Datenbestände des Brokers herankommt. Im Folgenden erklärt unsere ODIS-Geodaten-Expertin <a href="https://twitter.com/lxndrkp">Alexandra Kapp</a>, wie ihr die offenen Geodaten des Landes herunterladen und für eigene Zwecke nutzen könnt. Viel Spaß beim Stöbern!</i>
+                </p>
                 <p class="copy">Der <a href="https://www.stadtentwicklung.berlin.de/geoinformation/fis-broker/">FIS-Broker</a> 
                     ist der Geodatenkatalog der Stadt Berlin. Alle öffentlich verfügbaren Daten mit Raumbezug werden hier bereitgestellt, 
-                    beispielsweise die Fahrradwege, Standorte der Schulen oder Wohn- und Grünflächen.
+                    beispielsweise Fahrradwege, Standorte von Schulen oder Wohn- und Grünflächen.
                     Diese werden auf einer Karte visualisiert und Sachdaten werden tabellarisch angezeigt. 
-                    Häufig besteht jedoch Bedarf, die Daten für andere Zwecke weiterzuverarbeiten. 
-                    Der Download der Daten ist nicht über einen Download-Button in geoJson oder csv Format verfügbar, sondern ausschließlich über die URL eines WFS Servers. 
-                    Im Folgenden wird eine Anleitung gegeben, wie man mithilfe dieser URL die Daten herunterladen kann.
+                    Häufig besteht jedoch Bedarf, die Daten auch für andere Zwecke weiterzuverarbeiten. 
+                    Ein Download in gängigen Formaten wie GeoJSON oder CSV ist jedoch nicht möglich, stattdessen findet man lediglich die URL eines WFS-Servers. 
                 </p>
 
                    
                     <h2 class="p-top">Daten mit QGIS downloaden</h2>
-                    <p class="copy">Es gibt verschiedene Möglichkeiten Daten eines WFS/WMS Servers herunterzuladen. 
+                    <p class="copy">Es gibt verschiedene Möglichkeiten, Daten eines WFS/WMS Servers herunterzuladen. 
                         Wir empfehlen die Open Source Software <a href= https://www.qgis.org/de/site>QGIS</a>, die <a href="https://www.qgis.org/de/site/forusers/download.html">hier</a> 
-                        kostenlos zum Download bereitsteht. In QGIS können die Daten anschließend in eigenen Karten weiterverarbeitet werden oder u.a. als geoJson, shape-File, gml oder csv exportiert werden.
+                        kostenlos zum Download bereitsteht. In QGIS können die Daten anschließend in eigenen Karten weiterverarbeitet werden oder u.a. als GeoJSON, Shape-File, GML oder CSV exportiert werden.
                         <br> 
-                        <br><b>Die genauen Schritte werden im Folgenden erklärt:</b>
+                        <br><b>Die Schritte im einzelnen:</b>
                         <br>
                         <br>
                     </p>
 
-                    <p class="copy">Wählt im QGIS Interface über das Menü <i>"Layer > Layer hinzufügen"</i> 
+                    <p class="copy">Wählt im QGIS-Interface über das Menü <i>"Layer > Layer hinzufügen"</i> 
                         oder über die Menüleiste auf der linken Seite <i>"WFS-Layer hinzufügen"</i> aus.
                         
                         <div class="container small p-top p-bottom">
@@ -123,21 +125,21 @@
                             <p class="caption">Neue Serververbindung hinzufügen</p>
                         </div>
                     </p>
-                    <p class="copy">In dem neu geöffneten Fenster wird die URL des Servers abfragt. Sucht hierfür im FIS-Broker den Datensatz, den ihr herunterladen möchtet. In diesem Beispiel verwenden wir den Datensatz zu den Standorten der öffentlichen Schulen.
-                        Klickt in der rechten Leiste des FIS-Brokers unter <i>"Datenbereitstellung"</i> auf <i>"zum Downloaddienst (WFS)"</i>. Hierbei ist es wichtig den WFS Link auswählen, da über den WMS Link nur eine Rastergrafik ohne Vektor- und Sachdaten heruntergeladen wird.
+                    <p class="copy">In dem neu geöffneten Fenster wird die URL des Servers abgefragt. Sucht hierfür im FIS-Broker den Datensatz, den ihr herunterladen möchtet. In diesem Beispiel verwenden wir den Datensatz zu den Standorten der öffentlichen Schulen.
+                        Klickt in der rechten Leiste des FIS-Brokers unter <i>"Datenbereitstellung"</i> auf <i>"zum Downloaddienst (WFS)"</i>. Hierbei ist es wichtig, den WFS-Link auszuwählen, da über den WMS-Link nur eine Rastergrafik ohne Vektor- und Sachdaten heruntergeladen wird.
                             <div class="container small p-top p-bottom">
                                 <img class="responsive" src="images/schulen.png" alt="Datensatz im FIS-Broker" />
                                 <p class="caption">Datensatz im FIS-Broker</p>
                             </div>
                         </p>
-                        <p class="copy">Der Link öffnet ein neues Fenster mit den Angaben zum WFS Server. Hier benötigen wir die <i>"Rechneradresse"</i>.
+                        <p class="copy">Der Link öffnet ein neues Fenster mit den Angaben zum WFS-Server. Hier benötigen wir die <i>"Rechneradresse"</i>.
                                     <div class="container small p-top p-bottom">
                                         <img class="responsive" src="images/get_link.png" alt="Download Details im FIS-Broker" />
                                         <p class="caption">Download Details im FIS-Broker</p>
                                     </div>
                         </p>
                         <p class="copy">Kopiert die Rechneradresse in QGIS in das URL-Feld von <i>"Verbindungsdetails"</i>, das sich zuvor geöffnet hatte.
-                            Der Name kann nach belieben gewählt werden und der Rest der Felder wird hier nicht benötigt. Anschließen mit <i>"OK"</i> bestätigen.
+                            Der Name kann nach Belieben gewählt werden, der Rest der Felder wird hier nicht benötigt. Anschließend mit <i>"OK"</i> bestätigen.
                             <div class="container small p-top p-bottom">
                                 <img class="responsive" src="images/server_benennen.png" alt="Verbindungsdetails angeben" />
                                 <p class="caption">Verbindungsdetails angeben</p>
@@ -155,16 +157,16 @@
                                 <p class="caption">Browser-Fenster aktualisieren</p>
                             </div>
                         </p>
-                        <p class="copy">Anschließend sollte das Layer des Datensatzes im Browserfenster unter <i>"WFS"</i> zu finden sein.
+                        <p class="copy">Anschließend sollte der Layer des Datensatzes im Browserfenster unter <i>"WFS"</i> zu finden sein.
                             <div class="container small p-top p-bottom">
                                 <img class="responsive" src="images/aktualisiert.png" alt="aktualisiertes Browser-Fenster" />
                                 <p class="caption">aktualisiertes Browser-Fenster</p>
                             </div>
                         </p>
-                        <p class="copy">Durch Doppelklick oder Drag-and-Drop in das Layerfenster erscheinen die Datenpunkte in der Kartenansicht. In diesem Beispiel sind jetzt alle Schulen Berlins dargestellt. Mit QGIS kann die Darstellung nach belieben angepasst werden. Beispielsweise kann eine Karte darunter gelegt, die Markierungen der Datenpunkte verändert oder weitere Layer (bspw. Bezirksgrenzen) hinzugefügt werden.
-                                Sebastian Meier hat hierzu ein <a href=https://drive.google.com/file/d/1EB9rbJBm41Gv8rQ1N7wHTpDcx6Bq5X7W/view>ausführliches Skript zur Einführung in QGIS</a> erstellt, das kostenlos zum Download zur Verfügung steht. 
+                        <p class="copy">Durch Doppelklick oder Drag-and-Drop in das Layerfenster erscheinen die Datenpunkte in der Kartenansicht. In diesem Beispiel sind jetzt alle Schulen Berlins dargestellt. Mit QGIS kann die Darstellung nach Belieben angepasst werden. Beispielsweise kann eine Karte darunter gelegt, die Markierungen der Datenpunkte verändert oder weitere Layer (bspw. Bezirksgrenzen) hinzugefügt werden.
+                                Wer mehr wissen will, kann gerne einen Blick in die <a href=https://drive.google.com/file/d/1EB9rbJBm41Gv8rQ1N7wHTpDcx6Bq5X7W/view>ausführlichen Skripte zur Einführung in QGIS</a> werfen, die Sebastian Meier für unsere ODIS-Workshops erstellt hat. 
                                 <br>
-                                <br>Um die Sachdaten direkt in QGIS anzuschauen, klickt mit einem Rechtsklick auf das Layer und wählt <i>"Attributtabelle öffnen"</i> aus.
+                                <br>Um die Sachdaten direkt in QGIS anzuschauen, klickt mit einem Rechtsklick auf den Layer und wählt <i>"Attributtabelle öffnen"</i> aus.
                     
                             <div class="container small p-top p-bottom">
                                 <img class="responsive" src="images/go_to_table.png" alt="Attributtabelle öffnen" />
@@ -174,7 +176,7 @@
                                 <p class="caption">Attributtabelle</p>
                             </div>
                         </p>
-                        <p class="copy">Mit einen Rechtsklick auf das Layer und <i>"Speichern als..."</i> können die Daten des Layers in gewünschtem Format (shape-File, geoJson, gml, csv, etc. ) gespeichert werden.
+                        <p class="copy">Mit einen Rechtsklick auf den Layer und <i>"Speichern als..."</i> können die Daten des Layers im gewünschtem Format (Shape-File, GeoJSON, GML,CSV etc.) gespeichert werden.
                     
                             <div class="container small p-top p-bottom">
                                 <img class="responsive" src="images/go_to_save.png" alt="Layer speichern als ..." />
