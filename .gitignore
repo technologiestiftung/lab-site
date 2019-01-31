@@ -20,7 +20,8 @@ Desktop.ini
 *.lnk
 
 node_modules
-package-lock.json
+# package-lock.json
 
 # Debug log from npm
 npm-debug.log
+.sass-cache
