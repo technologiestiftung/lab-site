@@ -12,11 +12,22 @@
 	<atom:link href="http://lab.technologiestiftung-berlin.de/feed.xml" rel="self" type="application/rss+xml" />
 	<link>http://lab.technologiestiftung-berlin.de</link>
 	<description>Wir erforschen und erproben digitale Werkzeuge um gemeinsam mit Bürger*innen, Verwaltung und Unternehmen die Zukunft Berlins zu gestalten.</description>
-	<lastBuildDate>Mon, 28 Jan 2019 14:15:30  +0100</lastBuildDate>
+	<lastBuildDate>Thu, 31 Jan 2019 10:40:26  +0100</lastBuildDate>
 	<language>de-DE</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	
+<item>
+<title><![CDATA[HOW TO: Download aus dem Geodatenportal FIS-Broker]]></title>
+<link>http://lab.technologiestiftung-berlin.de/projects/fisbroker-to-qgis/index.html</link>
+<pubDate>Thu, 31 Jan 2019 00:00:00  +0100</pubDate>
+<category><![CDATA[Offene Daten, Wissen]]></category>
+<description><![CDATA[Eine Anleitung wie man Daten aus dem Berliner Geodatenkatalog FIS-Broker herunterzuladen kann.]]></description>
+<content:encoded><![CDATA[Eine Anleitung wie man Daten aus dem Berliner Geodatenkatalog FIS-Broker herunterzuladen kann.]]></content:encoded>
+<dc:creator><![CDATA[undefined]]></dc:creator>
+<guid isPermaLink="true">http://lab.technologiestiftung-berlin.de/projects/fisbroker-to-qgis/index.html</guid>
+</item>
+
 <item>
 <title><![CDATA[Zuwachs im Lab]]></title>
 <link>http://lab.technologiestiftung-berlin.de/projects/Zuwachs/index.html</link>

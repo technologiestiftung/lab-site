@@ -1,1 +1,23 @@
-{"LIVE":false,"TYPE":"full","PROJECT":"fisbroker-to-qgis","DATE":"{{DATE}}","EMAIL":"kapp@technologiestiftung-berlin.de","GITHUB_URL":"{{PROJECT}}","TWITTER_HANDLE":"lxndrkp","AUTHOR":"Alexandra Kapp","AUTHOR_IMAGE":"alexandra_kapp","AUTHOR_BIO_DE":"Alexandra Kapp ist wissenschaftliche Mitarbeiterin im Bereich Open Data bei der Technologiestiftung Berlin. Sie studierte Computing in the Humanities an der Otto-Friedrich-Universität Bamberg. Der Fokus ihrer Arbeit liegt auf der Frage, wie Geoinformationsdaten der Verwaltung effektiv als Open Data bereitgestellt werden können.","AUTHOR_BIO_EN":"Alexandra Kapp is an Open Data researcher at the Technologiestiftung Berlin. She studied Computing in the Humanities at the Otto-Friedrich-Universität Bamberg. She focuses on how geo spatial data can effectively be provided as Open Data.","TAG_DE":"{{TAG_DE}}","TAG_EN":"{{TAG_EN}}","PROJECT_DESCRIPTION_DE":"{{PROJECT_DESCRIPTION_DE}}","PROJECT_DESCRIPTION_EN":"{{PROJECT_DESCRIPTION_EN}}","PROJECT_TITLE_DE":"{{PROJECT_TITLE_DE}}","PROJECT_TITLE_EN":"{{PROJECT_TITLE_EN}}","SHORT_TITLE_DE":"{{SHORT_TITLE_DE}}","SHORT_TITLE_EN":"{{SHORT_TITLE_EN}}","SHORT_SUBTITLE_DE":"{{SHORT_SUBTITLE_DE}}","SHORT_SUBTITLE_EN":"{{SHORT_SUBTITLE_EN}}"}
+{
+    "LIVE":true,
+    "TYPE":"light",
+    "PROJECT":"fisbroker-to-qgis",
+    "DATE":"31/01/2019",
+    "EMAIL":"kapp@technologiestiftung-berlin.de",
+    "GITHUB_URL":"",
+    "TWITTER_HANDLE":"lxndrkp",
+    "AUTHOR":"Alexandra Kapp",
+    "AUTHOR_IMAGE":"alexandra_kapp",
+    "AUTHOR_BIO_DE":"Alexandra Kapp ist wissenschaftliche Mitarbeiterin im Bereich Open Data bei der Technologiestiftung Berlin. Sie studierte Computing in the Humanities an der Otto-Friedrich-Universität Bamberg. Der Fokus ihrer Arbeit liegt auf der Frage, wie Geoinformationsdaten der Verwaltung effektiv als Open Data bereitgestellt werden können.",
+    "AUTHOR_BIO_EN":"Alexandra Kapp is an Open Data researcher at the Technologiestiftung Berlin. She studied Computing in the Humanities at the Otto-Friedrich-Universität Bamberg. She focuses on how geo spatial data can effectively be provided as Open Data.",
+    "TAG_DE":"Offene Daten, Wissen",
+    "TAG_EN":"Open Data, Knowledge",
+    "PROJECT_DESCRIPTION_DE":"Eine Anleitung wie man Daten aus dem Berliner Geodatenkatalog FIS-Broker herunterzuladen kann.",
+    "PROJECT_DESCRIPTION_EN":"A guide on how to use QGIS to download geospatial data for Berlin",
+    "PROJECT_TITLE_DE":"HOW TO: Download aus dem Geodatenportal FIS-Broker",
+    "PROJECT_TITLE_EN":"HOW TO: Downloads from the geospatial data portal FIS-Broker",
+    "SHORT_TITLE_DE":"FIS-Broker Daten Download",
+    "SHORT_TITLE_EN":"FIS-Broker Data Download",
+    "SHORT_SUBTITLE_DE":"Mit QGIS Daten herunterladen und weiterverwenden",
+    "SHORT_SUBTITLE_EN":"Download and process data with QGIS"
+}
