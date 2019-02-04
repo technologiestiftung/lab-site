@@ -1,0 +1,14 @@
+- 404 pages @done(2019-02-01)
+- website data from json
+
+-  hotreload
+- navigation based on data in website.json (both languages) See _includes/navigation.html
+- language switching
+
+- sass
+- sourcemaps
+- autoprefixer
+- babel
+- minify js
+- browserify
+- project generator

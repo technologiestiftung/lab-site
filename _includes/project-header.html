@@ -1,0 +1,55 @@
+<header class="project-header {{ page.colorMode }}">
+    <div class="project-header__hero">
+        <div class="gradient-overlay"></div>
+        <img class="project-header__hero-image" src="{{ page.heroImage }}" alt="{{ page.title }}"/>
+    </div>
+
+    <div class="project-header__title">
+        <a class="link--button" href="#">Launch Project</a>
+
+        <div class="flex-row">
+            <h1 class="project-header__title--main headline--bold">
+                {{ page.title }}
+            </h1>
+            <h2 class="project-header__title--sub">
+                {{ page.subtitle }}
+            </h2>
+        </div>
+
+    </div>
+
+    <div class="project-header__meta">
+        <div class="project-header__meta-column project-header__meta-column--researchers">
+            <div class="project-header__meta-column__header">
+                Researchers
+            </div>
+            {%- for author in page.authors -%}
+            <a href="{{ site.url }}/team/{{ author }}/{{page.lang}}" class="project-header__meta-column__item">
+                {{ author }}
+            </a>
+            {%- endfor -%}
+        </div>
+        <div class="project-header__meta-column project-header__meta-column--status">
+            <div class="project-header__meta-column__header">
+                Current Status
+            </div>
+            <div class="project-header__meta-column__item">
+                {{ page.currentStatus }}
+            </div>
+        </div>
+        <div class="project-header__meta-column project-header__meta-column--date">
+            <div class="project-header__meta-column__header">Date</div>
+            <div class="project-header__meta-column__item">
+                {{ page.date }}
+            </div>
+        </div>
+        <div class="project-header__meta-column project-header__meta-column--materials">
+            <div class="project-header__meta-column__header">Materials</div>
+            {%- for materialIncluded in page.materialsIncluded -%}
+            <a href="{{ materialIncluded.link }}" class="project-header__meta-column__item">
+                {{ materialIncluded.name }}
+            </a>
+            {%- endfor -%}
+        </div>
+    </div>
+</header>

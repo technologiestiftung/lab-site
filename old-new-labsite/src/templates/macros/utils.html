@@ -1,0 +1,13 @@
+{% macro link(linkHref, linkContent, linkType) %}
+<a class="link--normal {{ linkType }}" href="{{ linkHref }}">{{ linkContent }}</a>
+{% endmacro %}
+
+{% macro image(imageSrc, imageAlt) %}
+<img src="../../../assets/images/{{ imageSrc }}" alt="{{ imageAlt }}">
+{% endmacro %}
+
+{% macro codeSnippet(code, language="javascript") %}
+<section class="section--code">
+    <pre><code class="language-{{ language }}">{{ code | safe }}</code></pre>
+</section>
+{% endmacro %}

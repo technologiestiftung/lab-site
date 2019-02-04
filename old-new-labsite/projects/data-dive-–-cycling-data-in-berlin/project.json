@@ -1,0 +1,43 @@
+{
+    "en": {
+        "title": "Data Dive – Cycling data in Berlin",
+        "subtitle": "Subtitle of the project",
+        "date": "2018-12-25T01:41:08.442Z",
+        "description": "This is the best project ever and here is why …",
+        "heroImage": "../../../assets/images/placeholder-rect.png",
+        "thumbnail": "../../../assets/images/data-dive-thumb.png",
+        "authors": ["Sebastian Meier"],
+        "type": "publication",
+        "currentStatus": "ongoing",
+        "materialsIncluded": [
+            { "name": "images", "link": "#" },
+            { "name": "video", "link": "#" },
+            { "name": "press text", "link": "#" },
+            { "name": "Source Code", "link": "#" }
+        ],
+        "featuredImage": "../../../assets/images/lakes.jpg",
+        "visible": true,
+        "isFeatured": false,
+        "confirmation": true
+    },
+    "de": {
+        "title": "Data Dive – Cycling data in Berlin",
+        "subtitle": "Projekt wurde noch nicht übersetzt",
+        "date": "2018-12-25T01:41:08.442Z",
+        "description": "Dies ist das beste Projekt jemals, denn …",
+        "heroImage": "../../../assets/images/placeholder-rect.png",
+        "thumbnail": "../../../assets/images/data-dive-thumb.png",
+        "authors": ["Sebastian Meier"],
+        "type": "publication",
+        "materialsIncluded": [
+            { "name": "images", "link": "#" },
+            { "name": "video", "link": "#" },
+            { "name": "press text", "link": "#" },
+            { "name": "Source Code", "link": "#" }
+        ],
+        "featuredImage": "../../../assets/images/lakes.jpg",
+        "visible": true,
+        "isFeatured": false,
+        "confirmation": true
+    }
+}

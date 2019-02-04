@@ -1,0 +1,104 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+# Contains the url of your site as it is configured in the _config.yml. For example, if you have url: http://mysite.com in your configuration file, then it will be accessible in Liquid as site.url. For the development environment there is an exception, if you are running jekyll serve in a development environment site.url will be set to the value of host, port, and SSL-related options. This defaults to url: http://localhost:4000.
+# the base hostname & protocol for your site, e.g. http://example.com
+url: https://lab.technologiestiftung-berlin.de/
+title: Technologiestiftung Berlin
+email: roboter@tsb.ara.uberspace.de
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+# baseurl: "" # the subpath of your site, e.g. /blog
+twitter_username:
+github_username:  tsboter
+
+# Front Matter Defaults
+# Using front matter is one way that you can specify configuration in the pages and posts for your site. Setting things like a default layout, or customizing the title, or specifying a more precise date/time for the post can all be added to your page or post front matter.
+# Often times, you will find that you are repeating a lot of configuration options. Setting the same layout in each file, adding the same category - or categories - to a post, etc. You can even add custom variables like author names, which might be the same for the majority of posts on your blog.
+# Instead of repeating this configuration each time you create a new post or page, Jekyll provides a way to set these defaults in the site configuration. To do this, you can specify site-wide defaults using the defaults key in the  _config.yml file in your project’s root directory.
+# https://jekyllrb.com/docs/configuration/front-matter-defaults/
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"
+      language: "de"
+
+# Build settings
+# Kramdown is the default Markdown renderer for Jekyll.
+# https://jekyllrb.com/docs/configuration/markdown/#kramdown
+# For more details about these options have a look at the Kramdown configuration documentation. https://kramdown.gettalong.org/options.html
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+  parse_block_html: true
+  footnote_backlink: '↑'
+  # https://kramdown.gettalong.org/syntax_highlighter/rouge.html
+  syntax_highlighter: rouge
+
+# Collections
+# Collections are a great way to group related content like members of a team or talks at a conference.
+# https://jekyllrb.com/docs/collections/
+collections_dir: collections
+# host: 127.0.0.1
+host: localhost
+collections:
+  team_de:
+    output: true
+  team_en:
+    output: true
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+  # - jekyll-redirect-from
+sass:
+  sass_dir: assets/_scss
+  style: compressed
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+exclude:
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - Gemfile
+  - Gemfile.lock
+  - .gitignore
+  - .git
+  - .asset-cache
+  - _static-site
+  - .sass-cache
+  - node_modules
+  - assets/js/index.js
+  - webpack.config.js
+  - package.json
+  - README.md
+  - ignore
+  - vendor
+paginate: 5
+paginate_path: "blog/page:num"
+
+webrick:
+  headers:
+    Access-Control-Allow-Origin: "*"

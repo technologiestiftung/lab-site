@@ -1,0 +1,114 @@
+{
+    "title": "Ideation & Prototyping Lab",
+    "siteUrl": "",
+    "language": "de",
+    "pages": [
+        {
+            "name": "start",
+            "title": "Index Page",
+            "url": "/de/"
+        },
+        {
+            "name": "about",
+            "title": "About Page",
+            "navigationTitle": "Über uns",
+            "url": "/de/about"
+        },
+        {
+            "name": "projects",
+            "title": "Projects Page",
+            "navigationTitle": "Projekte",
+            "url": "/de/projects"
+        },
+        {
+            "name": "datasets",
+            "title": "Data Page",
+            "navigationTitle": "Daten",
+            "url": "/de/datasets"
+        }
+    ],
+    "team": {
+        "current": [
+            {
+                "name": "team friend 1",
+                "position": "cool position",
+                "image": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
+                "type": "data",
+                "description": "Hello hello hello",
+                "mail": "hello@technologiestiftung-berlin.de"
+            },
+            {
+                "name": "team friend 2",
+                "position": "better position",
+                "image": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
+                "type": "data",
+                "description": "Hello hello hello",
+                "mail": "hello@technologiestiftung-berlin.de"
+            },
+            {
+                "name": "team friend 3",
+                "position": "best position",
+                "image": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
+                "type": "data",
+                "description": "Hello hello hello",
+                "mail": "hello@technologiestiftung-berlin.de"
+            },
+            {
+                "name": "team friend 4",
+                "position": "bestest position",
+                "image": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
+                "type": "data",
+                "description": "Hello hello hello",
+                "mail": "hello@technologiestiftung-berlin.de"
+            }
+        ],
+        "alumnis": [
+            {
+                "name": "alumni friend 1",
+                "position": "had cool position"
+            },
+            {
+                "name": "alumni friend 2",
+                "position": "had better position"
+            },
+            {
+                "name": "alumni friend 3",
+                "position": "had best position"
+            },
+            {
+                "name": "alumni friend 4",
+                "position": "had bestest position"
+            },
+            {
+                "name": "alumni friend 5",
+                "position": "had better position"
+            },
+            {
+                "name": "alumni friend 6",
+                "position": "had best position"
+            },
+            {
+                "name": "alumni friend 7",
+                "position": "had bestest position"
+            }
+        ]
+    },
+    "data": [
+        {
+            "name": "this is a dataset",
+            "resolution": "high",
+            "keywords": "keyword, another keyword",
+            "formats": [
+                {
+                    "name": "jpg",
+                    "size": "1.54 Mb"
+                },
+                {
+                    "name": "png",
+                    "size": "0.97 Mb"
+                }
+            ],
+            "thumbnail": "https://www.zps-smile.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png"
+        }
+    ]
+}

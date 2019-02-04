@@ -1,0 +1,44 @@
+ <!-- from "macros/navigationItem.html" import navigationItem -->
+
+<nav id="navigation" class="navigation">
+    <a class="navigation-logo" href="/{{ page.lang }}">
+        <span class="navigation-logo__line">Ideation & Prototyping <span class="bold">Lab</span></span>
+        <span class="navigation-logo__line"><span class="bold">Technologiestiftung</span> Berlin</span>
+    </a>
+
+    <ul class="navigation-list">
+        <!-- this is generate from data within the website.json -->
+        {% for page in site.pages %}
+            {% if page.navigationTitle %}
+            <!-- TODO -->
+            <!-- include with arguments -->
+            <!-- {{ navigationItem(page.navigationTitle, page.url) }} -->
+            <li class="navigation-list__item navigation-list__item--nav">
+                <a href="{{ page.url }}">{{ page.name }}</a>
+            </li>
+            {% endif %}
+        {% endfor %}
+
+        <li class="navigation-list__item navigation-list__item--lang">
+            <a id="language-switch" class="navigation-language" href="/{% if page.lang == "en" %}de{% else %}en{% endif %}">
+                {% if page.lang == "en" %}
+                    Deutsch
+                {% else %}
+                    English
+                {% endif %}
+            </a>
+        </li>
+        <li class="navigation-list__item navigation-list__item--icon">
+            <a href="https://twitter.com/tsbberlin" target="_blank">
+                <img class="navigation-icon--twitter" src="{{ site.url }}/assets/icons/twitter-icon.svg" alt="Twitter" />
+            </a>
+        </li>
+
+        <li class="navigation-list__item navigation-list__item--icon">
+            <a href="https://github.com/technologiestiftung" target="_blank">
+                <img class="navigation-icon--github" src="{{ site.url }}/assets/icons/github-icon.svg" alt="Github" />
+            </a>
+        </li>
+
+    </ul>
+</nav>

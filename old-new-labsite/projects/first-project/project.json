@@ -1,0 +1,45 @@
+{
+    "en": {
+        "title": "first project",
+        "subtitle": "Here is a short description of the project. This text should not exceed a length of 2 lines.",
+        "date": "2018-12-22T19:08:29.067Z",
+        "description": "This is the best project ever and here is why …",
+        "heroImage": "../../../assets/images/familie-see.jpeg",
+        "thumbnail": "../../../assets/images/placeholder-rect.png",
+        "authors": ["Benjamin Seibel", "Victoria Dykes"],
+        "type": "publication",
+        "colorMode": "dark",
+        "currentStatus": "ongoing",
+        "materialsIncluded": [
+            { "name": "images", "link": "#" },
+            { "name": "video", "link": "#" },
+            { "name": "press text", "link": "#" },
+            { "name": "Source Code", "link": "#" }
+        ],
+        "featuredImage": "../../../assets/images/kita-explorer.jpg",
+        "isFeatured": true,
+        "visible": true,
+        "confirmation": true
+    },
+    "de": {
+        "title": "first project",
+        "subtitle": "Hier steht eine kurze Beschreibung des Projektes. Dieser Text sollte eine Länge von 2 Zeilen nicht überschreiten.",
+        "date": "2018-12-22T19:08:29.067Z",
+        "description": "Dies ist das beste Projekt jemals, denn …",
+        "heroImage": "../../../assets/images/familie-see.jpeg",
+        "thumbnail": "../../../assets/images/placeholder-rect.png",
+        "authors": ["Benjamin Seibel", "Victoria Dykes"],
+        "type": "publication",
+        "colorMode": "dark",
+        "materialsIncluded": [
+            { "name": "images", "link": "#" },
+            { "name": "video", "link": "#" },
+            { "name": "press text", "link": "#" },
+            { "name": "Source Code", "link": "#" }
+        ],
+        "featuredImage": "../../../assets/images/kita-explorer.jpg",
+        "isFeatured": true,
+        "visible": true,
+        "confirmation": true
+    }
+}

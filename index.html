@@ -1,0 +1,24 @@
+---
+layout: default
+lang: de
+---
+
+<section>
+  needs feed
+  needs landing page
+  needs featured projects
+  {%- for pg in site.pages -%}
+  <a href={{pg.url}}>url: {{pg.url}} TITLE: {{pg.title}}</a><br>
+  {%- endfor -%}
+</section>
+
+
+{%- capture md -%}
+```plain
+Can this still be markdown?
+```
+{%- endcapture -%}
+
+<section>
+  {{md | markdownify}}
+</section>

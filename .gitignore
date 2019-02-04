@@ -25,3 +25,7 @@ node_modules
 # Debug log from npm
 npm-debug.log
 .sass-cache
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>{{ page.title }}</title>
+        <!-- {# Favicon #} -->
+        {% include favicon-links.html %}
+        <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/index.css" />
+        {%- if page.group == "projects" -%}
+        <!-- include assets only for projets.
+            all assets should be realtive to project folder-->
+        {%- if page.assets  -%}
+        <!-- we have assets -->
+        {%- if page.assets.css -%}
+            <!-- we have css -->
+            {%- for cssfile in page.assets.css -%}
+            <link rel="stylesheet" type="text/css" type="text/css" href="{{cssfile}}" />
+            {%- endfor -%}
+            <!-- end of css -->
+            {%- endif -%}
+            {%- if page.assets.js -%}
+            <!-- we have js assets -->
+                {%- for jsfile in page.assets.js -%}
+                <script src="{{jsfile}}" type="text/javascript"></script>
+                {%- endfor -%}
+            {%- endif -%}
+        {%- endif -%}
+        <!-- lksödflsdölsdölksdölskd -->
+        <link rel="stylesheet" type="text/css" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.8/tiny-slider.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.8/min/tiny-slider.js"></script>
+        {%- else -%}
+            <!-- else -->
+        {% endif %}
+    </head>
+    <body>
+        <!-- navigation -->
+        <!-- TODO Nav not working yet -->
+        {% include navigation.html %}
+
+        {{content}}
+
+        <!-- {# Footer #} -->
+        {% include footer.html %}
+
+        <script src="{{ site.url }}/assets/js/index.bundle.js" defer></script>
+    </body>
+</html>

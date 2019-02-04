@@ -1,0 +1,13 @@
+
+<section>
+
+  <ul>
+    {%- for pg in site.pages -%}
+    {%- if pg.lang == include.lang -%}
+    {%- if pg.group == 'projects' -%}
+    <li>{{pg.title}}</li>
+    {%- endif -%}
+    {%- endif -%}
+    {%- endfor -%}
+  </ul>
+</section>

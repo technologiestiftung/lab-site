@@ -1,0 +1,165 @@
+{
+    "title": "Ideation & Prototyping Lab",
+    "siteUrl": "",
+    "netlifyUrl": "https://pedantic-mirzakhani-1841cc.netlify.com/",
+    "language": "en",
+    "pages": [
+        {
+            "name": "start",
+            "title": "Index Page",
+            "url": "/en/"
+        },
+        {
+            "name": "about",
+            "title": "About Page",
+            "navigationTitle": "About us",
+            "url": "/en/about"
+        },
+        {
+            "name": "projects",
+            "title": "Projects Page",
+            "navigationTitle": "Projects",
+            "url": "/en/projects"
+        },
+        {
+            "name": "datasets",
+            "title": "Data Page",
+            "navigationTitle": "Data",
+            "url": "/en/datasets"
+        }
+    ],
+    "team": {
+        "current": [
+            {
+                "name": "Benjamin Seibel",
+                "position": "Head of lab",
+                "image": "assets/images/benjamin.png",
+                "type": "data",
+                "description": "Hello hello hello",
+                "mail": "hello@technologiestiftung-berlin.de",
+                "twitter": "#",
+                "github": "#"
+            },
+            {
+                "name": "Sebastian Meier",
+                "position": "Lead data scientist",
+                "image": "assets/images/sebastian.png",
+                "type": "data",
+                "description": "Hello hello hello",
+                "mail": "hello@technologiestiftung-berlin.de",
+                "twitter": "#",
+                "github": "#"
+            },
+            {
+                "name": "Victoria Dykes",
+                "position": "Open data referent",
+                "image": "assets/images/tori.png",
+                "type": "data",
+                "description": "This week we launched our new app Badestellen Berlin. This was a joint effort of Kompetenzzentrum Wasser, Berliner Wasserbetriebe and the LaGeSo. The new application allows citizens to get up to date information on bathing water quality. Besides water quality information the site provides additional info on each site, for example, accessibility features or availability of toilets and parking lots. A link to a routing service and the local public transport service allow you to conveniently plan your next trip.",
+                "mail": "dykes@technologiestiftung-berlin.de",
+                "twitter": "#"
+            },
+            {
+                "name": "Fabian Dinklage",
+                "position": "Visualization & Prototyping",
+                "image": "assets/images/fabian.png",
+                "type": "data",
+                "description": "Hello hello hello",
+                "mail": "hello@technologiestiftung-berlin.de",
+                "twitter": "#",
+                "github": "#"
+            }
+        ],
+        "alumnis": [
+            {
+                "name": "alumni friend 1",
+                "position": "had cool position"
+            },
+            {
+                "name": "alumni friend 2",
+                "position": "had better position"
+            },
+            {
+                "name": "alumni friend 3",
+                "position": "had best position"
+            },
+            {
+                "name": "alumni friend 4",
+                "position": "had bestest position"
+            },
+            {
+                "name": "alumni friend 5",
+                "position": "had better position"
+            },
+            {
+                "name": "alumni friend 6",
+                "position": "had best position"
+            },
+            {
+                "name": "alumni friend 7",
+                "position": "had bestest position"
+            }
+        ]
+    },
+    "partners": [
+        {
+            "name": "Open Data Informationsstelle",
+            "image": "assets/images/partner-open-data.svg",
+            "description": "cool partner cool partner cool partner cool partner "
+        },
+        {
+            "name": "CityVis Exhibition",
+            "image": "assets/images/partner-city-vis.svg",
+            "description": "better partner better partner better partner better partner "
+        },
+        {
+            "name": "Open Data Berlin",
+            "image": "assets/images/partner-open-data-berlin.svg",
+            "description": "bestest partner bestest partner bestest partner bestest partner "
+        }
+    ],
+    "data": [
+        {
+            "name": "Bike traffic signs",
+            "resolution": "Districts",
+            "keywords": "geo, mobility, line",
+            "formats": [
+                {
+                    "name": "GeoJSON",
+                    "size": "1.54 Mb",
+                    "link": "#"
+                },
+                {
+                    "name": "gml",
+                    "size": "1.48 Mb",
+                    "link": "#"
+                },
+                {
+                    "name": "kml",
+                    "size": "1.48 Mb",
+                    "link": "#"
+                },
+                {
+                    "name": "XML",
+                    "size": "1.48 Mb",
+                    "link": "#"
+                }
+            ],
+            "metadata": [
+                {
+                    "name": "Last modified",
+                    "value": "2018-09-10"
+                },
+                {
+                    "name": "Provider",
+                    "value": "Geoportal Berlin"
+                },
+                {
+                    "name": "Keywords",
+                    "value": "Nutzungsbedingungen: Für die Verwendung der Daten gelten folgende Nutzungsbestimmungen: http://www.stadtentwicklung.berlin.de/geoinformation/download/nutzIII.pdf - Der Quellenvermerk gemäß §2 lautet „Geoportal Berlin / [Titel des Datensatzes]“. Es sind die datenschutzrechtlichen Bestimmungen, insbesondere das Bundesdatenschutzgesetz, zu beachten."
+                }
+            ],
+            "thumbnail": "{{siteUrl}}/assets/images/bike-traffic-thumbnail.png"
+        }
+    ]
+}
