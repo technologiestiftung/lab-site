@@ -12,4 +12,4 @@ permalink: /team/ben/en/
 ---
 
 
-Ben is ben is ben is availaalbe as content
+Ben is ben is ben is availalbe as content

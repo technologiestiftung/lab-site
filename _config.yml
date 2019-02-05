@@ -64,7 +64,6 @@ collections:
     output: true
   team_en:
     output: true
-
 plugins:
   - jekyll-feed
   - jekyll-sitemap
@@ -96,6 +95,7 @@ exclude:
   - README.md
   - ignore
   - vendor
+  - notes
 paginate: 5
 paginate_path: "blog/page:num"
 

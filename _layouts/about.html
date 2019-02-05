@@ -1,0 +1,85 @@
+---
+layout: default
+title: about
+lang: de
+---
+
+{%- if page.lang == "de" -%}
+{%- assign team = site.team_de -%}
+{%- else -%}
+{%- assign team = site.team_en -%}
+{%- endif -%}
+
+<section class="about-content">
+{{content}}
+</section>
+
+<section class="feed">
+  <h2 class="feed-headline section-headline headline--bold">Team</h2>
+  <ul class="grid feed-list">
+
+      {% for member in team %}
+      <li class="feed-list__project">
+          <a href="{{ member.url }}">
+              <img class="feed-list__project-image" src="{{site.url}}{{ member.image }}" alt="{{ member.name }}">
+              <div class="feed-list__project-title">
+                  {{ member.name }}
+              </div>
+              <div class="feed-list__project-date">
+                  {{ member.position }}
+              </div>
+          </a>
+      </li>
+      {% endfor %}
+
+  </ul>
+</section>
+
+
+
+<section class="feed">
+    <h2 class="feed-headline section-headline headline--bold">Alumni</h2>
+    <ul class="grid feed-list">
+
+        {% for alumnus in site.data.alumni %}
+        <li class="feed-list__project">
+            <a href="#">
+                <div class="feed-list__project-title">
+                    {{ alumnus.name }}
+                <div class="feed-list__project-date">
+                    {%- if page.lang == "de" -%}
+                    {{ alumnus.role.de }}{%- else -%}{{ alumnus.role.en }}
+                    {%- endif -%}
+                </div>
+                </div>
+            </a>
+        </li>
+        {% endfor %}
+
+    </ul>
+</section>
+
+<section class="partner">
+        <h2 class="partner-headline section-headline headline--bold">Partner</h2>
+        <ul class="grid partner-list">
+            {% for partner in site.data.partners %}
+            <li class="partner-list__project">
+                <a href="#">
+                    <div class="partner-list__project-image">
+                        <img class="partner-list__project-image-logo partner-list__project-image-logo--{{ partner.name | slugify }}" src="{{ partner.image }}" alt="{{ partner.name }}">
+                    </div>
+                    <div class="partner-list__project-title">
+                        {{ partner.name }}
+                    </div>
+                    <div>
+                        {%- if page.lang == "de" -%}
+                        {{ partner.description.de }}
+                        {%- else -%}
+                        {{ partner.description.en }}
+                        {%- endif -%}
+                    </div>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>

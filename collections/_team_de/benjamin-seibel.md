@@ -3,7 +3,7 @@ layout: team-detail
 name: Benjamin Seibel
 image: /assets/images/benjamin.png
 mail: roboter@tsb.ara.uberspace.de
-description: Foo bah ba dew de z de
+description: Das ist Ben
 twitter: bnjmnsbl
 github:
 position: Master Of Disaster
