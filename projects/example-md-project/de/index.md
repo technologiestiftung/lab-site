@@ -1,8 +1,6 @@
 ---
 layout: project
 lang: de
-group: projects
-
 
 title: Beispiel Markdown Projekt
 subtitle: Auf deutsch
