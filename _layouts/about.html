@@ -1,7 +1,5 @@
 ---
 layout: default
-title: about
-lang: de
 ---
 
 {%- if page.lang == "de" -%}
@@ -20,7 +18,7 @@ lang: de
 
       {% for member in team %}
       <li class="feed-list__project">
-          <a href="{{ member.url }}">
+          <a href="/team/{{ member.name | slugify }}/{{page.lang}}">
               <img class="feed-list__project-image" src="{{site.url}}{{ member.image }}" alt="{{ member.name }}">
               <div class="feed-list__project-title">
                   {{ member.name }}

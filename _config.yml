@@ -38,7 +38,21 @@ defaults:
       path: "" # an empty string here means all files in the project
     values:
       layout: "default"
-      language: "de"
+      lang: "de"
+  -
+    scope:
+      path: ""
+      type: "team_de"
+    values:
+      lang: "de"
+      layout: "team-detail"
+  -
+    scope:
+      path: ""
+      type: "team_en"
+    values:
+      lang: "en"
+      layout: "team-detail"
 
 # Build settings
 # Kramdown is the default Markdown renderer for Jekyll.
@@ -62,8 +76,12 @@ host: localhost
 collections:
   team_de:
     output: true
+    permalink: /team/:name/de
   team_en:
     output: true
+    permalink: /team/:name/en
+
+
 plugins:
   - jekyll-feed
   - jekyll-sitemap
