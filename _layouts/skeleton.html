@@ -8,7 +8,7 @@
         <!-- {# Favicon #} -->
         {% include favicon-links.html %}
         <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/index.css" />
-        {%- if page.group == "projects" -%}
+        {%- if page.layout == "project" -%}
         <!-- include assets only for projets.
             all assets should be realtive to project folder-->
         {%- if page.assets  -%}
@@ -27,11 +27,11 @@
                 {%- endfor -%}
             {%- endif -%}
         {%- endif -%}
-        <!-- lksödflsdölsdölksdölskd -->
         <link rel="stylesheet" type="text/css" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.8/tiny-slider.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.8/min/tiny-slider.js"></script>
         {%- else -%}
             <!-- else -->
+            <!-- not the project layout -->
         {% endif %}
     </head>
     <body>

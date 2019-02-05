@@ -5,7 +5,7 @@
   <ul>
     {%- for pg in site.pages -%}
     {%- if pg.lang == include.lang -%}
-    {%- if pg.group == 'projects' -%}
+    {%- if pg.layout == 'project' -%}
     <li>{{pg.title}}</li>
     {%- endif -%}
     {%- endif -%}
