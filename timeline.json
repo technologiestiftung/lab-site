@@ -1,0 +1,17 @@
+---
+layout: nil
+---
+[
+ {%- for pg in site.pages -%}
+     {
+       "isproject":{%- if pg.group == 'projects' -%}true{%- else -%}false{%- endif -%},
+       "type":"{{pg.type}}",
+       "status":"{{pg.status}}",
+       "url":"{{site.url}}{{pg.url}}",
+       "name": "{{pg.title}}",
+       "lang":"{{pg.lang}}",
+       "start":"{{pg.start}}",
+       "end":"{{pg.end}}"
+     }{% unless forloop.last %},{% endunless %}
+ {%- endfor -%}
+]
