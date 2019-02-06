@@ -8,13 +8,13 @@
 
     <ul class="navigation-list">
         <!-- this is generate from data within the website.json -->
-        {% for page in site.data.en.website.pages %}
-            {% if page.navigationTitle %}
+        {% for item in site.data.meta.navigation %}
+            {% if item.navigationTitle %}
             <!-- TODO -->
             <!-- include with arguments -->
             <!-- {{ navigationItem(page.navigationTitle, page.url) }} -->
             <li class="navigation-list__item navigation-list__item--nav">
-                <a href="{{ page.url }}">{{ page.name }}</a>
+                <a href="{{ item.url[page.lang] }}">{{ item.name }}</a>
             </li>
             {% endif %}
         {% endfor %}

@@ -1,0 +1,39 @@
+{
+  "navigation": [
+    {
+      "name": "start",
+      "title": "Index Page",
+      "url": {
+        "de": "/",
+        "en": "/en"
+      }
+    },
+    {
+      "name": "about",
+      "title": "About Page",
+      "navigationTitle": "Über uns",
+      "url": {
+        "de": "/about/de",
+        "en": "/about/en"
+      }
+    },
+    {
+      "name": "projects",
+      "title": "Projects Page",
+      "navigationTitle": "Projekte",
+      "url": {
+        "de": "/projects/de",
+        "en": "/projects/en"
+      }
+    },
+    {
+      "name": "datasets",
+      "title": "Data Page",
+      "navigationTitle": "Daten",
+      "url": {
+        "de": "/datasets/de",
+        "en": "/datasets/en"
+      }
+    }
+  ]
+}
