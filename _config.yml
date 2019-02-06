@@ -70,7 +70,7 @@ kramdown:
 # Collections
 # Collections are a great way to group related content like members of a team or talks at a conference.
 # https://jekyllrb.com/docs/collections/
-collections_dir: collections
+collections_dir: _collections
 # host: 127.0.0.1
 host: localhost
 collections:
