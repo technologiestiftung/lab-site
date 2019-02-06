@@ -9,7 +9,7 @@ module.exports = {
     'text',
     'text-summary'],
   'collectCoverageFrom': [
-    'assets/js/**/*.{js,jsx}',
+    'source/assets/js/**/*.{js,jsx}',
     '!**/node_modules/**',
     '!**/build/**',
     '!**/coverage/**',
