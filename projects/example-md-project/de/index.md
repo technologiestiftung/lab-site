@@ -7,9 +7,13 @@ subtitle: Auf deutsch
 # project needs the following frontmatter values:
 type: publication # what other types are there
 colorMode: bright # or dark adds an additional class
+featuredImage: /projects/example-md-project/images/feature.png
+# thumbnail path needs to be absolute at the moment
+thumbnail: /projects/example-md-project/images/thumbnail.png
 heroImage: /assets/images/placeholder.png #full page url
-visible: false # if false the project will not be listed
+visible: true # if false the project will not be listed
 # somehow needs to be the name in url of the author page
+featured: true
 authors:
   - benjamin-seibel
   - victoria-dykes
