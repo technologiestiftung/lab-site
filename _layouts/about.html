@@ -58,7 +58,11 @@ layout: default
 </section>
 
 <section class="partner">
-        <h2 class="partner-headline section-headline headline--bold">Partner</h2>
+        <h2 class="partner-headline section-headline headline--bold">{%- if page.lang == "en" -%}
+            Partners
+            {%- else -%}
+            Partner
+          {%- endif -%}</h2>
         <ul class="grid partner-list">
             {% for partner in site.data.partners %}
             <li class="partner-list__project">
