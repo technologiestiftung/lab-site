@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - 10.15.0
+cache: npm
+# https://docs.travis-ci.com/user/deployment/pages/#further-configuration
+# how to config this
+# deploy:
+#   provider: pages
+#   skip-cleanup: true
+#   github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+#   keep-history: true
+#   on:
+#     branch: master
