@@ -14,7 +14,7 @@ languageSwitch();
  * Initialize image sliders by classname
  */
 function createImageSliders(sliderClassName) {
-    const imageSliders = document.getElementsByClassName(sliderClassName);
-    [...imageSliders].forEach(slider => new ImageSlider(slider));
+  const imageSliders = document.getElementsByClassName(sliderClassName);
+  [...imageSliders].forEach(slider => new ImageSlider(slider));
 }
 createImageSliders('image-slider');
