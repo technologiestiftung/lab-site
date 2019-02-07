@@ -1,32 +1,33 @@
 ---
 layout: default
 ---
-<section class="team-detail">
-  <div class="team-detail__image">
-    <img src="{{site.url}}{{ page.image }}" alt="{{ page.name }}" />
+<section class="team-detail {{page.type}}">
+    <div class="team-detail__image--outer">
+        <div class="team-detail__image" style="background-image: url({{site.url}}{{page.image}});"></div>
 
-    <div class="team-detail__social">
-      {% if page.twitter %}
-      <a class="team-detail__social--twitter" href="{{ page.twitter }}" target="_blank">
-        <img class="navigation-icon--twitter" src="{{ site.url }}/assets/icons/twitter-icon.svg" alt="Twitter" />
-      </a>
-      {% endif %}
-      {% if page.github %}
-      <a class="team-detail__social--github" href="{{ page.github }}" target="_blank">
-        <img class="navigation-icon--github" src="{{ site.url }}/assets/icons/github-icon.svg" alt="Github" />
-      </a>
-      {% endif %}
+        <div class="team-detail__description">
+            <div class="team-detail__description--name">{{ page.name }}</div>
+            <div class="team-detail__description--position">
+                {{ page.position }}
+            </div>
+            <div class="team-detail__description--text">
+                {{ page.description }}
+            </div>
 
-      <a class="team-detail__social--mail" href="mailto:{{ page.mail }}">{{ page.mail }}</a>
+            <div class="team-detail__social">
+                {% if page.twitter %}
+                    <a class="team-detail__social--twitter" href="{{ page.twitter }}" target="_blank">
+                    <img class="navigation-icon--twitter" src="{{ site.url }}/assets/icons/twitter-icon.svg" alt="Twitter" />
+                </a>
+                {% endif %}
+                {% if page.github %}
+                <a class="team-detail__social--github" href="{{ page.github }}" target="_blank">
+                    <img class="navigation-icon--github" src="{{ site.url }}/assets/icons/github-icon.svg" alt="Github" />
+                </a>
+                {% endif %}
+            </div>
+            <a style="width: fit-content;" class="team-detail__social--mail link--normal {{ page.type }}" href="mailto:{{ page.mail }}">{{ page.mail }}</a>
+        </div>
+
     </div>
-  </div>
-  <div class="team-detail__description">
-    <div class="team-detail__description--name">{{ page.name }}</div>
-    <div class="team-detail__description--position">
-      {{ page.position }}
-    </div>
-    <div class="team-detail__description--text">
-      {{ page.description }}
-    </div>
-  </div>
 </section>
