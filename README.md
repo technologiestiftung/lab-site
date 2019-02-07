@@ -28,6 +28,7 @@ Write guides for:
 Still to implement:
 
 - [ ] projects feed (same as the feed on the landing page but all of them)
+- [ ] Dataset pages
 
 
 ## License
