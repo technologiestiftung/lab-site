@@ -20,8 +20,11 @@ featProjectsHandler();
 
 function createTimeline(idTimelineDiv) {
     const div = document.getElementById(idTimelineDiv);
-    const projectTimeline = new Timeline(div);
+    if (div != null) {
+        const projectTimeline = new Timeline(div);
+    }
 }
+
 function createImageSliders(sliderClassName) {
     const imageSliders = document.getElementsByClassName(sliderClassName);
     [...imageSliders].forEach(slider => new ImageSlider(slider));
