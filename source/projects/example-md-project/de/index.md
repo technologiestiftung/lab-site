@@ -5,8 +5,8 @@ lang: de
 title: Beispiel Markdown Projekt
 subtitle: Auf deutsch
 # project needs the following frontmatter values:
-type: publication # what other types are there
-colorMode: bright # or dark adds an additional class
+type: publication # could also be "workshop", "dataset", "prototype"
+colorMode: bright # or "dark" adds an additional class
 featuredImage: /projects/example-md-project/images/feature.png
 # thumbnail path needs to be absolute at the moment
 thumbnail: /projects/example-md-project/images/thumbnail.png

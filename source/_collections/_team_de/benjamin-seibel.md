@@ -6,6 +6,7 @@ description: Das ist Ben
 twitter: bnjmnsbl
 github:
 position: Master Of Disaster
+type: publication # could also be "workshop", "dataset", "prototype"
 ---
 
 
