@@ -1,5 +1,22 @@
 ---
-layout: default
+layout: skeleton
 ---
 
-{{content}}
+
+{%- if page.lang == "de" -%}
+{%- assign sets = site.datasets_de -%}
+{%- else -%}
+{%- assign sets = site.datasets_en -%}
+{%- endif -%}
+
+<main class="datasets loading">
+    <section>
+      <ul>
+
+        {%- for set in sets -%}
+        <li><a href="{{site.url}}{{set.url}}">{{set.name}}</a></li>
+        {%- endfor -%}
+      </ul>
+    </section>
+  </main>
+
