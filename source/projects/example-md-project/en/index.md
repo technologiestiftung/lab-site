@@ -4,6 +4,10 @@ lang: en
 title: Example Markdown Project
 featured: true
 visible: true
+featuredImage: /projects/example-md-project/images/feature.png
+type: dataset
+subtitle: in english duuude!
+date: 2018-10-10
 
 ---
 

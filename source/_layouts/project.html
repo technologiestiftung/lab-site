@@ -2,9 +2,16 @@
 layout: skeleton
 ---
 
-<main class="project project--{{ page.type }} loading">
+<main class="project project--{{ page.type }} loading"  markdown="1">
     <!--  Project header -->
+    {% assign ext = page.path | split: "." | last %}
     {% include project-header.html %}
+  {%- if ext == "html" -%}
     {{ content }}
+    {%- else -%}
+    <section>
+      {{ content }}
+    </section>
+  {%- endif -%}
 
 </main>
