@@ -54,7 +54,20 @@ defaults:
     values:
       lang: "en"
       layout: "team-detail"
-
+  -
+    scope:
+      path: ""
+      type: "datasets_de"
+    values:
+      lang: "de"
+      layout: "dataset-detail"
+  -
+    scope:
+      path: ""
+      type: "datasets_en"
+    values:
+      lang: "en"
+      layout: "dataset-detail"
 # Build settings
 # Kramdown is the default Markdown renderer for Jekyll.
 # https://jekyllrb.com/docs/configuration/markdown/#kramdown
@@ -81,7 +94,12 @@ collections:
   team_en:
     output: true
     permalink: /team/:name/en
-
+  datasets_en:
+    output: true
+    permalink: /datasets/:name/en
+  datasets_de:
+    output: true
+    permalink: /datasets/:name/de
 
 plugins:
   - jekyll-feed
