@@ -5,7 +5,6 @@ import languageSwitch from './modules/languageSwitch.js';
 import ImageSlider from './modules/ImageSlider.js';
 import featProjectsHandler from './modules/featProjectsHandler.js';
 import Timeline from './modules/Timeline.js';
-
 /**
  * Initialize functions
  */
@@ -22,9 +21,7 @@ featProjectsHandler();
 function createTimeline(idTimelineDiv) {
     const div = document.getElementById(idTimelineDiv);
     const projectTimeline = new Timeline(div);
-
 }
-
 function createImageSliders(sliderClassName) {
     const imageSliders = document.getElementsByClassName(sliderClassName);
     [...imageSliders].forEach(slider => new ImageSlider(slider));

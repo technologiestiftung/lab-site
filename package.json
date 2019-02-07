@@ -7,7 +7,7 @@
     "test": "jest",
     "testWithCoverage": "jest --coverage",
     "parcel": "parcel",
-    "watch:js": "parcel watch source/assets/js/index.js --no-cache --out-dir source/assets/js/ --out-file index.bundle.js"
+    "watch:js": "parcel watch source/assets/js/index.js --no-cache --out-dir source/assets/js/ --out-file index.bundle.js --public-url ."
   },
   "repository": {
     "type": "git",
