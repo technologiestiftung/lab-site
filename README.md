@@ -30,6 +30,7 @@ Still to implement:
 - [ ] projects feed (same as the feed on the landing page but all of them)
 - [ ] Dataset pages
 - [ ] review website.json which data we need available
+- [ ] make timeline a separate js file only included in landing page and project feed
 
 ## License
 
