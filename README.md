@@ -24,6 +24,12 @@ Write guides for:
 - [ ] list of available includes/macros
 - [ ] minimal tool for scaffolding a new project/article
 
+
+Still to implement:
+
+- [ ] projects feed (same as the feed on the landing page but all of them)
+
+
 ## License
 
 Copyright (c) 2019 Technologiestiftung Berlin
