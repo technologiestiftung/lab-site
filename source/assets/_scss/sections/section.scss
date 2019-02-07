@@ -1,13 +1,17 @@
 section {
-    margin: 0 $spacing-page-m $spacing-xl $spacing-page-m;
+    margin: $spacing-page-m $spacing-page-m $spacing-xl $spacing-page-m;
 
 
     @media only screen and (max-width: $screen-m) {
-        margin: 0 $spacing-page-xs $spacing-xl $spacing-page-xs;
+        margin: $spacing-xxl $spacing-page-xs $spacing-xl $spacing-page-xs;
     }
 
     &:last-of-type {
-        margin: 0 $spacing-page-m 0 $spacing-page-m;
+        margin: $spacing-page-l $spacing-page-m 0 $spacing-page-m;
+
+        @media only screen and (max-width: $screen-m) {
+            margin: $spacing-page-l $spacing-page-xs 0 $spacing-page-xs;
+        }
     }
 }
 
@@ -16,6 +20,10 @@ section {
     &-headline {
         font-size: $font-size-xl;
         font-weight: bold;
+
+        @media only screen and (max-width: $screen-m) {
+            font-size: $font-size-ll;
+        }
     }
 
     @media only screen and (max-width: $screen-l) {
@@ -25,6 +33,7 @@ section {
     &--code {
         background-color: $light-grey--lighter;
         border-radius: 3px;
+        overflow: auto;
 
         pre {
             font-family: 'plex-mono';
@@ -32,6 +41,10 @@ section {
             line-height: $line-height-code;
             margin: 0;
             padding: $spacing-m $spacing-column;
+
+            @media only screen and (max-width: $screen-l) {
+                padding: $spacing-s $spacing-s;
+            }
 
             code {
                 font-family: 'plex-mono';
@@ -45,7 +58,30 @@ section {
     &--columns {
         margin: 0 0 $spacing-xl 0;
     }
+
+    &--metadata {
+        margin: 0 0 $spacing-xl 0 !important; // TODO: Shouldn't be necessary
+
+        h2 {
+            @media only screen and (min-width: $screen-m) {
+                margin-left: $spacing-page-m;
+            }   
+            @media only screen and (max-width: $screen-m) {
+                margin-left: $spacing-page-xs;
+            }   
+        }
+    }
+
     &--data {
         margin: 0 0 $spacing-xl 0 !important; // TODO: Shouldn't be necessary
+
+        h2 {
+            @media only screen and (min-width: $screen-m) {
+                margin-left: $spacing-page-m;
+            }   
+            @media only screen and (max-width: $screen-m) {
+                margin-left: $spacing-page-xs;
+            }   
+        }
     }
 }

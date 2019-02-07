@@ -54,7 +54,7 @@ body {
     }
 
     main {
-        margin: $spacing-xxl 0;
+        margin: 0 0 $spacing-xxl 0;
         opacity: 1;
         overflow: visible;
         transition: opacity $time-l;
@@ -64,4 +64,14 @@ body {
             opacity: 0;
         }
     }
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
 }

@@ -2,10 +2,10 @@
     &--button {
         background: rgba($black, 0);
         border: 1px solid $black;
-        border-radius: 6px;
+        border-radius: 4px;
         display: inline-block;
         margin-top: $spacing-m;
-        padding: 10px 12px 9px 12px;
+        padding: 7px 12px 9px 12px;
         transition: background $time-s, color $time-s;
         user-select: none;
 

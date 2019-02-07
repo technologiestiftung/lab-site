@@ -19,6 +19,10 @@
         margin: 0;
         padding: 0 $spacing-page-m;
 
+        @media only screen and (max-width: $screen-m) {
+            padding: 0 $spacing-page-xs;
+        }
+
         p {
             font-size: $font-size-ll;
             font-style: italic;
@@ -42,22 +46,6 @@
         }
     }
 
-    .flex-row {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .flex-col {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .gradient-overlay {
-        position: absolute;
-        width: 100%;
-        height: 80vh;
-        background: linear-gradient(to bottom,  rgba(137,255,241,0) 0%,rgba(0,0,0,0.5) 100%);
-    }
 
     margin-top: 0;
 
@@ -68,11 +56,31 @@
     }
 
     &-header {
-        margin: 0 0 $spacing-m 0;
+        margin: 0;
+
+        @media only screen and (max-width: $screen-m) {
+            margin: 0 0 0 0;
+        }
 
         &.dark {
             h1, h2, h3 {
                 color: $white;
+            }
+
+            .gradient-overlay {
+                position: absolute;
+                width: 100%;
+                height: 80vh;
+                background: linear-gradient(to bottom,  rgba(137,255,241,0) 0%,rgba(0,0,0,0.5) 100%);
+            }
+        }
+
+        &.bright {
+            .gradient-overlay {
+                position: absolute;
+                width: 100%;
+                height: 80vh;
+                background: linear-gradient(to bottom,  rgba(137,255,241,0) 0%,rgba(255,255,255,0.5) 100%);
             }
         }
 
@@ -96,8 +104,17 @@
             margin: $spacing-m 0;
             padding: 0 $spacing-page-m;
             position: absolute;
-            top: 45vh;
+            top: 50vh;
             width: 100%;
+
+            @media only screen and (max-width: $screen-m) {
+                padding: $spacing-l $spacing-page-xs;
+                top: 35vh;
+
+                .flex-row {
+                    flex-direction: column;
+                }
+            }
 
             .link--button {
                 width: 150px;
@@ -105,7 +122,7 @@
                 background: $white;
                 border: none;
                 left: $spacing-page-m;
-                margin-bottom: $spacing-page-xs;
+                margin-bottom: $spacing-m;
             }
 
             &--main {
@@ -127,22 +144,32 @@
         &__meta {
             padding-top: $spacing-xl;
             display: flex;
-            padding: $spacing-page-s $spacing-page-m;
+            padding: $spacing-l $spacing-page-m;
             text-transform: capitalize;
             flex-wrap: wrap;
+
+            @media only screen and (min-width: $screen-xl) {
+                padding: $spacing-xl $spacing-page-m;
+            }
+
+            @media only screen and (max-width: $screen-m) {
+                padding: $spacing-l $spacing-page-xs;
+            }
 
             &-column {
                 display: flex;
                 line-height: $line-height-list;
                 flex: 1;
                 flex-direction: column;
-                min-width: 220px;
+                min-width: 160px;
+                margin-bottom: $spacing-m;
 
                 &__header {
                     font-weight: bold;
                 }
                 &__item {
                     align-self: flex-start;
+                    color: $dark-grey;
 
                     &:last-of-type {
                         margin-bottom: 0;
@@ -155,6 +182,10 @@
     &-text {
         padding: 0 $spacing-page-m;
         color: $dark-grey;
+
+        h3 {
+            color: $black;
+        }
 
         @media only screen and (max-width: $screen-xl) {
             padding: 0;
@@ -304,6 +335,21 @@
     }
 
     &--publication {
+
+        .project-header.bright {
+            .link--button {
+                    border: 1px solid $color-publication;
+                    color: $color-publication;
+                    background: rgba(0,0,0,0);
+
+                    &:hover {
+                        color: $white;
+                        background: $color-publication;
+                    }
+            }
+        }
+
+
         a:not(.link--button) {
             &::after {
                 background-color: $color-publication;
@@ -337,6 +383,20 @@
         }
     }
     &--prototype {
+
+        .project-header.bright {
+            .link--button {
+                    border: 1px solid $color-prototype;
+                    color: $color-prototype;
+                    background: rgba(0,0,0,0);
+
+                    &:hover {
+                        color: $white;
+                        background: $color-prototype;
+                    }
+            }
+        }
+
         a:not(.link--button) {
             &::after {
                 background-color: $color-prototype;
@@ -368,6 +428,21 @@
         }
     }
     &--workshop {
+
+        .project-header.bright {
+            .link--button {
+                    border: 1px solid $color-workshop;
+                    color: $color-workshop;
+                    background: rgba(0,0,0,0);
+
+                    &:hover {
+                        color: $white;
+                        background: $color-workshop;
+                    }
+            }
+        }
+
+
         a:not(.link--button) {
             &::after {
                 background-color: $color-workshop;
@@ -399,6 +474,21 @@
         }
     }
     &--dataset {
+
+        .project-header.bright {
+            .link--button {
+                    border: 1px solid $color-dataset;
+                    color: $color-dataset;
+                    background: rgba(0,0,0,0);
+
+                    &:hover {
+                        color: $white;
+                        background: $color-dataset;
+                    }
+            }
+        }
+
+
         a:not(.link--button) {
             &::after {
                 background-color: $color-dataset;

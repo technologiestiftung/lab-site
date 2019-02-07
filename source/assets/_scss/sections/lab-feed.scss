@@ -2,28 +2,158 @@
     &-title {
         color: $grey;
         font-family: 'plex-mono';
-        font-size: $font-size-s;
+        font-size: $font-size-m;
         text-transform: uppercase;
+
+        @media only screen and (max-width: $screen-m) {
+            font-size: $font-size-s;
+        }
     }
     &-headline {
     }
     &-list {
-
         &__project {
 
-            &-image {
+            &.team {
+                .feed-list__project-title {
+                    margin-top: $spacing-ms;
+                }
+                .feed-list__project-date {
+                    margin-top: $spacing-xs;
+                }
             }
+
+            &.alumnis {
+                cursor: auto;
+                .feed-list__project-title {
+                    margin-top: $spacing-ms;
+                }
+                .feed-list__project-date {
+                    margin-top: $spacing-xs;
+                } 
+            }
+
+            &.dataset {
+                .project-image {
+                    background-color: $color-dataset-60;
+
+                    &:hover {
+                        background-color: $color-dataset-80;
+                    }  
+                }
+            }
+
+            &.workshop {
+                .project-image {
+                    background-color: $color-workshop-60;
+
+                    &:hover {
+                        background-color: $color-workshop;
+                    }  
+                }
+            }
+
+            &.publication {
+                .project-image {
+                    background-color: $color-publication-60;
+
+                    &:hover {
+                        background-color: $color-publication;
+                    }  
+                }
+            }
+
+            &.prototype {
+                .project-image {
+                    background-color: $color-prototype-60;
+
+                    &:hover {
+                        background-color: $color-prototype;
+                    }  
+                }
+            }
+
+            .project-image {
+                &__outer {
+                    position: relative;
+                    width: 100%;
+                    padding-bottom: 100%;
+                }
+
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                
+                background-repeat: no-repeat;
+                background-size: contain;
+
+                background-blend-mode: multiply;
+
+                transition: all $time-s; 
+            }
+
+
+            &:hover {
+                .img-wrapper {
+                    img:last-of-type {
+                        opacity: 0;
+                    }
+                }
+
+                &.prototype {
+                    .feed-list__project-title {
+                        color: $color-prototype;
+                    }
+                    .feed-list__project-date {
+                        color: $black;
+                    }
+                }
+
+                &.dataset {
+                    .feed-list__project-title {
+                        color: $color-dataset;
+                    }
+                    .feed-list__project-date {
+                        color: $black;
+                    }
+                }
+
+                &.workshop {
+                    .feed-list__project-title {
+                        color: $color-workshop;
+                    }
+                    .feed-list__project-date {
+                        color: $black;
+                    }
+                }
+
+                &.publication {
+                    .feed-list__project-title {
+                        color: $color-publication;
+                    }
+                    .feed-list__project-date {
+                        color: $black;
+                    }
+                }
+            }
+
             &-date {
                 color: $grey;
                 font-size: $font-size-s;
                 font-family: 'plex-mono';
                 line-height: $line-height-min;
                 text-transform: uppercase;
-                margin-top: $spacing-xs;
+                font-weight: bold;
+                letter-spacing: 1.5px;
+                margin-top: $spacing-ms;
+                transition: color $time-s;
             }
+
             &-title {
                 display: block;
                 font-size: $font-size-l;
+                margin-top: $spacing-xs;
+                transition: color $time-s;
             }
         }
     }

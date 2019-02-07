@@ -3,16 +3,69 @@
     font-size: $font-size-s;
     flex-direction: column;
 
+    .grid {
+        &-name {
+            grid-area: name;
+        }
+        &-keywords {
+            grid-area: keywords;
+        }
+        &-formats {
+            grid-area: formats;
+        }
+        &-resolution {
+            grid-area: resolution;
+        }
+        &-thumbnail {
+            grid-area: thumbnail;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+
     &__row {
         background-color: $white;
         border-bottom: 1px solid $light-grey;
         color: $black;
-        display: flex;
-        flex-direction: row;
-        height: 75px;
         padding: 0 $spacing-page-m;
         text-align: left;
         transition: background-color $time-s;
+
+        display: grid;
+        grid-template-areas: "name keywords formats resolution thumbnail";
+        grid-template-columns: 40% 15% 15% 15% 15%;
+
+
+
+        @media only screen and (max-width: $screen-l) {
+            grid-template-rows: auto;
+            height: auto;
+            grid-gap: 10px;
+            grid-template-areas: 
+                "name name"
+                "keywords thumbnail"
+                "formats thumbnail"
+                "resolution thumbnail";
+            grid-template-columns: 50% 50%;
+        }
+
+        @media only screen and (max-width: $screen-l) {
+            padding: $spacing-s $spacing-page-m;
+        }
+
+        @media only screen and (max-width: $screen-m) {
+            padding: $spacing-s $spacing-page-xs;
+        }
+
+
+        .datasets-screen-l {
+            display: none;
+
+            @media only screen and (max-width: $screen-l) {
+                display: block;
+                width: 20px;
+            }
+        }
 
         &:hover {
             background-color: $light-grey--lighter;
@@ -20,39 +73,104 @@
 
         &-cell {
             align-items: center;
-            display: inline-flex;
+            display: flex;
+            line-height: $line-height-title;
             flex: 1;
 
+            @media only screen and (max-width: $screen-l) {
+                svg {
+                    margin-right: 15px;
+                }
+            }
+
             &:first-of-type {
-                font-size: $font-size-l;
+                font-size: $font-size-m;
                 font-weight: bold;
             }
 
             &--thumbnail {
-                flex-flow: column nowrap;
+                height: 100%;
+                width: 100%;
             }
 
             &__image {
-                height: 100%;
-                max-height: 100%;
+                height: auto;
                 width: auto;
             }
+
         }
 
         &--header {
             height: 45px;
             pointer-events: none;
 
+
+            @media only screen and (max-width: $screen-l) {
+                display: none;
+            }
+
             .data-table__row-cell {
                 color: $grey;
                 padding: $spacing-xs 0;
-                text-transform: capitalize;
+                text-transform: uppercase;
+                font-family: 'plex-mono';
+                font-weight: bold;
+                letter-spacing: 1.5px;
+
+                svg {
+                    margin-right: 15px;
+                }
 
                 &:first-of-type {
                     font-size: $font-size-s;
-                    font-weight: normal;
+                    font-weight: bold;
                 }
             }
+        }
+    }
+}
+
+.meta-table {
+    .grid {
+        &-key {
+            grid-area: key;
+        }
+        &-value {
+            grid-area: value;
+        }
+    }
+
+    &__row {
+        display: grid;
+        border-top: 1px solid $light-grey;
+        padding: $spacing-s $spacing-page-m;
+        grid-template-columns: 50% 50%;
+        grid-template-areas: 
+            "key value"
+            "key value"
+            "key value";
+
+        &:last-of-type {
+            border-top: 1px solid $light-grey;
+            border-bottom: 1px solid $light-grey;
+        }
+
+        &-cell {
+            display: block;
+
+            &:first-of-type {
+                font-size: $font-size-m;
+                font-weight: bold;
+            }
+        }
+
+        @media only screen and (max-width: $screen-m) {
+            padding: $spacing-s $spacing-page-xs;
+            grid-template-columns: 100%;
+            grid-template-rows: auto;
+            grid-template-areas: 
+                "key"
+                "value"
         }
     }
 }

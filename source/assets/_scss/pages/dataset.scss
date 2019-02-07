@@ -10,14 +10,24 @@
     }
 
     &-downloads {
-        display: flex;
+        display: grid;
+        grid-gap: $spacing-s;
+        grid-template-columns: repeat(4, 25%);
+        
+        @media only screen and (max-width: $screen-m) {
+            grid-template-columns: repeat(2, 50%);
+        }
 
         &__item {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             margin: 0 $spacing-l 0 0;
-            padding: 0 0 0 36px;
+            padding: 0 0 0 0px;
             position: relative;
+
+            @media only screen and (max-width: $screen-m) {
+                margin: 0 $spacing-l 0 0;
+            }
 
             &:last-of-type {
                 margin: 0 0 0 0;
@@ -35,6 +45,7 @@
             &--size {
                 color: $grey;
                 font-size: $font-size-s;
+                line-height: $line-height-min;
             }
         }
     }

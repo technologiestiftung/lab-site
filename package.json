@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/technologiestiftung/lab-site#readme",
   "dependencies": {
+    "d3": "^5.8.2",
     "parcel-bundler": "^1.11.0"
   },
   "devDependencies": {

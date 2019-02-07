@@ -1,6 +1,143 @@
 .team-detail {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    width: auto;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: 1%;
+
+    @media only screen and (max-width: $screen-m) {
+        grid-template-columns: repeat(1, 100%);
+        grid-template-rows: auto;
+        grid-row-gap: $spacing-m;
+    }
+
+
+    &.dataset {
+        .team-detail__image {
+            background-color: $color-dataset-60;
+
+            &:hover {
+                background-color: $color-dataset-80;
+            }  
+        }
+    }
+
+    &.workshop {
+        .team-detail__image {
+            background-color: $color-workshop-60;
+
+            &:hover {
+                background-color: $color-workshop;
+            }  
+        }
+    }
+
+    &.publication {
+        .team-detail__image {
+            background-color: $color-publication-60;
+
+            &:hover {
+                background-color: $color-publication;
+            }  
+        }
+    }
+
+    &.prototype {
+        .team-detail__image {
+            background-color: $color-prototype-60;
+
+            &:hover {
+                background-color: $color-prototype;
+            }  
+        }
+    }
+
+    &__image {
+        &--outer {
+            position: relative;
+            width: 75%;
+            padding-bottom: 75%;
+            
+            @media only screen and (max-width: $screen-m) {
+                width: 100%;
+                padding-bottom: 100%;
+            }
+        }
+
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        background-blend-mode: multiply;
+
+        transition: all $time-s; 
+    }
+
+
+    &:hover {
+        .img-wrapper {
+            img:last-of-type {
+                opacity: 0;
+            }
+        }
+
+        &.prototype {
+            .feed-list__project-title {
+                color: $color-prototype;
+            }
+            .feed-list__project-date {
+                color: $black;
+            }
+        }
+
+        &.dataset {
+            .feed-list__project-title {
+                color: $color-dataset;
+            }
+            .feed-list__project-date {
+                color: $black;
+            }
+        }
+
+        &.workshop {
+            .feed-list__project-title {
+                color: $color-workshop;
+            }
+            .feed-list__project-date {
+                color: $black;
+            }
+        }
+
+        &.publication {
+            .feed-list__project-title {
+                color: $color-publication;
+            }
+            .feed-list__project-date {
+                color: $black;
+            }
+        }
+    }
+
+    &-date {
+        color: $grey;
+        font-size: $font-size-s;
+        font-family: 'plex-mono';
+        line-height: $line-height-min;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+        margin-top: $spacing-ms;
+        transition: color $time-s;
+    }
+
+    &-title {
+        display: block;
+        font-size: $font-size-l;
+        margin-top: $spacing-xs;
+        transition: color $time-s;
+    }
 
     &__image {
         flex: 1;
@@ -14,30 +151,30 @@
 
     &__social {
         display: flex;
-        margin-top: $spacing-xs;
+        flex-direction: row;
+        margin-top: $spacing-m;
 
         &--github, &--twitter {
             margin: 4px 10px 0 0;
-        }
-
-        &--mail {
-            margin-left: $spacing-column--half;
         }
     }
 
     &__description {
         flex: 1;
-        margin-left: $spacing-column--half;
 
         &--name {
             font-weight: bold;
             font-size: $font-size-xl;
-            margin-bottom: $spacing-s;
+            margin-bottom: $spacing-xs;
         }
         &--position {
-            color: $grey;
+            color: $black;
             margin-bottom: $spacing-m;
+            text-transform: uppercase;
+            font-family: 'plex-mono';
+            font-size: $font-size-s;
+            letter-spacing: $letter-spacing-uppercase;
+            font-weight: 600;
         }
-        &--text {}
     }
 }

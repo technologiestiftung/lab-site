@@ -1,17 +1,34 @@
 .featured {
     position: relative;
 
+    &-headline {
+        margin-bottom: $spacing-l;
+    }
+
     &-title {
         color: $grey;
         font-family: 'plex-mono';
-        font-size: $font-size-s;
+        font-size: $font-size-m;
         text-transform: uppercase;
+        font-weight: 500;
+        letter-spacing: 2px;    
+
+        @media only screen and (max-width: $screen-m) {
+            font-size: $font-size-s;
+        }
     }
     &-list {
         display: grid;
-        grid-gap: 0 $spacing-column--double;
-        grid-template-columns: max-content max-content;
+        grid-gap: $spacing-s $spacing-column--half;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
         position: relative;
+
+        @media only screen and (max-width: $screen-m) {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
+
+        margin-top: $spacing-xl;
+
+    }
 
         &__project {
             cursor: default;
@@ -21,6 +38,10 @@
             &-title {
                 font-size: $font-size-xl;
                 position: relative;
+
+                @media only screen and (max-width: $screen-m) {
+                    font-size: $font-size-ll;
+                }
 
                 a {
                     display: inline-block;
@@ -40,8 +61,22 @@
                     }
                 }
 
-                &:hover {
+                & ~ .featured-list__project {
+                    &-subtext {
+                        line-height: $line-height-title;
+                    }
 
+                    &-image {
+                        @media only screen and (max-width: $screen-m) {
+                            transform: translate3d($spacing-l, 0, 0);
+                        }
+                        @media only screen and (min-width: $screen-l) {
+                            transform: translate3d($spacing-xl, -280px, 0);
+                        }
+                    }
+                }
+
+                &.hovered {
                     & ~ .featured-list__project {
                         opacity: 1;
 
@@ -51,7 +86,15 @@
                         }
                         &-image {
                             opacity: 1;
-                            transform: translate3d($spacing-page-m, 0, 0);
+                            transform: translate3d($spacing-xxl, 0, 0);
+
+                            @media only screen and (max-width: $screen-s) {
+                                transform: translate3d($spacing-xll, 0, 0);
+                            }
+
+                            @media only screen and (min-width: $screen-l) {
+                                transform: translate3d($spacing-xl, -300px, 0);
+                            }
                         }
                     }
 
@@ -74,6 +117,45 @@
                         color: $color-dataset;
                     }
                 }
+
+                // &:hover {
+
+                //     & ~ .featured-list__project {
+                //         opacity: 1;
+
+                //         &-subtext {
+                //             opacity: 1;
+                //             transform: translate3d(0, 0, 0);
+                //         }
+                //         &-image {
+                //             opacity: 1;
+                //             transform: translate3d($spacing-xxl, 0, 0);
+
+                //             @media only screen and (max-width: $screen-s) {
+                //                 transform: translate3d($spacing-xll, 0, 0);
+                //             }
+                //         }
+                //     }
+
+                //     a {
+                //         &::after {
+                //             transform: translate(10%, 0);
+                //         }
+                //     }
+
+                //     &.publication a {
+                //         color: $color-publication;
+                //     }
+                //     &.prototype a {
+                //         color: $color-prototype;
+                //     }
+                //     &.workshop a {
+                //         color: $color-workshop;
+                //     }
+                //     &.dataset a {
+                //         color: $color-dataset;
+                //     }
+                // }
             }
 
             &-subtext {

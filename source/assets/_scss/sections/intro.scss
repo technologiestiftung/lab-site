@@ -2,12 +2,31 @@
     &-title {
         color: $grey;
         font-family: 'plex-mono';
-        font-size: $font-size-s;
+        font-size: $font-size-m;
         text-transform: uppercase;
+
+        @media only screen and (max-width: $screen-m) {
+            font-size: $font-size-s;
+        }
     }
+
     &-text {
         line-height: 1.5em;
         font-size: $font-size-xl;
         width: 50%;
+
+
+        @media only screen and (max-width: $screen-xl) {
+            width: 80%;
+        }
+
+        @media only screen and (max-width: $screen-l) {
+            width: 80%;
+        }
+
+        @media only screen and (max-width: $screen-m) {
+            font-size: $font-size-ll;
+            width: 100%;
+        }
     }
 }

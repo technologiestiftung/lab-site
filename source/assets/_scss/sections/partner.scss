@@ -1,6 +1,10 @@
 .partner {
     &-list {
         &__project {
+            &-title {
+                margin-top: $spacing-s;
+                font-weight: bold;
+            }
             &-image {
                 background: $light-grey;
                 height: 120px;
