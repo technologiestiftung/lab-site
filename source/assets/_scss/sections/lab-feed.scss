@@ -23,14 +23,14 @@
                 }
             }
 
-            &.alumnis {
+            &.alumni {
                 cursor: auto;
                 .feed-list__project-title {
                     margin-top: $spacing-ms;
                 }
                 .feed-list__project-date {
                     margin-top: $spacing-xs;
-                } 
+                }
             }
 
             &.dataset {
@@ -39,7 +39,7 @@
 
                     &:hover {
                         background-color: $color-dataset-80;
-                    }  
+                    }
                 }
             }
 
@@ -49,7 +49,7 @@
 
                     &:hover {
                         background-color: $color-workshop;
-                    }  
+                    }
                 }
             }
 
@@ -59,7 +59,7 @@
 
                     &:hover {
                         background-color: $color-publication;
-                    }  
+                    }
                 }
             }
 
@@ -69,7 +69,7 @@
 
                     &:hover {
                         background-color: $color-prototype;
-                    }  
+                    }
                 }
             }
 
@@ -83,13 +83,13 @@
                 height: 100%;
                 width: 100%;
                 position: absolute;
-                
+
                 background-repeat: no-repeat;
                 background-size: contain;
 
                 background-blend-mode: multiply;
 
-                transition: all $time-s; 
+                transition: all $time-s;
             }
 
 
