@@ -48,14 +48,14 @@ layout: default
 
         <li class="featured-list__project">
           <h3 class="featured-list__project-title {{ pg.type }}">
-            <a href="{{site.url}}/{{page.url}}">{{ pg.title }}</a>
+            <a href="{{site.url}}/{{pg.url}}">{{ pg.title }}</a>
           </h3>
           <span class="featured-list__project-subtext">
             {{ pg.subtitle }}
           </span>
           <img
           class="featured-list__project-image"
-          src="{{ pg.featuredImage }}"
+          src="{{site.url}}{{ pg.featuredImage }}"
           alt="{{ pg.title }}"
           />
         </li>
@@ -83,7 +83,7 @@ layout: default
     <ul class="grid feed-list">
         {%- for pg in sorted_pages -%}
         <!-- {% assign ndx = loop.index0 %} -->
-        {%- if pg.layout == "project" and pg.visible == true %}
+        {%- if pg.layout == "project" and pg.visible == true  and pg.lang == page.lang %}
 
         <li class="feed-list__project {{  pg.type }}">
             <a href="{{site.url}}/{{pg.url}}">
@@ -91,7 +91,15 @@ layout: default
                     <div class="project-image" style="background-image: url({{ pg.thumbnail }});"></div>
                 </div>
                 <div class="feed-list__project-date">
-                    {{ pg.date | date: " %Y %m %d" }}
+                    <!--
+                      https://shopify.github.io/liquid/filters/date/
+                      https://ruby-doc.org/stdlib-2.6.1/libdoc/time/rdoc/Time.html#method-c-parse
+                     -->
+                     {%- if page.lang == "de" -%}
+                       {{ pg.date | date: "%d.%m.%Y" }}
+                       {%- else -%}
+                       {{ pg.date | date: "%m.%d.%Y" }}
+                     {%- endif -%}
                 </div>
                 <div class="feed-list__project-title">
                     {{ pg.title }}
