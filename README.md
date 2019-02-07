@@ -31,7 +31,7 @@ Still to implement:
 - [x] make feed an _include
 - [ ] fix language switcher
 - [ ] image macro/slider
-- [ ] Dataset pages
+- [x] Dataset pages is located somewhere else
 - [ ] compare project detail markup
 - [ ] check project frontmatter key values pairs
 - [ ] review website.json which data we need available
