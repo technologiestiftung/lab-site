@@ -72,42 +72,4 @@ layout: default
   </a>
 </section>
 
-<section class="feed">
-    <div class="feed-title headline--uppercase">Lab Feed</div>
-    <h2 class="feed-headline section-headline headline--bold">{%- if page.lang == "en" -%}
-        From the lab
-        {%- else -%}
-        Aus dem Lab
-      {%- endif -%}</h2>
-      <div class="timeline timeline__wrapper" id="timeline"></div>
-    <ul class="grid feed-list">
-        {%- for pg in sorted_pages -%}
-        <!-- {% assign ndx = loop.index0 %} -->
-        {%- if pg.layout == "project" and pg.visible == true  and pg.lang == page.lang %}
-
-        <li class="feed-list__project {{  pg.type }}">
-            <a href="{{site.url}}/{{pg.url}}">
-                <div class="project-image__outer">
-                    <div class="project-image" style="background-image: url({{ pg.thumbnail }});"></div>
-                </div>
-                <div class="feed-list__project-date">
-                    <!--
-                      https://shopify.github.io/liquid/filters/date/
-                      https://ruby-doc.org/stdlib-2.6.1/libdoc/time/rdoc/Time.html#method-c-parse
-                     -->
-                     {%- if page.lang == "de" -%}
-                       {{ pg.date | date: "%d.%m.%Y" }}
-                       {%- else -%}
-                       {{ pg.date | date: "%m.%d.%Y" }}
-                     {%- endif -%}
-                </div>
-                <div class="feed-list__project-title">
-                    {{ pg.title }}
-                </div>
-            </a>
-        </li>
-
-        {%- endif -%}
-        {%- endfor -%}
-    </ul>
-</section>
+{%- include feed.html sorted_pages=sorted_pages -%}

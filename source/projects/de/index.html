@@ -5,4 +5,7 @@ lang: de
 permalink: /projects/de/
 ---
 
-{%- include projects-list.html lang=page.lang -%}
+{% assign sorted_pages = site.pages | sort: 'date' %}
+
+{%- include feed.html sorted_pages=sorted_pages -%}
+
