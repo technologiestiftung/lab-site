@@ -1,7 +1,7 @@
  <!-- from "macros/navigationItem.html" import navigationItem -->
 
 <nav id="navigation" class="navigation">
-    <a class="navigation-logo" href="/{{ page.lang }}">
+    <a class="navigation-logo" href="{%- if page.lang == 'de' -%}/{%- else -%}/en{%- endif -%}">
         <span class="navigation-logo__line">Ideation & Prototyping <span class="bold">Lab</span></span>
         <span class="navigation-logo__line"><span class="bold">Technologiestiftung</span> Berlin</span>
     </a>
