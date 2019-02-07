@@ -29,9 +29,15 @@ Still to implement:
 
 - [x] projects feed (same as the feed on the landing page but all of them)
 - [x] make feed an _include
+- [ ] fix language switcher
+- [ ] image macro/slider
 - [ ] Dataset pages
+- [ ] compare project detail markup
+- [ ] check project frontmatter key values pairs
 - [ ] review website.json which data we need available
 - [ ] make timeline a separate js file only included in landing page and project feed
+- [ ] review if parcel is the right thing for use
+- [ ] review if we need auto-prefixer
 
 
 ## License
