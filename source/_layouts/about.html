@@ -12,6 +12,8 @@ layout: default
   <h2 class="feed-headline section-headline headline--bold">Team</h2>
   <ul class="grid feed-list">
 
+    <!-- {{member.type}} -->
+
       {% for member in team %}
       <li class="feed-list__project team {{member.type}}">
           <a href="/team/{{ member.name | slugify }}/{{page.lang}}">

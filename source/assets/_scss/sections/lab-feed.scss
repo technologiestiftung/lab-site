@@ -4,6 +4,7 @@
         font-family: 'plex-mono';
         font-size: $font-size-m;
         text-transform: uppercase;
+        margin-top: $spacing-s;
 
         @media only screen and (max-width: $screen-m) {
             font-size: $font-size-s;
@@ -141,18 +142,18 @@
                 color: $grey;
                 font-size: $font-size-s;
                 font-family: 'plex-mono';
-                line-height: $line-height-min;
+                line-height: $line-height-title;
                 text-transform: uppercase;
                 font-weight: bold;
                 letter-spacing: 1.5px;
-                margin-top: $spacing-ms;
+                margin-top: 0;
                 transition: color $time-s;
             }
 
             &-title {
                 display: block;
                 font-size: $font-size-l;
-                margin-top: $spacing-xs;
+                margin-top: $spacing-s;
                 transition: color $time-s;
             }
         }

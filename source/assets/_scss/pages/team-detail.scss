@@ -124,11 +124,11 @@
         color: $grey;
         font-size: $font-size-s;
         font-family: 'plex-mono';
-        line-height: $line-height-min;
+        line-height: $line-height-title;
         text-transform: uppercase;
         font-weight: bold;
         letter-spacing: 1.5px;
-        margin-top: $spacing-ms;
+        // margin-top: $spacing-ms;
         transition: color $time-s;
     }
 
