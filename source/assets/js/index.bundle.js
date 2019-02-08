@@ -28680,7 +28680,7 @@ var data = [{
   name: "Example Markdown Project 1",
   lang: "en",
   start: "08-07-2016",
-  end: "10-09-2017"
+  end: "12-09-2017"
 }, {
   id: 0,
   isproject: true,
@@ -28805,19 +28805,20 @@ function () {
 
       this.vars.xAxis = (0, _d.axisBottom)(this.vars.x).ticks(this.vars.width / 100);
       this.vars.wrapper = (0, _d.select)(this.vars.container).append('svg').attr('width', this.vars.width).attr('class', 'timeline');
-      this.vars.xAxisElm = this.vars.wrapper.append('g').attr('class', 'timeline-axis').call(this.vars.xAxis);
+      this.vars.xAxisElm = this.vars.wrapper.append('g').attr('class', 'timeline-axis').call(this.vars.xAxis).attr('transform', function (d) {
+        return "translate(0,".concat(50, ")"); // add dynamic height -> this.vars.height
+      });
     }
   }, {
     key: "fitsIn",
     value: function fitsIn(lane, band) {
-      if (this.vars.parser(lane.end) < this.vars.parser(band.start) || this.vars.parser(lane.start) > this.vars.parser(band.end)) {
-        return true;
-      }
-
+      // console.log(band.start, lane)
+      // if (lane.end < band.start || lane.start > band.end) {
+      // 	return true;
+      // }
       var filteredLane = lane.filter(function (d) {
-        return this.vars.parser(d.start) <= this.vars.parser(band.end) && this.vars.parser(d.end) >= this.vars.parser(band.start);
+        return d.start <= band.end && d.end >= band.start;
       });
-      console.log(filteredLane);
 
       if (filteredLane.length === 0) {
         return true;
@@ -28866,7 +28867,7 @@ function () {
       height = Math.min(height, Infinity);
       this.vars.swimlanes.forEach(function (lane, i) {
         lane.forEach(function (band) {
-          band.y = i * height;
+          band.y = -(i * height);
           band.dy = height; // add "padding" later here?
 
           band.lane = i;
@@ -28898,21 +28899,38 @@ function () {
   }, {
     key: "setupBars",
     value: function setupBars() {
-      // this.vars.types.forEach((type, i) => {
-      var type = 'prototype'; // add real data here later.
+      var _this5 = this;
 
-      var onlyThisType = data.filter(function (d) {
-        return d.type === type;
+      this.vars.types.forEach(function (type, i) {
+        // add real data here later.
+        var onlyThisType = data.filter(function (d) {
+          return d.type === type;
+        });
+
+        var theseBands = _this5.timeline(onlyThisType);
+
+        var colors = {
+          'prototype': '#41b496',
+          'dataset': '#e60032',
+          'workshop': '#dcc82d',
+          'publication': '#2d91d2'
+        };
+        _this5.vars[type] = _this5.vars.wrapper.append('g').attr('class', "".concat(type, "-band")); // .attr('style', `transform: translateY(-${i * 10}px)`)
+
+        _this5.vars[type].selectAll('rect').data(theseBands).enter().append('rect').attr('x', function (d) {
+          return d.startX;
+        }).attr('y', function (d) {
+          return d.y;
+        }).attr('width', function (d) {
+          return d.width;
+        }).attr('height', 6).attr('fill', colors[type]);
+
+        _this5.vars[type].attr('transform', function (d) {
+          var height = _this5.vars[type].node().getBoundingClientRect().height;
+
+          return "translate(0,".concat(height, ")");
+        });
       });
-      var theseBands = this.timeline(onlyThisType);
-      this.vars[type] = this.vars.wrapper.append('g').attr('class', 'bars');
-      this.vars[type].selectAll('rect').data(theseBands).enter().append('rect').attr('x', function (d) {
-        return d.startX;
-      }).attr('y', function (d) {
-        return d.y;
-      }).attr('width', function (d) {
-        return d.width;
-      }).attr('height', 3).attr('fill', 'red'); // })
     }
   }]);
 

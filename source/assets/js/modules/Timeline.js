@@ -40,7 +40,7 @@ const data = [
         name: "Example Markdown Project 1",
         lang: "en",
         start: "08-07-2016",
-        end: "10-09-2017"
+        end: "12-09-2017"
     },
     {
         id: 0,
@@ -165,16 +165,20 @@ class Timeline {
             .append('g')
             .attr('class', 'timeline-axis')
             .call(this.vars.xAxis)
+            .attr('transform', d => {
+                return `translate(0,${50})` // add dynamic height -> this.vars.height
+            })
+
     }
 
     fitsIn (lane, band) {
-    	if (this.vars.parser(lane.end) < this.vars.parser(band.start) || this.vars.parser(lane.start) > this.vars.parser(band.end)) {
-    		return true;
-        }
+        // console.log(band.start, lane)
+    	// if (lane.end < band.start || lane.start > band.end) {
+    	// 	return true;
+        // }
         
-        let filteredLane = lane.filter(function (d) {return this.vars.parser(d.start) <= this.vars.parser(band.end) && this.vars.parser(d.end) >= this.vars.parser(band.start)});
+        let filteredLane = lane.filter(function (d) {return d.start <= band.end && d.end >= band.start});
         
-        console.log(filteredLane);
 
     	if (filteredLane.length === 0) {
     		return true;
@@ -195,7 +199,7 @@ class Timeline {
         
     	while (x <= l) {
     		if (this.fitsIn(this.vars.swimlanes[x], band)) {
-    			this.vars.swimlanes[x].push(band);
+                this.vars.swimlanes[x].push(band);
     			return;
     		}
     		x++;
@@ -219,15 +223,15 @@ class Timeline {
     	});
 
     	var height = 30 / this.vars.swimlanes.length;
-    	height = Math.min(height, Infinity);
-
-    	this.vars.swimlanes.forEach(function (lane, i) {
+        height = Math.min(height, Infinity);
+                
+    	this.vars.swimlanes.forEach( (lane, i) => {
     		lane.forEach(function (band) {
-    			band.y = i * (height);
+    			band.y = -(i * (height));
     			band.dy = height; // add "padding" later here?
     			band.lane = i;
     		});
-    	});
+        });        
 
     	return this.vars.processedTimelines;
     }
@@ -248,18 +252,24 @@ class Timeline {
     }
 
     setupBars () {
-        // this.vars.types.forEach((type, i) => {
-
-            const type = 'prototype';
+        this.vars.types.forEach((type, i) => {
 
             // add real data here later.
             const onlyThisType = data.filter(function(d) {return d.type === type});
 
             const theseBands = this.timeline(onlyThisType);
+
+            const colors = {
+                'prototype': '#41b496',
+                'dataset': '#e60032',
+                'workshop': '#dcc82d',
+                'publication': '#2d91d2',
+            }
             
             this.vars[type] = this.vars.wrapper
                 .append('g')
-                .attr('class', 'bars')
+                .attr('class', `${type}-band`)
+                // .attr('style', `transform: translateY(-${i * 10}px)`)
                 
             this.vars[type].selectAll('rect')
                 .data(theseBands)
@@ -268,11 +278,18 @@ class Timeline {
                     .attr('x', d => d.startX)
                     .attr('y', d => d.y)
                     .attr('width', d => d.width)
-                    .attr('height', 3)
-                    .attr('fill', 'red')
+                    .attr('height', 6)
+                    .attr('fill', colors[type])
+
+            this.vars[type]
+                .attr('transform', d => {
+                    const height = this.vars[type].node().getBoundingClientRect().height;
+                    return `translate(0,${height})`;
+                })
 
 
-        // })
+
+        })
 
     }
 }
