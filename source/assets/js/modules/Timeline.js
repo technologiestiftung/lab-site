@@ -29,7 +29,29 @@ const data = [
         name: "Example Markdown Project 1",
         lang: "en",
         start: "01-05-2016",
-        end: "01-03-2017"
+        end: "06-03-2017"
+    },
+    {
+        id: 0,
+        isproject: true,
+        type: "prototype",
+        status: "finished",
+        url: "http://localhost:4000/projects/example-md-project/en/",
+        name: "Example Markdown Project 1",
+        lang: "en",
+        start: "08-07-2016",
+        end: "10-09-2017"
+    },
+    {
+        id: 0,
+        isproject: true,
+        type: "prototype",
+        status: "finished",
+        url: "http://localhost:4000/projects/example-md-project/en/",
+        name: "Example Markdown Project 1",
+        lang: "en",
+        start: "01-07-2016",
+        end: "04-09-2016"
     },
     {
         id: 1,
@@ -40,7 +62,7 @@ const data = [
         name: "Example Markdown Project 1",
         lang: "en",
         start: "01-01-2018",
-        end: "01-03-2018"
+        end: "04-03-2018"
     },
     {
         id: 2,
@@ -51,7 +73,7 @@ const data = [
         name: "Example Publication 1",
         lang: "en",
         start: "01-05-2018",
-        end: "01-08-2018"
+        end: "03-08-2018"
     },
     {
         id: 3,
@@ -62,7 +84,7 @@ const data = [
         name: "Example Workshop 1",
         lang: "en",
         start: "01-01-2018",
-        end: "01-03-2018"
+        end: "05-03-2018"
     },
     {   
         id: 4,
@@ -92,13 +114,18 @@ class Timeline {
             parser: null,     
             xAxis: null,
             xAxisElm: null,
-            prototypes: null,
-            workshops: null,
-            datasets: null,
-            publications: null
+            prototype: null,
+            workshop: null,
+            dataset: null,
+            publication: null,
+            swimlanes: [],
+            processedTimelines: [],
+            timelines: [],
+            types: ['workshop', 'dataset', 'publication', 'prototype']
         }
         
-        this.init()
+        this.timeline = this.timeline.bind(this);
+        this.findlane = this.findlane.bind(this);
     }
 
     init() {
@@ -116,10 +143,6 @@ class Timeline {
         // insert real data here
         this.vars.minX = d3Min(data, (d) => { return this.vars.parser(d.start)});
         this.vars.maxX = d3Max(data, (d) => { return this.vars.parser(d.end)});
-        
-        // console dimensions
-        console.log(this.vars.width, this.vars.height);
-        console.log(this.vars.minX);
     }
 
     setupScales() {
@@ -133,16 +156,124 @@ class Timeline {
         this.vars.xAxis = d3AxisBottom(this.vars.x)
             .ticks(this.vars.width / 100);
 
-        this.vars.xAxisElm = d3Select(this.vars.container)
+        this.vars.wrapper = d3Select(this.vars.container)
             .append('svg')
             .attr('width', this.vars.width)
+            .attr('class', 'timeline')
+
+        this.vars.xAxisElm = this.vars.wrapper
+            .append('g')
             .attr('class', 'timeline-axis')
             .call(this.vars.xAxis)
     }
 
-    setupBars() {
-        this.vars.prototypes = d3Select(this.vars.container)
-            .append('svg')
+    fitsIn (lane, band) {
+    	if (this.vars.parser(lane.end) < this.vars.parser(band.start) || this.vars.parser(lane.start) > this.vars.parser(band.end)) {
+    		return true;
+        }
+        
+        let filteredLane = lane.filter(function (d) {return this.vars.parser(d.start) <= this.vars.parser(band.end) && this.vars.parser(d.end) >= this.vars.parser(band.start)});
+        
+        console.log(filteredLane);
+
+    	if (filteredLane.length === 0) {
+    		return true;
+    	}
+    	return false;
+    }
+
+    findlane (band) {
+        //make the first array
+    	if (this.vars.swimlanes[0] === undefined) {
+            this.vars.swimlanes[0] = [band];
+    		return;
+    	}
+    	var l = this.vars.swimlanes.length - 1;
+        var x = 0;
+        
+        // console.log(this.vars.swimlanes[x][x])
+        
+    	while (x <= l) {
+    		if (this.fitsIn(this.vars.swimlanes[x], band)) {
+    			this.vars.swimlanes[x].push(band);
+    			return;
+    		}
+    		x++;
+    	}
+    	this.vars.swimlanes[x] = [band];
+    	return;
+    }
+
+    timeline (data) {
+    	if (!arguments.length) return this.timeline;
+
+    	this.vars.timelines = data;
+
+        this.vars.processedTimelines = [];
+        this.vars.swimlanes = [];
+        
+        this.processTimelines()
+        
+    	this.vars.processedTimelines.forEach((band) => {
+    		this.findlane(band);
+    	});
+
+    	var height = 30 / this.vars.swimlanes.length;
+    	height = Math.min(height, Infinity);
+
+    	this.vars.swimlanes.forEach(function (lane, i) {
+    		lane.forEach(function (band) {
+    			band.y = i * (height);
+    			band.dy = height; // add "padding" later here?
+    			band.lane = i;
+    		});
+    	});
+
+    	return this.vars.processedTimelines;
+    }
+
+    processTimelines() {
+    	this.vars.timelines.forEach(band => {
+    		var projectedBand = {};
+            for (var x in band) {
+                if (band.hasOwnProperty(x)) {
+                    projectedBand[x] = band[x];
+                }
+            }
+    		projectedBand.startX = this.vars.elmX(band);
+    		projectedBand.width = this.vars.elmW(band);
+    		projectedBand.lane = 0;
+    		this.vars.processedTimelines.push(projectedBand);
+    	});
+    }
+
+    setupBars () {
+        // this.vars.types.forEach((type, i) => {
+
+            const type = 'prototype';
+
+            // add real data here later.
+            const onlyThisType = data.filter(function(d) {return d.type === type});
+
+            const theseBands = this.timeline(onlyThisType);
+            
+            this.vars[type] = this.vars.wrapper
+                .append('g')
+                .attr('class', 'bars')
+                
+            this.vars[type].selectAll('rect')
+                .data(theseBands)
+                .enter()
+                .append('rect')
+                    .attr('x', d => d.startX)
+                    .attr('y', d => d.y)
+                    .attr('width', d => d.width)
+                    .attr('height', 3)
+                    .attr('fill', 'red')
+
+
+        // })
+
     }
 }
 

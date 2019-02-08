@@ -22,6 +22,7 @@ function createTimeline(idTimelineDiv) {
     const div = document.getElementById(idTimelineDiv);
     if (div != null) {
         const projectTimeline = new Timeline(div);
+        projectTimeline.init();
     }
 }
 

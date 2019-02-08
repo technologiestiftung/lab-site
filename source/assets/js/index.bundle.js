@@ -28670,7 +28670,27 @@ var data = [{
   name: "Example Markdown Project 1",
   lang: "en",
   start: "01-05-2016",
-  end: "01-03-2017"
+  end: "06-03-2017"
+}, {
+  id: 0,
+  isproject: true,
+  type: "prototype",
+  status: "finished",
+  url: "http://localhost:4000/projects/example-md-project/en/",
+  name: "Example Markdown Project 1",
+  lang: "en",
+  start: "08-07-2016",
+  end: "10-09-2017"
+}, {
+  id: 0,
+  isproject: true,
+  type: "prototype",
+  status: "finished",
+  url: "http://localhost:4000/projects/example-md-project/en/",
+  name: "Example Markdown Project 1",
+  lang: "en",
+  start: "01-07-2016",
+  end: "04-09-2016"
 }, {
   id: 1,
   isproject: true,
@@ -28680,7 +28700,7 @@ var data = [{
   name: "Example Markdown Project 1",
   lang: "en",
   start: "01-01-2018",
-  end: "01-03-2018"
+  end: "04-03-2018"
 }, {
   id: 2,
   isproject: true,
@@ -28690,7 +28710,7 @@ var data = [{
   name: "Example Publication 1",
   lang: "en",
   start: "01-05-2018",
-  end: "01-08-2018"
+  end: "03-08-2018"
 }, {
   id: 3,
   isproject: true,
@@ -28700,7 +28720,7 @@ var data = [{
   name: "Example Workshop 1",
   lang: "en",
   start: "01-01-2018",
-  end: "01-03-2018"
+  end: "05-03-2018"
 }, {
   id: 4,
   isproject: true,
@@ -28732,12 +28752,17 @@ function () {
       parser: null,
       xAxis: null,
       xAxisElm: null,
-      prototypes: null,
-      workshops: null,
-      datasets: null,
-      publications: null
+      prototype: null,
+      workshop: null,
+      dataset: null,
+      publication: null,
+      swimlanes: [],
+      processedTimelines: [],
+      timelines: [],
+      types: ['workshop', 'dataset', 'publication', 'prototype']
     };
-    this.init();
+    this.timeline = this.timeline.bind(this);
+    this.findlane = this.findlane.bind(this);
   }
 
   _createClass(Timeline, [{
@@ -28761,10 +28786,7 @@ function () {
       });
       this.vars.maxX = (0, _d.max)(data, function (d) {
         return _this.vars.parser(d.end);
-      }); // console dimensions
-
-      console.log(this.vars.width, this.vars.height);
-      console.log(this.vars.minX);
+      });
     }
   }, {
     key: "setupScales",
@@ -28782,12 +28804,115 @@ function () {
       };
 
       this.vars.xAxis = (0, _d.axisBottom)(this.vars.x).ticks(this.vars.width / 100);
-      this.vars.xAxisElm = (0, _d.select)(this.vars.container).append('svg').attr('width', this.vars.width).attr('class', 'timeline-axis').call(this.vars.xAxis);
+      this.vars.wrapper = (0, _d.select)(this.vars.container).append('svg').attr('width', this.vars.width).attr('class', 'timeline');
+      this.vars.xAxisElm = this.vars.wrapper.append('g').attr('class', 'timeline-axis').call(this.vars.xAxis);
+    }
+  }, {
+    key: "fitsIn",
+    value: function fitsIn(lane, band) {
+      if (this.vars.parser(lane.end) < this.vars.parser(band.start) || this.vars.parser(lane.start) > this.vars.parser(band.end)) {
+        return true;
+      }
+
+      var filteredLane = lane.filter(function (d) {
+        return this.vars.parser(d.start) <= this.vars.parser(band.end) && this.vars.parser(d.end) >= this.vars.parser(band.start);
+      });
+      console.log(filteredLane);
+
+      if (filteredLane.length === 0) {
+        return true;
+      }
+
+      return false;
+    }
+  }, {
+    key: "findlane",
+    value: function findlane(band) {
+      //make the first array
+      if (this.vars.swimlanes[0] === undefined) {
+        this.vars.swimlanes[0] = [band];
+        return;
+      }
+
+      var l = this.vars.swimlanes.length - 1;
+      var x = 0; // console.log(this.vars.swimlanes[x][x])
+
+      while (x <= l) {
+        if (this.fitsIn(this.vars.swimlanes[x], band)) {
+          this.vars.swimlanes[x].push(band);
+          return;
+        }
+
+        x++;
+      }
+
+      this.vars.swimlanes[x] = [band];
+      return;
+    }
+  }, {
+    key: "timeline",
+    value: function timeline(data) {
+      var _this3 = this;
+
+      if (!arguments.length) return this.timeline;
+      this.vars.timelines = data;
+      this.vars.processedTimelines = [];
+      this.vars.swimlanes = [];
+      this.processTimelines();
+      this.vars.processedTimelines.forEach(function (band) {
+        _this3.findlane(band);
+      });
+      var height = 30 / this.vars.swimlanes.length;
+      height = Math.min(height, Infinity);
+      this.vars.swimlanes.forEach(function (lane, i) {
+        lane.forEach(function (band) {
+          band.y = i * height;
+          band.dy = height; // add "padding" later here?
+
+          band.lane = i;
+        });
+      });
+      return this.vars.processedTimelines;
+    }
+  }, {
+    key: "processTimelines",
+    value: function processTimelines() {
+      var _this4 = this;
+
+      this.vars.timelines.forEach(function (band) {
+        var projectedBand = {};
+
+        for (var x in band) {
+          if (band.hasOwnProperty(x)) {
+            projectedBand[x] = band[x];
+          }
+        }
+
+        projectedBand.startX = _this4.vars.elmX(band);
+        projectedBand.width = _this4.vars.elmW(band);
+        projectedBand.lane = 0;
+
+        _this4.vars.processedTimelines.push(projectedBand);
+      });
     }
   }, {
     key: "setupBars",
     value: function setupBars() {
-      this.vars.prototypes = (0, _d.select)(this.vars.container).append('svg');
+      // this.vars.types.forEach((type, i) => {
+      var type = 'prototype'; // add real data here later.
+
+      var onlyThisType = data.filter(function (d) {
+        return d.type === type;
+      });
+      var theseBands = this.timeline(onlyThisType);
+      this.vars[type] = this.vars.wrapper.append('g').attr('class', 'bars');
+      this.vars[type].selectAll('rect').data(theseBands).enter().append('rect').attr('x', function (d) {
+        return d.startX;
+      }).attr('y', function (d) {
+        return d.y;
+      }).attr('width', function (d) {
+        return d.width;
+      }).attr('height', 3).attr('fill', 'red'); // })
     }
   }]);
 
@@ -28840,6 +28965,7 @@ function createTimeline(idTimelineDiv) {
 
   if (div != null) {
     var projectTimeline = new _Timeline.default(div);
+    projectTimeline.init();
   }
 }
 
