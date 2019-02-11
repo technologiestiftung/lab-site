@@ -12,6 +12,53 @@
 
 tbd soon-ish…
 
+## Project Generator
+
+Run `npm run new-project` To get this help.
+To pass arguments to it use the dash dash whitspace `npm run new-project -- ` and then your arguments.
+
+
+```plain
+> ./project-generator/bin/run --help
+
+Generate a new project for @technologiestiftung
+
+USAGE
+  $ project-generator [TITLE]
+
+ARGUMENTS
+  TITLE  The folder for the new project. (Whitspace will be replaced uppercase as well)
+
+OPTIONS
+  -f, --force         💀 force the overwrite of existing files.
+  -h, --help          show CLI help
+
+  -p, --prompt        Use the interactive prompt to fill the yaml frontmatter
+                      (if not used a default will be inserted)
+
+  -t, --type=md|html  [default: md] the type of project possible "md" or "html"
+
+  -v, --version       show CLI version
+
+DESCRIPTION
+  When you run this from a npm-scripts in our project
+  you have to add `--` to execute the commands. E.g.
+
+       Call the help:
+       $ npm run new-project -- --help
+
+       Or generate a new project with HTML files under
+       /source/projects/my-cool-project/…
+       with the default frontmatter:
+       $ npm run new-project -- "my cool project" -t html
+
+       Or start the interactive prompt for generating your yaml frontmatter
+       $ npm run new-project -- -p
+       ________________________________
+                < wooohoo o/ >
+       --------------------------------
+```
+
 ## Todos
 
 Write guides for:
@@ -22,7 +69,7 @@ Write guides for:
 - [ ] add and write article/project
 - [ ] minimal needed frontmatter for article/project
 - [ ] list of available includes/macros
-- [ ] minimal tool for scaffolding a new project/article
+- [x] minimal tool for scaffolding a new project/article
 
 
 Still to implement:
@@ -30,11 +77,11 @@ Still to implement:
 - [x] projects feed (same as the feed on the landing page but all of them)
 - [x] make feed an _include
 - [ ] fix language switcher
-- [ ] image macro/slider
+- [x] image macro/slider
 - [x] Dataset pages is located somewhere else
-- [ ] compare project detail markup
-- [ ] check project frontmatter key values pairs
-- [ ] review website.json which data we need available
+- [x] compare project detail markup
+- [x] check project frontmatter key values pairs
+- [x] review website.json which data we need available
 - [ ] make timeline a separate js file only included in landing page and project feed
 - [ ] review if parcel is the right thing for use
 - [ ] review if we need auto-prefixer
