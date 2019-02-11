@@ -16,7 +16,7 @@ layout: default
 
       {% for member in team %}
       <li class="feed-list__project team {{member.type}}">
-          <a href="/team/{{ member.name | slugify }}/{{page.lang}}">
+          <a href="{{member.url}}">
             <div class="project-image__outer">
                 <div class="project-image" style="background-image: url({{site.url}}{{member.image}});"></div>
             </div>
