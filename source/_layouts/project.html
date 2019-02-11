@@ -7,9 +7,11 @@ layout: skeleton
     {% assign ext = page.path | split: "." | last %}
     {% include project-header.html %}
   {%- if ext == "html" -%}
+  <section class="html-content">
     {{ content }}
+  </section>
     {%- else -%}
-    <section class="project-text markdown-content">
+    <section class="markdown-content">
       {{ content }}
     </section>
   {%- endif -%}
