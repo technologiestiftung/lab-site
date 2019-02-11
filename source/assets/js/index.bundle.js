@@ -28993,6 +28993,11 @@ function () {
       });
     }
   }, {
+    key: "onResize",
+    value: function onResize() {
+      (0, _d.select)(this.vars.container);
+    }
+  }, {
     key: "setupBars",
     value: function setupBars() {
       var _this7 = this;
@@ -29043,7 +29048,9 @@ function () {
           gradient.append('stop').attr('class', 'stop-left').attr('offset', '0');
           gradient.append('stop').attr('class', "stop-right__".concat(type)).attr('offset', '1');
 
-          _this7.vars[type].selectAll('rect').data(theseBands).enter().append('rect').attr('x', function (d) {
+          _this7.vars[type].selectAll('rect').data(theseBands).enter().append("a").attr("xlink:href", function (d) {
+            return d.url;
+          }).append('rect').attr('x', function (d) {
             return d.startX;
           }).attr('y', function (d) {
             return d.y;

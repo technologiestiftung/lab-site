@@ -362,7 +362,9 @@ class Timeline {
 
     }
 
-    
+    onResize() {
+        d3Select(this.vars.container)
+    }
 
     setupBars () {
         this.vars.types.forEach((type, iType) => {
@@ -429,6 +431,8 @@ class Timeline {
                 this.vars[type].selectAll('rect')
                     .data(theseBands)
                     .enter()
+                    .append("a")
+                    .attr("xlink:href", function(d) { return d.url })
                     .append('rect')
                     .attr('x', d => d.startX)
                     .attr('y', d => d.y)
@@ -439,7 +443,6 @@ class Timeline {
                     .on('mouseover', (d, i, nodes) => {
                         this.updateTooltip(d.name);
                         this.vars.tooltip.classed('active', true);
-
                         d3Select(nodes[i]).attr('height', 8);
                     })
                     .on('mouseout', (d, i, nodes) => {
