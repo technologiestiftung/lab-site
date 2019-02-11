@@ -13,6 +13,9 @@
     &-headline {
     }
     &-list {
+
+        margin-top: $spacing-l;
+
         &__project {
 
             &.team {
@@ -146,14 +149,14 @@
                 text-transform: uppercase;
                 font-weight: bold;
                 letter-spacing: 1.5px;
-                margin-top: 0;
                 transition: color $time-s;
+                margin-top: $spacing-s;
             }
 
             &-title {
                 display: block;
                 font-size: $font-size-l;
-                margin-top: $spacing-s;
+                margin-top: $spacing-xs;
                 transition: color $time-s;
             }
         }

@@ -2,20 +2,22 @@
     <div class="project-header__hero">
         <div class="gradient-overlay"></div>
         <img class="project-header__hero-image" src="{{ page.heroImage }}" alt="{{ page.title }}"/>
-    </div>
 
-    <div class="project-header__title">
-        <a class="link--button" href="#">Launch Project</a>
-
-        <div class="flex-row">
-            <h1 class="project-header__title--main headline--bold">
-                {{ page.title }}
-            </h1>
-            <h2 class="project-header__title--sub">
-                {{ page.subtitle }}
-            </h2>
+        <div class="project-header__title">
+            {%- if page.externalUrl -%}
+                <a class="link--button" href="{{ page.externalUrl }}">Launch Project</a>
+            {%- endif -%}
+    
+            <div class="flex-row">
+                <h1 class="project-header__title--main headline--bold">
+                    {{ page.title }}
+                </h1>
+                <h2 class="project-header__title--sub">
+                    {{ page.subtitle }}
+                </h2>
+            </div>
+    
         </div>
-
     </div>
 
     <div class="project-header__meta">

@@ -1,0 +1,131 @@
+[
+    {
+        "year": 2017,
+        "month": 0,
+        "min": 0,
+        "max": 361,
+        "mean": 62.80862533692722,
+        "median": 30,
+        "lat": " 52.5139429938464",
+        "lng": " 13.417611074205",
+        "location": " Jannowitzbrücke Süd"
+    },
+    {
+        "year": 2017,
+        "month": 1,
+        "min": 1,
+        "max": 527,
+        "mean": 84.12369597615499,
+        "median": 31,
+        "lat": " 52.5139429938464",
+        "lng": " 13.417611074205",
+        "location": " Jannowitzbrücke Süd"
+    },
+    {
+        "year": 2017,
+        "month": 2,
+        "min": 0,
+        "max": 784,
+        "mean": 144.7106325706595,
+        "median": 251,
+        "lat": " 52.5139429938464",
+        "lng": " 13.417611074205",
+        "location": " Jannowitzbrücke Süd"
+    },
+    {
+        "year": 2017,
+        "month": 3,
+        "min": 1,
+        "max": 857,
+        "mean": 148.28233657858135,
+        "median": 265,
+        "lat": " 52.5139429938464",
+        "lng": " 13.417611074205",
+        "location": " Jannowitzbrücke Süd"
+    },
+    {
+        "year": 2017,
+        "month": 4,
+        "min": 2,
+        "max": 956,
+        "mean": 201.7442799461642,
+        "median": 26,
+        "lat": " 52.5139429938464",
+        "lng": " 13.417611074205",
+        "location": " Jannowitzbrücke Süd"
+    },
+    {
+        "year": 2017,
+        "month": 5,
+        "min": 1,
+        "max": 1027,
+        "mean": 225.3212795549374,
+        "median": 286,
+        "lat": " 52.5139429938464",
+        "lng": " 13.417611074205",
+        "location": " Jannowitzbrücke Süd"
+    },
+    {
+        "year": 2017,
+        "month": 6,
+        "min": 2,
+        "max": 970,
+        "mean": 203.98115746971737,
+        "median": 283,
+        "lat": " 52.5139429938464",
+        "lng": " 13.417611074205",
+        "location": " Jannowitzbrücke Süd"
+    },
+    {
+        "year": 2017,
+        "month": 7,
+        "min": 1,
+        "max": 839,
+        "mean": 215.04306864064603,
+        "median": 27,
+        "lat": " 52.5139429938464",
+        "lng": " 13.417611074205",
+        "location": " Jannowitzbrücke Süd"
+    },
+    {
+        "year": 2017,
+        "month": 8,
+        "min": 3,
+        "max": 928,
+        "mean": 198.30319888734354,
+        "median": 278,
+        "lat": " 52.5139429938464",
+        "lng": " 13.417611074205",
+        "location": " Jannowitzbrücke Süd"
+    },
+    {
+        "year": 2017,
+        "month": 9,
+        "min": 0,
+        "max": 885,
+        "mean": 149.0834454912517,
+        "median": 263,
+        "lat": " 52.5139429938464",
+        "lng": " 13.417611074205",
+        "location": " Jannowitzbrücke Süd"
+    },
+    {
+        "year": 2017,
+        "month": 10,
+        "min": 0,
+        "max": 716,
+        "mean": 137.884561891516,
+        "median": 26,
+        "lat": " 52.5139429938464",
+        "lng": " 13.417611074205",
+        "location": " Jannowitzbrücke Süd"
+    },
+    {
+        "year": null,
+        "month": null,
+        "min": 0,
+        "max": 539,
+        "mean": 85.3728129205922,
+        "median": 29
+    }
+]

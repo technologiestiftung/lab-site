@@ -3,14 +3,14 @@ layout: project
 lang: de
 
 title: H3LL0W0RLD!
-subtitle: Auf deutsch
+subtitle: Das Innovation  Prototyping Lab der Technoligiestiftung
 # project needs the following frontmatter values:
 type: publication # could also be "workshop", "dataset", "prototype"
 #
 colorMode: dark # or "dark" adds an additional class
 featuredImage: /projects/example-md-project/images/feature.png
 # thumbnail path needs to be absolute at the moment
-thumbnail: /projects/H3LL0W0RLD/images/hello3.gif
+thumbnail: /projects/H3LL0W0RLD/images/thumbnail.jpg
 heroImage: /projects/H3LL0W0RLD/images/breitband.png #full page url
 visible: true # if false the project will not be listed
 # somehow needs to be the name in url of the author page
@@ -21,7 +21,7 @@ authors:
 start: 2018-05-23
 end: 2018-05-24
 status: ongoing
-date: 2019-02-01
+date: 2018-02-01
 
 materialsIncluded:
   - name": "images"
@@ -35,11 +35,9 @@ materialsIncluded:
 
 ---
 
-{% include macro-image-section-markdown.html src="../images/hello.gif" subtitle="Hallo, wir sind neu!" %}
-
-
-
 Hallo und herzlich Willkommen beim Ideation & Prototyping Lab! Wir sind ein Teil der [Technologiestiftung Berlin](http://www.technologiestiftung-berlin.de). Als gemeinnützige Einrichtung arbeiten wir an der Schnittstelle von Digitalisierung und Stadtentwicklung daran, die Zukunft Berlins zu gestalten.
+
+{% include macro-image-section-markdown.html src="../images/hello.gif" subtitle="Hallo, wir sind neu!" %}
 
 Eine wesentliche Aufgabe der Technologiestiftung ist es, die Bedeutung technologischer Innovationen für die Stadtgesellschaft zu untersuchen. Im Laufe der letzten Jahre haben wir gemerkt, dass sich viele dieser Entwicklungen nur aus der Praxis heraus wirklich verstehen lassen. Um mit neuen technischen Möglichkeiten zu experimentieren, haben wir diesen Bereich ins Leben gerufen.
 
@@ -47,7 +45,7 @@ Ein aktueller Schwerpunkt unserer Arbeit ist die Aufbereitung, Analyse und Visua
 
 <!-- include images like this Using the include -->
 
-{% include macro-image-section.html src="../images/breitband.png" subtitle="Dit is Berlin $%%" %}
+{% include macro-image-section-markdown.html src="../images/breitband.png" subtitle="Dit is Berlin" %}
 
 
 

@@ -90,6 +90,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
 
             &-image {
                 flex-shrink: 0;
@@ -104,12 +105,12 @@
             margin: $spacing-m 0;
             padding: 0 $spacing-page-m;
             position: absolute;
-            top: 50vh;
             width: 100%;
+            bottom: 0px;
 
             @media only screen and (max-width: $screen-m) {
                 padding: $spacing-l $spacing-page-xs;
-                top: 35vh;
+                margin: 0;
 
                 .flex-row {
                     flex-direction: column;
@@ -223,6 +224,7 @@
     }
 
     &-image {
+
         img {
             display: block;
             max-width: 100%;

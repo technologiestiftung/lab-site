@@ -67,11 +67,13 @@
                     }
 
                     &-image {
+                        transform: translate3d($spacing-l, 0, 0);
+
                         @media only screen and (max-width: $screen-m) {
-                            transform: translate3d($spacing-l, 0, 0);
+                            transform: translate3d($spacing-xxl, -10px, 0);
                         }
                         @media only screen and (min-width: $screen-l) {
-                            transform: translate3d($spacing-xl, -280px, 0);
+                            transform: translate3d($spacing-xxl, -10px, 0);
                         }
                     }
                 }
@@ -82,18 +84,16 @@
 
                         &-subtext {
                             opacity: 1;
-                            transform: translate3d(0, 0, 0);
                         }
                         &-image {
                             opacity: 1;
-                            transform: translate3d($spacing-xxl, 0, 0);
 
                             @media only screen and (max-width: $screen-s) {
-                                transform: translate3d($spacing-xll, 0, 0);
+                                transform: translate3d($spacing-xxl, -10px, 0);
                             }
 
                             @media only screen and (min-width: $screen-l) {
-                                transform: translate3d($spacing-xl, -300px, 0);
+                                transform: translate3d($spacing-xxl, -10px, 0);
                             }
                         }
                     }
