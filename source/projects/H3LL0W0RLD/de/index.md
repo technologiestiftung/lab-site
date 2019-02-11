@@ -47,6 +47,10 @@ Eine wesentliche Aufgabe der Technologiestiftung ist es, die Bedeutung technolog
 
 Ein aktueller Schwerpunkt unserer Arbeit ist die Aufbereitung, Analyse und Visualisierung öffentlicher Daten. Zusammen mit der Berliner Senatsverwaltung wollen wir die in den Behörden schlummernden Datenschätze bergen und für alle nutzbar zu machen. Damit knüpfen wir an erfolgreiche Technologiestiftungs-Projekte an, etwa an die [Visualisierungen zum Berliner Breitbandausbau](http://breitband-berlin.de) oder an unser [Minecraft-Partizipationsprojekt](http://www.technologiestiftung-berlin.de/minecraft). Mehr Informationen rund um das Thema Open Data findet ihr auch in unseren [Studien.](https://www.technologiestiftung-berlin.de/de/bibliothek/publikationen/)
 
+<!-- Using the include -->
+{% include macro-image-section.html src="../images/breitband.png" subtitle="Dit is Berlin" %}
+
+<!-- adding a class and a caption -->
 ![Dit is Berlin](../images/Breitband.png)
 Dit is Berlin
 {: .project-image__subtitle}
@@ -56,5 +60,4 @@ Daneben engagieren wir uns für den Aufbau des Berliner LoRaWAN-Netzes für ein 
 Alle unsere Projekte sind übrigens [Open Source](https://publiccode.eu/de/) und können ohne Einschränkungen genutzt, verändert und weiterentwickelt werden. Wer statt Worten lieber Code lesen möchte, kann gerne einen Blick in unseren [GitHub](https://github.com/technologiestiftung/) werfen.
 
 Wenn ihr euch für unsere Arbeit interessiert oder Fragen habt, nehmt gerne Kontakt auf. Ihr erreicht uns per Mail, Twitter oder oft auch ganz altmodisch per Telefon. Wir veranstalten auch regelmäßig Meetups, Konferenzen, Workshops oder Open Labs – Infos dazu findet ihr zukünftig hier sowie auf unserem Mutterschiff [technologiestiftung-berlin.de](https://www.technologiestiftung-berlin.de/).
-
 
