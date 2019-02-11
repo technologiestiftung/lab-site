@@ -125,7 +125,7 @@ const data = [
 
 class Timeline {
     constructor(domElement) {
-        this.vars= {
+        this.vars = {
             container: domElement,
             wrapper: null,
             width: null,
@@ -137,7 +137,7 @@ class Timeline {
             svgs: null,
             catchAll: null,
             elmW: null,
-            parser: null,     
+            parser: null,   
             xAxis: null,
             xAxisElm: null,
             prototype: null,
@@ -163,6 +163,8 @@ class Timeline {
         
         this.timeline = this.timeline.bind(this);
         this.findlane = this.findlane.bind(this);
+        this.updateTooltip = this.updateTooltip.bind(this);
+        this.setupBars = this.setupBars.bind(this);
     }
 
     init() {
@@ -170,8 +172,8 @@ class Timeline {
         this.setupTimeline();
         this.setupScales();
         this.setupBars();
-        this.setupZoom();
         this.setupTooltip();
+        this.setupZoom();
     }
 
     setupTimeline() {
@@ -214,18 +216,13 @@ class Timeline {
     setupZoom() {
         let svgDomElm = document.querySelector('.timeline-svg')
         let axisDomElm = document.querySelector('.timeline-axis')
+
         this.vars.height = svgDomElm.clientHeight;
 
         this.vars.xAxisElm
             .attr('transform', `translate(0, ${this.vars.height - 22})`);
 
-        this.vars.catchAll = this.vars.svgs
-            .append('svg')
-            .attr('class', 'zoom')
-            .attr('width', this.vars.width)
-            .attr('height', this.vars.height)
-
-        this.vars.catchAll.call(d3Zoom()
+        this.vars.wrapper.call(d3Zoom()
             .scaleExtent([0.5, 8])
             .on('zoom', () => {
                 let transform = d3Event.transform;
@@ -279,11 +276,26 @@ class Timeline {
     }
 
     setupTooltip() {
-        this.vars.tooltip = d3Select('body').append('div')
+        
+        this.vars.tooltip = d3Select('body')
+            .append('div')
             .classed('timeline-tooltip', true)
+        
+        this.vars.tooltipTitle = this.vars.tooltip
+            .append('span')
+            .classed('timeline-tooltip__text', true)
 
-        this.vars.tooltipTitle = this.vars.tooltip.append('span')
-            .classed('tooltip-text')
+    }
+
+    updateTooltip(name) {
+        let x = d3Event.pageX + 10;
+        let y = d3Event.pageY + 10;
+
+        this.vars.tooltip
+            .attr('style', `left: ${x}px; top: ${y}px; position: absolute`)
+        
+        this.vars.tooltipTitle
+            .text(name)
     }
 
     timeline (data) {
@@ -350,6 +362,8 @@ class Timeline {
 
     }
 
+    
+
     setupBars () {
         this.vars.types.forEach((type, iType) => {
 
@@ -368,9 +382,20 @@ class Timeline {
                     .enter()
                     .append('circle')
                     .attr('cx', d => d.startX)
-                    .attr('cy', d => d.y + (this.vars.circleRadius))
+                    .attr('cy', d => d.y + (this.vars.circleRadius * 1.25))
                     .attr('r', this.vars.circleRadius)
                     .attr('fill', this.vars.colors[type])
+                    .on('mouseover', (d, i, nodes) => {
+                        this.updateTooltip(d.name);
+                        this.vars.tooltip.classed('active', true);
+                        d3Select(nodes[i]).attr('r', this.vars.circleRadius * 1.3)
+                    })
+                    .on('mouseout', (d, i, nodes) => {
+                        this.updateTooltip()
+                        this.vars.tooltip.classed('active', false);
+                        this.vars.tooltip.attr('style', 'display: none');
+                        d3Select(nodes[i]).attr('r', this.vars.circleRadius * 1)
+                    })
 
             } else if (type == 'workshop') {
 
@@ -405,12 +430,24 @@ class Timeline {
                     .data(theseBands)
                     .enter()
                     .append('rect')
-                        .attr('x', d => d.startX)
-                        .attr('y', d => d.y)
-                        .attr('width', d => d.width)
-                        .attr('height', 6)
-                        .classed(`${type}-gradient`, true)
-                        .attr('fill', this.vars.colors[type])
+                    .attr('x', d => d.startX)
+                    .attr('y', d => d.y)
+                    .attr('width', d => d.width)
+                    .attr('height', 6)
+                    .classed(`${type}-gradient`, true)
+                    .attr('fill', this.vars.colors[type])
+                    .on('mouseover', (d, i, nodes) => {
+                        this.updateTooltip(d.name);
+                        this.vars.tooltip.classed('active', true);
+
+                        d3Select(nodes[i]).attr('height', 8);
+                    })
+                    .on('mouseout', (d, i, nodes) => {
+                        this.vars.tooltip.classed('active', false);
+                        this.vars.tooltip.attr('style', 'display: none');
+                        d3Select(nodes[i]).attr('height', 6);
+                    })
+
 
                 this.vars[type]
                     .attr('transform', (d,i) => {

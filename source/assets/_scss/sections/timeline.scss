@@ -5,6 +5,24 @@
 
     &-tooltip {
         position: absolute;
+        width: auto;
+        height: 30px;
+        background: white;
+        animation: $time-m fadeInFromNone ease;
+        display: flex;
+
+
+        &__text {
+            font-weight: bold;
+        }
+
+
+
+        &.active {
+            opacity: 1;
+        }
+
+        
     }
 
     .publication-gradient {
@@ -62,5 +80,23 @@
         position: absolute;
         bottom: 0;
         left: 0;
+    }
+}
+
+
+@keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
     }
 }

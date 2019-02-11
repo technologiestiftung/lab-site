@@ -19,7 +19,7 @@ authors:
   - benjamin-seibel
 
 start: 2018-05-23
-end: 208-05-24
+end: 2018-05-24
 status: ongoing
 date: 2019-02-01
 

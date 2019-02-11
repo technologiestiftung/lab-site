@@ -28796,6 +28796,8 @@ function () {
     };
     this.timeline = this.timeline.bind(this);
     this.findlane = this.findlane.bind(this);
+    this.updateTooltip = this.updateTooltip.bind(this);
+    this.setupBars = this.setupBars.bind(this);
   }
 
   _createClass(Timeline, [{
@@ -28805,8 +28807,8 @@ function () {
       this.setupTimeline();
       this.setupScales();
       this.setupBars();
-      this.setupZoom();
       this.setupTooltip();
+      this.setupZoom();
     }
   }, {
     key: "setupTimeline",
@@ -28853,8 +28855,7 @@ function () {
       var axisDomElm = document.querySelector('.timeline-axis');
       this.vars.height = svgDomElm.clientHeight;
       this.vars.xAxisElm.attr('transform', "translate(0, ".concat(this.vars.height - 22, ")"));
-      this.vars.catchAll = this.vars.svgs.append('svg').attr('class', 'zoom').attr('width', this.vars.width).attr('height', this.vars.height);
-      this.vars.catchAll.call((0, _d.zoom)().scaleExtent([0.5, 8]).on('zoom', function () {
+      this.vars.wrapper.call((0, _d.zoom)().scaleExtent([0.5, 8]).on('zoom', function () {
         var transform = _d.event.transform;
 
         _this3.vars.xAxisElm.call(_this3.vars.xAxis.scale(transform.rescaleX(_this3.vars.x)));
@@ -28923,7 +28924,15 @@ function () {
     key: "setupTooltip",
     value: function setupTooltip() {
       this.vars.tooltip = (0, _d.select)('body').append('div').classed('timeline-tooltip', true);
-      this.vars.tooltipTitle = this.vars.tooltip.append('span').classed('tooltip-text');
+      this.vars.tooltipTitle = this.vars.tooltip.append('span').classed('timeline-tooltip__text', true);
+    }
+  }, {
+    key: "updateTooltip",
+    value: function updateTooltip(name) {
+      var x = _d.event.pageX + 10;
+      var y = _d.event.pageY + 10;
+      this.vars.tooltip.attr('style', "left: ".concat(x, "px; top: ").concat(y, "px; position: absolute"));
+      this.vars.tooltipTitle.text(name);
     }
   }, {
     key: "timeline",
@@ -29002,8 +29011,22 @@ function () {
           _this7.vars[type].selectAll('circle').data(theseBands).enter().append('circle').attr('cx', function (d) {
             return d.startX;
           }).attr('cy', function (d) {
-            return d.y + _this7.vars.circleRadius;
-          }).attr('r', _this7.vars.circleRadius).attr('fill', _this7.vars.colors[type]);
+            return d.y + _this7.vars.circleRadius * 1.25;
+          }).attr('r', _this7.vars.circleRadius).attr('fill', _this7.vars.colors[type]).on('mouseover', function (d, i, nodes) {
+            _this7.updateTooltip(d.name);
+
+            _this7.vars.tooltip.classed('active', true);
+
+            (0, _d.select)(nodes[i]).attr('r', _this7.vars.circleRadius * 1.3);
+          }).on('mouseout', function (d, i, nodes) {
+            _this7.updateTooltip();
+
+            _this7.vars.tooltip.classed('active', false);
+
+            _this7.vars.tooltip.attr('style', 'display: none');
+
+            (0, _d.select)(nodes[i]).attr('r', _this7.vars.circleRadius * 1);
+          });
         } else if (type == 'workshop') {
           _this7.vars[type].selectAll('rect').data(theseBands).enter().append('rect').attr('x', function (d) {
             return d.startX;
@@ -29026,7 +29049,19 @@ function () {
             return d.y;
           }).attr('width', function (d) {
             return d.width;
-          }).attr('height', 6).classed("".concat(type, "-gradient"), true).attr('fill', _this7.vars.colors[type]);
+          }).attr('height', 6).classed("".concat(type, "-gradient"), true).attr('fill', _this7.vars.colors[type]).on('mouseover', function (d, i, nodes) {
+            _this7.updateTooltip(d.name);
+
+            _this7.vars.tooltip.classed('active', true);
+
+            (0, _d.select)(nodes[i]).attr('height', 8);
+          }).on('mouseout', function (d, i, nodes) {
+            _this7.vars.tooltip.classed('active', false);
+
+            _this7.vars.tooltip.attr('style', 'display: none');
+
+            (0, _d.select)(nodes[i]).attr('height', 6);
+          });
 
           _this7.vars[type].attr('transform', function (d, i) {
             var height = _this7.vars[type].node().getBoundingClientRect().height;
@@ -29079,7 +29114,6 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 (0, _hamburgerHandler.default)();
 (0, _languageSwitch.default)();
 (0, _featProjectsHandler.default)();
-console.log('working!');
 /**
  * Initialize image sliders by classname
  */
@@ -29130,7 +29164,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55821" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59330" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

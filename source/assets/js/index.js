@@ -14,8 +14,6 @@ hamburgerHandler();
 languageSwitch();
 featProjectsHandler();
 
-console.log('working!');
-
 /**
  * Initialize image sliders by classname
  */
