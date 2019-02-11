@@ -65,10 +65,10 @@ section {
         h2 {
             @media only screen and (min-width: $screen-m) {
                 margin-left: $spacing-page-m;
-            }   
+            }
             @media only screen and (max-width: $screen-m) {
                 margin-left: $spacing-page-xs;
-            }   
+            }
         }
     }
 
@@ -78,10 +78,10 @@ section {
         h2 {
             @media only screen and (min-width: $screen-m) {
                 margin-left: $spacing-page-m;
-            }   
+            }
             @media only screen and (max-width: $screen-m) {
                 margin-left: $spacing-page-xs;
-            }   
+            }
         }
     }
 }
