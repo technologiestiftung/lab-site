@@ -11,22 +11,22 @@ import patch from './lib/patch';
 import questions from './lib/questions';
 import {isFolderSync, targetPathRoot} from './lib/utils';
 
-interface IRepsonse {
-  folderName: string;
-  fileType: string;
-  de_title: string;
-  en_title: string;
-  de_subtitle: string;
-  en_subtitle: string;
-  description: string;
-  projectType: string;
-  colorMode: string;
-  visible: boolean;
-  featured: boolean;
-  authors: string[];
-  externalUrl: string;
-  status: string;
-}
+// interface IRepsonse {
+//   folderName: string;
+//   fileType: string;
+//   de_title: string;
+//   en_title: string;
+//   de_subtitle: string;
+//   en_subtitle: string;
+//   description: string;
+//   projectType: string;
+//   colorMode: string;
+//   visible: boolean;
+//   featured: boolean;
+//   authors: string[];
+//   externalUrl: string;
+//   status: string;
+// }
 // const frontmatter = require('./frontmatter.json');
 const frontmatter: string | object = fs.readFileSync(path.resolve(__dirname, './frontmatter.yml'), 'utf8');
 
