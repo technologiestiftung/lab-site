@@ -28684,6 +28684,26 @@ var data = [{
 }, {
   id: 0,
   isproject: true,
+  type: "dataset",
+  status: "finished",
+  url: "http://localhost:4000/projects/example-md-project/en/",
+  name: "Example Markdown Project 1",
+  lang: "en",
+  start: "08-07-2016",
+  end: "12-09-2017"
+}, {
+  id: 0,
+  isproject: true,
+  type: "dataset",
+  status: "finished",
+  url: "http://localhost:4000/projects/example-md-project/en/",
+  name: "Example Markdown Project 1",
+  lang: "en",
+  start: "12-12-2016",
+  end: "12-09-2017"
+}, {
+  id: 0,
+  isproject: true,
   type: "prototype",
   status: "finished",
   url: "http://localhost:4000/projects/example-md-project/en/",
@@ -28714,12 +28734,12 @@ var data = [{
 }, {
   id: 3,
   isproject: true,
-  type: "workshop",
+  type: "publication",
   status: "finished",
   url: "http://localhost:4000/projects/example-md-project/en/",
   name: "Example Workshop 1",
   lang: "en",
-  start: "01-01-2018",
+  start: "09-01-2017",
   end: "05-03-2018"
 }, {
   id: 4,
@@ -28748,6 +28768,8 @@ function () {
       maxX: null,
       x: null,
       elmX: null,
+      svgs: null,
+      catchAll: null,
       elmW: null,
       parser: null,
       xAxis: null,
@@ -28756,21 +28778,37 @@ function () {
       workshop: null,
       dataset: null,
       publication: null,
+      circleRadius: 5,
+      tooltip: null,
+      tooltipTitle: null,
+      svgDefs: null,
+      legend: null,
       swimlanes: [],
       processedTimelines: [],
       timelines: [],
-      types: ['workshop', 'dataset', 'publication', 'prototype']
+      types: ['workshop', 'dataset', 'publication', 'prototype'],
+      colors: {
+        'prototype': '#41b496',
+        'dataset': '#e60032',
+        'workshop': '#dcc82d',
+        'publication': '#2d91d2'
+      }
     };
     this.timeline = this.timeline.bind(this);
     this.findlane = this.findlane.bind(this);
+    this.updateTooltip = this.updateTooltip.bind(this);
+    this.setupBars = this.setupBars.bind(this);
   }
 
   _createClass(Timeline, [{
     key: "init",
     value: function init() {
+      this.setupLegend();
       this.setupTimeline();
       this.setupScales();
       this.setupBars();
+      this.setupTooltip();
+      this.setupZoom();
     }
   }, {
     key: "setupTimeline",
@@ -28778,7 +28816,6 @@ function () {
       var _this = this;
 
       this.vars.width = this.vars.container.clientWidth;
-      this.vars.height = this.vars.container.clientHeight;
       this.vars.parser = _d.isoParse; // insert real data here
 
       this.vars.minX = (0, _d.min)(data, function (d) {
@@ -28804,18 +28841,51 @@ function () {
       };
 
       this.vars.xAxis = (0, _d.axisBottom)(this.vars.x).ticks(this.vars.width / 100);
-      this.vars.wrapper = (0, _d.select)(this.vars.container).append('svg').attr('width', this.vars.width).attr('class', 'timeline');
-      this.vars.xAxisElm = this.vars.wrapper.append('g').attr('class', 'timeline-axis').call(this.vars.xAxis).attr('transform', function (d) {
-        return "translate(0,".concat(50, ")"); // add dynamic height -> this.vars.height
-      });
+      this.vars.svgs = (0, _d.select)(this.vars.container).append('div').classed('svgs', true);
+      this.vars.wrapper = this.vars.svgs.append('svg').attr('width', this.vars.width).attr('class', 'timeline-svg');
+      this.vars.xAxisElm = this.vars.wrapper.append('g').attr('class', 'timeline-axis').call(this.vars.xAxis);
+      (0, _d.select)('.domain').remove();
+    }
+  }, {
+    key: "setupZoom",
+    value: function setupZoom() {
+      var _this3 = this;
+
+      var svgDomElm = document.querySelector('.timeline-svg');
+      var axisDomElm = document.querySelector('.timeline-axis');
+      this.vars.height = svgDomElm.clientHeight;
+      this.vars.xAxisElm.attr('transform', "translate(0, ".concat(this.vars.height - 22, ")"));
+      this.vars.wrapper.call((0, _d.zoom)().scaleExtent([0.5, 8]).on('zoom', function () {
+        var transform = _d.event.transform;
+
+        _this3.vars.xAxisElm.call(_this3.vars.xAxis.scale(transform.rescaleX(_this3.vars.x)));
+
+        _this3.vars.prototype.selectAll('rect').attr('x', function (d) {
+          return transform.applyX(_this3.vars.elmX(d));
+        }).attr('width', function (d) {
+          return transform.k * _this3.vars.elmW(d);
+        });
+
+        _this3.vars.publication.selectAll('rect').attr('x', function (d) {
+          return transform.applyX(_this3.vars.elmX(d));
+        }).attr('width', function (d) {
+          return transform.k * _this3.vars.elmW(d);
+        });
+
+        _this3.vars.workshop.selectAll('rect').attr('x', function (d) {
+          return transform.applyX(_this3.vars.elmX(d));
+        }).attr('width', function (d) {
+          return transform.k * _this3.vars.elmW(d);
+        });
+
+        _this3.vars.dataset.selectAll('circle').attr('cx', function (d) {
+          return transform.applyX(_this3.vars.elmX(d));
+        });
+      }));
     }
   }, {
     key: "fitsIn",
     value: function fitsIn(lane, band) {
-      // console.log(band.start, lane)
-      // if (lane.end < band.start || lane.start > band.end) {
-      // 	return true;
-      // }
       var filteredLane = lane.filter(function (d) {
         return d.start <= band.end && d.end >= band.start;
       });
@@ -28836,7 +28906,7 @@ function () {
       }
 
       var l = this.vars.swimlanes.length - 1;
-      var x = 0; // console.log(this.vars.swimlanes[x][x])
+      var x = 0;
 
       while (x <= l) {
         if (this.fitsIn(this.vars.swimlanes[x], band)) {
@@ -28851,9 +28921,23 @@ function () {
       return;
     }
   }, {
+    key: "setupTooltip",
+    value: function setupTooltip() {
+      this.vars.tooltip = (0, _d.select)('body').append('div').classed('timeline-tooltip', true);
+      this.vars.tooltipTitle = this.vars.tooltip.append('span').classed('timeline-tooltip__text', true);
+    }
+  }, {
+    key: "updateTooltip",
+    value: function updateTooltip(name) {
+      var x = _d.event.pageX + 10;
+      var y = _d.event.pageY + 10;
+      this.vars.tooltip.attr('style', "left: ".concat(x, "px; top: ").concat(y, "px; position: absolute"));
+      this.vars.tooltipTitle.text(name);
+    }
+  }, {
     key: "timeline",
     value: function timeline(data) {
-      var _this3 = this;
+      var _this4 = this;
 
       if (!arguments.length) return this.timeline;
       this.vars.timelines = data;
@@ -28861,7 +28945,7 @@ function () {
       this.vars.swimlanes = [];
       this.processTimelines();
       this.vars.processedTimelines.forEach(function (band) {
-        _this3.findlane(band);
+        _this4.findlane(band);
       });
       var height = 30 / this.vars.swimlanes.length;
       height = Math.min(height, Infinity);
@@ -28878,7 +28962,7 @@ function () {
   }, {
     key: "processTimelines",
     value: function processTimelines() {
-      var _this4 = this;
+      var _this5 = this;
 
       this.vars.timelines.forEach(function (band) {
         var projectedBand = {};
@@ -28889,47 +28973,103 @@ function () {
           }
         }
 
-        projectedBand.startX = _this4.vars.elmX(band);
-        projectedBand.width = _this4.vars.elmW(band);
+        projectedBand.startX = _this5.vars.elmX(band);
+        projectedBand.width = _this5.vars.elmW(band);
         projectedBand.lane = 0;
 
-        _this4.vars.processedTimelines.push(projectedBand);
+        _this5.vars.processedTimelines.push(projectedBand);
+      });
+    }
+  }, {
+    key: "setupLegend",
+    value: function setupLegend() {
+      var _this6 = this;
+
+      this.vars.legend = (0, _d.select)(this.vars.container).append('div').classed('legend', true);
+      this.vars.types.forEach(function (type) {
+        var legendTypeWrapper = _this6.vars.legend.append('div').classed("".concat(type, "-legend-wrapper legend-wrapper"), true);
+
+        legendTypeWrapper.append('span').classed('legend__description', true).text(type).style('color', _this6.vars.colors[type]);
       });
     }
   }, {
     key: "setupBars",
     value: function setupBars() {
-      var _this5 = this;
+      var _this7 = this;
 
-      this.vars.types.forEach(function (type, i) {
+      this.vars.types.forEach(function (type, iType) {
         // add real data here later.
         var onlyThisType = data.filter(function (d) {
           return d.type === type;
         });
 
-        var theseBands = _this5.timeline(onlyThisType);
+        var theseBands = _this7.timeline(onlyThisType);
 
-        var colors = {
-          'prototype': '#41b496',
-          'dataset': '#e60032',
-          'workshop': '#dcc82d',
-          'publication': '#2d91d2'
-        };
-        _this5.vars[type] = _this5.vars.wrapper.append('g').attr('class', "".concat(type, "-band")); // .attr('style', `transform: translateY(-${i * 10}px)`)
+        _this7.vars[type] = _this7.vars.wrapper.append('g').attr('class', "".concat(type, "-band"));
 
-        _this5.vars[type].selectAll('rect').data(theseBands).enter().append('rect').attr('x', function (d) {
-          return d.startX;
-        }).attr('y', function (d) {
-          return d.y;
-        }).attr('width', function (d) {
-          return d.width;
-        }).attr('height', 6).attr('fill', colors[type]);
+        if (type == 'dataset') {
+          _this7.vars[type].selectAll('circle').data(theseBands).enter().append('circle').attr('cx', function (d) {
+            return d.startX;
+          }).attr('cy', function (d) {
+            return d.y + _this7.vars.circleRadius * 1.25;
+          }).attr('r', _this7.vars.circleRadius).attr('fill', _this7.vars.colors[type]).on('mouseover', function (d, i, nodes) {
+            _this7.updateTooltip(d.name);
 
-        _this5.vars[type].attr('transform', function (d) {
-          var height = _this5.vars[type].node().getBoundingClientRect().height;
+            _this7.vars.tooltip.classed('active', true);
 
-          return "translate(0,".concat(height, ")");
-        });
+            (0, _d.select)(nodes[i]).attr('r', _this7.vars.circleRadius * 1.3);
+          }).on('mouseout', function (d, i, nodes) {
+            _this7.updateTooltip();
+
+            _this7.vars.tooltip.classed('active', false);
+
+            _this7.vars.tooltip.attr('style', 'display: none');
+
+            (0, _d.select)(nodes[i]).attr('r', _this7.vars.circleRadius * 1);
+          });
+        } else if (type == 'workshop') {
+          _this7.vars[type].selectAll('rect').data(theseBands).enter().append('rect').attr('x', function (d) {
+            return d.startX;
+          }).attr('y', function (d) {
+            return d.y;
+          }).attr('width', 8).attr('height', 8).attr('fill', _this7.vars.colors[type]);
+        } else {
+          if (_this7.vars.svgDefs == null) {
+            _this7.vars.svgDefs = _this7.vars.wrapper.append('defs');
+          }
+
+          var gradient = _this7.vars.svgDefs.append('linearGradient').attr('id', "".concat(type, "-gradient"));
+
+          gradient.append('stop').attr('class', 'stop-left').attr('offset', '0');
+          gradient.append('stop').attr('class', "stop-right__".concat(type)).attr('offset', '1');
+
+          _this7.vars[type].selectAll('rect').data(theseBands).enter().append('rect').attr('x', function (d) {
+            return d.startX;
+          }).attr('y', function (d) {
+            return d.y;
+          }).attr('width', function (d) {
+            return d.width;
+          }).attr('height', 6).classed("".concat(type, "-gradient"), true).attr('fill', _this7.vars.colors[type]).on('mouseover', function (d, i, nodes) {
+            _this7.updateTooltip(d.name);
+
+            _this7.vars.tooltip.classed('active', true);
+
+            (0, _d.select)(nodes[i]).attr('height', 8);
+          }).on('mouseout', function (d, i, nodes) {
+            _this7.vars.tooltip.classed('active', false);
+
+            _this7.vars.tooltip.attr('style', 'display: none');
+
+            (0, _d.select)(nodes[i]).attr('height', 6);
+          });
+
+          _this7.vars[type].attr('transform', function (d, i) {
+            var height = _this7.vars[type].node().getBoundingClientRect().height;
+
+            var verticalOffset = iType + 1;
+            return "translate(0,".concat(height * verticalOffset, ")");
+          });
+        }
       });
     }
   }]);
@@ -29024,7 +29164,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55205" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59330" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

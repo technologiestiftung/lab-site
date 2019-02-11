@@ -32,4 +32,4 @@ function createImageSliders(sliderClassName) {
 }
 
 createImageSliders('image-slider');
-createTimeline('timeline')
+createTimeline('timeline');

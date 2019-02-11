@@ -8,17 +8,16 @@
   p {
     margin: $spacing-page-m $spacing-page-m $spacing-xl $spacing-page-m;
 
-
     @media only screen and (max-width: $screen-m) {
-        margin: $spacing-xxl $spacing-page-xs $spacing-xl $spacing-page-xs;
+      margin: $spacing-xxl $spacing-page-xs $spacing-xl $spacing-page-xs;
     }
 
     &:last-of-type {
-        margin: $spacing-page-l $spacing-page-m 0 $spacing-page-m;
+      margin: $spacing-page-l $spacing-page-m 0 $spacing-page-m;
 
-        @media only screen and (max-width: $screen-m) {
-            margin: $spacing-page-l $spacing-page-xs 0 $spacing-page-xs;
-        }
+      @media only screen and (max-width: $screen-m) {
+        margin: $spacing-page-l $spacing-page-xs 0 $spacing-page-xs;
+      }
     }
   }
 }
