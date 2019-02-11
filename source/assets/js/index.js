@@ -14,6 +14,8 @@ hamburgerHandler();
 languageSwitch();
 featProjectsHandler();
 
+console.log('working!');
+
 /**
  * Initialize image sliders by classname
  */
@@ -32,4 +34,4 @@ function createImageSliders(sliderClassName) {
 }
 
 createImageSliders('image-slider');
-createTimeline('timeline')
+createTimeline('timeline');

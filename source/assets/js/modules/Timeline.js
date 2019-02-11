@@ -17,6 +17,8 @@ import {
     max as d3Max,
     isoParse as d3IsoParse,
     axisBottom as d3AxisBottom,
+    zoom as d3Zoom,
+    event as d3Event
 } from 'd3';
 
 const data = [
@@ -40,6 +42,28 @@ const data = [
         name: "Example Markdown Project 1",
         lang: "en",
         start: "08-07-2016",
+        end: "12-09-2017"
+    },
+    {
+        id: 0,
+        isproject: true,
+        type: "dataset",
+        status: "finished",
+        url: "http://localhost:4000/projects/example-md-project/en/",
+        name: "Example Markdown Project 1",
+        lang: "en",
+        start: "08-07-2016",
+        end: "12-09-2017"
+    },
+    {
+        id: 0,
+        isproject: true,
+        type: "dataset",
+        status: "finished",
+        url: "http://localhost:4000/projects/example-md-project/en/",
+        name: "Example Markdown Project 1",
+        lang: "en",
+        start: "12-12-2016",
         end: "12-09-2017"
     },
     {
@@ -78,12 +102,12 @@ const data = [
     {
         id: 3,
         isproject: true,
-        type: "workshop",
+        type: "publication",
         status: "finished",
         url: "http://localhost:4000/projects/example-md-project/en/",
         name: "Example Workshop 1",
         lang: "en",
-        start: "01-01-2018",
+        start: "09-01-2017",
         end: "05-03-2018"
     },
     {   
@@ -110,6 +134,8 @@ class Timeline {
             maxX: null,
             x: null,
             elmX: null,
+            svgs: null,
+            catchAll: null,
             elmW: null,
             parser: null,     
             xAxis: null,
@@ -118,10 +144,21 @@ class Timeline {
             workshop: null,
             dataset: null,
             publication: null,
+            circleRadius: 5,
+            tooltip: null,
+            tooltipTitle: null,
+            svgDefs: null,
+            legend: null,
             swimlanes: [],
             processedTimelines: [],
             timelines: [],
-            types: ['workshop', 'dataset', 'publication', 'prototype']
+            types: ['workshop', 'dataset', 'publication', 'prototype'],
+            colors: {
+                'prototype': '#41b496',
+                'dataset': '#e60032',
+                'workshop': '#dcc82d',
+                'publication': '#2d91d2',
+            }
         }
         
         this.timeline = this.timeline.bind(this);
@@ -129,15 +166,16 @@ class Timeline {
     }
 
     init() {
-        this.setupTimeline()
-        this.setupScales()
-        this.setupBars()
+        this.setupLegend();
+        this.setupTimeline();
+        this.setupScales();
+        this.setupBars();
+        this.setupZoom();
+        this.setupTooltip();
     }
 
     setupTimeline() {
         this.vars.width = this.vars.container.clientWidth;
-        this.vars.height = this.vars.container.clientHeight;
-
         this.vars.parser = d3IsoParse;
 
         // insert real data here
@@ -156,30 +194,64 @@ class Timeline {
         this.vars.xAxis = d3AxisBottom(this.vars.x)
             .ticks(this.vars.width / 100);
 
-        this.vars.wrapper = d3Select(this.vars.container)
+        this.vars.svgs = d3Select(this.vars.container)
+            .append('div')
+            .classed('svgs', true)
+
+        this.vars.wrapper = this.vars.svgs
             .append('svg')
             .attr('width', this.vars.width)
-            .attr('class', 'timeline')
+            .attr('class', 'timeline-svg')
 
         this.vars.xAxisElm = this.vars.wrapper
             .append('g')
             .attr('class', 'timeline-axis')
             .call(this.vars.xAxis)
-            .attr('transform', d => {
-                return `translate(0,${50})` // add dynamic height -> this.vars.height
-            })
 
+        d3Select('.domain').remove()
     }
 
-    fitsIn (lane, band) {
-        // console.log(band.start, lane)
-    	// if (lane.end < band.start || lane.start > band.end) {
-    	// 	return true;
-        // }
+    setupZoom() {
+        let svgDomElm = document.querySelector('.timeline-svg')
+        let axisDomElm = document.querySelector('.timeline-axis')
+        this.vars.height = svgDomElm.clientHeight;
+
+        this.vars.xAxisElm
+            .attr('transform', `translate(0, ${this.vars.height - 22})`);
+
+        this.vars.catchAll = this.vars.svgs
+            .append('svg')
+            .attr('class', 'zoom')
+            .attr('width', this.vars.width)
+            .attr('height', this.vars.height)
+
+        this.vars.catchAll.call(d3Zoom()
+            .scaleExtent([0.5, 8])
+            .on('zoom', () => {
+                let transform = d3Event.transform;
+                this.vars.xAxisElm.call(this.vars.xAxis.scale(transform.rescaleX(this.vars.x)));
+
+                this.vars.prototype.selectAll('rect')
+                    .attr('x', d => { return transform.applyX(this.vars.elmX(d)) })
+                    .attr('width', d => { return transform.k * this.vars.elmW(d) })
+
+                this.vars.publication.selectAll('rect')
+                    .attr('x', d => { return transform.applyX(this.vars.elmX(d)) })
+                    .attr('width', d => { return transform.k * this.vars.elmW(d) })
+
+                this.vars.workshop.selectAll('rect')
+                    .attr('x', d => { return transform.applyX(this.vars.elmX(d)) })
+                    .attr('width', d => { return transform.k * this.vars.elmW(d) })
+
+                this.vars.dataset.selectAll('circle')
+                    .attr('cx', d => { return transform.applyX(this.vars.elmX(d)) })
         
+            }))
+    }
+
+    fitsIn (lane, band) {        
         let filteredLane = lane.filter(function (d) {return d.start <= band.end && d.end >= band.start});
         
-
     	if (filteredLane.length === 0) {
     		return true;
     	}
@@ -195,8 +267,6 @@ class Timeline {
     	var l = this.vars.swimlanes.length - 1;
         var x = 0;
         
-        // console.log(this.vars.swimlanes[x][x])
-        
     	while (x <= l) {
     		if (this.fitsIn(this.vars.swimlanes[x], band)) {
                 this.vars.swimlanes[x].push(band);
@@ -208,6 +278,14 @@ class Timeline {
     	return;
     }
 
+    setupTooltip() {
+        this.vars.tooltip = d3Select('body').append('div')
+            .classed('timeline-tooltip', true)
+
+        this.vars.tooltipTitle = this.vars.tooltip.append('span')
+            .classed('tooltip-text')
+    }
+
     timeline (data) {
     	if (!arguments.length) return this.timeline;
 
@@ -215,7 +293,7 @@ class Timeline {
 
         this.vars.processedTimelines = [];
         this.vars.swimlanes = [];
-        
+         
         this.processTimelines()
         
     	this.vars.processedTimelines.forEach((band) => {
@@ -231,7 +309,7 @@ class Timeline {
     			band.dy = height; // add "padding" later here?
     			band.lane = i;
     		});
-        });        
+        });
 
     	return this.vars.processedTimelines;
     }
@@ -251,46 +329,98 @@ class Timeline {
     	});
     }
 
-    setupBars () {
-        this.vars.types.forEach((type, i) => {
+    setupLegend() {
+        this.vars.legend = d3Select(this.vars.container)
+            .append('div')
+            .classed('legend', true)
 
-            // add real data here later.
-            const onlyThisType = data.filter(function(d) {return d.type === type});
+        this.vars.types.forEach(type => {
 
-            const theseBands = this.timeline(onlyThisType);
+            let legendTypeWrapper = this.vars.legend
+                .append('div')
+                .classed(`${type}-legend-wrapper legend-wrapper`, true)
 
-            const colors = {
-                'prototype': '#41b496',
-                'dataset': '#e60032',
-                'workshop': '#dcc82d',
-                'publication': '#2d91d2',
-            }
-            
-            this.vars[type] = this.vars.wrapper
-                .append('g')
-                .attr('class', `${type}-band`)
-                // .attr('style', `transform: translateY(-${i * 10}px)`)
-                
-            this.vars[type].selectAll('rect')
-                .data(theseBands)
-                .enter()
-                .append('rect')
-                    .attr('x', d => d.startX)
-                    .attr('y', d => d.y)
-                    .attr('width', d => d.width)
-                    .attr('height', 6)
-                    .attr('fill', colors[type])
-
-            this.vars[type]
-                .attr('transform', d => {
-                    const height = this.vars[type].node().getBoundingClientRect().height;
-                    return `translate(0,${height})`;
-                })
-
+                legendTypeWrapper.append('span')
+                    .classed('legend__description', true)
+                    .text(type)
+                    .style('color', this.vars.colors[type])
 
 
         })
 
+    }
+
+    setupBars () {
+        this.vars.types.forEach((type, iType) => {
+
+            // add real data here later.
+            const onlyThisType = data.filter(function(d) {return d.type === type});
+            const theseBands = this.timeline(onlyThisType);
+
+            this.vars[type] = this.vars.wrapper
+                .append('g')
+                .attr('class', `${type}-band`)
+
+            if (type == 'dataset') {
+
+                this.vars[type].selectAll('circle')
+                    .data(theseBands)
+                    .enter()
+                    .append('circle')
+                    .attr('cx', d => d.startX)
+                    .attr('cy', d => d.y + (this.vars.circleRadius))
+                    .attr('r', this.vars.circleRadius)
+                    .attr('fill', this.vars.colors[type])
+
+            } else if (type == 'workshop') {
+
+                this.vars[type].selectAll('rect')
+                    .data(theseBands)
+                    .enter()
+                    .append('rect')
+                    .attr('x', d => d.startX)
+                    .attr('y', d => d.y)
+                    .attr('width', 8)
+                    .attr('height', 8)
+                    .attr('fill', this.vars.colors[type])
+
+            } else {
+
+                if (this.vars.svgDefs == null) {
+                    this.vars.svgDefs = this.vars.wrapper.append('defs');
+                }
+
+                var gradient = this.vars.svgDefs.append('linearGradient')
+                    .attr('id', `${type}-gradient`);
+
+                gradient.append('stop')
+                    .attr('class', 'stop-left')
+                    .attr('offset', '0');
+
+                gradient.append('stop')
+                    .attr('class', `stop-right__${type}`)
+                    .attr('offset', '1');
+
+                this.vars[type].selectAll('rect')
+                    .data(theseBands)
+                    .enter()
+                    .append('rect')
+                        .attr('x', d => d.startX)
+                        .attr('y', d => d.y)
+                        .attr('width', d => d.width)
+                        .attr('height', 6)
+                        .classed(`${type}-gradient`, true)
+                        .attr('fill', this.vars.colors[type])
+
+                this.vars[type]
+                    .attr('transform', (d,i) => {
+                        const height = this.vars[type].node().getBoundingClientRect().height;
+                        const verticalOffset = iType + 1;
+                        return `translate(0,${height * verticalOffset})`;
+                    })
+                    
+            }
+        })
     }
 }
 

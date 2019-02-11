@@ -1,0 +1,66 @@
+.timeline {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &-tooltip {
+        position: absolute;
+    }
+
+    .publication-gradient {
+        fill: url(#publication-gradient);
+    }
+
+    .prototype-gradient {
+        fill: url(#prototype-gradient);
+    }
+
+    .stop-left {
+        stop-color: $white;  /* Indigo */
+    }
+
+    .stop-right {
+        &__publication {
+            stop-color: $color-publication;
+        }
+        
+        &__prototype {
+            stop-color: $color-prototype;
+        }
+    }
+
+    .legend {
+        height: auto;
+        width: 100%;
+        margin-bottom: 10px;
+
+        display: flex;
+        justify-content: flex-end; 
+
+        &-wrapper {
+            margin-right: $spacing-m;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+
+
+    }
+
+    .tick {
+        font-family: 'plex-mono';
+        font-size: $font-size-s;
+    }
+
+    path.domain {
+        stroke: none;
+        fill: none;
+    }
+
+    .zoom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}
