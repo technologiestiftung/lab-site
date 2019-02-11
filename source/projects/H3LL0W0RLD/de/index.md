@@ -35,11 +35,9 @@ materialsIncluded:
 
 ---
 
-![Huhu!](../images/hello.gif)
-Bild untertitle
-{: .project-image__subtitle}
+{% include macro-image-section-markdown.html src="../images/hello.gif" subtitle="Hallo, wir sind neu!" %}
 
-Hallo, wir sind neu!
+
 
 Hallo und herzlich Willkommen beim Ideation & Prototyping Lab! Wir sind ein Teil der [Technologiestiftung Berlin](http://www.technologiestiftung-berlin.de). Als gemeinnützige Einrichtung arbeiten wir an der Schnittstelle von Digitalisierung und Stadtentwicklung daran, die Zukunft Berlins zu gestalten.
 
@@ -47,13 +45,12 @@ Eine wesentliche Aufgabe der Technologiestiftung ist es, die Bedeutung technolog
 
 Ein aktueller Schwerpunkt unserer Arbeit ist die Aufbereitung, Analyse und Visualisierung öffentlicher Daten. Zusammen mit der Berliner Senatsverwaltung wollen wir die in den Behörden schlummernden Datenschätze bergen und für alle nutzbar zu machen. Damit knüpfen wir an erfolgreiche Technologiestiftungs-Projekte an, etwa an die [Visualisierungen zum Berliner Breitbandausbau](http://breitband-berlin.de) oder an unser [Minecraft-Partizipationsprojekt](http://www.technologiestiftung-berlin.de/minecraft). Mehr Informationen rund um das Thema Open Data findet ihr auch in unseren [Studien.](https://www.technologiestiftung-berlin.de/de/bibliothek/publikationen/)
 
-<!-- Using the include -->
-{% include macro-image-section.html src="../images/breitband.png" subtitle="Dit is Berlin" %}
+<!-- include images like this Using the include -->
 
-<!-- adding a class and a caption -->
-![Dit is Berlin](../images/Breitband.png)
-Dit is Berlin
-{: .project-image__subtitle}
+{% include macro-image-section.html src="../images/breitband.png" subtitle="Dit is Berlin $%%" %}
+
+
+
 
 Daneben engagieren wir uns für den Aufbau des Berliner LoRaWAN-Netzes für ein [freies Internet of Things](https://www.thethingsnetwork.org/community/berlin/), bauen Prototypen mit den Materialien aus unserer [Hacking Box](https://www.technologiestiftung-berlin.de/hackingbox/) oder organisieren [Workshops](https://www.technologiestiftung-berlin.de/de/blog/smarte-loesungen-und-info-dienste-fuer-die-stadt-der-zukunft/) zum digitalen Wandel in Berlin.
 

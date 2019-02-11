@@ -1,6 +1,46 @@
 ---
-group: projects
 layout: project
+lang: en
+
+title: Beispiel HTML Projekt
+subtitle: Auf englisch
+# project needs the following frontmatter values:
+type: publication # could also be "workshop", "dataset", "prototype"
+#
+colorMode: bright # or "dark" adds an additional class
+featuredImage: /projects/example-md-project/images/feature.png
+# thumbnail path needs to be absolute at the moment
+thumbnail: /projects/example-md-project/images/thumbnail.png
+heroImage: /assets/images/placeholder.png #full page url
+visible: false # if false the project will not be listed
+# somehow needs to be the name in url of the author page
+featured: true
+authors:
+  - benjamin-seibel
+  - victoria-dykes
+  - fabian-dinklage
+  - fabian-moron-zirfas
+  - sebastian-meier
+  - alexandra-kapp
+
+start: 2018-05-23
+end: 208-05-24
+status: ongoing
+date: 2019-02-01
+assets:
+  js:
+    - "../js/index.js"
+
+materialsIncluded:
+  - name": "images"
+    link: "#"
+  - name": "video"
+    link: "#"
+  - name": "press text"
+    link: "#"
+  - name": "Source Code"
+    link: "#"
+
 ---
  <!-- extends "layout/project.html"  -->
 
@@ -33,8 +73,8 @@ layout: project
 {% endcapture %}
 
 {% capture firstSliderImages %}
-{% include macro-image.html src="lakes.jpg" alt="alt text" %}
-{% include macro-image.html src="lake-example-graphi.png" alt="alt text" %}
+{% include macro-image.html src="/assets/images/lakes.jpg" alt="alt text" %}
+{% include macro-image.html src="/assets/images/lake-example-graphic.png" alt="alt text" %}
 {% endcapture %}
 
 
@@ -50,9 +90,9 @@ This week we launched our new app Badestellen Berlin. This was a joint effort of
 {% endcapture %}
 
 {% capture secondSliderImages %}
-{% include macro-image.html src="lake-example-graphic.png" alt="alt text"%}
-{% include macro-image.html src="datadive.jpg" alt="alt text"%}
-{% include macro-image.html src="lakes.jpg" alt="alt text"%}
+{% include macro-image.html src="/assets/images/lake-example-graphic.png" alt="alt text"%}
+{% include macro-image.html src="/assets/images/datadive.jpg" alt="alt text"%}
+{% include macro-image.html src="/assets/images/lakes.jpg" alt="alt text"%}
 {% endcapture %}
 
 {% include macro-image-column.html title=titleFourth text=textFourth images=secondSliderImages reversed=true %}
@@ -68,7 +108,9 @@ This week we launched our new app Badestellen Berlin. This was a joint effort of
 <!--  Blockquote – end  -->
 
 <!--  Image section – start  -->
-{% include macro-image-section.html src="lake-example-graphic.png" subtitle="This is a subline, explaining the graphic above along one or two lines of code." %}
+
+{% include macro-image-section.html src="/assets/images/lake-example-graphic.png" subtitle="This is a subline, explaining the graphic above along one or two lines of code." %}
+
 <!--  Image section – end  -->
 
 <!--  Code snippet – start  -->
