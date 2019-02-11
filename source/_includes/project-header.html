@@ -45,13 +45,16 @@
                 {{ page.date }}
             </div>
         </div>
+        {%- if page.materialsIncluded  -%}
+        <!-- there are no materials -->
         <div class="project-header__meta-column project-header__meta-column--materials">
-            <div class="project-header__meta-column__header">Materials</div>
-            {%- for materialIncluded in page.materialsIncluded -%}
-            <a href="{{ materialIncluded.link }}" class="project-header__meta-column__item">
-                {{ materialIncluded.name }}
-            </a>
-            {%- endfor -%}
+          <div class="project-header__meta-column__header">Materials</div>
+          {%- for materialIncluded in page.materialsIncluded -%}
+          <a href="{{ materialIncluded.link }}" class="project-header__meta-column__item">
+            {{ materialIncluded.name }}
+          </a>
+          {%- endfor -%}
         </div>
+        {%- endif -%}
     </div>
 </header>

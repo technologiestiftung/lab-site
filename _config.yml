@@ -38,8 +38,8 @@ defaults:
     scope:
       path: "" # an empty string here means all files in the project
     values:
-      layout: "default"
       lang: "de"
+      description: "Awesome Things Happening here"
   -
     scope:
       path: ""
@@ -102,10 +102,14 @@ collections:
     permalink: /datasets/:name/de
 
 plugins:
-  - jekyll-feed
+  # - jekyll-feed
   - jekyll-sitemap
   - jekyll-paginate
-  # - jekyll-redirect-from
+  - jekyll-redirect-from
+whitelist:
+  - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-paginate
 sass:
   sass_dir: assets/_scss
   style: compressed

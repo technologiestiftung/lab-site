@@ -32,13 +32,13 @@ assets:
     - "../js/index.js"
 
 materialsIncluded:
-  - name": "images"
+  - name: "images"
     link: "#"
-  - name": "video"
+  - name: "video"
     link: "#"
-  - name": "press text"
+  - name: "press text"
     link: "#"
-  - name": "Source Code"
+  - name: "Source Code"
     link: "#"
 
 ---
@@ -114,7 +114,9 @@ This week we launched our new app Badestellen Berlin. This was a joint effort of
 <!--  Image section – end  -->
 
 <!--  Code snippet – start  -->
-{% capture awesomeCode %}
+{% highlight javascript %}
+
+const foo = 'bah';
 const create_csv_events = async() => {
     let csv_content = 'group; name';
     let json = await helper.read_json('./events_urls_berlin.json');
@@ -133,7 +135,5 @@ const create_csv_events = async() => {
 
     await helper.write_file(csv_content, 'events_frequencies_berlin.csv');
 }
-{% endcapture %}
-
-{% include macro-code-snippet.html code=awesomeCode language="javascript" %}
+{% endhighlight %}
 <!--  Code snippet – end  -->
