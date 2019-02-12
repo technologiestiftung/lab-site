@@ -24,20 +24,20 @@ status: ongoing
 date: 2018-02-01
 
 materialsIncluded:
-  - name": "images"
+  - name: "images"
     link: "#"
-  - name": "video"
+  - name: "video"
     link: "#"
-  - name": "press text"
+  - name: "press text"
     link: "#"
-  - name": "Source Code"
+  - name: "Source Code"
     link: "#"
 
 ---
 
 Hallo und herzlich Willkommen beim Ideation & Prototyping Lab! Wir sind ein Teil der [Technologiestiftung Berlin](http://www.technologiestiftung-berlin.de). Als gemeinnützige Einrichtung arbeiten wir an der Schnittstelle von Digitalisierung und Stadtentwicklung daran, die Zukunft Berlins zu gestalten.
 
-{% include macro-image-section-markdown.html src="../images/hello.gif" subtitle="Hallo, wir sind neu!" %}
+{% include macro-image-section-markdown.html src="../images/hello.gif" caption="Hallo, wir sind neu!" %}
 
 Eine wesentliche Aufgabe der Technologiestiftung ist es, die Bedeutung technologischer Innovationen für die Stadtgesellschaft zu untersuchen. Im Laufe der letzten Jahre haben wir gemerkt, dass sich viele dieser Entwicklungen nur aus der Praxis heraus wirklich verstehen lassen. Um mit neuen technischen Möglichkeiten zu experimentieren, haben wir diesen Bereich ins Leben gerufen.
 
@@ -45,7 +45,7 @@ Ein aktueller Schwerpunkt unserer Arbeit ist die Aufbereitung, Analyse und Visua
 
 <!-- include images like this Using the include -->
 
-{% include macro-image-section-markdown.html src="../images/breitband.png" subtitle="Dit is Berlin" %}
+{% include macro-image-section-markdown.html src="../images/breitband.png" caption="Dit is Berlin" %}
 
 
 

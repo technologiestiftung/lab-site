@@ -13,7 +13,7 @@ description: 'this is my awesome project'
 lang: de
 
 # REQUIRED: the title for your project
-title: Beispiel Markdown Projekt
+title: Beispiel HTML Projekt
 
 # REQUIRED: the subtitle for your project
 subtitle: Auf deutsch
@@ -27,10 +27,10 @@ colorMode: bright
 
 # REQUIRED:if it is a featured project
 # all paths should be absolut to the root of the source folder
-featuredImage: /projects/example-md-project/images/feature.png
+featuredImage: /projects/example-html-project/images/feature.png
 
 # REQUIRED: thumbnail path needs to be absolute at the moment. Also the image needs to be a quadrat 128 × 128
-thumbnail: /projects/example-md-project/images/thumbnail.png
+thumbnail: /projects/example-html-project/images/thumbnail.png
 
 # REQUIRED: heo image path needs to be absolute at the moment. Also the image needs to be a aize …
 heroImage: /assets/images/placeholder.png #full page url
@@ -40,7 +40,7 @@ heroImage: /assets/images/placeholder.png #full page url
 visible: false # if false the project will not be listed
 
 # if it should be on the frontpage
-featured: true
+featured: false
 
 # all the authors that where involved.
 # at least one isd needed
@@ -79,7 +79,7 @@ assets:
   js:
     - "../js/index.js"
   css:
-    - "../css/index.css"
+    - "../styles/index.css"
 
     # all tje materials that shoudl be included
 # as a listing on the project page##########################
@@ -101,12 +101,9 @@ redirect_from:
 # the header needs to close with these three lines! below
 ---
 
-Weit <b>hinten</b>, hinter den Wortbergen, fern der Länder **Vokalien** und Konsonantien leben die Blindtexte. Abgeschieden wohnen sie in Buchstabhausen an der Küste des Semantik, eines großen Sprachozeans. Ein kleines Bächlein namens Duden fließt durch ihren Ort und versorgt sie mit den nötigen Regelialien.<br> Es ist ein paradiesmatisches Land, in dem einem gebratene Satzteile in den Mund fliegen. Nicht einmal von der allmächtigen Interpunktion werden die Blindtexte beherrscht – ein geradezu unorthographisches Leben.
+{%- capture mytext -%}
+Dies ist ein <b>Typoblindtext</b>. An ihm kann man sehen, ob alle Buchstaben da sind und wie sie aussehen. Manchmal benutzt man Worte wie Hamburgefonts, Rafgenduks oder Handgloves, um Schriften zu testen. Manchmal Sätze, die alle Buchstaben des Alphabets enthalten - man nennt diese Sätze »Pangrams«. Sehr bekannt ist dieser: The quick brown fox jumps over the lazy old dog. Oft werden in Typoblindtexte auch fremdsprachige Satzteile eingebaut (AVAIL® and Wefox™ are testing aussi la Kerning), um die Wirkung in anderen Sprachen zu testen. In Lateinisch sieht zum Beispiel fast jede Schrift gut aus. Quod erat demonstrandum. Seit 1975 fehlen in den meisten Testtexten die Zahlen, weswegen nach TypoGb. 204 § ab dem Jahr 2034 Zahlen in 86 der Texte zur Pflicht werden. Nichteinhaltung wird mit bis zu 245 € oder 368 $ bestraft. Genauso wichtig in sind mittlerweile auch Âçcèñtë, die in neueren Schriften aber fast immer enthalten sind. Ein wichtiges aber schwierig zu integrierendes Feld sind OpenType-Funktionalitäten. Je nach Software und Voreinstellungen können eingebaute Kapitälchen, Kerning oder Ligaturen (sehr pfiffig) nicht richtig dargestellt werden.Dies ist ein Typoblindtext. An ihm kann man sehen, ob alle Buchstaben da sind und wie sie aussehen.
+{} aäb cde fgh ijk lmn oöp qrsß tuü vwx yz AÄBC DEF GHI JKL MNO ÖPQ RST UÜV WXYZ !"§ $%& /() =?* '<> #|; ²³~ @`´ ©«» ¼×
 
-<div style="color:tomato; padding:20vh">foo bah bz</div>
-
-**foo**
-
-<script> console.log('hello markdown')</script>
-
-
+{%- endcapture -%}
+{%- include macro-text.html text=mytext -%}

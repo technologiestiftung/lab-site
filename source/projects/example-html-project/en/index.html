@@ -1,20 +1,49 @@
 ---
+# this is the YAML frontmatter
+# Quick guide https://learnxinyminutes.com/docs/yaml/
+# see the specs for yaml here->
+# https://yaml.org/spec/1.2/spec.html
+# REQUIRED: layout currently only projexct is possible
+# DEFAULT: project
 layout: project
+# REQUIRED: write a short description of this project
+description: 'this is my awesome project'
+# REQUIRED: the language of the text
+# DEFAULT: de
 lang: en
 
-title: Beispiel HTML Projekt
-subtitle: Auf englisch
-# project needs the following frontmatter values:
-type: publication # could also be "workshop", "dataset", "prototype"
-#
-colorMode: bright # or "dark" adds an additional class
-featuredImage: /projects/example-md-project/images/feature.png
-# thumbnail path needs to be absolute at the moment
-thumbnail: /projects/example-md-project/images/thumbnail.png
+# REQUIRED: the title for your project
+title: Example HTML Project
+
+# REQUIRED: the subtitle for your project
+subtitle: In english
+
+# REQUIRED:# possible values "publication", "workshop", "dataset", "prototype"
+type: publication
+
+# REQUIRED:dark or bright -- if you have a dark image use dark if you have a bright image…
+# sets the color for the content on the text
+colorMode: bright
+
+# REQUIRED:if it is a featured project
+# all paths should be absolut to the root of the source folder
+featuredImage: /projects/example-html-project/images/feature.png
+
+# REQUIRED: thumbnail path needs to be absolute at the moment. Also the image needs to be a quadrat 128 × 128
+thumbnail: /projects/example-html-project/images/thumbnail.png
+
+# REQUIRED: heo image path needs to be absolute at the moment. Also the image needs to be a aize …
 heroImage: /assets/images/placeholder.png #full page url
+
+# if the post should be visible in the feed. You still can access it
+# DEFAULT?
 visible: false # if false the project will not be listed
-# somehow needs to be the name in url of the author page
-featured: true
+
+# if it should be on the frontpage
+featured: false
+
+# all the authors that where involved.
+# at least one isd needed
 authors:
   - benjamin-seibel
   - victoria-dykes
@@ -23,14 +52,37 @@ authors:
   - sebastian-meier
   - alexandra-kapp
 
+# If you have an external URL
+# add it here
+externalUrl: http://example.com
+
+# REQUIRED: the date of your project
 start: 2018-05-23
-end: 208-05-24
+
+# if it is for at timeperiod add the end value
+end: 2018-05-24
+
+# REQUIRED: ongoing or finished
+# DEFAULT: finished
 status: ongoing
+
+# REQUIRED: The date when it was published
 date: 2019-02-01
+###############
+
+# if you have additional JS or CSS add them here
+# they will be added to the header
+# remove if you have none
+# the URLS should be relativ the to project
+# can also be absolute
 assets:
   js:
     - "../js/index.js"
+  css:
+    - "../styles/index.css"
 
+    # all tje materials that shoudl be included
+# as a listing on the project page##########################
 materialsIncluded:
   - name: "images"
     link: "#"
@@ -41,13 +93,19 @@ materialsIncluded:
   - name: "Source Code"
     link: "#"
 
+# if the post had a counterpart on the old site add these tags
+# for redirecting it
+redirect_from:
+  - /projects/123456789/
+  - /old-site-path/my-amazing-post/
+# the header needs to close with these three lines! below
 ---
  <!-- extends "layout/project.html"  -->
 
 
 <!-- Intro – start -->
 {% capture textFirst %}
-    This week we launched our new app Badestellen Berlin. This was a joint effort of Kompetenzzentrum Wasser, {% include macro-link.html href="/" content="Berliner Wasserbetriebe" type="foo" %} and the LaGeSo. The new application allows citizens to get up to date information on bathing water quality. Besides water quality information the site provides additional info on each site, for example, accessibility features or availability of toilets and parking lots. A link to a routing service and the local public transport service allow you to conveniently plan your next trip.
+    This week we launched our new app Badestellen Berlin. This was a joint effort of Kompetenzzentrum Wasser, {% include macro-link.html href="/" text="Berliner Wasserbetriebe" type="foo" %} and the LaGeSo. The new application allows citizens to get up to date information on bathing water quality. Besides water quality information the site provides additional info on each site, for example, accessibility features or availability of toilets and parking lots. A link to a routing service and the local public transport service allow you to conveniently plan your next trip.
 {% endcapture %}
 
 {% include macro-text.html text=textFirst %}
@@ -109,11 +167,12 @@ This week we launched our new app Badestellen Berlin. This was a joint effort of
 
 <!--  Image section – start  -->
 
-{% include macro-image-section.html src="/assets/images/lake-example-graphic.png" subtitle="This is a subline, explaining the graphic above along one or two lines of code." %}
+{% include macro-image-section.html src="/assets/images/lake-example-graphic.png" caption="This is a subline, explaining the graphic above along one or two lines of code." %}
 
 <!--  Image section – end  -->
 
 <!--  Code snippet – start  -->
+<div class="section--code">
 {% highlight javascript %}
 
 const foo = 'bah';
@@ -136,4 +195,5 @@ const create_csv_events = async() => {
     await helper.write_file(csv_content, 'events_frequencies_berlin.csv');
 }
 {% endhighlight %}
+</section>
 <!--  Code snippet – end  -->
