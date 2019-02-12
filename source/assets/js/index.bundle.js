@@ -173,17 +173,44 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var languageSwitch = function languageSwitch() {
-  var languageSwitchElement = document.getElementById('language-switch');
-  languageSwitchElement.addEventListener('click', function (event) {
-    event.preventDefault();
-    var currentLocation = window.location; // TODO: Test window.location in IE <= 11
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
-    var href = currentLocation.href;
-    var currentLang = document.documentElement.lang;
-    var destinationLanguage = currentLang === 'en' ? 'de' : 'en';
-    var destinationUrl = href.replace(currentLang, destinationLanguage);
-    window.location.href = destinationUrl;
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+var languageSwitch = function languageSwitch() {
+  var languageSwitchElement = document.querySelectorAll('#language-switch');
+
+  var switchers = _toConsumableArray(languageSwitchElement);
+
+  switchers.forEach(function (ele) {
+    ele.addEventListener('click', function (event) {
+      event.preventDefault();
+      var _window$location = window.location,
+          pathname = _window$location.pathname,
+          origin = _window$location.origin;
+
+      if (pathname === '/') {
+        window.location.href = "".concat(origin, "/en");
+        return;
+      }
+
+      var segments = pathname.split('/');
+      var filteredSegments = segments.map(function (val) {
+        if (val === 'de') {
+          return 'en';
+        } else if (val === 'en') {
+          return 'de';
+        } else {
+          return val;
+        }
+      });
+      var patchedUrl = "".concat(origin).concat(filteredSegments.join('/'));
+      window.location.href = patchedUrl;
+    });
   });
 };
 
@@ -29116,15 +29143,10 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 /**
  * Initialize functions
  */
-(0, _handleOnload.default)();
-(0, _navigationHandler.default)();
-(0, _hamburgerHandler.default)();
-(0, _languageSwitch.default)();
-(0, _featProjectsHandler.default)();
+
 /**
  * Initialize image sliders by classname
  */
-
 function createTimeline(idTimelineDiv) {
   var div = document.getElementById(idTimelineDiv);
 
@@ -29142,8 +29164,15 @@ function createImageSliders(sliderClassName) {
   });
 }
 
-createImageSliders('image-slider');
-createTimeline('timeline');
+document.addEventListener('DOMContentLoaded', function () {
+  (0, _handleOnload.default)();
+  (0, _navigationHandler.default)();
+  (0, _hamburgerHandler.default)();
+  (0, _languageSwitch.default)();
+  (0, _featProjectsHandler.default)();
+  createTimeline('timeline');
+  createImageSliders('image-slider');
+});
 },{"./modules/handleOnload.js":"modules/handleOnload.js","./modules/navigationHandler.js":"modules/navigationHandler.js","./modules/hamburgerHandler.js":"modules/hamburgerHandler.js","./modules/languageSwitch.js":"modules/languageSwitch.js","./modules/ImageSlider.js":"modules/ImageSlider.js","./modules/featProjectsHandler.js":"modules/featProjectsHandler.js","./modules/Timeline.js":"modules/Timeline.js"}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -29171,7 +29200,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51551" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55262" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

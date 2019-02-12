@@ -14,7 +14,7 @@
             <!-- include with arguments -->
             <!-- {{ navigationItem(page.navigationTitle, page.url) }} -->
             <li class="navigation-list__item navigation-list__item--nav">
-                <a href="{{ item.url[page.lang] }}">{{ item.name }}</a>
+                <a href="{{ item.url[page.lang] }}">{{ item.navigationTitle[page.lang] }}</a>
             </li>
             {%- endif -%}
         {%- endfor -%}
@@ -26,6 +26,13 @@
                                 English
                             {%- endif -%}
                         </a>
+                        <!-- <a id="language-switch" class="navigation-language" href="#">
+                          {%- if page.lang == "en" -%}
+                              Deutsch
+                          {%- else -%}
+                              English
+                          {%- endif -%}
+                      </a> -->
                     </li>
 
                     <li class="flex-row">
@@ -58,7 +65,7 @@
             <!-- include with arguments -->
             <!-- {{ navigationItem(page.navigationTitle, page.url) }} -->
             <li class="navigation-list__item navigation-list__item--nav">
-                <a href="{{ item.url[page.lang] }}">{{ item.name }}</a>
+                <a href="{{ item.url[page.lang] }}">{{ item.navigationTitle[page.lang] }}</a>
             </li>
             {% endif %}
         {% endfor %}
@@ -70,7 +77,14 @@
                 {%- else -%}
                     English
                 {%- endif -%}
-            </a>
+            <!-- </a>
+            <a id="language-switch" class="navigation-language" href="#">
+              {%- if page.lang == "en" -%}
+                  Deutsch
+              {%- else -%}
+                  English
+              {%- endif -%}
+          </a> -->
         </li>
         <li class="navigation-list__item navigation-list__item--icon">
             <a href="https://twitter.com/tsbberlin" target="_blank">

@@ -8,28 +8,29 @@ import Timeline from './modules/Timeline.js';
 /**
  * Initialize functions
  */
-handleOnload();
-navigationHandler();
-hamburgerHandler();
-languageSwitch();
-featProjectsHandler();
-
 /**
  * Initialize image sliders by classname
  */
 
 function createTimeline(idTimelineDiv) {
-    const div = document.getElementById(idTimelineDiv);
-    if (div != null) {
-        const projectTimeline = new Timeline(div);
-        projectTimeline.init();
-    }
+  const div = document.getElementById(idTimelineDiv);
+  if (div != null) {
+    const projectTimeline = new Timeline(div);
+    projectTimeline.init();
+  }
 }
 
 function createImageSliders(sliderClassName) {
-    const imageSliders = document.getElementsByClassName(sliderClassName);
-    [...imageSliders].forEach(slider => new ImageSlider(slider));
+  const imageSliders = document.getElementsByClassName(sliderClassName);
+  [...imageSliders].forEach(slider => new ImageSlider(slider));
 }
 
-createImageSliders('image-slider');
-createTimeline('timeline');
+document.addEventListener('DOMContentLoaded',function() {
+  handleOnload();
+  navigationHandler();
+  hamburgerHandler();
+  languageSwitch();
+  featProjectsHandler();
+  createTimeline('timeline');
+  createImageSliders('image-slider');
+});
