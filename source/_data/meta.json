@@ -11,7 +11,7 @@
     {
       "name": "about",
       "title": "About Page",
-      "navigationTitle": "Über uns",
+      "navigationTitle":{"de":"Über uns","en":"about us"},
       "url": {
         "de": "/about/de",
         "en": "/about/en"
@@ -20,7 +20,7 @@
     {
       "name": "projects",
       "title": "Projects Page",
-      "navigationTitle": "Projekte",
+      "navigationTitle": {"de":"Projekte","en":"projects"},
       "url": {
         "de": "/projects/de",
         "en": "/projects/en"
@@ -29,7 +29,7 @@
     {
       "name": "datasets",
       "title": "Data Page",
-      "navigationTitle": "Daten",
+      "navigationTitle": {"de":"Daten","en":"datasets"},
       "url": {
         "de": "/datasets/de",
         "en": "/datasets/en"
