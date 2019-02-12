@@ -57,6 +57,16 @@
     <style>
         table {border-spacing:0; max-width:700px;margin:0 auto}
         td,th {padding:4px;text-align:center; font-family:'Barlow', sans-serif;font-size:16px;line-height:24px}
+        .embed-container {
+        position: relative; 
+        padding-bottom: 56.25%; /* ratio 16x9 */
+        height: 0; 
+        overflow: hidden; 
+        width: 100%;
+        height: auto;
+        }
+
+
     </style>
 </head>
 <body class="project">
@@ -103,7 +113,7 @@
                     <br>
             </p>
             <p class="copy">
-                Die Anzahl Anfragen steigt jährlich. Allein im Jahr 2018 wurden über 3.000 Anfragen an die Berliner Verwaltung und Regierung gestellt. Somit wäre eine Bereitstellung der angefragten Daten als Open Data nicht nur ein Gewinn für Bürger*innen und Abgeordnete, sondern auch für die Verwaltungsmitarbeiter*innen, die weniger Anfragen zu beantworten hätten.
+                Die Anzahl Anfragen steigt jährlich. Allein im Jahr 2018 wurden über 3.000 Anfragen an die Berliner Verwaltung und Regierung gestellt. Somit wäre eine Bereitstellung der angefragten Daten als Open Data nicht nur ein Gewinn für Bürger*innen und Abgeordnete, sondern auch eine potenzielle Möglichkeit, die Anzahl an Anfragen für die Verwaltungsmitarbeiter*innen,zu reduzieren.
                 <br>
                 Wir haben analysiert, zu welchen Themen besonders viele Informationen angefragt werden und welches Potenzial für Open Data in den Anfragen steckt. 
                 </p>
@@ -111,7 +121,7 @@
             
             <div class="container p-bottom">
                 <h2>Die gefragtesten Themen</h2>
-                <p class="copy">Um die Anfragen nach Themen zu sortieren, haben wir betrachtet welche Worte häufig in den Titeln der Anfragen vorkommen. Allgemeine (z.B. die, und, als) und berlinspezifische Worte (z.B. Senat, Berlin, Bezirk), die für die Analyse nicht relevant sind, wurden entfernt. Die verbliebenen Worte wurden auf ihren Wortstamm reduziert (z.B. Kinder zu kind). Anschließend ließ sich die Worthäufigkeit auswerten. Die zehn häufigsten Begriffe sind:
+                <p class="copy">Es gibt über 15.000 Anfragen auf kleineAnfragen.de für Berlin für den Zeitraum November 2011 bis heute. Für jede Anfrage gibt es Einen Titel, eine Antragsteller-Partei, eine Antwortende Verwaltung und den gesamten Text der Anfrage mit entsprechenden Antworten. Um die Anfragen nach Themen zu sortieren, haben wir betrachtet welche Worte häufig in den Titeln der Anfragen vorkommen. Obwohl der Titel von den Abgeordneten selbst gewählt ist und nicht zwangsläufig alle enthaltenen Themen der Anfrage beinhaltet, haben wir uns entschieden nur die Titel anstatt des Volltexts zu analysieren. (TODO: why?) Allgemeine (z.B. die, und, als) und berlinspezifische Worte (z.B. Senat, Berlin, Bezirk), die für die Analyse nicht relevant sind, wurden entfernt. Die verbliebenen Worte wurden auf ihren Wortstamm reduziert (z.B. Kinder zu kind). Anschließend ließ sich die Worthäufigkeit auswerten. Die zehn häufigsten Begriffe sind:
                 </p>
             </div>
             
@@ -195,22 +205,28 @@
             <div class="container p-bottom">
                 <p class="copy">Neben der Anzahl einzelner Begriffe, lässt sich die Kombination von Worten in den Titeln betrachten. Dadurch wird der Kontext des Begriffs deutlicher. Im folgenden Netzwerk stellt die Punktgröße die Häufigkeit eines Begriffs dar und die Linien die Verbindungen zwischen den Begriffen. Je näher sich zwei verbundene Punkte sind, desto häufiger kommen diese gemeinsam im Titel einer Anfrage vor:</p>
             </div>
-            
-            <div class="container p-bottom">
-                <img class="responsive" src="images/network.png" alt="Netzwerk an Begriffen, die in Anfragetiteln vorkommen" />
-                <p class="caption">Netzwerk an Begriffen, die in Anfragetiteln vorkommen</p>
+
+            <div class="embed iframe">
+                <iframe width="1200" height="1200" frameborder="0" scrolling="no" src="https://plot.ly/~lxndrkp/12.embed"></iframe>    
+                <p class="caption">Begriffe in Anfragentiteln als Netzwerk</p>
             </div>
             
             
             <div class="container p-bottom">
-                <p class="copy">Wenige Themencluster machen einen Großteil der Anfragen aus:
+                <p class="copy">Wenige Themencluster bilden einen Großteil der Anfragen:
                     <ul><li><b>Schule: </b> <br>Privat, Sonderungsverbot, Beruf, Gewaltvorfall,Trägerschaft, katholisch, LMB-Quote, freie, Kitaplatz, Geheimniskrämerei, Willkommensklassen</li>
                         <li><b>Polizei:</b> <br> Einsatz, Arbeitsschutz, Gesundheitsförderung, Planstellen, Kontrolle, Feuerwehr, Controlling, Abschnitt</li>
                         <li><b>Flughafen: </b> <br>Tegel, BER, Templehof, BER-Debakel</li>
                         <li><b>Flüchtling:</b> <br>minderjährig, unbegleitet, Unterbringung / Unterkunft / Wohnung, modular, MUF <i>(Anm.: modularen Unterkünften für Flüchtlinge)</i></li>
+                    </uL>
+                </p>
+                <br>
+                <p class="copy">
+                    Weitere, kleinere Themenkomplexe sind:
+                    <ul>
                         <li>Wohnungsbaugesellschaft: <br>landeseigen, Neubauvorhaben, privat, Immobilien, Ankauf, Verkauf, Gebäude, Nutzung, sozial, solar</li>
-                        <li>Kriminalität: <br>organisiert, Drogenhandel, (politisch) motiviert, linksextrem</li>
                         <li>BVG: <br>S-Bahn, Videoüberwachung, verspätet, Straftat, Verkehrsbetrieb</li>
+                        <li>Kriminalität: <br>organisiert, Drogenhandel, (politisch) motiviert, linksextrem</li>
                     </ul>
                 </p>
             </div>
@@ -220,10 +236,14 @@
                 <p class="copy">
                     An welche Senatsverwaltungen richten sich die Anfragen? Besonders Senatsverwaltungen zu Umwelt, Inneres & Sport, Bildung & Jugend und Soziales erhielten die meisten Anfragen.
                 </p>
-                <img style= "display:block;margin-left: auto; margin-right: auto;"; src="images/wp18_senCounts.png" alt="Anfragen an Senatsverwaltungen (Wahlperiode 18)" />
-                <p class="caption">Anfragen an Senatsverwaltungen (Wahlperiode 17)</p>
-                <img style= "display:block;margin-left: auto; margin-right: auto;" src="images/wp17_senCounts.png" alt="Anfragen an Senatsverwaltungen (Wahlperiode 17) (Anm. die Aufteilung der Senatsverwaltungen hat im Wechsel der Wahlperiode verändert.)" />
-                <p class="caption">Anfragen an Senatsverwaltungen (Wahlperiode 18)</p>
+                <div class="embed iframe">
+                    <iframe width="800" height="300" frameborder="0" scrolling="no" src="https://plot.ly/~lxndrkp/6.embed"></iframe>    
+                    <p class="caption">Anfragen an Senatsverwaltungen (Wahlperiode 17)</p>
+                </div>
+                <div class="embed iframe">
+                    <iframe width="800" height="300" frameborder="0" scrolling="no" src="https://plot.ly/~lxndrkp/4.embed"></iframe>    
+                    <p class="caption">Anfragen an Senatsverwaltungen (Wahlperiode 18)</p>
+                </div>
             </div>
             
             <div class="container small">
@@ -256,29 +276,6 @@
            
             
             <div class="container p-bottom">
-                <h3>Parteien (Anfragensteller)</h3>
-                <p class="copy">
-                    Die Anfragen lassen sich zusätzlich hinsichtlich der Anfragensteller*innen betrachten: Je Partei sind in den folgenden Grafiken die zehn häufigsten Begriffe dargestellt. Die anderen Parteien sind als Vergleich zusätzlich aufgeführt (Bspw. ist "Schul*" der dritthäufigste Begriff in Anfragen der Partei "die Linke", allerdings stellen fast alle anderen Parteien ebensoviele Anfragen dazu. "Lichtenberg" ist im Gegenteil dazu ein Begriff der speziell bei der Linken häufig verwendet wird.).
-                </p> 
-            </div>
-            <div class="container small">
-                <ul class="gallery lghtbx">
-                    
-                    <li><p class="caption">Die Linke</p><img src="images/word_counts_linke.png" alt="Die häufigsten Begriffe in Anfragen der Linken"/></li>
-                    
-                    <li> <p class="caption">SPD</p><img src="images/word_counts_SPD.png" alt="Die häufigsten Begriffe in Anfragen der SPD" /></li>
-                    
-                    <li><p class="caption">Bündnis 90 / Die Grünen</p><img src="images/word_counts_grune.png" alt="Die häufigsten Begriffe in Anfragen der Grünen" /></li>
-                    
-                    <li><p class="caption">CDU</p><img src="images/word_counts_CDU.png" alt="Die häufigsten Begriffe in Anfragen der CDU"/> </li>
-                    <li><p class="caption">FDP</p><img src="images/word_counts_FDP.png" alt="Die häufigsten Begriffe in Anfragen der FDP"/></li></li>
-                    <li><p class="caption">AfD</p><img src="images/word_counts_AfD.png" alt="Die häufigsten Begriffe in Anfragen der AfD"/></li>
-                    <li><p class="caption">Piraten</p><img src="images/word_counts_Piraten.png" alt="Die häufigsten Begriffe in Anfragen der Piraten" /></li>
-                    
-                </ul>
-            </div>
-            
-            <div class="container p-bottom">
                 <p class="copy">"Schule" und "Polizei" sind bei allen Parteien unter den Top 10 Begriffen. Bestimmte Themen einzelner Parteien stechen heraus: Die SPD hat 134 Anfragen zu privaten Schulen zum Thema "Sonderungsverbot" gestellt. Zum Anschlag am Breitscheidplatz vom 19.12.2016 wurden 83 (von 94) Anfragen von der FDP gestellt.
                     
                 </p>
@@ -289,7 +286,7 @@
                 <p class="copy">
                     Was bedeutet dies konkret für Open Data? Nicht alle Anfragen beziehen sich auf Datensätze. Aber immerhin ca. ein Drittel der über 15.000 Anfragen beinhalten Tabellen, was ein Hinweis auf enthaltene Daten sein kann. Zusätzlich werden in den Anfragen häufig aggregierte Zahlen und Statistiken herausgegeben, die auf interessante zugrundeliegende Rohdaten hinweisen: Beispielsweise wird in <a href="http://pardok.parlament-berlin.de/starweb/adis/citat/VT/18/SchrAnfr/s18-10513.pdf">dieser Anfrage</a> darauf hingewiesen, dass es regelmäßige statistische Erhebungen zum Schulschwimmen gibt, aus denen eine Nichtschwimmerquote von 18.2% hervorgeht. Diese statistischen Erhebungen aufgeschlüsselt nach Bezirken, Schulen oder Klassenstufen könnten beispielsweise ein interessanter Datensatz sein.
                     <br><br>
-                    Grundsätzlich wäre ein erster hilfreicher Schritt, wenn in den Anfragen enthaltene Datensätze zusätzlich zum pdf Dokument in <b>maschinenlesbarer Form veröffentlicht</b> werden würden (beispielsweise als CSV oder Excel Datei). Dadurch sind sie leichter weiterzuverwenden, leichter durchsuchbar und auffindbar. Zusätzlich empfehlen wir, festzustellen ob eine <b>grundsätzliche Bereitstellung der angefragten Daten als Open Data</b> sinnvoll und möglich ist. Dies hätte nicht nur den Vorteil des leichten Zugriffs für Bürger*innen und Abgeordnete, sondern auch den Vorteil für Verwaltungsmitarbeiter*innen, die weniger Zeit für die Beantwortung von Anfragen aufbringen müssen.
+                    Grundsätzlich wäre ein erster hilfreicher Schritt, wenn in den Anfragen enthaltene Datensätze zusätzlich zum pdf Dokument in <b>maschinenlesbarer Form veröffentlicht</b> werden würden (beispielsweise als CSV oder Excel Datei). Dadurch sind sie leichter weiterzuverwenden, leichter durchsuchbar und auffindbar. Zusätzlich empfehlen wir, festzustellen ob eine <b>grundsätzliche Bereitstellung der angefragten Daten als Open Data</b> sinnvoll und möglich ist. Dies hätte nicht nur den Vorteil des leichten Zugriffs für Bürger*innen und Abgeordnete, sondern es könnte potenziell zu weniger Anfragen für Verwaltungsmitarbeiter*innen führen.
                 </p>
             </div>
             
