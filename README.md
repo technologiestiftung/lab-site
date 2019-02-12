@@ -3,14 +3,166 @@
 
 [![Build Status](https://travis-ci.org/technologiestiftung/lab-site.svg?branch=master)](https://travis-ci.org/technologiestiftung/lab-site)
 
+## Table Of Contents
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Website of the Ideation & Prototyping Lab @technologiestiftung Berlin](#website-of-the-ideation--prototyping-lab-technologiestiftung-berlin)
+  - [Table Of Contents](#table-of-contents)
+  - [Prerequisites](#prerequisites)
+  - [Setup Jekyll & Run Jekyll](#setup-jekyll--run-jekyll)
+  - [How To](#how-to)
+    - [Create a New Project](#create-a-new-project)
+    - [Editing Content](#editing-content)
+    - [Project Assets](#project-assets)
+      - [Images](#images)
+      - [JS & CSS](#js--css)
+  - [YAML Frontmatter](#yaml-frontmatter)
+  - [Project Generator](#project-generator)
+  - [Still Todos](#still-todos)
+  - [Tools](#tools)
+    - [VSCode](#vscode)
+  - [License](#license)
+
+<!-- /code_chunk_output -->
+
+
 ## Prerequisites
 
-- node
+- Node.js (install it using [nodenv →](https://github.com/nodenv/nodenv))
 - Jekyll
+  - Non admin computers you need to change the ruby `.gem` folder location `echo "export GEM_HOME=${HOME}.gem" >> .bash_profile`
+  - Admin computers can install [Ruby Version Manager (rvm) →](https://rvm.io)
+    - needs `gpg` in `$PATH`: `brew install gpg`
+
+## Setup Jekyll & Run Jekyll
+
+**!Note:** This assumes you have Node.js installed with `nodenv` and node version 10.15.0 is installed (`nodenv install 10.15.0`).
+
+```bash
+cd /path/to/lab-site/
+# only needed once
+npm install
+bundle install
+# whenever you want to run Jekyll
+bundle exec jekyll server --livereload
+# or use
+npm run jekyll
+```
 
 ## How To
 
-tbd soon-ish…
+### Create a New Project
+
+To just create a new article/project you can either,
+
+- copy one of the existing folders
+- give it a new name (no whitespace and special characters please 🙏)
+- adjust all the variables in the frontmatter of the files
+  - `source/projects/<YOUR NEW PROJECT>/de/index.[html|md]`
+  - `source/projects/<YOUR NEW PROJECT>/en/index.[html|md]`
+- make sure your Markup is right
+- push it to the remote repo (the build will be done automagically)
+
+Or you can use the project generate. (See infos in section **Project Generator**).
+
+### Editing Content
+
+When writing simple markdown all the text will be
+
+- in one single column
+- images will have no caption
+- images will span the column
+
+If you want a specialized layout you can use the macros included in `source/_includes`
+
+- macro-blockqoute-section.html
+- macro-code-snippet.html
+- macro-image-column.html
+- macro-image-section-markdown.html
+- macro-image-section.html
+- macro-image.html
+- macro-link.html
+- macro-navigation-item.html
+- macro-text-column.html
+- macro-text.html
+
+See the example project `source/projects/example-html-project/en/index.html` on how to use them.
+
+The most common one will be the `macro-image-section-markdown.html` (if you write [M↓]). The usage would look like this.
+
+```html
+{% include macro-image-section-markdown.html src="../images/cat.png" caption="Here is a picture of a cat" %}
+```
+
+If you locate your images in the `images` folder you can use relativ urls.
+
+**!Hint:** The images used in the frontmatter should have absolut paths with the folder `source` as the root project folder. They are used on other pages as well.
+
+---
+
+Below is a table of all the parameters you can give to them.
+
+| name                              | parm1 | parm2   | parm3  | param4   |
+| :-------------------------------- | :---- | :------ | :----- | :------- |
+| macro-text.html                   | text  | --      | --     | --       |
+| macro-text-column.html            | title | text    | --     | --       |
+| macro-image-section-markdown.html | src   | caption | --     | --       |
+| macro-image-section.html          | src   | caption | --     | --       |
+| macro-blockqoute-section.html     | text  | info    | --     | --       |
+| macro-code-snippet.html           | code  | --      | --     | --       |
+| macro-image-column.html\*         | title | text    | images | reversed |
+| macro-image.html                  | src   | alt     | --     | --       |
+| macro-link.html                   | href  | text    | type   | --       |
+
+\* the image column accepts html markup as the `images` content. Should be used in conjunction with macro-image.html
+
+You can mix [M↓] with HTML, just make sure you don't mix block level markup. E.g. This wont work!
+
+```html
+Dies ist ein Typoblindtext.<div>someHTML</div>
+```
+
+This will work:
+
+```html
+Dies ist ein Typoblindtext.
+
+<div>someHTML</div>
+```
+
+### Project Assets
+
+#### Images
+
+Within your project folder you can add all your projects assets. There are some files that are required.
+
+| Description    | width | height | comment |
+| :------------- | :---- | :----- | :------ |
+| Hero image     | --    | --     | --      |
+| Thumbnail      | --    | --     | --      |
+| Featured image | --    | --     | --      |
+
+#### JS & CSS
+
+You can have additional JS and CSS files for your project. Add them to the frontmatter in the `assets` section and they will be included in the head of your project.
+
+**!Hint:** To make sure your JS executes when the full document is loaded execute it in this event listener.
+
+```js
+document.addEventListener('DOMContentLoaded',function() {
+// your code goes in here
+});
+```
+
+## YAML Frontmatter
+
+All variables for your project are located in the YAML frontmatter. You can see the current template for the frontmatter (with comments) [here →](project-generator/src/frontmatter.yml).
+
+- A quick guide on yaml can be found [here →](https://learnxinyminutes.com/docs/yaml/)
+- The whole specification for YAML is [here →](https://yaml.org/spec/1.2/spec.html)
 
 ## Project Generator
 
@@ -59,16 +211,18 @@ DESCRIPTION
        --------------------------------
 ```
 
-## Todos
+
+
+## Still Todos
 
 Write guides for:
 
-- [ ] setup Node.js (including `nodenv` without `sudo`)
-- [ ] setup Jekyll (including `rvm` without `sudo`)
-- [ ] build site locally
-- [ ] add and write article/project
-- [ ] minimal needed frontmatter for article/project
-- [ ] list of available includes/macros
+- [x] setup Node.js (including `nodenv` without `sudo`)
+- [x] setup Jekyll (including `rvm` without `sudo`)
+- [x] build site locally
+- [x] add and write article/project
+- [x] minimal needed frontmatter for article/project
+- [x] list of available includes/macros
 - [x] minimal tool for scaffolding a new project/article
 
 
@@ -86,7 +240,52 @@ Still to implement:
 - [ ] review if parcel is the right thing for use
 - [ ] review if we need auto-prefixer
 
+## Tools
 
+### VSCode
+
+When using VSCode for writing you should install these extensions for a better writing experience.
+
+****Name: Markdown Preview Enhanced****
+****Id:**** shd101wyy.markdown-preview-enhanced
+**Description:** Markdown Preview Enhanced ported to vscode
+[VS Marketplace Link:](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced)
+
+---
+
+**Name: Markdown All in One**
+**Id:** yzhang.markdown-all-in-one
+**Description:** All you need to write Markdown (keyboard shortcuts, table of contents, auto preview and more)
+[VS Marketplace Link:](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
+
+---
+
+**Name: markdownlint**
+**Id:** davidanson.vscode-markdownlint
+**Description:** Markdown linting and style checking for Visual Studio Codevid Anson
+[VS Marketplace Link:](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
+
+
+---
+
+**Name: Jekyll Snippets**
+**Id:** ginfuru.vscode-jekyll-snippets
+**Description:** Jekyll snippets for Visual Studio Code
+[VS Marketplace Link:](https://marketplace.visualstudio.com/items?itemName=ginfuru.vscode-jekyll-snippets)
+
+---
+
+**Name: Jekyll Syntax Support**
+**Id:** ginfuru.ginfuru-vscode-jekyll-syntax
+**Description:** Jekyll Syntax Highlighting for Visual Studio Code
+[VS Marketplace Link:](https://marketplace.visualstudio.com/items?itemName=ginfuru.ginfuru-vscode-jekyll-syntax)
+
+---
+
+**Name: Spell Right**
+**Id:** ban.spellright
+**Description:** Multilingual, Offline and Lightweight Spellchecker
+[VS Marketplace Link:](https://marketplace.visualstudio.com/items?itemName=ban.spellright)
 ## License
 
 Copyright (c) 2019 Technologiestiftung Berlin
