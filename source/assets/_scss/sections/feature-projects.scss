@@ -19,7 +19,7 @@
     }
     &-list {
         display: grid;
-        grid-gap: $spacing-s $spacing-column--half;
+        grid-gap: $spacing-s $spacing-column--double;
         grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
         position: relative;
 

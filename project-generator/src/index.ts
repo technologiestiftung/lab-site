@@ -48,8 +48,8 @@ const assets: IAssets = {
   folders: ['css', 'en', 'de', 'js', 'images', 'downloads'],
   files: ['en/index', 'de/index'],
   code: [
-    {path: 'js/index.js', content: 'console.log(\'hello from project js\')'},
-    {path: 'css/index.css', content: 'body{color:tomato};'}],
+    { path: 'js/index.js', content: 'console.log(\'hello from project js\')' },
+    { path: 'css/index.css', content: '' }],
   frontmatter
 };
 // assumes this is run from the root of the lab-site folder
