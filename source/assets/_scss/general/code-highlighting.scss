@@ -2,6 +2,17 @@ figure.highlight {
   text-align: left !important;
 }
 
+pre {
+  margin: 0;
+}
+
+.language-js {
+  margin-bottom: $spacing-l;
+  @media only screen and (max-width: $screen-m) {
+    margin-bottom: $spacing-m;
+  }
+}
+
 // get some styles over here
 // https://richleland.github.io/pygments-css/
 // uses pygments stylesheets. You can create your own
@@ -9,8 +20,21 @@ figure.highlight {
 
 // friendly.css
 //
+div.highlight {
+  overflow: hidden;
+  padding: $spacing-m $spacing-m;
+  
+  @media only screen and (max-width: $screen-m) {
+    overflow: scroll;
+  }
+}
+
 .highlight .hll { background-color: #ffffcc }
-.highlight  { background: #f0f0f0; }
+.highlight  { 
+  background: #f5f5f5; 
+  border-radius: 5px; 
+}
+
 .highlight .c { color: #60a0b0; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #007020; font-weight: bold } /* Keyword */

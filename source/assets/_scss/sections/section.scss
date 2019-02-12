@@ -53,7 +53,12 @@ section {
         }
     }
     &--blockquote {
-        margin: 0 0 $spacing-xl 0;
+        margin: $spacing-l 0 $spacing-l 0;
+
+        &__author {
+            font-size: $font-size-m !important;
+            font-style: normal !important;
+        }
     }
     &--columns {
         margin: 0 0 $spacing-xl 0;
