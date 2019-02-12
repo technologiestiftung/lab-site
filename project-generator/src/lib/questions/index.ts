@@ -12,7 +12,7 @@ const questions = (force: boolean) => {
       if (value) {
         const pt = buildTargetPath(slug(value));
         if (isFolderSync(pt) === true && force === false) {
-          process.stderr.write('\n\n 🚨 🚨 🚨 The folder already exists  🚨 🚨 🚨 \n\n');
+          process.stdout.write('\n\n 🚨 🚨 🚨 The folder already exists  🚨 🚨 🚨 \n\n');
           return false;
         } else if (isFolderSync(pt) === false) {
           return true;
@@ -20,7 +20,7 @@ const questions = (force: boolean) => {
           return true;
         }
       } else {
-        process.stderr.write('\n\n 🚨 🚨 🚨 No value given 🚨 🚨 🚨 \n\n');
+        process.stdout.write('\n\n 🚨 🚨 🚨 No value given 🚨 🚨 🚨 \n\n');
         process.exit(1);
       }
     }
@@ -33,22 +33,22 @@ const questions = (force: boolean) => {
     },
     {
       name: 'de_title',
-      message: '🇩🇪 Write a title:',
+      message: '🇩🇪  Write a title:',
       type: 'input',
     },
     {
       name: 'en_title',
-      message: '🇬🇧 Write a title:',
+      message: '🇬🇧  Write a title:',
       type: 'input',
     },
     {
       name: 'de_subtitle',
-      message: '🇩🇪 Write a subtitle:',
+      message: '🇩🇪  Write a subtitle:',
       type: 'input',
     },
     {
       name: 'en_subtitle',
-      message: '🇬🇧 Write a subtitle:',
+      message: '🇬🇧  Write a subtitle:',
       type: 'input',
     },
     {
@@ -58,7 +58,7 @@ const questions = (force: boolean) => {
     },
     {
       name: 'type',
-      message: '⚙️ What type of project is this?',
+      message: '⚙️  What type of project is this?',
       type: 'list',
       choices: [{name: 'publication'}, {name: 'workshop'}, {name: 'dataset'}, {name: 'prototype'}]
 
@@ -79,19 +79,19 @@ const questions = (force: boolean) => {
       name: 'featured',
       message: '🥇 Should it be a featured image?',
       type: 'list',
-      choices: [{name: 'is featured', value: true}, {name: 'is not featured', value: false}]
+      choices: [{name: 'is featured', value: true}, {name: 'is not featured', value: false, default: true}]
     },
     {
       name: 'authors',
-      message: '✏️ Who are the authors?',
+      message: '✏️  Who are the authors?',
       type: 'checkbox',
       choices: [
-      {name: '🙄 Alexandra Kapp', value: 'alexandra-kapp'},
-      {name: '🧐 Benjamin Seibel', value: 'benjamin-seibel'},
-      {name: '😳 Fabian Dinklage', value: 'fabian-dinklage'},
-      {name: '🤔 Fabian Morón Zirfas', value: 'fabian-moron-zirfas'},
-      {name: '😬 Sebastian Meier', value: 'sebastian-meier'},
-      {name: '🤩 Victoria Dykes', value: 'victoria-dykes'},
+      {name: '🙄  Alexandra Kapp', value: 'alexandra-kapp'},
+      {name: '🧐  Benjamin Seibel', value: 'benjamin-seibel'},
+      {name: '😳  Fabian Dinklage', value: 'fabian-dinklage'},
+      {name: '🤔  Fabian Morón Zirfas', value: 'fabian-moron-zirfas'},
+      {name: '😬  Sebastian Meier', value: 'sebastian-meier'},
+      {name: '🤩  Victoria Dykes', value: 'victoria-dykes'},
       ]
     },
     {

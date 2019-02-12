@@ -10,6 +10,7 @@ import * as yaml from 'yaml';
 import patch from './lib/patch';
 import questions from './lib/questions';
 import {isFolderSync, targetPathRoot} from './lib/utils';
+// const ui = new inquirer.ui.BottomBar();
 
 // interface IRepsonse {
 //   folderName: string;
@@ -39,6 +40,9 @@ interface IAssets {
   files: string[];
   code: Array<{path: string, content: string}>;
   frontmatter: string | object;
+}
+interface IConfirm {
+  aok: boolean;
 }
 const assets: IAssets = {
   folders: ['css', 'en', 'de', 'js', 'images', 'downloads'],
@@ -101,8 +105,22 @@ you have to add \`--\` to execute the commands. E.g.
     if (flags.prompt) {
       const q: any = questions(flags.force);
       response = await inquirer.prompt(q);
+      process.stdout.write('\n\n---------------------\n\n');
+      process.stdout.write('\n\n!!!!R E S U L T S!!!!\n\n');
+      process.stdout.write(yaml.stringify(response));
+      process.stdout.write('\n\n---------------------\n\n');
+      const confirm: IConfirm = await inquirer.prompt([{name: 'aok',
+        message: 'Is this corect?', type: 'list', choices: [
+          {name: '✅ (Y) Yeah baby!', value: true},
+          {name: '⛔️ (n) Upsi. Let me start over.', value: false}
+        ]
+      }
+      ]);
+      if (confirm.aok === false) {
+        process.stdout.write('aborting');
+        this.exit(0);
+      }
     }
-    this.log(JSON.stringify(response));
     if (flags.force === true) {
       this.warn(`☝️ Force is used - proceed with caution: ${flags.force}`);
     }
@@ -147,7 +165,12 @@ you have to add \`--\` to execute the commands. E.g.
           patched.lang = 'de';
         }
         patched.date = dayjs().format('YYYY-MM-DD');
-
+        this.log('🚀 This will be your yaml frontmatter\n\n');
+        this.log(yaml.stringify(patched));
+        this.log('\n\n----------------------------------\n\n');
+        this.log('To If you did some errors overwrite this with --force');
+        this.log(' npm run new-project -- --prompt --force');
+        this.log('\n\n----------------------------------\n\n');
       }
       ymlfm = (flags.prompt === true) ? yaml.stringify(patched) : assets.frontmatter as string;
       fs.writeFileSync(`${target}/${file}.${type}`, `---\n${ymlfm}\n---\n`);
