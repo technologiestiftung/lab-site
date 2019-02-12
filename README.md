@@ -16,6 +16,12 @@
   - [How To](#how-to)
     - [Create a New Project](#create-a-new-project)
     - [Editing Content](#editing-content)
+      - [Capture](#capture)
+      - [Assign](#assign)
+      - [Include](#include)
+      - [Variables](#variables)
+      - [HTML in [M↓]](#html-in-m%E2%86%93)
+      - [Example Projects for Reference](#example-projects-for-reference)
     - [Project Assets](#project-assets)
       - [Images](#images)
       - [JS & CSS](#js--css)
@@ -89,7 +95,6 @@ If you want a specialized layout you can use the macros included in `source/_inc
 - macro-text-column.html
 - macro-text.html
 
-See the example project `source/projects/example-html-project/en/index.html` on how to use them.
 
 The most common one will be the `macro-image-section-markdown.html` (if you write [M↓]). The usage would look like this.
 
@@ -119,6 +124,66 @@ Below is a table of all the parameters you can give to them.
 
 \* the image column accepts html markup as the `images` content. Should be used in conjunction with macro-image.html
 
+For some of these macros you will need to use the Jekyll templating syntax called liquid. See the shopifys wiki [Liquid for Designers](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers) for a in depth reference.
+
+In our macros you will use three different syntax constructs. capture, assign and include.
+
+#### Capture
+
+TO capture some content for later use you insert this syntax.
+
+```plain
+{%  capture variable  %}code{%  endcapture  %}
+```
+
+In use it is like this:
+
+```html
+{% capture myvaribale %}
+This is some captured content. It will be stored in the variable "myvaribale".
+{% endcapture %}
+<!-- now use this later on -->
+{% include macro-text.html text=myvaribale -%}
+
+```
+
+#### Assign
+
+Assign also creates a variable. The difference is that you assign it directly to the variable and don't capture longer blocks.
+
+```html
+{% assign myvariable = "This is the content of myvariable" %}
+<!-- later on you can use this variable -->
+This is some random text with a inserted variable --> {{myvariable}}
+<!-- or you use the variable on an include -->
+{% include macro-text.html text=myvaribale -%}
+
+```
+
+#### Include
+
+The include looks in the folder `source/_include` for the file that should be included and expands its content during site generation.
+
+```html
+{% include snippet.extension param1="foo" param2="bah" %}
+```
+
+#### Variables
+
+Additionally all values in the frontmatter are available as `page.variables`.
+
+You can use them like this:
+
+```html
+This is the title {{page.title}} this is the language {{page.lang}}
+```
+
+Of course you can add your own variables.
+
+
+
+#### HTML in [M↓]
+
 You can mix [M↓] with HTML, just make sure you don't mix block level markup. E.g. This wont work!
 
 ```html
@@ -132,6 +197,17 @@ Dies ist ein Typoblindtext.
 
 <div>someHTML</div>
 ```
+
+#### Example Projects for Reference
+
+To see how all if this is used to to the example projects source `source/projects/example-html-project/en/index.html`.
+
+If your Jekyll development server is running you can go to these URLs
+
+- **HTML EN:** [http://localhost:4000/projects/example-html-project/en/](http://localhost:4000/projects/example-html-project/en/)
+- **HTML DE:** [http://localhost:4000/projects/example-html-project/de/](http://localhost:4000/projects/example-html-project/de/)
+- **[M↓] EN:** [http://localhost:4000/projects/example-md-project/en/](http://localhost:4000/projects/example-md-project/en/)
+- **[M↓] DE:** [http://localhost:4000/projects/example-md-project/de/](http://localhost:4000/projects/example-md-project/de/)
 
 ### Project Assets
 
