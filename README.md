@@ -216,11 +216,11 @@ If your Jekyll development server is running you can go to these URLs
 
 Within your project folder you can add all your projects assets. There are some files that are required.
 
-| Description    | width | height | comment |
-| :------------- | :---- | :----- | :------ |
-| Hero image     | --    | --     | --      |
-| Thumbnail      | --    | --     | --      |
-| Featured image | --    | --     | --      |
+| Description    | width in PX | height in PX | comment |
+| :------------- | :---------- | :----------- | :------ |
+| Hero image     | 2400          | 1400           | --      |
+| Thumbnail      | 600         | 600          | --      |
+| Featured image | --          | --           | --      |
 
 #### JS & CSS
 
