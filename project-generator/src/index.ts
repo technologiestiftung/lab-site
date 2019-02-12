@@ -105,6 +105,7 @@ you have to add \`--\` to execute the commands. E.g.
     if (flags.prompt) {
       const q: any = questions(flags.force);
       response = await inquirer.prompt(q);
+      response.externalUrl = response.externalUrl.length === 0 ? null : response.externalUrl;
       process.stdout.write('\n\n---------------------\n\n');
       process.stdout.write('\n\n!!!!R E S U L T S!!!!\n\n');
       process.stdout.write(yaml.stringify(response));
@@ -164,6 +165,7 @@ you have to add \`--\` to execute the commands. E.g.
           patched.subtitle = response.de_subtitle;
           patched.lang = 'de';
         }
+        // patched.externalUrl = (patched.externalUrl.length === 0) ? null : patched.externalUrl;
         patched.date = dayjs().format('YYYY-MM-DD');
         this.log('🚀 This will be your yaml frontmatter\n\n');
         this.log(yaml.stringify(patched));
