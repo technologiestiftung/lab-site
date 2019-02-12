@@ -50,7 +50,8 @@
 ```bash
 cd /path/to/lab-site/
 # only needed once
-npm install
+npm install && cd project-generator && npm install
+cd ..
 bundle install
 # whenever you want to run Jekyll
 bundle exec jekyll server --livereload
