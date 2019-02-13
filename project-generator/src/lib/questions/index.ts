@@ -62,11 +62,6 @@ const questions = (force: boolean) => {
       type: 'input',
     },
     {
-      name: 'description',
-      message: '🍼\tWrite a description for the RSS feed:\n',
-      type: 'input',
-    },
-    {
       name: 'type',
       message: '⚙️\tWhat type of project is this?\n',
       type: 'list',

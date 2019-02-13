@@ -99,7 +99,7 @@ you have to add \`--\` to execute the commands. E.g.
 
   async run() {
     const {args, flags} = this.parse(ProjectGenerator);
-    let foldername: string | null = null;
+    let folderName: string | null = null;
     let type = flags.type;
 
     if (flags.prompt) {
@@ -133,8 +133,8 @@ you have to add \`--\` to execute the commands. E.g.
     // value in the prompt
 
     type = (flags.prompt === true) ? response.fileType : type;
-    foldername = (flags.prompt === true) ? response.folderName : slugify(args.title).toLowerCase();
-    const target = path.resolve(process.cwd(), `${targetPathRoot}${foldername}`);
+    folderName = (flags.prompt === true) ? response.folderName : slugify(args.title).toLowerCase();
+    const target = path.resolve(process.cwd(), `${targetPathRoot}${folderName}`);
 
     // this.log(`target path: ${target}`);
     if (isFolderSync(target) && !flags.force) {
@@ -160,17 +160,30 @@ you have to add \`--\` to execute the commands. E.g.
           patched.title = response.en_title;
           patched.subtitle = response.en_subtitle;
           patched.lang = 'en';
+          patched.description = response.en_description;
         } else if (file.indexOf('de') === 0) {
           patched.title = response.de_title;
           patched.subtitle = response.de_subtitle;
+          patched.description = response.de_description;
           patched.lang = 'de';
         }
         // patched.externalUrl = (patched.externalUrl.length === 0) ? null : patched.externalUrl;
         patched.date = dayjs().format('YYYY-MM-DD');
+        delete patched.de_description;
+        delete patched.en_description;
+        delete patched.en_title;
+        delete patched.de_title;
+        delete patched.de_subtitle;
+        delete patched.en_subtitle;
+        delete patched.folderName;
+        delete patched.fileType;
+        if (response.externalUrl === null) {
+          delete patched.externalUrl;
+        }
 
-        patched.featuredImage = `/projects/${foldername}/images/featured.jpg`;
-        patched.heroImage = `/projects/${foldername}/images/hero.jpg`;
-        patched.thumbnail = `/projects/${foldername}/images/thumbnail.jpg`;
+        patched.featuredImage = `/projects/${folderName}/images/featured.jpg`;
+        patched.heroImage = `/projects/${folderName}/images/hero.jpg`;
+        patched.thumbnail = `/projects/${folderName}/images/thumbnail.jpg`;
 
         this.log('🚀 This will be your yaml frontmatter\n\n');
         this.log(yaml.stringify(patched));
