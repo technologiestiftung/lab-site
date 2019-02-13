@@ -118,6 +118,7 @@ Below is a table of all the parameters you can give to them.
 | macro-image-section-markdown.html | src   | caption | --     | --       |
 | macro-image-section.html          | src   | caption | --     | --       |
 | macro-blockqoute-section.html     | text  | info    | --     | --       |
+| macro-blockqoute-section-markdown.html     | text  | info    | --     | --       |
 | macro-code-snippet.html           | code  | --      | --     | --       |
 | macro-image-column.html\*         | title | text    | images | reversed |
 | macro-image.html                  | src   | alt     | --     | --       |

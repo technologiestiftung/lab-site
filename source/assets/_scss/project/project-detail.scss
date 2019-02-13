@@ -17,7 +17,7 @@
     blockquote {
         font-size: $font-size-s;
         margin: 0;
-        padding: 0 $spacing-page-m;
+        padding: 0;
 
         @media only screen and (max-width: $screen-m) {
             padding: 0 $spacing-page-xs;

@@ -167,6 +167,11 @@ you have to add \`--\` to execute the commands. E.g.
         }
         // patched.externalUrl = (patched.externalUrl.length === 0) ? null : patched.externalUrl;
         patched.date = dayjs().format('YYYY-MM-DD');
+
+        patched.featuredImage = `/projects/${foldername}/images/featured.jpg`;
+        patched.heroImage = `/projects/${foldername}/images/hero.jpg`;
+        patched.thumbnail = `/projects/${foldername}/images/thumbnail.jpg`;
+
         this.log('🚀 This will be your yaml frontmatter\n\n');
         this.log(yaml.stringify(patched));
         this.log('\n\n----------------------------------\n\n');
