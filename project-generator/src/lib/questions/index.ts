@@ -3,7 +3,7 @@ import {buildTargetPath, isFolderSync, slug} from '../utils';
 const questions = (force: boolean) => {
   return [{
     name: 'folderName',
-    message: '📁 What should be the folder name? (Will appear in the url)',
+    message: '📁\tWhat should be the folder name? (Will appear in the url)\n',
     type: 'input',
     filter: async (value: string) => {
       return slug(value);
@@ -12,7 +12,7 @@ const questions = (force: boolean) => {
       if (value) {
         const pt = buildTargetPath(slug(value));
         if (isFolderSync(pt) === true && force === false) {
-          process.stdout.write('\n\n 🚨 🚨 🚨 The folder already exists  🚨 🚨 🚨 \n\n');
+          process.stdout.write('\n 🚨 🚨 🚨 The folder already exists  🚨 🚨 🚨 \n\n');
           return false;
         } else if (isFolderSync(pt) === false) {
           return true;
@@ -20,88 +20,98 @@ const questions = (force: boolean) => {
           return true;
         }
       } else {
-        process.stdout.write('\n\n 🚨 🚨 🚨 No value given 🚨 🚨 🚨 \n\n');
+        process.stdout.write('\n 🚨 🚨 🚨 No value given 🚨 🚨 🚨 \n\n');
         process.exit(1);
       }
     }
   },
     {
       name: 'fileType',
-      message: '📄 What type of markup do you want to use?',
+      message: '📄\tWhat type of markup do you want to use?\n',
       type: 'list',
       choices: [{name: 'Markdown [M↓]', value: 'md', default: true}, {name: 'HTML ', value: 'html'}]
     },
     {
       name: 'de_title',
-      message: '🇩🇪  Write a title:',
+      message: '🇩🇪\tWrite a title:\n',
       type: 'input',
     },
     {
       name: 'en_title',
-      message: '🇬🇧  Write a title:',
+      message: '🇬🇧\tWrite a title:\n',
       type: 'input',
     },
     {
       name: 'de_subtitle',
-      message: '🇩🇪  Write a subtitle:',
+      message: '🇩🇪\tWrite a subtitle:\n',
       type: 'input',
     },
     {
       name: 'en_subtitle',
-      message: '🇬🇧  Write a subtitle:',
+      message: '🇬🇧\tWrite a subtitle:\n',
+      type: 'input',
+    },
+    {
+      name: 'de_description',
+      message: '🇩🇪\tWrite a description for the RSS feed:\n',
+      type: 'input',
+    },
+    {
+      name: 'en_description',
+      message: '🇬🇧\tWrite a description for the RSS feed:\n',
       type: 'input',
     },
     {
       name: 'description',
-      message: '🍼 Write a description for the RSS feed:',
+      message: '🍼\tWrite a description for the RSS feed:\n',
       type: 'input',
     },
     {
       name: 'type',
-      message: '⚙️  What type of project is this?',
+      message: '⚙️\tWhat type of project is this?\n',
       type: 'list',
       choices: [{name: 'publication'}, {name: 'workshop'}, {name: 'dataset'}, {name: 'prototype'}]
 
     },
     {
       name: 'colorMode',
-      message: '🎨 Is the header image bright or dark?',
+      message: '🎨\tIs the header image bright or dark?\n',
       type: 'list',
       choices: [{name: 'bright', value: 'bright', default: true}, {name: 'dark', value: 'dark'}]
     },
     {
       name: 'visible',
-      message: '👀 Should the project be visible?',
+      message: '👀\tShould the project be visible?\n',
       type: 'list',
       choices: [{name: 'is visible', value: true}, {name: 'is not visible', value: false}]
     },
     {
       name: 'featured',
-      message: '🥇 Should it be a featured image?',
+      message: '🥇\tShould it be a featured image?\n',
       type: 'list',
       choices: [{name: 'is featured', value: true}, {name: 'is not featured', value: false, default: true}]
     },
     {
       name: 'authors',
-      message: '✏️  Who are the authors?',
+      message: '✏️\tWho are the authors?\n',
       type: 'checkbox',
       choices: [
-      {name: '🙄  Alexandra Kapp', value: 'alexandra-kapp'},
-      {name: '🧐  Benjamin Seibel', value: 'benjamin-seibel'},
-      {name: '😳  Fabian Dinklage', value: 'fabian-dinklage'},
-      {name: '🤔  Fabian Morón Zirfas', value: 'fabian-moron-zirfas'},
-      {name: '😬  Sebastian Meier', value: 'sebastian-meier'},
-      {name: '🤩  Victoria Dykes', value: 'victoria-dykes'},
+      {name: '🙄\tAlexandra Kapp', value: 'alexandra-kapp'},
+      {name: '🧐\tBenjamin Seibel', value: 'benjamin-seibel'},
+      {name: '😳\tFabian Dinklage', value: 'fabian-dinklage'},
+      {name: '🤔\tFabian Morón Zirfas', value: 'fabian-moron-zirfas'},
+      {name: '😬\tSebastian Meier', value: 'sebastian-meier'},
+      {name: '🤩\tVictoria Dykes', value: 'victoria-dykes'},
       ]
     },
     {
       name: 'externalUrl',
-      message: '🔗 Is there a external url for the project?',
+      message: '🔗\tIs there a external url for the project?\n',
       type: 'input',
     },
     {
       name: 'status',
-      message: '⌛️ What is the status of the project?',
+      message: '⌛️\tWhat is the status of the project?\n',
       type: 'list',
       choices: [{name: 'is ongoing', value: 'ongoing'}, {name: 'is finished', value: 'finished', default: true}]
     },
