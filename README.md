@@ -34,12 +34,11 @@
 
 <!-- /code_chunk_output -->
 
-
 ## Prerequisites
 
 - Node.js (install it using [nodenv →](https://github.com/nodenv/nodenv))
 - Jekyll
-  - Non admin computers you need to change the ruby `.gem` folder location `echo "export GEM_HOME=${HOME}.gem" >> .bash_profile`
+  - Non admin computers you need to change the ruby `.gem` folder location `echo "export GEM_HOME=${HOME}/.gem" >> "${HOME}/.bash_profile"`
   - Admin computers can install [Ruby Version Manager (rvm) →](https://rvm.io)
     - needs `gpg` in `$PATH`: `brew install gpg`
 
