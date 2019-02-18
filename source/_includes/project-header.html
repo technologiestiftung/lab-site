@@ -7,7 +7,7 @@
             {%- if page.externalUrl -%}
                 <a class="link--button" href="{{ page.externalUrl }}">Launch Project</a>
             {%- endif -%}
-    
+
             <div class="flex-row">
                 <h1 class="project-header__title--main headline--bold">
                     {{ page.title }}
@@ -16,19 +16,31 @@
                     {{ page.subtitle }}
                 </h2>
             </div>
-    
+
         </div>
     </div>
 
     <div class="project-header__meta">
         <div class="project-header__meta-column project-header__meta-column--researchers">
-            <div class="project-header__meta-column__header">
-                Researchers
-            </div>
+            <div class="project-header__meta-column__header">Researchers</div>
+            {%- comment -%}
+            <!--
+               Matching the id added to the frontend
+               wikth the team members
+              -->
+            {%- endcomment -%}
+            {%- if page.lang =='en' -%}
+              {%- assign team = site.team_en -%}
+              {%- else -%}
+              {%- assign team = site.team_de -%}
+              {%- endif -%}
             {%- for author in page.authors -%}
-            <a href="{{ site.url }}/team/{{ author }}/{{page.lang}}" class="project-header__meta-column__item">
-                {{ author }}
-            </a>
+            {%- for member in team -%}
+            {%- if member.uid == author -%}
+                <a href="{{ site.url }}{{member.url}}" class="project-header__meta-column__item">{{member.name}}</a>
+                {%- break -%}
+                {%- endif -%}
+              {%- endfor -%}
             {%- endfor -%}
         </div>
         <div class="project-header__meta-column project-header__meta-column--status">

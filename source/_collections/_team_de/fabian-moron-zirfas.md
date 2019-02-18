@@ -1,5 +1,6 @@
 ---
 name: Fabian Morón Zirfas
+uid: fabian-moron-zirfas
 image: /assets/images/fabianm.jpg
 mail: Moron-zirfas@technologiestiftung-berlin.de
 description: Hier steht ein kurzer text über Fabian.
