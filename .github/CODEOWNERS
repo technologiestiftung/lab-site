@@ -1,0 +1,24 @@
+# https://help.github.com/articles/about-code-owners/
+
+* @fdnklg @sebastian-meier @fabianmoronzirfas
+
+source/assets/js/* @fdnklg
+source/assets/js/css/* @fdnklg
+source/assets/js/_scss/* @fdnklg
+
+project-generator/* @fabianmoronzirfas
+tslint.json @fabianmoronzirfas
+tsconfig.json @fabianmoronzirfas
+Gemfile.lock @fabianmoronzirfas
+Gemfile @fabianmoronzirfas
+jest.config.js @fabianmoronzirfas
+.travis.yml @fabianmoronzirfas
+.stylelintrc.js @fabianmoronzirfas
+.node-version @fabianmoronzirfas
+.eslintrc.js @fabianmoronzirfas
+.editorconfig @fabianmoronzirfas
+_config.yml @fabianmoronzirfas
+__tests__/* @fabianmoronzirfas
+.uglifyrc @fabianmoronzirfas
+source/_collections/* @fabianmoronzirfas
+source/_data/* @fabianmoronzirfas
