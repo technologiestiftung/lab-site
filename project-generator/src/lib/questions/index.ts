@@ -97,6 +97,7 @@ const questions = (force: boolean) => {
       {name: '🤔\tFabian Morón Zirfas', value: 'fabian-moron-zirfas'},
       {name: '😬\tSebastian Meier', value: 'sebastian-meier'},
       {name: '🤩\tVictoria Dykes', value: 'victoria-dykes'},
+      {name: '🤗\tJolanta Paliszewska ', value: 'jolanta-paliszewska'},
       ]
     },
     {
