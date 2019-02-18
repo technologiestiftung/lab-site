@@ -37,10 +37,28 @@
 ## Prerequisites
 
 - Node.js (install it using [nodenv →](https://github.com/nodenv/nodenv))
-- Jekyll
-  - Non admin computers you need to change the ruby `.gem` folder location `echo "export GEM_HOME=${HOME}/.gem" >> "${HOME}/.bash_profile"`
-  - Admin computers can install [Ruby Version Manager (rvm) →](https://rvm.io)
-    - needs `gpg` in `$PATH`: `brew install gpg`
+- Jekyll with Ruby:
+
+To setup Ruby:
+
+Non admin computers you need to change the ruby `.gem` folder location
+- With bash, run:
+
+```bash
+echo "export GEM_HOME=${HOME}/.gem" >> "${HOME}/.bash_profile" &&\
+echo "export PATH="${HOME}/.gem/bin:$PATH" >> "${HOME}/.bash_profile"
+```
+
+if you are using  zsh as shell use, run:
+
+```bash
+echo "export GEM_HOME=${HOME}/.gem" >> "${HOME}/.zshrc" &&\
+echo "export PATH="${HOME}/.gem/bin:$PATH" >> "${HOME}/.zshrc"
+```
+
+Admin computers can install [Ruby Version Manager (rvm) →](https://rvm.io).
+
+- needs `gpg` in `$PATH`: `brew install gpg`
 
 ## Setup Jekyll & Run Jekyll
 
