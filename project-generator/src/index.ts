@@ -167,8 +167,11 @@ you have to add \`--\` to execute the commands. E.g.
           patched.description = response.de_description;
           patched.lang = 'de';
         }
-        // patched.externalUrl = (patched.externalUrl.length === 0) ? null : patched.externalUrl;
-        patched.date = dayjs().format('YYYY-MM-DD');
+
+        const now = dayjs().format('YYYY-MM-DD');
+        patched.date = now;
+        patched.start = now;
+        patched.end = now;
         delete patched.de_description;
         delete patched.en_description;
         delete patched.en_title;
