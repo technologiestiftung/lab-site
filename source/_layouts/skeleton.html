@@ -7,6 +7,44 @@
         <title>{{ page.title }}</title>
         <!-- {# Favicon #} -->
         {% include favicon-links.html %}
+        <!-- FACEBOOK -->
+        <meta property="fb:app_id" content="487094758334595">
+        <meta property="og:url" content="{{site.url}}">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Ideation &amp; Prototyping Lab">
+        <meta property="og:image" content="{{site.url}}/icons/social_media.jpg">
+        <meta property="og:description" content="{%- if page.lang == 'de' -%}
+          Wir erforschen und erproben digitale Werkzeuge um gemeinsam mit Bürger*innen, Verwaltung und Unternehmen die Zukunft Berlins zu gestalten. #OpenData #OpenSource #OpenInnovation
+          {%- else -%}
+          We are exploring and prototyping digital tools in order to collaboratively shape Berlin’s future for citizens, the local government and the industry. #OpenData #OpenSource #OpenInnovation
+        {%- endif -%}">
+        <meta property="og:site_name" content="Ideation &amp; Prototyping Lab">
+        <meta property="article:author" content="Sebastian Meier">
+
+        <!-- TWITTER -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@TSBBerlin">
+        <meta name="twitter:creator" content="@seb_meier">
+        <meta name="twitter:url" content="{{site.url}}">
+        <meta name="twitter:title" content="Ideation &amp; Prototyping Lab">
+        <meta name="twitter:description" content="{%- if page.lang == 'de' -%}
+          Wir erforschen und erproben digitale Werkzeuge um gemeinsam mit Bürger*innen, Verwaltung und Unternehmen die Zukunft Berlins zu gestalten. #OpenData #OpenSource #OpenInnovation
+          {%- else -%}
+          We are exploring and prototyping digital tools in order to collaboratively shape Berlin’s future for citizens, the local government and the industry. #OpenData #OpenSource #OpenInnovation
+        {%- endif -%}">
+        <meta name="twitter:image" content="{{site.url}}/icons/social_media.jpg">
+
+        <!-- GOOGLE+/SCHEMA.ORG -->
+        <meta itemprop="name" content="Ideation &amp; Prototyping Lab">
+        <meta itemprop="description" content="{%- if page.lang == 'de' -%}
+          Wir erforschen und erproben digitale Werkzeuge um gemeinsam mit Bürger*innen, Verwaltung und Unternehmen die Zukunft Berlins zu gestalten. #OpenData #OpenSource #OpenInnovation
+          {%- else -%}
+          We are exploring and prototyping digital tools in order to collaboratively shape Berlin’s future for citizens, the local government and the industry. #OpenData #OpenSource #OpenInnovation
+        {%- endif -%}">
+        <meta itemprop="image" content="{{site.url}}/icons/social_media.jpg">
+
+        <!-- CANONICAL URL -->
+        <link rel="canonical" href="{{site.url}}">
         <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/index.css" />
         <link rel="stylesheet" type="text/css" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.8/tiny-slider.css" />
         {%- if page.layout == "project" -%}
