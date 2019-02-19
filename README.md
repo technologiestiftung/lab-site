@@ -46,14 +46,14 @@ Non admin computers you need to change the ruby `.gem` folder location
 
 ```bash
 echo "export GEM_HOME=${HOME}/.gem" >> "${HOME}/.bash_profile" &&\
-echo "export PATH="${HOME}/.gem/bin:$PATH" >> "${HOME}/.bash_profile"
+echo "export PATH=${HOME}/.gem/bin:"'$PATH' >> "${HOME}/.bash_profile"
 ```
 
 if you are using  zsh as shell use, run:
 
 ```bash
 echo "export GEM_HOME=${HOME}/.gem" >> "${HOME}/.zshrc" &&\
-echo "export PATH="${HOME}/.gem/bin:$PATH" >> "${HOME}/.zshrc"
+echo "export PATH=${HOME}/.gem/bin:"'$PATH' >> "${HOME}/.zshrc"
 ```
 
 Admin computers can install [Ruby Version Manager (rvm) →](https://rvm.io).
