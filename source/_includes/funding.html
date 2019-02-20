@@ -65,5 +65,11 @@
             </a>
     </div>
 
-    <span class="copy-funding">Gefördert von der Senatsverwaltung für Wirtschaft, Energie und Betriebe und der Investitionsbank Berlin aus den Mitteln des Landes Berlin.</span>
+    <span class="copy-funding">
+        {%- if page.lang == "de" -%}
+        Gefördert von der Senatsverwaltung für Wirtschaft, Energie und Betriebe und der Investitionsbank Berlin aus den Mitteln des Landes Berlin.
+        {%- else -%}
+        Financial support provided by the Senate Department for Economics, Energy and Public Enterprises and the Investitionsbank Berlin via funds from the State of Berlin.
+        {%- endif -%}
+    </span>
 </div>
