@@ -1,8 +1,8 @@
 {
-    "LIVE": false,
+    "LIVE": true,
     "TYPE": "light",
     "PROJECT": "datadive_accessibility",
-    "DATE": "15/02/2019",
+    "DATE": "20/02/2019",
     "EMAIL": "dykes@technologiestiftung-berlin.de",
     "GITHUB_URL": "",
     "TWITTER_HANDLE": "toridykes",
