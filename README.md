@@ -251,11 +251,19 @@ Within your project folder you can add all your projects assets. There are some 
 
 You can have additional JS and CSS files for your project. Add them to the frontmatter in the `assets` section and they will be included in the head of your project.
 
-**!Hint:** To make sure your JS executes when the full document is loaded execute it in this event listener.
+**!Hint:** To make sure your JS executes when the [full document is loaded](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded) execute it in this event listener.
 
 ```js
 document.addEventListener('DOMContentLoaded',function() {
 // your code goes in here
+});
+```
+
+If you want to be super sure that everything is loaded you should use the [load event](https://developer.mozilla.org/en-US/docs/Web/Events/load):
+
+```js
+window.addEventListener("load", function(event) {
+// Your code here
 });
 ```
 
@@ -359,6 +367,7 @@ When using VSCode for writing you should install these extensions for a better w
 **Id:** ban.spellright
 **Description:** Multilingual, Offline and Lightweight Spellchecker
 [VS Marketplace Link:](https://marketplace.visualstudio.com/items?itemName=ban.spellright)
+
 ## License
 
 Copyright (c) 2019 Technologiestiftung Berlin
