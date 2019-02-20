@@ -41,19 +41,24 @@
 To setup Ruby:
 
 Non admin computers you need to change the ruby `.gem` folder location
-- With bash, run:
+
+With bash, run:
 
 ```bash
 echo "export GEM_HOME=${HOME}/.gem" >> "${HOME}/.bash_profile" &&\
-echo "export PATH=${HOME}/.gem/bin:"'$PATH' >> "${HOME}/.bash_profile"
+echo "export PATH=${HOME}/.gem/bin:"'$PATH' >> "${HOME}/.bash_profile" &&\
+source ~/.bash_profile
 ```
 
 if you are using  zsh as shell use, run:
 
 ```bash
 echo "export GEM_HOME=${HOME}/.gem" >> "${HOME}/.zshrc" &&\
-echo "export PATH=${HOME}/.gem/bin:"'$PATH' >> "${HOME}/.zshrc"
+echo "export PATH=${HOME}/.gem/bin:"'$PATH' >> "${HOME}/.zshrc" &&\
+source ~/.zshrc
 ```
+
+
 
 Admin computers can install [Ruby Version Manager (rvm) →](https://rvm.io).
 
@@ -66,13 +71,24 @@ Admin computers can install [Ruby Version Manager (rvm) →](https://rvm.io).
 ```bash
 cd /path/to/lab-site/
 # only needed once
+# install the ruby bundler tool
+gem install bundler
+# install all needed node.js dependencies
 npm install && cd project-generator && npm install
+# go back into the root
 cd ..
+# install all ruby gems for jekyll
 bundle install
+
+# now for each session
 # whenever you want to run Jekyll
+# run
 bundle exec jekyll server --livereload
-# or use
+# or even simpler
 npm run jekyll
+# to generate a new project run in a new session
+npm run new
+# now follow the prompt…
 ```
 
 ## How To
@@ -89,7 +105,7 @@ To just create a new article/project you can either,
 - make sure your Markup is right
 - push it to the remote repo (the build will be done automagically)
 
-Or you can use the project generate. (See infos in section **Project Generator**).
+Or even better you can use the project generate. (See infos in section **Project Generator**).
 
 **!Hint:** When you already have existing HTML on the old site you can grap the source from the GitHub repo and convert it to **[M⬇︎]** using for example these online tools:
 
