@@ -20,14 +20,13 @@
       - [Assign](#assign)
       - [Include](#include)
       - [Variables](#variables)
-      - [HTML in [M↓]](#html-in-m%E2%86%93)
+      - [HTML in [M⬇︎]](#html-in-m%E2%AC%87%EF%B8%8E)
       - [Example Projects for Reference](#example-projects-for-reference)
     - [Project Assets](#project-assets)
       - [Images](#images)
       - [JS & CSS](#js--css)
   - [YAML Frontmatter](#yaml-frontmatter)
   - [Project Generator](#project-generator)
-  - [Still Todos](#still-todos)
   - [Tools](#tools)
     - [VSCode](#vscode)
   - [License](#license)
@@ -92,6 +91,14 @@ To just create a new article/project you can either,
 
 Or you can use the project generate. (See infos in section **Project Generator**).
 
+**!Hint:** When you already have existing HTML on the old site you can grap the source from the GitHub repo and convert it to **[M⬇︎]** using for example these online tools:
+
+- [Turndown Demo Page](https://domchristie.github.io/turndown/)
+- [Pandoc Demo Page](https://pandoc.org/try/?text=&from=html&to=markdown_strict)
+
+There might be some leftovers within the **[M⬇︎]** that you need to remove manually.
+
+
 ### Editing Content
 
 When writing simple markdown all the text will be
@@ -114,7 +121,7 @@ If you want a specialized layout you can use the macros included in `source/_inc
 - macro-text.html
 
 
-The most common one will be the `macro-image-section-markdown.html` (if you write [M↓]). The usage would look like this.
+The most common one will be the `macro-image-section-markdown.html` (if you write **[M⬇︎]**). The usage would look like this.
 
 ```html
 {% include macro-image-section-markdown.html src="../images/cat.png" caption="Here is a picture of a cat" %}
@@ -201,9 +208,9 @@ Of course you can add your own variables.
 
 
 
-#### HTML in [M↓]
+#### HTML in [M⬇︎]
 
-You can mix [M↓] with HTML, just make sure you don't mix block level markup. E.g. This wont work!
+You can mix **[M⬇︎]** with HTML, just make sure you don't mix block level markup. E.g. This wont work!
 
 ```html
 Dies ist ein Typoblindtext.<div>someHTML</div>
@@ -225,8 +232,8 @@ If your Jekyll development server is running you can go to these URLs
 
 - **HTML EN:** [http://localhost:4000/projects/example-html-project/en/](http://localhost:4000/projects/example-html-project/en/)
 - **HTML DE:** [http://localhost:4000/projects/example-html-project/de/](http://localhost:4000/projects/example-html-project/de/)
-- **[M↓] EN:** [http://localhost:4000/projects/example-md-project/en/](http://localhost:4000/projects/example-md-project/en/)
-- **[M↓] DE:** [http://localhost:4000/projects/example-md-project/de/](http://localhost:4000/projects/example-md-project/de/)
+- ****[M⬇︎]** EN:** [http://localhost:4000/projects/example-md-project/en/](http://localhost:4000/projects/example-md-project/en/)
+- ****[M⬇︎]** DE:** [http://localhost:4000/projects/example-md-project/de/](http://localhost:4000/projects/example-md-project/de/)
 
 ### Project Assets
 
@@ -305,35 +312,6 @@ DESCRIPTION
                 < wooohoo o/ >
        --------------------------------
 ```
-
-
-
-## Still Todos
-
-Write guides for:
-
-- [x] setup Node.js (including `nodenv` without `sudo`)
-- [x] setup Jekyll (including `rvm` without `sudo`)
-- [x] build site locally
-- [x] add and write article/project
-- [x] minimal needed frontmatter for article/project
-- [x] list of available includes/macros
-- [x] minimal tool for scaffolding a new project/article
-
-
-Still to implement:
-
-- [x] projects feed (same as the feed on the landing page but all of them)
-- [x] make feed an _include
-- [ ] fix language switcher
-- [x] image macro/slider
-- [x] Dataset pages is located somewhere else
-- [x] compare project detail markup
-- [x] check project frontmatter key values pairs
-- [x] review website.json which data we need available
-- [ ] make timeline a separate js file only included in landing page and project feed
-- [ ] review if parcel is the right thing for use
-- [ ] review if we need auto-prefixer
 
 ## Tools
 
