@@ -5,13 +5,13 @@ description: "Barrierefreiheit lässt sich nicht von heute auf morgen umsetzen. 
   zeigen, wie man innerhalb des ServicePortals der Berliner Verwaltung für mehr
   Barrierefreiheit sorgen kann. "
 lang: de
-title: Hinweise zur Barrierefreiheit 
+title: Auffindbarkeit und Sichtbarkeit von Barrierefreiheit
 subtitle: ServicePortal berlin.de
 type: publication
 colorMode: dark
 featuredImage: /projects/hinweise-zur-barrierefreiheit-auf-der-serviceportal-berlin.de/images/featured.jpg
-thumbnail: /projects/hinweise-zur-barrierefreiheit-auf-der-serviceportal-berlin.de/images/thumbnail.png
-heroImage: /projects/hinweise-zur-barrierefreiheit-auf-der-serviceportal-berlin.de/images/hero_2.png
+thumbnail: /projects/hinweise-zur-barrierefreiheit-auf-der-serviceportal-berlin.de/images/thumbnail.svg
+heroImage: /projects/hinweise-zur-barrierefreiheit-auf-der-serviceportal-berlin.de/images/hero.svg
 visible: true
 featured: false
 authors: [jolanta-paliszewska]
@@ -43,26 +43,26 @@ Bei der Untersuchung der Berliner Behörden auf [berlin.de](https://service.berl
 
 {% include macro-image-section-markdown.html src="../images/standort_auswaehlen.png" caption="(Ist-Zustand)" %}
 
-Die aktuelle Ansicht der Website [www.berlin.de](https://service.berlin.de/) ist, zeigt, wie eine Online-Terminvereinbarung bei Berliner Behörden derzeit aussieht. Momentan gibt es an dieser Stelle keine Informationen zur Barrierefreiheit der Gebäude. Die Bürgerinnen müssen selbst recherchieren, in welchen Bürgerämtern Barrierefreiheit gegeben ist – eine zusätzlich Erschwernis. Durch Hinzufügen eines Filters zum Thema Barrierefreiheit soll den Bürgerinnen die Auswahl eines geeigneten Bürgeramts erleichtert werden. (Doppelt:) Die einzelnen Elemente sollten einen wirklichen Mehrwert bieten und die Auswahl nicht zusätzlich erschweren.
+Die aktuelle Ansicht der Website [www.berlin.de](https://service.berlin.de/) zeigt, wie eine Online-Terminvereinbarung bei Berliner Behörden derzeit aussieht. Momentan gibt es an dieser Stelle keine Informationen zur Barrierefreiheit der Gebäude. Die Bürgerinnen müssen selbst recherchieren, in welchen Bürgerämtern Barrierefreiheit gegeben ist – eine zusätzlich Erschwernis. Durch Hinzufügen eines Filters zum Thema Barrierefreiheit soll den Bürgerinnen die Auswahl eines geeigneten Bürgeramts erleichtert werden. 
 
 {% include macro-image-section-markdown.html src="../images/loesungsvorschlag.png" caption="(Lösungsvorschlag)" %}
 
-Unser Lösungsvorschlag, um die Barrierefreiheit der Gebäude präzise zu durchsuchen, ist eine neue zusätzliche Filteroption in der Auswahl der Terminvergabe. Mit Hilfe eines Dropdowns könnten somit Hinweise zu Barrierefreiheit eingebettet werden. Zusätzlich zur Filteroption könnten die Angaben zur Barrierefreiheit auch in der Auflistung direkt angezeigt werden.
+Unser Lösungsvorschlag, Verwaltungsgebäude präzise auf ihre Barrierefreiheit zu durchsuchen, ist eine neue zusätzliche Filteroption in der Auswahl der Terminvergabe. Mit Hilfe eines Dropdowns könnten somit Hinweise zu Barrierefreiheit eingebettet werden. Zusätzlich zur Filteroption könnten die Angaben zur Barrierefreiheit auch in der Auflistung direkt angezeigt werden.
 
-In der Auflistung wird übersichtlich erklärt, was sich hinter den einzelnen Piktogrammen verbirgt. Anhand dieser koennen die Buerger*innen erkennen, welche barrierefreien Moeglichkeiten die Dienstgebäude aufweisen. 
+In der Auflistung wird übersichtlich erklärt, was sich hinter den einzelnen Piktogrammen verbirgt. Anhand dieser koennen die Bürger*innen erkennen, welche barrierefreien Möglichkeiten die Dienstgebäude aufweisen. 
 
 {% include macro-image-section-markdown.html src="../images/1_pikotogramme_zur_barrierefreiheit.png" caption="(Piktogramme zur Barrierefreiheit)" %}
 
 # Bürgertelefon in Gebärdensprache
 
 
-Seit einiger Zeit gibt es die Möglichkeit über das Bürgertelefon 115 umfassende Informationen der Berliner Ämter einzuholen – in Lautsprache. Wie können hörbehinderte Menschen barrierefrei mit Ämtern in Kontakt treten? Zur Verbesserung der barrierefreien Kommunikation fuer gehörlose Menschen möchten wir ein barrierefreies Tool vorstellen.
+Seit einiger Zeit gibt es die Möglichkeit über das Bürgertelefon 115 umfassende Informationen der Berliner Ämter einzuholen – in Lautsprache. Wie können hörbehinderte Menschen barrierefrei mit Ämtern in Kontakt treten? Zur Verbesserung der barrierefreien Kommunikation für gehörlose Menschen möchten wir ein barrierefreies Tool vorstellen.
 
 
-{% include macro-image-section-markdown.html src="../images/buergertelefon.png" caption="(Bürgertelefon 115)" %}
+{% include macro-image-section-markdown.html src="../images/buergertelefon.png" caption="(Ist-Zustand)" %}
 
 Es gibt SQAT (Sign Question and Answer Tool), einen Dienst eines Übersetzungsbüros, welches einen Übersetzungsservice zwischen Schriftsprache und Gebärdensprache für hörbehinderte Nutzer*innen anbietet.
-Mit SQAT hätten hörbehinderte Nutzer*innen der Website die Möglichkeit mit den Berliner Bürgerämtern ohne Barrieren zu kommunizieren.
+Mit SQAT haben hörbehinderte Nutzer*innen der Website die Möglichkeit mit den Berliner Bürgerämtern ohne Barrieren zu kommunizieren.
 
 
 Hier gibt es Übersetzungsservice SQAT bereits: [Antidiskriminierungsstelle](http://www.antidiskriminierungsstelle.de/DE/Beratung/Beratung_Moeglichkeiten/SQAT/SQAT_node.html).
@@ -72,12 +72,16 @@ Hier gibt es Übersetzungsservice SQAT bereits: [Antidiskriminierungsstelle](htt
 
 Bisher wird das SQAT u.a. von der Antidiskriminierungsstelle des Bundes, dem Beauftragten der Bundesregierung für die Belange der Menschen mit Behinderungen und dem Presse- und Informationsamt der Bundesregierung, DHL und Teekampagne angeboten.
 
-{% include macro-image-section-markdown.html src="../images/gebaerdensprache_sqat.png" caption="(Bürgertelefon 115)" %}
+{% include macro-image-section-markdown.html src="../images/gebaerdensprache_sqat.png" caption="(2. Lösungsvorschlag)" %}
 
 
-Unser Lösungsvorschlag fuer den Kontakt in Gebärdensprache ist die Einbettung von SQAT. Die Webseiten der Ämter müssten nur mit einem Button ausgestattet werden, der auf den SQAT-Service hinweist und so in wenigen Schritten eine Anfrage in Gebärdensprache möglich macht. Eine Registrierung ist nicht nötig, da der Button den User direkt mit dem Anbieter der Webseite verbindet. 
+Unser Lösungsvorschlag für den Kontakt in Gebärdensprache ist die Einbettung von SQAT. Die Webseiten der Ämter müssten nur mit einem Button ausgestattet werden, der auf den SQAT-Service hinweist und so in wenigen Schritten eine Anfrage in Gebärdensprache möglich macht. Eine Registrierung ist nicht nötig, da der Button den User direkt mit dem Anbieter der Webseite verbindet. 
 
 Die hörbehinderten Bürger*innen können in ihrer eigenen Sprache, der Deutschen Gebärdensprache (DGS), mit den Betreibern der Website ohne Barrieren kommunizieren. Das Video wird vom Nutzer in DGS per Webcam aufgezeichnet, um dann in eine Textnachricht von SQAT übersetzt zu werden.
 
 
 {% include macro-image-section-markdown.html src="../images/gebaerdensprache_sqat_2.png" caption="(Kontakt in Gebärdensprache mit SQAT)" %}
+
+
+
+Aktuell läuft verwaltungsintern die Prüfung, in wie weit ein solches Tool implementiert werden kann. 

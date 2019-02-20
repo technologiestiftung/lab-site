@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="870px" height="298px" viewBox="0 0 870 298" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53 (72520) - https://sketchapp.com -->
+    <title>A4</title>
+    <desc>Created with Sketch.</desc>
+    <g id="A4" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-6" transform="translate(614.000000, 181.000000)">
+            <g id="Group-5">
+                <g id="Group">
+                    <g id="Group-3">
+                        <g id="Group-2" transform="translate(63.000000, 0.000000)">
+                            <path d="M1,4 L1,40.6285714 L30.9954128,40.6285714 L30.9954128,4 L1,4 Z" id="Rectangle" stroke="#1E3791" stroke-width="2" fill="#1E3791"></path>
+                            <text id="?" font-family="ClanPro-Bold, Clan Pro" font-size="34" font-weight="bold" letter-spacing="0.270000011" fill="#FFFFFF">
+                                <tspan x="8" y="34">?</tspan>
+                            </text>
+                        </g>
+                        <text id="Behindertenrechts--k" font-family="ClanPro-Bold, Clan Pro" font-size="11" font-weight="bold" line-spacing="13" letter-spacing="0.28875" fill="#1E3791">
+                            <tspan x="22.635305" y="55.528">Behindertenrechts-</tspan>
+                            <tspan x="45.207305" y="68.528">konvention</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g id="UN" transform="translate(99.000000, 193.000000)">
+            <g id="Group-4">
+                <g id="Group-2" transform="translate(63.000000, 0.000000)">
+                    <path d="M1,1 L1,37.6285714 L30.9954128,37.6285714 L30.9954128,1 L1,1 Z" id="Rectangle" stroke="#1E3791" stroke-width="2"></path>
+                    <text id="§" font-family="ClanPro-Bold, Clan Pro" font-size="10" font-weight="bold" letter-spacing="0.270000011" fill="#1E3791">
+                        <tspan x="13.4236697" y="16">§</tspan>
+                    </text>
+                    <text id="UN" font-family="ClanPro-Bold, Clan Pro" font-size="14" font-weight="bold" line-spacing="10" letter-spacing="0.782353" fill="#1E3791">
+                        <tspan x="3.09376627" y="32.5161558">UN</tspan>
+                    </text>
+                </g>
+                <text id="Behindertenrechts--k" font-family="ClanPro-Bold, Clan Pro" font-size="11" font-weight="bold" line-spacing="13" letter-spacing="0.28875" fill="#1E3791">
+                    <tspan x="22.635305" y="52.528">Behindertenrechts-</tspan>
+                    <tspan x="45.207305" y="65.528">konvention</tspan>
+                </text>
+            </g>
+        </g>
+        <g id="Group-10" transform="translate(331.000000, 89.000000)" fill="#1E3791" fill-rule="nonzero">
+            <rect id="Rectangle" x="0" y="49" width="176" height="24" rx="3"></rect>
+            <g id="Group-9" transform="translate(84.000000, 0.000000)">
+                <g id="Group-8">
+                    <g id="Group-7">
+                        <path d="M103,38 L103,101 C103,102.656854 101.656854,104 100,104 L82,104 C80.3431458,104 79,102.656854 79,101 L79,41 L22,41 C20.3431458,41 19,39.6568542 19,38 L19,20 C19,18.3431458 20.3431458,17 22,17 L100,17 C101.656854,17 103,18.3431458 103,20 L103,38 Z" id="Combined-Shape" transform="translate(61.000000, 60.500000) rotate(-315.000000) translate(-61.000000, -60.500000) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g id="Group-11" transform="translate(104.000000, 150.000000)" fill="#1E3791" font-family="ClanPro-Bold, Clan Pro" font-size="41" font-weight="bold" letter-spacing="1.07625" line-spacing="13">
+            <text id="2019">
+                <tspan x="526.046959" y="14.968">2019</tspan>
+            </text>
+            <text id="2009">
+                <tspan x="16.0469587" y="13.968">2009</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

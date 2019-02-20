@@ -52,12 +52,10 @@
   "main": "lib/index.js",
   "oclif": {
     "bin": "project-generator",
-    "macos":{
-      "identifier":"de.technologiestiftung-berlin.lab-site.project-generator"
+    "macos": {
+      "identifier": "de.technologiestiftung-berlin.lab-site.project-generator"
     }
   },
-
-
   "scripts": {
     "posttest": "tslint -p test -t stylish",
     "prepack": "rm -rf lib && tsc -b",
