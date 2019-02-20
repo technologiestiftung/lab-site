@@ -135,18 +135,18 @@ If you locate your images in the `images` folder you can use relativ urls.
 
 Below is a table of all the parameters you can give to them.
 
-| name                              | parm1 | parm2   | parm3  | param4   |
-| :-------------------------------- | :---- | :------ | :----- | :------- |
-| macro-text.html                   | text  | --      | --     | --       |
-| macro-text-column.html            | title | text    | --     | --       |
-| macro-image-section-markdown.html | src   | caption | --     | --       |
-| macro-image-section.html          | src   | caption | --     | --       |
-| macro-blockqoute-section.html     | text  | info    | --     | --       |
-| macro-blockqoute-section-markdown.html     | text  | info    | --     | --       |
-| macro-code-snippet.html           | code  | --      | --     | --       |
-| macro-image-column.html\*         | title | text    | images | reversed |
-| macro-image.html                  | src   | alt     | --     | --       |
-| macro-link.html                   | href  | text    | type   | --       |
+| name                                   | parm1 | parm2   | parm3  | param4   |
+| :------------------------------------- | :---- | :------ | :----- | :------- |
+| macro-text.html                        | text  | --      | --     | --       |
+| macro-text-column.html                 | title | text    | --     | --       |
+| macro-image-section-markdown.html      | src   | caption | --     | --       |
+| macro-image-section.html               | src   | caption | --     | --       |
+| macro-blockqoute-section.html          | text  | info    | --     | --       |
+| macro-blockqoute-section-markdown.html | text  | info    | --     | --       |
+| macro-code-snippet.html                | code  | --      | --     | --       |
+| macro-image-column.html\*              | title | text    | images | reversed |
+| macro-image.html                       | src   | alt     | --     | --       |
+| macro-link.html                        | href  | text    | type   | --       |
 
 \* the image column accepts html markup as the `images` content. Should be used in conjunction with macro-image.html
 
@@ -241,11 +241,11 @@ If your Jekyll development server is running you can go to these URLs
 
 Within your project folder you can add all your projects assets. There are some files that are required.
 
-| Description    | width in PX | height in PX | comment |
-| :------------- | :---------- | :----------- | :------ |
-| Hero image     | 2400          | 1400           | --      |
-| Thumbnail      | 600         | 600          | --      |
-| Featured image | --          | --           | --      |
+| Description    | width in PX | height in PX | comment                |
+| :------------- | :---------- | :----------- | :--------------------- |
+| Hero image     | 2400        | 1400         | --                     |
+| Thumbnail      | 600         | 600          | --                     |
+| Featured image | 2400        | 1800         | needs an alpha channel |
 
 #### JS & CSS
 
