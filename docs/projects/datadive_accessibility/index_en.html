@@ -164,17 +164,23 @@
 
             <div class="container">
                 <p class="copy">
-                One open data resource is an <a href="https://www.vbb.de/unsere-themen/vbbdigital/api-entwicklerinfos/rss-feed-aufzugsstoerungen" target="blank">RSS-Feed</a> provided by the VBB, which reports broken elevators for both U-Bahn and S-Bahn stations in Berlin. It’s unclear, however, how often this data is updated and the feed does not provide information on when a given service disruption was first reported (thus it’s hard to determine how up-to-date the feed is). </p><br>
+                For S-Bahn stations, the Deutsche Bahn has a <a href="https://data.deutschebahn.com/dataset/fasta-station-facilities-status" target="blank">"Facilities Status" (FaSta) API</a> available. Through this API, it is possible to get up-to-date information on the operational status of both elevators and escalators in the Deutsche Bahn network. </p><br>
+            </div> 
+
+            <div class="container">
+                <p class="copy">
+                For the U-Bahn network (as well as the S-Bahn network) there is also an <a href="https://www.vbb.de/unsere-themen/vbbdigital/api-entwicklerinfos/rss-feed-aufzugsstoerungen" target="blank">RSS-Feed</a> provided by the VBB, which reports broken elevators. It’s unclear, however, how often this data is updated and the feed does not provide information on when a given service disruption was first reported (thus it’s hard to determine how up-to-date the feed is). </p><br>
             </div> 
 
 
             <div class="container">
                 <p class="copy">
-                For U-Bahn stations, the BVG has a <a href="https://www.bvg.de/de/Fahrinfo/Verkehrsmeldungen/Aufzugsstoerungen" target="blank">website</a> listing currently out-of-order elevators. They do not make this data available via a public API, however. The S-Bahn also shares this information on <a href="https://sbahn.berlin/fahren/bahnhofsuebersicht/barrierefrei-unterwegs/aufzug-und-fahrtreppenstoerungen/?acc=acc2000-tab107">their website</a> (which also includes escalator outages), but again, no API is made available.  </p><br>
+                For U-Bahn stations, the BVG has a <a href="https://www.bvg.de/de/Fahrinfo/Verkehrsmeldungen/Aufzugsstoerungen" target="blank">website</a> listing currently out-of-order elevators. They do not make this data available via a public API, however. The S-Bahn also shares this information on <a href="https://sbahn.berlin/fahren/bahnhofsuebersicht/barrierefrei-unterwegs/aufzug-und-fahrtreppenstoerungen/?acc=acc2000-tab107">their website</a>.  </p><br>
             </div> 
 
             <ul class="p-bottom">
                     <li><a href="http://brokenlifts.org/" target="blank">BrokenLifts (Website)</a></li>
+                    <li><a href="https://data.deutschebahn.com/dataset/fasta-station-facilities-status" target="blank">Deutsche Bahn FaSta API (API)</a></li>
                     <li><a href="https://www.vbb.de/unsere-themen/vbbdigital/api-entwicklerinfos/rss-feed-aufzugsstoerungen" target="blank">VBB Elevator Disruptions (RSS Feed)</a></li>
                 </ul>
 
