@@ -9,7 +9,7 @@ colorMode: bright
 featuredImage: /projects/datadive-accessibility/images/featured.jpg
 thumbnail: /projects/datadive-accessibility/images/thumbnail.jpg
 heroImage: /projects/datadive-accessibility/images/hero.jpg
-visible: false
+visible: true
 featured: false
 authors:
   - victoria-dykes
@@ -232,9 +232,7 @@ A smart city can’t truly be smart if broad segments of its population are bein
 Further Resources
 -----------------
 
-![A screenshot of a website Wheelmap, which shoes wheelchair accessible locations in Berlin](images/wheelmap.png)
-
-The website Wheelmap gathers information on wheelchair-accessible locations across the city
+{% include macro-image-section-markdown.html src="../images/wheelmap.png" caption="A screenshot of a website Wheelmap, which shows wheelchair accessible locations in Berlin" %}
 
 There are a few websites worth highlighting that, although they don’t all make available raw data, nevertheless provide valuable information related to accessibility in Berlin:  
   
