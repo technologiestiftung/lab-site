@@ -18,8 +18,7 @@ end: 2019-02-20
 status: finished
 date: 2019-02-20
 redirect_from:
-  - /projects/123456789/
-  - /old-site-path/my-amazing-post/
+  - /projects/datadive_accessibility/index.html
 
 ---
 
