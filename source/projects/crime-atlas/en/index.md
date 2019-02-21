@@ -2,7 +2,7 @@
 layout: project
 description: The crime atlas serves as a model project for the publishing of open data
 lang: en
-title: "How to Publish sensitive data openly: Berlin's Crime Atlas"
+title: "How to publish sensitive data openly: Berlin's Crime Atlas"
 subtitle: Open Data lessons from Berlin's Police
 type: publication
 colorMode: bright
@@ -33,8 +33,7 @@ The Berlin Police presumably had many similar concerns to those mentioned earlie
   
 In doing so, the police have set an excellent example for other government bodies to follow, both in Berlin and beyond. Here are a few notable features of the Crime Atlas that show how governments can successfully publish sensitive or complicated types of data.
 
-1\. The atlas explains what variables the data includes and how they were chosen.
----------------------------------------------------------------------------------
+### 1) The atlas explains what variables the data includes and how they were chosen.
 
 The Crime Atlas only contains data for a specific set of crimes. These include crimes like muggings, bike thefts and drug-related crimes. The dataset does not include statistics for more serious crimes, like murder or rape. But rather than simply allowing data users to fill in the blanks as to why some crimes have been featured and not others (which could open the door for the police to be criticized for cherry-picking data, for example), the Crime Atlas lists out four explicit factors that were used in the selection of the featured crimes: the ability to connect the crime with a specific location, the breadth of available data on the crime, the relevance of the crime for the general public, and the preventability of the crime.  
   
@@ -43,15 +42,13 @@ This doesn’t mean the police are beyond reproach for their choice of which dat
 {% include macro-image-section-markdown.html src="../images/fahrraddiebstahl.png" caption="Various visualizations of the instances of bike thefts in the Bezirksregion Tempelhofer Vorstadt." %}
 
 
-2\. The atlas explains statistical terms and how they should be understood.
----------------------------------------------------------------------------
+### 2) The atlas explains statistical terms and how they should be understood.
 
 The Crime Atlas makes use of statistical concepts that many of the general public may not initially be familiar with. Numbers are presented both as the total number of cases for a given crime and as a “frequency number” (German: _Häufigkeitszahl_), which shows how often a crime occurs for every 100,000 residents in a given region (in the case of the Crime Atlas, the regions are either the individual Bezirke, or the “Bezirksregionen” that make up a Bezirk). Knowing that not everyone will understand this number, the Crime Atlas page both explains what the term frequency number means and also visualizes how it is calculated (number of crimes times 100,000, divided by the population of the region in question).  
   
 Moreover, the atlas also explains what factors have an influence on this number being higher or lower – for example, the atlas points out that areas with a high appeal for tourists (like those areas in the center of the city) or which host many large-scale events (like the areas around the Tiergarten) will likely see much higher frequency numbers for crime than other areas. While for some people the connection between these factors and higher frequency numbers is obvious, for others it may be new information. And if the police want to ensure their data is correctly interpreted, it’s a good idea for them to be explicit about how their statistics are calculated and what contextual factors are important for understanding these numbers.
 
-3\. The atlas provides additional context for the six areas with the highest crime rates.
------------------------------------------------------------------------------------------
+### 3) The atlas provides additional context for the six areas with the highest crime rates.
 
 A major reason why police departments the world over are often reluctant to publish crime data is because of a general fear that this data will be used to cast a city – or specific parts of a city – in a negative light. People will see the data and conclude, rightfully or wrongfully, that crime is far too high and that the police don’t have a good control of the situation, or at least that certain areas of the city are much less safe than others.  
   

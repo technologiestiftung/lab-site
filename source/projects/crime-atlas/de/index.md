@@ -30,8 +30,7 @@ Eine mögliche Lösung für dieses Dilemma liegt darin, zusätzliche Kontextinfo
   
 Höchstwahrscheinlich bestanden auch bei der Berliner Polizei im Vorfeld Bedenken – Daten über Straftaten sind sensibel und es besteht ein gewisses Risiko der Fehlinterpretation. Um diesen Sorgen zu begegnen, hat die Berliner Polizei zusätzlich im Bereich „Hinweise/Erläuterungen“ kontextbezogene Informationen veröffentlicht, sodass sich besser nachvollziehen lässt, was die Daten wirklich zeigen – und was nicht. Diese Veröffentlichungspraxis ist vorbildlich und die Polizei gibt damit ein gutes Beispiel, wie sich auch sensiblere oder komplexere Datensätze öffentlich zugänglich machen lassen.
 
-1\. Der Atlas erklärt, welche Variablen die Daten beinhalten und wie diese ausgewählt wurden.
----------------------------------------------------------------------------------------------
+### 1) Der Atlas erklärt, welche Variablen die Daten beinhalten und wie diese ausgewählt wurden.
 
 Der Kriminalitätsatlas zeigt nur Daten zu einer bestimmten Auswahl an Straftaten, etwa Straßenraub, Fahrraddiebstahl, und Rauschgiftdelikte. Nicht zu finden sind gravierendere Straftaten wie Mord oder Vergewaltigung. Statt es den Nutzer\*innen zu überlassen, über Gründe für die Auswahl zu spekulieren, erläutert der Atlas vier explizite Kriterien, anhand derer die Auswahl erfolgt ist: die Möglichkeit für eine exakte Standorterfassung der Straftat, die Verfügbarkeit einer ausreichenden Datenbasis, die öffentliche Wahrnehmbarkeit der Straftat, und die Frage, inwieweit die Straftat vermeidbar gewesen wäre.  
   
@@ -39,15 +38,13 @@ Natürlich ließe sich nach wie vor kritisieren, dass nur ein Teil der vorhanden
 
 {% include macro-image-section-markdown.html src="../images/fahrraddiebstahl.png" caption="Visualisierungen von Fahrraddiebstahl in Bezirksregion Tempelhofer Vorstadt." %}
 
-2\. Der Atlas erklärt statistische Begriffe und wie man sie verstehen sollte.
------------------------------------------------------------------------------
+### 2) Der Atlas erklärt statistische Begriffe und wie man sie verstehen sollte.
 
 Der Kriminalitätsatlas verwendet an einigen Stellen statistische Konzepte, die das breite Publikum eventuell nicht kennt. So werden zum Beispiel Straftaten als Anzahl absoluter Fälle sowie als Häufigkeitszahl dargestellt. Die Häufigkeitszahl zeigt, wie die Häufigkeit einer Straftat pro 100,000 Einwohner in einer Region (bei dem Kriminalitätsatlas ist die Region entweder ein Bezirk oder eine Bezirksregion). Weil das nicht selbsterklärend ist, erläutert der Atlas, was der Begriff bedeutet und wie die Zahl errechnet wird.  
   
 Weiterhin erklärt der Atlas, welche Faktoren einen Einfluss auf die Höhe der Häufigkeitszahl haben – zum Beispiel haben bei Touristen beliebte Orten (wie die Gebiete in der Stadtmitte) oder Orte, an denen regelmäßig große Veranstaltungen stattfinden (wie die Gebiete um den Tiergarten), oft höhere Häufigkeitszahlen für Kriminalität. Dieser Zusammenhang ist vielleicht nicht für jede\*n offensichtlich. Um eine korrekte Interpretation zu ermöglichen, ist es sinnvoll, dass die Berechnungsgrundlage ebenso wie kontextuelle Faktoren explizit erklärt werden.
 
-3\. Der Atlas liefert zusätzlichen Kontext für die sechs „stark belasteten“ Bezirksregionen.
---------------------------------------------------------------------------------------------
+### 3) Der Atlas liefert zusätzlichen Kontext für die sechs „stark belasteten“ Bezirksregionen.
 
 Viele Polizeibehörden lehnen die Veröffentlichung von Kriminalitätsdaten ab, weil sie Angst haben, ihre Stadt (oder einzige Stadtteile) könnten in einem schlechten Licht erscheinen. Schließlich könnte man beim Betrachten der Daten den Eindruck bekommen (ob zurecht oder nicht), dass die Zahlen zu hoch seien und die Polizei die Situation folglich nicht unter Kontrolle habe.  
   
