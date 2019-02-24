@@ -10,7 +10,7 @@ subtitle: ServicePortal berlin.de
 type: publication
 colorMode: dark
 featuredImage: /projects/hinweise-zur-barrierefreiheit-auf-der-serviceportal-berlin.de/images/featured.jpg
-thumbnail: /projects/hinweise-zur-barrierefreiheit-auf-der-serviceportal-berlin.de/images/thumbnail.svg
+thumbnail: /projects/hinweise-zur-barrierefreiheit-auf-der-serviceportal-berlin.de/images/thumbnail.jpg
 heroImage: /projects/hinweise-zur-barrierefreiheit-auf-der-serviceportal-berlin.de/images/hero.svg
 visible: true
 featured: false

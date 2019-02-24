@@ -5,8 +5,48 @@
   //     max-width: 100%;
   //   }
   // }
-  p {
+  .highlighter-rouge {
+    margin: 0 $spacing-s $spacing-l $spacing-s;
+  }
+
+  h1 {
+    font-size: $font-size-xl;
     margin: 0 $spacing-page-m $spacing-l $spacing-page-m;
+
+    @media only screen and (max-width: $screen-m) {
+      margin: 0 $spacing-s $spacing-m $spacing-s;
+    }
+  }
+
+  h2 {
+    font-size: $font-size-xl;
+    margin: 0 $spacing-page-m $spacing-m $spacing-page-m;
+
+    @media only screen and (max-width: $screen-m) {
+      margin: 0 0 $spacing-m 0;
+    }
+  }
+  
+  h3 {
+    margin: 0 $spacing-page-m $spacing-s $spacing-page-m;
+
+    @media only screen and (max-width: $screen-m) {
+      margin: 0 0 $spacing-m 0;
+    }
+  }
+
+  ul {
+    margin: 0 $spacing-page-m $spacing-l $spacing-page-m;
+    list-style-type: disc;
+
+    @media only screen and (max-width: $screen-m) {
+      margin: 0 0 $spacing-m 0;
+    }
+  }
+
+
+  p {
+    margin: 0 $spacing-page-m $spacing-m $spacing-page-m;
 
     @media only screen and (max-width: $screen-m) {
       margin: 0 0 $spacing-m 0;
@@ -16,7 +56,7 @@
       margin: 0 $spacing-page-m 0 $spacing-page-m;
 
       @media only screen and (max-width: $screen-m) {
-        margin: 0;
+        margin: 0 0;
       }
     }
 
@@ -40,4 +80,68 @@
         margin: $spacing-s 0;
     }
   }
+}
+
+.project {
+
+  &--publication {
+    ul {
+      li:before {
+        content: "→ ";
+        color: $color-publication;
+        position: absolute;
+        transform: translate(-25px);
+
+        @media only screen and (max-width: $screen-m) {
+          transform: translate(-20px);
+        }
+      }
+    }
+  }
+
+  &--workshop {
+    ul {
+      li:before {
+        content: "→ ";
+        position: absolute;
+        transform: translate(-25px);
+        color: $color-workshop;
+
+        @media only screen and (max-width: $screen-m) {
+          transform: translate(-20px);
+        }
+      }
+    }
+  }
+
+  &--dataset {
+    ul {
+      li:before {
+        content: "→ ";
+        position: absolute;
+        transform: translate(-25px);
+        color: $color-dataset;
+
+        @media only screen and (max-width: $screen-m) {
+          transform: translate(-20px);
+        }
+      }
+    }
+  }
+
+  &--prototype {
+    ul {
+      li:before {
+        color: $color-prototype;
+        content: "→ ";
+        position: absolute;
+        transform: translate(-25px);
+
+        @media only screen and (max-width: $screen-m) {
+          transform: translate(-20px);
+        }
+      }
+    }
+  }
+
 }

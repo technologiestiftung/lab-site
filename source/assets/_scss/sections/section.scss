@@ -3,14 +3,14 @@ section {
 
 
     @media only screen and (max-width: $screen-m) {
-        margin: $spacing-xxl $spacing-page-xs $spacing-xl $spacing-page-xs;
+        margin: $spacing-xxl $spacing-m $spacing-xl $spacing-m;
     }
 
     &:last-of-type {
         margin: 0 $spacing-page-m 0 $spacing-page-m;
 
         @media only screen and (max-width: $screen-m) {
-            margin: 0 $spacing-page-xs 0 $spacing-page-xs;
+            margin: 0 $spacing-m 0 $spacing-m;
         }
     }
 }

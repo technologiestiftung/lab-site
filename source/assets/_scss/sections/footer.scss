@@ -9,12 +9,12 @@
     border-bottom: 1px solid $light-grey;
 
     @media only screen and (max-width: $screen-s) {
-        padding: 0 $spacing-page-xs;
+        padding: 0 $spacing-m;
     }
 
     @media only screen and (max-width: $screen-m) {
         flex-direction: column;
-        padding: 0 $spacing-page-xs;
+        padding: 0 $spacing-m;
     }
 
     &-outer {

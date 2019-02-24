@@ -53,7 +53,7 @@ Für Informationen darüber, welche U-Bahnstationen bisher keinen Aufzug haben, 
 
 Da die S-Bahn von der Deutsche Bahn AG betrieben wird, gibt es Informationen zu Aufzügen im S-Bahn-Netz in [diesem offenen Datensatz](https://data.deutschebahn.com/dataset/data-aufzug) der Deutschen Bahn. Sonst bietet die Webseite der S-Bahn Berlin eine [Bahnhofsübersicht](https://sbahn.berlin/fahren/bahnhofsuebersicht/), die auch Informationen über Barrierefreiheit in den Stationen liefert.
 
-*   [Koordinaten der Zugangsmöglichkeiten zu Stationen (CSV)](https://daten.berlin.de/datensaetze/koordinaten-der-zugangsm%C3%B6glichkeiten-zu-stationen-0)
+*   [Koordinaten](https://daten.berlin.de/datensaetze/koordinaten-der-zugangsm%C3%B6glichkeiten-zu-stationen-0) der Zugangsmöglichkeiten zu Stationen (CSV)
 *   [Barrierefreies Reisen mit der BVG (Webseite)](https://www.bvg.de/de/Willkommen/Barrierefreies-Reisen)
 *   [Aufzugsdaten der Deutsche Bahn (XLSX & CSV)](https://data.deutschebahn.com/dataset/data-aufzug)
 
@@ -79,14 +79,14 @@ Für U-Bahnstationen, bietet die BVG [eine Webseite mit Aufzugsstörungen](https
 <u>Status: Offene Daten verfügbar</u>  
 Für Menschen mit eingeschränkter Mobilität, die die kürzeste Route planen wollen, kann es wichtig sein zu wissen, wo genau eine Haltestelle oder der Eingang zu einer Station liegen (Informationen, die z.B. Google Maps nicht immer zeigt). Diese Daten sind [im Berliner Datenportal veröffentlicht](https://daten.berlin.de/datensaetze/koordinaten-der-zugangsm%C3%B6glichkeiten-zu-stationen-0) (der Datensatz wurde schon im Abschnitt über die Verfügbarkeit von Aufzügen erwähnt). Der Datensatz beinhaltet Koordinaten für alle Haltestellen und Stations-Eingänge im VBB-Netz. Hier ist auch aufgelistet, wo ein Eingang über eine Rampe oder einen Aufzug verfügt.
 
-*   [Koordinaten der Zugangsmöglichkeiten zu Stationen (CSV)](https://daten.berlin.de/datensaetze/koordinaten-der-zugangsm%C3%B6glichkeiten-zu-stationen-0)
+*   [Koordinaten](https://daten.berlin.de/datensaetze/koordinaten-der-zugangsm%C3%B6glichkeiten-zu-stationen-0) der Zugangsmöglichkeiten zu Stationen (CSV)
 
 ### Informationen über verlegte oder zurzeit nicht bediente Haltestellen und Eingänge
 
 <u>Status: Begrenzte Verfügbarkeit nicht-offener Daten</u>  
 Wie bei Rolltreppen und Aufzügen, reicht es nicht zu wissen, wo unter normalen Umständen eine Haltestelle oder ein Bahnhofs-Eingang verortet ist. Bauprojekte führen oft zu verlegten Haltestellen oder gesperrten Eingängen, und das kann die Barrierefreiheit eines Ortes negativ beeinflussen. Die Verkehrsinformationszentrale Berlin veröffentlicht eine [interaktive Karte](https://viz.berlin.de/web/guest/2?p_p_id=vizmap_WAR_vizmapportlet_INSTANCE_Ds4N&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_vizmap_WAR_vizmapportlet_INSTANCE_Ds4N_cmd=bus&_vizmap_WAR_vizmapportlet_INSTANCE_Ds4N_submenu=bus_default) die Störungen im öffentlichen Verkehr anmerkt. Es gibt auch eine [HTML-Meldungsliste](https://viz.berlin.de/2?p_p_id=vizmap_WAR_vizmapportlet_INSTANCE_Ds4N&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_vizmap_WAR_vizmapportlet_INSTANCE_Ds4N_cmd=bus&_vizmap_WAR_vizmapportlet_INSTANCE_Ds4N_submenu=bus_list). Es werden aber keine API oder rohe Daten zur Verfügung gestellt.
 
-*   [Verkehrsmeldungen für Bus und Bahn von der VIZ (Webseite)](https://viz.berlin.de/web/guest/2?p_p_id=vizmap_WAR_vizmapportlet_INSTANCE_Ds4N&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_vizmap_WAR_vizmapportlet_INSTANCE_Ds4N_cmd=bus&_vizmap_WAR_vizmapportlet_INSTANCE_Ds4N_submenu=bus_default)
+*   [Verkehrsmeldungen](https://viz.berlin.de/web/guest/2?p_p_id=vizmap_WAR_vizmapportlet_INSTANCE_Ds4N&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_vizmap_WAR_vizmapportlet_INSTANCE_Ds4N_cmd=bus&_vizmap_WAR_vizmapportlet_INSTANCE_Ds4N_submenu=bus_default) für Bus und Bahn von der VIZ (Webseite)
 
 ### Blindenleitsysteme in S- und U-Bahnhöfen
 
@@ -94,7 +94,7 @@ Wie bei Rolltreppen und Aufzügen, reicht es nicht zu wissen, wo unter normalen 
 Blindenleitsysteme nutzen Elemente wie Rillen und Noppen, um sehbehinderten Menschen dabei zu helfen, den richtigen Weg zu finden. Viele Stationen in Berlin verfügen über ein Blindenleitsystem, aber es gibt keinen Datensatz dazu, genau welche Stationen so ein System haben. Die BVG scheint keine spezifischen Informationen dazu zu veröffentlichen, aber die [Bahnhofsübersicht-Seite der S-Bahn Berlin](https://sbahn.berlin/fahren/bahnhofsuebersicht/) notiert, welche Stationen ein Blindenleitsystem haben. Eine [kleine Anfrage vom Mai 2018](https://kleineanfragen.de/berlin/18/15096-barrierefreiheit-auf-s-bahnhoefen) bietet eine Liste von allen S-Bahnhöfen, die aktuell über kein Blindenleitsystem verfügen. Schwieriger zu finden sind Informationen über den Stand in U-Bahnhöfen. [Diese kleine Anfrage](https://kleineanfragen.de/berlin/17/12203-blindenleitsysteme-im-oeffentlichen-nahverkehr) vom Juni 2013 hat eine Tabelle mit Informationen über U-Bahnhöfe, aber die Daten sind so alt, dass sie wahrscheinlich nicht mehr gültig sind.
 
 *   [Mai 2018 kleine Anfrage zu Barrierefreiheit in S-Bahnhöfen (PDF)](https://kleineanfragen.de/berlin/18/15096-barrierefreiheit-auf-s-bahnhoefen)
-*   [Juni 2013 kleine Anfrage zu Blindenleitsystemen im öffentlichen Nahverkehr (PDF)](https://kleineanfragen.de/berlin/17/12203-blindenleitsysteme-im-oeffentlichen-nahverkehr)
+*   Juni 2013 [kleine Anfrage](https://kleineanfragen.de/berlin/17/12203-blindenleitsysteme-im-oeffentlichen-nahverkehr) zu Blindenleitsystemen im öffentlichen Nahverkehr (PDF)
 
 Barrierefreiheit in öffentlichen Räumen
 ---------------------------------------

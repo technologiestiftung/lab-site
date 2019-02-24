@@ -5,6 +5,9 @@
         {%- else -%}
         Aus dem Lab
       {%- endif -%}</h2>
+
+    <div class="timeline timeline__wrapper" id="timeline"></div>
+
     <ul class="grid feed-list">
         {%- for pg in include.sorted_pages -%}
         {%- if pg.layout == "project" and pg.visible == true  and pg.lang == page.lang %}
@@ -36,5 +39,5 @@
         {%- endif -%}
         {%- endfor -%}
     </ul>
-    <div class="timeline timeline__wrapper" id="timeline"></div>
+    
 </section>

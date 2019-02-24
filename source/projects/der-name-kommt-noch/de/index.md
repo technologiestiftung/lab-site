@@ -7,7 +7,7 @@ subtitle: warum sind sie so wichtig und warum gehen sie jeden an
 type: publication
 colorMode: dark
 featuredImage: /projects/der-name-kommt-noch/images/featured.jpg
-thumbnail: /projects/der-name-kommt-noch/images/picture.png
+thumbnail: /projects/der-name-kommt-noch/images/thumbnail.jpg
 heroImage: /projects/der-name-kommt-noch/images/background.png
 visible: true
 featured: false

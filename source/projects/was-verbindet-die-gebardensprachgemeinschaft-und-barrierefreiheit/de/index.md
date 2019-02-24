@@ -7,7 +7,7 @@ subtitle: ""
 type: publication
 colorMode: dark
 featuredImage: /projects/was-verbindet-die-gebardensprachgemeinschaft-und-barrierefreiheit/images/featured.jpg
-thumbnail: /projects/was-verbindet-die-gebardensprachgemeinschaft-und-barrierefreiheit/images/thumbnail.svg
+thumbnail: /projects/was-verbindet-die-gebardensprachgemeinschaft-und-barrierefreiheit/images/thumbnail.jpg
 heroImage: /projects/was-verbindet-die-gebardensprachgemeinschaft-und-barrierefreiheit/images/background.svg
 visible: true
 featured: false
