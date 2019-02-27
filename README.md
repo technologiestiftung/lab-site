@@ -90,3 +90,11 @@ npm run boilerplate PROJECT="GraueDaten" AUTHOR="benjaminseibel" TYPE="light" DA
 ```bash
 npm run boilerplate PROJECT="ODIS-Launch" AUTHOR="toridykes" TYPE="light" DATE="18/05/2018" GITHUB_URL="" TAG_DE="Offene Daten" TAG_EN="OpenData" PROJECT_TITLE_DE="ODIS" PROJECT_TITLE_EN="ODIS" SHORT_TITLE_DE="ODIS" SHORT_TITLE_EN="ODIS" SHORT_SUBTITLE_DE="Zum Start der Open Data Informationsstelle" SHORT_SUBTITLE_EN="Launch of ODIS" PROJECT_DESCRIPTION_DE="Ein paar Gedanken zu ODIS" PROJECT_DESCRIPTION_EN="Some thoughts about ODIS"
 ```
+
+## Support
+
+We are part of BrowserStack's non-profit program, helping us deliver an even better user experience.
+
+<a href="https://www.browserstack.com/">
+  <img src="https://p14.zdusercontent.com/attachment/1015988/Hjnr3apa9OCplUi1GbaLiCVa7?token=eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..QA4hJSE7NQfMjFDK1w6tog.0-YOVfCRjxpeHUf5tjKutEEoQn-U5peEUgQ6ZxBZugOJrShlKGm0lCgAURhV9T8Y-dIiFS9xTpdJ0UVPzSL1k4ka4emU3lzjerjHwhHt3Yl65Fs3S4JUWOhHvmiiG9-C0DvY7PJAEpwtGMNf-auRy84MUiYSMIriQzwkTTBJ7rdm7laryRnCGntFYfhs_GgGK38QEk8ZUhmx6M45yPoGTYrwjFPN85D3YmUA1zsEYEYKpIYOE2zdWT38wtQ6yyNWFTi6GyVQZ-p8nXAGbE5ZQR8XlKU2CquvZurSDtFeWhM.BIRFSvq27MoywSgtua3tYw" height="100">
+</a>
