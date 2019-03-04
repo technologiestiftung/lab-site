@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded',function() {
         function update_texts(word) {
             d3.csv("../preprocessed.csv", function(text_data) {
                 example_texts = text_data.filter(function(row) {
-                    return (row['title_stemmed_list']).includes(word)
+                    return (row['title_stemmed_list']).includes(word.toLowerCase())
                 })
                 
                 //select 5 random examples
