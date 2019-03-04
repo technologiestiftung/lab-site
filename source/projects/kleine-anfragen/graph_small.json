@@ -1,0 +1,2856 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "name": "17",
+            "size": 27
+        },
+        {
+            "id": 1,
+            "name": "abs",
+            "size": 26
+        },
+        {
+            "id": 2,
+            "name": "abschieb",
+            "size": 42
+        },
+        {
+            "id": 3,
+            "name": "aktivitat",
+            "size": 36
+        },
+        {
+            "id": 4,
+            "name": "alt",
+            "size": 53
+        },
+        {
+            "id": 5,
+            "name": "anerkenn",
+            "size": 34
+        },
+        {
+            "id": 6,
+            "name": "anfrag",
+            "size": 35
+        },
+        {
+            "id": 7,
+            "name": "angebot",
+            "size": 40
+        },
+        {
+            "id": 8,
+            "name": "angriff",
+            "size": 37
+        },
+        {
+            "id": 9,
+            "name": "anschlag",
+            "size": 106
+        },
+        {
+            "id": 10,
+            "name": "anzahl",
+            "size": 37
+        },
+        {
+            "id": 11,
+            "name": "arbeit",
+            "size": 98
+        },
+        {
+            "id": 12,
+            "name": "asylbewerb",
+            "size": 38
+        },
+        {
+            "id": 13,
+            "name": "asylsuch",
+            "size": 35
+        },
+        {
+            "id": 14,
+            "name": "auftrag",
+            "size": 41
+        },
+        {
+            "id": 15,
+            "name": "ausbau",
+            "size": 38
+        },
+        {
+            "id": 16,
+            "name": "ausbild",
+            "size": 57
+        },
+        {
+            "id": 17,
+            "name": "ausland",
+            "size": 47
+        },
+        {
+            "id": 18,
+            "name": "ausschreib",
+            "size": 30
+        },
+        {
+            "id": 19,
+            "name": "ausstatt",
+            "size": 32
+        },
+        {
+            "id": 20,
+            "name": "auswirk",
+            "size": 102
+        },
+        {
+            "id": 21,
+            "name": "bad",
+            "size": 34
+        },
+        {
+            "id": 22,
+            "name": "baderbetrieb",
+            "size": 52
+        },
+        {
+            "id": 23,
+            "name": "bahn",
+            "size": 26
+        },
+        {
+            "id": 24,
+            "name": "bahnhof",
+            "size": 75
+        },
+        {
+            "id": 25,
+            "name": "barrierefrei",
+            "size": 90
+        },
+        {
+            "id": 26,
+            "name": "bau",
+            "size": 49
+        },
+        {
+            "id": 27,
+            "name": "baustell",
+            "size": 36
+        },
+        {
+            "id": 28,
+            "name": "bauvorhab",
+            "size": 29
+        },
+        {
+            "id": 29,
+            "name": "bbb",
+            "size": 43
+        },
+        {
+            "id": 30,
+            "name": "bedarf",
+            "size": 32
+        },
+        {
+            "id": 31,
+            "name": "behinder",
+            "size": 78
+        },
+        {
+            "id": 32,
+            "name": "behord",
+            "size": 46
+        },
+        {
+            "id": 33,
+            "name": "bekampf",
+            "size": 35
+        },
+        {
+            "id": 34,
+            "name": "belast",
+            "size": 32
+        },
+        {
+            "id": 35,
+            "name": "ber",
+            "size": 211
+        },
+        {
+            "id": 36,
+            "name": "berat",
+            "size": 33
+        },
+        {
+            "id": 37,
+            "name": "berdebakel",
+            "size": 148
+        },
+        {
+            "id": 38,
+            "name": "berlinbrandenburg",
+            "size": 41
+        },
+        {
+            "id": 39,
+            "name": "berlinovo",
+            "size": 30
+        },
+        {
+            "id": 40,
+            "name": "beruf",
+            "size": 53
+        },
+        {
+            "id": 41,
+            "name": "beschaftigt",
+            "size": 58
+        },
+        {
+            "id": 42,
+            "name": "beteil",
+            "size": 36
+        },
+        {
+            "id": 43,
+            "name": "betrieb",
+            "size": 54
+        },
+        {
+            "id": 44,
+            "name": "betroff",
+            "size": 32
+        },
+        {
+            "id": 45,
+            "name": "bezirksamt",
+            "size": 37
+        },
+        {
+            "id": 46,
+            "name": "bilanz",
+            "size": 40
+        },
+        {
+            "id": 47,
+            "name": "bildung",
+            "size": 75
+        },
+        {
+            "id": 48,
+            "name": "bleibt",
+            "size": 31
+        },
+        {
+            "id": 49,
+            "name": "brandenburg",
+            "size": 61
+        },
+        {
+            "id": 50,
+            "name": "breitscheidplatz",
+            "size": 93
+        },
+        {
+            "id": 51,
+            "name": "bruck",
+            "size": 51
+        },
+        {
+            "id": 52,
+            "name": "bund",
+            "size": 28
+        },
+        {
+            "id": 53,
+            "name": "burgermeist",
+            "size": 29
+        },
+        {
+            "id": 54,
+            "name": "bvg",
+            "size": 145
+        },
+        {
+            "id": 55,
+            "name": "charit\u00e9",
+            "size": 56
+        },
+        {
+            "id": 56,
+            "name": "dat",
+            "size": 35
+        },
+        {
+            "id": 57,
+            "name": "demonstration",
+            "size": 34
+        },
+        {
+            "id": 58,
+            "name": "denkmalschutz",
+            "size": 33
+        },
+        {
+            "id": 59,
+            "name": "deutsch",
+            "size": 72
+        },
+        {
+            "id": 60,
+            "name": "dien",
+            "size": 65
+        },
+        {
+            "id": 61,
+            "name": "digital",
+            "size": 31
+        },
+        {
+            "id": 62,
+            "name": "direktion",
+            "size": 39
+        },
+        {
+            "id": 63,
+            "name": "diskriminier",
+            "size": 27
+        },
+        {
+            "id": 64,
+            "name": "drs",
+            "size": 47
+        },
+        {
+            "id": 65,
+            "name": "drucksach",
+            "size": 59
+        },
+        {
+            "id": 66,
+            "name": "ehemal",
+            "size": 101
+        },
+        {
+            "id": 67,
+            "name": "einfuhr",
+            "size": 30
+        },
+        {
+            "id": 68,
+            "name": "einricht",
+            "size": 71
+        },
+        {
+            "id": 69,
+            "name": "einsatz",
+            "size": 97
+        },
+        {
+            "id": 70,
+            "name": "elektron",
+            "size": 42
+        },
+        {
+            "id": 71,
+            "name": "engagement",
+            "size": 26
+        },
+        {
+            "id": 72,
+            "name": "ergebnis",
+            "size": 106
+        },
+        {
+            "id": 73,
+            "name": "erhalt",
+            "size": 38
+        },
+        {
+            "id": 74,
+            "name": "ermittl",
+            "size": 40
+        },
+        {
+            "id": 75,
+            "name": "europa",
+            "size": 44
+        },
+        {
+            "id": 76,
+            "name": "evaluation",
+            "size": 28
+        },
+        {
+            "id": 77,
+            "name": "fall",
+            "size": 34
+        },
+        {
+            "id": 78,
+            "name": "famili",
+            "size": 28
+        },
+        {
+            "id": 79,
+            "name": "fehlend",
+            "size": 28
+        },
+        {
+            "id": 80,
+            "name": "feld",
+            "size": 45
+        },
+        {
+            "id": 81,
+            "name": "feuerwehr",
+            "size": 169
+        },
+        {
+            "id": 82,
+            "name": "finanziell",
+            "size": 34
+        },
+        {
+            "id": 83,
+            "name": "finanzier",
+            "size": 53
+        },
+        {
+            "id": 84,
+            "name": "fluchtling",
+            "size": 226
+        },
+        {
+            "id": 85,
+            "name": "fluchtlingsunterbring",
+            "size": 32
+        },
+        {
+            "id": 86,
+            "name": "fluchtlingsunterkunft",
+            "size": 94
+        },
+        {
+            "id": 87,
+            "name": "flughaf",
+            "size": 147
+        },
+        {
+            "id": 88,
+            "name": "flughafengesellschaft",
+            "size": 53
+        },
+        {
+            "id": 89,
+            "name": "folg",
+            "size": 50
+        },
+        {
+            "id": 90,
+            "name": "forder",
+            "size": 98
+        },
+        {
+            "id": 91,
+            "name": "frag",
+            "size": 59
+        },
+        {
+            "id": 92,
+            "name": "frau",
+            "size": 41
+        },
+        {
+            "id": 93,
+            "name": "freie",
+            "size": 45
+        },
+        {
+            "id": 94,
+            "name": "freiwill",
+            "size": 67
+        },
+        {
+            "id": 95,
+            "name": "friedrichshainkreuzberg",
+            "size": 40
+        },
+        {
+            "id": 96,
+            "name": "gebaud",
+            "size": 55
+        },
+        {
+            "id": 97,
+            "name": "gefahr",
+            "size": 58
+        },
+        {
+            "id": 98,
+            "name": "gefluchtet",
+            "size": 156
+        },
+        {
+            "id": 99,
+            "name": "gefordert",
+            "size": 30
+        },
+        {
+            "id": 100,
+            "name": "geland",
+            "size": 29
+        },
+        {
+            "id": 101,
+            "name": "gemeinsam",
+            "size": 40
+        },
+        {
+            "id": 102,
+            "name": "geplant",
+            "size": 85
+        },
+        {
+            "id": 103,
+            "name": "gericht",
+            "size": 31
+        },
+        {
+            "id": 104,
+            "name": "gesetz",
+            "size": 34
+        },
+        {
+            "id": 105,
+            "name": "gesichert",
+            "size": 26
+        },
+        {
+            "id": 106,
+            "name": "gesund",
+            "size": 56
+        },
+        {
+            "id": 107,
+            "name": "gewalt",
+            "size": 74
+        },
+        {
+            "id": 108,
+            "name": "gewobag",
+            "size": 33
+        },
+        {
+            "id": 109,
+            "name": "grun",
+            "size": 44
+        },
+        {
+            "id": 110,
+            "name": "grundschul",
+            "size": 70
+        },
+        {
+            "id": 111,
+            "name": "grundstuck",
+            "size": 42
+        },
+        {
+            "id": 112,
+            "name": "halbjahr",
+            "size": 38
+        },
+        {
+            "id": 113,
+            "name": "hellersdorf",
+            "size": 46
+        },
+        {
+            "id": 114,
+            "name": "hilf",
+            "size": 53
+        },
+        {
+            "id": 115,
+            "name": "hochschul",
+            "size": 124
+        },
+        {
+            "id": 116,
+            "name": "hoh",
+            "size": 46
+        },
+        {
+            "id": 117,
+            "name": "iga",
+            "size": 37
+        },
+        {
+            "id": 118,
+            "name": "illegal",
+            "size": 57
+        },
+        {
+            "id": 119,
+            "name": "immobili",
+            "size": 67
+        },
+        {
+            "id": 120,
+            "name": "information",
+            "size": 26
+        },
+        {
+            "id": 121,
+            "name": "infrastruktur",
+            "size": 33
+        },
+        {
+            "id": 122,
+            "name": "inklusion",
+            "size": 34
+        },
+        {
+            "id": 123,
+            "name": "inn",
+            "size": 58
+        },
+        {
+            "id": 124,
+            "name": "integration",
+            "size": 38
+        },
+        {
+            "id": 125,
+            "name": "integriert",
+            "size": 44
+        },
+        {
+            "id": 126,
+            "name": "international",
+            "size": 43
+        },
+        {
+            "id": 127,
+            "name": "investition",
+            "size": 29
+        },
+        {
+            "id": 128,
+            "name": "islam",
+            "size": 26
+        },
+        {
+            "id": 129,
+            "name": "jobcent",
+            "size": 94
+        },
+        {
+            "id": 130,
+            "name": "jugend",
+            "size": 100
+        },
+        {
+            "id": 131,
+            "name": "justiz",
+            "size": 55
+        },
+        {
+            "id": 132,
+            "name": "justizvollzug",
+            "size": 32
+        },
+        {
+            "id": 133,
+            "name": "justizvollzugsanstalt",
+            "size": 37
+        },
+        {
+            "id": 134,
+            "name": "jva",
+            "size": 27
+        },
+        {
+            "id": 135,
+            "name": "kampf",
+            "size": 94
+        },
+        {
+            "id": 136,
+            "name": "kaulsdorf",
+            "size": 41
+        },
+        {
+            "id": 137,
+            "name": "kind",
+            "size": 208
+        },
+        {
+            "id": 138,
+            "name": "kita",
+            "size": 44
+        },
+        {
+            "id": 139,
+            "name": "kitaplatz",
+            "size": 45
+        },
+        {
+            "id": 140,
+            "name": "kitas",
+            "size": 65
+        },
+        {
+            "id": 141,
+            "name": "kleingartenanlag",
+            "size": 30
+        },
+        {
+            "id": 142,
+            "name": "konsequenz",
+            "size": 57
+        },
+        {
+            "id": 143,
+            "name": "kontroll",
+            "size": 58
+        },
+        {
+            "id": 144,
+            "name": "konzept",
+            "size": 27
+        },
+        {
+            "id": 145,
+            "name": "kooperation",
+            "size": 33
+        },
+        {
+            "id": 146,
+            "name": "kopenick",
+            "size": 54
+        },
+        {
+            "id": 147,
+            "name": "kost",
+            "size": 153
+        },
+        {
+            "id": 148,
+            "name": "kostet",
+            "size": 26
+        },
+        {
+            "id": 149,
+            "name": "krankenhaus",
+            "size": 43
+        },
+        {
+            "id": 150,
+            "name": "kreuzberg",
+            "size": 38
+        },
+        {
+            "id": 151,
+            "name": "kriminalitat",
+            "size": 98
+        },
+        {
+            "id": 152,
+            "name": "kultur",
+            "size": 28
+        },
+        {
+            "id": 153,
+            "name": "lageso",
+            "size": 51
+        },
+        {
+            "id": 154,
+            "name": "landesamt",
+            "size": 26
+        },
+        {
+            "id": 155,
+            "name": "landeseig",
+            "size": 167
+        },
+        {
+            "id": 156,
+            "name": "leb",
+            "size": 37
+        },
+        {
+            "id": 157,
+            "name": "lehr",
+            "size": 26
+        },
+        {
+            "id": 158,
+            "name": "lehrkraft",
+            "size": 45
+        },
+        {
+            "id": 159,
+            "name": "leistung",
+            "size": 45
+        },
+        {
+            "id": 160,
+            "name": "lichtenberg",
+            "size": 109
+        },
+        {
+            "id": 161,
+            "name": "linksextremismus",
+            "size": 28
+        },
+        {
+            "id": 162,
+            "name": "mahlsdorf",
+            "size": 74
+        },
+        {
+            "id": 163,
+            "name": "mai",
+            "size": 46
+        },
+        {
+            "id": 164,
+            "name": "marzahn",
+            "size": 37
+        },
+        {
+            "id": 165,
+            "name": "marzahnhellersdorf",
+            "size": 65
+        },
+        {
+            "id": 166,
+            "name": "massnahm",
+            "size": 78
+        },
+        {
+            "id": 167,
+            "name": "mauerpark",
+            "size": 26
+        },
+        {
+            "id": 168,
+            "name": "medizin",
+            "size": 26
+        },
+        {
+            "id": 169,
+            "name": "miet",
+            "size": 31
+        },
+        {
+            "id": 170,
+            "name": "minderjahr",
+            "size": 62
+        },
+        {
+            "id": 171,
+            "name": "mitt",
+            "size": 68
+        },
+        {
+            "id": 172,
+            "name": "moabit",
+            "size": 34
+        },
+        {
+            "id": 173,
+            "name": "mobil",
+            "size": 28
+        },
+        {
+            "id": 174,
+            "name": "modular",
+            "size": 37
+        },
+        {
+            "id": 175,
+            "name": "motiviert",
+            "size": 34
+        },
+        {
+            "id": 176,
+            "name": "muf",
+            "size": 26
+        },
+        {
+            "id": 177,
+            "name": "naturschutz",
+            "size": 27
+        },
+        {
+            "id": 178,
+            "name": "nebentat",
+            "size": 26
+        },
+        {
+            "id": 179,
+            "name": "neu",
+            "size": 58
+        },
+        {
+            "id": 180,
+            "name": "neubau",
+            "size": 40
+        },
+        {
+            "id": 181,
+            "name": "neubauvorhab",
+            "size": 33
+        },
+        {
+            "id": 182,
+            "name": "neukolln",
+            "size": 153
+        },
+        {
+            "id": 183,
+            "name": "notunterkunft",
+            "size": 28
+        },
+        {
+            "id": 184,
+            "name": "nr",
+            "size": 33
+        },
+        {
+            "id": 185,
+            "name": "nutz",
+            "size": 34
+        },
+        {
+            "id": 186,
+            "name": "nutzung",
+            "size": 85
+        },
+        {
+            "id": 187,
+            "name": "obdachlos",
+            "size": 28
+        },
+        {
+            "id": 188,
+            "name": "off",
+            "size": 47
+        },
+        {
+            "id": 189,
+            "name": "opnv",
+            "size": 46
+        },
+        {
+            "id": 190,
+            "name": "organisiert",
+            "size": 76
+        },
+        {
+            "id": 191,
+            "name": "ost",
+            "size": 27
+        },
+        {
+            "id": 192,
+            "name": "pankow",
+            "size": 83
+        },
+        {
+            "id": 193,
+            "name": "park",
+            "size": 50
+        },
+        {
+            "id": 194,
+            "name": "passiert",
+            "size": 31
+        },
+        {
+            "id": 195,
+            "name": "person",
+            "size": 37
+        },
+        {
+            "id": 196,
+            "name": "personal",
+            "size": 30
+        },
+        {
+            "id": 197,
+            "name": "personalsituation",
+            "size": 30
+        },
+        {
+            "id": 198,
+            "name": "perspektiv",
+            "size": 69
+        },
+        {
+            "id": 199,
+            "name": "pfleg",
+            "size": 34
+        },
+        {
+            "id": 200,
+            "name": "plan",
+            "size": 31
+        },
+        {
+            "id": 201,
+            "name": "planstell",
+            "size": 32
+        },
+        {
+            "id": 202,
+            "name": "plant",
+            "size": 38
+        },
+        {
+            "id": 203,
+            "name": "planung",
+            "size": 76
+        },
+        {
+            "id": 204,
+            "name": "platz",
+            "size": 60
+        },
+        {
+            "id": 205,
+            "name": "polit",
+            "size": 73
+        },
+        {
+            "id": 206,
+            "name": "polizei",
+            "size": 446
+        },
+        {
+            "id": 207,
+            "name": "polizeiabschnitt",
+            "size": 28
+        },
+        {
+            "id": 208,
+            "name": "polizeieinsatz",
+            "size": 49
+        },
+        {
+            "id": 209,
+            "name": "pravention",
+            "size": 30
+        },
+        {
+            "id": 210,
+            "name": "praxis",
+            "size": 64
+        },
+        {
+            "id": 211,
+            "name": "privat",
+            "size": 255
+        },
+        {
+            "id": 212,
+            "name": "problem",
+            "size": 29
+        },
+        {
+            "id": 213,
+            "name": "programm",
+            "size": 33
+        },
+        {
+            "id": 214,
+            "name": "projekt",
+            "size": 59
+        },
+        {
+            "id": 215,
+            "name": "qmgebiet",
+            "size": 30
+        },
+        {
+            "id": 216,
+            "name": "qualitat",
+            "size": 37
+        },
+        {
+            "id": 217,
+            "name": "quo",
+            "size": 49
+        },
+        {
+            "id": 218,
+            "name": "rahm",
+            "size": 41
+        },
+        {
+            "id": 219,
+            "name": "raum",
+            "size": 45
+        },
+        {
+            "id": 220,
+            "name": "rechtsextrem",
+            "size": 42
+        },
+        {
+            "id": 221,
+            "name": "reinickendorf",
+            "size": 50
+        },
+        {
+            "id": 222,
+            "name": "rockerkriminalitat",
+            "size": 53
+        },
+        {
+            "id": 223,
+            "name": "roll",
+            "size": 34
+        },
+        {
+            "id": 224,
+            "name": "rudow",
+            "size": 47
+        },
+        {
+            "id": 225,
+            "name": "sachstand",
+            "size": 47
+        },
+        {
+            "id": 226,
+            "name": "sanier",
+            "size": 107
+        },
+        {
+            "id": 227,
+            "name": "sanierungsbedarf",
+            "size": 45
+        },
+        {
+            "id": 228,
+            "name": "sanierungsmassnahm",
+            "size": 37
+        },
+        {
+            "id": 229,
+            "name": "saub",
+            "size": 26
+        },
+        {
+            "id": 230,
+            "name": "sbahn",
+            "size": 83
+        },
+        {
+            "id": 231,
+            "name": "sbahnhof",
+            "size": 48
+        },
+        {
+            "id": 232,
+            "name": "schriftlich",
+            "size": 91
+        },
+        {
+            "id": 233,
+            "name": "schul",
+            "size": 580
+        },
+        {
+            "id": 234,
+            "name": "schulerinn",
+            "size": 42
+        },
+        {
+            "id": 235,
+            "name": "schuljahr",
+            "size": 117
+        },
+        {
+            "id": 236,
+            "name": "schulsanier",
+            "size": 44
+        },
+        {
+            "id": 237,
+            "name": "schulscharf",
+            "size": 36
+        },
+        {
+            "id": 238,
+            "name": "schutz",
+            "size": 64
+        },
+        {
+            "id": 239,
+            "name": "senator",
+            "size": 28
+        },
+        {
+            "id": 240,
+            "name": "sexuell",
+            "size": 60
+        },
+        {
+            "id": 241,
+            "name": "sgb",
+            "size": 48
+        },
+        {
+            "id": 242,
+            "name": "sieht",
+            "size": 44
+        },
+        {
+            "id": 243,
+            "name": "sogenannt",
+            "size": 33
+        },
+        {
+            "id": 244,
+            "name": "sonderungsverbot",
+            "size": 134
+        },
+        {
+            "id": 245,
+            "name": "sozial",
+            "size": 139
+        },
+        {
+            "id": 246,
+            "name": "spandau",
+            "size": 88
+        },
+        {
+            "id": 247,
+            "name": "sport",
+            "size": 55
+        },
+        {
+            "id": 248,
+            "name": "sporthall",
+            "size": 26
+        },
+        {
+            "id": 249,
+            "name": "staatlich",
+            "size": 29
+        },
+        {
+            "id": 250,
+            "name": "staatsopernskandal",
+            "size": 69
+        },
+        {
+            "id": 251,
+            "name": "stadt",
+            "size": 47
+        },
+        {
+            "id": 252,
+            "name": "standort",
+            "size": 30
+        },
+        {
+            "id": 253,
+            "name": "status",
+            "size": 31
+        },
+        {
+            "id": 254,
+            "name": "steglitzzehlendorf",
+            "size": 28
+        },
+        {
+            "id": 255,
+            "name": "stell",
+            "size": 31
+        },
+        {
+            "id": 256,
+            "name": "stiftung",
+            "size": 41
+        },
+        {
+            "id": 257,
+            "name": "straftat",
+            "size": 63
+        },
+        {
+            "id": 258,
+            "name": "strassenverkehr",
+            "size": 26
+        },
+        {
+            "id": 259,
+            "name": "student",
+            "size": 36
+        },
+        {
+            "id": 260,
+            "name": "tegel",
+            "size": 98
+        },
+        {
+            "id": 261,
+            "name": "tempelhof",
+            "size": 64
+        },
+        {
+            "id": 262,
+            "name": "tempelhofschoneberg",
+            "size": 26
+        },
+        {
+            "id": 263,
+            "name": "tierpark",
+            "size": 32
+        },
+        {
+            "id": 264,
+            "name": "tor",
+            "size": 34
+        },
+        {
+            "id": 265,
+            "name": "transparenz",
+            "size": 33
+        },
+        {
+            "id": 266,
+            "name": "treptowkopenick",
+            "size": 57
+        },
+        {
+            "id": 267,
+            "name": "ubahnhof",
+            "size": 49
+        },
+        {
+            "id": 268,
+            "name": "ubergriff",
+            "size": 26
+        },
+        {
+            "id": 269,
+            "name": "umbau",
+            "size": 32
+        },
+        {
+            "id": 270,
+            "name": "umgang",
+            "size": 75
+        },
+        {
+            "id": 271,
+            "name": "unbegleitet",
+            "size": 54
+        },
+        {
+            "id": 272,
+            "name": "universitat",
+            "size": 38
+        },
+        {
+            "id": 273,
+            "name": "unterbring",
+            "size": 92
+        },
+        {
+            "id": 274,
+            "name": "unterkunft",
+            "size": 59
+        },
+        {
+            "id": 275,
+            "name": "unternehm",
+            "size": 90
+        },
+        {
+            "id": 276,
+            "name": "unternimmt",
+            "size": 34
+        },
+        {
+            "id": 277,
+            "name": "unterricht",
+            "size": 28
+        },
+        {
+            "id": 278,
+            "name": "unterstutz",
+            "size": 90
+        },
+        {
+            "id": 279,
+            "name": "unterstutzt",
+            "size": 26
+        },
+        {
+            "id": 280,
+            "name": "verbesser",
+            "size": 34
+        },
+        {
+            "id": 281,
+            "name": "verbind",
+            "size": 41
+        },
+        {
+            "id": 282,
+            "name": "verbraucherschutz",
+            "size": 29
+        },
+        {
+            "id": 283,
+            "name": "verein",
+            "size": 26
+        },
+        {
+            "id": 284,
+            "name": "verfahr",
+            "size": 51
+        },
+        {
+            "id": 285,
+            "name": "verfassungsschutz",
+            "size": 69
+        },
+        {
+            "id": 286,
+            "name": "vergab",
+            "size": 50
+        },
+        {
+            "id": 287,
+            "name": "verkauf",
+            "size": 30
+        },
+        {
+            "id": 288,
+            "name": "versamml",
+            "size": 34
+        },
+        {
+            "id": 289,
+            "name": "versorg",
+            "size": 49
+        },
+        {
+            "id": 290,
+            "name": "vertrag",
+            "size": 26
+        },
+        {
+            "id": 291,
+            "name": "verwalt",
+            "size": 94
+        },
+        {
+            "id": 292,
+            "name": "verwend",
+            "size": 27
+        },
+        {
+            "id": 293,
+            "name": "videouberwach",
+            "size": 43
+        },
+        {
+            "id": 294,
+            "name": "vielfalt",
+            "size": 33
+        },
+        {
+            "id": 295,
+            "name": "wasserbetrieb",
+            "size": 37
+        },
+        {
+            "id": 296,
+            "name": "weiss",
+            "size": 27
+        },
+        {
+            "id": 297,
+            "name": "weiterentwickl",
+            "size": 27
+        },
+        {
+            "id": 298,
+            "name": "willkommensklass",
+            "size": 37
+        },
+        {
+            "id": 299,
+            "name": "wirtschaft",
+            "size": 40
+        },
+        {
+            "id": 300,
+            "name": "wissenschaft",
+            "size": 37
+        },
+        {
+            "id": 301,
+            "name": "wlan",
+            "size": 39
+        },
+        {
+            "id": 302,
+            "name": "wohn",
+            "size": 155
+        },
+        {
+            "id": 303,
+            "name": "wohnraum",
+            "size": 35
+        },
+        {
+            "id": 304,
+            "name": "wohnungsbau",
+            "size": 35
+        },
+        {
+            "id": 305,
+            "name": "wohnungsbaugesellschaft",
+            "size": 138
+        },
+        {
+            "id": 306,
+            "name": "wohnungslos",
+            "size": 51
+        },
+        {
+            "id": 307,
+            "name": "zahl",
+            "size": 58
+        },
+        {
+            "id": 308,
+            "name": "zentral",
+            "size": 49
+        },
+        {
+            "id": 309,
+            "name": "zugang",
+            "size": 38
+        },
+        {
+            "id": 310,
+            "name": "zusammenhang",
+            "size": 40
+        },
+        {
+            "id": 311,
+            "name": "zustand",
+            "size": 91
+        }
+    ],
+    "links": [
+        {
+            "source": 211,
+            "target": 244,
+            "weight": 131
+        },
+        {
+            "source": 9,
+            "target": 50,
+            "weight": 85
+        },
+        {
+            "source": 190,
+            "target": 151,
+            "weight": 71
+        },
+        {
+            "source": 155,
+            "target": 305,
+            "weight": 61
+        },
+        {
+            "source": 137,
+            "target": 130,
+            "weight": 61
+        },
+        {
+            "source": 94,
+            "target": 81,
+            "weight": 58
+        },
+        {
+            "source": 211,
+            "target": 233,
+            "weight": 58
+        },
+        {
+            "source": 135,
+            "target": 222,
+            "weight": 53
+        },
+        {
+            "source": 155,
+            "target": 275,
+            "weight": 52
+        },
+        {
+            "source": 271,
+            "target": 170,
+            "weight": 49
+        },
+        {
+            "source": 170,
+            "target": 84,
+            "weight": 48
+        },
+        {
+            "source": 87,
+            "target": 260,
+            "weight": 47
+        },
+        {
+            "source": 233,
+            "target": 244,
+            "weight": 46
+        },
+        {
+            "source": 271,
+            "target": 84,
+            "weight": 44
+        },
+        {
+            "source": 87,
+            "target": 35,
+            "weight": 44
+        },
+        {
+            "source": 261,
+            "target": 80,
+            "weight": 38
+        },
+        {
+            "source": 37,
+            "target": 88,
+            "weight": 36
+        },
+        {
+            "source": 273,
+            "target": 84,
+            "weight": 35
+        },
+        {
+            "source": 54,
+            "target": 230,
+            "weight": 34
+        },
+        {
+            "source": 37,
+            "target": 35,
+            "weight": 34
+        },
+        {
+            "source": 201,
+            "target": 41,
+            "weight": 32
+        },
+        {
+            "source": 233,
+            "target": 235,
+            "weight": 31
+        },
+        {
+            "source": 181,
+            "target": 305,
+            "weight": 29
+        },
+        {
+            "source": 205,
+            "target": 175,
+            "weight": 27
+        },
+        {
+            "source": 232,
+            "target": 6,
+            "weight": 26
+        },
+        {
+            "source": 253,
+            "target": 217,
+            "weight": 25
+        },
+        {
+            "source": 237,
+            "target": 72,
+            "weight": 24
+        },
+        {
+            "source": 106,
+            "target": 245,
+            "weight": 24
+        },
+        {
+            "source": 240,
+            "target": 294,
+            "weight": 24
+        },
+        {
+            "source": 119,
+            "target": 211,
+            "weight": 23
+        },
+        {
+            "source": 305,
+            "target": 211,
+            "weight": 23
+        },
+        {
+            "source": 119,
+            "target": 305,
+            "weight": 23
+        },
+        {
+            "source": 234,
+            "target": 233,
+            "weight": 22
+        },
+        {
+            "source": 182,
+            "target": 215,
+            "weight": 22
+        },
+        {
+            "source": 181,
+            "target": 155,
+            "weight": 21
+        },
+        {
+            "source": 278,
+            "target": 182,
+            "weight": 21
+        },
+        {
+            "source": 274,
+            "target": 98,
+            "weight": 21
+        },
+        {
+            "source": 211,
+            "target": 93,
+            "weight": 20
+        },
+        {
+            "source": 69,
+            "target": 206,
+            "weight": 20
+        },
+        {
+            "source": 93,
+            "target": 244,
+            "weight": 20
+        },
+        {
+            "source": 40,
+            "target": 233,
+            "weight": 19
+        },
+        {
+            "source": 278,
+            "target": 215,
+            "weight": 19
+        },
+        {
+            "source": 206,
+            "target": 81,
+            "weight": 19
+        },
+        {
+            "source": 245,
+            "target": 121,
+            "weight": 18
+        },
+        {
+            "source": 228,
+            "target": 227,
+            "weight": 18
+        },
+        {
+            "source": 5,
+            "target": 17,
+            "weight": 18
+        },
+        {
+            "source": 188,
+            "target": 91,
+            "weight": 18
+        },
+        {
+            "source": 233,
+            "target": 233,
+            "weight": 16
+        },
+        {
+            "source": 22,
+            "target": 29,
+            "weight": 16
+        },
+        {
+            "source": 87,
+            "target": 49,
+            "weight": 16
+        },
+        {
+            "source": 259,
+            "target": 302,
+            "weight": 16
+        },
+        {
+            "source": 41,
+            "target": 206,
+            "weight": 16
+        },
+        {
+            "source": 239,
+            "target": 123,
+            "weight": 16
+        },
+        {
+            "source": 147,
+            "target": 274,
+            "weight": 16
+        },
+        {
+            "source": 109,
+            "target": 141,
+            "weight": 15
+        },
+        {
+            "source": 245,
+            "target": 109,
+            "weight": 15
+        },
+        {
+            "source": 87,
+            "target": 38,
+            "weight": 15
+        },
+        {
+            "source": 109,
+            "target": 121,
+            "weight": 15
+        },
+        {
+            "source": 110,
+            "target": 244,
+            "weight": 15
+        },
+        {
+            "source": 201,
+            "target": 206,
+            "weight": 15
+        },
+        {
+            "source": 123,
+            "target": 247,
+            "weight": 15
+        },
+        {
+            "source": 273,
+            "target": 306,
+            "weight": 15
+        },
+        {
+            "source": 211,
+            "target": 110,
+            "weight": 15
+        },
+        {
+            "source": 47,
+            "target": 130,
+            "weight": 14
+        },
+        {
+            "source": 245,
+            "target": 141,
+            "weight": 14
+        },
+        {
+            "source": 121,
+            "target": 141,
+            "weight": 14
+        },
+        {
+            "source": 240,
+            "target": 107,
+            "weight": 14
+        },
+        {
+            "source": 154,
+            "target": 245,
+            "weight": 14
+        },
+        {
+            "source": 154,
+            "target": 106,
+            "weight": 14
+        },
+        {
+            "source": 123,
+            "target": 123,
+            "weight": 13
+        },
+        {
+            "source": 286,
+            "target": 14,
+            "weight": 13
+        },
+        {
+            "source": 256,
+            "target": 59,
+            "weight": 13
+        },
+        {
+            "source": 287,
+            "target": 211,
+            "weight": 13
+        },
+        {
+            "source": 232,
+            "target": 184,
+            "weight": 13
+        },
+        {
+            "source": 245,
+            "target": 304,
+            "weight": 13
+        },
+        {
+            "source": 209,
+            "target": 306,
+            "weight": 13
+        },
+        {
+            "source": 293,
+            "target": 54,
+            "weight": 13
+        },
+        {
+            "source": 204,
+            "target": 140,
+            "weight": 13
+        },
+        {
+            "source": 186,
+            "target": 96,
+            "weight": 13
+        },
+        {
+            "source": 156,
+            "target": 302,
+            "weight": 12
+        },
+        {
+            "source": 236,
+            "target": 228,
+            "weight": 12
+        },
+        {
+            "source": 291,
+            "target": 306,
+            "weight": 12
+        },
+        {
+            "source": 155,
+            "target": 43,
+            "weight": 12
+        },
+        {
+            "source": 206,
+            "target": 143,
+            "weight": 12
+        },
+        {
+            "source": 136,
+            "target": 162,
+            "weight": 12
+        },
+        {
+            "source": 287,
+            "target": 119,
+            "weight": 12
+        },
+        {
+            "source": 209,
+            "target": 291,
+            "weight": 12
+        },
+        {
+            "source": 236,
+            "target": 237,
+            "weight": 12
+        },
+        {
+            "source": 281,
+            "target": 191,
+            "weight": 12
+        },
+        {
+            "source": 287,
+            "target": 305,
+            "weight": 12
+        },
+        {
+            "source": 237,
+            "target": 228,
+            "weight": 12
+        },
+        {
+            "source": 273,
+            "target": 98,
+            "weight": 12
+        },
+        {
+            "source": 233,
+            "target": 139,
+            "weight": 12
+        },
+        {
+            "source": 302,
+            "target": 84,
+            "weight": 11
+        },
+        {
+            "source": 49,
+            "target": 264,
+            "weight": 11
+        },
+        {
+            "source": 274,
+            "target": 84,
+            "weight": 11
+        },
+        {
+            "source": 168,
+            "target": 289,
+            "weight": 11
+        },
+        {
+            "source": 155,
+            "target": 111,
+            "weight": 11
+        },
+        {
+            "source": 131,
+            "target": 282,
+            "weight": 11
+        },
+        {
+            "source": 134,
+            "target": 260,
+            "weight": 10
+        },
+        {
+            "source": 174,
+            "target": 274,
+            "weight": 10
+        },
+        {
+            "source": 8,
+            "target": 98,
+            "weight": 10
+        },
+        {
+            "source": 158,
+            "target": 233,
+            "weight": 10
+        },
+        {
+            "source": 98,
+            "target": 31,
+            "weight": 10
+        },
+        {
+            "source": 175,
+            "target": 257,
+            "weight": 10
+        },
+        {
+            "source": 93,
+            "target": 233,
+            "weight": 10
+        },
+        {
+            "source": 106,
+            "target": 153,
+            "weight": 10
+        },
+        {
+            "source": 205,
+            "target": 151,
+            "weight": 10
+        },
+        {
+            "source": 126,
+            "target": 233,
+            "weight": 10
+        },
+        {
+            "source": 14,
+            "target": 310,
+            "weight": 10
+        },
+        {
+            "source": 175,
+            "target": 151,
+            "weight": 10
+        },
+        {
+            "source": 286,
+            "target": 310,
+            "weight": 10
+        },
+        {
+            "source": 298,
+            "target": 233,
+            "weight": 10
+        },
+        {
+            "source": 47,
+            "target": 300,
+            "weight": 9
+        },
+        {
+            "source": 11,
+            "target": 302,
+            "weight": 9
+        },
+        {
+            "source": 227,
+            "target": 207,
+            "weight": 9
+        },
+        {
+            "source": 20,
+            "target": 210,
+            "weight": 9
+        },
+        {
+            "source": 206,
+            "target": 217,
+            "weight": 9
+        },
+        {
+            "source": 37,
+            "target": 147,
+            "weight": 9
+        },
+        {
+            "source": 272,
+            "target": 115,
+            "weight": 9
+        },
+        {
+            "source": 215,
+            "target": 296,
+            "weight": 9
+        },
+        {
+            "source": 210,
+            "target": 232,
+            "weight": 9
+        },
+        {
+            "source": 11,
+            "target": 156,
+            "weight": 9
+        },
+        {
+            "source": 20,
+            "target": 232,
+            "weight": 9
+        },
+        {
+            "source": 182,
+            "target": 296,
+            "weight": 9
+        },
+        {
+            "source": 155,
+            "target": 302,
+            "weight": 9
+        },
+        {
+            "source": 87,
+            "target": 261,
+            "weight": 9
+        },
+        {
+            "source": 210,
+            "target": 6,
+            "weight": 9
+        },
+        {
+            "source": 245,
+            "target": 153,
+            "weight": 9
+        },
+        {
+            "source": 203,
+            "target": 191,
+            "weight": 9
+        },
+        {
+            "source": 130,
+            "target": 300,
+            "weight": 9
+        },
+        {
+            "source": 125,
+            "target": 107,
+            "weight": 9
+        },
+        {
+            "source": 156,
+            "target": 95,
+            "weight": 9
+        },
+        {
+            "source": 20,
+            "target": 6,
+            "weight": 9
+        },
+        {
+            "source": 154,
+            "target": 153,
+            "weight": 9
+        },
+        {
+            "source": 206,
+            "target": 253,
+            "weight": 9
+        },
+        {
+            "source": 302,
+            "target": 95,
+            "weight": 9
+        },
+        {
+            "source": 137,
+            "target": 137,
+            "weight": 9
+        },
+        {
+            "source": 11,
+            "target": 95,
+            "weight": 9
+        },
+        {
+            "source": 257,
+            "target": 114,
+            "weight": 8
+        },
+        {
+            "source": 74,
+            "target": 60,
+            "weight": 8
+        },
+        {
+            "source": 278,
+            "target": 233,
+            "weight": 8
+        },
+        {
+            "source": 271,
+            "target": 98,
+            "weight": 8
+        },
+        {
+            "source": 205,
+            "target": 47,
+            "weight": 8
+        },
+        {
+            "source": 86,
+            "target": 211,
+            "weight": 8
+        },
+        {
+            "source": 226,
+            "target": 51,
+            "weight": 8
+        },
+        {
+            "source": 175,
+            "target": 107,
+            "weight": 8
+        },
+        {
+            "source": 170,
+            "target": 98,
+            "weight": 8
+        },
+        {
+            "source": 257,
+            "target": 293,
+            "weight": 8
+        },
+        {
+            "source": 174,
+            "target": 84,
+            "weight": 8
+        },
+        {
+            "source": 114,
+            "target": 293,
+            "weight": 8
+        },
+        {
+            "source": 205,
+            "target": 107,
+            "weight": 8
+        },
+        {
+            "source": 210,
+            "target": 46,
+            "weight": 8
+        },
+        {
+            "source": 102,
+            "target": 162,
+            "weight": 8
+        },
+        {
+            "source": 227,
+            "target": 62,
+            "weight": 8
+        },
+        {
+            "source": 311,
+            "target": 81,
+            "weight": 8
+        },
+        {
+            "source": 10,
+            "target": 116,
+            "weight": 8
+        },
+        {
+            "source": 84,
+            "target": 176,
+            "weight": 8
+        },
+        {
+            "source": 232,
+            "target": 65,
+            "weight": 8
+        },
+        {
+            "source": 257,
+            "target": 54,
+            "weight": 8
+        },
+        {
+            "source": 249,
+            "target": 233,
+            "weight": 8
+        },
+        {
+            "source": 206,
+            "target": 288,
+            "weight": 8
+        },
+        {
+            "source": 257,
+            "target": 112,
+            "weight": 8
+        },
+        {
+            "source": 117,
+            "target": 117,
+            "weight": 8
+        },
+        {
+            "source": 164,
+            "target": 113,
+            "weight": 8
+        },
+        {
+            "source": 163,
+            "target": 57,
+            "weight": 7
+        },
+        {
+            "source": 206,
+            "target": 245,
+            "weight": 7
+        },
+        {
+            "source": 62,
+            "target": 206,
+            "weight": 7
+        },
+        {
+            "source": 114,
+            "target": 199,
+            "weight": 7
+        },
+        {
+            "source": 201,
+            "target": 62,
+            "weight": 7
+        },
+        {
+            "source": 250,
+            "target": 226,
+            "weight": 7
+        },
+        {
+            "source": 96,
+            "target": 305,
+            "weight": 7
+        },
+        {
+            "source": 37,
+            "target": 87,
+            "weight": 7
+        },
+        {
+            "source": 59,
+            "target": 302,
+            "weight": 7
+        },
+        {
+            "source": 233,
+            "target": 140,
+            "weight": 7
+        },
+        {
+            "source": 16,
+            "target": 60,
+            "weight": 7
+        },
+        {
+            "source": 241,
+            "target": 184,
+            "weight": 7
+        },
+        {
+            "source": 175,
+            "target": 112,
+            "weight": 7
+        },
+        {
+            "source": 231,
+            "target": 136,
+            "weight": 7
+        },
+        {
+            "source": 98,
+            "target": 137,
+            "weight": 7
+        },
+        {
+            "source": 114,
+            "target": 54,
+            "weight": 7
+        },
+        {
+            "source": 51,
+            "target": 146,
+            "weight": 7
+        },
+        {
+            "source": 238,
+            "target": 90,
+            "weight": 7
+        },
+        {
+            "source": 233,
+            "target": 234,
+            "weight": 7
+        },
+        {
+            "source": 206,
+            "target": 270,
+            "weight": 7
+        },
+        {
+            "source": 203,
+            "target": 26,
+            "weight": 7
+        },
+        {
+            "source": 24,
+            "target": 162,
+            "weight": 7
+        },
+        {
+            "source": 78,
+            "target": 137,
+            "weight": 7
+        },
+        {
+            "source": 41,
+            "target": 62,
+            "weight": 7
+        },
+        {
+            "source": 82,
+            "target": 278,
+            "weight": 7
+        },
+        {
+            "source": 8,
+            "target": 206,
+            "weight": 7
+        },
+        {
+            "source": 310,
+            "target": 87,
+            "weight": 7
+        },
+        {
+            "source": 233,
+            "target": 171,
+            "weight": 7
+        },
+        {
+            "source": 104,
+            "target": 238,
+            "weight": 7
+        },
+        {
+            "source": 122,
+            "target": 233,
+            "weight": 7
+        },
+        {
+            "source": 11,
+            "target": 129,
+            "weight": 7
+        },
+        {
+            "source": 62,
+            "target": 227,
+            "weight": 6
+        },
+        {
+            "source": 174,
+            "target": 176,
+            "weight": 6
+        },
+        {
+            "source": 311,
+            "target": 59,
+            "weight": 6
+        },
+        {
+            "source": 19,
+            "target": 233,
+            "weight": 6
+        },
+        {
+            "source": 21,
+            "target": 43,
+            "weight": 6
+        },
+        {
+            "source": 124,
+            "target": 92,
+            "weight": 6
+        },
+        {
+            "source": 207,
+            "target": 62,
+            "weight": 6
+        },
+        {
+            "source": 226,
+            "target": 96,
+            "weight": 6
+        },
+        {
+            "source": 311,
+            "target": 94,
+            "weight": 6
+        },
+        {
+            "source": 137,
+            "target": 258,
+            "weight": 6
+        },
+        {
+            "source": 145,
+            "target": 233,
+            "weight": 6
+        },
+        {
+            "source": 257,
+            "target": 258,
+            "weight": 6
+        },
+        {
+            "source": 208,
+            "target": 175,
+            "weight": 6
+        },
+        {
+            "source": 41,
+            "target": 308,
+            "weight": 6
+        },
+        {
+            "source": 18,
+            "target": 87,
+            "weight": 6
+        },
+        {
+            "source": 66,
+            "target": 192,
+            "weight": 6
+        },
+        {
+            "source": 211,
+            "target": 126,
+            "weight": 6
+        },
+        {
+            "source": 62,
+            "target": 228,
+            "weight": 6
+        },
+        {
+            "source": 26,
+            "target": 191,
+            "weight": 6
+        },
+        {
+            "source": 206,
+            "target": 62,
+            "weight": 6
+        },
+        {
+            "source": 175,
+            "target": 69,
+            "weight": 6
+        },
+        {
+            "source": 139,
+            "target": 182,
+            "weight": 6
+        },
+        {
+            "source": 18,
+            "target": 49,
+            "weight": 6
+        },
+        {
+            "source": 241,
+            "target": 241,
+            "weight": 6
+        },
+        {
+            "source": 13,
+            "target": 153,
+            "weight": 6
+        },
+        {
+            "source": 206,
+            "target": 233,
+            "weight": 6
+        },
+        {
+            "source": 205,
+            "target": 69,
+            "weight": 6
+        },
+        {
+            "source": 260,
+            "target": 48,
+            "weight": 6
+        },
+        {
+            "source": 267,
+            "target": 224,
+            "weight": 6
+        },
+        {
+            "source": 115,
+            "target": 219,
+            "weight": 6
+        },
+        {
+            "source": 98,
+            "target": 274,
+            "weight": 6
+        },
+        {
+            "source": 84,
+            "target": 273,
+            "weight": 6
+        },
+        {
+            "source": 143,
+            "target": 62,
+            "weight": 6
+        },
+        {
+            "source": 196,
+            "target": 233,
+            "weight": 6
+        },
+        {
+            "source": 208,
+            "target": 205,
+            "weight": 6
+        },
+        {
+            "source": 301,
+            "target": 230,
+            "weight": 6
+        },
+        {
+            "source": 11,
+            "target": 92,
+            "weight": 6
+        },
+        {
+            "source": 8,
+            "target": 86,
+            "weight": 6
+        },
+        {
+            "source": 231,
+            "target": 162,
+            "weight": 6
+        },
+        {
+            "source": 60,
+            "target": 206,
+            "weight": 6
+        },
+        {
+            "source": 269,
+            "target": 24,
+            "weight": 6
+        },
+        {
+            "source": 310,
+            "target": 49,
+            "weight": 6
+        },
+        {
+            "source": 18,
+            "target": 310,
+            "weight": 6
+        },
+        {
+            "source": 70,
+            "target": 32,
+            "weight": 6
+        },
+        {
+            "source": 192,
+            "target": 264,
+            "weight": 6
+        },
+        {
+            "source": 34,
+            "target": 158,
+            "weight": 6
+        },
+        {
+            "source": 274,
+            "target": 176,
+            "weight": 6
+        },
+        {
+            "source": 278,
+            "target": 296,
+            "weight": 6
+        },
+        {
+            "source": 233,
+            "target": 162,
+            "weight": 6
+        },
+        {
+            "source": 11,
+            "target": 124,
+            "weight": 6
+        },
+        {
+            "source": 81,
+            "target": 206,
+            "weight": 6
+        },
+        {
+            "source": 98,
+            "target": 98,
+            "weight": 6
+        },
+        {
+            "source": 69,
+            "target": 81,
+            "weight": 6
+        },
+        {
+            "source": 208,
+            "target": 69,
+            "weight": 6
+        },
+        {
+            "source": 182,
+            "target": 207,
+            "weight": 6
+        },
+        {
+            "source": 139,
+            "target": 215,
+            "weight": 6
+        },
+        {
+            "source": 203,
+            "target": 281,
+            "weight": 6
+        },
+        {
+            "source": 227,
+            "target": 182,
+            "weight": 6
+        },
+        {
+            "source": 25,
+            "target": 231,
+            "weight": 6
+        },
+        {
+            "source": 161,
+            "target": 3,
+            "weight": 6
+        },
+        {
+            "source": 246,
+            "target": 233,
+            "weight": 6
+        },
+        {
+            "source": 88,
+            "target": 35,
+            "weight": 6
+        }
+    ]
+}
