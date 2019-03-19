@@ -185,7 +185,7 @@ In use it is like this:
 This is some captured content. It will be stored in the variable "myvaribale".
 {% endcapture %}
 <!-- now use this later on -->
-{% include macro-text.html text=myvaribale -%}
+{% include macro-text-column.html title="My Title" text=myvaribale -%}
 
 ```
 
@@ -198,7 +198,7 @@ Assign also creates a variable. The difference is that you assign it directly to
 <!-- later on you can use this variable -->
 This is some random text with a inserted variable --> {{myvariable}}
 <!-- or you use the variable on an include -->
-{% include macro-text.html text=myvaribale -%}
+{% include macro-text-column.html title="My title" text=myvaribale -%}
 
 ```
 

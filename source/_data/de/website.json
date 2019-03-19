@@ -15,13 +15,13 @@
             "url": "/de/about"
         },
         {
-            "name": "projects",
+            "name": "Projects",
             "title": "Projects Page",
             "navigationTitle": "Projekte",
             "url": "/de/projects"
         },
         {
-            "name": "datasets",
+            "name": "Datasets",
             "title": "Data Page",
             "navigationTitle": "Daten",
             "url": "/de/datasets"

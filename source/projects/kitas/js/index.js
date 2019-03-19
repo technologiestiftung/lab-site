@@ -202,3 +202,6 @@ var map = (function(container, lang){
 
   return module;
 });
+
+icons(d3.select('#icons', 'de'));
+map(d3.select('#map', 'de'));
