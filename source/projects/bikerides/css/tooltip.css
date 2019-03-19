@@ -4,7 +4,6 @@
   width: 145px;
   z-index: 100000;
   padding: 10px;
-  font-family: 'Barlow', sans-serif;
   font-size: 12px;
   letter-spacing: .5px;
   flex-shrink: 0;
@@ -29,7 +28,6 @@
   height: 60px;
   z-index: 100000;
   padding: 10px;
-  font-family: 'Barlow', sans-serif;
   font-size: 12px;
   letter-spacing: .5px;
   flex-shrink: 0;

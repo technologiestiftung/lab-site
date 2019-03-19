@@ -8,7 +8,6 @@
   stroke-width: 1;
 }
 .radar-chart .axis .legend {
-  font-family: sans-serif;
   font-size: 10px;
 }
 .radar-chart .axis .legend.top {
@@ -61,7 +60,7 @@
 
 .legend_text {
   fill: black;
-  font-family: 'Barlow', sans-serif;
+  font-size: 10px;
   letter-spacing: .5px;
   transform: translateY(7px);
 }

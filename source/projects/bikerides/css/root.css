@@ -3,14 +3,12 @@
   fill: black;
   }
   .title-wrapper .title {
-    font-family: 'Barlow', sans-serif;
     letter-spacing: .5px;
     font-size: 11px; }
 
 .charts-wrapper {
   width: 995px;
   position: relative;
-  z-index: 1000;
   display: block;
   margin: auto; 
   margin-bottom: 60px; }
@@ -58,15 +56,13 @@
     opacity: 1; }
 
 .ui-wrapper {
-  z-index: 100000;
   display: flex;
   flex-direction: row; }
   .ui-wrapper .custom-select {
-    z-index: 100000; }
+ }
 
 text.legend {
   text-transform: uppercase;
-  font-family: 'Barlow', sans-serif;
   font-weight: regular;
   font-size: 8px;
   letter-spacing: .4px;
@@ -88,7 +84,7 @@ text.legend {
 
 .river-svg-wrapper {
   /* height: 100%; */
-  top: 405px;
+  top: 424px;
   left: -11px;
   z-index: -1000;
   width: 100%;
@@ -103,7 +99,6 @@ text.legend {
   width: 160px;
   z-index: 100000;
   padding: 10px;
-  font-family: 'Barlow', sans-serif;
   font-size: 12px;
   letter-spacing: .5px;
   flex-shrink: 0;
@@ -120,7 +115,6 @@ text.legend {
   height: 40px;
   z-index: 100000;
   padding: 10px;
-  font-family: 'Barlow', sans-serif;
   font-size: 12px;
   letter-spacing: .5px;
   flex-shrink: 0;
@@ -130,10 +124,11 @@ text.legend {
   animation: .25s fadeInFromNone ease;
   opacity: 1; }
   .tooltip-wrapper .median, .tooltip-wrapper .max, .tooltip-wrapper .total {
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
     display: flex;
     flex-direction: row;
-    justify-content: space-between; }
+    /* justify-content: space-between;  */
+  }
 
 .value-desc {
   color: #9B9B9B; }
@@ -163,7 +158,13 @@ text.legend {
 .station-wrapper {
   font-weight: 700;
   font-size: 14px;
+  line-height: 1.5em;
   letter-spacing: .5px; }
+
+.values-wrapper {
+  display: flex;
+  flex-direction: column;
+}
 
 .time-wrapper {
   display: flex;
@@ -181,7 +182,6 @@ span#total-value {
 /*the container must be positioned relative:*/
 .custom-select {
   position: relative;
-  font-family: 'Barlow', sans-serif;
   letter-spacing: .5px; }
 
 .custom-select select {
@@ -190,8 +190,8 @@ span#total-value {
   top: -100px; }
 
 .select-selected {
-  background-color: #FCFCFC;
-  font-family: 'Barlow', sans-serif; }
+  background-color: #FCFCFC; 
+}
 
 /*style the arrow inside the select element:*/
 .select-selected:after {
@@ -212,7 +212,7 @@ span#total-value {
 /*style the items (options), including the selected item:*/
 .select-items div, .select-selected {
   color: black;
-  padding: 8px 16px;
+  padding: 2px 16px;
   border: 1px solid;
   border-color: transparent #E4E4E4 #E4E4E4 #E4E4E4;
   cursor: pointer; }
@@ -242,10 +242,6 @@ span#total-value {
   margin-bottom: 40px;
   margin-top: 40px; }
 
-body {
-  font: 10px sans-serif;
-  margin: 0; }
-
 .line {
   fill: none;
   stroke: #666;
@@ -256,11 +252,17 @@ body {
 
 .intro-wrapper {
   margin-top: 20px;
-  width: 490px;
+  width: 535px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   margin: 0 auto;
+
+}
+
+.intro-wrapper > span {
+  text-align: center;
+  line-height: 1.5em;
 }
 
 .special-section {
@@ -268,16 +270,15 @@ body {
 }
 
 .intro-headline {
-  font-family: 'Barlow', sans-serif;
   font-weight: bold;
   text-align: center;
   font-size: 32px;
   letter-spacing: .5px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  line-height: 1.25em;
 }
 
 .intro-text {
-  font-family: 'Barlow', sans-serif;
   font-size: 14px;
   text-align: center;
   letter-spacing: .5px;
@@ -286,7 +287,6 @@ body {
 
 .two-col-flex {
   display: flex; 
-  max-width: 700px; 
   justify-content: space-between;
 }
 
@@ -329,7 +329,7 @@ body {
 
 .wrapper-50 {
   margin-left: 30px;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .wrapper-51 text.legend {
@@ -434,8 +434,9 @@ body {
     justify-content: center;
   }
 
-  .intro-headline {
+  span.intro-headline {
     font-size: 24px;
+    line-height: 1.25em;
     width: 95%;
   }
 
@@ -466,11 +467,6 @@ path.active {
   opacity: 1;
   transition: all .5 ease;
 }
-
-.axis-line-chart text {
-  font-family: 'Barlow', sans-serif;
-}
-
 
 .chart-wrapper-line {
   margin: 0 auto;

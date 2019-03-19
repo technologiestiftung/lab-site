@@ -2,20 +2,20 @@
 layout: project
 description: ""
 lang: en
-title: ""
-subtitle: ""
-type: publication
-colorMode: dark
-featuredImage: /projects/meine-perspektive/images/featured.jpg
-thumbnail: /projects/meine-perspektive/images/thumbnail.jpg
-heroImage: /projects/meine-perspektive/images/hero.jpg
+title: Universities of Berlin and Germany
+subtitle: A comparison of all universities of Berlin und Germany.
+type: prototype
+colorMode: bright
+featuredImage: /projects/unis/images/featured.jpg
+thumbnail: /projects/unis/images/thumbnail.jpg
+heroImage: /projects/unis/images/hero.jpg
 visible: true
 featured: false
 authors: []
-start: 2019-02-19
-end: 2019-02-19
+start: 2019-03-18
+end: 2019-03-18
 status: finished
-date: 2019-02-19
+date: 2019-03-18
 assets:
   js:
     - ../js/index.js

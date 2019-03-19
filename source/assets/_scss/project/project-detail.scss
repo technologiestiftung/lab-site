@@ -182,18 +182,18 @@
 
     &-text {
         padding: 0 $spacing-page-m;
-        color: $dark-grey;
+        color: $black;
 
         h3 {
             color: $black;
         }
 
         @media only screen and (max-width: $screen-xl) {
-            padding: 0;
+            padding: 0 0 $spacing-m 0 ;
         }
 
         @media only screen and (min-width: $screen-xl) {
-            padding: 0 $spacing-page-l;
+            padding: 0 $spacing-page-m $spacing-m $spacing-page-m ;
         }
 
         &.columns {
