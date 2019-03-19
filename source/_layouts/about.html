@@ -15,6 +15,9 @@ layout: default
     <!-- {{member.type}} -->
 
       {% for member in team %}
+      {%- if member.external == true -%}
+      {%- continue -%}
+      {%- endif -%}
       <li class="feed-list__project team {{member.type}}">
           <a href="{{member.url}}">
             <div class="project-image__outer">
