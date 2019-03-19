@@ -23,6 +23,10 @@ end: 2018-05-02
 status: finished
 date: 2018-05-02
 assets:
+  js:
+    - ../../../assets/js/d3.v4.min.js
+    - ../js/topojson.v1.min.js
+    - ../js/index.min.js
   css:
     - ../css/index-min.css
 materialsIncluded:
@@ -35,20 +39,11 @@ materialsIncluded:
   <p class="kita-image"><img src="../images/Icon-kids@2x.png"></p>
 </div>
 
-{% capture textFirst %}
-  In Berlin leben knapp 180.000 Kinder im Kita-Alter zwischen 1 und 6 Jahren (Stand: Dezember 2016). Demgegenüber stehen mehr als 2.500 Kitas die im gesamten Land Berlin verteilt sind.
-{% endcapture %}
-
-{% include macro-text.html text=textFirst %}
+<p>In Berlin leben knapp 180.000 Kinder im Kita-Alter zwischen 1 und 6 Jahren (Stand: Dezember 2016). Demgegenüber stehen mehr als 2.500 Kitas die im gesamten Land Berlin verteilt sind.</p>
 
 <div class="special-section" id="map"></div>
 
-
-{% capture textSecond %}
-Auch wenn bei der Anzahl Kita-Kinder pro 50 Einwohner einige Bezirke leicht über dem Durschnitt liegen (z.B. Pankow und Lichtenberg), zeichnet sich eine gleichmäßige Verteilung über Berlin hinweg ab. Durch die Größe und Einwohnerdichte der Bezirke bedingt, müssen die Bezirke Mitte und Pankow wesentlich mehr Kinder mit Kitaplätzen versorgen als Ihre benachbarten Bezirke.
-{% endcapture %}
-
-{% include macro-text.html text=textSecond %}
+<p>Auch wenn bei der Anzahl Kita-Kinder pro 50 Einwohner einige Bezirke leicht über dem Durschnitt liegen (z.B. Pankow und Lichtenberg), zeichnet sich eine gleichmäßige Verteilung über Berlin hinweg ab. Durch die Größe und Einwohnerdichte der Bezirke bedingt, müssen die Bezirke Mitte und Pankow wesentlich mehr Kinder mit Kitaplätzen versorgen als Ihre benachbarten Bezirke.</p>
 
 <div class="special-section" id="icons">
   <div id="icon_controlls">
@@ -57,18 +52,4 @@ Auch wenn bei der Anzahl Kita-Kinder pro 50 Einwohner einige Bezirke leicht übe
   </div>
 </div>
 
-{% capture textThird %}
-Die Senatsverwaltung für Bildung, Jugend und Familie bietet den Berliner Bürger*innen Informationen zu den Berliner Kitas bereits durch eine <a href="https://www.berlin.de/sen/jugend/familie-und-kinder/kindertagesbetreuung/kitas/verzeichnis/">Suchmaske</a> über Berlin.de an. Im Sinne der Exploration moderner Möglichkeiten der nutzerfreundlichen Informationsaufbereitung hat das Ideation &amp; Protoyping Lab sich mit den Kita-Daten des Landes Berlin beschäftigt. Das Ergebnis ist eine <a href="http://www.kita-suche.berlin">Kartenanwendung</a>, welche es Benutzer*innen erlaubt die passende Kita in Ihrer Nähe zu finden.
-{% endcapture %}
-
-{% include macro-text.html text=textThird %}
-
-<script type="text/javascript" src="../../../assets/js/d3.v4.min.js"></script>
-<script type="text/javascript" src="../js/topojson.v1.min.js"></script>
-<script type="text/javascript" src="../js/index.min.js"></script>
-<script type="text/javascript">
-
-  icons(d3.select('#icons', 'de'));
-  map(d3.select('#map', 'de'));
-
-</script>
+<p>Die Senatsverwaltung für Bildung, Jugend und Familie bietet den Berliner Bürger*innen Informationen zu den Berliner Kitas bereits durch eine <a href="https://www.berlin.de/sen/jugend/familie-und-kinder/kindertagesbetreuung/kitas/verzeichnis/">Suchmaske</a> über Berlin.de an. Im Sinne der Exploration moderner Möglichkeiten der nutzerfreundlichen Informationsaufbereitung hat das Ideation &amp; Protoyping Lab sich mit den Kita-Daten des Landes Berlin beschäftigt. Das Ergebnis ist eine <a href="http://www.kita-suche.berlin">Kartenanwendung</a>, welche es Benutzer*innen erlaubt die passende Kita in Ihrer Nähe zu finden.</p>

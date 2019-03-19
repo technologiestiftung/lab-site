@@ -38,9 +38,6 @@ Ein aktueller Schwerpunkt unserer Arbeit ist die Aufbereitung, Analyse und Visua
 
 {% include macro-image-section-markdown.html src="../images/breitband.png" caption="Dit is Berlin" %}
 
-
-
-
 Daneben engagieren wir uns für den Aufbau des Berliner LoRaWAN-Netzes für ein [freies Internet of Things](https://www.thethingsnetwork.org/community/berlin/), bauen Prototypen mit den Materialien aus unserer [Hacking Box](https://www.technologiestiftung-berlin.de/hackingbox/) oder organisieren [Workshops](https://www.technologiestiftung-berlin.de/de/blog/smarte-loesungen-und-info-dienste-fuer-die-stadt-der-zukunft/) zum digitalen Wandel in Berlin.
 
 Alle unsere Projekte sind übrigens [Open Source](https://publiccode.eu/de/) und können ohne Einschränkungen genutzt, verändert und weiterentwickelt werden. Wer statt Worten lieber Code lesen möchte, kann gerne einen Blick in unseren [GitHub](https://github.com/technologiestiftung/) werfen.
