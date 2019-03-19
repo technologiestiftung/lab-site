@@ -3,7 +3,8 @@ layout: project
 lang: de
 
 title: H3LL0W0RLD!
-subtitle: Das Innovation  Prototyping Lab der Technoligiestiftung
+subtitle: Willkommen beim Ideation & Prototyping Lab
+description: Herzlich Willkommen beim Ideation & Prototyping Lab der Technologiestiftung Berlin
 # project needs the following frontmatter values:
 type: publication # could also be "workshop", "dataset", "prototype"
 #
@@ -18,20 +19,10 @@ featured: false
 authors:
   - benjamin-seibel
 
-start: 2018-05-23
-end: 2018-05-24
-status: ongoing
-date: 2018-02-01
-
-materialsIncluded:
-  - name: "images"
-    link: "#"
-  - name: "video"
-    link: "#"
-  - name: "press text"
-    link: "#"
-  - name: "Source Code"
-    link: "#"
+start: 2017-09-01
+end: 2017-09-01
+status: Published
+date: 2017-09-01
 
 ---
 

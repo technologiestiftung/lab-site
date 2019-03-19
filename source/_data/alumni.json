@@ -5,5 +5,12 @@
       "en": "Developer",
       "de": "Entwickler"
     }
+  },
+  {
+    "name": "Sebastian Rauer",
+    "role": {
+      "en": "Designer",
+      "de": "Designer"
+    }
   }
 ]

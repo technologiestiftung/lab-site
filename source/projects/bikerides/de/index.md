@@ -27,15 +27,14 @@ assets:
   js:
     - "../js/d3.min.js"
     - "../js/crossfilter.min.js"
-    - "../js/main.js"
     - "../js/radar_chart.js"
+    - "../js/main.js"
 
   css:
     - "../css/custom_select.css"
     - "../css/radar-chart.css"
-    - "../css/radar.css"
-    - "../css/root.css"
     - "../css/tooltip.css"
+    - "../css/root.css"
 
 materialsIncluded:
   - name: "images"
@@ -53,4 +52,9 @@ Seit 2015 erfasst die Berliner Senatsverwaltung den Radverkehr in der Stadt durc
 
 Unsere Visualisierung zeigt jährliche, wöchentliche und tägliche Fahrmuster. Das Netz-Diagramm einer Radzählstelle fasst jeweils 8760 Einträge zusammen (ein Eintrag pro Stunde für ein ganzes Jahr). Die Daten von jeder Station lassen sich in drei unterschiedlichen Detailstufen abbilden. Jede Darstellung zeigt nach Wahl Median- oder Maximalwerte. Durch das Hovern über einzelne Monate/Tage/Stunden werden absolute Werte zum jeweiligen Zeitpunkt angezeigt.
 
-<div class="special-section polar-chart-wrapper">
+<div class="example-chart-wrapper" id="Woche-example"></div>
+<div class="example-chart-wrapper" id="Monat-example"></div>
+<div class="special-section line-chart-wrapper" style="overflow: visible;"></div>
+<div class="special-section polar-chart-wrapper" style="overflow: visible;"></div>
+<div class="example-chart-wrapper" id="Wochentage-example"></div>
+<div class="example-chart-wrapper" id="Wochenenden-example"></div>

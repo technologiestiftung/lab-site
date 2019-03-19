@@ -242,6 +242,10 @@ span#total-value {
   margin-bottom: 40px;
   margin-top: 40px; }
 
+body {
+  font: 10px sans-serif;
+  margin: 0; }
+
 .line {
   fill: none;
   stroke: #666;

@@ -72,7 +72,7 @@ Admin computers can install [Ruby Version Manager (rvm) →](https://rvm.io).
 cd /path/to/lab-site/
 # only needed once
 # install the ruby bundler tool
-gem install bundler
+gem install bundler -v 1.17.2
 # install all needed node.js dependencies
 npm install && cd project-generator && npm install
 # go back into the root
