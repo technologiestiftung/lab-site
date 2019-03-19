@@ -54,7 +54,7 @@
         <div class="project-header__meta-column project-header__meta-column--date">
             <div class="project-header__meta-column__header">Date</div>
             <div class="project-header__meta-column__item">
-                {{ page.date }}
+                {%- include date-format.html element=page -%}
             </div>
         </div>
         {%- if page.materialsIncluded  -%}

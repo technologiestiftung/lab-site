@@ -1,0 +1,6 @@
+
+{%- if page.lang == "de" -%}
+{{ include.element.date | date: "%d.%m.%Y" }}
+{%- else -%}
+{{ include.element.date | date: "%Y-%m-%d" }}
+{%- endif -%}

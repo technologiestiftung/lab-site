@@ -24,11 +24,12 @@
                       https://shopify.github.io/liquid/filters/date/
                       https://ruby-doc.org/stdlib-2.6.1/libdoc/time/rdoc/Time.html#method-c-parse
                      -->
-                     {%- if page.lang == "de" -%}
+                     <!-- {%- if page.lang == "de" -%}
                        {{ pg.date | date: "%d.%m.%Y" }}
                        {%- else -%}
-                       {{ pg.date | date: "%m.%d.%Y" }}
-                     {%- endif -%}
+                       {{ pg.date | date: "%Y-%m-%d" }}
+                     {%- endif -%} -->
+                     {%- include date-format.html element=pg -%}
                 </div>
                 <div class="feed-list__project-title">
                     {{ pg.title }}
@@ -39,5 +40,5 @@
         {%- endif -%}
         {%- endfor -%}
     </ul>
-    
+
 </section>
