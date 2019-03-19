@@ -1,6 +1,6 @@
 ---
 layout: project
-lang: de
+lang: en
 
 title: The rhythm of the road
 subtitle: Monitoring bike traffic across the city.
@@ -37,45 +37,30 @@ assets:
     - "../css/root.css"
 
 materialsIncluded:
-  - name: "images"
-    link: "#"
-  - name: "video"
-    link: "#"
-  - name: "press text"
-    link: "#"
-  - name: "Source Code"
-    link: "#"
+  - name: "Dataset"
+    link: "https://data.technologiestiftung-berlin.de/dataset/radverkehrsmengen"
 
 ---
 
-{% capture textFirst %}
+<p>
   Since 2015, cycle traffic has been recorded automatically throughout the city with the aid of  <a href="https://www.stadtentwicklung.berlin.de/aktuell/pressebox/archiv_volltext.shtml?arch_1609/nachricht6200.html">counting stations</a> embedded in the road. The Senate Department for Urban Development and the Environment provides the current data daily for each hour in the form of an Excel table.
-{% endcapture %}
+</p>
 
-{% include macro-text.html text=textFirst %}
-
-{% capture textSecond %}
+<p>
   We aggregated the data and converted it into the machine-readable JSON format. The visualization illustrates the traffic volume of the 26 bicycle counting stations within Berlin.
-{% endcapture %}
+</p>
 
-{% include macro-text.html text=textSecond %}
 
 <div class="special-section polar-chart-wrapper" style="overflow: visible;"></div>
 
 <div class="project-text">
   <h3>What does the Visualization show?</h3>
 
-  <p>
-      The visualization shows annual, weekly and daily driving patterns. The "web chart" (also called radar charts) of a given bike counting station summarizes 8760 entries per year (representing each hour of each day) and visualizes them. The data from each station can be displayed in four different levels of detail: weekdays, weekends, whole weeks, and whole months. Median- and maximum values can be read off in each display. This allows hourly, daily and weekly driving patterns to be read.
-  </p>
-
+  The visualization shows annual, weekly and daily driving patterns. The "web chart" (also called radar charts) of a given bike counting station summarizes 8760 entries per year (representing each hour of each day) and visualizes them. The data from each station can be displayed in four different levels of detail: weekdays, weekends, whole weeks, and whole months. Median- and maximum values can be read off in each display. This allows hourly, daily and weekly driving patterns to be read.
 </div>
 
-
 <div class="project-text">
-  <p>
-      By hovering over individual months/days/hours, absolute values are displayed in a tooltip corresponding to the chosen time.
-  </p>
+  By hovering over individual months/days/hours, absolute values are displayed in a tooltip corresponding to the chosen time.
 </div>
 
 <div class="project-text">

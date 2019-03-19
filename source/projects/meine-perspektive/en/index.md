@@ -10,7 +10,7 @@ featuredImage: /projects/meine-perspektive/images/featured.jpg
 thumbnail: /projects/meine-perspektive/images/thumbnail.jpg
 heroImage: /projects/meine-perspektive/images/hero.jpg
 visible: true
-featured: true
+featured: false
 authors: []
 start: 2019-02-19
 end: 2019-02-19
