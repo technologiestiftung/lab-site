@@ -8,6 +8,7 @@ twitter: sebimweb
 github: sebastianrauer
 position: Designer
 type: dataset # could also be "workshop", "dataset", "prototype"
+external: true
 ---
 
 
