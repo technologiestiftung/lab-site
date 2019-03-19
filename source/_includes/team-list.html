@@ -1,0 +1,31 @@
+{%- if page.lang == "de" -%}
+{%- assign team = site.team_de -%}
+{%- else -%}
+{%- assign team = site.team_en -%}
+{%- endif -%}
+
+<section class="feed">
+  <h2 class="feed-headline section-headline headline--bold">Team</h2>
+  <ul class="grid feed-list">
+
+    <!-- {{member.type}} -->
+
+      {% for member in team %}
+      <li class="feed-list__project team {{member.type}}">
+          <a href="{{member.url}}">
+            <div class="project-image__outer">
+                <div class="project-image" style="background-image: url({{site.url}}{{member.image}});"></div>
+            </div>
+
+              <div class="feed-list__project-title">
+                  {{ member.name }}
+              </div>
+              <div class="feed-list__project-date">
+                  {{ member.position }}
+              </div>
+          </a>
+      </li>
+      {% endfor %}
+
+  </ul>
+</section>
