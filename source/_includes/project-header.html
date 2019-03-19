@@ -45,16 +45,33 @@
         </div>
         <div class="project-header__meta-column project-header__meta-column--status">
             <div class="project-header__meta-column__header">
-                Current Status
+                {%- if page.lang =='en' -%}
+                    Project Type
+                    {%- else -%}
+                    Projektart
+                    {%- endif -%}
             </div>
             <div class="project-header__meta-column__item">
-                {{ page.status }}
+                {%- if page.lang =='en' -%}
+                    {{ page.type }}
+                {%- else -%}
+                    {%- case page.type -%}
+                    {%- when 'publication' -%}
+                        Publikation
+                    {%- when 'prototype' -%}
+                        Prototyp
+                    {%- when 'workshop' -%}
+                        Workshop
+                    {%- when 'Dataset' -%}
+                        Datensatz
+                    {%- endcase -%}
+                {%- endif -%}
             </div>
         </div>
         <div class="project-header__meta-column project-header__meta-column--date">
             <div class="project-header__meta-column__header">Date</div>
             <div class="project-header__meta-column__item">
-                {{ page.date }}
+                {%- include date-format.html element=page -%}
             </div>
         </div>
         {%- if page.materialsIncluded  -%}

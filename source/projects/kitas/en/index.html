@@ -24,6 +24,7 @@ status: finished
 date: 2018-05-02
 assets:
   js:
+    - ../../../assets/js/d3.v4.min.js
     - ../js/topojson.v1.min.js
     - ../js/index.min.js
   css:
@@ -38,20 +39,12 @@ materialsIncluded:
   <p class="kita-image"><img src="../images/Icon-kids@2x.png"></p>
 </div>
 
-{% capture textFirst %}
-About 180.000 children between the age of 1 and 6 years are living in the city of Berlin (State: Dezember 2016). More than 2.500 Kitas (childcare/daycare) are serving those in need, spread throughout the city of Berlin.
-{% endcapture %}
-
-{% include macro-text.html text=textFirst %}
+<p>About 180.000 children between the age of 1 and 6 years are living in the city of Berlin (State: Dezember 2016). More than 2.500 Kitas (childcare/daycare) are serving those in need, spread throughout the city of Berlin.</p>
 
 <div class="special-section" id="map"></div>
 
 
-{% capture textSecond %}
-Even though, some districts have a little more children per 50 inhabitants than the average district (e.g. Pankow and Lichtenberg), most districts show a similar pattern. Due to higher population density and district size, districts like Pankow and Mitte need to support a larger number of children than their neighbouring districts.
-{% endcapture %}
-
-{% include macro-text.html text=textSecond %}
+<p>Even though, some districts have a little more children per 50 inhabitants than the average district (e.g. Pankow and Lichtenberg), most districts show a similar pattern. Due to higher population density and district size, districts like Pankow and Mitte need to support a larger number of children than their neighbouring districts.</p>
 
 <div class="special-section" id="icons">
   <div id="icon_controlls">
@@ -60,18 +53,4 @@ Even though, some districts have a little more children per 50 inhabitants than 
   </div>
 </div>
 
-{% capture textThird %}
-The senate administration for education, youth and family is already providing their citizens with access to information on all of Berlin's Kitas through a <a href="https://www.berlin.de/sen/jugend/familie-und-kinder/kindertagesbetreuung/kitas/verzeichnis/">search engine</a>. The Ideation &amp; Prototyping lab is continuously exploring novel user-friendly interfaces in order to enable citizens to explore their cities data vaults. As a result, we build a map-based <a href="http://www.kita-suche.berlin">search interface</a>, which allows citizens to find their local Kita.
-{% endcapture %}
-
-{% include macro-text.html text=textThird %}
-
-<script type="text/javascript" src="../../../assets/js/d3.v4.min.js"></script>
-<script type="text/javascript" src="../js/topojson.v1.min.js"></script>
-<script type="text/javascript" src="../js/index.min.js"></script>
-<script type="text/javascript">
-
-  icons(d3.select('#icons', 'de'));
-  map(d3.select('#map', 'de'));
-
-</script>
+<p>The senate administration for education, youth and family is already providing their citizens with access to information on all of Berlin's Kitas through a <a href="https://www.berlin.de/sen/jugend/familie-und-kinder/kindertagesbetreuung/kitas/verzeichnis/">search engine</a>. The Ideation &amp; Prototyping lab is continuously exploring novel user-friendly interfaces in order to enable citizens to explore their cities data vaults. As a result, we build a map-based <a href="http://www.kita-suche.berlin">search interface</a>, which allows citizens to find their local Kita.</p>
