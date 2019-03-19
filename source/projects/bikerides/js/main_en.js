@@ -1,11 +1,11 @@
 const filepath = "../assets/all_years.json";
 const filepath_v2 = "../assets/structure.json";
 
-const values_array = ['Skalierung','Absolut', 'Relativ Median', 'Relativ Max'];
-const years_array = ['Jahr', 2017, 2016, 2015, 2014, 2013, 2012];
+const values_array = ['Scale','absolute', 'relative median', 'relative max'];
+const years_array = ['Year', 2017, 2016, 2015, 2014, 2013, 2012];
 const months_array = [0,1,2,3,4,5,6,7,8,9,10,11];
-const types_array = ['Zeitraum', 'Monat', 'Woche', 'Wochentage', 'Wochenenden'];
-let year_value = 2017, type_value = 'Monat', metric_value = 'Absolut', radarChart = [], radar_chart_week = [], charts_wrapper;
+const types_array = ['Time period', 'month', 'week', 'weekdays', 'weekends'];
+let year_value = 2017, type_value = 'month', metric_value = 'absolute', radarChart = [], radar_chart_week = [], charts_wrapper;
 var x, i, j, selElmnt, a, b, c, data_line;
 
 var names_dict;
@@ -270,7 +270,7 @@ let config  = {
     radius: 1,
     value_metric: 'Relativ Max',
     factor: 1,
-    type: 'Monat',
+    type: 'month',
     month: 0,
     factor_legend: .85,
     max_value: 10000,
@@ -376,13 +376,15 @@ function createIntroText() {
     intro_wrapper
         .append('span')
         .classed('intro-headline', true)
-        .text('Wie verändert sich der Radverkehr in Berlin? ')
+        .text('How are cycling patterns \n changing in Berlin?')
 
     intro_wrapper
         .append('span')
         // .classed('intro-text', true)
-        .text('Zeige unterschiedliche Rhythmen der Radfahrer im Datensatz durch Auswahl der Filter (z.B. Tages-, Wochen- und Jahresrhythmus):')
+        .text('Explore the various rhythms present in the data set by using the filters below (e.g. daily, weekly and yearly rhythm):')
 }
+
+
 
 function createIntroTextLineChart() {
     let intro_wrapper = d3.select('.line-chart-wrapper').append('div')
@@ -394,12 +396,12 @@ function createIntroTextLineChart() {
     intro_wrapper
         .append('span')
         .classed('intro-headline', true)
-        .text('Alle Radzählstellen im Vergleich')
+        .text('Compare all bicycle counting stations')
 
     intro_wrapper
         .append('span')
         // .classed('intro-text', true)
-        .text('Entdecke welche in welchem Jahr die Radzählstellen in Betrieb genommen worden sind und wie sich das jährliche Verkehrsaufkommen der Zählstellen verändert.')
+        .text('Discover which bike counting stations were put into operation in which year and how the annual traffic volume for each station changes.')
 }
 
 function create_filter_ui() {
@@ -443,7 +445,7 @@ function create_filter_ui() {
         .append('option')
         .text(d => { return d })
         .property('value', d => {
-            return d == 'Monat' ? true : false;
+            return d == 'month' ? true : false;
         })
 
     
@@ -460,15 +462,15 @@ function create_filter_ui() {
         .append('option')
         .text(d => { return d })
         .property('value', d => {
-            return d == 'Absolut' ? true : false;
+            return d == 'absolute' ? true : false;
         })
 }
 
 function onchange() {
     
-    let year_value_temp = d3.select('div.select-selected.year').html() == 'Jahr' ? 2017 : d3.select('div.select-selected.year').html();
-    let type_value_temp = d3.select('div.select-selected.cycle').html() == 'Zeitraum' ? 'Monat' : d3.select('div.select-selected.cycle').html();
-    let value_metric_temp = d3.select('div.select-selected.metric').html() == 'Skalierung' ? 'Relativ Max' : d3.select('div.select-selected.metric').html();
+    let year_value_temp = d3.select('div.select-selected.year').html() == 'Year' ? 2017 : d3.select('div.select-selected.year').html();
+    let type_value_temp = d3.select('div.select-selected.cycle').html() == 'Time period' ? 'month' : d3.select('div.select-selected.cycle').html();
+    let value_metric_temp = d3.select('div.select-selected.metric').html() == 'Scale' ? 'relative max' : d3.select('div.select-selected.metric').html();
 
 
     let used_selection;
@@ -505,9 +507,9 @@ function init(file) {
         width: 130,
         levels: 5,
         radius: 1,
-        value_metric: 'Absolut',
+        value_metric: 'absolute',
         factor: 1,
-        type: "Wochentage",
+        type: 'weekdays',
         month: 0,
         factor_legend: .85,
         max_value: 10000,
@@ -525,9 +527,9 @@ function init(file) {
         width: 130,
         levels: 5,
         radius: 1,
-        value_metric: 'Absolut',
+        value_metric: 'absolute',
         factor: 1,
-        type: "Wochenenden",
+        type: 'weekends',
         month: 0,
         factor_legend: .85,
         max_value: 10000,
@@ -545,9 +547,9 @@ function init(file) {
         width: 130,
         levels: 5,
         radius: 1,
-        value_metric: 'Absolut',
+        value_metric: 'absolute',
         factor: 1,
-        type: 'Woche',
+        type: 'week',
         month: 0,
         factor_legend: .85,
         max_value: 10000,
@@ -565,9 +567,9 @@ function init(file) {
         width: 130,
         levels: 5,
         radius: 1,
-        value_metric: 'Absolut',
+        value_metric: 'absolute',
         factor: 1,
-        type: 'Monat',
+        type: 'month',
         month: 0,
         factor_legend: .85,
         max_value: 10000,
@@ -705,7 +707,7 @@ function exampleChart(file, year, station, config_current, id) {
 
 init(filepath);
 
-let selects = { year: '2017', type: 'Monat', value: 'Absolut' };
+let selects = { year: '2017', type: 'month', value: 'absolute' };
 
 function checkSelection(selected_current) {
     let content_current = selected_current.innerHTML;
@@ -738,12 +740,12 @@ function createLegend(item_index) {
         
         legend_wrapper.append('text')
             .classed('legend_text', true)
-            .text('Median Wert d.')
+            .text('Median value of')
             .style('transform', 'translateX(15px) translateY(15px)')
         
         legend_wrapper.append('text')
             .classed('legend_text', true)
-            .text('Anzahl Fahrradfahrer')
+            .text('number of cyclists')
             .style('transform', 'translateX(15px) translateY(28px)')
 
         let legend_max_circle = legend_wrapper.append('circle')
@@ -755,12 +757,12 @@ function createLegend(item_index) {
         
         legend_wrapper.append('text')
             .classed('legend_text', true)
-            .text('Höchster Wert d.')
+            .text('Maximum value of')
             .style('transform', 'translateX(15px) translateY(55px)')
         
         legend_wrapper.append('text')
             .classed('legend_text', true)
-            .text('Anzahl Fahrradfahrer')
+            .text('number of cyclists')
             .style('transform', 'translateX(15px) translateY(68px)')
     }
 }
@@ -775,23 +777,23 @@ function createSrc(item_index) {
 
         src_wrapper.append('text')
             .classed('legend_text', true)
-            .text('Quelle:')
+            .text('Source:')
             .style('transform', 'translateX(15px) translateY(15px)')
             .style('font-weight', 'bold')
 
         src_wrapper.append('text')
             .classed('legend_text', true)
-            .text('Senatsverwaltung')
+            .text('Senate Department')
             .style('transform', 'translateX(15px) translateY(28px)')
 
         src_wrapper.append('text')
             .classed('legend_text', true)
-            .text('für Umwelt und')
+            .text('for Urban Development')
             .style('transform', 'translateX(15px) translateY(41px)')
 
         src_wrapper.append('text')
             .classed('legend_text', true)
-            .text('Stadtentwicklung')
+            .text('and the Environment')
             .style('transform', 'translateX(15px) translateY(53px)')
     }
 }
@@ -869,7 +871,7 @@ function createStackedArea(file) {
         let areaAhart = lineChart({
             container:d3.select('#stacked'),
             data: data_temp_temp,
-            yLabel:'Radfahrer',
+            yLabel:'Cyclists',
             isTime:true,
             height:400,
             group_column:'type',
@@ -1111,7 +1113,7 @@ for (i = 0; i < x.length; i++) {
     c = document.createElement("DIV");
     c.innerHTML = selElmnt.options[j].innerHTML;
 
-    if (c.innerHTML == 'Monat' || c.innerHTML == 2017 || c.innerHTML == 'Relativ Max') {
+    if (c.innerHTML == 'month' || c.innerHTML == 2017 || c.innerHTML == 'Relativ Max') {
         c.setAttribute("class", "same-as-selected");
     }
 

@@ -3,14 +3,12 @@
   fill: black;
  }
   .title-wrapper .title {
-    font-family: 'Barlow', sans-serif;
     letter-spacing: .5px;
     font-size: 11px; }
 
 .charts-wrapper {
   width: 995px;
   position: relative;
-  z-index: 1000;
   display: block;
   margin: auto; }
   @media screen and (max-width: 995px) {
@@ -36,7 +34,6 @@
 
 text.legend {
   text-transform: uppercase;
-  font-family: 'Barlow', sans-serif;
   font-weight: regular;
   font-size: 8px;
   letter-spacing: .4px;
@@ -55,7 +52,7 @@ text.legend {
 
 .river-svg-wrapper {
   /* height: 100%; */
-  top: 405px;
+  top: 424px;
   left: -11px;
   z-index: -1000;
   width: 100%;

@@ -1,7 +1,6 @@
 /*the container must be positioned relative:*/
 .custom-select {
   position: relative;
-  font-family: 'Barlow', sans-serif;
   letter-spacing: .5px; }
 
 .custom-select select {
@@ -12,7 +11,7 @@
 .select-selected {
   background-color: #FCFCFC;
   color: black;
-  font-family: 'Barlow', sans-serif; }
+}
 
 /*style the arrow inside the select element:*/
 .select-selected:after {
@@ -33,10 +32,12 @@
 /*style the items (options), including the selected item:*/
 .select-items div, .select-selected {
   color: black;
-  padding: 8px 16px;
+  padding: 2px 16px;
   border: 1px solid;
   border-color: transparent #E4E4E4 #E4E4E4 #E4E4E4;
-  cursor: pointer; }
+  font-size: 12px;
+  cursor: pointer; 
+}
 
 .select-selected {
   border-color: #E4E4E4; }
@@ -63,4 +64,5 @@
   margin-bottom: 40px;
   display: flex;
   flex-direction: row;
+  font-size: 12px;
   margin-top: 40px; }
