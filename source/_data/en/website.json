@@ -10,19 +10,19 @@
             "url": "/en/"
         },
         {
-            "name": "about",
+            "name": "About us",
             "title": "About Page",
             "navigationTitle": "About us",
             "url": "/en/about"
         },
         {
-            "name": "projects",
+            "name": "Projects",
             "title": "Projects Page",
             "navigationTitle": "Projects",
             "url": "/en/projects"
         },
         {
-            "name": "datasets",
+            "name": "Datasets",
             "title": "Data Page",
             "navigationTitle": "Data",
             "url": "/en/datasets"
