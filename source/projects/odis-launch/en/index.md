@@ -1,6 +1,6 @@
 ---
 layout: project
-description: ""
+description: An overview of the new Open Data InfoPoint
 lang: en
 title: Berlin's new Open Data Infopoint
 subtitle: 3 questions and 3 goals for ODIS
@@ -14,37 +14,14 @@ featured: false
 authors:
   - victoria-dykes
 externalUrl: null
-start: 2018-05-23
-end: 2018-05-24
+start: 2018-05-22
+end: 2018-05-22
 status: finished
-date: 2019-02-12
-assets:
-  js:
-    - ../js/index.js
-  css:
-    - ../css/index.css
-materialsIncluded:
-  - name: images
-    link: "#"
-  - name: video
-    link: "#"
-  - name: press text
-    link: "#"
-  - name: Source Code
-    link: "#"
+date: 2018-05-22
 redirect_from:
-  - /projects/123456789/
-  - /old-site-path/my-amazing-post/
-folderName: odis-launch
-fileType: md
-de_title: Berlins neue Open Data Informationstelle
-en_title: Berlin's new Open Data Infopoint
-de_subtitle: 3 Ziele und 3 Fragen für ODIS
-en_subtitle: 3 questions and 3 goals for ODIS
+  - /projects/ODIS-Launch/index_en.html
 
 ---
-
-Introducing ODIS, Berlin's Open Data Information Point. Learn more at: [https://odis-berlin.de/](https://odis-berlin.de/)
 
 Recently, the Technologiestiftung Berlin released a report on “Open Data in the Berlin City Government”. The report, which is available to read [here](https://www.technologiestiftung-berlin.de/fileadmin/user_upload/Open_Data_in-der-Verwaltung_WEB.pdf) (in German), assesses the status quo of Open Data within the city government and offers recommendations for how policies and processes can be improved to better meet the needs of both data publishers and data users. The findings made it clear that despite a robust number of datasets published on Berlin’s official Open Data portal and general support for Open Data emanating from the city’s leadership, much room for improvement remains with respect to everyday data-related processes. For example, many government offices lack an oversight of what data they have in their possession, and the absence of individuals tasked with coordinating data publishing activities breeds confusion about who is even responsible for “doing” Open Data.
 
@@ -71,10 +48,6 @@ _Ensuring the usefulness of data, both through demonstrating possible applicatio
 
 When trying to navigate the oft-bewildering world of Open Data (from understanding the necessary data structure to figuring out how to publish it in the Berlin portal), it’s easy to lose sight of the reasons you’re doing this to begin with – i.e., for whom you’re actually publishing data, and what the data is actually useful for. ODIS hopes to help Berlin data publishers regain that focus through two initiatives. First, we want to continuously develop new prototypes based on Open Data that demonstrate the utility of this data. The Technologiestiftung Lab has already developed some applications of Open Data, such as [Kita-Suche](http://kita-suche.berlin/), which helps Berliners find daycares in the city, and the [Broadband Berlin site](http://www.breitband-berlin.de/) (German only), which visualizes the availability of high-speed internet in the city. Second, we want to establish stronger connections between data publishers and data users. Berlin has a thriving Open Data community, but the meetups and associated activities are generally very focused on what people are building with Open Data and usually have little involvement from the data publisher side. We want to help bridge this gap, such as through hosting events that have the explicit intention of bringing the Berlin city government and data users from the Berlin community together. This offers each side the chance to learn from the other and potentially build productive future relationships.
 
-```javascript
-  console.log('hello from project js');
-```
-
 Guiding Questions
 -----------------
 
@@ -82,13 +55,9 @@ Guiding Questions
 
 As mentioned above, our three starting points are not the extent of what we want to achieve with ODIS. How exactly ODIS and its focuses will evolve remains to be seen. We want this to be an iterative, dynamic process whereby our focus areas are shaped by the needs and demands of the city employees and our initiatives are shaped by our experiences of what actually works and what doesn’t. As part of the process of reflecting on what the goals and focuses of ODIS should be, we identified a lengthy list of guiding questions we’d like to answer – or at least reflect upon – as part of our work. In the interest of making the motivations and goals behind ODIS more transparent, we’ve pulled a few of the questions from this list that we thought best characterized the big picture behind ODIS, particularly the challenges we foresee and the opportunities with which we will be presented.
 
-{% include macro-image-section-markdown.html src="../images/hero.jpg" caption="Die ist eine Unterzeile" %}
-
 Many of these questions are actively being answered by governments in other cities and countries, and we fully intend to learn from their experiences by reading reports, conducting personal interviews, and maybe even making the occasional field trip outside of Berlin. But there are never one-size-fits-all approaches in governments and policy making. We can learn from other places, but we also need to apply our own knowledge about the institutional structures and cultures that are unique to Berlin. The goal is to blend both of these to come up with approaches for the city of Berlin that are ideally backed up by international experience, but which also fit into the specific context of Berlin.
 
 _What is the actual added value of Open Data? Who profits from it, and how can this be measured (if measurement is even possible)?_
-
-<div id="js-wrapper" class="html-tag">This is text inside a html tag</div>
 
 This question might seem odd coming from a self-professed “Open Data Information Center” – surely we should be the ones with a ready-to-go answer to this question? But from our perspective, too many advocates of Open Data rest on recycling the same broadly stated benefits of Open Data without critically engaging with said benefits (even we have engaged in this). Open Data is a great way to increase transparency, we hear again and again, but far less common are attempts to assess what the impact of this transparency really is – do citizens actually feel like they understand their governments better? Has this increased transparency enabled analyses of the government’s work that were previously impossible?
 
