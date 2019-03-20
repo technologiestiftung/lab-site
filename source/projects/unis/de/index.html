@@ -43,7 +43,7 @@ redirect_from:
 
 <div class="tile-analysis-wrapper">
   <div class="tile-analysis">
-      <img class="icon" src="./images/students.png" alt="">
+      <img class="icon" src="../images/students.png" alt="">
       <div class="tile-analysis--part">
           <span class="tile-analysis--title">Am <b>meisten</b> Studierende</span>
           <div class="tile-analysis--content">
@@ -61,7 +61,7 @@ redirect_from:
   </div>
 
   <div class="tile-analysis">
-      <img class="icon" src="./images/uni.png" alt="">
+      <img class="icon" src="../images/uni.png" alt="">
       <div class="tile-analysis--part">
           <span class="tile-analysis--title"><b>Älteste</b> Hochschule</span>
           <div class="tile-analysis--content">
@@ -78,7 +78,7 @@ redirect_from:
       </div>
   </div>
   <div class="tile-analysis--last">
-      <img class="icon" src="./images/sponsor.png" alt="">
+      <img class="icon" src="../images/sponsor.png" alt="">
       <div>
           <span class="tile-analysis--title">Anzahl Hochschulen nach Art der <b>Förderung</b> <br> und Anzahl d. Studierenden insgesamt</span> 
           <div class="tile-analysis-wrapper--last">
@@ -113,6 +113,135 @@ redirect_from:
       </div>
   </div>
 </div>
+
+<div class="special-section">
+    <div class="charts-section">
+        <div id="info"><h3 id="name"></h3></div>
+        <div class="chart-wrapper first">
+            <span class="chart__h2">Berliner Hochschulen</span>
+            <div class="chart-legend">
+                <span class="chart-legend__h3">Studierende <br> pro Universität</span>
+                <div id="legend-berlin-bars" class="chart-legend__graph"></div>
+            </div>
+            <div id="mapChartBerlin"></div>
+            <div class="chart-subline">
+                <div>
+                    <span>Diese Grafik zeigt Deutschlands Hochschulen <br/> und die Anzahl d. eingeschriebenen Studierenden.</span>
+                </div>
+                <div>
+                    <span>Quelle: <br/> <a class="link" href="http://hochschulkompass.de">Hochschulkompass</a></span>
+                </div>
+                </div>
+                <div id="tooltip-berlin" class="tooltip"></div>
+        </div>
+        <div class="chart-wrapper">
+            <span class="chart__h2">Hochschulen Histogramm</span>
+            <div class="chart-legend">
+                <span class="chart-legend__h3">Eingeschriebene Studierende</span>
+                <div class="chart-legend__unis">
+                    <div class="chart-legend__unis--oval"></div>
+                    <span class="chart-legend__subline">Ein Punkt, eine Universität</span>
+                </div>
+            </div>
+            <div id="beeChartBerlin"></div>
+            <div class="chart-subline">
+                <span>Diese Grafik zeigt die Verteilung der Universitäten <br/> anhand der Studierendenzahlen in einem Histogramm.</span>
+                <span>Quelle: <br/> <a class="link" href="http://hochschulkompass.de">Hochschulkompass</a></span>
+            </div>
+            <div id="brushed-tooltip-berlin" class="tooltip"></div>
+        </div>
+    </div>
+</div>
+
+<p>
+    Insgesamt sind 2.8 Millionen Menschen in Deutschland zum Studium eingeschrieben, rund 20 Prozent davon allein an den zehn größten Universitäten des Landes. Da der Hochschulkompass Daten zu ganz Deutschland umfasst, zeigen wir hier die Auswertungen des Gesamtdatensatzes.   
+</p>
+
+<div class="special-section">
+    <div class="charts-section">
+        <div id="info"><h3 id="name"></h3></div>
+        <div class="chart-wrapper first">
+            <span class="chart__h2">Die deutsche Hochschullandschaft
+            </span>
+            <div class="chart-legend">
+                <span class="chart-legend__h3">Studierende <br> pro Universität</span>
+                <div id="legend-bars" class="chart-legend__graph"></div>
+            </div>
+            <div id="map_Chart"></div>
+            <div class="chart-subline">
+                <div>
+                    <span>Diese Grafik zeigt Deutschlands Hochschulen <br/> und die Anzahl d. eingeschriebenen Studierenden.</span>
+                </div>
+                <div>
+                    <span>Quelle: <br/> <a class="link" href="http://hochschulkompass.de">Hochschulkompass</a></span>
+                </div>
+                </div>
+                <div id="_tooltip" class="tooltip"></div>
+        </div>
+        <div class="chart-wrapper">
+            <span class="chart__h2">Hochschulen Histogramm</span>
+            <div class="chart-legend">
+                <span class="chart-legend__h3">Eingeschriebene Studierende</span>
+                <div class="chart-legend__unis">
+                    <div class="chart-legend__unis--oval"></div>
+                    <span class="chart-legend__subline">Ein Punkt, eine Universität</span>
+                </div>
+            </div>
+            <div id="bee_Chart"></div>
+            <div class="chart-subline">
+                <span>Diese Grafik zeigt die Verteilung der Universitäten <br/> anhand der Studierendenzahlen in einem Histogramm.</span>
+                <span>Quelle: <br/> <a class="link" href="http://hochschulkompass.de">Hochschulkompass</a></span>
+            </div>
+            <div id="brushed-tooltip" class="tooltip"></div>
+        </div>
+    </div>
+</div>
+
+<p>
+    Entlang des Datensatzes haben wir eine Liste der Top 10 Universitäten für Berlin und Deutschland zusammengestellt:
+</p>
+
+<div class="project-text container container-unis">
+    <div class="table-headline">Die Top 10 Universitäten Deutschlands und Berlin im Vergleich</div>
+
+    <div class="btn-group-wrapper">
+        <div class="buttons grouped">
+            <button class="button" id="filter--oldest">
+                <span>Gründungsjahr</span>
+            </button>
+            <button class="button"  id="filter--diverse">
+                <span>Studiengänge</span>
+            </button>
+            <button class="button"  id="filter--countStudents">
+                <span>Studierende</span>
+            </button>
+        </div>
+
+        <div class="buttons">
+            <button class="button"  id="filter--sortOrder">
+                Sortierung: aufsteigend
+            </button>
+        </div>
+    </div>
+
+    <div class="table-legend">
+        <span>Universität</span>
+        <span class="legend-value">Anzahl</span>
+    </div>
+    <div id="table-wrapper"></div>
+</div>
+
+
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+<script src="https://rawgit.com/Kcnarf/d3-beeswarm/master/build/d3-beeswarm.js"></script>
+<script src="https://unpkg.com/topojson-client@3"></script>
+
+<script src="./js/d3-beeswarm.js"></script>
+<!-- <script src="./js/d3.min.js"></script> -->
+<script src="https://d3js.org/d3-tile.v0.0.min.js"></script>
+<script src="./js/topojson.js"></script>
 
 
 
