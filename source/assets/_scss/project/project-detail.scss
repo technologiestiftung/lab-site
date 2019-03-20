@@ -344,10 +344,12 @@
                     color: $color-publication;
                     background: rgba(0,0,0,0);
                     font-size: $font-size-s;
+                    background: $color-publication;
 
                     &:hover {
-                        color: $white;
-                        background: $color-publication;
+                        color: $color-publication;
+                        background: transparent;
+                        border: 1px solid $color-publication;
                     }
             }
         }
@@ -390,13 +392,15 @@
 
         .project-header.bright {
             .link--button {
+                    
+                    color: white;
+                    background: $color-prototype;
                     border: 1px solid $color-prototype;
-                    color: $color-prototype;
-                    background: rgba(0,0,0,0);
 
                     &:hover {
-                        color: $white;
-                        background: $color-prototype;
+                        color: $color-prototype;
+                        background: transparent;
+                        border: 1px solid $color-prototype;
                     }
             }
         }
@@ -436,12 +440,13 @@
         .project-header.bright {
             .link--button {
                     border: 1px solid $color-workshop;
-                    color: $color-workshop;
-                    background: rgba(0,0,0,0);
+                    color: white;
+                    background: $color-workshop;
 
                     &:hover {
+                        border: 1px solid $color-workshop;
                         color: $white;
-                        background: $color-workshop;
+                        background: transparent;
                     }
             }
         }
@@ -482,12 +487,13 @@
         .project-header.bright {
             .link--button {
                     border: 1px solid $color-dataset;
-                    color: $color-dataset;
-                    background: rgba(0,0,0,0);
+                    color: white;
+                    background: $color-dataset;
 
                     &:hover {
-                        color: $white;
-                        background: $color-dataset;
+                        color: $color-dataset;
+                        border: 1px solid $color-dataset;
+                        background: transparent;
                     }
             }
         }
