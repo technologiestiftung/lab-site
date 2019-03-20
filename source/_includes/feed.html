@@ -9,10 +9,17 @@
     <div class="timeline timeline__wrapper" id="timeline"></div>
 
     <ul class="grid feed-list">
+      {% assign count = -1 %}
         {%- for pg in include.sorted_pages -%}
-        {%- if pg.layout == "project" and pg.visible == true  and pg.lang == page.lang %}
-      {%- if forloop.index0 == 4 and page.layout == "landing" -%}
+        {%- if pg.layout == "project" and pg.visible == true and pg.lang == page.lang %}
+        {% assign count = count | plus: 1 %}
+      {%- if count == 4 and page.layout == "landing" -%}
+      <!-- should be on landing page foo -->
         {%- break -%}
+        {%- else -%}
+        <!-- {{forloop.index0}} -->
+      <!-- should not be on landing page {{page}} -->
+
       {%- endif -%}
         <li class="feed-list__project {{  pg.type }}">
             <a href="{{site.url}}{{pg.url}}">
