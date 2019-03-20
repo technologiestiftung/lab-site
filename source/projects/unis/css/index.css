@@ -5,8 +5,7 @@
 }
 
 body.safari .chart-legend {
-        padding-top: 1.5rem;
-
+    padding-top: 1.5rem;
 }
 
 svg#bee {
@@ -287,12 +286,20 @@ div.charts-section div.chart-wrapper h2 {
 }
 
 .table-item:hover {
-    background: #EEEDED;
+    background: rgb(247, 247, 247);
     transition: background .15s;
 }
 
+#filter--sortOrder {
+    margin-top: 0;
+}
+
+#filter--sortOrder:hover {
+    background: black;
+}
+
 .table-item:hover .td-content .td-headline {
-    color:#3291D0;
+    color:black;
     transition: color .15s;
 }
 
@@ -581,11 +588,15 @@ div.charts-section div.chart-wrapper h2 {
 .overlay-boarding-bee > .hint {
     text-align: center;
     width: 200px;
+    line-height: 1.5rem;
+    margin: 0;
 }
 
 .overlay-boarding-map > .hint {
     text-align: center;
     width: 200px;
+    line-height: 1.5rem;
+    margin: 0;
 }
 
 .charts-section > .chart-wrapper.first {
