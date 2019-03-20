@@ -529,6 +529,33 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
         return scale;
     }
 
+    module.initActive = () => {
+        var t_id = 'map_33';
+
+        if (type == 'BER') {
+            const circles = d3.selectAll('circle__wrapper--circle-ber');
+        } else if (type == 'GER') {
+            const circles = d3.selectAll('circle__wrapper--circle-ger');
+        }
+
+        d3.selectAll('.sub-wrapper')
+            .attr('style', 'display: flex')
+
+        circles
+            .transition()
+            .duration(100)
+            .style('opacity', function(d) {
+                if(`map_${d.id_hochschule}` == t_id){
+                    return 0.8
+                }
+                return 0.2
+            })
+
+        updateTooltip(d, 'map');
+
+        bee_chart.refresh(d3.select(this).attr('id'), 'mouseover');
+    }
+
     module.refresh = (id, event) => {
         id = parseInt(id.slice(4,7));
         const selection = d3.selectAll(`circle[id="map_${id}"]`);
@@ -1337,7 +1364,6 @@ const btnOldest = document.getElementById('filter--oldest');
 const btnDiverse = document.getElementById('filter--diverse');
 const btnSmallest = document.getElementById('filter--countStudents');
 const btnSortOrder = document.getElementById('filter--sortOrder');
-
 
 btnSortOrder.addEventListener('click', () => {
     var filtered, filteredBerlin;

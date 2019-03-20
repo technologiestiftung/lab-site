@@ -29,7 +29,8 @@ svg#bee {
     width: 70px;
     display: flex;
     flex-direction: row;
-    font-size: 14px;
+    font-size: 12px;
+    line-height: 1.25rem;
 }
 
 button:focus {
@@ -64,7 +65,8 @@ button:focus {
 }
 
 .axis text {
-font: 10px sans-serif;
+    font-size: 12px;
+    font-family: 'plex-sans' !important;
 }
 
 .cells circle:hover  {
@@ -99,6 +101,7 @@ font: 10px sans-serif;
 .tt-subline {
     margin-top: 0.25rem;
     color: grey;
+    line-height: 1.25rem;
     font-size: 14px;
 }
 
@@ -148,7 +151,7 @@ font: 10px sans-serif;
 .link {
     text-decoration: none;
     font-weight: bold;
-    color: #1e3791;
+    color: black;
 }
 
 .link:hover {
@@ -171,7 +174,6 @@ font: 10px sans-serif;
 }
 
 #mapChartBerlin {
-    margin-top: 2rem;
     overflow: hidden;
     position: relative;
 }
@@ -206,6 +208,11 @@ font: 10px sans-serif;
     padding-bottom: 10px;
 }
 
+.chart-wrapper h4 {
+    max-width: 700px;
+    border-bottom: #D8D8D8 1px solid;
+}
+
 .chart-subline {
     /* border-top: #D8D8D8 1px solid; */
     border-bottom: #D8D8D8 1px solid;
@@ -215,7 +222,8 @@ font: 10px sans-serif;
 }
 
 .chart-subline span {
-    font-size: 14px;
+    font-size: 12px;
+    line-height: 16px;
     letter-spacing: 0.1px;
     color: grey;
 }
@@ -228,6 +236,10 @@ div.charts-section div.chart-wrapper h2 {
     margin: 0;
 }
 
+.chart-legend__graph {
+    margin-top: 5px;
+}
+
 .chart-legend__h3 {
     margin: 0;
     text-align: left;
@@ -236,11 +248,13 @@ div.charts-section div.chart-wrapper h2 {
     font-size: 14px;
     display: block;
     max-width: 700px;
+    line-height: 1.25em;
 }
 
 .chart-legend__subline {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 12px;
+    line-height: 1.25rem;
 }
 
 .chart-legend__unis {
@@ -259,7 +273,6 @@ div.charts-section div.chart-wrapper h2 {
 
 .container-unis {
     font-size: 20px;
-    max-width: 700px;
 }
 
 .table-items-berlin {
@@ -296,8 +309,24 @@ div.charts-section div.chart-wrapper h2 {
     position: relative;
 }
 
-button:hover {
-    background: #3291D0 !important;
+.grouped .link--button {
+    margin-right: 15px;
+    font-size: 16px;
+    flex-wrap: wrap;
+    margin-top: 0;
+}
+
+.grouped .link--button:hover {
+    background: black
+}
+
+#filter--sortOrder {
+    font-size: 16px;
+}
+
+.grouped .link--button.active {
+    background: black;
+    color: white;
 }
 
 .table-legend span {
@@ -313,11 +342,10 @@ button:hover {
 
 #legend-bars {
     position: absolute;
-    margin-top: 20px;
 }
 
 #legend-berlin-bars {
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 .td-headline {
@@ -384,21 +412,21 @@ button:hover {
 .tile-analysis-wrapper {
     display: flex;
     flex-wrap: wrap;
-    max-width: 700px;
     margin: 0 auto;
     justify-content: space-between;
+    margin: 0 12vw 30px 12vw;
 }
 
 .tile-analysis {
     margin-bottom: 20px;
-    border-radius: 10px;
+    border-radius: 4px;
     padding: 20px;
     background: white;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     flex-wrap: wrap;
-    max-width: 700px;
+    width: 100%;
+    line-height: 1.25rem;
     border: rgb(230,230,230) 1px solid;
 }
 
@@ -411,7 +439,7 @@ button:hover {
 }
 
 .tile-analysis:hover {
-    border: #1e3791 1px solid;
+    border: black 1px solid;
 }
 
 .tile-analysis--last:hover {
@@ -420,13 +448,12 @@ button:hover {
 
 .tile-analysis--last {
     margin-bottom: 20px;
-    border-radius: 10px;
+    border-radius: 4px;
     padding: 20px;
     background: white;
     display: flex;
     flex-direction: column;
-    width: 700px;
-    max-width: 700px;
+    width: 100%;
     border: rgb(230,230,230) 1px solid;
 }
 
@@ -438,8 +465,8 @@ button:hover {
     width: 219px;
 }
 
-.tile-analysis--last > div  {
-    margin-top: 20px;
+.tile-analysis--title {
+    line-height: 1.25rem;
 }
 
 .tile-analysis-wrapper--last {
@@ -449,13 +476,13 @@ button:hover {
 
 .tile-analysis--last {
     margin-bottom: 20px;
-    border-radius: 10px;
+    border-radius: 4px;
     padding: 20px;
     background: white;
     flex-direction: row;
     display: flex;
     flex-wrap: wrap;
-    max-width: 700px;
+    width: 100%;
     border: rgb(230,230,230) 1px solid;
 }
 
@@ -465,6 +492,8 @@ button:hover {
 
 .tile-analysis--sub {
     color: grey;
+    line-height: 1.25rem;
+    margin-top: 5px;
 }
 
 .tile-analysis--content {
@@ -473,7 +502,7 @@ button:hover {
 }
 
 .tile-analysis--count {
-    color: #1e3791;
+    color: black;
     margin-top: 10px;
     font-size: 28px;
     font-weight: bold;
@@ -586,8 +615,9 @@ button:hover {
         min-height: 100px;
     }
 
-    .chart-subline > span {
+    .chart-subline span {
         padding-bottom: 10px;
+        line-height: 1.25rem;
     }
 
     .chart-wrapper {
@@ -601,11 +631,11 @@ button:hover {
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1024px) {
     .charts-section {
         flex-direction: column;
         height: auto;
-        width: 90%;
+        width: 100%;
     }
 
     #brushed-tooltip {
@@ -614,7 +644,6 @@ button:hover {
 
     .tile-analysis--last > div > span {
         display: inline-block;
-        width: 200px;
     }
 
     .tile-analysis {
@@ -680,3 +709,24 @@ button:hover {
         flex-direction: column;
     }
 }
+
+
+@media screen and (max-width: 768px) {
+    .tile-analysis-wrapper {
+        margin: 0;
+    }
+
+    .icon {
+        margin-left: -12px;
+        margin-top: -5px;
+    }
+
+    .grouped .link--button {
+        margin-bottom: 15px;
+    }
+
+    .charts-section {
+        width: 100%;
+    }
+}
+
