@@ -38,48 +38,48 @@ Es gibt verschiedene Möglichkeiten, Daten eines WFS/WMS Servers herunterzuladen
 
 Wählt im QGIS-Interface über das Menü _"Layer > Layer hinzufügen"_ oder über die Menüleiste auf der linken Seite _"WFS-Layer hinzufügen"_ aus.
 
-{% include macro-image-section-markdown.html src="../images/new_wfs_layer.png" caption="Neues WFS-Layer hinzufügen" %}
+{% include macro-image-section-markdown-small.html src="../images/new_wfs_layer.png" caption="Neues WFS-Layer hinzufügen" %}
 
 Es öffnet sich ein Fenster mit den bestehenden Serververbindungen. Stellt eine neue Serververbindung her.
 
 
-{% include macro-image-section-markdown.html src="../images/neue_verbindung.png" caption="Neue Serververbindung hinzufügen" %}
+{% include macro-image-section-markdown-small.html src="../images/neue_verbindung.png" caption="Neue Serververbindung hinzufügen" %}
 
 In dem neu geöffneten Fenster wird die URL des Servers abgefragt. Sucht hierfür im FIS-Broker den Datensatz, den ihr herunterladen möchtet. In diesem Beispiel verwenden wir den Datensatz zu den Standorten der öffentlichen Schulen. Klickt in der rechten Leiste des FIS-Brokers unter _"Datenbereitstellung"_ auf _"zum Downloaddienst (WFS)"_. Hierbei ist es wichtig, den WFS-Link auszuwählen, da über den WMS-Link nur eine Rastergrafik ohne Vektor- und Sachdaten heruntergeladen wird.
 
-{% include macro-image-section-markdown.html src="../images/schulen.png" caption="Datensatz im FIS-Broker" %}
+{% include macro-image-section-markdown-small.html src="../images/schulen.png" caption="Datensatz im FIS-Broker" %}
 
 Der Link öffnet ein neues Fenster mit den Angaben zum WFS-Server. Hier benötigen wir die _"Rechneradresse"_.
 
-{% include macro-image-section-markdown.html src="../images/get_link.png" caption="Download Details im FIS-Broker" %}
+{% include macro-image-section-markdown-small.html src="../images/get_link.png" caption="Download Details im FIS-Broker" %}
 
 Kopiert die Rechneradresse in QGIS in das URL-Feld von _"Verbindungsdetails"_, das sich zuvor geöffnet hatte. Der Name kann nach Belieben gewählt werden, der Rest der Felder wird hier nicht benötigt. Anschließend mit _"OK"_ bestätigen.
 
-{% include macro-image-section-markdown.html src="../images/server_benennen.png" caption="Verbindungsdetails angeben" %}
+{% include macro-image-section-markdown-small.html src="../images/server_benennen.png" caption="Verbindungsdetails angeben" %}
 
 Mit einem Klick auf _"Verbinden"_ wird die Verbindung zum Server hergestellt und der Name des Datensatzes sollte in der Tabelle angezeigt werden. Diesen anklicken und per Buttonklick _"hinzufügen"_.
 
-{% include macro-image-section-markdown.html src="../images/verbinden.png" caption="Verbindung zum Server herstellen" %}
+{% include macro-image-section-markdown-small.html src="../images/verbinden.png" caption="Verbindung zum Server herstellen" %}
 
 Falls der Datensatz nicht direkt angezeigt wird, das Browser-Fenster mit dem Pfeil-Symbol _"aktualisieren"_.
 
-{% include macro-image-section-markdown.html src="../images/aktualisieren.png" caption="Browser-Fenster aktualisieren" %}
+{% include macro-image-section-markdown-small.html src="../images/aktualisieren.png" caption="Browser-Fenster aktualisieren" %}
 
 Anschließend sollte der Layer des Datensatzes im Browserfenster unter _"WFS"_ zu finden sein.
 
-{% include macro-image-section-markdown.html src="../images/aktualisiert.png" caption="aktualisiertes Browser-Fenster" %}
+{% include macro-image-section-markdown-small.html src="../images/aktualisiert.png" caption="aktualisiertes Browser-Fenster" %}
 
 Durch Doppelklick oder Drag-and-Drop in das Layerfenster erscheinen die Datenpunkte in der Kartenansicht. In diesem Beispiel sind jetzt alle Schulen Berlins dargestellt. Mit QGIS kann die Darstellung nach Belieben angepasst werden. Beispielsweise kann eine Karte darunter gelegt, die Markierungen der Datenpunkte verändert oder weitere Layer (bspw. Bezirksgrenzen) hinzugefügt werden. Wer mehr wissen will, kann gerne einen Blick in die [ausführlichen Skripte zur Einführung in QGIS](https://drive.google.com/file/d/1EB9rbJBm41Gv8rQ1N7wHTpDcx6Bq5X7W/view) werfen, die Sebastian Meier für unsere ODIS-Workshops erstellt hat.  
   
 Um die Sachdaten direkt in QGIS anzuschauen, klickt mit einem Rechtsklick auf den Layer und wählt _"Attributtabelle öffnen"_ aus.
 
-{% include macro-image-section-markdown.html src="../images/go_to_table.png" caption="Attributtabelle öffnen" %}
+{% include macro-image-section-markdown-small.html src="../images/go_to_table.png" caption="Attributtabelle öffnen" %}
 
-{% include macro-image-section-markdown.html src="../images/attributtabelle.png" caption="Attributtabelle" %}
+{% include macro-image-section-markdown-small.html src="../images/attributtabelle.png" caption="Attributtabelle" %}
 
 Mit einen Rechtsklick auf den Layer und _"Speichern als..."_ können die Daten des Layers im gewünschtem Format (Shape-File, GeoJSON, GML,CSV etc.) gespeichert werden.
 
-{% include macro-image-section-markdown.html src="../images/go_to_save.png" caption="Layer speichern als ..." %}
+{% include macro-image-section-markdown-small.html src="../images/go_to_save.png" caption="Layer speichern als ..." %}
 
-{% include macro-image-section-markdown.html src="../images/save.png" caption="in gewünschtem Format speichern" %}
+{% include macro-image-section-markdown-small.html src="../images/save.png" caption="in gewünschtem Format speichern" %}
   

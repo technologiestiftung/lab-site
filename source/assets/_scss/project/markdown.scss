@@ -65,6 +65,22 @@
     }
   }
 
+  .project-image.small {
+    margin: $spacing-xl $spacing-page-m;
+
+    @media only screen and (max-width: $screen-xl) {
+      margin: $spacing-l $spacing-page-m;
+    }
+
+    @media only screen and (max-width: $screen-l) {
+      margin: $spacing-m $spacing-page-m;
+    }
+
+    @media only screen and (max-width: $screen-m) {
+      margin: $spacing-s 0;
+      }
+  }
+
   .project-image {
       margin: $spacing-xl 0;
 

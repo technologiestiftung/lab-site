@@ -36,47 +36,47 @@ There are various possibilities to download data from a WMS/WFS server. Programm
 
 In QGIS, select _"Layer > Add Layer"_ and click on _"Add WFS-Layer"_ or select the icon in the left menu bar.
 
-{% include macro-image-section-markdown.html src="../images/new_wfs_layer.png" caption="add new WFS-Layer" %}
+{% include macro-image-section-markdown-small.html src="../images/new_wfs_layer.png" caption="add new WFS-Layer" %}
 
 A new window with the existing sever connections will open. Create a new server connection.
 
-{% include macro-image-section-markdown.html src="../images/neue_verbindung.png" caption="Add new server connection" %}
+{% include macro-image-section-markdown-small.html src="../images/neue_verbindung.png" caption="Add new server connection" %}
 
 A new window will open that asks for the server URL. Search within the FIS-Broker for the desired dataset. In this example, we're using a dataset of school locations. In the right-hand menu bar of the FIS-Broker, below the heading _"Datenbereitstellung"_, click on _"zum Downloaddienst (WFS)"_. It is important to select the WFS Link because the WMS Link only leads to a raster graphic without vector data or additional attributes.
 
 
-{% include macro-image-section-markdown.html src="../images/schulen.png" caption="Dataset in the FIS-Broker" %}
+{% include macro-image-section-markdown-small.html src="../images/schulen.png" caption="Dataset in the FIS-Broker" %}
 
 Clicking this link opens a new window with the information about the WFS server. We need the URL located at _"Rechneradresse"_.
 
-{% include macro-image-section-markdown.html src="../images/get_link.png" caption="Download details in the FIS-Broker" %}
+{% include macro-image-section-markdown-small.html src="../images/get_link.png" caption="Download details in the FIS-Broker" %}
 
 Copy the _"Rechneradresse"_ into the URL field of the previously opened window _"Connection Details"_ in QGIS. The name can be chosen arbitrarily, and the other fields can remain empty. Then, confirm with _"OK"_.
 
-{% include macro-image-section-markdown.html src="../images/server_benennen.png" caption="Insert connection details" %}
+{% include macro-image-section-markdown-small.html src="../images/server_benennen.png" caption="Insert connection details" %}
 
 Click on _"Connect"_ to connect to the server. The name of the dataset should appear in the table below. Add the data with a button click on _"Add"_.
 
-{% include macro-image-section-markdown.html src="../images/verbinden.png" caption="Connect to server"%}
+{% include macro-image-section-markdown-small.html src="../images/verbinden.png" caption="Connect to server"%}
 
 In case the dataset is not shown, _"refresh"_ the browser panel by clicking on the arrow symbol.
 
-{% include macro-image-section-markdown.html src="../images/aktualisieren.png" caption="Refresh browser panel"%}
+{% include macro-image-section-markdown-small.html src="../images/aktualisieren.png" caption="Refresh browser panel"%}
 
 The layer of the dataset should now be visible in the browser panel within the _"WFS"_ tab.
 
-{% include macro-image-section-markdown.html src="../images/aktualisiert.png" caption="Refreshed browser panel"%}
+{% include macro-image-section-markdown-small.html src="../images/aktualisiert.png" caption="Refreshed browser panel"%}
 
 With a double click or drag and drop of the dataset into the Layer Panel the data should appear in the map view. In this example we can now see all schools in Berlin. QGIS offers various options to edit or enhance the appearance of your map. For example, a map can be laid underneath the existing map, the visualization of the data points can be edited, or another layer can be added (e.g., the district borders). For a more detailed guide on what you can do with QGIS, Sebastian Meier (member of the Ideation & Prototyping Lab team) created [an elaborate QGIS introductory guide](https://drive.google.com/file/d/1EB9rbJBm41Gv8rQ1N7wHTpDcx6Bq5X7W/view) (available only in German) that can be downloaded for free.  
   
 The attributes of the data can be viewed directly in QGIS by right clicking on the Layer and selecting _"Open Attribute Table"_.
 
-{% include macro-image-section-markdown.html src="../images/go_to_table.png" caption="Open attribute table"%}
+{% include macro-image-section-markdown-small.html src="../images/go_to_table.png" caption="Open attribute table"%}
   
-{% include macro-image-section-markdown.html src="../images/attributtabelle.png" caption="Viewing an attribute table"%}
+{% include macro-image-section-markdown-small.html src="../images/attributtabelle.png" caption="Viewing an attribute table"%}
 
 With a right click on the layer and selecting "Save as ...", the data can be saved in various other formats (shapefile, GeoJson, GML, CSV, etc.).
 
-{% include macro-image-section-markdown.html src="../images/go_to_save.png" caption="Save layer as ..."%}
+{% include macro-image-section-markdown-small.html src="../images/go_to_save.png" caption="Save layer as ..."%}
 
-{% include macro-image-section-markdown.html src="../images/save.png" caption="Save in desired format"%}
+{% include macro-image-section-markdown-small.html src="../images/save.png" caption="Save in desired format"%}
