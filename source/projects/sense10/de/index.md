@@ -23,7 +23,7 @@ redirect_from:
 
 ---
 
-<iframe src="https://player.vimeo.com/video/234345714" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe class="embed" src="https://player.vimeo.com/video/234345714" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 Sense10 ist ein mobiler Sensor, der es jedem ermöglicht, Luftqualität zu messen und darzustellen. Das Projekt bietet ein detaillierteren Einblick in die Herausforderungen im Umgang mit Luftbelastungen, die Menschen in einer Großstadt täglich ausgesetzt sind. Die Übertragung der Messdaten erfolgt über die LoRa-Technologie, so dass der Sensor keine direkte Internetverbindung benötigt.
 

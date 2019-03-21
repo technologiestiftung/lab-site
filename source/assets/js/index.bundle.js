@@ -29205,6 +29205,37 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
  */
 var projectTimeline;
 
+function debounce(func, wait, immediate) {
+  var timeout;
+  return function () {
+    var context = this,
+        args = arguments;
+
+    var later = function later() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+}
+
+var embedResize = debounce(function () {
+  var embeds = document.querySelectorAll('.embed');
+  embeds.forEach(function (obj, currentIndex, listObj) {
+    var style = window.getComputedStyle(document.getElementById("navigation"), null);
+    var padding_total = parseFloat(style['paddingLeft'].replace('px', '')) * 2;
+    var width = parseFloat(style['width']);
+    var styled_width = width - padding_total;
+    var styled_height = width / 16 * 9;
+    obj.setAttribute('width', styled_width.toString());
+    obj.setAttribute('height', styled_height.toString());
+  });
+}, 250);
+
 function createTimeline(idTimelineDiv) {
   var div = document.getElementById(idTimelineDiv);
 
@@ -29232,8 +29263,13 @@ document.addEventListener('DOMContentLoaded', function () {
   createImageSliders('image-slider');
 });
 window.addEventListener('resize', function (evt) {
-  projectTimeline.onResize();
+  if (projectTimeline != undefined) {
+    projectTimeline.onResize();
+  }
+
+  embedResize();
 });
+embedResize();
 },{"./modules/handleOnload.js":"modules/handleOnload.js","./modules/navigationHandler.js":"modules/navigationHandler.js","./modules/hamburgerHandler.js":"modules/hamburgerHandler.js","./modules/languageSwitch.js":"modules/languageSwitch.js","./modules/ImageSlider.js":"modules/ImageSlider.js","./modules/featProjectsHandler.js":"modules/featProjectsHandler.js","./modules/Timeline.js":"modules/Timeline.js"}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

@@ -22,6 +22,6 @@ redirect_from:
 
 ---
 
-<iframe src="https://player.vimeo.com/video/234345714" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe class="embed" src="https://player.vimeo.com/video/234345714" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 Sense10 is a fully functional mobile prototype that measures air quality. The idea was to combine the Airrohr from the Luftdaten.info initiative with the LoRaWAN technology. We now sending the exact location of the LoRa Node in combination with the measurement data from the NovaPM10 sensor. This then gets visualized on a map to enable people to watch where a people on the streets can get problems in terms of air quality.

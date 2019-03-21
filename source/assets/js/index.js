@@ -12,7 +12,38 @@ import Timeline from './modules/Timeline.js';
  * Initialize image sliders by classname
  */
 
- let projectTimeline;
+let projectTimeline;
+
+function debounce(func, wait, immediate) {
+	var timeout;
+	return function() {
+		var context = this, args = arguments;
+		var later = function() {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		};
+		var callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+		if (callNow) func.apply(context, args);
+	};
+}
+
+var embedResize = debounce(function() {
+
+  const embeds = document.querySelectorAll('.embed');
+
+  embeds.forEach((obj, currentIndex, listObj) => {
+    const style = window.getComputedStyle(document.getElementById("navigation"), null);
+    const padding_total = parseFloat(style['paddingLeft'].replace('px', '')) * 2;
+    const width = parseFloat(style['width']);
+    const styled_width = width - padding_total;
+    const styled_height = (width / 16) * 9;
+
+    obj.setAttribute('width', styled_width.toString())
+    obj.setAttribute('height', styled_height.toString())
+  });
+}, 250);
 
 function createTimeline(idTimelineDiv) {
   const div = document.getElementById(idTimelineDiv);
@@ -38,5 +69,10 @@ document.addEventListener('DOMContentLoaded',function() {
 });
 
 window.addEventListener('resize', evt => {
-  projectTimeline.onResize();
+  if (projectTimeline != undefined) {
+    projectTimeline.onResize();
+  }
+  embedResize();
 })
+
+embedResize();
