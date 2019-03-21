@@ -1,7 +1,3 @@
----
-# we need this for jekyll to process our scss
-# all components need to be in assets/_scss
----
 // General styling
 @import 'general/variables';
 @import 'general/base';
@@ -10,7 +6,6 @@
 @import 'general/typography';
 @import 'general/inputs';
 @import 'general/code-highlighting';
-
 // Layout
 @import 'layout/grid';
 @import 'layout/data-table';

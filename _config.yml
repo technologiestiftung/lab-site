@@ -110,9 +110,10 @@ whitelist:
   - jekyll-redirect-from
   - jekyll-sitemap
   - jekyll-paginate
-sass:
-  sass_dir: assets/_scss
-  style: compressed
+
+  # sass:
+#   sass_dir: assets/_scss
+#   style: compressed
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
@@ -131,6 +132,8 @@ exclude:
   - .sass-cache
   - node_modules
   - assets/js/index.js
+  - assets/_scss/
+  - assets/assets/css/index.scss
   - webpack.config.js
   - package.json
   - README.md
