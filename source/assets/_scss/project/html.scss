@@ -1,6 +1,10 @@
 .html-content {
   p {
-    margin: 0 $spacing-page-m $spacing-m $spacing-page-m;
+    margin: 0 $spacing-page-l $spacing-s $spacing-page-l;
+
+    @media only screen and (max-width: $screen-l) {
+      margin: 0 $spacing-page-s $spacing-m $spacing-page-s;
+    }
 
     @media only screen and (max-width: $screen-m) {
       margin: 0 0 $spacing-m 0;
@@ -12,7 +16,11 @@
   }
 
   h3 {
-    margin: 0 $spacing-page-m $spacing-m $spacing-page-m;
+    margin: 0 $spacing-page-l $spacing-s $spacing-page-l;
+
+    @media only screen and (max-width: $screen-l) {
+      margin: 0 $spacing-page-s $spacing-m $spacing-page-s;
+    }
 
     @media only screen and (max-width: $screen-m) {
       margin: 0 0 $spacing-m 0;

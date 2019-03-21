@@ -117,7 +117,7 @@ Guidance systems for the visually impaired often involve tactile paths covered w
 Accessibility in Public Buildings and Spaces
 --------------------------------------------
 
-{% include macro-image-section-markdown.html src="../images/TS_icons.png" caption="Accessibility in government buildings within the Tempelhof-Schöneberg Bezirk" %}
+{% include macro-image-section-markdown-small.html src="../images/TS_icons.png" caption="Accessibility in government buildings within the Tempelhof-Schöneberg Bezirk" %}
 
 ### Accessibility in city government buildings
 
@@ -231,7 +231,7 @@ A smart city can’t truly be smart if broad segments of its population are bein
 Further Resources
 -----------------
 
-{% include macro-image-section-markdown.html src="../images/wheelmap.png" caption="A screenshot of a website Wheelmap, which shows wheelchair accessible locations in Berlin" %}
+{% include macro-image-section-markdown-small.html src="../images/wheelmap.png" caption="A screenshot of a website Wheelmap, which shows wheelchair accessible locations in Berlin" %}
 
 There are a few websites worth highlighting that, although they don’t all make available raw data, nevertheless provide valuable information related to accessibility in Berlin:  
   

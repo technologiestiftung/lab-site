@@ -99,7 +99,7 @@ Blindenleitsysteme nutzen Elemente wie Rillen und Noppen, um sehbehinderten Mens
 Barrierefreiheit in öffentlichen Räumen
 ---------------------------------------
 
-{% include macro-image-section-markdown.html src="../images/TS_icons.png" caption="Barrierefreiheit der Dienstgebäude im Bezirk Tempelhof-Schöneberg" %}
+{% include macro-image-section-markdown-small.html src="../images/TS_icons.png" caption="Barrierefreiheit der Dienstgebäude im Bezirk Tempelhof-Schöneberg" %}
 
 ### Barrierefreiheit in Verwaltungsgebäuden
 
@@ -189,7 +189,7 @@ Eine Smart City kann nicht wirklich smart sein, wenn Teile der Bevölkerung an d
 Weitere Ressourcen
 ------------------
 
-{% include macro-image-section-markdown.html src="../images/wheelmap.png" caption="Die Webseite Wheelmap sammelt „crowdsourced“ Informationen zur Rollstuhlgerechtigkeit verschiedener Orte in Berlin" %}
+{% include macro-image-section-markdown-small.html src="../images/wheelmap.png" caption="Die Webseite Wheelmap sammelt „crowdsourced“ Informationen zur Rollstuhlgerechtigkeit verschiedener Orte in Berlin" %}
 
 Es gibt einige Webseiten, die selbst keine rohen Daten zur Verfügung stellen, die aber trotzdem nützliche Informationen zu Barrierefreiheit in Berlin bieten:  
   

@@ -11,16 +11,24 @@
 
   h1 {
     font-size: $font-size-xl;
-    margin: 0 $spacing-page-m $spacing-l $spacing-page-m;
+    margin: 0 $spacing-page-l $spacing-l $spacing-page-l;
 
     @media only screen and (max-width: $screen-m) {
       margin: 0 $spacing-s $spacing-m $spacing-s;
+    }
+
+    @media only screen and (max-width: $screen-l) {
+      margin: 0 $spacing-page-s $spacing-m $spacing-page-s;
     }
   }
 
   h2 {
     font-size: $font-size-xl;
-    margin: 0 $spacing-page-m $spacing-m $spacing-page-m;
+    margin: 0 $spacing-page-l $spacing-m $spacing-page-l;
+
+    @media only screen and (max-width: $screen-l) {
+      margin: 0 $spacing-page-s $spacing-m $spacing-page-s;
+    }
 
     @media only screen and (max-width: $screen-m) {
       margin: 0 0 $spacing-m 0;
@@ -28,7 +36,11 @@
   }
   
   h3 {
-    margin: 0 $spacing-page-m $spacing-s $spacing-page-m;
+    margin: 0 $spacing-page-l $spacing-s $spacing-page-l;
+
+    @media only screen and (max-width: $screen-l) {
+      margin: 0 $spacing-page-s $spacing-m $spacing-page-s;
+    }
 
     @media only screen and (max-width: $screen-m) {
       margin: 0 0 $spacing-m 0;
@@ -36,8 +48,12 @@
   }
 
   ul {
-    margin: 0 $spacing-page-m $spacing-l $spacing-page-m;
+    margin: 0 $spacing-page-l $spacing-l $spacing-page-l;
     list-style-type: disc;
+
+    @media only screen and (max-width: $screen-l) {
+      margin: 0 $spacing-page-s $spacing-m $spacing-page-s;
+    }
 
     @media only screen and (max-width: $screen-m) {
       margin: 0 0 $spacing-m 0;
@@ -46,14 +62,22 @@
 
 
   p {
-    margin: 0 $spacing-page-m $spacing-m $spacing-page-m;
+    margin: 0 $spacing-page-l $spacing-m $spacing-page-l;
+
+    @media only screen and (max-width: $screen-l) {
+      margin: 0 $spacing-page-s $spacing-m $spacing-page-s;
+    }
 
     @media only screen and (max-width: $screen-m) {
       margin: 0 0 $spacing-m 0;
     }
 
     &:last-of-type {
-      margin: 0 $spacing-page-m 0 $spacing-page-m;
+      margin: 0 $spacing-page-l 0 $spacing-page-l;
+
+      @media only screen and (max-width: $screen-l) {
+        margin: 0 $spacing-page-s $spacing-m $spacing-page-s;
+      }
 
       @media only screen and (max-width: $screen-m) {
         margin: 0 0;
@@ -66,14 +90,14 @@
   }
 
   .project-image.small {
-    margin: $spacing-xl $spacing-page-m;
+    margin: $spacing-xl $spacing-page-l;
 
     @media only screen and (max-width: $screen-xl) {
-      margin: $spacing-l $spacing-page-m;
+      margin: $spacing-l $spacing-page-l;
     }
 
     @media only screen and (max-width: $screen-l) {
-      margin: $spacing-m $spacing-page-m;
+      margin: $spacing-m $spacing-page-l;
     }
 
     @media only screen and (max-width: $screen-m) {

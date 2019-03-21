@@ -22,6 +22,7 @@
         grid-gap: $spacing-s $spacing-column--double;
         grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
         position: relative;
+        margin-bottom: $spacing-m;
 
         @media only screen and (max-width: $screen-m) {
         grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
