@@ -28825,6 +28825,7 @@ function () {
     this.findlane = this.findlane.bind(this);
     this.updateTooltip = this.updateTooltip.bind(this);
     this.setupBars = this.setupBars.bind(this);
+    this.onResize = this.onResize.bind(this);
   }
 
   _createClass(Timeline, [{
@@ -28851,6 +28852,14 @@ function () {
       this.vars.maxX = (0, _d.max)(data, function (d) {
         return _this.vars.parser(d.end);
       });
+    }
+  }, {
+    key: "updateScales",
+    value: function updateScales() {
+      this.vars.x = (0, _d.scaleTime)().domain([this.vars.minX, this.vars.maxX]).rangeRound([0, this.vars.width]);
+      this.vars.xAxis = (0, _d.axisBottom)(this.vars.x).ticks(this.vars.width / 100);
+      this.vars.wrapper.attr('width', this.vars.width);
+      this.vars.xAxisElm.call(this.vars.xAxis);
     }
   }, {
     key: "setupScales",
@@ -29022,12 +29031,48 @@ function () {
   }, {
     key: "onResize",
     value: function onResize() {
-      (0, _d.select)(this.vars.container);
+      var container = (0, _d.select)(this.vars.container);
+      var timeline_svg = (0, _d.select)('.timeline-svg');
+      var container_width = document.getElementsByClassName('timeline__wrapper')[0].getBoundingClientRect().width; // document.getElementsByClassName('.timeline__wrapper').getBoundingClientRect()
+      // timeline_svg.attr('width', container_width);
+
+      this.vars.width = container_width;
+      this.updateScales();
+      this.updateBars();
+    }
+  }, {
+    key: "updateBars",
+    value: function updateBars() {
+      var _this7 = this;
+
+      this.vars.types.forEach(function (type, iType) {
+        var onlyThisType = data.filter(function (d) {
+          return d.type === type;
+        });
+
+        var theseBands = _this7.timeline(onlyThisType);
+
+        if (type == 'dataset') {
+          _this7.vars[type].selectAll('circle').data(theseBands).attr('cx', function (d) {
+            return d.startX;
+          });
+        } else if (type == 'workshop') {
+          _this7.vars[type].selectAll('rect').data(theseBands).attr('x', function (d) {
+            return d.startX;
+          });
+        } else {
+          _this7.vars[type].selectAll('rect').data(theseBands).attr('x', function (d) {
+            return d.startX;
+          }).attr('width', function (d) {
+            return d.width;
+          });
+        }
+      });
     }
   }, {
     key: "setupBars",
     value: function setupBars() {
-      var _this7 = this;
+      var _this8 = this;
 
       this.vars.types.forEach(function (type, iType) {
         // add real data here later.
@@ -29035,47 +29080,47 @@ function () {
           return d.type === type;
         });
 
-        var theseBands = _this7.timeline(onlyThisType);
+        var theseBands = _this8.timeline(onlyThisType);
 
-        _this7.vars[type] = _this7.vars.wrapper.append('g').attr('class', "".concat(type, "-band"));
+        _this8.vars[type] = _this8.vars.wrapper.append('g').attr('class', "".concat(type, "-band"));
 
         if (type == 'dataset') {
-          _this7.vars[type].selectAll('circle').data(theseBands).enter().append('circle').attr('cx', function (d) {
+          _this8.vars[type].selectAll('circle').data(theseBands).enter().append('circle').attr('cx', function (d) {
             return d.startX;
           }).attr('cy', function (d) {
-            return d.y + _this7.vars.circleRadius * 1.25;
-          }).attr('r', _this7.vars.circleRadius).attr('fill', _this7.vars.colors[type]).on('mouseover', function (d, i, nodes) {
-            _this7.updateTooltip(d.name);
+            return d.y + _this8.vars.circleRadius * 1.25;
+          }).attr('r', _this8.vars.circleRadius).attr('fill', _this8.vars.colors[type]).on('mouseover', function (d, i, nodes) {
+            _this8.updateTooltip(d.name);
 
-            _this7.vars.tooltip.classed('active', true);
+            _this8.vars.tooltip.classed('active', true);
 
-            (0, _d.select)(nodes[i]).attr('r', _this7.vars.circleRadius * 1.3);
+            (0, _d.select)(nodes[i]).attr('r', _this8.vars.circleRadius * 1.3);
           }).on('mouseout', function (d, i, nodes) {
-            _this7.updateTooltip();
+            _this8.updateTooltip();
 
-            _this7.vars.tooltip.classed('active', false);
+            _this8.vars.tooltip.classed('active', false);
 
-            _this7.vars.tooltip.attr('style', 'display: none');
+            _this8.vars.tooltip.attr('style', 'display: none');
 
-            (0, _d.select)(nodes[i]).attr('r', _this7.vars.circleRadius * 1);
+            (0, _d.select)(nodes[i]).attr('r', _this8.vars.circleRadius * 1);
           });
         } else if (type == 'workshop') {
-          _this7.vars[type].selectAll('rect').data(theseBands).enter().append('rect').attr('x', function (d) {
+          _this8.vars[type].selectAll('rect').data(theseBands).enter().append('rect').attr('x', function (d) {
             return d.startX;
           }).attr('y', function (d) {
             return d.y;
-          }).attr('width', 8).attr('height', 8).attr('fill', _this7.vars.colors[type]);
+          }).attr('width', 8).attr('height', 8).attr('fill', _this8.vars.colors[type]);
         } else {
-          if (_this7.vars.svgDefs == null) {
-            _this7.vars.svgDefs = _this7.vars.wrapper.append('defs');
+          if (_this8.vars.svgDefs == null) {
+            _this8.vars.svgDefs = _this8.vars.wrapper.append('defs');
           }
 
-          var gradient = _this7.vars.svgDefs.append('linearGradient').attr('id', "".concat(type, "-gradient"));
+          var gradient = _this8.vars.svgDefs.append('linearGradient').attr('id', "".concat(type, "-gradient"));
 
           gradient.append('stop').attr('class', 'stop-left').attr('offset', '0');
           gradient.append('stop').attr('class', "stop-right__".concat(type)).attr('offset', '1');
 
-          _this7.vars[type].selectAll('rect').data(theseBands).enter().append("a").attr("xlink:href", function (d) {
+          _this8.vars[type].selectAll('rect').data(theseBands).enter().append("a").attr("xlink:href", function (d) {
             return d.url;
           }).append('rect').attr('x', function (d) {
             return d.startX;
@@ -29083,22 +29128,22 @@ function () {
             return d.y;
           }).attr('width', function (d) {
             return d.width;
-          }).attr('height', 6).classed("".concat(type, "-gradient"), true).attr('fill', _this7.vars.colors[type]).on('mouseover', function (d, i, nodes) {
-            _this7.updateTooltip(d.name);
+          }).attr('height', 6).classed("".concat(type, "-gradient"), true).attr('fill', _this8.vars.colors[type]).on('mouseover', function (d, i, nodes) {
+            _this8.updateTooltip(d.name);
 
-            _this7.vars.tooltip.classed('active', true);
+            _this8.vars.tooltip.classed('active', true);
 
             (0, _d.select)(nodes[i]).attr('height', 8);
           }).on('mouseout', function (d, i, nodes) {
-            _this7.vars.tooltip.classed('active', false);
+            _this8.vars.tooltip.classed('active', false);
 
-            _this7.vars.tooltip.attr('style', 'display: none');
+            _this8.vars.tooltip.attr('style', 'display: none');
 
             (0, _d.select)(nodes[i]).attr('height', 6);
           });
 
-          _this7.vars[type].attr('transform', function (d, i) {
-            var height = _this7.vars[type].node().getBoundingClientRect().height;
+          _this8.vars[type].attr('transform', function (d, i) {
+            var height = _this8.vars[type].node().getBoundingClientRect().height;
 
             var verticalOffset = iType + 1;
             return "translate(0,".concat(height * verticalOffset, ")");
@@ -29147,11 +29192,13 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 /**
  * Initialize image sliders by classname
  */
+var projectTimeline;
+
 function createTimeline(idTimelineDiv) {
   var div = document.getElementById(idTimelineDiv);
 
   if (div != null) {
-    var projectTimeline = new _Timeline.default(div);
+    projectTimeline = new _Timeline.default(div);
     projectTimeline.init();
   }
 }
@@ -29172,6 +29219,9 @@ document.addEventListener('DOMContentLoaded', function () {
   (0, _featProjectsHandler.default)();
   createTimeline('timeline');
   createImageSliders('image-slider');
+});
+window.addEventListener('resize', function (evt) {
+  projectTimeline.onResize();
 });
 },{"./modules/handleOnload.js":"modules/handleOnload.js","./modules/navigationHandler.js":"modules/navigationHandler.js","./modules/hamburgerHandler.js":"modules/hamburgerHandler.js","./modules/languageSwitch.js":"modules/languageSwitch.js","./modules/ImageSlider.js":"modules/ImageSlider.js","./modules/featProjectsHandler.js":"modules/featProjectsHandler.js","./modules/Timeline.js":"modules/Timeline.js"}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -29200,7 +29250,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49718" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57067" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

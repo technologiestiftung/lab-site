@@ -165,6 +165,7 @@ class Timeline {
         this.findlane = this.findlane.bind(this);
         this.updateTooltip = this.updateTooltip.bind(this);
         this.setupBars = this.setupBars.bind(this);
+        this.onResize = this.onResize.bind(this);
     }
 
     init() {
@@ -183,6 +184,21 @@ class Timeline {
         // insert real data here
         this.vars.minX = d3Min(data, (d) => { return this.vars.parser(d.start)});
         this.vars.maxX = d3Max(data, (d) => { return this.vars.parser(d.end)});
+    }
+
+    updateScales() {
+        this.vars.x = d3ScaleTime()
+            .domain([this.vars.minX, this.vars.maxX])
+            .rangeRound([0, this.vars.width]);
+
+        this.vars.xAxis = d3AxisBottom(this.vars.x)
+            .ticks(this.vars.width / 100);
+
+        this.vars.wrapper
+            .attr('width', this.vars.width);
+
+        this.vars.xAxisElm
+            .call(this.vars.xAxis);
     }
 
     setupScales() {
@@ -356,14 +372,47 @@ class Timeline {
                     .classed('legend__description', true)
                     .text(type)
                     .style('color', this.vars.colors[type])
-
-
         })
 
     }
 
     onResize() {
-        d3Select(this.vars.container)
+        const container = d3Select(this.vars.container);
+        const timeline_svg = d3Select('.timeline-svg');
+
+        const container_width = document.getElementsByClassName('timeline__wrapper')[0].getBoundingClientRect().width;
+
+        // document.getElementsByClassName('.timeline__wrapper').getBoundingClientRect()
+
+        // timeline_svg.attr('width', container_width);
+
+        this.vars.width = container_width;
+
+        this.updateScales()
+        this.updateBars()
+    }
+
+
+    updateBars() {
+        this.vars.types.forEach((type, iType) => {
+            const onlyThisType = data.filter(function(d) {return d.type === type});
+            const theseBands = this.timeline(onlyThisType);
+
+            if (type == 'dataset') {
+                this.vars[type].selectAll('circle')
+                    .data(theseBands)
+                    .attr('cx', d => d.startX)
+            } else if (type == 'workshop') {
+                this.vars[type].selectAll('rect')
+                    .data(theseBands)
+                    .attr('x', d => d.startX)
+            } else {
+                this.vars[type].selectAll('rect')
+                .data(theseBands)
+                .attr('x', d => d.startX)
+                .attr('width', d => d.width)
+            }
+        })
     }
 
     setupBars () {

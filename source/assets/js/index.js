@@ -12,10 +12,12 @@ import Timeline from './modules/Timeline.js';
  * Initialize image sliders by classname
  */
 
+ let projectTimeline;
+
 function createTimeline(idTimelineDiv) {
   const div = document.getElementById(idTimelineDiv);
   if (div != null) {
-    const projectTimeline = new Timeline(div);
+    projectTimeline = new Timeline(div);
     projectTimeline.init();
   }
 }
@@ -34,3 +36,7 @@ document.addEventListener('DOMContentLoaded',function() {
   createTimeline('timeline');
   createImageSliders('image-slider');
 });
+
+window.addEventListener('resize', evt => {
+  projectTimeline.onResize();
+})
