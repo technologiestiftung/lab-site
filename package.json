@@ -8,7 +8,7 @@
     "testWithCoverage": "jest --coverage",
     "parcel": "parcel",
     "prebuild:css": "node build-tools/build-css-prepare.js source/assets/css/index.scss && node-sass --include-path source/assets/_scss tmp/index.scss tmp/index.css",
-    "build:css": "postcss --use autoprefixer < tmp/index.css | postcss --use cssnano > source/assets/css/index.min.css",
+    "build:css": "postcss --config postcss.config.js --use autoprefixer < tmp/index.css | postcss --use cssnano > source/assets/css/index.min.css",
     "jekyll": "bundle exec jekyll serve  --livereload",
     "watch:js": "parcel watch source/assets/js/index.js --no-cache --out-dir source/assets/js/ --out-file index.bundle.js --public-url .",
     "new-project": "./project-generator/bin/run",
@@ -30,7 +30,8 @@
   "dependencies": {
     "d3": "^5.8.2",
     "node-sass": "^4.11.0",
-    "parcel-bundler": "^1.11.0"
+    "parcel-bundler": "^1.11.0",
+    "postcss-preset-env": "^6.6.0"
   },
   "devDependencies": {
     "@types/jest": "^24.0.0",
