@@ -28688,7 +28688,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var data = [{
+var data_temp = [{
   id: 0,
   isproject: true,
   type: "prototype",
@@ -28794,6 +28794,7 @@ function () {
       minX: null,
       maxX: null,
       x: null,
+      lang: null,
       elmX: null,
       svgs: null,
       catchAll: null,
@@ -28831,12 +28832,7 @@ function () {
   _createClass(Timeline, [{
     key: "init",
     value: function init() {
-      this.setupLegend();
       this.setupTimeline();
-      this.setupScales();
-      this.setupBars();
-      this.setupTooltip();
-      this.setupZoom();
     }
   }, {
     key: "setupTimeline",
@@ -28844,14 +28840,29 @@ function () {
       var _this = this;
 
       this.vars.width = this.vars.container.clientWidth;
-      this.vars.parser = _d.isoParse; // insert real data here
+      this.vars.parser = _d.isoParse;
+      this.lang = (0, _d.select)('html').attr('lang');
+      (0, _d.json)('/timeline.json').then(function (dat) {
+        _this.data = dat.filter(function (elm) {
+          return elm.isproject && elm.lang == _this.lang;
+        });
+        _this.vars.minX = (0, _d.min)(_this.data, function (d) {
+          return _this.vars.parser(d.start);
+        });
+        _this.vars.maxX = (0, _d.max)(_this.data, function (d) {
+          return _this.vars.parser(d.end);
+        });
 
-      this.vars.minX = (0, _d.min)(data, function (d) {
-        return _this.vars.parser(d.start);
-      });
-      this.vars.maxX = (0, _d.max)(data, function (d) {
-        return _this.vars.parser(d.end);
-      });
+        _this.setupLegend();
+
+        _this.setupScales();
+
+        _this.setupBars();
+
+        _this.setupTooltip();
+
+        _this.setupZoom();
+      }); // insert real data here
     }
   }, {
     key: "updateScales",
@@ -29046,7 +29057,7 @@ function () {
       var _this7 = this;
 
       this.vars.types.forEach(function (type, iType) {
-        var onlyThisType = data.filter(function (d) {
+        var onlyThisType = _this7.data.filter(function (d) {
           return d.type === type;
         });
 
@@ -29076,7 +29087,7 @@ function () {
 
       this.vars.types.forEach(function (type, iType) {
         // add real data here later.
-        var onlyThisType = data.filter(function (d) {
+        var onlyThisType = _this8.data.filter(function (d) {
           return d.type === type;
         });
 
@@ -29088,7 +29099,7 @@ function () {
           _this8.vars[type].selectAll('circle').data(theseBands).enter().append('circle').attr('cx', function (d) {
             return d.startX;
           }).attr('cy', function (d) {
-            return d.y + _this8.vars.circleRadius * 1.25;
+            d.y + _this8.vars.circleRadius * 1.25;
           }).attr('r', _this8.vars.circleRadius).attr('fill', _this8.vars.colors[type]).on('mouseover', function (d, i, nodes) {
             _this8.updateTooltip(d.name);
 
@@ -29108,7 +29119,7 @@ function () {
           _this8.vars[type].selectAll('rect').data(theseBands).enter().append('rect').attr('x', function (d) {
             return d.startX;
           }).attr('y', function (d) {
-            return d.y;
+            d.y;
           }).attr('width', 8).attr('height', 8).attr('fill', _this8.vars.colors[type]);
         } else {
           if (_this8.vars.svgDefs == null) {
@@ -29122,10 +29133,10 @@ function () {
 
           _this8.vars[type].selectAll('rect').data(theseBands).enter().append("a").attr("xlink:href", function (d) {
             return d.url;
-          }).append('rect').attr('x', function (d) {
-            return d.startX;
-          }).attr('y', function (d) {
-            return d.y;
+          }).append('rect').attr('x', function (dat) {
+            return dat.startX;
+          }).attr('y', function (dat) {
+            return dat.y;
           }).attr('width', function (d) {
             return d.width;
           }).attr('height', 6).classed("".concat(type, "-gradient"), true).attr('fill', _this8.vars.colors[type]).on('mouseover', function (d, i, nodes) {
@@ -29250,7 +29261,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57067" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59809" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

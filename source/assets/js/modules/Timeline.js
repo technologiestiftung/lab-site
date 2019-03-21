@@ -18,10 +18,11 @@ import {
     isoParse as d3IsoParse,
     axisBottom as d3AxisBottom,
     zoom as d3Zoom,
-    event as d3Event
+    event as d3Event,
+    json as d3Json
 } from 'd3';
 
-const data = [
+const data_temp = [
     {
         id: 0,
         isproject: true,
@@ -133,6 +134,7 @@ class Timeline {
             minX: null,
             maxX: null,
             x: null,
+            lang: null,
             elmX: null,
             svgs: null,
             catchAll: null,
@@ -169,21 +171,31 @@ class Timeline {
     }
 
     init() {
-        this.setupLegend();
         this.setupTimeline();
-        this.setupScales();
-        this.setupBars();
-        this.setupTooltip();
-        this.setupZoom();
     }
 
     setupTimeline() {
         this.vars.width = this.vars.container.clientWidth;
         this.vars.parser = d3IsoParse;
+        this.lang = d3Select('html').attr('lang');
+
+        
+
+        d3Json('/timeline.json')
+            .then((dat) => {
+                this.data = dat.filter(elm => { return elm.isproject && elm.lang == this.lang; })
+                
+                this.vars.minX = d3Min(this.data, (d) => { return this.vars.parser(d.start)});
+                this.vars.maxX = d3Max(this.data, (d) => { return this.vars.parser(d.end)});
+
+                this.setupLegend();
+                this.setupScales();
+                this.setupBars();
+                this.setupTooltip();
+                this.setupZoom();
+            })
 
         // insert real data here
-        this.vars.minX = d3Min(data, (d) => { return this.vars.parser(d.start)});
-        this.vars.maxX = d3Max(data, (d) => { return this.vars.parser(d.end)});
     }
 
     updateScales() {
@@ -395,7 +407,7 @@ class Timeline {
 
     updateBars() {
         this.vars.types.forEach((type, iType) => {
-            const onlyThisType = data.filter(function(d) {return d.type === type});
+            const onlyThisType = this.data.filter(function(d) {return d.type === type});
             const theseBands = this.timeline(onlyThisType);
 
             if (type == 'dataset') {
@@ -419,7 +431,7 @@ class Timeline {
         this.vars.types.forEach((type, iType) => {
 
             // add real data here later.
-            const onlyThisType = data.filter(function(d) {return d.type === type});
+            const onlyThisType = this.data.filter(function(d) {return d.type === type});
             const theseBands = this.timeline(onlyThisType);
 
             this.vars[type] = this.vars.wrapper
@@ -433,7 +445,7 @@ class Timeline {
                     .enter()
                     .append('circle')
                     .attr('cx', d => d.startX)
-                    .attr('cy', d => d.y + (this.vars.circleRadius * 1.25))
+                    .attr('cy', d => { d.y + (this.vars.circleRadius * 1.25) })
                     .attr('r', this.vars.circleRadius)
                     .attr('fill', this.vars.colors[type])
                     .on('mouseover', (d, i, nodes) => {
@@ -455,7 +467,7 @@ class Timeline {
                     .enter()
                     .append('rect')
                     .attr('x', d => d.startX)
-                    .attr('y', d => d.y)
+                    .attr('y', d => { d.y })
                     .attr('width', 8)
                     .attr('height', 8)
                     .attr('fill', this.vars.colors[type])
@@ -483,8 +495,10 @@ class Timeline {
                     .append("a")
                     .attr("xlink:href", function(d) { return d.url })
                     .append('rect')
-                    .attr('x', d => d.startX)
-                    .attr('y', d => d.y)
+                    .attr('x', dat => dat.startX)
+                    .attr('y', dat => {
+                        return dat.y
+                    })
                     .attr('width', d => d.width)
                     .attr('height', 6)
                     .classed(`${type}-gradient`, true)
