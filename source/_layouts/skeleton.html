@@ -45,7 +45,11 @@
 
         <!-- CANONICAL URL -->
         <link rel="canonical" href="{{site.url}}">
+        {%- if jekyll.environment == 'production' -%}
+        <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/index.min.css" />
+        {%- else -%}
         <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/index.css" />
+        {%- endif -%}
         <link rel="stylesheet" type="text/css" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.8/tiny-slider.css" />
         {%- if page.layout == "project" -%}
         <!-- include assets only for projets.
