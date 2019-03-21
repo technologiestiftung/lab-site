@@ -32,11 +32,11 @@ rimraf(outpath, (e1) => {
         }
         // tslint:disable-next-line: no-console
         console.log('success written file out');
-        rimraf(outpath, (e4) => {
-          if (e4) {
-            throw e4;
-          }
-        });
+        // rimraf(outpath, (e4) => {
+        //   if (e4) {
+        //     throw e4;
+        //   }
+        // });
       });
     });
   });
