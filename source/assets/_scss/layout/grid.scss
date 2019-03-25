@@ -1,16 +1,40 @@
-.grid {
+_:-ms-fullscreen, :root .grid.feed-list {
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     display: grid;
     grid-gap: $spacing-column--half $spacing-column--half;
     grid-template-columns: repeat(4, minmax(200px, 400px));
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-
 
     @media only screen and (max-width: $screen-xl) {
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-gap: $spacing-column--half $spacing-column--half;
         grid-template-columns: repeat(3, minmax(150px, 400px));
-        grid-template-rows: 1fr 1fr 1fr;
+    }
+    
+    @media only screen and (max-width: $screen-m) {
+        grid-gap: $spacing-column--half $spacing-column--half;
+        grid-template-columns: repeat(2, minmax(150px, 400px));
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     }
 
+    @media only screen and (max-width: $screen-s) {
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: $spacing-column--half $spacing-column--half;
+        grid-template-columns: repeat(1, minmax(150px, 500px));
+    }
+}
+
+_:-ms-fullscreen, :root .grid {
+    grid-template-rows: 1fr 1fr;
+    display: grid;
+    grid-gap: $spacing-column--half $spacing-column--half;
+    grid-template-columns: repeat(4, minmax(200px, 400px));
+
+    @media only screen and (max-width: $screen-xl) {
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-gap: $spacing-column--half $spacing-column--half;
+        grid-template-columns: repeat(3, minmax(150px, 400px));
+    }
+    
     @media only screen and (max-width: $screen-m) {
         grid-gap: $spacing-column--half $spacing-column--half;
         grid-template-columns: repeat(2, minmax(150px, 400px));
@@ -18,8 +42,29 @@
     }
 
     @media only screen and (max-width: $screen-s) {
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-gap: $spacing-column--half $spacing-column--half;
         grid-template-columns: repeat(1, minmax(150px, 500px));
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-gap: $spacing-column--half $spacing-column--half;
+    grid-template-columns: repeat(4, minmax(200px, 400px));
+
+    @media only screen and (max-width: $screen-xl){
+        grid-gap: $spacing-column--half $spacing-column--half;
+        grid-template-columns: repeat(3, minmax(150px, 400px));
+    }
+
+    @media only screen and (max-width: $screen-m) {
+        grid-gap: $spacing-column--half $spacing-column--half;
+        grid-template-columns: repeat(2, minmax(150px, 400px));
+    }
+    
+    @media only screen and (max-width: $screen-s) {
+        grid-gap: $spacing-column--half $spacing-column--half;
+        grid-template-columns: repeat(1, minmax(150px, 500px));
     }
 }
