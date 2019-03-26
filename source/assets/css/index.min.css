@@ -2525,12 +2525,9 @@ section {
       -webkit-box-align: center;
           -ms-flex-align: center;
               align-items: center;
-      position: relative; }
-      .project-header__hero-image {
-        -ms-flex-negative: 0;
-            flex-shrink: 0;
-        min-width: 100%;
-        min-height: 100%; }
+      position: relative;
+      background-position: center;
+      background-size: cover; }
     .project-header__title {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -2554,7 +2551,7 @@ section {
                 -ms-flex-direction: column;
                     flex-direction: column; } }
       .project-header__title .link--button {
-        width: 150px;
+        width: 180px;
         text-align: center;
         background: #ffffff;
         border: none;
@@ -2854,38 +2851,67 @@ section {
     .project a:not(.link--button):hover::after {
       -webkit-transform: scaleX(0.9) translateZ(0);
               transform: scaleX(0.9) translateZ(0); }
+  .project .html-content p, .project .markdown-content p {
+    margin: 0 17.5vw 15px 17.5vw; }
+    @media only screen and (max-width: 1024px) {
+      .project .html-content p, .project .markdown-content p {
+        margin: 0 5vw 30px 5vw; } }
+    @media only screen and (max-width: 768px) {
+      .project .html-content p, .project .markdown-content p {
+        margin: 0 0 30px 0; } }
+    .project .html-content p.blockquote, .project .markdown-content p.blockquote {
+      margin: 0 0 15px 0; }
+  .project .html-content h1, .project .markdown-content h1 {
+    font-size: 32px;
+    margin: 0 17.5vw 50px 17.5vw; }
+    @media only screen and (max-width: 768px) {
+      .project .html-content h1, .project .markdown-content h1 {
+        margin: 0 15px 30px 15px; } }
+    @media only screen and (max-width: 1024px) {
+      .project .html-content h1, .project .markdown-content h1 {
+        margin: 0 5vw 30px 5vw; } }
+  .project .html-content h2, .project .markdown-content h2 {
+    font-size: 32px;
+    margin: 0 17.5vw 30px 17.5vw; }
+    @media only screen and (max-width: 1024px) {
+      .project .html-content h2, .project .markdown-content h2 {
+        margin: 0 5vw 30px 5vw; } }
+    @media only screen and (max-width: 768px) {
+      .project .html-content h2, .project .markdown-content h2 {
+        margin: 0 0 30px 0; } }
+  .project .html-content h3, .project .markdown-content h3 {
+    margin: 0 17.5vw 15px 17.5vw; }
+    @media only screen and (max-width: 1024px) {
+      .project .html-content h3, .project .markdown-content h3 {
+        margin: 0 5vw 30px 5vw; } }
+    @media only screen and (max-width: 768px) {
+      .project .html-content h3, .project .markdown-content h3 {
+        margin: 0 0 30px 0; } }
+  .project .html-content .project-image.small, .project .markdown-content .project-image.small {
+    margin: 80px 17.5vw; }
+    @media only screen and (max-width: 1200px) {
+      .project .html-content .project-image.small, .project .markdown-content .project-image.small {
+        margin: 50px 17.5vw; } }
+    @media only screen and (max-width: 1024px) {
+      .project .html-content .project-image.small, .project .markdown-content .project-image.small {
+        margin: 30px 17.5vw; } }
+    @media only screen and (max-width: 768px) {
+      .project .html-content .project-image.small, .project .markdown-content .project-image.small {
+        margin: 15px 0; } }
+  .project .html-content .project-image, .project .markdown-content .project-image {
+    margin: 80px 0; }
+    @media only screen and (max-width: 1200px) {
+      .project .html-content .project-image, .project .markdown-content .project-image {
+        margin: 50px 0; } }
+    @media only screen and (max-width: 1024px) {
+      .project .html-content .project-image, .project .markdown-content .project-image {
+        margin: 30px 0; } }
+    @media only screen and (max-width: 768px) {
+      .project .html-content .project-image, .project .markdown-content .project-image {
+        margin: 15px 0; } }
 
 .markdown-content .highlighter-rouge {
   margin: 0 15px 50px 15px; }
-
-.markdown-content h1 {
-  font-size: 32px;
-  margin: 0 17.5vw 50px 17.5vw; }
-  @media only screen and (max-width: 768px) {
-    .markdown-content h1 {
-      margin: 0 15px 30px 15px; } }
-  @media only screen and (max-width: 1024px) {
-    .markdown-content h1 {
-      margin: 0 5vw 30px 5vw; } }
-
-.markdown-content h2 {
-  font-size: 32px;
-  margin: 0 17.5vw 30px 17.5vw; }
-  @media only screen and (max-width: 1024px) {
-    .markdown-content h2 {
-      margin: 0 5vw 30px 5vw; } }
-  @media only screen and (max-width: 768px) {
-    .markdown-content h2 {
-      margin: 0 0 30px 0; } }
-
-.markdown-content h3 {
-  margin: 0 17.5vw 15px 17.5vw; }
-  @media only screen and (max-width: 1024px) {
-    .markdown-content h3 {
-      margin: 0 5vw 30px 5vw; } }
-  @media only screen and (max-width: 768px) {
-    .markdown-content h3 {
-      margin: 0 0 30px 0; } }
 
 .markdown-content ul {
   margin: 0 17.5vw 50px 17.5vw;
@@ -2907,48 +2933,8 @@ section {
     .markdown-content ol {
       margin: 0 0 30px 0; } }
 
-.markdown-content p {
-  margin: 0 17.5vw 30px 17.5vw; }
-  @media only screen and (max-width: 1024px) {
-    .markdown-content p {
-      margin: 0 5vw 30px 5vw; } }
-  @media only screen and (max-width: 768px) {
-    .markdown-content p {
-      margin: 0 0 30px 0; } }
-  .markdown-content p:last-of-type {
-    margin: 0 17.5vw 0 17.5vw; }
-    @media only screen and (max-width: 1024px) {
-      .markdown-content p:last-of-type {
-        margin: 0 5vw 30px 5vw; } }
-    @media only screen and (max-width: 768px) {
-      .markdown-content p:last-of-type {
-        margin: 0 0; } }
-  .markdown-content p.blockquote {
-    margin: 0 0 15px 0; }
-
-.markdown-content .project-image.small {
-  margin: 80px 17.5vw; }
-  @media only screen and (max-width: 1200px) {
-    .markdown-content .project-image.small {
-      margin: 50px 17.5vw; } }
-  @media only screen and (max-width: 1024px) {
-    .markdown-content .project-image.small {
-      margin: 30px 17.5vw; } }
-  @media only screen and (max-width: 768px) {
-    .markdown-content .project-image.small {
-      margin: 15px 0; } }
-
-.markdown-content .project-image {
-  margin: 80px 0; }
-  @media only screen and (max-width: 1200px) {
-    .markdown-content .project-image {
-      margin: 50px 0; } }
-  @media only screen and (max-width: 1024px) {
-    .markdown-content .project-image {
-      margin: 30px 0; } }
-  @media only screen and (max-width: 768px) {
-    .markdown-content .project-image {
-      margin: 15px 0; } }
+.markdown-content p.blockquote {
+  margin: 0 0 15px 0; }
 
 .project--publication ul li:before {
   content: "→ ";
@@ -3001,23 +2987,3 @@ section {
       -webkit-transform: translate(-20px);
           -ms-transform: translate(-20px);
               transform: translate(-20px); } }
-
-.html-content p {
-  margin: 0 17.5vw 15px 17.5vw; }
-  @media only screen and (max-width: 1024px) {
-    .html-content p {
-      margin: 0 5vw 30px 5vw; } }
-  @media only screen and (max-width: 768px) {
-    .html-content p {
-      margin: 0 0 30px 0; } }
-  .html-content p.blockquote {
-    margin: 0 0 15px 0; }
-
-.html-content h3 {
-  margin: 0 17.5vw 15px 17.5vw; }
-  @media only screen and (max-width: 1024px) {
-    .html-content h3 {
-      margin: 0 5vw 30px 5vw; } }
-  @media only screen and (max-width: 768px) {
-    .html-content h3 {
-      margin: 0 0 30px 0; } }

@@ -45,11 +45,11 @@ interface IConfirm {
   aok: boolean;
 }
 const assets: IAssets = {
-  folders: ['css', 'en', 'de', 'js', 'images', 'downloads'],
+  folders: ['styles', 'en', 'de', 'js', 'images', 'downloads'],
   files: ['en/index', 'de/index'],
   code: [
     { path: 'js/index.js', content: 'console.log(\'hello from project js\')' },
-    { path: 'css/index.css', content: '' }],
+    { path: 'styles/index.css', content: '' }],
   frontmatter
 };
 // assumes this is run from the root of the lab-site folder
