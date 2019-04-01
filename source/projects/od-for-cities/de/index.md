@@ -60,7 +60,7 @@ Die Nutzung offener Daten durch die Privatwirtschaft hat darüber hinaus das Pot
 
 Erfahrungsgemäß erweisen sich offene Geo- und Mobilitätsdaten als besonders wertvoll, weil diese Daten häufig der Entwicklung innovativer Lösungen zur effizienteren und nachhaltigen Fortbewegung dienen. In Berlin nutzt etwa die [Bike Citizens GmbH](https://www.bikecitizens.net/de/) raumbezogene Daten, um Radfahrer\*innen optimierte Routingvorschläge anzubieten. Bike Citizens koppelt diese Daten mit usergenerierten Daten, um Städten datengetriebene Einblicke anzubieten, wie der Radverkehr in der Stadt aktuell aussieht und wie die passende Infrastruktur zukünftig verbessert werden könnte. Bike Citizens ist eines von rund zwanzig Unternehmen, die in unserem Bericht ["Open Data in der Praxis"](https://www.technologiestiftung-berlin.de/de/projects/projects/open-data-in-practice/)vorgestellt werden. Der Bericht evaluiert, wie Unternehmen aus Berlin Open Data in ihr Geschäftsmodell integrieren. Ähnliche Studien werden auch vom Open Data Institute in London durchgeführt – [ein Bericht von 2015](https://theodi.org/article/open-data-means-business/) hat 270 verschiedene Firmen identifiziert, die Open Data nutzen, erzeugen oder in diesem Bereich investieren.
 
-{% include macro-image-section-markdown.html src="../images/zuerich.png" caption="Eine Alayse der Bike Citizens GmbH zu Wartezeiten an Kreuzungen in Wien" %}
+{% include macro-image-section-markdown.html src="../images/bikecitizens.png" caption="Eine Analyse der Bike Citizens GmbH zu Wartezeiten an Kreuzungen in Wien" %}
 
 
 Fazit

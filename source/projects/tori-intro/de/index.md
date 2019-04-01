@@ -7,7 +7,7 @@ subtitle: Unser neuestes Lab-Mitglied stellt sich vor
 type: publication
 colorMode: bright
 thumbnail: /projects/tori-intro/images/hello.gif
-heroImage: /projects/loranodes/images/hero.jpg
+heroImage: ""
 visible: true
 featured: false
 authors:
