@@ -2,6 +2,19 @@
 layout: default
 ---
 
+<section class="mission-statement">
+  {%- if page.lang == "de" -%}
+  <h1>{{site.data.meta.missionStatement.title.de}}</h1>
+  <p>
+    {{site.data.meta.missionStatement.text.de}}
+  </p>
+  {%- else -%}
+  <h1>{{site.data.meta.missionStatement.title.en}}</h1>
+  <p>
+    {{site.data.meta.missionStatement.text.en}}
+  </p>
+  {%- endif -%}
+</section>
 {% include team-list.html %}
 
 <section class="feed">

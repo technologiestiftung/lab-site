@@ -1,5 +1,9 @@
+{%- assign hero = page.heroImage -%}
+{%- if hero == null -%}
+  {%- assign hero = "/assets/images/placeholder-hero.png" -%}
+{%- endif -%}
 <header class="project-header {{ page.colorMode }}">
-    <div class="project-header__hero" style="background-image:url({{ page.heroImage }});">
+    <div class="project-header__hero" style="background-image:url({{ hero }});">
         <div class="gradient-overlay"></div>
 
         <div class="project-header__title">

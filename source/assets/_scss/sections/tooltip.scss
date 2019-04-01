@@ -1,0 +1,80 @@
+    .tooltip {
+        
+        background: $white;
+        width: 170px;
+        height: auto;
+        position: absolute;
+        top: 150px;
+        left: 150px;
+        display: flex;
+        flex-direction: column;
+        padding: 12px 14px 12px 14px;
+        border: 1px solid $light-grey;
+        filter: drop-shadow(3px 5px 6px $light-grey);
+        animation: .25s fadeInFromNone ease;
+
+        &--title {
+            font-weight: bold;
+            font-size: $font-size-s;
+        }
+
+        &--subtitle {
+            font-size: $font-size-s;
+        }
+
+        &--datawrapper {
+            display: flex;
+            
+            flex-direction: column;
+            margin-top: $spacing-xs;
+
+            .attr {
+                opacity: 0.3;
+                font-size: $font-size-xs;
+            }
+
+            .value {
+                font-weight: bold;
+                font-size: $font-size-xs;
+            }
+
+            &--row {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    @keyframes fadeInFromNone {
+        0% {
+        display: none;
+        opacity: 0; }
+        1% {
+        display: block;
+        opacity: 0; }
+        100% {
+        display: block;
+        opacity: 1; } }
+    
+    @keyframes fadeInFromNone {
+        0% {
+        display: none;
+        opacity: 0; }
+        1% {
+        display: block;
+        opacity: 0; } }
+    
+    .month-wrapper {
+        margin-right: 5px; }
+    
+    .station-wrapper {
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: .5px; }
+    
+    .time-wrapper {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 10px;
+        color: black; }

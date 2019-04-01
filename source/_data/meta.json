@@ -1,4 +1,14 @@
 {
+  "missionStatement":{
+    "title":{
+      "de": "Leitbild",
+      "en": "Mission Statement"
+    },
+    "text":{
+      "de": "Dies ist ein Typoblindtext. An ihm kann man sehen, ob alle Buchstaben da sind und wie sie aussehen. Manchmal benutzt man Worte wie Hamburgefonts, Rafgenduks oder Handgloves, um Schriften zu testen. Manchmal Sätze, die alle Buchstaben des Alphabets enthalten - man nennt diese Sätze »Pangrams«.",
+      "en": "One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections."
+    }
+  },
   "navigation": [
     {
       "name": "start",
