@@ -6,7 +6,7 @@ title: Open Data for Cities
 subtitle: How open data can improve urban life
 type: publication
 colorMode: bright
-thumbnail: /projects/od-for-cities/images/zuerich.png
+thumbnail: /projects/od-for-cities/images/thumbnail.jpg
 heroImage: /projects/od-for-cities/images/zuerich.png
 visible: true
 featured: false
