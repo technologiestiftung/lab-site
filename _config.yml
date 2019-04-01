@@ -90,16 +90,16 @@ host: localhost
 collections:
   team_de:
     output: true
-    permalink: /team/:name/de
+    permalink: /team/:name/de/
   team_en:
     output: true
-    permalink: /team/:name/en
+    permalink: /team/:name/en/
   datasets_en:
     output: true
-    permalink: /datasets/:name/en
+    permalink: /datasets/:name/en/
   datasets_de:
     output: true
-    permalink: /datasets/:name/de
+    permalink: /datasets/:name/de/
 
 plugins:
   # - jekyll-feed
