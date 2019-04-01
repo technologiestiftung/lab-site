@@ -6,8 +6,8 @@ title: "New Team Member: Tori Dykes"
 subtitle: Welcome to our lab!
 type: publication
 colorMode: bright
-thumbnail: /projects/tori-intro/images/hello.gif
-heroImage: /projects/loranodes/images/hero.jpg
+thumbnail: /projects/tori-intro/images/thumbnail.jpg
+heroImage: ""
 visible: true
 featured: false
 authors:
