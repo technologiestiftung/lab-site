@@ -30,7 +30,7 @@ class Linechart {
         "translate(" + this.margin.left + "," + this.margin.top + ")");
         
         var h =  this.height_line 
-
+        
         // Get the data
         d3.csv(csv_file, function(error, data) {
             

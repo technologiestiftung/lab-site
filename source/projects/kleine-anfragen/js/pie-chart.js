@@ -11,25 +11,6 @@ class Piechart {
     
     init (pie_name, csv_file) {
         
-        //tooltip
-        var tooltip = d3.select(`#${pie_name}`).append('div')
-        .attr('class', 'tooltip')
-        .style('display', 'none');
-
-        function mouseover_pie(){
-            tooltip.style('display', 'inline');
-        }
-        function mousemove_pie(){
-            var d = d3.select(this).data()[0]
-            tooltip
-            .html(d.data.percentage + "<br> - <br>" + d.value)
-            .style('left', (d3.event.pageX - 34) + 'px')
-            .style('top', (d3.event.pageY - 12) + 'px');
-        }
-        function mouseout_pie(){
-            tooltip.style('display', 'none');
-        }
-        
         this.svg = d3.select(`#${pie_name}`)
         .append('svg')
         .attr('class', 'piechart-wrapper')
@@ -66,10 +47,7 @@ class Piechart {
             
             arc.append("path")
             .attr("d", path)
-            .attr("fill", function(d) { return color(d.data.ministry); })
-            .on('mouseover', mouseover_pie)
-            .on('mousemove', mousemove_pie)
-            .on('mouseout', mouseout_pie);
+            .attr("fill", function(d) { return color(d.data.ministry); });
             
             function midAngle(d) {
                 return d.startAngle + (d.endAngle - d.startAngle) / 2;
@@ -85,7 +63,7 @@ class Piechart {
                 // if slice centre is on the left, anchor text to start, otherwise anchor to end
                 return (midAngle(d)) < Math.PI ? 'start' : 'end';
             })
-            .text(function(d) { return d.data.ministry; });
+            .text(function(d) { return d.data.ministry + ' ' + d.value + ' (' + d.data.percentage + ')'; });
             
             // add lines connecting labels to slice. A polyline creates straight lines connecting several points
             arc.append('polyline')

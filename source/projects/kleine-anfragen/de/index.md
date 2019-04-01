@@ -13,10 +13,10 @@ visible: true
 featured: false
 authors:
   - alexandra-kapp
-start: 2019-03-01
-end: 2019-03-01
+start: 2019-02-01
+end: 2019-04-01
 status: finished
-date: 2019-03-01
+date: 2019-04-01
 assets:
   js:
     - ../js/index.js
@@ -145,6 +145,7 @@ Die gefragtesten Senatsverwaltungen
 Die Senatsverwaltungen Verkehr & Umwelt, Inneres & Sport, Bildung & Jugend und Soziales erhielten die meisten Anfragen. _(Anm. Senatsverwaltungen mit dem Zusatz (WP17) wurden in der Wahlperiode 18 umstrukturiert oder umbenannt.)_
 
 <div id='piechart-wp17'></div>
+
 TODO: format title
 Anfragen an Senatsverwaltungen (Wahlperiode 17)
 

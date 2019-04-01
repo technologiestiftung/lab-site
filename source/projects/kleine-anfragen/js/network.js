@@ -231,14 +231,17 @@ class Network {
             function mousemove(){
                 var d = d3.select(this).data()[0]
                 div
-                .html(d.size)
+                .html('<h3 class="tooltip--title">' + d.name + '</h3>' + 
+                '<div class="tooltip--datawrapper"> <div class="tooltip--datawrapper--row">' +
+                    '<p class="attr">Anzahl</p>' +
+                    '<p class="value">' + d.size + '</p>' +
+                '</div> </div>')
                 .style('left', (d3.event.pageX - 34) + 'px')
                 .style('top', (d3.event.pageY - 12) + 'px');
             }
             function mouseout(){
                 div.style('display', 'none');
             }
-            
             
             slider
             .call(d3.drag()
