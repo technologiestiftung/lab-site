@@ -1,3 +1,5 @@
+import 'whatwg-fetch'; // needed for ie11 should be the first things
+import 'babel-polyfill'; // needed for ie11 should be the first things
 import handleOnload from './modules/handleOnload.js';
 import navigationHandler from './modules/navigationHandler.js';
 import hamburgerHandler from './modules/hamburgerHandler.js';
@@ -5,6 +7,7 @@ import languageSwitch from './modules/languageSwitch.js';
 import ImageSlider from './modules/ImageSlider.js';
 import featProjectsHandler from './modules/featProjectsHandler.js';
 import Timeline from './modules/Timeline.js';
+import {ie11Test} from './modules/ie-11-test.js';
 /**
  * Initialize functions
  */
@@ -20,28 +23,28 @@ function debounce(func, wait, immediate) {
 		var context = this, args = arguments;
 		var later = function() {
 			timeout = null;
-			if (!immediate) func.apply(context, args);
+			if (!immediate) { func.apply(context, args); }
 		};
 		var callNow = immediate && !timeout;
 		clearTimeout(timeout);
 		timeout = setTimeout(later, wait);
-		if (callNow) func.apply(context, args);
+		if (callNow) { func.apply(context, args); }
 	};
 }
 
 var embedResize = debounce(function() {
 
-  const embeds = document.querySelectorAll('.embed');
+  const embeds = Array.from(document.querySelectorAll('.embed'));
 
   embeds.forEach((obj, currentIndex, listObj) => {
-    const style = window.getComputedStyle(document.getElementById("navigation"), null);
-    const padding_total = parseFloat(style['paddingLeft'].replace('px', '')) * 2;
-    const width = parseFloat(style['width']);
+    const style = window.getComputedStyle(document.getElementById('navigation'), null);
+    const padding_total = parseFloat(style.paddingLeft.replace('px', '')) * 2;
+    const width = parseFloat(style.width);
     const styled_width = width - padding_total;
     const styled_height = (width / 16) * 9;
 
-    obj.setAttribute('width', styled_width.toString())
-    obj.setAttribute('height', styled_height.toString())
+    obj.setAttribute('width', styled_width.toString());
+    obj.setAttribute('height', styled_height.toString());
   });
 }, 250);
 
@@ -58,7 +61,8 @@ function createImageSliders(sliderClassName) {
   [...imageSliders].forEach(slider => new ImageSlider(slider));
 }
 
-document.addEventListener('DOMContentLoaded',function() {
+ie11Test();
+document.addEventListener('DOMContentLoaded', function() {
   handleOnload();
   navigationHandler();
   hamburgerHandler();
@@ -73,6 +77,6 @@ window.addEventListener('resize', evt => {
     projectTimeline.onResize();
   }
   embedResize();
-})
+});
 
 embedResize();
