@@ -17,7 +17,7 @@
     "new": "./project-generator/bin/run --prompt",
     "new-project:interactive": "./project-generator/bin/run -p",
     "new-project:help": "./project-generator/bin/run --help",
-    "htmlproofer": " bundle exec htmlproofer ./_site/ > htmlproofer-report.txt"
+    "htmlproofer": " bundle exec htmlproofer ./_site/ > htmlproofer-report.txt 2>&1"
   },
   "repository": {
     "type": "git",

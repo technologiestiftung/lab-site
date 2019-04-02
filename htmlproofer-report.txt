@@ -1,0 +1,593 @@
+Running ["ImageCheck", "ScriptCheck", "LinkCheck"] on ["./_site/"] on *.html... 
+
+
+Checking 384 external links...
+Ran on 109 files!
+
+
+- ./_site/about/de/index.html
+  *  linking to internal hash # that does not exist (line 308)
+     <a href="#">
+                    <div class="partner-list__project-image">
+                        <img class="partner-list__project-image-logo partner-list__project-image-logo--partner" src="/assets/images/placeholder.png" alt="partner">
+                    </div>
+                    <div class="partner-list__project-title">
+                        partner
+                    </div>
+                    <div>partner partner partner partner</div>
+                </a>
+- ./_site/about/en/index.html
+  *  linking to internal hash # that does not exist (line 308)
+     <a href="#">
+                    <div class="partner-list__project-image">
+                        <img class="partner-list__project-image-logo partner-list__project-image-logo--partner" src="/assets/images/placeholder.png" alt="partner">
+                    </div>
+                    <div class="partner-list__project-title">
+                        partner
+                    </div>
+                    <div>partner partner partner partner</div>
+                </a>
+- ./_site/en/index.html
+  *  External link https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.8/min/tiny-slider.js failed: got a time out (response code 0)
+  *  External link https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.8/tiny-slider.css failed: got a time out (response code 0)
+  *  External link https://lab.technologiestiftung-berlin.de//about/en failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//assets/css/index.min.css failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//assets/favicons/android-icon-192x192.png failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//assets/favicons/apple-icon-114x114.png failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//assets/favicons/apple-icon-120x120.png failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//assets/favicons/apple-icon-144x144.png failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//assets/favicons/apple-icon-152x152.png failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//assets/favicons/apple-icon-180x180.png failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//assets/favicons/apple-icon-57x57.png failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//assets/favicons/apple-icon-60x60.png failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//assets/favicons/apple-icon-72x72.png failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//assets/favicons/apple-icon-76x76.png failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//assets/favicons/favicon-16x16.png failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//assets/favicons/favicon-32x32.png failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//assets/favicons/favicon-96x96.png failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//assets/favicons/manifest.json failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//assets/js/index.bundle.js failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/bathing-water/en/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/bathing-water/images/featured-badewasser.jpg failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/bikerides/en/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/bikerides/images/featured.jpg failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/datadive-accessibility/en/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/en failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/funding/en/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/kitas/en/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/kitas/images/featured.png failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/meine-perspektive/en/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/unis/en/ failed: 404 No error
+- ./_site/index.html
+  *  External link https://lab.technologiestiftung-berlin.de//about/de failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/de failed: 404 No error
+- ./_site/old-site-path/my-amazing-post/index.html
+  *  External link https://lab.technologiestiftung-berlin.de//projects/example-md-project/de/ failed: 404 No error
+- ./_site/projects/H3LL0W0RLD/en/index.html
+  *  External link http://www.technologiestiftung-berlin.de failed: got a time out (response code 302)
+  *  External link http://www.technologiestiftung-berlin.de/minecraft failed: got a time out (response code 302)
+  *  External link https://www.technologiestiftung-berlin.de/de/bibliothek/publikationen/ failed: 404 No error
+- ./_site/projects/bathing-water/en/index.html
+  *  External link https://badegewaesser-berlin.de/ failed: got a time out (response code 0)
+- ./_site/projects/bikerides/de/index.html
+  *  External link https://www.technologiestiftung-berlin.de/de/veranstaltungen/beitrag/radverkehr-40/Fahrrad-Meetup failed: 404 No error
+- ./_site/projects/bikerides/en/index.html
+  *  External link https://data.technologiestiftung-berlin.de/dataset/radverkehrsmengen failed: got a time out (response code 0)
+- ./_site/projects/datadive-accessibility/de/index.html
+  *  External link https://data.deutschebahn.com/dataset/fasta-station-facilities-status failed: got a time out (response code 0)
+- ./_site/projects/datadive-accessibility/en/index.html
+  *  External link https://data.deutschebahn.com/dataset/data-aufzug failed: got a time out (response code 0)
+  *  internally linking to pardok.parlament-berlin.de/starweb/adis/citat/VT/17/SchrAnfr/s17-17623.pdf, which does not exist (line 375)
+     <a href="pardok.parlament-berlin.de/starweb/adis/citat/VT/17/SchrAnfr/s17-17623.pdf">December 2015 Parliamentary enquiry on accessibile apartments (PDF)</a>
+- ./_site/projects/datadive-cycling/de/index.html
+  *  External link https://data.technologiestiftung-berlin.de failed: got a time out (response code 0)
+  *  External link https://data.technologiestiftung-berlin.de/dataset/detailnetz_strassenabschnitte failed: got a time out (response code 0)
+  *  External link https://data.technologiestiftung-berlin.de/dataset/lichtsignalanlagen failed: got a time out (response code 0)
+- ./_site/projects/datadive-cycling/en/index.html
+  *  External link http://digitalpresent.tagesspiegel.de/hier-plant-berlin-neue-radwege failed: got a time out (response code 301)
+  *  External link https://data.technologiestiftung-berlin.de/dataset/lichtsignalanlagen/en failed: got a time out (response code 0)
+  *  External link https://data.technologiestiftung-berlin.de/dataset/radverkehrsanlagen failed: got a time out (response code 0)
+  *  External link https://data.technologiestiftung-berlin.de/dataset/verkehrsmengen failed: response code 0 means something's wrong.
+             It's possible libcurl couldn't connect to the server or perhaps the request timed out.
+             Sometimes, making too many requests at once also breaks things.
+             Either way, the return message (if any) from the server is: SSL connect error
+  *  External link https://www.berlin.de/senuvk/verkehr/lenkung/vlb/download/radzaehlung/Gesamtdatei_Stundenwerte_2014_2017.xlsx failed: 404 No error
+- ./_site/projects/datadive_cycling/index.html
+  *  External link https://lab.technologiestiftung-berlin.de//projects/datadive-cycling/de/ failed: 404 No error
+- ./_site/projects/datadive_cycling/index_en.html
+  *  External link https://lab.technologiestiftung-berlin.de//projects/datadive-cycling/en/ failed: 404 No error
+- ./_site/projects/de/index.html
+  *  External link https://lab.technologiestiftung-berlin.de//projects/H3LL0W0RLD/de/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/bathing-water/de/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/bikerides/de/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/crime-atlas/de/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/datadive-accessibility/de/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/der-name-kommt-noch/de/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/fisbroker-to-qgis/de/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/funding/de/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/hinweise-zur-barrierefreiheit-auf-der-serviceportal-berlin.de/de/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/iodc-recap/de/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/kartendarstellung/de/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/kitas/de/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/kleine-anfragen/de/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/loranodes/de/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/magic-mirror/de/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/meine-perspektive/de/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/od-for-cities/de/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/odis-launch/de/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/our-lab-is-growing/de/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/sense10/de/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/testing-project/de/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/tori-intro/de/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/unis/de/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/was-verbindet-die-gebardensprachgemeinschaft-und-barrierefreiheit/de/ failed: 404 No error
+- ./_site/projects/der-name-kommt-noch/de/index.html
+  *  image ../images/1_blog_picture.png does not have an alt attribute (line 204)
+  *  image ../images/3_blog_picture.png does not have an alt attribute (line 213)
+  *  image ../images/5_blog_picture.png does not have an alt attribute (line 224)
+  *  image ../images/7_blog_picture.svg does not have an alt attribute (line 248)
+  *  image ../images/9_blog_picture.svg does not have an alt attribute (line 237)
+- ./_site/projects/der-name-kommt-noch/en/index.html
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+- ./_site/projects/en/index.html
+  *  External link https://lab.technologiestiftung-berlin.de//projects/H3LL0W0RLD/en/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/crime-atlas/en/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/der-name-kommt-noch/en/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/fisbroker-to-qgis/en/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/hinweise-zur-barrierefreiheit-auf-der-serviceportal-berlin.de/en/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/kartendarstellung/en/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/loranodes/en/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/magic-mirror/en/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/od-for-cities/en/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/odis-launch/en/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/sense10/en/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/testing-project/en/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/tori-intro/en/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//projects/was-verbindet-die-gebardensprachgemeinschaft-und-barrierefreiheit/en/ failed: 404 No error
+- ./_site/projects/example-html-project/de/index.html
+  *  External link https://lab.technologiestiftung-berlin.de//team/alexandra-kapp/de/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//team/fabian-moron-zirfas/de/ failed: 404 No error
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+- ./_site/projects/example-html-project/en/index.html
+  *  External link https://lab.technologiestiftung-berlin.de//team/alexandra-kapp/en/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//team/fabian-moron-zirfas/en/ failed: 404 No error
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+- ./_site/projects/example-md-project/de/index.html
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+- ./_site/projects/example-md-project/en/index.html
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+- ./_site/projects/funding/de/index.html
+  *  External link https://lab.technologiestiftung-berlin.de//team/fabian-dinklage/de/ failed: 404 No error
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+- ./_site/projects/funding/en/index.html
+  *  External link https://d3js.org/d3.v4.min.js failed: got a time out (response code 0)
+  *  External link https://lab.technologiestiftung-berlin.de//team/fabian-dinklage/en/ failed: 404 No error
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+- ./_site/projects/hinweise-zur-barrierefreiheit-auf-der-serviceportal-berlin.de/de/index.html
+  *  External link https://lab.technologiestiftung-berlin.de//team/jolanta-paliszewska/de/ failed: 404 No error
+  *  internally linking to www.service.berlin.de, which does not exist (line 178)
+     <a class="link--button" href="www.service.berlin.de">Projekt besuchen</a>
+- ./_site/projects/hinweise-zur-barrierefreiheit-auf-der-serviceportal-berlin.de/en/index.html
+  *  internally linking to www.service.berlin.de, which does not exist (line 178)
+     <a class="link--button" href="www.service.berlin.de">Launch Project</a>
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+- ./_site/projects/iodc-recap/de/index.html
+  *  External link https://lab.technologiestiftung-berlin.de//team/victoria-dykes/de/ failed: 404 No error
+- ./_site/projects/iodc-recap/en/index.html
+  *  External link https://datazetu.or.tz/wp-content/uploads/2018/06/Using-a-data-mural-to-fight-drug-abuse-in-Temeke.pdf failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//team/victoria-dykes/en/ failed: 404 No error
+- ./_site/projects/iodc-recap/index.html
+  *  External link https://lab.technologiestiftung-berlin.de//projects/iodc-recap/en/ failed: 404 No error
+- ./_site/projects/kartendarstellung/de/index.html
+  *  External link http://openmaptiles.org/ failed: got a time out (response code 301)
+  *  image /CI.png does not have an alt attribute (line 225)
+  *  internal image /CI.png does not exist (line 225)
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+- ./_site/projects/kartendarstellung/en/index.html
+  *  External link https://lab.technologiestiftung-berlin.de//team/jolanta-paliszewska/en/ failed: 404 No error
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+- ./_site/projects/ki-ai-ethics/index.html
+  *  External link https://lab.technologiestiftung-berlin.de//projects/ki-ai-intro/de/ethics.html failed: 404 No error
+- ./_site/projects/ki-ai-ethics/index_en.html
+  *  External link https://lab.technologiestiftung-berlin.de//projects/ki-ai-intro/en/ethics.html failed: 404 No error
+- ./_site/projects/ki-ai-intro/de/ethics.html
+  *  image ../images/icon-content-01.png does not have an alt attribute (line 268)
+  *  image ../images/icon-content-02.png does not have an alt attribute (line 272)
+  *  image ../images/icon-content-03.png does not have an alt attribute (line 276)
+  *  internally linking to ../ki-ai-making-of/index.html, which does not exist (line 246)
+     <a href="../ki-ai-making-of/index.html">genutzt</a>
+  *  internally linking to ../ki-ai-potentials-challenges/index.html, which does not exist (line 219)
+     <a href="../ki-ai-potentials-challenges/index.html">Anwendungsfelder</a>
+- ./_site/projects/ki-ai-intro/de/index.html
+  *  image ../images/icon-content-01.png does not have an alt attribute (line 243)
+  *  image ../images/icon-content-02.png does not have an alt attribute (line 235)
+  *  image ../images/icon-content-03.png does not have an alt attribute (line 239)
+- ./_site/projects/ki-ai-intro/de/making-of.html
+  *  External link https://lab.technologiestiftung-berlin.de//team/benjamin-seibel/de/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//team/sebastian-meier/de/ failed: 404 No error
+  *  image ../images/icon-content-01.png does not have an alt attribute (line 283)
+  *  image ../images/icon-content-02.png does not have an alt attribute (line 279)
+  *  image ../images/icon-content-03.png does not have an alt attribute (line 275)
+- ./_site/projects/ki-ai-intro/de/potentials-challenges.html
+  *  image ../images/icon-content-01.png does not have an alt attribute (line 364)
+  *  image ../images/icon-content-02.png does not have an alt attribute (line 356)
+  *  image ../images/icon-content-03.png does not have an alt attribute (line 360)
+  *  image ../images/ki/01.png does not have an alt attribute (line 222)
+  *  image ../images/ki/02.png does not have an alt attribute (line 244)
+  *  image ../images/ki/03.png does not have an alt attribute (line 267)
+  *  image ../images/ki/04.png does not have an alt attribute (line 285)
+  *  image ../images/ki/05.png does not have an alt attribute (line 311)
+  *  image ../images/ki/06.png does not have an alt attribute (line 331)
+  *  internally linking to ../images/LNDW_1.pdf, which does not exist (line 231)
+     <a href="../images/LNDW_1.pdf">Download</a>
+  *  internally linking to ../images/LNDW_2.pdf, which does not exist (line 252)
+     <a href="../images/LNDW_2.pdf">Download</a>
+  *  internally linking to ../images/LNDW_3.pdf, which does not exist (line 275)
+     <a href="../images/LNDW_3.pdf">Download</a>
+  *  internally linking to ../images/LNDW_4.pdf, which does not exist (line 293)
+     <a href="../images/LNDW_4.pdf">Download</a>
+  *  internally linking to ../images/LNDW_5.pdf, which does not exist (line 318)
+     <a href="../images/LNDW_5.pdf">Download</a>
+  *  internally linking to ../images/LNDW_6.pdf, which does not exist (line 340)
+     <a href="../images/LNDW_6.pdf">Download</a>
+  *  internally linking to ../ki-ai-ethics/index.html, which does not exist (line 219)
+     <a href="../ki-ai-ethics/index.html">vertiefenden Artikel </a>
+- ./_site/projects/ki-ai-intro/en/ethics.html
+  *  internally linking to ../ki-ai-making-of/index.html, which does not exist (line 246)
+     <a href="../ki-ai-making-of/index.html">genutzt</a>
+  *  internally linking to ../ki-ai-potentials-challenges/index.html, which does not exist (line 219)
+     <a href="../ki-ai-potentials-challenges/index.html">Anwendungsfelder</a>
+- ./_site/projects/ki-ai-intro/en/making-of.html
+  *  External link https://lab.technologiestiftung-berlin.de//team/benjamin-seibel/en/ failed: 404 No error
+  *  External link https://lab.technologiestiftung-berlin.de//team/sebastian-meier/en/ failed: 404 No error
+- ./_site/projects/ki-ai-intro/en/potentials-challenges.html
+  *  External link http://nushinyazdani.com/ failed: got a time out (response code 301)
+  *  External link http://www.predpol.com failed: got a time out (response code 0)
+  *  image ../images/ki/01.png does not have an alt attribute (line 222)
+  *  image ../images/ki/02.png does not have an alt attribute (line 244)
+  *  image ../images/ki/03.png does not have an alt attribute (line 267)
+  *  image ../images/ki/04.png does not have an alt attribute (line 285)
+  *  image ../images/ki/05.png does not have an alt attribute (line 311)
+  *  image ../images/ki/06.png does not have an alt attribute (line 331)
+  *  internally linking to ../images/LNDW_1.pdf, which does not exist (line 231)
+     <a href="../images/LNDW_1.pdf">Download</a>
+  *  internally linking to ../images/LNDW_2.pdf, which does not exist (line 252)
+     <a href="../images/LNDW_2.pdf">Download</a>
+  *  internally linking to ../images/LNDW_3.pdf, which does not exist (line 275)
+     <a href="../images/LNDW_3.pdf">Download</a>
+  *  internally linking to ../images/LNDW_4.pdf, which does not exist (line 293)
+     <a href="../images/LNDW_4.pdf">Download</a>
+  *  internally linking to ../images/LNDW_5.pdf, which does not exist (line 318)
+     <a href="../images/LNDW_5.pdf">Download</a>
+  *  internally linking to ../images/LNDW_6.pdf, which does not exist (line 340)
+     <a href="../images/LNDW_6.pdf">Download</a>
+  *  internally linking to ../ki-ai-ethics/index.html, which does not exist (line 219)
+     <a href="../ki-ai-ethics/index.html">vertiefenden Artikel </a>
+- ./_site/projects/ki-ai-intro/index.html
+  *  External link https://lab.technologiestiftung-berlin.de//projects/ki-ai-intro/de/ failed: 404 No error
+- ./_site/projects/ki-ai-intro/index_en.html
+  *  External link https://lab.technologiestiftung-berlin.de//projects/ki-ai-intro/en/ failed: 404 No error
+- ./_site/projects/ki-ai-making-of/index.html
+  *  External link https://lab.technologiestiftung-berlin.de//projects/ki-ai-intro/de/making-of.html failed: 404 No error
+- ./_site/projects/ki-ai-potentials-challenges/index.html
+  *  External link https://lab.technologiestiftung-berlin.de//projects/ki-ai-intro/en/potentials-challenges.html failed: 404 No error
+- ./_site/projects/kitas/de/index.html
+  *  image ../images/Icon-kids@2x.png does not have an alt attribute (line 209)
+- ./_site/projects/kitas/en/index.html
+  *  image ../images/Icon-kids@2x.png does not have an alt attribute (line 209)
+- ./_site/projects/kleine-anfragen/de/index.html
+  *  External link http://daten.berlin.de failed: got a time out (response code 301)
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+- ./_site/projects/kleine-anfragen/en/index.html
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+- ./_site/projects/loranodes/en/index.html
+  *  External link http://wiki.dragino.com/index.php?title=Lora_Shield failed: got a time out (response code 0)
+- ./_site/projects/meine-perspektive/de/index.html
+  *  image ../images/12_blog_picture.svg does not have an alt attribute (line 254)
+  *  image ../images/14_blog_picture.svg does not have an alt attribute (line 240)
+  *  image ../images/15_blog_picture.svg does not have an alt attribute (line 206)
+  *  image ../images/antidiskriminierungsstelle_sqat.png does not have an alt attribute (line 267)
+  *  image ../images/barrierefrei_stadt.svg does not have an alt attribute (line 278)
+  *  image ../images/example.png does not have an alt attribute (line 215)
+  *  internal image ../images/14_blog_picture.svg does not exist (line 240)
+- ./_site/projects/meine-perspektive/en/index.html
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+- ./_site/projects/od-for-cities/de/index.html
+  *  External link https://www.technologiestiftung-berlin.de/de/projects/projects/open-data-in-practice/ failed: 404 No error
+- ./_site/projects/od-for-cities/en/index.html
+  *  External link http://bikecolli.info/ failed: got a time out (response code 0)
+  *  External link https://anliegen.bonn.de/ failed: got a time out (response code 0)
+- ./_site/projects/our-lab-is-growing/de/index.html
+  *  External link https://correlaid.org/ failed: got a time out (response code 0)
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            
+          </a>
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            
+          </a>
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            
+          </a>
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            
+          </a>
+- ./_site/projects/sense10/de/index.html
+  *  External link https://lab.technologiestiftung-berlin.de//team/sebastian-rauer/de/ failed: 404 No error
+- ./_site/projects/sense10/en/index.html
+  *  External link https://lab.technologiestiftung-berlin.de//team/sebastian-rauer/en/ failed: 404 No error
+- ./_site/projects/testing-project/de/index.html
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+- ./_site/projects/testing-project/en/index.html
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+- ./_site/projects/tori-intro/en/index.html
+  *  External link http://opentender.eu failed: got a time out (response code 301)
+- ./_site/projects/unis/de/index.html
+  *  image ../images/sponsor.png does not have an alt attribute (line 244)
+  *  image ../images/students.png does not have an alt attribute (line 209)
+  *  image ../images/uni.png does not have an alt attribute (line 227)
+- ./_site/projects/unis/en/index.html
+  *  External link http://hochschulkompass.de failed: got a time out (response code 301)
+  *  External link https://d3js.org/d3-tile.v0.0.min.js failed: got a time out (response code 0)
+  *  image ../images/sponsor.png does not have an alt attribute (line 244)
+  *  image ../images/students.png does not have an alt attribute (line 209)
+  *  image ../images/uni.png does not have an alt attribute (line 227)
+- ./_site/projects/was-verbindet-die-gebardensprachgemeinschaft-und-barrierefreiheit/de/index.html
+  *  image ../images/10_blog_picture.png does not have an alt attribute (line 225)
+  *  image ../images/9_blog_picture.png does not have an alt attribute (line 214)
+  *  image ../images/statistik.svg does not have an alt attribute (line 248)
+  *  image ../images/world.svg does not have an alt attribute (line 305)
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+- ./_site/projects/was-verbindet-die-gebardensprachgemeinschaft-und-barrierefreiheit/en/index.html
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+- ./_site/team/fabian-moron-zirfas/en/index.html
+  *  External link https://lab.technologiestiftung-berlin.de//assets/icons/github-icon.svg failed: 404 No error
+- ./_site/team/jolanta-paliszewska/en/index.html
+  *  External link https://lab.technologiestiftung-berlin.de//assets/icons/twitter-icon.svg failed: 404 No error
+htmlproofer 3.10.2 | Error:  HTML-Proofer found 270 failures!
