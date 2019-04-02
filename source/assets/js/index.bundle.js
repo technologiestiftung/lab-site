@@ -37288,98 +37288,6 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var data_temp = [{
-  id: 0,
-  isproject: true,
-  type: "prototype",
-  status: "finished",
-  url: "http://localhost:4000/projects/example-md-project/en/",
-  name: "Example Markdown Project 1",
-  lang: "en",
-  start: "01-05-2016",
-  end: "06-03-2017"
-}, {
-  id: 0,
-  isproject: true,
-  type: "prototype",
-  status: "finished",
-  url: "http://localhost:4000/projects/example-md-project/en/",
-  name: "Example Markdown Project 1",
-  lang: "en",
-  start: "08-07-2016",
-  end: "12-09-2017"
-}, {
-  id: 0,
-  isproject: true,
-  type: "dataset",
-  status: "finished",
-  url: "http://localhost:4000/projects/example-md-project/en/",
-  name: "Example Markdown Project 1",
-  lang: "en",
-  start: "08-07-2016",
-  end: "12-09-2017"
-}, {
-  id: 0,
-  isproject: true,
-  type: "dataset",
-  status: "finished",
-  url: "http://localhost:4000/projects/example-md-project/en/",
-  name: "Example Markdown Project 1",
-  lang: "en",
-  start: "12-12-2016",
-  end: "12-09-2017"
-}, {
-  id: 0,
-  isproject: true,
-  type: "prototype",
-  status: "finished",
-  url: "http://localhost:4000/projects/example-md-project/en/",
-  name: "Example Markdown Project 1",
-  lang: "en",
-  start: "01-07-2016",
-  end: "04-09-2016"
-}, {
-  id: 1,
-  isproject: true,
-  type: "prototype",
-  status: "finished",
-  url: "http://localhost:4000/projects/example-md-project/en/",
-  name: "Example Markdown Project 1",
-  lang: "en",
-  start: "01-01-2018",
-  end: "04-03-2018"
-}, {
-  id: 2,
-  isproject: true,
-  type: "publication",
-  status: "finished",
-  url: "http://localhost:4000/projects/example-md-project/en/",
-  name: "Example Publication 1",
-  lang: "en",
-  start: "01-05-2018",
-  end: "03-08-2018"
-}, {
-  id: 3,
-  isproject: true,
-  type: "publication",
-  status: "finished",
-  url: "http://localhost:4000/projects/example-md-project/en/",
-  name: "Example Workshop 1",
-  lang: "en",
-  start: "09-01-2017",
-  end: "05-03-2018"
-}, {
-  id: 4,
-  isproject: true,
-  type: "data",
-  status: "finished",
-  url: "http://localhost:4000/projects/example-md-project/en/",
-  name: "Example Markdown Project 1",
-  lang: "en",
-  start: "01-00-2018",
-  end: ""
-}];
-
 var Timeline =
 /*#__PURE__*/
 function () {
@@ -37462,7 +37370,7 @@ function () {
         _this.setupTooltip();
 
         _this.setupZoom();
-      }); // insert real data here
+      });
     }
   }, {
     key: "updateScales",
@@ -37533,6 +37441,10 @@ function () {
   }, {
     key: "fitsIn",
     value: function fitsIn(lane, band) {
+      if (lane.end < band.start || lane.start > band.end) {
+        return true;
+      }
+
       var filteredLane = lane.filter(function (d) {
         return d.start <= band.end && d.end >= band.start;
       });
@@ -37594,7 +37506,8 @@ function () {
       this.vars.processedTimelines.forEach(function (band) {
         _this4.findlane(band);
       });
-      var height = 30 / this.vars.swimlanes.length;
+      var height = 60 / this.vars.swimlanes.length;
+      console.log('inside timeline!');
       height = Math.min(height, Infinity);
       this.vars.swimlanes.forEach(function (lane, i) {
         lane.forEach(function (band) {
@@ -37654,114 +37567,67 @@ function () {
   }, {
     key: "updateBars",
     value: function updateBars() {
-      var _this7 = this;
-
-      this.vars.types.forEach(function (type, iType) {
-        var onlyThisType = _this7.data.filter(function (d) {
-          return d.type === type;
-        });
-
-        var theseBands = _this7.timeline(onlyThisType);
-
-        if (type == 'dataset') {
-          _this7.vars[type].selectAll('circle').data(theseBands).attr('cx', function (d) {
-            return d.startX;
-          });
-        } else if (type == 'workshop') {
-          _this7.vars[type].selectAll('rect').data(theseBands).attr('x', function (d) {
-            return d.startX;
-          });
-        } else {
-          _this7.vars[type].selectAll('rect').data(theseBands).attr('x', function (d) {
-            return d.startX;
-          }).attr('width', function (d) {
-            return d.width;
-          });
-        }
+      var onlyThisType = this.data.filter(function (d) {
+        return d.type === type;
+      });
+      var theseBands = this.timeline(onlyThisType);
+      this.vars['prototype'].selectAll('rect').data(theseBands).attr('x', function (d) {
+        return d.startX;
+      }).attr('width', function (d) {
+        return d.width;
       });
     }
   }, {
     key: "setupBars",
     value: function setupBars() {
-      var _this8 = this;
+      var _this7 = this;
 
-      this.vars.types.forEach(function (type, iType) {
-        // add real data here later.
-        var onlyThisType = _this8.data.filter(function (d) {
-          return d.type === type;
-        });
+      // this.vars.types.forEach((type, iType) => {
+      var type = 'prototype';
+      var iType = 0; // add real data here later.
+      // const onlyThisType = this.data.filter(function(d) {return d.type === type});
 
-        var theseBands = _this8.timeline(onlyThisType);
+      var onlyThisType = this.data;
+      var theseBands = this.timeline(onlyThisType);
+      this.vars[type] = this.vars.wrapper.append('g').attr('class', "".concat(type, "-band"));
 
-        _this8.vars[type] = _this8.vars.wrapper.append('g').attr('class', "".concat(type, "-band"));
+      if (this.vars.svgDefs == null) {
+        this.vars.svgDefs = this.vars.wrapper.append('defs');
+      }
 
-        if (type == 'dataset') {
-          _this8.vars[type].selectAll('circle').data(theseBands).enter().append('circle').attr('cx', function (d) {
-            return d.startX;
-          }).attr('cy', function (d) {
-            d.y + _this8.vars.circleRadius * 1.25;
-          }).attr('r', _this8.vars.circleRadius).attr('fill', _this8.vars.colors[type]).on('mouseover', function (d, i, nodes) {
-            _this8.updateTooltip(d.name);
+      var gradient = this.vars.svgDefs.append('linearGradient').attr('id', "".concat(type, "-gradient"));
+      gradient.append('stop').attr('class', 'stop-left').attr('offset', '0');
+      gradient.append('stop').attr('class', "stop-right__".concat(type)).attr('offset', '1');
+      this.vars[type].selectAll('rect').data(theseBands).enter().append("a").attr("xlink:href", function (d) {
+        return d.url;
+      }).append('rect').attr('x', function (dat) {
+        return dat.startX;
+      }).attr('y', function (dat) {
+        return dat.y;
+      }).attr('width', function (d) {
+        return d.width;
+      }).attr('height', 6).attr('fill', function (d) {
+        return _this7.vars.colors[d.type];
+      }).on('mouseover', function (d, i, nodes) {
+        _this7.updateTooltip(d.name);
 
-            _this8.vars.tooltip.classed('active', true);
+        _this7.vars.tooltip.classed('active', true);
 
-            (0, _d.select)(nodes[i]).attr('r', _this8.vars.circleRadius * 1.3);
-          }).on('mouseout', function (d, i, nodes) {
-            _this8.updateTooltip();
+        (0, _d.select)(nodes[i]).attr('height', 8);
+      }).on('mouseout', function (d, i, nodes) {
+        _this7.vars.tooltip.classed('active', false);
 
-            _this8.vars.tooltip.classed('active', false);
+        _this7.vars.tooltip.attr('style', 'display: none');
 
-            _this8.vars.tooltip.attr('style', 'display: none');
-
-            (0, _d.select)(nodes[i]).attr('r', _this8.vars.circleRadius * 1);
-          });
-        } else if (type == 'workshop') {
-          _this8.vars[type].selectAll('rect').data(theseBands).enter().append('rect').attr('x', function (d) {
-            return d.startX;
-          }).attr('y', function (d) {
-            d.y;
-          }).attr('width', 8).attr('height', 8).attr('fill', _this8.vars.colors[type]);
-        } else {
-          if (_this8.vars.svgDefs == null) {
-            _this8.vars.svgDefs = _this8.vars.wrapper.append('defs');
-          }
-
-          var gradient = _this8.vars.svgDefs.append('linearGradient').attr('id', "".concat(type, "-gradient"));
-
-          gradient.append('stop').attr('class', 'stop-left').attr('offset', '0');
-          gradient.append('stop').attr('class', "stop-right__".concat(type)).attr('offset', '1');
-
-          _this8.vars[type].selectAll('rect').data(theseBands).enter().append("a").attr("xlink:href", function (d) {
-            return d.url;
-          }).append('rect').attr('x', function (dat) {
-            return dat.startX;
-          }).attr('y', function (dat) {
-            return dat.y;
-          }).attr('width', function (d) {
-            return d.width;
-          }).attr('height', 6).classed("".concat(type, "-gradient"), true).attr('fill', _this8.vars.colors[type]).on('mouseover', function (d, i, nodes) {
-            _this8.updateTooltip(d.name);
-
-            _this8.vars.tooltip.classed('active', true);
-
-            (0, _d.select)(nodes[i]).attr('height', 8);
-          }).on('mouseout', function (d, i, nodes) {
-            _this8.vars.tooltip.classed('active', false);
-
-            _this8.vars.tooltip.attr('style', 'display: none');
-
-            (0, _d.select)(nodes[i]).attr('height', 6);
-          });
-
-          _this8.vars[type].attr('transform', function (d, i) {
-            var height = _this8.vars[type].node().getBoundingClientRect().height;
-
-            var verticalOffset = iType + 1;
-            return "translate(0,".concat(height * verticalOffset, ")");
-          });
-        }
+        (0, _d.select)(nodes[i]).attr('height', 6);
       });
-    }
+      this.vars[type].attr('transform', function (d, i) {
+        var height = _this7.vars[type].node().getBoundingClientRect().height;
+
+        return "translate(0,".concat(height + 50, ")");
+      });
+    } // })
+
   }]);
 
   return Timeline;
