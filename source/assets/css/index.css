@@ -2125,6 +2125,24 @@ section {
     @media only screen and (max-width: 768px) {
       .project .html-content h3, .project .markdown-content h3 {
         margin: 0 0 30px 0; } }
+  .project .html-content ul, .project .markdown-content ul {
+    margin: 0 17.5vw 50px 17.5vw;
+    list-style-type: disc; }
+    @media only screen and (max-width: 1024px) {
+      .project .html-content ul, .project .markdown-content ul {
+        margin: 0 5vw 30px 5vw; } }
+    @media only screen and (max-width: 768px) {
+      .project .html-content ul, .project .markdown-content ul {
+        margin: 0 0 30px 0; } }
+  .project .html-content ol, .project .markdown-content ol {
+    margin: 0 17.5vw 50px 17.5vw;
+    list-style-type: disc; }
+    @media only screen and (max-width: 1024px) {
+      .project .html-content ol, .project .markdown-content ol {
+        margin: 0 5vw 30px 5vw; } }
+    @media only screen and (max-width: 768px) {
+      .project .html-content ol, .project .markdown-content ol {
+        margin: 0 0 30px 0; } }
   .project .html-content .project-image.small, .project .markdown-content .project-image.small {
     margin: 80px 17.5vw; }
     @media only screen and (max-width: 1200px) {

@@ -2754,8 +2754,6 @@ section {
     color: #2d91d2; }
   .project--publication .tns-controls button:hover {
     color: #2d91d2; }
-  .project--publication ::-moz-selection {
-    background: rgba(45, 145, 210, 0.25); }
   .project--publication ::selection {
     background: rgba(45, 145, 210, 0.25); }
   .project--prototype .project-header.bright .link--button {
@@ -2776,8 +2774,6 @@ section {
     background: #41b496; }
   .project--prototype .tns-controls button:hover {
     color: #41b496; }
-  .project--prototype ::-moz-selection {
-    background: rgba(65, 180, 150, 0.25); }
   .project--prototype ::selection {
     background: rgba(65, 180, 150, 0.25); }
   .project--workshop .project-header.bright .link--button {
@@ -2798,8 +2794,6 @@ section {
     background-color: #dcc82d; }
   .project--workshop .tns-controls button:hover {
     color: #dcc82d; }
-  .project--workshop ::-moz-selection {
-    background: rgba(220, 200, 45, 0.25); }
   .project--workshop ::selection {
     background: rgba(220, 200, 45, 0.25); }
   .project--dataset .project-header.bright .link--button {
@@ -2820,8 +2814,6 @@ section {
     background-color: #e60032; }
   .project--dataset .tns-controls button:hover {
     color: #e60032; }
-  .project--dataset ::-moz-selection {
-    background: rgba(230, 0, 50, 0.25); }
   .project--dataset ::selection {
     background: rgba(230, 0, 50, 0.25); }
   .project a:not(.link--button) {
@@ -2886,6 +2878,24 @@ section {
         margin: 0 5vw 30px 5vw; } }
     @media only screen and (max-width: 768px) {
       .project .html-content h3, .project .markdown-content h3 {
+        margin: 0 0 30px 0; } }
+  .project .html-content ul, .project .markdown-content ul {
+    margin: 0 17.5vw 50px 17.5vw;
+    list-style-type: disc; }
+    @media only screen and (max-width: 1024px) {
+      .project .html-content ul, .project .markdown-content ul {
+        margin: 0 5vw 30px 5vw; } }
+    @media only screen and (max-width: 768px) {
+      .project .html-content ul, .project .markdown-content ul {
+        margin: 0 0 30px 0; } }
+  .project .html-content ol, .project .markdown-content ol {
+    margin: 0 17.5vw 50px 17.5vw;
+    list-style-type: disc; }
+    @media only screen and (max-width: 1024px) {
+      .project .html-content ol, .project .markdown-content ol {
+        margin: 0 5vw 30px 5vw; } }
+    @media only screen and (max-width: 768px) {
+      .project .html-content ol, .project .markdown-content ol {
         margin: 0 0 30px 0; } }
   .project .html-content .project-image.small, .project .markdown-content .project-image.small {
     margin: 80px 17.5vw; }

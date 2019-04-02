@@ -1,0 +1,220 @@
+---
+layout: project
+description: NodeJS, Commandline and Webservice for cleaning CSV files and reducing similar
+  strings.
+lang: en
+title: "CSV-Tool: Similar Strings"
+subtitle: Clean your CSV and remove typos etc.
+type: prototype
+colorMode: bright
+featuredImage: /projects/csv-string-optimization/images/featured.jpg
+thumbnail: /projects/csv-string-optimization/images/thumbnail.jpg
+heroImage: /projects/csv-string-optimization/images/hero.jpg
+socialMediaImage: /projects/csv-string-optimization/social_media.jpg
+visible: true
+featured: false
+authors:
+  - sebastian-meier
+start: 2018-03-13
+end: 2018-04-06
+status: finished
+date: 2018-04-06
+assets:
+  js:
+    - ../../../assets/js/d3.v4.min.js
+    - ../js/index.js
+  css:
+    - ../styles/index.css
+materialsIncluded:
+  - name: GitHub
+    link: "https://github.com/technologiestiftung/csv-string-optimization"
+redirect_from:
+  - /projects/123456789/
+  - /old-site-path/my-amazing-post/
+
+---
+
+<p><i>Not every data set is clean and organized. In order to help users deal with such messy data sets, we are building a set of tools to help us and you deal with such cases. Our first tool helps you remove typos and similar mistakes from a set of strings. We have used this tool in projects where we wanted to group columns by the name of an organization. In order to do so, we are using two methods to calculate the similarity of a string. You can try our tool directly on this web site or you can use it as a command line tool via <a href="https://www.npmjs.com/package/csv-string-optimization">NPM</a> or of course as a node package, inside your application. A short description of how our tool works is provided at the end of the article.</i></p>
+
+<div class="container p-bottom">
+    <h2>Input</h2>
+    <p class="copy p-bottom">
+        Paste the content of a CSV file into the text field below or drag'n'drop a CSV file onto the text field. The first row needs to contain the column names.<br />
+        <span class="small">In order to maintain a responsive interaction with the system don't use the web interface for large CSVs (&lt;2MB).</span>
+    </p>
+    <textarea id="field-csv" name="csv">
+name,id
+Berlin,88
+Berlin,90
+Brlin,92
+Börlen,100
+Berlin,102
+Brlin,104
+Brln,108
+"'Berlin'",108
+Hamburg,112
+Hamburh,112
+    </textarea>
+    <p class="copy center p-bottom p-top">
+        <span class="feedback" id="btn-refresh-message"></span>
+        <input id="btn-refresh" class="btn" type="button" value="Import Input Data"><br /><br />
+        What delimiter is used in the CSV?<br />
+        <span class="small">This should be detected automatically.</span><br />
+        <input id="field-delimiter" type="text" name="delimiter" value="," placeholder="," /><br /><br />
+        Which column should we analyse?<br />
+        <span class="small">Please choose.</span><br />
+        <select id="field-column" value="column">
+            <option value="name">name</option>
+        </select>
+    </p>
+    <h2 id="algo-expand"><span>►</span>Comparison Algorithm</h2>
+    <p id="algo-expansion" class="copy p-bottom">
+        Which algorithm should we use to compare the strings?<br />
+        <span class="small">An explanation of the methods can be found below.</span><br />
+        <select id="field-method" name="method">
+            <option value="fingerprint">Fingerprint</option>
+            <option value="knn" selected="selected">KNN</option>
+        </select>
+        <span id="extra-fingerprint" class="copy p-bottom">
+            Additional parameters for the Fingerprint-Algorithm:<br />
+            <span class="small">Type of Fingerprinting:</span><br />
+            <select id="field-finger_type" name="method">
+                <option value="normal" selected="selected">Normal</option>
+                <option value="phonetic">Phonetic</option>
+            </select><br />
+            <span class="small">Language:</span><br />
+            <select id="field-finger_lang" name="method">
+                <option value="german" selected="selected">German</option>
+                <option value="other">Other (preferably English)</option>
+            </select><br />
+            <span class="small">Should the words be stemmed:</span><br />
+            <select id="field-finger_stemming" name="method">
+                <option value="false" selected="selected">No</option>
+                <option value="true">Yes</option>
+            </select>
+        </span>
+        <span id="extra-knn" class="copy p-bottom">
+            Additional parameters for the KNN-Algorithm:<br />
+            <span class="small">Minimum number of characters to be the same in both strings (recommended: 6):</span><br />
+            <input id="field-ngram_size" type="text" name="ngram_size" value="2" placeholder="2" /><br />
+            <span class="small">Maximum difference in percentage (recommended: 10):</span><br />
+            <input id="field-limit" type="text" name="limit" value="40" placeholder="40" />
+        </span>
+    </p>
+    <p class="copy">
+        <span class="feedback" id="btn-analyse-message"></span>
+        <input id="btn-analyse" class="btn btn-send" type="button" value="Vergleich durchführen">
+    </p>
+</div>
+
+<div class="container p-bottom">
+    <h2>Cleaning-Template</h2>
+    <p class="copy p-bottom">
+        Based on the information provided above the following field holds a list of string comparison results. If a group consists of only one item with "ok":2, then there was no similar item found. Otherwise, there should be multiple items per group, all besides one should have "ok":1, which means that in the next step every item with a string in the "ok":1 group, will be replaced by the "ok":2 string. You are free to modify which item should receive the "2".<br />
+        <span class="small">Depending on the size of your input data set, this might take a while.</span>
+    </p>
+    <div id="table-container">
+        <table id="table-template"></table>
+    </div>
+    <textarea name="template" id="field-template"></textarea>
+    <p class="copy p-top">
+        <input type="button" id="btn-toggle" class="btn" value="Show Template-JSON"><br /><br />
+        <span class="feedback" id="btn-clean-message"></span>
+        <input type="button" id="btn-clean" class="btn btn-send" value="Clean CSV">
+    </p>
+</div>
+
+<div class="container p-bottom">
+    <h2>Output Data</h2>
+    <p class="copy p-bottom">
+        The following text field holds your cleaned data.<br />
+        <span class="small">Depending on input size, this might take a while.</span>
+    </p>
+    <textarea id="clean-csv"></textarea>
+</div>
+
+<div class="container p-bottom">
+    <h2 class="p-bottom">How does this work?</h2>
+    <h2>Fingerprint</h2>
+    <p class="copy p-bottom">
+        The fundamental idea behind the fingerprinting approach is to reduce the text string down to its essential components, which then becomes it's fingerprint. The fingerprint is used to compare each string with all other strings and their fingerprints.
+    </p>
+    <h3>Normal Fingerprinting</h3>
+    <p class="copy">
+        There are two methods for fingerprinting implemented in this tool. The first runs the following processes on the string:
+    </p>
+    <ul class="p-bottom">
+        <li>Remove spaces at the beginning and end of a string.</li>
+        <li>Convert to lower case characters.</li>
+        <li>Remove punctuation and spaces.</li>
+        <li>Convert special characters (e.g. ä > ae).</li>
+        <li>Remove invisible characters.</li>
+    </ul>
+    <p class="copy">This process, for example, converts:</p>
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre><code>
+        'Grips'-Theater gemeinnützige Gesellschaft
+        gripstheatergemeinnuetzigegesellschaft
+    </code></pre></div></div>
+    <p class="copy p-top">This means that all of the following variations share the same fingerprint:</p>
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre><code>
+        'Grips'-Theater gemeinnützige Gesellschaft
+        Grips-Theater gemeinnützige Gesellschaft
+         Grips Theater gemeinnützige Gesellschaft
+        Grips Theater gemeinnützigeGesellschaft
+
+        gripstheatergemeinnuetzigegesellschaft
+    </code></pre></div></div>
+    <p class="copy p-top p-bottom">This method is very fast, but in turn is not able to detect more complex typos and problems.</p>
+    <h3>Phonetic Fingerprinting</h3>
+    <p class="copy p-bottom">
+        The method of phonetic fingerprinting is translating text strings into it's corresponding phonetic markers. Thereby, we can identify some typos and mistakes, for example if people write names by ear.<br /><br />
+        The following variations all result in the same phonetic markers:
+    </p>
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre><code>
+        Sebastian
+        Sebästian
+        Sebastien
+
+        81826
+    </code></pre></div></div>
+    <p class="copy p-top p-bottom">
+        In order to convert strings to phonetic markers the module is using two libraries: cologne-framework for German and metaphone for other languages.
+    </p>
+    <h2>KNN / Neighbour</h2>
+    <p class="copy p-bottom">
+        The neighbourhood method is slightly more complex and therefore, on the one hand, requires more resources but, on the other hand, is a lot more precise. The foundation is a direct comparison of two text strings, calculating the distance between two strings using the Levenshtein distance. The latter calculates the number of manipulations required to convert string-1 to string-2 (Delete, Add, Replace). Calculating the distance between all items in a set would take quite a while, depending on the size of the data set, therefore, before calculating the distance, our module checks which strings actually contain corresponding sub-strings. The minimum length of a corresponding sub-string defines how detailed the check is, but also how fast it will be (longer sub-strings lead to fast processing but also less detailed checks; default length: 6).<br /><br />
+        The following example demonstrates what sub-strings are (length:6):
+    </p>
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre><code>
+        Technologie
+        Techno
+         echnol
+          chnolo
+           hnolog
+            nologi
+             ologie
+
+        Technik
+        Techni
+         echnik
+
+        Technische
+        Techni
+         echnis
+          chnisc
+           hnisch
+            nische
+
+    </code></pre></div></div>
+    <p class="copy p-bottom p-top">
+        In the example above Technik and Technische both share the substring "Techni".<br /><br />
+        For the strings that share a certain sub-string, the module calculates the exact distance. Following a few examples and their distance:
+    </p>
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre><code>
+        Technik &lt;&gt; Technische = 4
+        Berlin &lt;&gt; Bern = 2
+        Senat &lt;&gt; Stern = 4
+    </code></pre></div></div>
+</div>
+<p>We are interpreting the Levenshtein distance (LD) relative to the size of the text string itself. While a long string with an LD of two might actually be the same, a short string with LD 2 might not be.</p>
+<p>We did not come up with the methods that we implemented into our tool, they are common methods for solving such problems. Our implementation was strongly inspired by the open source tool <a href="https://github.com/OpenRefine/OpenRefine">Open Refine</a>, which is a desktop application to help users search and clean their data.</p>
