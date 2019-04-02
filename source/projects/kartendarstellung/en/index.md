@@ -9,7 +9,7 @@ colorMode: dark
 featuredImage: /projects/kartendarstellung/images/featured.jpg
 thumbnail: /projects/kartendarstellung/images/thumbnail.jpg
 heroImage: /projects/kartendarstellung/images/hero.jpg
-visible: true
+visible: false
 featured: false
 authors:
   - sebastian-meier

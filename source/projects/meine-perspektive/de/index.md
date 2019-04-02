@@ -9,7 +9,7 @@ colorMode: dark
 featuredImage: /projects/meine-perspektive/images/featured.jpg
 thumbnail: /projects/meine-perspektive/images/thumbnail.jpg
 heroImage: /projects/meine-perspektive/images/hero.png
-visible: true
+visible: false
 featured: false
 authors: [jolanta-paliszewska]
 start: 2019-02-19

@@ -1,0 +1,251 @@
+---
+layout: project
+description: Statistische und visuelle Analyse der offenen Daten zum Berliner
+  Breitbandausbau.
+lang: de
+title: Breitband Berlin 2017
+subtitle: Auswertung des Berlin Breitbandausbaus
+type: prototype
+colorMode: dark
+featuredImage: /projects/breitband-2017/images/featured.jpg
+thumbnail: /projects/breitband-2017/images/thumbnail.jpg
+heroImage: /projects/breitband-2017/images/breitband-berlin.jpg
+visible: true
+featured: false
+authors:
+  - sebastian-meier
+externalUrl: https://www.breitband-berlin.de
+start: 2018-03-01
+end: 2018-03-15
+status: finished
+date: 2018-03-15
+assets:
+  js:
+    - ../js/breitband-min.js
+    - ../js/index-de.js
+  css:
+    - ../styles/bootstrap.min.css
+    - ../styles/main.css
+redirect_from:
+  - /projects/123456789/
+  - /old-site-path/my-amazing-post/
+
+---
+
+<p>In Zusammenarbeit mit dem Bundesministerium für Verkehr und digitale Infrastruktur (BMVI) und dem TÜV Rheinland hat die Berliner Senatsverwaltung für Wirtschaft, Energie und Betriebe Ende 2017 zum ersten Mal Daten zur Breitbandversorgung unter einer offenen Lizenz <a href="https://daten.berlin.de/interaktion/artikel/breitbanddaten-f%C3%BCr-berlin">zur Verfügung</a> gestellt. Das Land verfolgt hier beispielhaft die Open-by-Default Strategie, mit der zukünftig über Dritte eingeworbene Daten (soweit nicht mit Personenbezug) direkt bereitgestellt werden. Die Daten auf Ebene der Berliner LORs aufgelöst und stehen bis auf Planungsraumebene bereit zur Nutzung. Bisherige Erhebungen basierten noch nicht auf dem statistischen Standard und wurden für die Berliner Ortsteile erhoben. Deshalb kommt es leider beim Vergleich mit den historischen Daten zu Ungenauigkeiten.</p>
+
+<div id="minimap" style="padding-top:50px;">
+  <div class="container">
+      <div class="row">
+          <div style="padding-top:20px;" class="col col-xs-12 col-sm-5 col-lg-5">
+              <div class="mapswitch-head">
+                  <h3>Entwicklung des Breitbandausbaus</h3>
+                  <p>Seit 7 Jahren erhebt die Berliner Senatsverwaltung Daten zum Breitbandausbau auf Ortsteilebene/LOR-Ebene. Die Daten zeigen, dass Teile Ostberlins noch 2011 massiv unterversorgt waren. Inzwischen holt der Osten auf, auch das bisherige Schlusslicht, der Bezirk Pankow.</p>
+              </div>
+          </div>
+          <div style="padding-top:20px;" class="col col-xs-12 col-sm-1 col-lg-2"></div>
+          <div style="padding-top:20px;" class="col col-xs-12 col-sm-6 col-lg-5">
+              <div class="row switchrow">
+                  <div class="col col-xs-12 red company-help">
+                      <span class="image image-interactive"></span><strong>2011 - 2017</strong>
+                      <p class="speed-info speed-info-16">Für normales Surfen im Internet und die meisten anderen webbasierten Anwendungen sind 16&nbsp;Mbit/s-Anbindungen ausreichend.</p>
+                      <p class="speed-info speed-info-50">50&nbsp;Mbit/s Anbindungen erlauben darüber hinaus das Nutzen von neuen HD-Streaming Diensten und professionellen Anwendungen.</p>
+                  </div>
+              </div>
+              <div class="row switchrow">
+                  <div class="col col-xs-12 col-sm-6" data-speed="16">
+                      <div class="mapswitch red">16Mbit/s</div>
+                      <div class="hidden-xs triangle bottom red"></div>
+                  </div>
+                  <div class="col col-xs-12 col-sm-6" data-speed="50">
+                      <div class="mapswitch light_red">50Mbit/s</div>
+                      <div class="hidden-xs triangle bottom red" style="display:none;"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col col-xs-12 col-sm-1"></div>
+      <div class="col col-xs-12 col-sm-2">
+          <div class="minimap mm-2011" data-year="2011"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-2">
+          <div class="minimap mm-2012" data-year="2012"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-2">
+          <div class="minimap mm-2013" data-year="2013"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-2">
+          <div class="minimap mm-2015" data-year="2015"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-2">
+          <div class="minimap mm-2017" data-year="2017"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-1"></div>
+  </div>
+  <div class="row">
+      <div class="datacol col col-xs-12">
+          <svg id="minimap-legend" height="50" width="240"></svg><br />
+          <span class="small">Prozentuale Verfügbarkeit für private Anwender*innen</span>
+      </div>
+  </div>
+</div>
+
+<div id="compare" style="padding-top:100px;">
+  <div class="container">
+      <div class="row">
+          <div style="padding-top:20px;padding-bottom:20px;" class="col col-xs-12 col-sm-4 col-lg-4">
+              <div class="red company-help pulse-help">
+                  <strong>Bezirke im Detail</strong>
+                  <p>Prozentuale Verfügbarkeit von<br />16Mbit | 50Mbit für private Anwender*innen</p>
+              </div>
+              <div id="compare-legend"></div>
+          </div>
+          <div class="chart"></div>
+      </div>
+  </div>
+</div>
+
+<p style="padding-top:100px;">Die erhobenen Daten unterscheiden zwischen geschäftlichen und privaten Anschlüssen. Bei den geschäftlichen Anschlüssen, besonders in Mitte, ist der Ausbau von schnellem Breitband bereits sehr weit vorangeschritten.</p>
+
+<div id="karte">
+<div id="map-gui">
+  <div class="selector">
+      <span class="selector-title">Nutzergrupppe</span><br />
+      <select id="map-type">
+          <option value="b">Geschäftlich</option>
+          <option value="p">Privat</option>
+      </select>
+  </div>
+  <div class="selector">
+      <span class="selector-title">Technologie</span><br />
+      <select id="map-technology">
+          <option value="alle">Alle</option>
+          <option class="b-disable" value="wireless" disabled="disabled">Drahtlos</option>
+          <option class="b-disable" value="wired" disabled="disabled">Leitungsgebunden</option>
+      </select>
+  </div>
+  <div class="selector">
+      <span class="selector-title">Geschwindigkeit</span><br />
+      <select id="map-speed">
+          <option value="100">100 Mbit/s</option>
+          <option value="50"> 50 Mbit/s</option>
+          <option value="30"> 30 Mbit/s</option>
+          <option class="b-disable" value="16" disabled="disabled"> 16 Mbit/s</option>
+          <option value="10" class="p-disable"> 10 Mbit/s</option>
+          <option class="b-disable" value="6" disabled="disabled">  6 Mbit/s</option>
+          <option value="2">  2 Mbit/s</option>
+          <option class="b-disable" value="1" disabled="disabled">  1 Mbit/s</option>
+      </select>
+  </div>
+</div>
+<div id="map"></div>
+<div id="map-legend-container">
+  <svg id="map-legend" height="50" width="240"></svg><br />
+  <span class="small">Prozentuale Verfügbarkeit</span>
+</div>
+</div>
+
+<p>Eine Analyse der räumlichen Informationen zum Breitbandausbau fördern verschiedene Muster zu Tage. Während früher noch ein starker Unterschied zwischen Ost- und Westberlin vorlag, ist dieses Muster nun nicht mehr erkennbar. Sowohl der ehemalige Ostteil als auch der Westen weisen eine ähnliche Verteilung von gut und schlecht versorgten Bereichen auf. Sowohl im privaten als auch im gewerblichen Bereich ist Mitte besser versorgt als die äußeren Bereiche Berlins. Ebenso gibt es eine sehr schwache Korrelation zwischen der Priorisierung von stärker besiedelten Gebieten.<br /><i>Schwarze Linie zeigt den Trend auf.</i></p>
+
+<div id="correlation">
+  <div class="row">
+      <h3>Private Anschlüsse, sortiert nach Abstand zur Berliner Mitte<br /><span class="small">Von links im Zentrum nach rechts am Rande Berlins</span></h3>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>100 Mbit/s</h4>
+          <div class="correlation" data-speed="p-all-100_mbit" data-type="dist"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>50 Mbit/s</h4>
+          <div class="correlation" data-speed="p-all-50_mbit" data-type="dist"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>16 Mbit/s</h4>
+          <div class="correlation" data-speed="p-all-16_mbit" data-type="dist"></div>
+      </div>
+  </div>
+  <div class="row">
+      <h3>Private Anschlüsse, sortiert ehem. Ost-Berlin, Grenzbereich und West-Berlin</h3>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>100 Mbit/s</h4>
+          <div class="correlation" data-speed="p-all-100_mbit" data-type="east"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>50 Mbit/s</h4>
+          <div class="correlation" data-speed="p-all-50_mbit" data-type="east"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>16 Mbit/s</h4>
+          <div class="correlation" data-speed="p-all-16_mbit" data-type="east"></div>
+      </div>
+  </div>
+  <div class="row">
+      <h3>Private Anschlüsse, sortiert nach Einwohnerzahl<br /><span class="small">Von links wenig Einwohner nach rechts viele Einwohner</span></h3>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>100 Mbit/s</h4>
+          <div class="correlation" data-speed="p-all-100_mbit" data-type="population"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>50 Mbit/s</h4>
+          <div class="correlation" data-speed="p-all-50_mbit" data-type="population"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>16 Mbit/s</h4>
+          <div class="correlation" data-speed="p-all-16_mbit" data-type="population"></div>
+      </div>
+  </div>
+  <div class="row">
+      <h3>Geschäftliche Anschlüsse, sortiert nach Abstand zur Berliner Mitte<br /><span class="small">Von links im Zentrum nach rechts am Rande Berlins</span></h3>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>100 Mbit/s</h4>
+          <div class="correlation" data-speed="b-100-alle" data-type="dist"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>50 Mbit/s</h4>
+          <div class="correlation" data-speed="b-50-alle" data-type="dist"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>10 Mbit/s</h4>
+          <div class="correlation" data-speed="b-10-alle" data-type="dist"></div>
+      </div>
+  </div>
+  <div class="row">
+      <h3>Geschäftliche Anschlüsse, sortiert ehem. Ost-Berlin, Grenzbereich und West-Berlin</h3>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>100 Mbit/s</h4>
+          <div class="correlation" data-speed="b-100-alle" data-type="east"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>50 Mbit/s</h4>
+          <div class="correlation" data-speed="b-50-alle" data-type="east"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>10 Mbit/s</h4>
+          <div class="correlation" data-speed="b-10-alle" data-type="east"></div>
+      </div>
+  </div>
+  <div class="row">
+      <h3>Geschäftliche Anschlüsse, sortiert nach Einwohnerzahl<br /><span class="small">Von links wenig Einwohner nach rechts viele Einwohner</span></h3>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>100 Mbit/s</h4>
+          <div class="correlation" data-speed="b-100-alle" data-type="population"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>50 Mbit/s</h4>
+          <div class="correlation" data-speed="b-50-alle" data-type="population"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>10 Mbit/s</h4>
+          <div class="correlation" data-speed="b-10-alle" data-type="population"></div>
+      </div>
+  </div>
+</div>
+
+<p style="padding-top:50px;">Der schwache Ausbau in den Berliner Randbezirken macht sich vor allem in dicht besiedelten Gebieten bemerkbar. Obwohl Pankow prozentual aufgeschlossen hat, trifft die immer noch nicht ausreichende Versorgung in Berlins einwohnerstärkstem Bezirk die meisten Personen. Ähnlich sieht es in Treptow-Köpenick und Lichtenberg aus.<br /><br /><i>Zur Berechnung der Betroffenheit wurden die Einwohnerzahlen mit der prozentualen Versorgung verschnitten. Hierbei ist zu beachten, dass dies nicht 100% korrekt ist, da keine Daten auf Hausebene vorliegen. Somit kann es sein, dass die realen Ergebnisse von den hier aufgezeigten Zahlen abweichen. Die Zahlen sind somit als grobe Trends zu verstehen.</i> </p>
+
+<div id="population-gui">
+  <a class="population-button active" data-key="16">16 Mbit/s</a><a class="population-button" data-key="50">50 Mbit/s</a><a class="population-button" data-key="100">100 Mbit/s</a><br />
+  <span class="small">Betroffene Einwohner*innen | Prozentuale Unterversorgung</span>
+</div>
+<div id="population"></div>

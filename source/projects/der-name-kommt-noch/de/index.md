@@ -9,7 +9,7 @@ colorMode: dark
 featuredImage: /projects/der-name-kommt-noch/images/featured.jpg
 thumbnail: /projects/der-name-kommt-noch/images/thumbnail.jpg
 heroImage: /projects/der-name-kommt-noch/images/background.png
-visible: true
+visible: false
 featured: false
 authors: [jolanta-paliszewska]
 start: 2019-02-18

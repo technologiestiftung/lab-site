@@ -9,7 +9,7 @@ colorMode: bright
 featuredImage: /projects/hinweise-zur-barrierefreiheit-auf-der-serviceportal-berlin.de/images/featured.jpg
 thumbnail: /projects/hinweise-zur-barrierefreiheit-auf-der-serviceportal-berlin.de/images/thumbnail.jpg
 heroImage: /projects/hinweise-zur-barrierefreiheit-auf-der-serviceportal-berlin.de/images/hero.jpg
-visible: true
+visible: false
 featured: false
 authors: []
 externalUrl: www.service.berlin.de

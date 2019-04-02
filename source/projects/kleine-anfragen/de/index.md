@@ -9,7 +9,7 @@ colorMode: bright
 featuredImage: /projects/kleine-anfragen/images/featured.jpg
 thumbnail: /projects/kleine-anfragen/images/thumbnail.jpg
 heroImage: /projects/kleine-anfragen/images/hero.jpg
-visible: true
+visible: false
 featured: false
 authors:
   - alexandra-kapp
