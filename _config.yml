@@ -17,7 +17,7 @@
 # Contains the url of your site as it is configured in the _config.yml. For example, if you have url: http://mysite.com in your configuration file, then it will be accessible in Liquid as site.url. For the development environment there is an exception, if you are running jekyll serve in a development environment site.url will be set to the value of host, port, and SSL-related options. This defaults to url: http://localhost:4000.
 # the base hostname & protocol for your site, e.g. http://example.com
 source: source
-url: https://lab.technologiestiftung-berlin.de/
+url: https://lab.technologiestiftung-berlin.de
 title: Technologiestiftung Berlin
 email: roboter@tsb.ara.uberspace.de
 description: >- # this means to ignore newlines until "baseurl:"
@@ -90,16 +90,16 @@ host: localhost
 collections:
   team_de:
     output: true
-    permalink: /team/:name/de
+    permalink: /team/:name/de/
   team_en:
     output: true
-    permalink: /team/:name/en
+    permalink: /team/:name/en/
   datasets_en:
     output: true
-    permalink: /datasets/:name/en
+    permalink: /datasets/:name/en/
   datasets_de:
     output: true
-    permalink: /datasets/:name/de
+    permalink: /datasets/:name/de/
 
 plugins:
   # - jekyll-feed
@@ -123,6 +123,7 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - vendor
   - Gemfile
   - Gemfile.lock
   - .gitignore

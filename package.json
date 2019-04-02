@@ -16,7 +16,9 @@
     "new-project": "./project-generator/bin/run",
     "new": "./project-generator/bin/run --prompt",
     "new-project:interactive": "./project-generator/bin/run -p",
-    "new-project:help": "./project-generator/bin/run --help"
+    "new-project:help": "./project-generator/bin/run --help",
+    "htmlproofer": "bundle exec htmlproofer ./_site/ --disable-external > htmlproofer-report.txt 2>&1",
+    "broken-link-check":"npx broken-link-checker --recursive http://localhost:4000"
   },
   "repository": {
     "type": "git",
@@ -30,15 +32,21 @@
   },
   "homepage": "https://github.com/technologiestiftung/lab-site#readme",
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "d3": "^5.8.2",
     "node-sass": "^4.11.0",
     "parcel-bundler": "^1.11.0",
     "postcss-preset-env": "^6.6.0",
-    "postcss-scss": "^2.0.0"
+    "postcss-scss": "^2.0.0",
+    "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/polyfill": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
     "@types/jest": "^24.0.0",
     "autoprefixer": "^9.5.0",
+    "core-js": "^2.6.5",
     "cssnano": "^4.1.10",
     "cz-conventional-changelog": "^2.1.0",
     "delims": "^0.4.2",
