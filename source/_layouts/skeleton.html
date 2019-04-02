@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang }}">
+{%- if page.socialMediaImage == null -%}
+{%- assign socialMediaImage = "/icons/social_media.jpg" -%}
+  {%- else -%}
+{%- assign socialMediaImage = page.socialMediaImage -%}
+  {%- endif -%}
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,7 +17,8 @@
         <meta property="og:url" content="{{site.url}}">
         <meta property="og:type" content="website">
         <meta property="og:title" content="Ideation &amp; Prototyping Lab">
-        <meta property="og:image" content="{{site.url}}/icons/social_media.jpg">
+          <meta property="og:image" content="{{site.url}}{{socialMediaImage}}">
+
         <meta property="og:description" content="{%- if page.lang == 'de' -%}
           Wir erforschen und erproben digitale Werkzeuge um gemeinsam mit Bürger*innen, Verwaltung und Unternehmen die Zukunft Berlins zu gestalten. #OpenData #OpenSource #OpenInnovation
           {%- else -%}
@@ -32,7 +38,7 @@
           {%- else -%}
           We are exploring and prototyping digital tools in order to collaboratively shape Berlin’s future for citizens, the local government and the industry. #OpenData #OpenSource #OpenInnovation
         {%- endif -%}">
-        <meta name="twitter:image" content="{{site.url}}/icons/social_media.jpg">
+        <meta name="twitter:image" content="{{site.url}}{{socialMediaImage}}">
 
         <!-- GOOGLE+/SCHEMA.ORG -->
         <meta itemprop="name" content="Ideation &amp; Prototyping Lab">
@@ -41,7 +47,7 @@
           {%- else -%}
           We are exploring and prototyping digital tools in order to collaboratively shape Berlin’s future for citizens, the local government and the industry. #OpenData #OpenSource #OpenInnovation
         {%- endif -%}">
-        <meta itemprop="image" content="{{site.url}}/icons/social_media.jpg">
+        <meta itemprop="image" content="{{site.url}}{{socialMediaImage}}">
 
         <!-- CANONICAL URL -->
         <link rel="canonical" href="{{site.url}}">
