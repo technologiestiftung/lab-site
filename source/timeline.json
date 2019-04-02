@@ -2,6 +2,7 @@
 ---
 [
  {%- for pg in site.pages -%}
+   {%- if pg.visible == true -%}
      {
        "isproject":{%- if pg.layout == 'project' -%}true{%- else -%}false{%- endif -%},
        "type":"{{pg.type}}",
@@ -12,5 +13,6 @@
        "start":"{{pg.start}}",
        "end":"{{pg.end}}"
      }{% unless forloop.last %},{% endunless %}
+   {%- endif -%}
  {%- endfor -%}
 ]
