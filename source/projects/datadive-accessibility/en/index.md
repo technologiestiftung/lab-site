@@ -4,7 +4,7 @@ description: An analysis of the availability of data for the topic of accessibil
 lang: en
 title: "Data Dive: Accessibility in Berlin"
 subtitle: What data is available?
-type: workshop
+type: dataset
 colorMode: bright
 featuredImage: /projects/datadive-accessibility/images/featured.jpg
 thumbnail: /projects/datadive-accessibility/images/thumbnail.jpg

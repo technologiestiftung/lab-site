@@ -4,7 +4,7 @@ description: Eine Analyse der Verfügbarkeit von Daten für Barrierefreiheit
 lang: de
 title: "Data Dive: Barrierefreiheit in Berlin"
 subtitle: Welchen Daten gibt es?
-type: workshop
+type: dataset
 colorMode: bright
 featuredImage: /projects/datadive-accessibility/images/featured.jpg
 thumbnail: /projects/datadive-accessibility/images/thumbnail.jpg

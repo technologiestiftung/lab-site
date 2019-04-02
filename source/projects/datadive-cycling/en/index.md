@@ -4,7 +4,7 @@ description: An analysis of the availability of data for the topic of bike infra
 lang: en
 title: "Data Dive: Cycling data in Berlin"
 subtitle: What data is available?
-type: publication
+type: dataset
 colorMode: bright
 featuredImage: /projects/datadive-cycling/images/featured.jpg
 thumbnail: /projects/datadive-cycling/images/thumbnail.jpg
