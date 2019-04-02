@@ -9,12 +9,12 @@ colorMode: bright
 featuredImage: /projects/kleine-anfragen/images/featured.jpg
 thumbnail: /projects/kleine-anfragen/images/thumbnail.jpg
 heroImage: /projects/kleine-anfragen/images/hero.jpg
-visible: false
+visible: true
 featured: false
 authors:
   - alexandra-kapp
-start: 2019-02-01
-end: 2019-04-01
+start: 2019-02-05
+end: 2019-03-01
 status: finished
 date: 2019-04-01
 assets:

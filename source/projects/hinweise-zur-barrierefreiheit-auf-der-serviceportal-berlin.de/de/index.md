@@ -16,7 +16,7 @@ visible: false
 featured: false
 authors: [jolanta-paliszewska]
 externalUrl: www.service.berlin.de
-start: 2019-02-18
+start: 2019-02-03
 end: 2019-02-18
 status: ongoing
 date: 2019-02-18

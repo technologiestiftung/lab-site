@@ -22,108 +22,6 @@ import {
     json as d3Json
 } from 'd3';
 
-const data_temp = [
-    {
-        id: 0,
-        isproject: true,
-        type: "prototype",
-        status: "finished",
-        url: "http://localhost:4000/projects/example-md-project/en/",
-        name: "Example Markdown Project 1",
-        lang: "en",
-        start: "01-05-2016",
-        end: "06-03-2017"
-    },
-    {
-        id: 0,
-        isproject: true,
-        type: "prototype",
-        status: "finished",
-        url: "http://localhost:4000/projects/example-md-project/en/",
-        name: "Example Markdown Project 1",
-        lang: "en",
-        start: "08-07-2016",
-        end: "12-09-2017"
-    },
-    {
-        id: 0,
-        isproject: true,
-        type: "dataset",
-        status: "finished",
-        url: "http://localhost:4000/projects/example-md-project/en/",
-        name: "Example Markdown Project 1",
-        lang: "en",
-        start: "08-07-2016",
-        end: "12-09-2017"
-    },
-    {
-        id: 0,
-        isproject: true,
-        type: "dataset",
-        status: "finished",
-        url: "http://localhost:4000/projects/example-md-project/en/",
-        name: "Example Markdown Project 1",
-        lang: "en",
-        start: "12-12-2016",
-        end: "12-09-2017"
-    },
-    {
-        id: 0,
-        isproject: true,
-        type: "prototype",
-        status: "finished",
-        url: "http://localhost:4000/projects/example-md-project/en/",
-        name: "Example Markdown Project 1",
-        lang: "en",
-        start: "01-07-2016",
-        end: "04-09-2016"
-    },
-    {
-        id: 1,
-        isproject: true,
-        type: "prototype",
-        status: "finished",
-        url: "http://localhost:4000/projects/example-md-project/en/",
-        name: "Example Markdown Project 1",
-        lang: "en",
-        start: "01-01-2018",
-        end: "04-03-2018"
-    },
-    {
-        id: 2,
-        isproject: true,
-        type: "publication",
-        status: "finished",
-        url: "http://localhost:4000/projects/example-md-project/en/",
-        name: "Example Publication 1",
-        lang: "en",
-        start: "01-05-2018",
-        end: "03-08-2018"
-    },
-    {
-        id: 3,
-        isproject: true,
-        type: "publication",
-        status: "finished",
-        url: "http://localhost:4000/projects/example-md-project/en/",
-        name: "Example Workshop 1",
-        lang: "en",
-        start: "09-01-2017",
-        end: "05-03-2018"
-    },
-    {   
-        id: 4,
-        isproject: true,
-        type: "data",
-        status: "finished",
-        url: "http://localhost:4000/projects/example-md-project/en/",
-        name: "Example Markdown Project 1",
-        lang: "en",
-        start: "01-00-2018",
-        end: ""
-    },
-]
-
 class Timeline {
     constructor(domElement) {
         this.vars = {
@@ -194,8 +92,6 @@ class Timeline {
                 this.setupTooltip();
                 this.setupZoom();
             })
-
-        // insert real data here
     }
 
     updateScales() {
@@ -274,7 +170,10 @@ class Timeline {
             }))
     }
 
-    fitsIn (lane, band) {        
+    fitsIn (lane, band) {   
+        if (lane.end < band.start || lane.start > band.end) {
+    		return true;
+    	}     
         let filteredLane = lane.filter(function (d) {return d.start <= band.end && d.end >= band.start});
         
     	if (filteredLane.length === 0) {
@@ -340,7 +239,8 @@ class Timeline {
     		this.findlane(band);
     	});
 
-    	var height = 30 / this.vars.swimlanes.length;
+        var height = 60 / this.vars.swimlanes.length;
+        console.log('inside timeline!')
         height = Math.min(height, Infinity);
                 
     	this.vars.swimlanes.forEach( (lane, i) => {
@@ -406,125 +306,79 @@ class Timeline {
 
 
     updateBars() {
-        this.vars.types.forEach((type, iType) => {
             const onlyThisType = this.data.filter(function(d) {return d.type === type});
             const theseBands = this.timeline(onlyThisType);
 
-            if (type == 'dataset') {
-                this.vars[type].selectAll('circle')
-                    .data(theseBands)
-                    .attr('cx', d => d.startX)
-            } else if (type == 'workshop') {
-                this.vars[type].selectAll('rect')
-                    .data(theseBands)
-                    .attr('x', d => d.startX)
-            } else {
-                this.vars[type].selectAll('rect')
-                .data(theseBands)
-                .attr('x', d => d.startX)
-                .attr('width', d => d.width)
-            }
-        })
+            this.vars['prototype'].selectAll('rect')
+            .data(theseBands)
+            .attr('x', d => d.startX)
+            .attr('width', d => d.width)
     }
 
     setupBars () {
-        this.vars.types.forEach((type, iType) => {
+        // this.vars.types.forEach((type, iType) => {
+
+            const type = 'prototype';
+            const iType = 0;
 
             // add real data here later.
-            const onlyThisType = this.data.filter(function(d) {return d.type === type});
+            // const onlyThisType = this.data.filter(function(d) {return d.type === type});
+            const onlyThisType = this.data;
             const theseBands = this.timeline(onlyThisType);
 
             this.vars[type] = this.vars.wrapper
                 .append('g')
                 .attr('class', `${type}-band`)
 
-            if (type == 'dataset') {
+            if (this.vars.svgDefs == null) {
+                this.vars.svgDefs = this.vars.wrapper.append('defs');
+            }
 
-                this.vars[type].selectAll('circle')
-                    .data(theseBands)
-                    .enter()
-                    .append('circle')
-                    .attr('cx', d => d.startX)
-                    .attr('cy', d => { d.y + (this.vars.circleRadius * 1.25) })
-                    .attr('r', this.vars.circleRadius)
-                    .attr('fill', this.vars.colors[type])
-                    .on('mouseover', (d, i, nodes) => {
-                        this.updateTooltip(d.name);
-                        this.vars.tooltip.classed('active', true);
-                        d3Select(nodes[i]).attr('r', this.vars.circleRadius * 1.3)
-                    })
-                    .on('mouseout', (d, i, nodes) => {
-                        this.updateTooltip()
-                        this.vars.tooltip.classed('active', false);
-                        this.vars.tooltip.attr('style', 'display: none');
-                        d3Select(nodes[i]).attr('r', this.vars.circleRadius * 1)
-                    })
+            var gradient = this.vars.svgDefs.append('linearGradient')
+                .attr('id', `${type}-gradient`);
 
-            } else if (type == 'workshop') {
+            gradient.append('stop')
+                .attr('class', 'stop-left')
+                .attr('offset', '0');
 
-                this.vars[type].selectAll('rect')
-                    .data(theseBands)
-                    .enter()
-                    .append('rect')
-                    .attr('x', d => d.startX)
-                    .attr('y', d => { d.y })
-                    .attr('width', 8)
-                    .attr('height', 8)
-                    .attr('fill', this.vars.colors[type])
+            gradient.append('stop')
+                .attr('class', `stop-right__${type}`)
+                .attr('offset', '1');
 
-            } else {
-
-                if (this.vars.svgDefs == null) {
-                    this.vars.svgDefs = this.vars.wrapper.append('defs');
-                }
-
-                var gradient = this.vars.svgDefs.append('linearGradient')
-                    .attr('id', `${type}-gradient`);
-
-                gradient.append('stop')
-                    .attr('class', 'stop-left')
-                    .attr('offset', '0');
-
-                gradient.append('stop')
-                    .attr('class', `stop-right__${type}`)
-                    .attr('offset', '1');
-
-                this.vars[type].selectAll('rect')
-                    .data(theseBands)
-                    .enter()
-                    .append("a")
-                    .attr("xlink:href", function(d) { return d.url })
-                    .append('rect')
-                    .attr('x', dat => dat.startX)
-                    .attr('y', dat => {
-                        return dat.y
-                    })
-                    .attr('width', d => d.width)
-                    .attr('height', 6)
-                    .classed(`${type}-gradient`, true)
-                    .attr('fill', this.vars.colors[type])
-                    .on('mouseover', (d, i, nodes) => {
-                        this.updateTooltip(d.name);
-                        this.vars.tooltip.classed('active', true);
-                        d3Select(nodes[i]).attr('height', 8);
-                    })
-                    .on('mouseout', (d, i, nodes) => {
-                        this.vars.tooltip.classed('active', false);
-                        this.vars.tooltip.attr('style', 'display: none');
-                        d3Select(nodes[i]).attr('height', 6);
-                    })
+            this.vars[type].selectAll('rect')
+                .data(theseBands)
+                .enter()
+                .append("a")
+                .attr("xlink:href", function(d) { return d.url })
+                .append('rect')
+                .attr('x', dat => dat.startX)
+                .attr('y', dat => {
+                    return dat.y;
+                })
+                .attr('width', d => d.width)
+                .attr('height', 6)
+                .attr('fill', d => this.vars.colors[d.type])
+                .on('mouseover', (d, i, nodes) => {
+                    this.updateTooltip(d.name);
+                    this.vars.tooltip.classed('active', true);
+                    d3Select(nodes[i]).attr('height', 8);
+                })
+                .on('mouseout', (d, i, nodes) => {
+                    this.vars.tooltip.classed('active', false);
+                    this.vars.tooltip.attr('style', 'display: none');
+                    d3Select(nodes[i]).attr('height', 6);
+                })
 
 
-                this.vars[type]
-                    .attr('transform', (d,i) => {
-                        const height = this.vars[type].node().getBoundingClientRect().height;
-                        const verticalOffset = iType + 1;
-                        return `translate(0,${height * verticalOffset})`;
-                    })
+            this.vars[type]
+                .attr('transform', (d,i) => {
+                    const height = this.vars[type].node().getBoundingClientRect().height;
+                    return `translate(0,${height + 50})`;
+                })
                     
             }
-        })
-    }
+        // })
+    
 }
 
 export default Timeline;
