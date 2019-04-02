@@ -12,7 +12,7 @@ heroImage: /projects/der-neue-name-kommt-noch/images/hero.jpg
 visible: true
 featured: false
 authors: []
-start: 2019-02-18
+start: 2019-02-03
 end: 2019-02-18
 status: finished
 date: 2019-02-18
