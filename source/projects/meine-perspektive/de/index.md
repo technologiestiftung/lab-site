@@ -12,7 +12,7 @@ heroImage: /projects/meine-perspektive/images/hero.png
 visible: false
 featured: false
 authors: [jolanta-paliszewska]
-start: 2019-02-19
+start: 2019-02-01
 end: 2019-02-19
 status: finished
 date: 2019-02-19
