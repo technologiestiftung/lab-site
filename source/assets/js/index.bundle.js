@@ -5,8 +5,6 @@
 //
 // anything defined in a previous bundle is accessed via the
 // orig method which is the require for previous bundles
-
-// eslint-disable-next-line no-global-assign
 parcelRequire = (function (modules, cache, entry, globalName) {
   // Save the require from previous bundle to this closure if any
   var previousRequire = typeof parcelRequire === 'function' && parcelRequire;
@@ -77,8 +75,16 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     }, {}];
   };
 
+  var error;
   for (var i = 0; i < entry.length; i++) {
-    newRequire(entry[i]);
+    try {
+      newRequire(entry[i]);
+    } catch (e) {
+      // Save first error but execute all entries
+      if (!error) {
+        error = e;
+      }
+    }
   }
 
   if (entry.length) {
@@ -103,6 +109,13 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   // Override the current require with this new one
+  parcelRequire = newRequire;
+
+  if (error) {
+    // throw error from earlier, _after updating parcelRequire_
+    throw error;
+  }
+
   return newRequire;
 })({"modules/handleOnload.js":[function(require,module,exports) {
 "use strict";
@@ -376,7 +389,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.dependencies = exports.devDependencies = exports.scripts = exports.repository = exports.module = exports.jsdelivr = exports.unpkg = exports.main = exports.author = exports.license = exports.homepage = exports.keywords = exports.description = exports.version = exports.name = void 0;
 var name = "d3";
 exports.name = name;
-var version = "5.8.2";
+var version = "5.9.2";
 exports.version = version;
 var description = "Data-Driven Documents";
 exports.description = description;
@@ -9651,6 +9664,24 @@ function inferColumns(rows) {
   return columns;
 }
 
+function pad(value, width) {
+  var s = value + "",
+      length = s.length;
+  return length < width ? new Array(width - length + 1).join(0) + s : s;
+}
+
+function formatYear(year) {
+  return year < 0 ? "-" + pad(-year, 6) : year > 9999 ? "+" + pad(year, 6) : pad(year, 4);
+}
+
+function formatDate(date) {
+  var hours = date.getUTCHours(),
+      minutes = date.getUTCMinutes(),
+      seconds = date.getUTCSeconds(),
+      milliseconds = date.getUTCMilliseconds();
+  return isNaN(date) ? "Invalid Date" : formatYear(date.getUTCFullYear(), 4) + "-" + pad(date.getUTCMonth() + 1, 2) + "-" + pad(date.getUTCDate(), 2) + (milliseconds ? "T" + pad(hours, 2) + ":" + pad(minutes, 2) + ":" + pad(seconds, 2) + "." + pad(milliseconds, 3) + "Z" : seconds ? "T" + pad(hours, 2) + ":" + pad(minutes, 2) + ":" + pad(seconds, 2) + "Z" : minutes || hours ? "T" + pad(hours, 2) + ":" + pad(minutes, 2) + "Z" : "");
+}
+
 function _default(delimiter) {
   var reFormat = new RegExp("[\"" + delimiter + "\n\r]"),
       DELIMITER = delimiter.charCodeAt(0);
@@ -9727,13 +9758,22 @@ function _default(delimiter) {
     return rows;
   }
 
-  function format(rows, columns) {
-    if (columns == null) columns = inferColumns(rows);
-    return [columns.map(formatValue).join(delimiter)].concat(rows.map(function (row) {
+  function preformatBody(rows, columns) {
+    return rows.map(function (row) {
       return columns.map(function (column) {
         return formatValue(row[column]);
       }).join(delimiter);
-    })).join("\n");
+    });
+  }
+
+  function format(rows, columns) {
+    if (columns == null) columns = inferColumns(rows);
+    return [columns.map(formatValue).join(delimiter)].concat(preformatBody(rows, columns)).join("\n");
+  }
+
+  function formatBody(rows, columns) {
+    if (columns == null) columns = inferColumns(rows);
+    return preformatBody(rows, columns).join("\n");
   }
 
   function formatRows(rows) {
@@ -9744,14 +9784,15 @@ function _default(delimiter) {
     return row.map(formatValue).join(delimiter);
   }
 
-  function formatValue(text) {
-    return text == null ? "" : reFormat.test(text += "") ? "\"" + text.replace(/"/g, "\"\"") + "\"" : text;
+  function formatValue(value) {
+    return value == null ? "" : value instanceof Date ? formatDate(value) : reFormat.test(value += "") ? "\"" + value.replace(/"/g, "\"\"") + "\"" : value;
   }
 
   return {
     parse: parse,
     parseRows: parseRows,
     format: format,
+    formatBody: formatBody,
     formatRows: formatRows
   };
 }
@@ -9761,7 +9802,7 @@ function _default(delimiter) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.csvFormatRows = exports.csvFormat = exports.csvParseRows = exports.csvParse = void 0;
+exports.csvFormatRows = exports.csvFormatBody = exports.csvFormat = exports.csvParseRows = exports.csvParse = void 0;
 
 var _dsv = _interopRequireDefault(require("./dsv"));
 
@@ -9774,6 +9815,8 @@ var csvParseRows = csv.parseRows;
 exports.csvParseRows = csvParseRows;
 var csvFormat = csv.format;
 exports.csvFormat = csvFormat;
+var csvFormatBody = csv.formatBody;
+exports.csvFormatBody = csvFormatBody;
 var csvFormatRows = csv.formatRows;
 exports.csvFormatRows = csvFormatRows;
 },{"./dsv":"../../../node_modules/d3-dsv/src/dsv.js"}],"../../../node_modules/d3-dsv/src/tsv.js":[function(require,module,exports) {
@@ -9782,7 +9825,7 @@ exports.csvFormatRows = csvFormatRows;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.tsvFormatRows = exports.tsvFormat = exports.tsvParseRows = exports.tsvParse = void 0;
+exports.tsvFormatRows = exports.tsvFormatBody = exports.tsvFormat = exports.tsvParseRows = exports.tsvParse = void 0;
 
 var _dsv = _interopRequireDefault(require("./dsv"));
 
@@ -9795,9 +9838,29 @@ var tsvParseRows = tsv.parseRows;
 exports.tsvParseRows = tsvParseRows;
 var tsvFormat = tsv.format;
 exports.tsvFormat = tsvFormat;
+var tsvFormatBody = tsv.formatBody;
+exports.tsvFormatBody = tsvFormatBody;
 var tsvFormatRows = tsv.formatRows;
 exports.tsvFormatRows = tsvFormatRows;
-},{"./dsv":"../../../node_modules/d3-dsv/src/dsv.js"}],"../../../node_modules/d3-dsv/src/index.js":[function(require,module,exports) {
+},{"./dsv":"../../../node_modules/d3-dsv/src/dsv.js"}],"../../../node_modules/d3-dsv/src/autoType.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = autoType;
+
+function autoType(object) {
+  for (var key in object) {
+    var value = object[key].trim(),
+        number;
+    if (!value) value = null;else if (value === "true") value = true;else if (value === "false") value = false;else if (value === "NaN") value = NaN;else if (!isNaN(number = +value)) value = number;else if (/^([-+]\d{2})?\d{4}(-\d{2}(-\d{2})?)?(T\d{2}:\d{2}(:\d{2}(\.\d{3})?)?(Z|[-+]\d{2}:\d{2})?)?$/.test(value)) value = new Date(value);else continue;
+    object[key] = value;
+  }
+
+  return object;
+}
+},{}],"../../../node_modules/d3-dsv/src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9827,6 +9890,12 @@ Object.defineProperty(exports, "csvFormat", {
     return _csv.csvFormat;
   }
 });
+Object.defineProperty(exports, "csvFormatBody", {
+  enumerable: true,
+  get: function () {
+    return _csv.csvFormatBody;
+  }
+});
 Object.defineProperty(exports, "csvFormatRows", {
   enumerable: true,
   get: function () {
@@ -9851,10 +9920,22 @@ Object.defineProperty(exports, "tsvFormat", {
     return _tsv.tsvFormat;
   }
 });
+Object.defineProperty(exports, "tsvFormatBody", {
+  enumerable: true,
+  get: function () {
+    return _tsv.tsvFormatBody;
+  }
+});
 Object.defineProperty(exports, "tsvFormatRows", {
   enumerable: true,
   get: function () {
     return _tsv.tsvFormatRows;
+  }
+});
+Object.defineProperty(exports, "autoType", {
+  enumerable: true,
+  get: function () {
+    return _autoType.default;
   }
 });
 
@@ -9864,8 +9945,10 @@ var _csv = require("./csv");
 
 var _tsv = require("./tsv");
 
+var _autoType = _interopRequireDefault(require("./autoType"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./dsv":"../../../node_modules/d3-dsv/src/dsv.js","./csv":"../../../node_modules/d3-dsv/src/csv.js","./tsv":"../../../node_modules/d3-dsv/src/tsv.js"}],"../../../node_modules/d3-fetch/src/blob.js":[function(require,module,exports) {
+},{"./dsv":"../../../node_modules/d3-dsv/src/dsv.js","./csv":"../../../node_modules/d3-dsv/src/csv.js","./tsv":"../../../node_modules/d3-dsv/src/tsv.js","./autoType":"../../../node_modules/d3-dsv/src/autoType.js"}],"../../../node_modules/d3-fetch/src/blob.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10251,11 +10334,10 @@ function addAll(data) {
     if (x > x1) x1 = x;
     if (y < y0) y0 = y;
     if (y > y1) y1 = y;
-  } // If there were no (valid) points, inherit the existing extent.
+  } // If there were no (valid) points, abort.
 
 
-  if (x1 < x0) x0 = this._x0, x1 = this._x1;
-  if (y1 < y0) y0 = this._y0, y1 = this._y1; // Expand the tree to cover the new points.
+  if (x0 > x1 || y0 > y1) return this; // Expand the tree to cover the new points.
 
   this.cover(x0, y0).cover(x1, y1); // Add the new points.
 
@@ -10287,45 +10369,37 @@ function _default(x, y) {
     x1 = (x0 = Math.floor(x)) + 1;
     y1 = (y0 = Math.floor(y)) + 1;
   } // Otherwise, double repeatedly to cover.
-  else if (x0 > x || x > x1 || y0 > y || y > y1) {
+  else {
       var z = x1 - x0,
           node = this._root,
           parent,
           i;
 
-      switch (i = (y < (y0 + y1) / 2) << 1 | x < (x0 + x1) / 2) {
-        case 0:
-          {
-            do parent = new Array(4), parent[i] = node, node = parent; while ((z *= 2, x1 = x0 + z, y1 = y0 + z, x > x1 || y > y1));
+      while (x0 > x || x >= x1 || y0 > y || y >= y1) {
+        i = (y < y0) << 1 | x < x0;
+        parent = new Array(4), parent[i] = node, node = parent, z *= 2;
 
+        switch (i) {
+          case 0:
+            x1 = x0 + z, y1 = y0 + z;
             break;
-          }
 
-        case 1:
-          {
-            do parent = new Array(4), parent[i] = node, node = parent; while ((z *= 2, x0 = x1 - z, y1 = y0 + z, x0 > x || y > y1));
-
+          case 1:
+            x0 = x1 - z, y1 = y0 + z;
             break;
-          }
 
-        case 2:
-          {
-            do parent = new Array(4), parent[i] = node, node = parent; while ((z *= 2, x1 = x0 + z, y0 = y1 - z, x > x1 || y0 > y));
-
+          case 2:
+            x1 = x0 + z, y0 = y1 - z;
             break;
-          }
 
-        case 3:
-          {
-            do parent = new Array(4), parent[i] = node, node = parent; while ((z *= 2, x0 = x1 - z, y0 = y1 - z, x0 > x || y0 > y));
-
+          case 3:
+            x0 = x1 - z, y0 = y1 - z;
             break;
-          }
+        }
       }
 
       if (this._root && this._root.length) this._root = node;
-    } // If the quadtree covers the point already, just return.
-    else return this;
+    }
 
   this._x0 = x0;
   this._y0 = y0;
@@ -11082,8 +11156,8 @@ function _default(nodes) {
   function initializeNodes() {
     for (var i = 0, n = nodes.length, node; i < n; ++i) {
       node = nodes[i], node.index = i;
-      if (!isNaN(node.fx)) node.x = node.fx;
-      if (!isNaN(node.fy)) node.y = node.fy;
+      if (node.fx != null) node.x = node.fx;
+      if (node.fy != null) node.y = node.fy;
 
       if (isNaN(node.x) || isNaN(node.y)) {
         var radius = initialRadius * Math.sqrt(i),
@@ -25929,7 +26003,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = _default;
 
 function _default(series, order) {
-  if (!((n = series.length) > 1)) return;
+  if (!((n = series.length) > 0)) return;
 
   for (var i, j = 0, d, dy, yp, yn, n, m = series[order[0]].length; j < m; ++j) {
     for (yp = yn = 0, i = 0; i < n; ++i) {
@@ -29292,26 +29366,46 @@ function Module(moduleName) {
 }
 
 module.bundle.Module = Module;
+var checkedAssets, assetsToAccept;
 var parent = module.bundle.parent;
 
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61918" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51550" + '/');
 
   ws.onmessage = function (event) {
+    checkedAssets = {};
+    assetsToAccept = [];
     var data = JSON.parse(event.data);
 
     if (data.type === 'update') {
-      console.clear();
-      data.assets.forEach(function (asset) {
-        hmrApply(global.parcelRequire, asset);
-      });
+      var handled = false;
       data.assets.forEach(function (asset) {
         if (!asset.isNew) {
-          hmrAccept(global.parcelRequire, asset.id);
+          var didAccept = hmrAcceptCheck(global.parcelRequire, asset.id);
+
+          if (didAccept) {
+            handled = true;
+          }
         }
+      }); // Enable HMR for CSS by default.
+
+      handled = handled || data.assets.every(function (asset) {
+        return asset.type === 'css' && asset.generated.js;
       });
+
+      if (handled) {
+        console.clear();
+        data.assets.forEach(function (asset) {
+          hmrApply(global.parcelRequire, asset);
+        });
+        assetsToAccept.forEach(function (v) {
+          hmrAcceptRun(v[0], v[1]);
+        });
+      } else {
+        window.location.reload();
+      }
     }
 
     if (data.type === 'reload') {
@@ -29399,7 +29493,7 @@ function hmrApply(bundle, asset) {
   }
 }
 
-function hmrAccept(bundle, id) {
+function hmrAcceptCheck(bundle, id) {
   var modules = bundle.modules;
 
   if (!modules) {
@@ -29407,9 +29501,27 @@ function hmrAccept(bundle, id) {
   }
 
   if (!modules[id] && bundle.parent) {
-    return hmrAccept(bundle.parent, id);
+    return hmrAcceptCheck(bundle.parent, id);
   }
 
+  if (checkedAssets[id]) {
+    return;
+  }
+
+  checkedAssets[id] = true;
+  var cached = bundle.cache[id];
+  assetsToAccept.push([bundle, id]);
+
+  if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
+    return true;
+  }
+
+  return getParents(global.parcelRequire, id).some(function (id) {
+    return hmrAcceptCheck(global.parcelRequire, id);
+  });
+}
+
+function hmrAcceptRun(bundle, id) {
   var cached = bundle.cache[id];
   bundle.hotData = {};
 
@@ -29434,10 +29546,6 @@ function hmrAccept(bundle, id) {
 
     return true;
   }
-
-  return getParents(global.parcelRequire, id).some(function (id) {
-    return hmrAccept(global.parcelRequire, id);
-  });
 }
 },{}]},{},["../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
-//# sourceMappingURL=index.bundle.map
+//# sourceMappingURL=index.bundle.js.map
