@@ -35,6 +35,8 @@ thumbnail: /projects/example-md-project/images/thumbnail.png
 # REQUIRED: heo image path needs to be absolute at the moment. Also the image needs to be a aize …
 heroImage: /assets/images/placeholder.png #full page url
 
+socialMediaImage: /assets/images/placeholder.png #full page url
+
 # if the post should be visible in the feed. You still can access it
 # DEFAULT?
 visible: false # if false the project will not be listed

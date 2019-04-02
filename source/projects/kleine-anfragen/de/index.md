@@ -28,7 +28,7 @@ assets:
     - ../css/index.css
 materialsIncluded:
   - name: Source Code
-    link: "#"
+    link: "https://github.com/technologiestiftung/kleine-anfragen"
 ---
 
 
@@ -63,22 +63,19 @@ Methode
 
 Über 15.000 Anfragen sind bei [Kleine Anfragen](https://kleineanfragen.de/) für Berlin im Zeitraum November 2011 bis heute gelistet. Für jede Anfrage gibt es einen Titel, eine Antragsteller-Partei, eine antwortende Verwaltung und den Volltext der Anfrage mit entsprechenden Antworten. Über die Häufigkeit einzelner Worte in den Anfragetiteln haben wir Themen herausgearbeitet, zu denen viele Anfragen gestellt wurden.  
 
-Allgemeine (z.B. die, und, als) und berlinspezifische Worte (z.B. Senat, Berlin, Bezirk), die für die Analyse nicht relevant sind, wurden entfernt (TODO Hier sind alle sogenannten Stopwords gelistet). Die verbliebenen Worte wurden auf ihren Wortstamm reduziert (z.B. Kinder zu kind). Anschließend ließ sich die Worthäufigkeit auswerten. Um die Begriffe besser im Kontext zu verstehen, werden sie hier in einem Netzwerk dargestellt. Die Punktgröße stellt die Häufigkeit eines Begriffs dar und die Linien die Verbindungen zwischen den Begriffen. Je häufiger zwei Begriffe gemeinsam in einem Titel vorkommen, desto dicker ist die Verbindungslinie. Durch Klick auf ein Wort werden fünf beispielhafte Anfragen gelistet.
+Allgemeine (z.B. die, und, als) und berlinspezifische Worte (z.B. Senat, Berlin, Bezirk), die für die Analyse nicht relevant sind, wurden entfernt ( [Hier sind alle sogenannten Stopwords](https://github.com/technologiestiftung/kleine-anfragen/blob/master/data/stopwords_de.txt) gelistet). Die verbliebenen Worte wurden auf ihren Wortstamm reduziert (z.B. Kinder zu kind). Anschließend ließ sich die Worthäufigkeit auswerten. Um die Begriffe besser im Kontext zu verstehen, werden sie hier in einem Netzwerk dargestellt. Die Punktgröße stellt die Häufigkeit eines Begriffs dar und die Linien die Verbindungen zwischen den Begriffen. Je häufiger zwei Begriffe gemeinsam in einem Titel vorkommen, desto dicker ist die Verbindungslinie. Durch Klick auf ein Wort werden fünf beispielhafte Anfragen gelistet. Mit dem Slider "minimum Wortanzahl" kann eingestellt werden, wie häufig ein Wort mindestens vorkommen muss, um in der Grafik angezeigt zu werden.
 
 <div id='network'></div>
 
 Die gefragtesten Themen
 -----------------------
 
-  
-
-Die großen Themen der Landespolitik Bildung (Schule) und innere Sicherheit zeigen sich in den zwei mit Abstand häufigsten Begriffen: _Schule (580 Anfragen)_ und _Polizei (446 Anfragen)_. Aktuelle politische und mediale Themen in Berlin spiegeln sich ebenfalls in den Anfragen wider: Wohnungen, öffentlicher Nahverkehr, die Flughäfen (BER, Tempelhof und Tegel) und Flüchtlinge gehören zu den weiteren größten Themenkomplexen.  
+Die großen Themen der Landespolitik Bildung (Schule) und innere Sicherheit zeigen sich in den zwei mit Abstand häufigsten Begriffen: _Schule (653 Anfragen)_ und _Polizei (456 Anfragen)_. Aktuelle politische und mediale Themen in Berlin spiegeln sich ebenfalls in den Anfragen wider: Wohnungen, öffentlicher Nahverkehr, die Flughäfen (BER, Tempelhof und Tegel) und Flüchtlinge gehören zu den weiteren größten Themenkomplexen.  
   
 
 ### Bildung und Kinderbetreuung
 
-Die meisten Anfragen werden rund um das Thema Bildung und Schule gestellt. Verwendete Begriffe sind hier beispielsweise "Schule" (580 Anfragen), "Hochschule" (122), "Bildung" (75), "Lehrkräfte" (44) und "Willkommensklassen" (37), sowie "Kinder" (200), "Kitas" / "Kitaplätze" (150) und "Jugend" (98).  
-
+Die meisten Anfragen werden rund um das Thema Bildung und Schule gestellt. Verwendete Begriffe sind hier beispielsweise "Schule" (653 Anfragen), "Hochschule" (129), "Bildung" (80), "Lehrkräfte" (48) und "Willkommensklassen" (38), sowie "Kinder" (213), "Kita" / "Kitaplätze" (175) und "Jugend" (104).  
 
 Welche Daten sind zu diesem Thema bereits offen verfügbar? Berlin bietet [detaillierte Informationen zu Standorten und Angeboten von Schulen](https://www.berlin.de/sen/bildung/schule/berliner-schulen/schulverzeichnis/), die im Rahmen des Projekts ["Jede Schule"](https://jedeschule.de/) visuell ansprechend aufbereitet wurden. Die Senatsverwaltung für Bildung, Jugend und Familie stellt zusätzlich Statistiken über die [Anzahl Schüler\*innen nach Schulart und Region](https://www.bildungsstatistik.berlin.de/visualisierung/Schueler/schueler.aspx) sowie schöne Visualisierungen der [Bewegungen zwischen Wohnbezirk und Schulbezirk](https://www.bildungsstatistik.berlin.de/visualisierung/circle/index.html) bereit.
 
@@ -100,7 +97,7 @@ Jedoch gibt es auch noch einiges an Potenzial für weitere Open Data-Veröffentl
 
 ### Polizei und Kriminalität
 
-"Polizei" ist der zweithäufigste Begriff in den Anfragetiteln. Das Thema ist parteiübergreifend nachgefragt. So hat beispielsweise die SPD [detaillierte Zahlen zu jeder Direktion der Polizei](https://kleineanfragen.de/search?q=controlling+ist+gut+kontrolle+ist+besser) angefragt. Die CDU hat diverse Anfragen zu [Planstellen vs. tatsächlichen Beschäftigten](https://kleineanfragen.de/search?q=Planstellen+tats%C3%A4chliche+Besch%C3%A4ftigte+polizei) gestellt und die FDP zu [Arbeitsschutz und Gesundheitsförderung der Polizei](https://kleineanfragen.de/search?q=arbeitsschutz+gesundheitsf%C3%B6rderung+polizei). Weitere häufige Begriffe sind "Feuerwehr" (166), "organisierte Kriminalität" (71), "Rockerkriminalität" (51), und "Justizvollzug" (31). Zum Anschlag am Breitscheidplatz vom 19. Dezember 2016 wurden 94 Anfragen gestellt. Letztes Jahr wurde mit dem [Kriminalitätsatlas](https://daten.berlin.de/anwendungen/kriminalit%C3%A4tsatlas-app) bereits ein wichtiger Datensatz als Open Data bereitgestellt _[(Hier haben wir dazu berichtet)](https://lab.technologiestiftung-berlin.de/projects/crime-atlas/index.html)_. Potenzial für weitere Open Data-Datensätze zum Thema Polizei verbergen sich beispielsweise hinter diesen Anfragen:
+"Polizei" ist der zweithäufigste Begriff in den Anfragetiteln. Das Thema ist parteiübergreifend nachgefragt. So hat beispielsweise die SPD [detaillierte Zahlen zu jeder Direktion der Polizei](https://kleineanfragen.de/search?q=controlling+ist+gut+kontrolle+ist+besser) angefragt. Die CDU hat diverse Anfragen zu [Planstellen vs. tatsächlichen Beschäftigten](https://kleineanfragen.de/search?q=Planstellen+tats%C3%A4chliche+Besch%C3%A4ftigte+polizei) gestellt und die FDP zu [Arbeitsschutz und Gesundheitsförderung der Polizei](https://kleineanfragen.de/search?q=arbeitsschutz+gesundheitsf%C3%B6rderung+polizei). Weitere häufige Begriffe sind "Feuerwehr" (166), "organisierte Kriminalität" (74), "Rockerkriminalität" (53), und "Justizvollzug" (32). Zum Anschlag am Breitscheidplatz vom 19. Dezember 2016 wurden 94 Anfragen gestellt. Letztes Jahr wurde mit dem [Kriminalitätsatlas](https://daten.berlin.de/anwendungen/kriminalit%C3%A4tsatlas-app) bereits ein wichtiger Datensatz als Open Data bereitgestellt _[(Hier haben wir dazu berichtet)](https://lab.technologiestiftung-berlin.de/projects/crime-atlas/index.html)_. Potenzial für weitere Open Data-Datensätze zum Thema Polizei verbergen sich beispielsweise hinter diesen Anfragen:
 
 *   [Reaktionszeit der Berliner Polizei](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/17/SchrAnfr/s17-16549.pdf)
 *   [Polizei Immobilien](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/18/SchrAnfr/s18-16035.pdf)
@@ -110,7 +107,7 @@ Jedoch gibt es auch noch einiges an Potenzial für weitere Open Data-Veröffentl
 
 ### Wohnen
 
-Zum Thema "Wohnen" wurden 2018 so viele Anfragen gestellt, wie in keinem Jahr zuvor. Der Teilbegriff "wohn" kommt 731 mal in den Titeln vor, versteckt in verschiedenen Begriffen z.B. Wohnung, Wohnungsbaugesellschaften, Wohnraum, Wohnungsnot, etc. Weitere Begriffe zu dem Thema sind "Immobilien" (67), "landeseigenen Wohnungsbaugesellschaften" (61), "Neubauvorhaben" (33), "An- und Verkäufe" (59). Mögliche interessante Datensätze in Anfragen sind beispielsweise:
+Zum Thema "Wohnen" wurden 2018 so viele Anfragen gestellt, wie in keinem Jahr zuvor. Der Teilbegriff "wohn" kommt so zwar 'nur' 161 vor, steckt allerdings insgesamt in 731 Titeln, versteckt in verschiedenen Begriffen z.B. wohnungslos, Wohnungsbaugesellschaften, Wohnraum, Wohnungsnot, etc. Weitere Begriffe zu dem Thema sind "Immobilien" (70), "Wohnungsbaugesellschaften" (130), "Neubau" (41) oder "Unterbringung" (95). Mögliche interessante Datensätze in Anfragen sind beispielsweise:
 
 *   [umgesetztes Vorkaufsrecht Milieuschutzgebiet](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/18/SchrAnfr/s18-13411.pdf)
 *   [Studentisches Wohnen in Berlin](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/18/SchrAnfr/s18-15944.pdf)
@@ -120,7 +117,7 @@ Zum Thema "Wohnen" wurden 2018 so viele Anfragen gestellt, wie in keinem Jahr zu
 
 ### Öffentlicher Nahverkehr (BVG)
 
-Zum öffentlichen Nahverkehr gibt es Anfragen in Bezug auf "BVG" (145), "S-Bahn" (83), "Bahnhof" (73) und "U-Bahn" (17). Mit den aktuellen [Fahrplandaten des VBB](https://www.vbb.de/unsere-themen/vbbdigital/api-entwicklerinfos) ist ein wichtiger Datensatz online verfügbar. Darüber hinaus gibt es allerdings weitere Potenziale: beispielsweise werden die [Verspätungen](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/18/SchrAnfr/s18-10525.pdf) der BVG jährlich angefragt. Weitere Möglichkeiten für Open Data:
+Zum öffentlichen Nahverkehr gibt es Anfragen in Bezug auf "BVG" (149), "S-Bahn" (87), "Bahnhof" (79) und "U-Bahnhof" (49). Mit den aktuellen [Fahrplandaten des VBB](https://www.vbb.de/unsere-themen/vbbdigital/api-entwicklerinfos) ist ein wichtiger Datensatz online verfügbar. Darüber hinaus gibt es allerdings weitere Potenziale: beispielsweise werden die [Verspätungen](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/18/SchrAnfr/s18-10525.pdf) der BVG jährlich angefragt. Weitere Möglichkeiten für Open Data:
 
 *   [BVG Verspätungen](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/18/SchrAnfr/s18-10525.pdf)
 *   [Betriebshöfe BVG](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/18/SchrAnfr/s18-16673.pdf)
@@ -130,13 +127,13 @@ Zum öffentlichen Nahverkehr gibt es Anfragen in Bezug auf "BVG" (145), "S-Bahn"
 
 ### Flughäfen
 
-Zu allen Flughäfen "BER" (210), "Tegel" (93) und "Tempelhof" (60) gibt es regelmäßige Anfragen.  
+Zu allen Flughäfen "BER" (215), "Tegel" (99) und "Tempelhof" (66) gibt es regelmäßige Anfragen.  
 Potenziell relevante Datensätze sind hier beispielsweise die [Flughafen- und Flugfeldflächen Tempelhof](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/18/SchrAnfr/s18-13860.pdf) oder die [Kapazitäten vom BER im Vergleich zu Schönefeld](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/17/SchrAnfr/s17-17627.pdf).
 
 
 ### Flüchtlinge
 
-Zum Thema "Flüchtlinge" (225) gab es im Jahr 2015 über 70 Anfragen. 2018 Waren es nur noch 15. Das Landesamt für Flüchtlingsangelegenheiten bieten inzwischen aufschlussreiche **Zahlen und Visualisierungen**, z.B. zu [Flüchtlingsunterkünften](https://www.berlin.de/laf/wohnen/allgemeine-informationen/ueberblick-fluechtlingsunterkuenfte/artikel.629241.php) und [Ankunftszahlen](https://www.berlin.de/laf/ankommen/aktuelle-ankunftszahlen/artikel.625503.php).
+Zum Thema "Flüchtlinge" (229) gab es im Jahr 2015 über 70 Anfragen. 2018 Waren es nur noch 15. Das Landesamt für Flüchtlingsangelegenheiten bieten inzwischen aufschlussreiche **Zahlen und Visualisierungen**, z.B. zu [Flüchtlingsunterkünften](https://www.berlin.de/laf/wohnen/allgemeine-informationen/ueberblick-fluechtlingsunterkuenfte/artikel.629241.php) und [Ankunftszahlen](https://www.berlin.de/laf/ankommen/aktuelle-ankunftszahlen/artikel.625503.php).
 
 
 Die gefragtesten Senatsverwaltungen
@@ -153,9 +150,9 @@ Anfragen an Senatsverwaltungen (Wahlperiode 17)
 TODO: format title
 Anfragen an Senatsverwaltungen (Wahlperiode 18)
 
-Die **Senatsverwaltung für Inneres & Sport** hat in beiden Wahlperioden mit die meisten Anfragen erhalten. Dabei handelte es sich vor allem um Fragen mit Bezug zu Polizei, Feuerwehr, Kriminalität und Badebetrieben.
+Die **Senatsverwaltung für Inneres & Sport** hat in beiden Wahlperioden mit die meisten Anfragen erhalten. Dabei handelte es sich vor allem um Fragen mit Bezug zu Polizei, Feuerwehr, Kriminalität, Verfassungsschutz und Badebetrieben.
 
-Die **Senatsverwaltung für Umwelt, Verkehr und Klimaschutz (WP18)** erhielt in Wahlperiode 18 die zweitmeisten Anfragen. Anfragen handeln hier hauptsächlich von öffentlichem Nahverkehr, Grün(anlagen), der IGA _(Anm.: Internationale Gartenausstellung)_, Sanierungen und den Flughäfen. Die **Senatsverwaltung Stadtentwicklung und Umwelt (WP17)** hat in der vorherigen Wahlperiode die meisten Anfragen erhalten. Zusätzlich zu sich überschneidenden Themen wie Bahn, Flughafen und Barrierefreiheit wurden Anfragen zur landeseigenen Wohnungsbaugesellschaft, dem "Staatsopernskandal" und Wohnungen gestellt.
+Die **Senatsverwaltung für Umwelt, Verkehr und Klimaschutz (WP18)** erhielt in Wahlperiode 18 die zweitmeisten Anfragen. Anfragen handeln hier hauptsächlich von öffentlichem Nahverkehr, Grün(anlagen), Brücken, Sanierungen und den Flughäfen. Die **Senatsverwaltung Stadtentwicklung und Umwelt (WP17)** hat in der vorherigen Wahlperiode die meisten Anfragen erhalten. Zusätzlich zu sich überschneidenden Themen wie Bahn, Flughafen und Barrierefreiheit wurden Anfragen zur landeseigenen Wohnungsbaugesellschaft, dem "Staatsopernskandal" und Wohnungen gestellt.
 
 Die **Senatsverwaltung für Bildung, Jugend und Familie** (bzw. zuvor Bildung, Jugend und Wissenschaft) erhielt die drittmeisten Anfragen. Themen waren hier Schule, Kinder, Jugend, Kitas und minderjährige Flüchtlinge.
 
@@ -171,5 +168,4 @@ Einschränkungen der Analyse
 
 Bei der Interpretation dieser Ergebnisse ist zu bedenken, dass sich nicht alle Anfragen auf Datensätze beziehen. Somit lässt sich aus den Häufigkeiten der Begriffe nicht in allen Fällen eine Relevanz für Open Data ableiten. Außerdem ist zu berücksichtigen, dass Daten nicht mehr angefragt werden müssen, wenn diese bereits verfügbar sind. Folglich lässt sich ebenfalls keine eins-zu-eins Übertragung von Begriffshäufigkeiten auf die Relevanz von Themen vornehmen.
 
-Die Analyse über die Titel lässt eine grobe Übersicht der Themen zu, ist jedoch keine vollständig akkurate Auswertung: die Titel sind sind von den Abgeordneten frei wählbar und folgen keinem bestimmten Format. Somit sind nicht zwangsläufig alle enthaltenen Themen der Anfrage aus dem Titel ersichtlich. Eine Analyse der Volltexte wäre komplexer und umfangreicher würde aber gegebenenfalls detailliertere Informationen ermöglichen. Zusätzlich ist bei dieser Textanalyse zu bedenken: Synonyme werden nicht berücksichtigt, zusammengesetzte Worte werden durch das verwendete Analyse-Package nicht immer gut getrennt (bspw. wird Wohnungsnot nicht dem Wort 'Wohn' zugeordnet TODO - oben schreibst du dass wohnungsnot zu wohn gehört -BEN) und doppelte Wortbedeutungen werden nicht beachtet (z.B. Behinderung kann sich auf Behinderung des Straßenverkehrs oder körperliche Behinderung beziehen).
-
+Die Analyse über die Titel lässt eine grobe Übersicht der Themen zu, ist jedoch keine vollständig akkurate Auswertung: die Titel sind sind von den Abgeordneten frei wählbar und folgen keinem bestimmten Format. Somit sind nicht zwangsläufig alle enthaltenen Themen der Anfrage aus dem Titel ersichtlich. Eine Analyse der Volltexte wäre komplexer und umfangreicher würde aber gegebenenfalls detailliertere Informationen ermöglichen. Zusätzlich ist bei dieser Textanalyse zu bedenken: Synonyme werden nicht berücksichtigt, zusammengesetzte Worte werden durch das verwendete Analyse-Package ([NLTK Snowball Stemmer](https://www.nltk.org/_modules/nltk/stem/snowball.html)) nicht immer gut getrennt (bspw. wird Kitaausbau nicht in 'Kita' und 'Ausbau' getrennt und somit nicht dem Wort 'Kita' zugeordnet) und doppelte Wortbedeutungen werden nicht beachtet (z.B. Behinderung kann sich auf Behinderung des Straßenverkehrs oder körperliche Behinderung beziehen).
