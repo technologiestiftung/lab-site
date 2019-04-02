@@ -1,9 +1,10 @@
 ---
 ---
 [
+  {% assign i=0 %}
  {%- for pg in site.pages -%}
    {%- if pg.visible == true -%}
-     {
+   {% if i > 0 %},{% endif %}{
        "isproject":{%- if pg.layout == 'project' -%}true{%- else -%}false{%- endif -%},
        "type":"{{pg.type}}",
        "status":"{{pg.status}}",
@@ -12,7 +13,8 @@
        "lang":"{{pg.lang}}",
        "start":"{{pg.start}}",
        "end":"{{pg.end}}"
-     }{% unless forloop.last %},{% endunless %}
+     }
+     {% assign i = i | plus:1  %}
    {%- endif -%}
  {%- endfor -%}
 ]
