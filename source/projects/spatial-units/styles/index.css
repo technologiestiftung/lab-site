@@ -1,0 +1,100 @@
+ul#overview-list{
+  max-width: 810px;
+  margin:0 auto;
+  padding-top:50px;
+}
+
+#overview-list, #overview-list li{
+  list-style: none;
+  margin:0;
+  padding:0;
+  text-align: center;
+}
+
+#overview-list li,
+#overview-list li img,
+#overview-list li a>span{
+  float:left;
+  width:250px;
+  text-align: center;
+  font-weight:bold;
+}
+
+#overview-list li img{
+  width:250px;
+  height:207px;
+}
+
+#overview-list li{
+  display: block;
+  margin:0 20px 20px 0;
+  width:250px;
+  height:207px;
+}
+
+#overview-list li a:hover>span>span{
+  background-color:rgba(255,255,255,1);
+  color:#e60032;
+}
+
+#overview-list li a>span{
+  margin-left:-250px;
+  margin-top:80px;
+  line-height: 1.75em;
+}
+
+#overview-list li a>span>span{
+  background-color:rgba(255,255,255,0.8);
+  border-radius:5px;
+  padding:5px 8px;
+}
+
+.layermix svg path{
+  fill:transparent;
+}
+
+.menu li a.active,
+.menu li a:hover{
+  text-decoration: line-through;
+  cursor: pointer;
+}
+
+.menu li a.active:hover{
+  text-decoration: none;
+}
+
+.layermix{
+  text-align: center;
+}
+
+.layermix svg{
+  margin: 0 auto;
+}
+
+.layermix li{
+  display: inline-block;
+  padding-right:15px;
+  list-style: none;
+}
+
+.download-list li{
+  padding-bottom:15px;
+}
+
+#section_lors{
+  clear:both;
+}
+
+.project--publication ul#overview-list li:before,
+.project--publication ul.menu li:before{
+  content:"";
+}
+
+.project--publication ul.menu{
+  margin:0;
+}
+
+.project--publication ul#overview-list li a::after,
+.project--publication ul.menu li a::after{
+  background-color:transparent;
+}
