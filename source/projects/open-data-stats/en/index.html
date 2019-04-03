@@ -1,0 +1,119 @@
+---
+layout: project
+description: An in depth-analysis of the usage statistics of Berlin's open data portal
+lang: en
+title: "Open data in Berlin: Behind the numbers"
+subtitle: Open data usage statistics in Berlin
+type: publication
+colorMode: bright
+featuredImage: /projects/open-data-stats/images/featured.jpg
+thumbnail: /projects/open-data-stats/images/thumbnail.jpg
+heroImage: /projects/open-data-stats/images/hero.jpg
+socialMediaImage: /projects/open-data-stats/images/social_media.jpg
+visible: true
+featured: false
+authors:
+  - sebastian-meier
+start: 2018-07-01
+end: 2018-07-24
+status: finished
+date: 2018-07-24
+assets:
+  js:
+    - ../../../assets/js/d3.v5.min.js
+    - https://cdnjs.cloudflare.com/ajax/libs/d3-annotation/2.3.0/d3-annotation.min.js
+    - ../js/main_en.js
+  css:
+    - ../styles/custom.css
+redirect_from:
+  - /projects/123456789/
+  - /old-site-path/my-amazing-post/
+
+---
+
+<p><i>In June of 2018, BerlinOnline, the operators of Berlin's open data portal, published the <a href="https://daten.berlin.de/datensaetze/zugriffsstatistik-datenberlinde">download statistics</a> for the portal's datasets. Given that we are supporting the further development of Berlin's data offerings through our <a href="http://odis-berlin.de">ODIS</a> initiative, we analyzed these statistics to better understand usage of the portal. In this post, we take a look at how the data portal has developed since 2013 and highlight some of the trends in its usage.</i></p>
+
+<div class="special-section" id="intro-section">
+    <div id="introviscontainer">
+        <div id="introvis"></div>
+        <div id="introtext">
+            <span id="introtitle">Downloads</span>
+            <span id="introcopy">The line chart on left shows the download for data sets in Berlin's OpenData portal since April 2013.<br /><br />Klicke auf weiter um mehr zu erfahren.</span>
+            <button id="introprev">back</button>
+            <button id="intronext">continue</button>
+        </div>
+        <hr class="clear" />
+    </div>
+</div>
+
+<div class="container p-bottom">
+<h2 class="p-bottom">The most important insights</h2>
+
+<h3>1. The overall development of the portal is positive</h3>
+<p class="copy p-bottom">As the volume of datasets offered in the portal has grown, so too have the visitor numbers. Thus, to little surprise, we can observe that a more expansive offering leads to increased use of the portal. This positive relationship shows that there is indeed a demand for open government data in Berlin and that citizens are acting on this demand.</p>
+
+<h3>2. Most of the downloads cover just a handful of datasets</h3>
+<p class="copy p-bottom">Although a few datasets had several thousand hits, the majority of datasets in the data portal are rarely accessed by site visitors. It's important to remember, however, that the number of hits a given dataset has is not a perfect indicator of success – a single download of a dataset can be what leads to a useful and/or interesting application of the data. Regardless, the distribution of downloads should call attention to questions of data quality and relevance, since it could also be the case that many of these little-accessed datasets are simply unusable in their current forms.</p>
+
+<h3>3. The level of interest in a given dataset is highly dependent on outside factors</h3>
+<p class="copy p-bottom">Unusually high download numbers are almost always tied to outside factors. These factors could be that some online source has linked to the dataset, that a datajournalism project has made use of the data, or that the data are seasonally relevant (e.g., results from a recent election or information or increased interest in swimming locations at the start of summer). Data that has a direct relevance for citizens' everyday lives will generally see higher visitor counts. This also means that if data publishers want to see higher numbers of downloads for their datasets, they should focus on publishing datasets that are most relevant to citizens.</p>
+
+<h2 class="p-bottom">Detailed analysis</h2>
+
+<p class="copy p-bottom">Before we dive into the analysis, there is one important consideration to keep in mind: these figures only represent downloads occuring via <a href="https://daten.berlin.de">Berlin's Open Data Portal</a>. If users are downloading datasets directly via other portals offered by the state of Berlin (such as the <a href="http://fbinter.stadt-berlin.de/fb/index.jsp">FIS Broker</a> for geospatial data, <a href="http://www.gsi-berlin.info/">the GSI portal</a> for health data, or <a href="https://www.statistik-berlin-brandenburg.de/datenbank/inhalt-datenbank.asp">the Berlin-Brandenburg Office for Statistics</a>), these downloads will not appear in our statistics. Nevertheless, the following figures offer us an interesting and valuable look into usage of the data portal. If you're interested in learning more about the current status of Open Data in Berlin, we have released a report on <a href="https://www.technologiestiftung-berlin.de/fileadmin/user_upload/Open_Data_in-der-Verwaltung_WEB.pdf">Open Data in the Berlin City Administration</a> (available only in German).
+
+<h2>Distribution</h2>
+
+<p style="padding-bottom:10px;">Looking at the individudal distribution of downloads makes it clear that a small number of datasets is responsible for the majority of downloads.</p>
+<div id="histograms">
+    <h3 class="p-top" style="text-align: center;">Total number of downloads for a single dataset</h3>
+    <div id="histograms-1"></div>
+    <h3 class="p-top" style="text-align: center;">Average monthly downloads (Mean)</h3>
+    <div id="histograms-2"></div>
+    <h3 class="p-top" style="text-align: center;">Median monthly downloads</h3>
+    <div id="histograms-3"></div>
+</div>
+<p style="padding-bottom:10px;">The majority of newly added datasets also see very little activity – only a few datasets have consistently high download numbers.</p>
+<h3 class="p-top" style="text-align: center;">The first 24 months after the publishing of a dataset</h3>
+<div id="individual"></div>
+<div id="individual-histograms" style="display:none;">
+    <p style="text-align:center;">Average monthly download numbers</p>
+</div>
+<p style="text-align:center;"><button id="showhistos">Show histograms for the first 12 months of a dataset</button></p>
+
+<h2 class="p-top">Temporal patterns</h2>
+<p>The number of available datasets has grown continuously over the last five years. One trend noticeable in the first graph below are the periodic, concentrated spikes in the number of new datasets being added – these represent activities like batch uploads and harvesting efforts from other data portals.</p>
+<div id="newdata"></div>
+<p>Demand for data has also risen steadily. The following figure shows what percentage of the total number of datasets in the portal were accessed in a given month. At the beginning, 15% of all datasets saw some form of activity; today, the number is more than 30% (this trend is illustrated by the black line). Datasets that had been added within the last four months of a given timeframe receive a bit more attention (illustrated by the grey line). An interesting pattern can be observed in this chart: every four months there is a spike in datasets being accessed, suggesting some sort of automated activity. We haven't yet been able to find a clear explanation for this trend. The affected datasets are largely those originating from the GSI portal.</p>
+<div id="timepatterns"></div>
+<p style="padding-bottom:10px;">A clear pattern of reduced portal activity in winter can be observed; the trends in summer are less well-defined, however.</p>
+<div id="seasonal"></div>
+
+<h2>The outliers</h2>
+<p style="padding-bottom:10px;">In this section, we highlight some examples of datasets that have seen unusually high activity in comparison with the rest of the portal's offerings.</p>
+<div id="outliers"></div>
+
+<h2 class="p-top">Downloads according to category, data source, and license</h2>
+<p>The most popular type of data accessed via the portal is spatial data, followed by demographic data. The <a href="https://www.statistik-berlin-brandenburg.de/">Berlin-Brandenburg Office for Statistics</a> remains the most important publisher of open data in Berlin. And for licenses, the internationally-respected Creative Commons License is far and above the most used.</p>
+<h3 class="p-top" style="text-align:center;">Download numbers by category</h3>
+<p style="text-align:center;"><button id="stacked_groups_1-abs">Absolute</button>&nbsp;<button id="stacked_groups_1-rel">Relative</button></p>
+<div id="stacked_groups_1"></div>
+<h3 class="p-top" style="text-align:center;">Download numbers by data publisher</h3>           
+<p style="text-align:center;"><button id="stacked_groups_2-abs">Absolute</button>&nbsp;<button id="stacked_groups_2-rel">Relative</button></p>
+<div id="stacked_groups_2"></div>
+<h3 class="p-top" style="text-align:center;">Download numbers by license type</h3>           
+<p style="text-align:center;"><button id="stacked_groups_3-abs">Absolute</button>&nbsp;<button id="stacked_groups_3-rel">Relative</button></p>
+<div id="stacked_groups_3"></div>
+<h2 class="p-top">Top datasets</h2>
+  <p>To close, here is a list of the most popular datasets. Oh, and in case you were wondering: the most popular names for babies born in Berlin last year were "Emilia" and "Ben". If you'd like to see the raw data yourself, <a href="https://daten.berlin.de/datensaetze/liste-der-h%C3%A4ufigen-vornamen-2017">click here</a>.</p>
+
+<div id="toptables">
+  <h3 class="p-top" style="text-align:center;">Total downloads since 2013</h3>
+  <div id="top_abs"></div>
+  <h3 class="p-top" style="text-align:center;">Average monthly downloads</h3>
+  <div id="top_month"></div>
+  <h3 class="p-top" style="text-align:center;">Grouped total downloads since 2013</h3>
+  <div id="top_group_abs"></div>
+  <h3 class="p-top" style="text-align:center;">Grouped average monthly downloads</h3>
+  <div id="top_group_month"></div>
+</div>
