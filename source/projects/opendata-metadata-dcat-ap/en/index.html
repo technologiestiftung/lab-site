@@ -1,0 +1,207 @@
+---
+layout: project
+description: With the implementation of new laws and regulations for fostering the
+  publication of open data in Germany the number of open data sets is steadly
+  growing. In order to create sustainable data management structures and for
+  increasing the data's machinereadability, accessability and findability good
+  meta data is required. The new German standard for meta data DCAT-AP.de is a
+  first step in the right direction.
+lang: en
+title: OpenData and Metadaten
+subtitle: Introduction to metadata and their opportunities
+type: publication
+colorMode: bright
+featuredImage: /projects/opendata-metadata-dcat-ap/images/featured.jpg
+thumbnail: /projects/opendata-metadata-dcat-ap/images/thumbnail.jpg
+heroImage: /projects/opendata-metadata-dcat-ap/images/govdata.de.png
+socialMediaImage: /projects/opendata-metadata-dcat-ap/images/social_media.jpg
+visible: true
+featured: false
+authors:
+  - sebastian-meier
+start: 2018-02-01
+end: 2018-02-26
+status: finished
+date: 2018-02-26
+assets:
+  js:
+    - ../../../assets/js/d3.v4.min.js
+    - ../js/topojson-client.js
+    - ../js/index.js
+redirect_from:
+  - /projects/123456789/
+  - /old-site-path/my-amazing-post/
+
+---
+
+<h2>Metadaten — An Introduction</h2>
+<p>Metadata contains additional descriptive information about other datasets. Metadata is nothing new, digital images and music, for example, already contain additional metadata for many years. In the case of media files, metadata is containing information on the author or artist, year of publication, genre and in the case of music if it belongs to an album or collection. Using those additional bits of information, data can be put in context, connections between individual items can be established and files can be organized and searched. Similar motives drive the implementation of metadata for open data. Publishing datasets as machine-readable open data on public data portals is only a first step, only if this data is complemented with standardised and detailed metadata it becomes a cornerstone to an transparent and sustainable digital infrastructure. In the following paragraphs the new German open data standard DCAT-AP.de will be discussed and explained using applied examples to demonstrate the need and demand for good metadata.</p>
+
+{% include macro-image-section-small.html src="../images/govdata.de.png" caption="Screenshot of <a href='http://www.govdata.de'>www.govdata.de</a>, which have already implemented DCAT-AP.de." %}
+
+<h2>DCAT-AP.de</h2>
+<p>DCAT is short for Data Catalogue Vocabulary and AP stands for Application Profile. <a href="https://joinup.ec.europa.eu/release/dcat-ap-v11">DCAT-AP</a> is a European standard for describing datasets. <a href="http://www.dcat-ap.de/">DCAT-AP.de</a> is the German adoption of the standard (specifically the vocabulary). So even if you are using DCAT-AP or another national adoption, the following article might still be a useful introduction to the topic. DCAT-AP.de can be broken down into to components: 1) The <strong>structure</strong> of a metadata file, which parameters to include in a metadata description, for example, the URL to the dataset or the license. 2) A <strong>controlled vocabulary</strong> which should be used to describe metadata, for example, license type or spatial granularity (national or city data). When using the standard the committee suggests a minimum version of attributes to include (<a href="http://www.dcat-ap.de/def/dcatde/1_0/examples.zip">download examples</a>). This light version can be extended depending on data type and available information. The metadata can be provided in the machine-readable formats <a href="https://de.wikipedia.org/wiki/Extensible_Markup_Language">XML</a>, <a href="https://de.wikipedia.org/wiki/Resource_Description_Framework">RDF</a> and <a href="https://de.wikipedia.org/wiki/JavaScript_Object_Notation">JSON</a>. Definitions of each attribute and its vocabulary can be found on <a href="http://www.dcat-ap.de/">www.DCAT-AP.de</a>.</p>
+
+<h3>DCAT-AP Minimum Version</h3>
+<div class="section--code">
+{%- highlight json -%}
+{
+  "dcat:Catalog": {
+    "dct:title": ["Transparenzportal Hamburg"],
+    "dct:description": ["Das Transparenzportal Hamburg ist das ..."],
+    "dct:publisher": {"foaf:name": "Freie und Hansestadt Hamburg"},
+    "dcat:dataset": ["https://www.govdata.de/web/guest/suchen/..."]
+  },
+  "dcat:Dataset": [{
+    "dct:identifier": ["https://www.govdata.de/web/guest/suchen/..."],
+    "dct:title": ["Naturräume Geest und Marsch"],
+    "dct:description": ["Die Zuordnung des Hamburger Stadtgebietes..."],
+    "dcatde:contributorID": ["http://dcat-ap.de/def/contributors/..."],
+    "dcat:distribution": ["http://geodienste.hamburg.de/HH_WFS_..."],
+    "dct:license": ["http://dcat-ap.de/def/licenses/dl-by-de/2.0/"]
+  }]
+}
+{%- endhighlight -%}
+</div>
+
+<p>The metadata descriptions according to DCAT-AP are split up into multiple main components. In the minimum variant the two elements are <i>dcat:Catalog</i> and <i>dcat:Dataset</i>. <i>dcat:Catalog</i> is describing the catalogue the dataset belongs to, for example, the open data portal Berlin or in the example above Hamburg. All attributes within in this element (besides dcat:dataset) specifically describe the overall catalogue or portal not the individual item. <i>dcat:Dataset</i> is in contrast describing the specific dataset in question. In addition there are multiple other main components, for example, <i>dcat:Distribution</i>.</p>
+
+<h2>Applications</h2>
+<p>While the minimum variant only contains essential attributes like title, description, license, URLs and information on the contributor of the data. The full strength of the metadata standard unfolds when additional attributes are added. In the following a few examples for such additional attributes are being explored.</p>
+
+<h3>Temporal Description</h3>
+<div class="section--code">
+{%- highlight json -%}
+{
+  "dcat:Catalog": {
+    "dct:issued": "2017-03-10T10:00:00",
+    "dct:modified": "2017-07-15T11:05:00"
+  },
+  "dcat:Dataset": [{
+    "dct:issued": "2017-02-27",
+    "dct:modified": "2017-07-15T11:05:00",
+    "dct:accrualPeriodicity": "http://dcat-ap.de/def/changefrequency/yearly",
+    "dct:temporal": [
+      {
+        "schema:startDate": "2016-01-01",
+        "schema:endDate": "2016-12-31"
+      }
+    ]
+  }]
+}
+{%- endhighlight -%}
+</div>
+
+<p><i>dct:issued</i> and <i>dct:modified</i> describe when a catalogue or dataset was created and last modified. Using this information users can determine if their data is still up to date or if it needs updating. <i>dct:accrualPeriodicity</i> lets the users know in which intervals the data is being updated. For a sustainable and long lasting relationship between data providers and consumers a transparent and reliable documentation of data provision processes is important. By describing, for example, update intervals, users can streamline their processes accordingly. </p>
+<p><i>dct:temporal</i> on the other hand is not describing the data file, but instead, the data contained in the file. Using <i>schema:startDate</i> and <i>schema:endDate</i> the <i>dct:temporal</i> attribute defines the timespan described by the dataset. Making use of this information users can find datasets for the same temporal period without analysing the overall dataset itself. Search engines for open data can use this data to optimize the user experience of finding the optimal data sources.</p>
+<p>To underline the importance of such temporal attributes for describing the contained data, the following visualisation shows a sample of datasets from <a href="https://www.statistik-berlin-brandenburg.de">Berlin's and Brandenburg's office for statistics</a> and the temporal periods they describe. In some cases, for example, election and census the data is only available for the years in which the events happened. In other cases like the BQFG (determination of job qualification law) or the trainee program (Auszubildende) the statistical methods have changed over the years and, therefore, two time series datasets are available. And sometimes the digitization of data does not go back long enough or sometimes the time between observation time and data publishing is longer.</p>
+
+
+<div class="special-section">
+    <svg id="temporal-overlaps" style="width:100%;height:200px;"></svg>
+</div>
+
+<h3>Spatial Description</h3>
+<div class="section--code">
+{%- highlight json -%}
+{
+  "dcat:Catalog": {
+    "dct:spatial": ["http://www.geonames.org/2911298/"]
+  },
+  "dcat:Dataset": [{
+    "dcatde:politicalGeocodingLevelURI": [
+      "http://dcat-ap.de/def/politicalGeocoding/Level/state"
+    ],
+    "dcatde:politicalGeocodingURI": [
+      "http://dcat-ap.de/def/politicalGeocoding/stateKey/11"
+    ],
+    "dcatde:geocodingText": ["Freie und Hansestadt Hamburg"],
+    "dct:spatial": [
+      {
+        "type": "Polygon",
+        "crs": "urn:ogc:def:crs:OGC:1.3:CRS84",
+        "coordinates": "[[[10.326304,53.394985], [10.326304,53.964153], [8.420551,53.964153], [8.420551,53.394985], [10.326304,53.394985]]]"
+      }
+    ]
+  }]
+}
+{%- endhighlight -%}
+</div>
+
+<p>Similar to the temporal description, the spatial attributes are also organised in two layers. The catalogue itself is georeferenced through a Geoname ID, describing the catchment area of the catalogue using the attribute <i>"dct:spatial"</i>. <a href="http://www.geonames.org/">Geonames</a> is an open database for spatial descriptors. On the second level the actual data itself is described. The granularity of the data is defined through <i>dcatde:politicalGeocodingLevelURI</i>. At the moment, possible values are EU, national, federal state, districts and cities. Through <i>dcatde:politicalGeocodingURI</i> a predefined ID can be assigned (Berlin, for example, would be 11). An additional textual description of the area can be provided through the use of <i>dcatde:geocodingText</i>. More detailed and more interesting for computational processing is the <i>dct:spatial</i> attribute. The latter can hold spatial information, for example, a polygon. The simplest example would be a bounding box (see graphic below). Making use of the spatial information users can search for datasets of similar spatial extent in order to combine them.</p>
+
+<div class="special-section">
+    <svg id="spatial-overlaps" style="width:100%;height:500px;" width="100%" preserveAspectRatio="xMidYMid meet"></svg>
+</div>
+
+<h3>Contact Information</h3>
+<div class="section--code">
+{%- highlight json -%}
+{
+  "dcat:Dataset": [{
+    "dcat:contactPoint": [{
+      "vcard:fn": "Sebastian Meier",
+      "vcard:hasEmail": "mailto:meier@technologiestiftung-berlin.de",
+      "vcard:hasTelephone": "+49 30 209 69 99 42"
+    }]
+  }]
+}
+{%- endhighlight -%}
+</div>
+
+
+<p>In order to allow users to get in touch with the responsible person, for example, in regards of license questions, the standard offers the possibility to include contact information.</p>
+
+<h3>Controlled Vocabulary</h3>
+<div class="section--code">
+{%- highlight json -%}
+{
+  "dcat:Dataset": [{
+    "dcatde:originator": [{
+      "foaf:name": "Sebastian Meier",
+      "dct:type": "http://inspire.ec.europa.eu/metadata-codelist/ResponsiblePartyRole/processor"
+    }],
+    "dct:license": [
+      "http://dcat-ap.de/def/licenses/cc-by"
+    ]
+  }]
+}
+{%- endhighlight -%}
+</div>
+
+
+<p>A standard which is applied by various data providers with heterogeneous backgrounds requires a controlled vocabulary in order to ensure a sustainable and long lasting application of the standard. Controlled vocabularies are available for many of the DCAT-AP attributes, for example, a list of available licenses is provided. An item from the vocabulary is an URL, which points to the description of the term or the list of available terms on the DCAT-AP definition site. It is highly recommended to make use of the existing vocabulary. If a term is not yet included, one should try to get in touch with the committee and add the term to the next revision of the standard.</p>
+
+<h3>Additional Information</h3>
+<div class="section--code">
+{%- highlight json -%}
+{
+  "dcat:Dataset": [{
+    "dct:hasVersion": [
+      "https://www.govdata.de/web/guest/suchen/-/details/naturraume-geest-und-marsch4"
+    ],
+    "dct:isVersionOf": [
+      "https://www.govdata.de/web/guest/suchen/-/details/naturraume-geest-und-marsch2"
+    ],
+    "dct:language": [
+      "http://publications.europa.eu/resource/authority/language/GER"
+    ]
+  }]
+}
+{%- endhighlight -%}
+</div>
+
+<p>In this introduction of the new metadata standard DCAT-AP.de we tried to shed some light on the advantages in regards to sustainable data infrastructures, usability and machine-readability. Besides the attributes highlighted in this article there are many more attributes from pointing out relationships to others versions of a file using (<i>dct:hasVersion</i> or <i>dct:isVersionOf</i>) to describing the language of the available information (<i>dct:language</i>). In some cases there will be redundancy between attributes, which is a feature not a bug. In order to incorporate as many use cases as possible such redundancies are a by-product. In everyday life, such metadata files will often be written semi-automatically, for example, automatically filling in data about the data-provider.</p>
+<p>More information and a complete documentation of all attributes available in the standard and additional documents are available here:</p>
+
+<ul class="p-bottom p-top">
+    <li><a href="http://www.dcat-ap.de/def/">Definition of DCAT-AP</a></li>
+    <li><a href="http://www.dcat-ap.de/def/dcatde/1_0/spec/specification.pdf">Specification PDF</a></li>
+    <li><a href="http://www.dcat-ap.de/def/dcatde/1_0/examples.zip">Example files (ZIP)</a></li>
+    <li><a href="https://www.govdata.de/web/guest/daten">GovData.de</a></li>
+</ul>
+
+<h2>Examples</h2>
+<p>The Technologiestiftung Berlin (Technology Foundation Berlin) is not a data provider in the metropolitan area of Berlin. But we regularly work with open data. When ever we refine and combine data, we would like the community to benefit from our work, therefore, we publish the refined data on our  <a href="http://data.technologiestiftung-berlin.de/en">open data site</a>. Every dataset on our site has an DCAT-AP.de metadata file. If you are interested in some applied examples check the files on <a href="http://data.technologiestiftung-berlin.de/en">our site</a>.</p>
+
+{% include macro-image-section-small.html src="../images/dataportal.png" caption="Screenshot of the Open Data <a href='http://data.technologiestiftung-berlin.de'>collection</a> curated by the Technologiestiftung Berlin" %}

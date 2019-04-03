@@ -18,7 +18,7 @@ authors:
   - sebastian-meier
 externalUrl: https://www.tech4germany.org
 start: 2018-07-01
-end: 2019-10-25
+end: 2018-10-25
 status: finished
 date: 2019-03-01
 redirect_from:
