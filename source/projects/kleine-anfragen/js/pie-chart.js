@@ -47,7 +47,7 @@ class Piechart {
             
             arc.append("path")
             .attr("d", path)
-            .attr("fill", function(d) { return color(d.data.ministry); });
+            .attr("fill", function(d) {return color(d.data.ministry); });
             
             function midAngle(d) {
                 return d.startAngle + (d.endAngle - d.startAngle) / 2;

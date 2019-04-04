@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded',function() {
     }
     
     var network = new Network(network_config);
-    network.init('network', "../graph_small.json", "../preprocessed.csv");
+    network.init('network', "de", "../data/graph_small.json", "../data/preprocessed.csv");
     
     // Line Chart
     let line_config  = {
@@ -28,17 +28,19 @@ document.addEventListener('DOMContentLoaded',function() {
     }
     
     var linechart = new Linechart(line_config);
-    linechart.init('word_count_linechart', "../all_words_ts.csv");
+    linechart.init('word_count_linechart', "../data/all_words_ts.csv");
     
-    // Pie Chart
-    let pie_config  = {
+    // Stacked Bar Chart
+    let bar_config  = {
         width: width,
-        height: 500,
+        height: 700,
+        barWidth: 50,
     }
+    var barchart17 = new StackedBarChart(bar_config);
+    barchart17.init('barchart-wp17', "../data/ministries_17.csv", "de");
+
+    var barchart18 = new StackedBarChart(bar_config);
+    barchart18.init('barchart-wp18', "../data/ministries_18.csv", "de");
     
-    var piechart17 = new Piechart(pie_config);
-    piechart17.init('piechart-wp17', "../ministries_17.csv");
-    
-    var piechart18 = new Piechart(pie_config);
-    piechart18.init('piechart-wp18', "../ministries_18.csv");
+ 
 });

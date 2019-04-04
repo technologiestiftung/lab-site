@@ -46,7 +46,7 @@ class Linechart {
             
             // Scale the range of the data
             x_line.domain(d3.extent(data, function(d) { return d.date}));
-            y_line.domain([0, d3.max(data, function(d) {return d.count; })]);
+            y_line.domain([0, d3.max(data, function(d) { return d.count; })]);
             
             // Add the valueline path.
             svg_count.append("path")
@@ -61,7 +61,7 @@ class Linechart {
             
             // Add the Y Axis
             svg_count.append("g")
-            .call(d3.axisLeft(y_line));
+            .call(d3.axisLeft(y_line).tickFormat(d3.format("d")));
         }); 
         
     }

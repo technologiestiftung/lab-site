@@ -67,35 +67,6 @@
     stroke-width: 2px;
   }  
 
-.arc text {
-    font: 14px sans-serif;
-}
-
-.arc path {
-    stroke: #fff;
-}
-
-.arc:hover path {
-    stroke-width: 5;
-}
-
-
-.arc:hover text {
+.legend_percent{
   font-weight: 900; 
-}
-
-polyline{
-    opacity: .3;
-    stroke: black;
-    stroke-width: 2px;
-    fill: none;
-}
-
-.tooltip {
-  margin-top: 15px;
-  display: flex;
-  flex-direction: row;
-  position: absolute;
-  width: 100%;
-  height: 150px;
 }

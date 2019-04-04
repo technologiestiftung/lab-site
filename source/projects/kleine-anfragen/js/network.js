@@ -15,13 +15,14 @@ class Network {
         this.init = this.init.bind(this);
     }
     
-    init (network_name, json_file, csv_file) {
+    init (network_name, language, json_file, csv_file) {
         
         this.svg = d3.select(`#${network_name}`).append("svg")
         .attr('class', 'network-wrapper')
         .attr("width", this.width)
         .attr("height", this.height);   
         this.text_svg = d3.select(`#${network_name}`).append("svg")
+        .attr("class", "example-texts-wrapper")
         .attr("width", this.width)
         .attr("height", this.text_height);   
         
@@ -36,6 +37,20 @@ class Network {
         .domain([25, 150])
         .range([0 + this.width/4, this.width/2  + this.width/4])
         .clamp(true);
+        
+        var scaleTicks = d3.scaleLinear()
+        .domain([200, 1000])
+        .range([2, 10]);
+        
+        // language specific adaptions
+        var word_count_label
+        
+        if (language == "de") {
+            word_count_label = "Miminum Wortanzahl"
+        }
+        else {
+            word_count_label = "minimum word count"
+        }
         
         var slider = this.text_svg.append("g")
         .attr("class", "slider")
@@ -54,7 +69,7 @@ class Network {
         .attr("class", "ticks")
         .attr("transform", "translate(0," + 18 + ")")
         .selectAll("text")
-        .data(x.ticks(10))
+        .data(x.ticks(scaleTicks(this.width)))
         .enter().append("text")
         .attr("x", x)
         .attr("text-anchor", "middle")
@@ -71,7 +86,7 @@ class Network {
         .attr("text-anchor", "end")
         .attr("font-size", "14px")
         .style("opacity", 0.5)
-        .text("Minimum Wortanzahl");
+        .text(word_count_label);
         
         var examples_rect = this.text_svg.append("g")
         .attr("class", "example_rect")
@@ -89,6 +104,33 @@ class Network {
         var text_g = this.text_svg.append('g')
         .attr("class", "example_text")
         
+        var gradient = this.text_svg.append("defs")
+        .append("linearGradient")
+        .attr("id", "gradient")
+        .attr("spreadMethod", "pad");
+        
+        gradient.append("stop")
+        .attr("offset", "70%")
+        .attr("stop-color", "rgb(30,55,145)")
+        .attr("stop-opacity", 0);
+        
+        gradient.append("stop")
+        .attr("offset", "100%")
+        .attr("stop-color", "rgb(30,55,145)")
+        .attr("stop-opacity", 1);
+
+        for (var i = 0; i < 5; i++){ 
+            
+            this.text_svg.append("rect")
+            .attr("class", "rect_gradient")
+            .attr('width', this.width - this.padding.left - this.padding.right)
+            .attr('height', 30)
+            .attr("x", this.padding.left)             
+            .attr("y", (d, ) => this.text_height - this.padding.bottom - (i+1) * (this.rectHeight+ this.rectDist))
+            .attr("rx", 3)         
+            .attr("ry", 3)
+            .style("fill", "url(#gradient)");
+        }
         var _this = this
         d3.json(json_file, function(error, graph) {
             if (error) throw error;
@@ -181,7 +223,7 @@ class Network {
                 
                 var node = _this.nodes_g.selectAll(".node")
                 .data(thresholded_nodes, function(d){ return d.id; })
-
+                
                 node.exit().remove();
                 
                 node = node.enter().append("g")
@@ -223,7 +265,7 @@ class Network {
             // tooltips
             var div = d3.select(`#${network_name}`).append('div')
             .attr('class', 'tooltip')
-            .style('display', 'none');
+            .style('display', 'block');
             
             function mouseover(){
                 div.style('display', 'inline');
@@ -233,8 +275,8 @@ class Network {
                 div
                 .html('<h3 class="tooltip--title">' + d.name + '</h3>' + 
                 '<div class="tooltip--datawrapper"> <div class="tooltip--datawrapper--row">' +
-                    '<p class="attr">Anzahl</p>' +
-                    '<p class="value">' + d.size + '</p>' +
+                '<p class="attr">Anzahl</p>' +
+                '<p class="value">' + d.size + '</p>' +
                 '</div> </div>')
                 .style('left', (d3.event.pageX - 34) + 'px')
                 .style('top', (d3.event.pageY - 12) + 'px');
