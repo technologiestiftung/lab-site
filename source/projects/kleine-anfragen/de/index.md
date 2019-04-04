@@ -43,7 +43,7 @@ _Kleine Anfragen_ sind ein Instrument der **parlamentarischen Kontrolle**. Sie b
 
 Die Anzahl Anfragen steigt jährlich (nur im Wahljahr 2016 war die Anzahl rückläufig). Allein im **Jahr 2018 wurden über 3.000 Anfragen** an die Berliner Verwaltung gestellt. Dabei kann es sich um spezifische Informationen zu konkreten Ereignissen handeln, z.B. [zum Frauenmarsch am 18.2.2018](https://kleineanfragen.de/berlin/18/13668-frauenmarsch-17-februar-2018), oder um allgemeine Datensätze, z.B. [die Klassengrößen an Berliner Schulen](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/17/KlAnfr/ka17-12182.pdf).  
 
-<div id= "word_count_linechart"></div>
+<div id= "word_count_linechart" alt="Liniendiagramm mit Anzahlen an kleinen Anfragen nach Jahren"></div>
 TODO: Format title
 Anzahl Anfragen nach Jahren
 
@@ -58,7 +58,7 @@ Methode
 
 Allgemeine (z.B. die, und, als) und berlinspezifische Worte (z.B. Senat, Berlin, Bezirk), die für die Analyse nicht relevant sind, wurden entfernt ( [Hier sind alle sogenannten Stopwords](https://github.com/technologiestiftung/kleine-anfragen/blob/master/data/stopwords_de.txt) gelistet). Die verbliebenen Worte wurden auf ihren Wortstamm reduziert (z.B. Kinder zu kind). Anschließend ließ sich die Worthäufigkeit auswerten. Um die Begriffe besser im Kontext zu verstehen, werden sie hier in einem Netzwerk dargestellt. Die **Punktgröße stellt die Häufigkeit eines Begriffs dar und die Linien die Verbindungen zwischen den Begriffen**. Je häufiger zwei Begriffe gemeinsam in einem Titel vorkommen, desto dicker ist die Verbindungslinie. Durch Klick auf ein Wort werden fünf beispielhafte Anfragen gelistet. Mit dem Slider "minimum Wortanzahl" kann eingestellt werden, wie häufig ein Wort mindestens vorkommen muss, um in der Grafik angezeigt zu werden.
 
-<div id='network'></div>
+<div id='network' alt = "Netzwerkdarstellung von Worten in Titeln der kleinen Anfragen."></div>
 
 Die gefragtesten Themen
 -----------------------
@@ -129,12 +129,12 @@ Die gefragtesten Senatsverwaltungen
 
 Die Senatsverwaltungen der Bereiche Verkehr & Umwelt, Inneres & Sport, Bildung & Jugend und Soziales erhielten die meisten Anfragen. _(Anm. Senatsverwaltungen mit dem Zusatz (WP17) wurden in der Wahlperiode 18 umstrukturiert oder umbenannt.)_
 
-<div id='barchart-wp17'></div>
+<div id='barchart-wp17' alt="Balkendiagramm zur Aufteilung von kleinen Anfragen nach antwortender Senatsverwaltung für die Wahlperiode 17"></div>
 
 TODO: format title
 Anfragen an Senatsverwaltungen (Wahlperiode 17)
 
-<div id='barchart-wp18'></div>
+<div id='barchart-wp18' alt="Balkendiagramm zur Aufteilung von kleinen Anfragen nach antwortender Senatsverwaltung für die Wahlperiode 18"></div>
 TODO: format title
 Anfragen an Senatsverwaltungen (Wahlperiode 18)
 
