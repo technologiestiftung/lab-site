@@ -13,6 +13,7 @@
     "dev": "npm-run-all --parallel watch:**",
     "jekyll": "bundle exec jekyll serve  --livereload",
     "watch:js": "parcel watch source/assets/js/index.js --no-cache --out-dir source/assets/js/ --out-file index.bundle.js --public-url .",
+    "build:js": "parcel build source/assets/js/index.js --no-cache --out-dir source/assets/js/ --out-file index.bundle.js --public-url .",
     "new-project": "./project-generator/bin/run",
     "new": "./project-generator/bin/run --prompt",
     "new-project:interactive": "./project-generator/bin/run -p",
