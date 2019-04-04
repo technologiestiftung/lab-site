@@ -20,6 +20,8 @@ materialsIncluded:
   - name: Source Code
     link: "https://github.com/technologiestiftung/mm-mockup"
 
+redirect_from:
+  - /projects/MagicMirror/index_en.html
 ---
 
 _Who hasn't thought about open data while brushing their teeth? At the lab, we often wonder how public data can be made more accessible. One way to achieve this is through interfaces that bring data out of your computer screen and into your everyday life – for example, into your bathroom mirror._

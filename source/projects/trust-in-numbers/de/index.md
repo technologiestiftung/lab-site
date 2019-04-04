@@ -20,8 +20,7 @@ end: 2018-03-15
 status: finished
 date: 2018-03-15
 redirect_from:
-  - /projects/123456789/
-  - /old-site-path/my-amazing-post/
+  - /projects/trust-in-numbers/index.html
 
 ---
 

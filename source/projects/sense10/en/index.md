@@ -1,6 +1,6 @@
 ---
 layout: project
-description: 
+description:
 lang: en
 title: Mobile Air Pollution Sensor
 subtitle: Measuring Air-Pollution with open hardware
@@ -17,8 +17,7 @@ end: 2017-09-18
 status: finished
 date: 2017-09-18
 redirect_from:
-  - /projects/123456789/
-  - /old-site-path/my-amazing-post/
+  - /projects/sense10/index_en.html
 
 ---
 

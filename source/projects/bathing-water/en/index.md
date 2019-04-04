@@ -22,7 +22,7 @@ end: 2018-06-01
 status: finished
 date: 2018-07-04
 redirect_from:
-  - /projects/bathing-water/index.html
+  - /projects/bathing-water/index_en.html
 
 materialsIncluded:
   - name: "GitHub"

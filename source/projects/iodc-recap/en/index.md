@@ -18,7 +18,7 @@ end: 2018-10-16
 status: finished
 date: 2018-10-16
 redirect_from:
-  - /projects/iodc-recap/index.html
+  - /projects/iodc-recap/index_en.html
 
 ---
 In the week of September 24 – 28, open data experts from across the globe descended on Buenos Aires, Argentina for the fifth gathering of the International Open Data Conference (and the first edition of the conference happening in the southern hemisphere). The actual conference was September 27-28, but there were a variety of satellite events happening in the days before the official conference (for example, the Open Cities Summit and the Open Data Research Symposium).

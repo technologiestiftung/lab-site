@@ -20,8 +20,7 @@ end: 2018-03-15
 status: finished
 date: 2018-03-15
 redirect_from:
-  - /projects/123456789/
-  - /old-site-path/my-amazing-post/
+  - /projects/trust-in-numbers/index_en.html
 
 ---
 
@@ -41,7 +40,7 @@ Breitbandmessung.de is an open web portal, which allows citizens to measure thei
 
 In addition, what is the user's motivation to visit the site (e.g. their internet connection is particularly slow). And on top there are several reasons why the data is not correct, some of those reasons are even listed on breitbandmessung.de: from using a badly configured access point, to up- and downloads running in parallel to the test to old cables in your house or a bad contract with your provider. The site breitbandmessung.de is very transparent about this (sorry no english quotes): <i>"Bei der vorliegenden Stichprobe handelt es sich nicht um eine Zufallsstichprobe, sondern es konnten alle Kunden teilnehmen, die Kenntnis von der Breitbandmessung erlangt haben und gleichzeitig motiviert waren, die Messung bei sich durchzuführen." "Die berechneten und dargestellten Werte können möglicherweise von den tatsächlichen Werten in der Grundgesamtheit abweichen."</i> Even the insights one is able to deduce from the data is contextualized: <i>"Dies liegt insbesondere an kleinen bis sehr kleinen Stichproben für die jeweils dargestellte Region."</i> And the <a href="https://www.bundesnetzagentur.de/SharedDocs/Pressemitteilungen/DE/2017/27032017_Breitbandmessung.html">federal institution</a> makes it very clear that the data cannot be used to learn anything about the broadband availability in any area: <i>"<strong>Messungen lassen keine Rückschlüsse auf Breitbandversorgung zu</strong>: Die Ergebnisse der Breitbandmessung hängen davon ab, welchen Tarif der Nutzer mit dem Anbieter vereinbart hat. Insofern können auf der Grundlage der Breitbandmessung keine Aussagen zur Versorgungssituation oder Verfügbarkeit von breitbandigen Internetzugangsdiensten getroffen werden."</i>
 
-The site breitbandmessung.de as well as the Netzagentur was not responsible for the study (confirmed via phone). Breitbandmessung and the federal institution only publish annual reports. Even in those reports there are no insights about individual cities, because, the data does not provide insights at that granularity. Better data on Germany's broadband expansion can be found in the German <a href="https://www.bmvi.de/DE/Themen/Digitales/Breitbandausbau/Breitbandatlas-Karte/start.html">Breitbandatlas</a> by the Federal Ministry of Transport and Digital Infrastructure (BMVI), which is produced in a systematic way by TÜV Rheinland. 
+The site breitbandmessung.de as well as the Netzagentur was not responsible for the study (confirmed via phone). Breitbandmessung and the federal institution only publish annual reports. Even in those reports there are no insights about individual cities, because, the data does not provide insights at that granularity. Better data on Germany's broadband expansion can be found in the German <a href="https://www.bmvi.de/DE/Themen/Digitales/Breitbandausbau/Breitbandatlas-Karte/start.html">Breitbandatlas</a> by the Federal Ministry of Transport and Digital Infrastructure (BMVI), which is produced in a systematic way by TÜV Rheinland.
 
 ## So Germany's broadband expansion is doing fine?
 

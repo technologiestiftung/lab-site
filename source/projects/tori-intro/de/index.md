@@ -18,6 +18,8 @@ status: finished
 date: 2018-03-19
 
 
+redirect_from:
+  - /projects/tori-intro/index.html
 ---
 
 

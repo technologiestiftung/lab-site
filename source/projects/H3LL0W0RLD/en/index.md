@@ -23,15 +23,16 @@ start: 2017-08-26
 end: 2017-09-01
 status: Published
 date: 2017-09-01
-
+redirect_from:
+  - /projects/H3LL0W0RLD/index_en.html
 ---
 
 Hey there, and welcome to the Ideation and Prototyping Lab! We are part of the [Technology Foundation Berlin](http://www.technologiestiftung-berlin.de). As a non-profit foundation, we work at the intersection of technology & urban planning to design Berlin's future.
-            
+
 {% include macro-image-section-markdown.html src="../images/hello.gif" caption="Hi, we're new!" %}
 
 An important part of our work at the Technology Foundation is to research how new technologies influence urban life. Over the last years, we realized that more often than not you have to put your theories into practice to really understand what is going on. That is why we created this lab.
-          
+
 Currently, our main focus is on the analysis and visualisation of public data. Together with the Senate of Berlin, we are retrieving the data treasures of our public administration to make them open and usable for everyone. In these efforts, we can build on some of our succesful projects at the Technology Foundation, such as our [broadband data visualisation](http://breitband-berlin.de) and our [Minecraft planning](http://www.technologiestiftung-berlin.de/minecraft) project. If you like to learn more about Open Data in Berlin, have a look at our [research](https://www.technologiestiftung-berlin.de/de/bibliothek/publikationen/).
 
 {% include macro-image-section-markdown.html src="../images/breitband.png" caption="Dit is Berlin, as Berliners like to say" %}

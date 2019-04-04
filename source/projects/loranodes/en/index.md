@@ -21,14 +21,16 @@ materialsIncluded:
   - name": "GitHub"
     link: "https://github.com/technologiestiftung/LoRa-HelloByte"
 
+redirect_from:
+  - /projects/LORANODES/index_en.html
 ---
 
 Over the last days I finally found the time to play with LoRaWAN again. It has been a while since our [first steps](https://github.com/technologiestiftung/LoRaWAN) in the open internet of things. In the meantime we have contributed to Berlin's [LoRa infrastructure](https://www.technologiestiftung-berlin.de/de/blog/gewinnspiel-lorawan-gateways-gewinnerinnen-stehen-fest/) and hosted a few [community meetups](https://www.technologiestiftung-berlin.de/de/blog/anwendungen-netze-und-bildung/). But recently we added 20 LoRa nodes to our [Hacking Box](https://www.technologiestiftung-berlin.de/hackingbox/), and those needed to be set up and tested. Of course I volunteered!
-           
+
 {% include macro-image-section-markdown.html src="../images/Node.jpg" caption="Fresh nodes" %}
 
 The nodes consist of an Arduino Mega 2560 and a [Dragino LoRa-Shield](http://wiki.dragino.com/index.php?title=Lora_Shield) (some even have a GPS tracker). We registered them with [The Things Network (TTN)](https://thethingsnetwork.org) and got our device adresses. We also created an individual .ino for each device to be able to easily reset them after a workshop. As a default, the nodes now transmit a short message with an ID. This way you can a) check if they are working correctly and b) have a template to built upon for more complex applications.
-            
+
 The Dragino shields don't work with the official TTN-Arduino-Library. That's not a problem though, as [Arduino-LMIC](https://github.com/matthijskooijman/arduino-lmic) is a great alternative. On GitHub you can find a simple [hello world program](https://github.com/SensorsIot/LoRa/blob/master/Nodes/Dragino/HelloWorld/HelloWorld.ino) for the library. Enter your keys, put the .ino on your Arduino and you are ON AIR:
 
 {% include macro-image-section-markdown.html src="../images/HelloByte3.jpg" caption="What, what?" %}
@@ -39,7 +41,7 @@ To decode the bytes in human-readable text, you need to enter a decoder function
 function Decoder(bytes, port) {
     var decoded = {};
     decoded.message = String.fromCharCode.apply(null, bytes);
-    return decoded;       
+    return decoded;
 }
 ```
 

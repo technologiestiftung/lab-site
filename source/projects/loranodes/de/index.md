@@ -21,14 +21,17 @@ materialsIncluded:
   - name: "GitHub"
     link: "https://github.com/technologiestiftung/LoRa-HelloByte"
 
+redirect_from:
+  - /projects/LORANODES/index.html
+
 ---
 
  Die letzten Tage hatte ich endlich Gelegenheit, mich mal wieder etwas praktischer mit dem Thema LoRaWAN zu beschäftigen. Unsere ersten [Gehversuche](https://github.com/technologiestiftung/LoRaWAN) im freien Internet der Dinge sind schon einige Monate her und in der Zwischenzeit haben wir uns bei der Technologiestiftung eher mit dem Aufbau von [Infrastruktur](https://www.technologiestiftung-berlin.de/de/blog/gewinnspiel-lorawan-gateways-gewinnerinnen-stehen-fest/) und der [Community-Organisation](https://www.technologiestiftung-berlin.de/de/blog/anwendungen-netze-und-bildung/) rund um LoRa befasst. Jetzt aber haben wir unsere [Hacking Box](https://www.technologiestiftung-berlin.de/hackingbox/) um zwanzig LoRa-Nodes erweitert, die natürlich auch eingerichtet und getestet werden wollten. Freiwillige vor!
-            
+
 {% include macro-image-section-markdown.html src="../images/Node.jpg" caption="Frisch geschlüpft" %}
 
 Die Nodes bestehen aus einem Arduino Mega 2560 und einem [LoRa-Shield](http://wiki.dragino.com/index.php?title=Lora_Shield) von Dragino (teils mit, teils ohne GPS). Wir haben sie bei [The Things Network (TTN)](https://thethingsnetwork.org) registriert, mit Device-Adressen versorgt und für jedes der zwanzig Geräte ein eigenes .ino-File angelegt. Damit lassen sie sich nach einem Workshop schnell wieder in ihren Ursprungszustand zurückversetzen. Standardmäßig versenden die Nodes jetzt nach dem Einschalten eine kurze Nachricht mit einer individuellen Kennung. So sieht man 1.) dass sie ordnungsgemäß funktionieren und hat 2.) gleich ein Template, um weitere Anwendungen zu entwickeln.
-            
+
 Die Dragino-Shields vertragen sich übrigens nicht mit der offiziellen TTN-Arduino-Library. Macht aber nichts, da mit [Arduino-LMIC](https://github.com/matthijskooijman/arduino-lmic) eine prima Alternative existiert. Auf GitHub findet sich ein passendes [Hello World-Programm](https://github.com/SensorsIot/LoRa/blob/master/Nodes/Dragino/HelloWorld/HelloWorld.ino). Hier trägt man seine TTN-Keys ein, spielt das .ino auf den Arduino und schon sind wir auf Sendung:
 
 {% include macro-image-section-markdown.html src="../images/HelloByte3.jpg" caption="What, what?" %}
@@ -39,7 +42,7 @@ Um die angekommenen Bytes wieder in lesbaren Text zu verwandeln, müssen wir in 
 function Decoder(bytes, port) {
     var decoded = {};
     decoded.message = String.fromCharCode.apply(null, bytes);
-    return decoded;       
+    return decoded;
 }
 ```
 

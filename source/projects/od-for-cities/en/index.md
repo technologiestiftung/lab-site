@@ -17,6 +17,8 @@ end: 2018-04-19
 status: finished
 date: 2018-04-19
 
+redirect_from:
+  - /projects/od-for-cities/index_en.html
 ---
 
 _Recently, the head of the German Cities and Communes Association (“Deutscher Städte- und Gemeindebund”) caused waves with his pronouncement that [German towns should be selling their data](https://www.swr.de/swraktuell/idee-des-staedte-und-gemeindebundes-daten-verkaufen-fuer-die-buerger/-/id=396/did=21471578/nid=396/1nforlg/index.html), rather than simply giving it away for free. The ensuing conversation has made it clear that despite the open data movement having long since entered mainstream acceptance, many people still remain unconvinced of its value. To that end, this blog post represents an effort to summarize some of the key benefits cities can enjoy by making their data freely available for all to use:_
@@ -28,7 +30,7 @@ The answer is: they do. Open Data is not just a meaningless badge for cities to 
 To identify and potentially solve social problems
 -------------------------------------------------
 
-  
+
 
 Open Data can reveal specific problems in different parts of a city that warrant a targeted invention. For example, releasing data on where auto or bicycle accidents occur (as well as specific details about the nature of the accident) can enable citizens or organizations to spot intersections that are particularly dangerous. Examples of this include [CrashMap](http://www.crashmap.co.uk/) in the UK (which creates maps of road accidents based on government-released data) and [Bikecolli](http://bikecolli.info/) out of Tucson, AZ. The latter is not actively maintained, but it provides a great example of what kinds of analyses can be conducted with this type of data.
 
@@ -39,7 +41,7 @@ Releasing accident-related data matters, because the mere knowledge that a given
 To engage citizens and increase trust
 -------------------------------------
 
-  
+
 
 The aforementioned examples also present new opportunities to engage citizens with their communities: releasing data that can be filtered down to specific neighborhoods gives people the opportunity to see what the data means for them personally and gives them new lenses through which to view their surroundings. Such data doesn’t always have to be negatively connotated – for example, it can be as simple as [providing a map visualizing how old buildings across the city are](https://fbinter.stadt-berlin.de/fb/index.jsp?loginkey=showMap&mapId=k06_12baualter@senstadt), giving residents a new perspective on their everyday surroundings.
 
@@ -52,7 +54,7 @@ Citizen engagement doesn’t have to be limited to cases where residents tell th
 To bolster the private sector
 -----------------------------
 
-  
+
 
 In the intersection of Open Data and the private sector, there is the unique potential for Open Data to spur business development. This relationship can benefit cities not just through the general economic benefits that a vibrant and thriving private sector brings to a city, but also through the potential that the private sector uses Open Data to develop products and solutions that can further improve quality of life as well as quality of services provided. In short: it can be a win-win.
 
@@ -63,6 +65,6 @@ For businesses, open geospatial and transportation data are often particularly v
 Closing thoughts
 ----------------
 
-  
+
 
 Open Data is not a panacea. Releasing an Open Data portal and publishing a few token datasets online will not see cities reaping immediate benefits. But cities that genuinely and thoughtfully commit themselves to the cause can see very real benefits, including improved infrastructure, services and the overall quality of life they provide, as well as a stronger local economy. This is why one of the key goals of the Ideation and Prototyping Lab is to support Berlin’s Open Data ecosystem and to continuously explore the potential of working with open government data. We are planning to intensify our cooperation with the Berlin city administration on the topic of Open Data in the near future – keep an eye out for an announcement in the coming weeks.

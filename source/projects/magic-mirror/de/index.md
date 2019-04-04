@@ -20,6 +20,8 @@ materialsIncluded:
   - name: Source Code
     link: "https://github.com/technologiestiftung/mm-mockup"
 
+redirect_from:
+  - /projects/MagicMirror/index.html
 ---
 
 

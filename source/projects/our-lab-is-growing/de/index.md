@@ -8,7 +8,7 @@ subtitle: Wir freuen uns, im Jahr 2019 gleich zwei neue Kolleg*innen im Lab zu b
 type: publication # could also be "workshop", "dataset", "prototype"
 #
 colorMode: dark # or "dark" adds an additional class
-featuredImage: 
+featuredImage:
 # thumbnail path needs to be absolute at the moment
 thumbnail: /projects/our-lab-is-growing/images/thumbnail.jpg
 heroImage: /projects/our-lab-is-growing/images/team_new.jpg #full page url
@@ -33,6 +33,8 @@ materialsIncluded:
   - name": "Source Code"
     link: "#"
 
+redirect_from:
+  - /projects/Zuwachs/index.html
 ---
 
 [Alexandra Kapp](https://twitter.com/lxndrkp) verstärkt ab sofort unsere Open Data-Aktivitäten rund um [ODIS](http://odis-berlin.de/). Mit einem Informatikstudium, viel User Research-Erfahrung und einer Zusatzausbildung in Design Thinking ist sie geradezu perfekt qualifiziert, um mehr digitalen Wind in die öffentliche Verwaltung zu bringen. Wenn sie sich nicht gerade durch den Berliner Datendschungel kämpft, engagiert sich Alex bei [CorrelAid](https://correlaid.org/) und sie backt hervorragenden Schokoladenkuchen – bitte mehr davon! Bei ODIS kümmert sie sich vor allem um das Berliner Geodatenangebot, insbesondere um bessere Datenstandards bei der Zusammenarbeit von Bezirks- und Hauptverwaltungen.

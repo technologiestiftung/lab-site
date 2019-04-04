@@ -23,6 +23,8 @@ start: 2017-08-26
 end: 2017-09-01
 status: Published
 date: 2017-09-01
+redirect_from:
+  - /projects/H3LL0W0RLD/index.html
 
 ---
 

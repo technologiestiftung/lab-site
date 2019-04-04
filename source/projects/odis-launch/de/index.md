@@ -18,8 +18,6 @@ start: 2018-05-05
 end: 2018-05-22
 status: finished
 date: 2018-05-22
-redirect_from:
-  - /projects/ODIS-Launch/index.html
 folderName: odis-launch
 fileType: md
 de_title: Berlins neue Open Data Informationstelle
@@ -27,6 +25,8 @@ en_title: Berlin's new Open Data Infopoint
 de_subtitle: 3 Ziele und 3 Fragen für ODIS
 en_subtitle: 3 questions and 3 goals for ODIS
 
+redirect_from:
+  - /projects/ODIS-Launch/index.html
 ---
 
 Die Technologiestiftung hat vor kurzem den Bericht ["Open Data in der Berliner Verwaltung"](https://www.technologiestiftung-berlin.de/fileadmin/user_upload/Open_Data_in-der-Verwaltung_WEB.pdf) veröffentlicht, der sich mit dem Status quo von Open Data in der Landesverwaltung befasst. Zudem macht der Report Vorschläge, wie Policies und Prozesse rund um Open Data verbessert werden können, um die Bedürfnisse von Datenbereitsteller\*innen und -nutzer\*innen besser zu erfüllen. Die Ergebnisse der Studie zeigen deutlich, dass trotz einer vergleichsweise großen Zahl von Veröffentlichungen im Berliner Datenportal und wachsender Unterstützung der Leitungsebene bei alltäglichen Open Data-Prozessen noch Luft nach oben bleibt. Viele Behörden und Ämter haben zum Beispiel keine umfassende Übersicht über ihre eigenen Datenbestände, und das Fehlen von Personen, die Datenaktivitäten koordinieren, führt zur Verwirrung, wer für das Thema überhaupt verantwortlich ist.
@@ -36,7 +36,7 @@ Probleme im System zu identifizieren ist leicht. Viel schwieriger ist es, passen
 Unsere Antwort: ODIS
 --------------------
 
-  
+
 
 Um das Open Data-Angebot im Land Berlin strategisch und praktisch weiterzuentwickeln, haben wir zusammen mit der Senatsverwaltung für Wirtschaft, Energie und Betriebe die „Open Data Informationsstelle“ (kurz: ODIS) ins Leben gerufen. Wie im Namen bereits anklingt, soll ODIS in erster Linie eine Anlaufstelle werden, die das Wissen über Open Data in Berlin bündelt und verbreitet. Zum Beginn haben wir uns für unsere Aktivitäten drei Schwerpunkte gesetzt, um die in der erwähnten Studie identifizierten Herausforderungen anzugehen.
 
@@ -55,7 +55,7 @@ Wenn man sich mit den formalen und technischen Details offener Daten befasst, l�
 Leitfragen
 ----------
 
-  
+
 
 Wie genau sich ODIS und die verschiedenen Schwerpunkte entwickeln, bleibt abzuwarten. Wir wollen ein Angebot schaffen, das sich an tatsächlichen Bedarfen orientiert und aus praktischer Erfahrung gespeist wird. Bei der Konzeption von ODIS haben wir eine lange Liste von Leitfragen erstellt, mit denen wir uns im Rahmen unserer Arbeit beschäftigen wollen, Viele dieser Fragen sind allgemeiner Natur und beschäftigen auch andere Städte, aber die Antworten hängen oft von den spezifischen Kontexten und institutionellen Strukturen vor Ort ab. Auf drei dieser Fragen wollen wir kurz eingehen:
 

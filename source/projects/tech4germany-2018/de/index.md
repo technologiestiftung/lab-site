@@ -22,8 +22,7 @@ end: 2018-10-25
 status: finished
 date: 2019-03-01
 redirect_from:
-  - /projects/123456789/
-  - /old-site-path/my-amazing-post/
+  - /projects/tech4germany-2018/index.html
 
 ---
 
@@ -37,7 +36,7 @@ Tech4Germany ist ein Programm, welches über studentische Fellowships innovative
 
 In der ersten Runde haben insgesammt 9 Student*innen mit sehr unterschiedlichen Hintergründen am Programm teilgenommen. Von der Informatik über Projektmanagement bis hin zum Design waren diverse Studiengänge vertreten. Über den Spätsommer hinweg nahmen sich die Student*innen zwei konkreten Projekten an: Der Zoll-Auktions-Plattform des Bundes (<a href="https://www.tech4germany.org/zoll2018/">Projektbeschreibung</a>) und dem Anmeldeprozess beim Nutzerkonto Bund (<a href="https://www.tech4germany.org/nutzerkonto2018/">Projektbeschreibung</a>). In einer beeindruckend kurzen Zeit arbeiteten die Teams sehr agil an den Herausforderungen. So führten die Teams zum Beispiel Nutzerforschung durch, um herauszufinden was die wirklichen Bedürfnisse ihrer Zielgruppe sind und wo die eigentlichen Probleme liegen.
 
-{::nomarkdown}  
+{::nomarkdown}
 <blockquote>
     <p>Uns war wichtig, schon bei der Identifizierung der Probleme bei den Bürger*innen anzufangen, und sie im gesamten Prozess in den Mittelpunkt zu stellen.</p>
     <p class="author">Lisa Schmechel, Tech4Germany Fellow 2018 (Studiert National and International Administration and Policy an der Universität Potsdam)</p>
@@ -65,4 +64,3 @@ Ich habe über die Jahre mit den verschiedensten behördlichen Einrichtungen gea
 {% include macro-image-section-markdown.html src="../images/team.jpg" caption="Die Tech4Germany Teilnehmer*innen, Mentoren und die Partner aus der Verwaltung. (Quelle: Tech4Germany)" %}
 
 Noch erfreulicher ist, dass das Programm in 2019 fortgesetzt wird, mit mehr Studierenden und mehr Projekten. <strong><i>Jeder und jedem, der digitale Innovation in die Verwaltung bringen möchte, kann ich nur ans Herz legen sich sofort zu <a href="https://www.tech4germany.org/bewerbung/">bewerben</a>. Die Anmeldefrist ist der 31.03.</i></strong>
-            

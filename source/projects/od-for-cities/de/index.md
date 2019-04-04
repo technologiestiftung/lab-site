@@ -17,6 +17,9 @@ end: 2018-04-19
 status: finished
 date: 2018-04-19
 
+redirect_from:
+  - /projects/od-for-cities/index.html
+
 ---
 
 
@@ -29,7 +32,7 @@ Die Antwort lautet: Ja, Städte können von Open Data profitieren. Wenn sie das 
 Um gesellschaftliche Probleme zu identifizieren und möglicherweise zu lösen
 ---------------------------------------------------------------------------
 
-  
+
 
 Offene Daten können ortsspezifische Probleme aufzeigen, die eine gezielte Intervention erfordern. Die Veröffentlichung von Daten über Auto- oder Fahrradunfälle kann etwa Bürger\*innen oder Organisationen befähigen, gefährliche Kreuzungen zu identifizieren. Zwei Beispiele sind die [CrashMap](http://www.crashmap.co.uk/) aus Großbritannien (eine Karte von Verkehrsunfällen basierend auf Verwaltungsdaten) und das Projekt [Bikecolli](http://bikecolli.info/) aus Tucson, Arizona. Beide Seiten zeigen eindrucksvoll, welche Analysen und Visualisierungen aus Verwaltungsdaten möglich sind.
 
@@ -40,7 +43,7 @@ Die Veröffentlichung von unfallbezogenen Daten ist wichtig, weil schon das Wiss
 Um Bürgerengagement zu fördern und mehr Vertrauen aufzubauen
 ------------------------------------------------------------
 
-  
+
 
 Die oben genannten Beispiele zeigen auch neue Möglichkeiten für Bürger\*innen, sich vor Ort zu engagieren: Mit der Veröffentlichung detaillierter Daten zu einem spezifischen Kiez oder Stadtteil können neue Perspektiven auf die eigene Stadt entstehen. Dabei muss es auch nicht immer nur um problemorientierte Daten gehen, wie bei Unfällen oder Kriminalität. Es kann auch [eine Karte sein, die zum Beispiel das Alter einzelner Gebäude visualisiert.](https://fbinter.stadt-berlin.de/fb/index.jsp?loginkey=showMap&mapId=k06_12baualter@senstadt) Mit solcher Information können Bürger\*innen ihre alltäglichen Umgebungen neu erfahren.
 
@@ -53,7 +56,7 @@ Bürgerengagement muss nicht auf Beschwerden beschränkt bleiben. Es gibt auch M
 Um die Wirtschaft zu stärken
 ----------------------------
 
-  
+
 
 Die Nutzung offener Daten durch die Privatwirtschaft hat darüber hinaus das Potenzial, das Wirtschaftswachstum vor Ort anzukurbeln. Städte profitieren hier nicht nur durch Steuereinnahmen und Arbeitsplätze, sondern auch durch die Entstehung neuer Anwendungen und Dienstleistungen, die sich positiv auf die Lebensqualität auswirken können. Die Nutzung offener Daten durch die Wirtschaft kann also durchaus eine Win-Win-Situation sein.
 
@@ -65,7 +68,7 @@ Erfahrungsgemäß erweisen sich offene Geo- und Mobilitätsdaten als besonders w
 Fazit
 -----
 
-  
+
 
 Natürlich ist Open Data kein Allheilmittel. Das Aufsetzen eines Open Data-Portals und die Veröffentlichung von ein paar Vorzeigedatensätzen können noch keine unmittelbaren Gewinne garantieren. Aber Städte, die sich ernsthaft und sorgfältig mit dem Thema beschäftigen, werden mittelfristig echte Vorteile realisieren: Verbesserte Infrastruktur, neue Services und höhere Lebensqualität sowie eine Stärkung lokaler Initiativen und Unternehmen. Deshalb ist es eines der Kernziele unseres Ideation and Prototyping Labs, das Open Data-Ökosystem in Berlin zu unterstützen und die Potenziale offener Verwaltungsdaten weiter zu erkunden. Unsere Zusammenarbeit mit dem Land Berlin im Bereich Open Data werden wir zukünftig weiter ausbauen – mehr Neuigkeiten dazu gibt es demnächst hier.
 

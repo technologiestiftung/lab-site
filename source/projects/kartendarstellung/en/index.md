@@ -32,8 +32,6 @@ materialsIncluded:
     link: "#"
   - name: Source Code
     link: "#"
-redirect_from:
-  - /projects/123456789/
-  - /old-site-path/my-amazing-post/
+
 
 ---

@@ -35,9 +35,7 @@ materialsIncluded:
     link: "#"
   - name: Source Code
     link: "#"
-redirect_from:
-  - /projects/123456789/
-  - /old-site-path/my-amazing-post/
+
 
 ---
 
@@ -50,15 +48,15 @@ Maputnik ist ein Editor zum Definieren von Vektorkachel-Stilen. Dieser basiert a
 Wichtig ist, dass man mit Maputnik zwar eine Open Source Lösung hat um Kartenstile zu entwerfen, man aber trotzdem auf räumliche Daten angewiesen ist. Mit OpenMapTiles kann man sich, basierend auf OpenStreetMap aber eigene Vector Tiles generieren und diese auf dem eigenen Server hosten.
 
 
-Hier kannst du deine Karte online designieren:  
+Hier kannst du deine Karte online designieren:
 Design your maps online bei [Maputnik](https://maputnik.github.io/editor/)
 
-# Corporate Design von #Technologiestiftung 
+# Corporate Design von #Technologiestiftung
 ![](/CI.png)
 
- 
 
-Ich habe Maputnik genutzt um eine Karte angepasst an das Corporate Design der Technologiestiftung Berlin zu gestalten. 
+
+Ich habe Maputnik genutzt um eine Karte angepasst an das Corporate Design der Technologiestiftung Berlin zu gestalten.
 
 - Straßen
 - Autobahnen
@@ -68,7 +66,7 @@ Ich habe Maputnik genutzt um eine Karte angepasst an das Corporate Design der Te
 - Grenzen
 - ...
 
-Sobald die eigene Karte fertig gestaltet ist, kannst du deinen Style speichern. Dafür musst du auf die Schaltfläche "Export"  klicken, um eine "style.json" zu exportieren. Du erstellst eine HTML-Seite und fügst den Mapbox GL JS-Viewer hinzu. 
+Sobald die eigene Karte fertig gestaltet ist, kannst du deinen Style speichern. Dafür musst du auf die Schaltfläche "Export"  klicken, um eine "style.json" zu exportieren. Du erstellst eine HTML-Seite und fügst den Mapbox GL JS-Viewer hinzu.
 
 
 	<!DOCTYPE html>
@@ -102,7 +100,7 @@ Sobald die eigene Karte fertig gestaltet ist, kannst du deinen Style speichern. 
 Die Datei ist hier zum Download verfügbar.
 -> GitHUB ???
 
-interaktive Karte auf der Blog + Point (TSB) 
+interaktive Karte auf der Blog + Point (TSB)
 -> GitHUB ???
 
 

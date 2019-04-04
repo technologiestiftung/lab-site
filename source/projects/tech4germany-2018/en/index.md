@@ -22,8 +22,7 @@ end: 2018-10-25
 status: finished
 date: 2019-03-01
 redirect_from:
-  - /projects/123456789/
-  - /old-site-path/my-amazing-post/
+  - /projects/tech4germany-2018/index_en.html
 
 ---
 
@@ -37,7 +36,7 @@ Tech4Germany acts as a digital technology task force, taking on challenges throu
 
 In the first round in 2018, nine students joined the program, with backgrounds spanning from computer science to design. Over the summer, they formed teams and tackled two digital challenges: redesigning the auction platform maintained by the federal customs agency (<a href="https://www.tech4germany.org/zoll2018/">project description (in German)</a>) and redesigning the registration process for the user accounts for a federal citizen portal (<a href="https://www.tech4germany.org/nutzerkonto2018/">project description (in German)</a>). The teams delivered impressive work in a short amount of time, using agile methodologies to guide their approach. An important part of this process was user research, in which the Tech4Germany fellows worked to find out what the true needs of their target audiences were and where the actual problems were located.
 
-{::nomarkdown}  
+{::nomarkdown}
 <blockquote>
   <p>It was important to us to start with citizens when identifying problems and challenges and to center the whole development process around them.</p>
   <p class="author">Lisa Schmechel, Tech4Germany Fellow 2018 (studies National and International Administration and Policy at Potsdam University)</p>
@@ -55,7 +54,7 @@ They designed, developed and tested prototypes for services which would haven pr
 
 As someone who has been working with different governmental bodies on digital projects over the years, I see this project as a significant success. I was excited to see so many motivated and talented young people interested in making a difference. It was also great to see that the government took the project seriously and provided the students with both the necessary resources as well as access to people and departments that were crucial for their work. This impression was also reflected in the feedback we heard from participating students at the end of the 2018 fellowship, as they asseessed what they found positive about their Tech4Germany experiences:
 
-{::nomarkdown} 
+{::nomarkdown}
 <blockquote>
     <p>Open discussions with the mentors and conversations where we were treated as peers, insight into the administration and government, and the trust and confidence displayed from everyone involved in our project planning and execution.</p>
     <p class="author">Andreas Ellwanger, Tech4Germany Fellow 2018 (studies Computer Science at LMU Munich)</p>
@@ -65,4 +64,3 @@ As someone who has been working with different governmental bodies on digital pr
 {% include macro-image-section-markdown.html src="../images/team.jpg" caption="The 2018 fellows, mentors and the supporting partners from the administration. (Source: Tech4Germany)" %}
 
 Perhaps most exciting of all is that the program was continued into 2019, with resources available for both more fellows and more projects. <strong><i>I can strongly recommend that anyone interested in bringing digital innovation to the government <a href="https://www.tech4germany.org/bewerbung/">submits an application</a> before the deadline closes on March 17th.</i></strong>
-           
