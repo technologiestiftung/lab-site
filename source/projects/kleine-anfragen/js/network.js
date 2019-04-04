@@ -110,7 +110,7 @@ class Network {
         .attr("spreadMethod", "pad");
         
         gradient.append("stop")
-        .attr("offset", "70%")
+        .attr("offset", "50%")
         .attr("stop-color", "rgb(30,55,145)")
         .attr("stop-opacity", 0);
         
@@ -119,13 +119,17 @@ class Network {
         .attr("stop-color", "rgb(30,55,145)")
         .attr("stop-opacity", 1);
 
+        var gradient_g = this.text_svg.append('g')
+        .attr("class", "gradient_rects")
+        
+
         for (var i = 0; i < 5; i++){ 
             
-            this.text_svg.append("rect")
+            gradient_g.append("rect")
             .attr("class", "rect_gradient")
-            .attr('width', this.width - this.padding.left - this.padding.right)
+            .attr('width', 0.3*(this.width - this.padding.left - this.padding.right))
             .attr('height', 30)
-            .attr("x", this.padding.left)             
+            .attr("x", this.padding.left + 0.7*(this.width - this.padding.left - this.padding.right))            
             .attr("y", (d, ) => this.text_height - this.padding.bottom - (i+1) * (this.rectHeight+ this.rectDist))
             .attr("rx", 3)         
             .attr("ry", 3)
