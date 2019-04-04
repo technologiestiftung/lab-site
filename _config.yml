@@ -132,7 +132,7 @@ exclude:
   - _static-site
   - .sass-cache
   - node_modules
-  - assets/js/index.js
+  - assets/js/src
   - assets/_scss/
   - assets/assets/css/index.scss
   - webpack.config.js

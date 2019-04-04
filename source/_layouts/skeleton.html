@@ -88,7 +88,10 @@
         {% include footer.html %}
         {% include funding.html %}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.8/min/tiny-slider.js"></script>
-        <script src="{{ site.url }}/assets/js/index.bundle.js" defer></script>
+        <script src="{{ site.url }}/assets/js/index.js" defer></script>
+        {%- if page.layout == 'landing' -%}
+        <script src="{{ site.url }}/assets/js/index-timeline.js"></script>
+        {%- endif -%}
         {%- if page.layout == "project" -%}
         <!-- include assets only for projets.
             all assets should be realtive to project folder-->
