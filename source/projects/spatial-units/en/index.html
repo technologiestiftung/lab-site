@@ -1,0 +1,222 @@
+---
+layout: project
+description: The city of Berlin is organised in various spatial units, from political
+  district boundaries, to statistical life-world related spaces (LOR), to
+  buildings.
+lang: en
+title: Berlin's spatial units
+subtitle: Introduction and overview
+type: publication
+colorMode: bright
+featuredImage: /projects/spatial-units/images/featured.jpg
+thumbnail: /projects/spatial-units/images/thumbnail.jpg
+heroImage: /projects/spatial-units/images/social_media.jpg
+socialMediaImage: /projects/spatial-units/images/social_media.jpg
+visible: true
+featured: false
+authors:
+  - sebastian-meier
+start: 2018-02-01
+end: 2018-02-14
+status: finished
+date: 2018-02-14
+assets:
+  js:
+    - ../../../assets/js/d3.v4.min.js
+    - ../js/topojson.v1.min.js
+    - ../js/index.js
+  css:
+    - ../styles/index.css
+redirect_from:
+  - /projects/123456789/
+  - /old-site-path/my-amazing-post/
+
+---
+
+<p>Berlin's spatial data is being provided in various resolutions and spatial units. We have gathered the most important spatial units and transformed them into the most common formats, thereby, allowing you to use them directly for your next data analysis or visualization project. The following paragraphs will introduce those spatial units and provide an overview of their origins and meaning.</p>
+
+<div class="container">
+    <ul id="overview-list">
+        <li>
+            <a href="#section_lors">
+                <img src="../images/thumbs_lor@2x.jpg" srcset="../images/thumbs_lor.jpg, ../images/thumbs_lor@2x.jpg 2x" alt="LORs" />
+                <span><span>LORs</span></span>
+            </a>
+        </li>
+        <li>
+            <a href="#section_vz">
+                <img src="../images/thumbs_vz@2x.jpg" srcset="../images/thumbs_vz.jpg, ../images/thumbs_vz@2x.jpg 2x" alt="Verkehrszellen" />
+                <span><span>Traffic cells</span></span>
+            </a>
+        </li>
+        <li>
+            <a href="#section_flure">
+                <img src="../images/thumbs_flure@2x.jpg" srcset="../images/thumbs_flure.jpg, ../images/thumbs_flure@2x.jpg 2x" alt="Flure" />
+                <span><span>Corridors</span></span>
+            </a>
+        </li>
+        <li>
+            <a href="#section_plz">
+                <img src="../images/thumbs_plz@2x.jpg" srcset="../images/thumbs_plz.jpg, ../images/thumbs_plz@2x.jpg 2x" alt="PLZ &amp; Stadtteile" />
+                <span><span>Postcode &amp; city parts</span></span>
+            </a>
+        </li>
+        <li>
+            <a href="#section_buildings">
+                <img src="../images/thumbs_buildings@2x.jpg" srcset="../images/thumbs_buildings.jpg, ../images/thumbs_buildings@2x.jpg 2x" alt="Straßen, Gebäude &amp; Blöcke" />
+                <span><span>Roads, buildings</span><br /><span style="border-top-right-radius: 0; border-top-left-radius: 0;">&amp; blocks</span></span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="container p-bottom" id="section_lors">
+    <h2 class="p-top">LORs</h2>
+    <p class="copy">Most of the recent statistical information, for example, population density, are provided as LOR spatial units. LOR stands for "lebensweltlich orientierte Räume" or living-world oriented spaces (translated by the author). The LORs are available in three granularities (low to high): Prognoseräume (prediction areas), Bezirksregionen (district areas) and Planungsräume (planning areas). The units were derived from social units, which are also based on top of the district borders. The units are trying to respect natural or build borders, like for example, main roads or rivers. The highest resolution, the planning areas, are also paying respect to former statistical units, like, the traffic cells (see below). For statistical purposes each unit should be as homogenous as possible as well as ensure that enough people are living in each unit in order to guarantee their anonymity. More information on LORs is available <a href="http://www.stadtentwicklung.berlin.de/planen/basisdaten_stadtentwicklung/lor/">here</a> (only in German).</p>
+</div>
+
+<div class="container small layermix" data-labels="Districts,Prediction Areas,District Areas,Planning Areas" data-layer="districts,predictionsspaces,districtspaces,planningspaces"></div>
+
+<div class="container p-bottom">
+    <ul class="download-list">
+        <li>
+            <a href="https://data.technologiestiftung-berlin.de/dataset/bezirksgrenzen/en">
+                <span class="download-icon"></span>
+                <span class="download-title">Districts</span><br />
+                <span class="download-subtitle">CSV, GeoJSON, KML, SQLite, Postgres, gml, Shapefile</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://data.technologiestiftung-berlin.de/dataset/lor_prognoseraeume/en">
+                <span class="download-icon"></span>
+                <span class="download-title">Prediction areas</span><br />
+                <span class="download-subtitle">CSV, GeoJSON, KML, SQLite, Postgres, gml, Shapefile</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://data.technologiestiftung-berlin.de/dataset/lor_bezirksregionen/en">
+                <span class="download-icon"></span>
+                <span class="download-title">District areas</span><br />
+                <span class="download-subtitle">CSV, GeoJSON, KML, SQLite, Postgres, gml, Shapefile</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://data.technologiestiftung-berlin.de/dataset/lor_planungsgraeume/en">
+                <span class="download-icon"></span>
+                <span class="download-title">Planning areas</span><br />
+                <span class="download-subtitle">CSV, GeoJSON, KML, SQLite, Postgres, gml, Shapefile</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="container p-top p-bottom" id="section_vz">
+    <h2 class="p-top">Traffic cells and sub traffic cells</h2>
+    <p class="copy">Before the introduction of the LORs the importance of the traffic cells was far bigger. But even today there are still a few metrics which are based on the traffic cells, for example the information on <a href="https://www.berlin.de/sen/finanzen/service/zuwendungsdatenbank/">funding</a> in Berlin, is based on the traffic cells. In many cases this is due to the fact, that before the introduction of LORs, the traffic cells were used in European standardization processes and are, therefore, still being used.</p>
+</div>
+
+<div class="container small layermix" data-labels="Verkehrszellen,Teilverkehrszellen" data-layer="trafficcells,subtrafficcells"></div>
+
+<div class="container p-bottom">
+    <ul class="download-list">
+        <li>
+            <a href="https://data.technologiestiftung-berlin.de/dataset/verkehrszellen/en">
+                <span class="download-icon"></span>
+                <span class="download-title">Traffic cells</span><br />
+                <span class="download-subtitle">CSV, GeoJSON, KML, SQLite, Postgres, gml, Shapefile</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://data.technologiestiftung-berlin.de/dataset/teil_verkehrszellen/en">
+                <span class="download-icon"></span>
+                <span class="download-title">Sub traffic cells</span><br />
+                <span class="download-subtitle">CSV, GeoJSON, KML, SQLite, Postgres, gml, Shapefile</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="container p-bottom" id="section_flure">
+    <h2 class="p-top">Corridors and corridor pieces</h2>
+    <p class="copy">While LORs and traffic cells are the most important units for statistical information in Berlin, there are a few other spatial units, which are used for very specific tasks. One such unit are the corridors and the corridor pieces. Those units are used by Berlin's governmental real estate register, in order to document who owns which piece of land and, thereby, also document the statistical land prices and building rights.</p>
+</div>
+
+<div class="container small layermix" data-labels="Flure" data-layer="corridors"></div>
+
+<div class="container p-bottom">
+    <ul class="download-list">
+        <li>
+            <a href="https://data.technologiestiftung-berlin.de/dataset/flure/en">
+                <span class="download-icon"></span>
+                <span class="download-title">Corridors</span><br />
+                <span class="download-subtitle">CSV, GeoJSON, KML, SQLite, Postgres, gml, Shapefile</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://data.technologiestiftung-berlin.de/dataset/flurstuecke/en">
+                <span class="download-icon"></span>
+                <span class="download-title">Corridor pieces</span><br />
+                <span class="download-subtitle">Postgres, GeoJSON, Shapefile</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="container p-bottom" id="section_plz">
+    <h2 class="p-top">Postcodes and city parts</h2>
+    <p class="copy">Two other datasets which are used quite frequently are the city parts as well as the postcode areas. Both can be easily connected to the LORs.</p>
+</div>
+
+<div class="container small layermix" data-labels="Postleitzahlen,Stadtteile" data-layer="postcode,cityparts"></div>
+
+<div class="container p-bottom">
+    <ul class="download-list">
+        <li>
+            <a href="https://data.technologiestiftung-berlin.de/dataset/plz/en">
+                <span class="download-icon"></span>
+                <span class="download-title">Postcodes</span><br />
+                <span class="download-subtitle">CSV, GeoJSON, KML, SQLite, Postgres, gml, Shapefile</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://data.technologiestiftung-berlin.de/dataset/ortsteile/en">
+                <span class="download-icon"></span>
+                <span class="download-title">City parts</span><br />
+                <span class="download-subtitle">CSV, GeoJSON, KML, SQLite, Postgres, gml, Shapefile</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="container p-bottom" id="section_buildings">
+    <h2 class="p-top">Roads, Buildings and blocks</h2>
+    <p class="copy">The last three are rarely used for statistics these days but still represent important spatial units of the city. Roads are simply the road areas of the city. Buildings are all individual build elements in the city. Blocks are grouped buildings usually a connected group of buildings that is surrounded by streets. As the building data set is quite big, the block data set can be an interesting alternative for lower resolution data visualizations.</p>
+</div>
+
+<div class="container p-bottom">
+    <ul class="download-list">
+        <li>
+            <a href="https://data.technologiestiftung-berlin.de/dataset/strassenflaechen/en">
+                <span class="download-icon"></span>
+                <span class="download-title">Roads</span><br />
+                <span class="download-subtitle">CSV, GeoJSON, KML, SQLite, Postgres, gml, Shapefile</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://data.technologiestiftung-berlin.de/dataset/gebaeude/en">
+                <span class="download-icon"></span>
+                <span class="download-title">Buildings</span><br />
+                <span class="download-subtitle">Postgres, GeoJSON, Shapefile</span>
+            </a>
+        </li>
+        <li style="clear:both;">
+            <a href="https://data.technologiestiftung-berlin.de/dataset/blockflaechen/en">
+                <span class="download-icon"></span>
+                <span class="download-title">Blocks- and Sub-blocks</span><br />
+                <span class="download-subtitle">CSV, GeoJSON, KML, SQLite, Postgres, gml, Shapefile</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<p>If you are interested and want to learn more about Berlin's spatial and statistical units, Berlin and Brandenburg's office for statistics wrote an <a href="https://www.statistik-berlin-brandenburg.de/publikationen/aufsaetze/2012/HZ_201201-06.pdf">article</a> (only in German) with further details.</p>
+<p>All spatial units mentioned in this overview are available for download on our <a href="https://data.technologiestiftung-berlin.de">data site</a> in various formats. The original data sets can be downloaded from Berlin's <a href="http://fbinter.stadt-berlin.de/fb/index.jsp">FIS-Broker</a> as WFS-sources.</p>

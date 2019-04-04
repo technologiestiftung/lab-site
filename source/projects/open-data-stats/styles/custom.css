@@ -1,0 +1,184 @@
+#intro-section{
+	min-height:300px;
+}
+
+#introviscontainer{
+	width:800px;
+	margin:0 auto;
+}
+
+#introvis{
+	float: left;
+}
+
+#introtext{
+	float:left; 
+	width:300px; 
+	padding:10px;
+	background-color:rgba(0,0,0,0.1);
+	font-family: 'Barlow', sans-serif;
+}
+
+#introtitle{
+	font-size:16px;
+	padding-bottom: 5px;
+	display:block;
+	font-weight:bold;
+}
+
+#introcopy{
+	font-size:14px;
+	line-height:1.1em;
+	display: block;
+	min-height:180px;
+}
+
+@media screen and (max-width: 1023px) {
+	#intro-section{
+		padding:0;
+	}
+
+	#introviscontainer{
+		width:100%;
+	}
+
+	#introvis, #introtext{
+		float:none;
+		width:100%;
+		max-width:500px;
+		margin:0 auto;
+	}
+
+	#introcopy{
+		min-height:auto;
+		padding-bottom:10px;
+	}
+
+	#introvis svg{
+		width:100%;
+	}
+
+	#introcopy{
+		height:auto;
+	}
+
+	#introviscontainer hr{
+		display: none;
+	}
+
+}
+
+.annotation-group path,
+.annotation-group line{
+	stroke:red;
+}
+
+.annotation-group.black path,
+.annotation-group.black line{
+	stroke:black;
+}
+
+.annotation-group text,
+.annotation-group tspan{
+	font-family: sans-serif;
+	font-weight:bold;
+	font-size:10px;
+	fill:red;
+}
+
+.annotation-group .annotation-note-label tspan{
+	font-weight:normal;
+}
+
+.annotation-group.black text,
+.annotation-group.black tspan{
+	fill:black;
+}
+
+#stacked_groups_1, 
+#stacked_groups_2,
+#stacked_groups_3, 
+#outliers, #newdata, #timepatterns, #seasonal{
+	max-width:700px;
+	width:100%;
+	margin:0 auto;
+}
+
+.project #outliers h3,
+.project #outliers p{
+	margin:0;
+}
+
+#histograms svg, #individual svg,
+#stacked_groups_1 svg, 
+#stacked_groups_2 svg,
+#stacked_groups_3 svg, 
+#outliers svg, #newdata svg, #timepatterns svg, #seasonal svg{
+	max-width:100%;
+}
+
+#outliers svg{
+	width:100%;
+}
+
+svg .gridline path{
+	display:none;
+}
+
+svg .gridline line{
+	stroke:rgba(0,0,0,0.1);
+}
+
+p.copy.small-copy{
+	padding-top:5px;
+	font-size:14px;
+	line-height:20px;
+}
+
+#histograms, #individual{
+	text-align: center;
+	max-width:1000px;
+	width:100%;
+	margin:0 auto;
+}
+
+#toptables table{
+	max-width:700px;
+	width:100%;
+	margin:0 auto;
+	font-family: sans-serif;
+}
+
+#toptables table, #toptables table tr{
+	border:none;
+	padding:0;
+}
+
+#toptables td{
+	border:1px solid #555;
+	padding:3px 5px;
+	vertical-align: top;
+}
+
+#toptables th{
+	padding:3px 5px;
+}
+
+#toptables a{
+	text-decoration: none;
+	color:#000;
+}
+
+#toptables a:hover{
+	text-decoration: underline;
+}
+
+#toptables .small{
+	display: block;
+	font-size:10px;
+	line-height: 14px;
+}
+
+button{
+	outline:none;
+}
