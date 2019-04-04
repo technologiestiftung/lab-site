@@ -7,7 +7,7 @@ import languageSwitch from './modules/languageSwitch.js';
 import ImageSlider from './modules/ImageSlider.js';
 import featProjectsHandler from './modules/featProjectsHandler.js';
 import Timeline from './modules/Timeline.js';
-import {ie11Test} from './modules/ie-11-test.js';
+// import {ie11Test} from './modules/ie-11-test.js';
 /**
  * Initialize functions
  */
@@ -61,7 +61,7 @@ function createImageSliders(sliderClassName) {
   [...imageSliders].forEach(slider => new ImageSlider(slider));
 }
 
-ie11Test();
+// ie11Test();
 document.addEventListener('DOMContentLoaded', function() {
   handleOnload();
   navigationHandler();
