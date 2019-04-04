@@ -12,12 +12,12 @@ colorMode: dark
 featuredImage: /projects/kartendarstellung/images/featured.jpg
 thumbnail: /projects/kartendarstellung/images/thumbnail.jpg
 heroImage: /projects/kartendarstellung/images/hero.jpg
-visible: true
+visible: false
 featured: false
 authors:
   - sebastian-meier
   - jolanta-paliszewska
-start: 2019-02-18
+start: 2019-02-02
 end: 2019-02-18
 status: finished
 date: 2019-02-18

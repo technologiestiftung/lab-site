@@ -9,7 +9,7 @@ colorMode: bright
 featuredImage: /projects/was-verbindet-die-gebardensprachgemeinschaft-und-barrierefreiheit/images/featured.jpg
 thumbnail: /projects/was-verbindet-die-gebardensprachgemeinschaft-und-barrierefreiheit/images/thumbnail.jpg
 heroImage: /projects/was-verbindet-die-gebardensprachgemeinschaft-und-barrierefreiheit/images/hero.jpg
-visible: true
+visible: false
 featured: false
 authors: []
 start: 2019-02-18

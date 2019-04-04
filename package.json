@@ -13,12 +13,13 @@
     "dev": "npm-run-all --parallel watch:**",
     "jekyll": "bundle exec jekyll serve  --livereload",
     "watch:js": "parcel watch source/assets/js/index.js --no-cache --out-dir source/assets/js/ --out-file index.bundle.js --public-url .",
+    "build:js": "parcel build source/assets/js/index.js --no-cache --out-dir source/assets/js/ --out-file index.bundle.js --public-url .",
     "new-project": "./project-generator/bin/run",
     "new": "./project-generator/bin/run --prompt",
     "new-project:interactive": "./project-generator/bin/run -p",
     "new-project:help": "./project-generator/bin/run --help",
     "htmlproofer": "bundle exec htmlproofer ./_site/ --disable-external > htmlproofer-report.txt 2>&1",
-    "broken-link-check":"npx broken-link-checker --recursive http://localhost:4000"
+    "broken-link-check": "npx broken-link-checker --recursive http://localhost:4000"
   },
   "repository": {
     "type": "git",

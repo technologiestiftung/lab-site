@@ -72,6 +72,8 @@ Admin computers can install [Ruby Version Manager (rvm) →](https://rvm.io).
 cd /path/to/lab-site/
 # only needed once
 # install the ruby bundler tool
+gem install bundler
+# sometimes a specific version is required
 gem install bundler -v 1.17.2
 # install all needed node.js dependencies
 npm install && cd project-generator && npm install
@@ -89,6 +91,12 @@ npm run jekyll
 # to generate a new project run in a new session
 npm run new
 # now follow the prompt…
+```
+
+If you run into problems with the eventmachine (incompatible library version) this might help, or not:
+```
+gem uninstall eventmachine
+gem install eventmachine --platform ruby
 ```
 
 ## How To

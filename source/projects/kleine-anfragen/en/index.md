@@ -13,8 +13,13 @@ visible: false
 featured: false
 authors:
   - alexandra-kapp
+<<<<<<< HEAD
 start: 2019-02-01
 end: 2019-04-01
+=======
+start: 2019-02-05
+end: 2019-03-01
+>>>>>>> 9322992caea0757fc8f6d55596925de5cf83fc6b
 status: finished
 date: 2019-04-01
 assets:

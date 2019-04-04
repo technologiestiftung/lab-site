@@ -4,7 +4,7 @@ description: An analysis of the availability of data for the topic of bike infra
 lang: en
 title: "Data Dive: Cycling data in Berlin"
 subtitle: What data is available?
-type: publication
+type: dataset
 colorMode: bright
 featuredImage: /projects/datadive-cycling/images/featured.jpg
 thumbnail: /projects/datadive-cycling/images/thumbnail.jpg
@@ -13,7 +13,7 @@ visible: true
 featured: false
 authors:
   - victoria-dykes
-start: 2018-09-17
+start: 2018-09-02
 end: 2018-09-17
 status: finished
 date: 2018-09-17 

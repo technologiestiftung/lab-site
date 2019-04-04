@@ -19,7 +19,7 @@ featured: false
 authors:
   - benjamin-seibel
 
-start: 2017-09-01
+start: 2017-08-26
 end: 2017-09-01
 status: Published
 date: 2017-09-01

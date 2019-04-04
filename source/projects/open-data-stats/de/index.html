@@ -1,0 +1,119 @@
+---
+layout: project
+description: Eine Analyse der Zugriffszahlen des Berliner Open Data-Portals
+lang: de
+title: Berliner Open Data-Statistiken
+subtitle: Analyse der Zugriffszahlen des Open Data-Portals
+type: publication
+colorMode: bright
+featuredImage: /projects/open-data-stats/images/featured.jpg
+thumbnail: /projects/open-data-stats/images/thumbnail.jpg
+heroImage: /projects/open-data-stats/images/hero.jpg
+socialMediaImage: /projects/open-data-stats/images/social_media.jpg
+visible: true
+featured: false
+authors:
+  - sebastian-meier
+start: 2018-07-01
+end: 2018-07-24
+status: finished
+date: 2018-07-24
+assets:
+  js:
+    - ../../../assets/js/d3.v5.min.js
+    - https://cdnjs.cloudflare.com/ajax/libs/d3-annotation/2.3.0/d3-annotation.min.js
+    - ../js/main.js
+  css:
+    - ../styles/custom.css
+redirect_from:
+  - /projects/123456789/
+  - /old-site-path/my-amazing-post/
+
+---
+
+<p><i>Im Juni hat Berlin Online aktuelle <a href="https://daten.berlin.de/datensaetze/zugriffsstatistik-datenberlinde">Zugriffsstatistiken</a> zum Open Data-Portal der Hauptstadt veröffentlicht. Da wir im Rahmen von <a href="http://odis-berlin.de/">ODIS</a> die Weiterentwicklung des Berliner Datenangebotes strategisch unterstützen, haben wir diese Zahlen einer ausführlichen Analyse unterzogen. Im Folgenden geben wir einen kleinen Einblick in die Entwicklung des Portals seit 2013, zeigen Trends und fassen die wesentlichen Einsichten zusammen.</i></p>
+
+<div class="special-section" id="intro-section">
+    <div id="introviscontainer">
+        <div id="introvis"></div>
+        <div id="introtext">
+            <span id="introtitle">Zugriffszahlen</span>
+            <span id="introcopy">Die Kurve links zeigt die Zugriffszahlen seid April 2013.<br /><br />Klicke auf weiter um mehr zu erfahren.</span>
+            <button id="introprev">zurück</button>
+            <button id="intronext">weiter</button>
+        </div>
+        <hr class="clear" />
+    </div>
+</div>
+
+<h2 class="p-bottom">Die wichtigsten Erkenntnisse</h2>
+
+<h3>1. Die Gesamtentwicklung ist positiv</h3>
+<p>Mit dem Anwachsen des Datenbestandes sind im letzten Jahr auch die Zugriffszahlen gestiegen. Ein breiteres Angebot führt also – wenig überraschend – auch zu intensiverer Nutzung. Die positive Tendenz zeigt, dass tatsächlich ein Bedarf an offenen Verwaltungsdaten besteht und diese kontinuierlich nachgefragt werden.</p>
+
+<h3>2. Der Großteil der Downloads entfällt auf wenige Datensätze</h3>
+<p>Während einige wenige Datensätze mehrere tausend Zugriffe verzeichnen, wird der größte Teil auch über längere Zeiträume nur selten aufgerufen. Allerdings taugt die Zahl der Aufrufe nur bedingt als Erfolgsindikator, denn schon aus einem einzelnen Download kann eine relevante Anwendung entstehen. Trotzdem sollte bei einer solchen Verteilung ein besonderes Augenmerk darauf liegen, dass die wenigen wirklich stark nachgefragten Datensätze hohen Qualitäts- und Aktualitätsansprüchen genügen.</p>
+
+<h3>3. Die Interesse an Daten hängt stark von äußeren Faktoren ab</h3>
+<p>Ungewöhnlich hohe Zugriffszahlen hängen fast immer mit äußeren Faktoren zusammen. Das kann eine Verlinkung auf einem Online-Medium oder ein datenjournalistisches Projekt sein, oft aber auch Ereignisse wie Wahlen, oder der Beginn der Badesaison. Starke Nachfrage lässt sich immer dort verzeichnen, wo es einen direkten Bezug der Daten zur Lebensrealität der Bürger*innen gibt. Das bedeutet umgekehrt: Eine Orientierung an konkreten Bedarfen zahlt sich für Datenbereitsteller fast immer aus und schlägt sich in deutlich höheren Zugriffszahlen nieder.   </p>
+
+<h2>Detailanalysen</h2>
+   
+<p>Eine einschränkende Anmerkung vorab: In den Zugriffszahlen tauchen nur jene Aufrufe auf, die auch tatsächlich über das <a href="https://daten.berlin.de">Open Data-Portal</a> erfolgen. Falls User*innen ihre Daten direkt aus anderen Portalangeboten des Landes (z.B. <a href="http://fbinter.stadt-berlin.de/fb/index.jsp">FIS Broker</a>, <a href="http://www.gsi-berlin.info/">GSI</a> oder <a href="https://www.statistik-berlin-brandenburg.de/datenbank/inhalt-datenbank.asp">AfS</a>) beziehen, erscheinen diese nicht in den Statistiken. Trotzdem erlauben die veröffentlichten Zahlen zahlreiche interessante Einsichten.<br />Im Folgenden zeigen wir detailliertere Analysen zu einzelnen Aspekten des Berliner Open Data-Bestandes. Wer sich darüber hinaus für den Stand von offenen Daten in Berlin interessiert, dem sei auch unser Report <a href="https://www.technologiestiftung-berlin.de/fileadmin/user_upload/Open_Data_in-der-Verwaltung_WEB.pdf">Open Data in der Berliner Verwaltung</a> empfohlen.</p>
+
+<h2>Verteilung</h2>
+<p>Ein Blick auf die individuelle Verteilung der Zugriffe macht deutlich, dass eine kleine Gruppe von Datensätzen den Großteil der Zugriffe ausmacht.</p>
+
+<div id="histograms">
+    <h3 class="p-top" style="text-align: center;">Gesamtzahl der Zugriffe auf einen Datensatz</h3>
+    <div id="histograms-1"></div>
+    <h3 class="p-top" style="text-align: center;">Durchschnittliche monatliche Zugriffe (Mean)</h3>
+    <div id="histograms-2"></div>
+    <h3 class="p-top" style="text-align: center;">Mittelwert monatlicher Downloads (Median)</h3>
+    <div id="histograms-3"></div>
+</div>
+
+<p>Auch der Großteil neu hochgeladener Datensätze bekommt kaum Zugriffe. Nur wenige Datensätze können auch über einen längeren Zeitraum konstant hohe Abrufzahlen verzeichnen</p>
+<h3 class="p-top" style="text-align: center;">Die ersten 24 Monate nach Bereitstellung eines Datensatzes</h3>
+<div id="individual"></div>
+<div id="individual-histograms" style="display:none;">
+    <p style="text-align:center;">Durchschnittliche monatliche Zugriffszahlen</p>
+</div>
+<p style="text-align:center;"><button id="showhistos">Die ersten 12 Monate eines Datensatzes als Histogramme anzeigen</button></p>
+    
+<h2 class="p-top">Zeitliche Muster</h2>
+<p>Der Anteil der verfügbaren Daten ist während dieser Zeit kontinuierlich angewachsen. Immer wieder gab es konzentrierte Initiativen, größere Pakete an Daten in das Portal zu bringen (Batch-Uploads, Harvesting anderer Portale).</p>
+<div id="newdata"></div>
+<p>Auch die Nachfrage ist stetig gestiegen. Die folgende Grafik zeigt, auf wieviel Prozent der Daten im jeweiligen Monat zugegriffen wurde. Anfangs waren es um die 15%, mittlerweile sind es mehr als 30% (schwarze Linie). Daten, die in den letzten vier Monaten hochgeladen wurden erhalten etwas mehr Aufmerksamkeit (graue Linie). Ein interessantes Muster, das wir dabei entdeckten: Alle vier Monate gibt es einen Peak an Anfragen, als würde automatisiert eine größere Gruppe an Daten abgefragt werden. Hierfür konnten wir bisher keine Erklärung finden. Die auffälligen Daten stammen größtenteils vom GSI-Portal.</p>
+<div id="timepatterns"></div>
+<p style="padding-bottom:10px;">Über das Jahr hinweg gibt es ein durchgehendes Muster, nämlich das Abflauen der Anfragen im Winter. Im Sommer lässt sich bislang keine rechte Regelmäßigkeit erkennen.</p>
+<div id="seasonal"></div>
+    
+<h2>Die Ausreißer</h2>
+<p style="padding-bottom:10px;">Immer wieder finden sich in den Zahlen ungewöhnliche Ausreißer, wenn einzelne Datensätze zu einem bestimmten Zeitpunkt besonders nachgefragt werden. Hier einige Beispiele</p>
+<div id="outliers"></div>
+
+<h2 class="p-top">Zugriffe nach Themen, Herkunft und Lizenzen</h2>
+<p>Über alle Datensätze hinweg besteht das größte Interesse an räumlichen Informationen, gefolgt von Datensätzen rund um das Thema Demographie. Das <a href="https://www.statistik-berlin-brandenburg.de/">Amt für Statistik Berlin Brandenburg</a> bleibt der wichtigste Bereitsteller offener Daten in Berlin. Bei den Lizenzen hat sich die international verbreitete Creative Commons-Lizenz weitgehend durchgesetzt.</p>
+<h3 class="p-top" style="text-align:center;">Zugriffszahlen nach Thema</h3>
+<p style="text-align:center;"><button id="stacked_groups_1-abs">Absolut</button>&nbsp;<button id="stacked_groups_1-rel">Relativ</button></p>
+<div id="stacked_groups_1"></div>
+<h3 class="p-top" style="text-align:center;">Zugriffszahlen nach Bereitsteller</h3>           
+<p style="text-align:center;"><button id="stacked_groups_2-abs">Absolut</button>&nbsp;<button id="stacked_groups_2-rel">Relativ</button></p>
+<div id="stacked_groups_2"></div>
+<h3 class="p-top" style="text-align:center;">Zugriffszahlen nach Lizenzen</h3>           
+<p style="text-align:center;"><button id="stacked_groups_3-abs">Absolut</button>&nbsp;<button id="stacked_groups_3-rel">Relativ</button></p>
+<div id="stacked_groups_3"></div>
+<h2 class="p-top">Top-Datensätze</h2>
+<p>Abschließend noch die Top-Ten der beliebtesten Datensätze. Übrigens: Die beliebtesten Berliner Vornamen des letzten Jahres waren "Emilia" und "Ben". Wer es in den Rohdaten nachsehen will: <a href="https://daten.berlin.de/datensaetze/liste-der-h%C3%A4ufigen-vornamen-2017">Hier entlang </a>.</p>
+
+<div id="toptables">
+    <h3 class="p-top" style="text-align:center;">Gesamtzugriffe seit 2013</h3>
+    <div id="top_abs"></div>
+    <h3 class="p-top" style="text-align:center;">Durchschnittliche monatliche Zugriffe</h3>
+    <div id="top_month"></div>
+    <h3 class="p-top" style="text-align:center;">Gruppierte Zugriffe seit 2013</h3>
+    <div id="top_group_abs"></div>
+    <h3 class="p-top" style="text-align:center;">Gruppierte durchschnittliche monatliche Zugriffe</h3>
+    <div id="top_group_month"></div>
+</div>

@@ -57,7 +57,7 @@ authors:
 externalUrl: http://example.com
 
 # REQUIRED: the date of your project
-start: 2018-05-23
+start: 2018-05-09
 
 # if it is for at timeperiod add the end value
 end: 2018-05-24

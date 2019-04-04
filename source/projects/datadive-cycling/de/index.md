@@ -4,7 +4,7 @@ description: Eine Analyse der Verfügbarkeit von Daten für den Radverkehr
 lang: de
 title: "Data Dive: Radverkehrsdaten in Berlin"
 subtitle: Welchen Daten gibt es?
-type: publication
+type: dataset
 colorMode: bright
 featuredImage: /projects/datadive-cycling/images/featured.jpg
 thumbnail: /projects/datadive-cycling/images/thumbnail.jpg
@@ -13,7 +13,7 @@ visible: true
 featured: false
 authors:
   - victoria-dykes
-start: 2018-09-17
+start: 2018-09-02
 end: 2018-09-17
 status: finished
 date: 2018-09-17

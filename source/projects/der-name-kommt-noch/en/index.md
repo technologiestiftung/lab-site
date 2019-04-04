@@ -9,10 +9,10 @@ colorMode: bright
 featuredImage: /projects/der-neue-name-kommt-noch/images/featured.jpg
 thumbnail: /projects/der-neue-name-kommt-noch/images/thumbnail.jpg
 heroImage: /projects/der-neue-name-kommt-noch/images/hero.jpg
-visible: true
+visible: false
 featured: false
 authors: []
-start: 2019-02-18
+start: 2019-02-03
 end: 2019-02-18
 status: finished
 date: 2019-02-18
