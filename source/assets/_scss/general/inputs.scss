@@ -21,19 +21,19 @@
         position: relative;
         transition: color 0.25s;
 
-        &::after {
-            background-color: $grey;
-            backface-visibility: hidden;
-            bottom: 0;
-            content: '';
-            height: $link-stroke-width;
-            left: 0;
-            position: absolute;
-            transform: scaleX(1) translateZ(0);
-            transform-origin: left center;
-            transition: transform 0.25s;
-            width: 100%;
-        }
+        // &::after {
+        //     background-color: $grey;
+        //     backface-visibility: hidden;
+        //     bottom: 0;
+        //     content: '';
+        //     height: $link-stroke-width;
+        //     left: 0;
+        //     position: absolute;
+        //     transform: scaleX(1) translateZ(0);
+        //     transform-origin: left center;
+        //     transition: transform 0.25s;
+        //     width: 100%;
+        // }
 
         &:hover {
             color: $grey;

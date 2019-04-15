@@ -21,7 +21,7 @@
         display: flex;
         justify-content: space-between;
 
-        @media only screen and (max-width: $screen-s) {
+        @media only screen and (max-width: $screen-m) {
             flex-direction: column;
         }
     }
@@ -30,8 +30,9 @@
         display: flex;
         
 
-        @media only screen and (max-width: $screen-s) {
+        @media only screen and (max-width: $screen-m) {
             flex-direction: column;
+
         }
 
         &__item {
@@ -45,8 +46,7 @@
                 }
             }
 
-
-            @media only screen and (max-width: $screen-s) {
+            @media only screen and (max-width: $screen-m) {
                 padding: 0;
             }
 

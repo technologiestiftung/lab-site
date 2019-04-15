@@ -133,6 +133,7 @@
                 flex: 1;
                 font-size: $font-size-xl;
                 font-weight: bold;
+                margin-right: 40px;
             }
             &--sub {
                 align-self: flex-start;
@@ -184,19 +185,32 @@
     }
 
     &-text {
-        padding: 0 $spacing-page-m;
         color: $black;
+        margin: 0 $spacing-page-l $spacing-m $spacing-page-l;
 
         h3 {
             color: $black;
+            margin: 0 !important;
         }
 
+        h4 {
+            margin: 0 !important;
+        }
+        
+        @media only screen and (max-width: $screen-xxl) {
+        margin: 0 $spacing-page-m $spacing-m $spacing-page-m;
+        }
+    
         @media only screen and (max-width: $screen-xl) {
-            padding: 0 0 $spacing-m 0 ;
+        margin: 0 $spacing-page-m $spacing-m $spacing-page-m;
         }
-
-        @media only screen and (min-width: $screen-xl) {
-            padding: 0 $spacing-page-l $spacing-m $spacing-page-l ;
+    
+        @media only screen and (max-width: $screen-l) {
+        margin: 0 $spacing-page-s $spacing-m $spacing-page-s;
+        }
+    
+        @media only screen and (max-width: $screen-m) {
+        margin: 0 0 $spacing-m 0;
         }
 
         &.columns {
@@ -341,6 +355,10 @@
 
     &--publication {
 
+        a {
+            border-bottom: 1px solid $color-publication;
+        }
+
         .project-header.bright {
             .link--button {
                     border: 1px solid $color-publication;
@@ -393,6 +411,10 @@
     }
     &--prototype {
 
+        a {
+            border-bottom: 1px solid $color-prototype;
+        }
+
         .project-header.bright {
             .link--button {
                     
@@ -439,6 +461,10 @@
         }
     }
     &--workshop {
+
+        a {
+            border-bottom: 1px solid $color-workshop;
+        }
 
         .project-header.bright {
             .link--button {
@@ -487,6 +513,10 @@
     }
     &--dataset {
 
+        a {
+            border-bottom: 1px solid $color-dataset;
+        }
+
         .project-header.bright {
             .link--button {
                     border: 1px solid $color-dataset;
@@ -534,37 +564,29 @@
     }
 
     a:not(.link--button) {
-        display: inline-block;
         line-height: $line-height-text;
         position: relative;
         transition: color $time-s;
-
-        // text-decoration-line: underline;
-
-        &::after {
-            backface-visibility: hidden;
-            bottom: 0;
-            content: '';
-            height: $link-stroke-width;
-            left: 0;
-            position: absolute;
-            transform: scaleX(1) translateZ(0);
-            transform-origin: left center;
-            transition: transform $time-s;
-            width: 100%;
-        }
-
-        &:hover {
-            &::after {
-                transform: scaleX(0.9) translateZ(0);
-            }
-        }
+        text-decoration-line: none;
     }
 
     .html-content, .markdown-content{
 
-        p {
-            margin: 0 $spacing-page-l $spacing-s $spacing-page-l;
+
+        h2 {
+            line-height: 2.75rem;
+        }
+
+        p, h1, h2, h3, h4, ul, ol {
+            margin: 0 $spacing-page-l $spacing-m $spacing-page-l;
+        
+            @media only screen and (max-width: $screen-xxl) {
+            margin: 0 $spacing-page-m $spacing-m $spacing-page-m;
+            }
+        
+            @media only screen and (max-width: $screen-xl) {
+            margin: 0 $spacing-page-m $spacing-m $spacing-page-m;
+            }
         
             @media only screen and (max-width: $screen-l) {
             margin: 0 $spacing-page-s $spacing-m $spacing-page-s;
@@ -581,66 +603,19 @@
         
         h1 {
             font-size: $font-size-xl;
-            margin: 0 $spacing-page-l $spacing-l $spacing-page-l;
-        
-            @media only screen and (max-width: $screen-m) {
-            margin: 0 $spacing-s $spacing-m $spacing-s;
-            }
-        
-            @media only screen and (max-width: $screen-l) {
-            margin: 0 $spacing-page-s $spacing-m $spacing-page-s;
-            }
         }
         
         h2 {
             font-size: $font-size-xl;
-            margin: 0 $spacing-page-l $spacing-m $spacing-page-l;
-        
-            @media only screen and (max-width: $screen-l) {
-            margin: 0 $spacing-page-s $spacing-m $spacing-page-s;
-            }
-        
-            @media only screen and (max-width: $screen-m) {
-            margin: 0 0 $spacing-m 0;
-            }
-        }
-        
-        h3 {
-            margin: 0 $spacing-page-l $spacing-s $spacing-page-l;
-        
-            @media only screen and (max-width: $screen-l) {
-            margin: 0 $spacing-page-s $spacing-m $spacing-page-s;
-            }
-        
-            @media only screen and (max-width: $screen-m) {
-            margin: 0 0 $spacing-m 0;
-            }
         }
 
+
         ul {
-            margin: 0 $spacing-page-l $spacing-l $spacing-page-l;
             list-style-type: disc;
-        
-            @media only screen and (max-width: $screen-l) {
-              margin: 0 $spacing-page-s $spacing-m $spacing-page-s;
-            }
-        
-            @media only screen and (max-width: $screen-m) {
-              margin: 0 0 $spacing-m 0;
-            }
           }
         
           ol {
-            margin: 0 $spacing-page-l $spacing-l $spacing-page-l;
             list-style-type: disc;
-        
-            @media only screen and (max-width: $screen-l) {
-              margin: 0 $spacing-page-s $spacing-m $spacing-page-s;
-            }
-        
-            @media only screen and (max-width: $screen-m) {
-              margin: 0 0 $spacing-m 0;
-            }
           }
         
         .project-image.small {
