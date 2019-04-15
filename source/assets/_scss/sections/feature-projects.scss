@@ -1,15 +1,16 @@
 .featured {
     position: relative;
+    margin-top: $spacing-l;
 
     &-headline {
-        margin-bottom: $spacing-l;
+        margin-bottom: $spacing-m;
     }
 
     &-title {
-        color: $grey;
+        color: $black;
         font-family: 'plex-mono';
         font-size: $font-size-m;
-        text-transform: uppercase;
+        margin-left: 2px;
         font-weight: 500;
         letter-spacing: 2px;    
 
@@ -20,7 +21,7 @@
     &-list {
         display: grid;
         grid-gap: $spacing-s $spacing-column--double;
-        grid-template-columns: repeat(1, minmax(400px, 400px));
+        grid-template-columns: repeat(1, minmax(400px, 600px));
         position: relative;
         margin-bottom: $spacing-m;
 
@@ -29,7 +30,7 @@
         }
 
         @media only screen and (max-width: $screen-m) {
-            grid-template-columns: repeat(1, minmax(400px, 400px));
+            grid-template-columns: repeat(1, minmax(400px, 600px));
             margin-top: $spacing-xl;
         }
 

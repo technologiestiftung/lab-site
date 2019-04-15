@@ -1067,12 +1067,12 @@ section {
     user-select: none;
     text-transform: uppercase;
     white-space: nowrap; }
-    @media only screen and (max-width: 1024px) {
+    @media only screen and (max-width: 1200px) {
       .navigation-logo {
         background-size: 37px; } }
     .navigation-logo__line {
       display: block; }
-      @media only screen and (max-width: 1024px) {
+      @media only screen and (max-width: 1200px) {
         .navigation-logo__line {
           display: none; } }
       .navigation-logo__line .bold {
@@ -1092,7 +1092,7 @@ section {
       .navigation-list-mobile a {
         font-size: 32px;
         margin-bottom: 50px; }
-    @media only screen and (max-width: 1024px) {
+    @media only screen and (max-width: 1200px) {
       .navigation-list {
         display: none; } }
     .navigation-list a {
@@ -1138,7 +1138,7 @@ section {
   border: 0;
   margin: 0;
   overflow: visible; }
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: 1200px) {
     .hamburger {
       display: none; } }
   .hamburger:hover {
@@ -1162,7 +1162,7 @@ section {
   margin-top: -1px; }
   .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
     width: 30px;
-    height: 2px;
+    height: 1px;
     background-color: #000;
     border-radius: 0;
     position: absolute;
@@ -1268,10 +1268,10 @@ section {
         max-width: 100%; } }
 
 .intro-title {
-  color: #adadad;
+  color: #000000;
   font-family: 'plex-mono';
   font-size: 16px;
-  text-transform: uppercase; }
+  margin-left: 1px; }
   @media only screen and (max-width: 768px) {
     .intro-title {
       font-size: 12px; } }
@@ -1292,14 +1292,15 @@ section {
       width: 100%; } }
 
 .featured {
-  position: relative; }
+  position: relative;
+  margin-top: 50px; }
   .featured-headline {
-    margin-bottom: 50px; }
+    margin-bottom: 30px; }
   .featured-title {
-    color: #adadad;
+    color: #000000;
     font-family: 'plex-mono';
     font-size: 16px;
-    text-transform: uppercase;
+    margin-left: 2px;
     font-weight: 500;
     letter-spacing: 2px; }
     @media only screen and (max-width: 768px) {
@@ -1308,7 +1309,7 @@ section {
   .featured-list {
     display: grid;
     grid-gap: 15px 100px;
-    grid-template-columns: repeat(1, minmax(400px, 400px));
+    grid-template-columns: repeat(1, minmax(400px, 600px));
     position: relative;
     margin-bottom: 30px; }
     @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
@@ -1316,7 +1317,7 @@ section {
         grid-template-rows: 1fr 1fr 1fr; } }
     @media only screen and (max-width: 768px) {
       .featured-list {
-        grid-template-columns: repeat(1, minmax(400px, 400px));
+        grid-template-columns: repeat(1, minmax(400px, 600px));
         margin-top: 80px; } }
     @media only screen and (max-width: 768px) and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
       .featured-list {
@@ -1403,11 +1404,11 @@ section {
     margin: 0 15px 0 0; }
 
 .feed-title {
-  color: #adadad;
+  color: #000000;
   font-family: 'plex-mono';
   font-size: 16px;
-  text-transform: uppercase;
-  margin-top: 15px; }
+  margin-top: 15px;
+  margin-left: 1px; }
   @media only screen and (max-width: 768px) {
     .feed-title {
       font-size: 12px; } }
@@ -1495,7 +1496,7 @@ section {
   .feed-list__project:hover.publication .feed-list__project-date {
     color: #000000; }
   .feed-list__project-date {
-    color: #adadad;
+    color: #000000;
     font-size: 12px;
     font-family: 'plex-mono';
     line-height: 1.5em;
@@ -1528,6 +1529,10 @@ section {
     .partner-list__project-image-logo--open-data-informationsstelle {
       max-width: 75%; }
 
+.mission-statement h1.section-headline {
+  font-size: 32px;
+  margin-bottom: 30px; }
+
 .timeline {
   display: flex;
   flex-direction: column;
@@ -1557,7 +1562,6 @@ section {
   .timeline .legend {
     height: auto;
     width: 100%;
-    margin-bottom: 10px;
     display: flex;
     justify-content: flex-end; }
     .timeline .legend-wrapper {
@@ -1810,12 +1814,14 @@ section {
       position: absolute;
       width: 100%;
       height: 80vh;
-      background: linear-gradient(to bottom, rgba(137, 255, 241, 0) 50%, rgba(0, 0, 0, 0.7) 100%); }
+      background: linear-gradient(to bottom, rgba(137, 255, 241, 0) 50%, rgba(0, 0, 0, 0.7) 100%);
+      border-bottom: 1px solid #e8e8e8; }
     .project-header.bright .gradient-overlay {
       position: absolute;
       width: 100%;
       height: 80vh;
-      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 100%); }
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 100%);
+      border-bottom: 1px solid #e8e8e8; }
     .project-header__hero {
       overflow: hidden;
       height: 80vh;
@@ -2114,12 +2120,15 @@ section {
     list-style-type: disc; }
   .project .html-content .project-image.small, .project .markdown-content .project-image.small {
     margin: 80px 17.5vw; }
+    @media only screen and (max-width: 1600px) {
+      .project .html-content .project-image.small, .project .markdown-content .project-image.small {
+        margin: 50px 12vw; } }
     @media only screen and (max-width: 1200px) {
       .project .html-content .project-image.small, .project .markdown-content .project-image.small {
-        margin: 50px 17.5vw; } }
+        margin: 50px 12vw; } }
     @media only screen and (max-width: 1024px) {
       .project .html-content .project-image.small, .project .markdown-content .project-image.small {
-        margin: 30px 17.5vw; } }
+        margin: 30px 12vw; } }
     @media only screen and (max-width: 768px) {
       .project .html-content .project-image.small, .project .markdown-content .project-image.small {
         margin: 15px 0; } }

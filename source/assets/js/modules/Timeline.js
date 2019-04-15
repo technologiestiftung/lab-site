@@ -283,7 +283,7 @@ class Timeline {
                 legendTypeWrapper.append('span')
                     .classed('legend__description', true)
                     .text(type)
-                    .style('color', this.vars.colors[type])
+                    .attr('style', `font: 16px plex-mono; color: ${this.vars.colors[type]};`)
         })
 
     }

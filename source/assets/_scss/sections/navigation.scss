@@ -57,7 +57,7 @@
         text-transform: uppercase;
         white-space: nowrap;
 
-        @media only screen and (max-width: $screen-l) {
+        @media only screen and (max-width: $screen-xl) {
             background-size: 37px;
         }
 
@@ -65,7 +65,7 @@
         &__line {
             display: block;
 
-            @media only screen and (max-width: $screen-l) {
+            @media only screen and (max-width: $screen-xl) {
                 display: none
             }
 
@@ -96,7 +96,7 @@
 
         }
 
-        @media only screen and (max-width: $screen-l) {
+        @media only screen and (max-width: $screen-xl) {
             display: none;
         }
 
@@ -174,7 +174,7 @@
     margin: 0;
     overflow: visible;
 
-    @media only screen and (min-width: $screen-l) {
+    @media only screen and (min-width: $screen-xl) {
         display: none;
     }
     
@@ -219,7 +219,7 @@
         &::before,
         &::after {
             width: $hamburger-layer-width;
-            height: 2px;
+            height: 1px;
             background-color: $hamburger-layer-color;
             border-radius: 0;
             position: absolute;
