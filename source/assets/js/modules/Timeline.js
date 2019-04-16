@@ -155,18 +155,6 @@ class Timeline {
                 this.vars.prototype.selectAll('rect')
                     .attr('x', d => { return transform.applyX(this.vars.elmX(d)) })
                     .attr('width', d => { return transform.k * this.vars.elmW(d) })
-
-                this.vars.publication.selectAll('rect')
-                    .attr('x', d => { return transform.applyX(this.vars.elmX(d)) })
-                    .attr('width', d => { return transform.k * this.vars.elmW(d) })
-
-                this.vars.workshop.selectAll('rect')
-                    .attr('x', d => { return transform.applyX(this.vars.elmX(d)) })
-                    .attr('width', d => { return transform.k * this.vars.elmW(d) })
-
-                this.vars.dataset.selectAll('circle')
-                    .attr('cx', d => { return transform.applyX(this.vars.elmX(d)) })
-        
             }))
     }
 
@@ -306,7 +294,7 @@ class Timeline {
 
 
     updateBars() {
-            const onlyThisType = this.data.filter(function(d) {return d.type === type});
+            const onlyThisType = this.data;
             const theseBands = this.timeline(onlyThisType);
 
             this.vars['prototype'].selectAll('rect')

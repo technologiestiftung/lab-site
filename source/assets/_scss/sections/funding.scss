@@ -1,16 +1,27 @@
 .funding {
-    padding: 0 $spacing-page-m;
+    &-inner {
+        padding: 0 $spacing-page-m;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+
+        @media only screen and (max-width: $screen-m) {
+            flex-direction: column;
+            padding: 0 30px;
+        }
+    }
+
     display: flex;
     justify-content: space-between;
-    margin-bottom: $spacing-s;
+    padding: 20px 0 22px 0;
 
     @media only screen and (max-width: $screen-m) {
         flex-direction: column;
-        padding: 0 $spacing-m;
     }
 
     .copy-funding {
-        max-width: 60%;
+        max-width: 430px;
         font-size: $font-size-s;
         line-height: $line-height-title;
         color: $grey;

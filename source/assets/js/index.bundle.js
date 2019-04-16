@@ -37436,22 +37436,6 @@ function () {
         }).attr('width', function (d) {
           return transform.k * _this3.vars.elmW(d);
         });
-
-        _this3.vars.publication.selectAll('rect').attr('x', function (d) {
-          return transform.applyX(_this3.vars.elmX(d));
-        }).attr('width', function (d) {
-          return transform.k * _this3.vars.elmW(d);
-        });
-
-        _this3.vars.workshop.selectAll('rect').attr('x', function (d) {
-          return transform.applyX(_this3.vars.elmX(d));
-        }).attr('width', function (d) {
-          return transform.k * _this3.vars.elmW(d);
-        });
-
-        _this3.vars.dataset.selectAll('circle').attr('cx', function (d) {
-          return transform.applyX(_this3.vars.elmX(d));
-        });
       }));
     }
   }, {
@@ -37583,9 +37567,7 @@ function () {
   }, {
     key: "updateBars",
     value: function updateBars() {
-      var onlyThisType = this.data.filter(function (d) {
-        return d.type === type;
-      });
+      var onlyThisType = this.data;
       var theseBands = this.timeline(onlyThisType);
       this.vars['prototype'].selectAll('rect').data(theseBands).attr('x', function (d) {
         return d.startX;
@@ -37793,7 +37775,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61954" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54390" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
