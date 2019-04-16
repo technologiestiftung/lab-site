@@ -1,7 +1,7 @@
 {%- if page.lang == "de" -%}
-{%- assign team = site.team_de -%}
+{%- assign team = site.team_de | sort: 'order' -%}
 {%- else -%}
-{%- assign team = site.team_en -%}
+{%- assign team = site.team_en | sort: 'order' -%}
 {%- endif -%}
 
 <section class="feed">
