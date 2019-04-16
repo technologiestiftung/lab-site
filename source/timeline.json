@@ -8,7 +8,7 @@
        "isproject":{%- if pg.layout == 'project' -%}true{%- else -%}false{%- endif -%},
        "type":"{{pg.type}}",
        "status":"{{pg.status}}",
-       "url":"/{{pg.url}}",
+       "url":"{{pg.url}}",
        "name": "{{pg.title}}",
        "lang":"{{pg.lang}}",
        "start":"{{pg.start}}",
