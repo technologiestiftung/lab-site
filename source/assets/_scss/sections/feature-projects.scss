@@ -20,9 +20,16 @@
     }
     &-list {
         display: flex;
-        height: 230px;
+        height: 210px;
         flex-direction: column;
         
+        @media only screen and (max-width: $screen-m) {
+            height: 180px;
+        }
+        
+        @media only screen and (max-width: $screen-s) {
+            height: 220px;
+        }
 
         &__project {
             margin-bottom: 5px;
@@ -84,11 +91,20 @@
                     &-image {
                         transform: translate3d($spacing-l, 0, 0);
 
+                        @media only screen and (max-width: $screen-s) {
+                            transform: translate3d(35px, -350px, 0);
+                        }
+
                         @media only screen and (max-width: $screen-m) {
                             transform: translate3d(115px, -10px, 0);
                         }
+
+                        @media only screen and (max-width: 1000px) {
+                            transform: translate3d(150px, 10px, 0);
+                        }
+
                         @media only screen and (min-width: $screen-l) {
-                            transform: translate3d($spacing-xxl, -10px, 0);
+                            transform: translate3d($spacing-xxl, 50px, 0);
                         }
                     }
                 }
