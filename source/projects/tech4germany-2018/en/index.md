@@ -7,7 +7,7 @@ lang: en
 title: Tech4Germany — How to bring innovation into Germany's administration
 subtitle: New federal program brings young digital innovators into the administration.
 type: publication
-colorMode: bright
+colorMode: dark
 featuredImage: /projects/tech4germany-2018/images/featured.jpg
 thumbnail: /projects/tech4germany-2018/images/thumbnail.jpg
 heroImage: /projects/tech4germany-2018/images/week4_2.jpg

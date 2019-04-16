@@ -7,7 +7,7 @@ lang: de
 title: Tech4Germany - Wie agile Innovation in die öffentliche Verwaltung kommt
 subtitle: Neues Bundesprogramm bringt junge Digital-Innovatoren in die Verwaltung.
 type: publication
-colorMode: bright
+colorMode: dark
 featuredImage: /projects/tech4germany-2018/images/featured.jpg
 thumbnail: /projects/tech4germany-2018/images/thumbnail.jpg
 heroImage: /projects/tech4germany-2018/images/week4_2.jpg

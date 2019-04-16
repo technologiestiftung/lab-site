@@ -55,7 +55,7 @@ body {
   body button {
     outline: none; }
   body main {
-    margin: 0 0 175px 0;
+    margin: 0 0 80px 0;
     opacity: 1;
     overflow: visible;
     -webkit-transition: opacity 0.75s;
@@ -456,25 +456,6 @@ h4 {
   position: relative;
   -webkit-transition: color 0.25s;
   transition: color 0.25s; }
-  .link--normal::after {
-    background-color: #adadad;
-    -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-    bottom: 0;
-    content: '';
-    height: 1px;
-    left: 0;
-    position: absolute;
-    -webkit-transform: scaleX(1) translateZ(0);
-            transform: scaleX(1) translateZ(0);
-    -webkit-transform-origin: left center;
-        -ms-transform-origin: left center;
-            transform-origin: left center;
-    -webkit-transition: -webkit-transform 0.25s;
-    transition: -webkit-transform 0.25s;
-    transition: transform 0.25s;
-    transition: transform 0.25s, -webkit-transform 0.25s;
-    width: 100%; }
   .link--normal:hover {
     color: #adadad; }
     .link--normal:hover::after {
@@ -824,11 +805,11 @@ div.highlight {
 
 /* Literal.Number.Integer.Long */
 _:-ms-fullscreen, :root .grid.feed-list {
-  -ms-grid-rows: 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr;
+  -ms-grid-rows: 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   display: -ms-grid;
   display: grid;
-  grid-gap: 25px 25px;
+  grid-gap: 50px 25px;
   -ms-grid-columns: minmax(200px, 400px) 25px minmax(200px, 400px) 25px minmax(200px, 400px) 25px minmax(200px, 400px);
   grid-template-columns: repeat(4, minmax(200px, 400px)); }
 _:-ms-fullscreen > *:nth-child(1), :root .grid.feed-list > *:nth-child(1) {
@@ -905,9 +886,9 @@ _:-ms-fullscreen > *:nth-child(24), :root .grid.feed-list > *:nth-child(24) {
   -ms-grid-column: 7; }
   @media only screen and (max-width: 1200px) {
     _:-ms-fullscreen, :root .grid.feed-list {
-      -ms-grid-rows: 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr;
+      -ms-grid-rows: 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-      grid-gap: 25px 25px;
+      grid-gap: 50px 25px;
       -ms-grid-columns: minmax(150px, 400px) 25px minmax(150px, 400px) 25px minmax(150px, 400px);
       grid-template-columns: repeat(3, minmax(150px, 400px)); }
     _:-ms-fullscreen > *:nth-child(1), :root .grid.feed-list > *:nth-child(1) {
@@ -984,10 +965,10 @@ _:-ms-fullscreen > *:nth-child(24), :root .grid.feed-list > *:nth-child(24) {
     -ms-grid-column: 5; } }
   @media only screen and (max-width: 768px) {
     _:-ms-fullscreen, :root .grid.feed-list {
-      grid-gap: 25px 25px;
+      grid-gap: 50px 25px;
       -ms-grid-columns: minmax(150px, 400px) 25px minmax(150px, 400px);
       grid-template-columns: repeat(2, minmax(150px, 400px));
-      -ms-grid-rows: 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr;
+      -ms-grid-rows: 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; }
     _:-ms-fullscreen > *:nth-child(1), :root .grid.feed-list > *:nth-child(1) {
     -ms-grid-row: 1;
@@ -1063,9 +1044,9 @@ _:-ms-fullscreen > *:nth-child(24), :root .grid.feed-list > *:nth-child(24) {
     -ms-grid-column: 3; } }
   @media only screen and (max-width: 520px) {
     _:-ms-fullscreen, :root .grid.feed-list {
-      -ms-grid-rows: 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr;
+      -ms-grid-rows: 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-      grid-gap: 25px 25px;
+      grid-gap: 50px 25px;
       -ms-grid-columns: minmax(150px, 500px);
       grid-template-columns: repeat(1, minmax(150px, 500px)); }
     _:-ms-fullscreen > *:nth-child(1), :root .grid.feed-list > *:nth-child(1) {
@@ -1136,11 +1117,11 @@ _:-ms-fullscreen > *:nth-child(24), :root .grid.feed-list > *:nth-child(24) {
     -ms-grid-column: 1; } }
 
 _:-ms-fullscreen, :root .grid {
-  -ms-grid-rows: 1fr 25px 1fr;
+  -ms-grid-rows: 1fr 50px 1fr;
   grid-template-rows: 1fr 1fr;
   display: -ms-grid;
   display: grid;
-  grid-gap: 25px 25px;
+  grid-gap: 50px 25px;
   -ms-grid-columns: minmax(200px, 400px) 25px minmax(200px, 400px) 25px minmax(200px, 400px) 25px minmax(200px, 400px);
   grid-template-columns: repeat(4, minmax(200px, 400px)); }
 
@@ -1177,9 +1158,9 @@ _:-ms-fullscreen > *:nth-child(8), :root .grid > *:nth-child(8) {
   -ms-grid-column: 7; }
   @media only screen and (max-width: 1200px) {
     _:-ms-fullscreen, :root .grid {
-      -ms-grid-rows: 1fr 25px 1fr 25px 1fr;
+      -ms-grid-rows: 1fr 50px 1fr 50px 1fr;
       grid-template-rows: 1fr 1fr 1fr;
-      grid-gap: 25px 25px;
+      grid-gap: 50px 25px;
       -ms-grid-columns: minmax(150px, 400px) 25px minmax(150px, 400px) 25px minmax(150px, 400px);
       grid-template-columns: repeat(3, minmax(150px, 400px)); }
     _:-ms-fullscreen > *:nth-child(1), :root .grid > *:nth-child(1) {
@@ -1211,10 +1192,10 @@ _:-ms-fullscreen > *:nth-child(8), :root .grid > *:nth-child(8) {
     -ms-grid-column: 5; } }
   @media only screen and (max-width: 768px) {
     _:-ms-fullscreen, :root .grid {
-      grid-gap: 25px 25px;
+      grid-gap: 50px 25px;
       -ms-grid-columns: minmax(150px, 400px) 25px minmax(150px, 400px);
       grid-template-columns: repeat(2, minmax(150px, 400px));
-      -ms-grid-rows: 1fr 25px 1fr 25px 1fr 25px 1fr;
+      -ms-grid-rows: 1fr 50px 1fr 50px 1fr 50px 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr; }
     _:-ms-fullscreen > *:nth-child(1), :root .grid > *:nth-child(1) {
     -ms-grid-row: 1;
@@ -1242,9 +1223,9 @@ _:-ms-fullscreen > *:nth-child(8), :root .grid > *:nth-child(8) {
     -ms-grid-column: 3; } }
   @media only screen and (max-width: 520px) {
     _:-ms-fullscreen, :root .grid {
-      -ms-grid-rows: 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr;
+      -ms-grid-rows: 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-      grid-gap: 25px 25px;
+      grid-gap: 50px 25px;
       -ms-grid-columns: minmax(150px, 500px);
       grid-template-columns: repeat(1, minmax(150px, 500px)); }
     _:-ms-fullscreen > *:nth-child(1), :root .grid > *:nth-child(1) {
@@ -1275,22 +1256,22 @@ _:-ms-fullscreen > *:nth-child(8), :root .grid > *:nth-child(8) {
 .grid {
   display: -ms-grid;
   display: grid;
-  grid-gap: 25px 25px;
+  grid-gap: 50px 25px;
   -ms-grid-columns: minmax(200px, 400px) 25px minmax(200px, 400px) 25px minmax(200px, 400px) 25px minmax(200px, 400px);
   grid-template-columns: repeat(4, minmax(200px, 400px)); }
   @media only screen and (max-width: 1200px) {
     .grid {
-      grid-gap: 25px 25px;
+      grid-gap: 50px 25px;
       -ms-grid-columns: minmax(150px, 400px) 25px minmax(150px, 400px) 25px minmax(150px, 400px);
       grid-template-columns: repeat(3, minmax(150px, 400px)); } }
   @media only screen and (max-width: 768px) {
     .grid {
-      grid-gap: 25px 25px;
+      grid-gap: 50px 25px;
       -ms-grid-columns: minmax(150px, 400px) 25px minmax(150px, 400px);
       grid-template-columns: repeat(2, minmax(150px, 400px)); } }
   @media only screen and (max-width: 520px) {
     .grid {
-      grid-gap: 25px 25px;
+      grid-gap: 50px 25px;
       -ms-grid-columns: minmax(150px, 500px);
       grid-template-columns: repeat(1, minmax(150px, 500px)); } }
 
@@ -1591,12 +1572,12 @@ section {
             user-select: none;
     text-transform: uppercase;
     white-space: nowrap; }
-    @media only screen and (max-width: 1024px) {
+    @media only screen and (max-width: 1200px) {
       .navigation-logo {
         background-size: 37px; } }
     .navigation-logo__line {
       display: block; }
-      @media only screen and (max-width: 1024px) {
+      @media only screen and (max-width: 1200px) {
         .navigation-logo__line {
           display: none; } }
       .navigation-logo__line .bold {
@@ -1628,7 +1609,7 @@ section {
       .navigation-list-mobile a {
         font-size: 32px;
         margin-bottom: 50px; }
-    @media only screen and (max-width: 1024px) {
+    @media only screen and (max-width: 1200px) {
       .navigation-list {
         display: none; } }
     .navigation-list a {
@@ -1689,7 +1670,7 @@ section {
   border: 0;
   margin: 0;
   overflow: visible; }
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: 1200px) {
     .hamburger {
       display: none; } }
   .hamburger:hover {
@@ -1713,7 +1694,7 @@ section {
   margin-top: -1px; }
   .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
     width: 30px;
-    height: 2px;
+    height: 1px;
     background-color: #000;
     border-radius: 0;
     position: absolute;
@@ -1799,7 +1780,7 @@ section {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between; }
-    @media only screen and (max-width: 520px) {
+    @media only screen and (max-width: 768px) {
       .footer-outer {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
@@ -1809,7 +1790,7 @@ section {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
-    @media only screen and (max-width: 520px) {
+    @media only screen and (max-width: 768px) {
       .footer-list {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
@@ -1822,7 +1803,7 @@ section {
         transition: color 0.1s linear; }
         .footer-list__item a:hover {
           color: #adadad; }
-      @media only screen and (max-width: 520px) {
+      @media only screen and (max-width: 768px) {
         .footer-list__item {
           padding: 0; } }
       .footer-list__item:first-of-type {
@@ -1869,10 +1850,10 @@ section {
         max-width: 100%; } }
 
 .intro-title {
-  color: #adadad;
+  color: #000000;
   font-family: 'plex-mono';
   font-size: 16px;
-  text-transform: uppercase; }
+  margin-left: 1px; }
   @media only screen and (max-width: 768px) {
     .intro-title {
       font-size: 12px; } }
@@ -1893,14 +1874,15 @@ section {
       width: 100%; } }
 
 .featured {
-  position: relative; }
+  position: relative;
+  margin-top: 50px; }
   .featured-headline {
-    margin-bottom: 50px; }
+    margin-bottom: 30px; }
   .featured-title {
-    color: #adadad;
+    color: #000000;
     font-family: 'plex-mono';
     font-size: 16px;
-    text-transform: uppercase;
+    margin-left: 2px;
     font-weight: 500;
     letter-spacing: 2px; }
     @media only screen and (max-width: 768px) {
@@ -1910,8 +1892,8 @@ section {
     display: -ms-grid;
     display: grid;
     grid-gap: 15px 100px;
-    -ms-grid-columns: minmax(400px, 400px) 100px minmax(400px, 400px);
-    grid-template-columns: repeat(2, minmax(400px, 400px));
+    -ms-grid-columns: minmax(400px, 600px);
+    grid-template-columns: repeat(1, minmax(400px, 600px));
     position: relative;
     margin-bottom: 30px; }
     @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
@@ -1920,8 +1902,8 @@ section {
         grid-template-rows: 1fr 1fr 1fr; } }
     @media only screen and (max-width: 768px) {
       .featured-list {
-        -ms-grid-columns: minmax(400px, 400px);
-        grid-template-columns: repeat(1, minmax(400px, 400px));
+        -ms-grid-columns: minmax(400px, 600px);
+        grid-template-columns: repeat(1, minmax(400px, 600px));
         margin-top: 80px; } }
     @media only screen and (max-width: 768px) and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
       .featured-list {
@@ -2039,11 +2021,11 @@ section {
     margin: 0 15px 0 0; }
 
 .feed-title {
-  color: #adadad;
+  color: #000000;
   font-family: 'plex-mono';
   font-size: 16px;
-  text-transform: uppercase;
-  margin-top: 15px; }
+  margin-top: 15px;
+  margin-left: 1px; }
   @media only screen and (max-width: 768px) {
     .feed-title {
       font-size: 12px; } }
@@ -2132,7 +2114,7 @@ section {
   .feed-list__project:hover.publication .feed-list__project-date {
     color: #000000; }
   .feed-list__project-date {
-    color: #adadad;
+    color: #000000;
     font-size: 12px;
     font-family: 'plex-mono';
     line-height: 1.5em;
@@ -2168,6 +2150,10 @@ section {
             transform: translate(-50%, -50%); }
     .partner-list__project-image-logo--open-data-informationsstelle {
       max-width: 75%; }
+
+.mission-statement h1.section-headline {
+  font-size: 32px;
+  margin-bottom: 30px; }
 
 .timeline {
   display: -webkit-box;
@@ -2206,7 +2192,6 @@ section {
   .timeline .legend {
     height: auto;
     width: 100%;
-    margin-bottom: 10px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2510,13 +2495,15 @@ section {
       width: 100%;
       height: 80vh;
       background: -webkit-linear-gradient(top, rgba(137, 255, 241, 0) 50%, rgba(0, 0, 0, 0.7) 100%);
-      background: linear-gradient(to bottom, rgba(137, 255, 241, 0) 50%, rgba(0, 0, 0, 0.7) 100%); }
+      background: linear-gradient(to bottom, rgba(137, 255, 241, 0) 50%, rgba(0, 0, 0, 0.7) 100%);
+      border-bottom: 1px solid #e8e8e8; }
     .project-header.bright .gradient-overlay {
       position: absolute;
       width: 100%;
       height: 80vh;
       background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 100%);
-      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 100%); }
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 100%);
+      border-bottom: 1px solid #e8e8e8; }
     .project-header__hero {
       overflow: hidden;
       height: 80vh;
@@ -2566,7 +2553,8 @@ section {
             -ms-flex: 1;
                 flex: 1;
         font-size: 32px;
-        font-weight: bold; }
+        font-weight: bold;
+        margin-right: 40px; }
       .project-header__title--sub {
         -ms-flex-item-align: start;
             align-self: flex-start;
@@ -2615,16 +2603,25 @@ section {
           .project-header__meta-column__item:last-of-type {
             margin-bottom: 0; }
   .project-text {
-    padding: 0 12vw;
-    color: #000000; }
+    color: #000000;
+    margin: 0 17.5vw 30px 17.5vw; }
     .project-text h3 {
-      color: #000000; }
+      color: #000000;
+      margin: 0 !important; }
+    .project-text h4 {
+      margin: 0 !important; }
+    @media only screen and (max-width: 1600px) {
+      .project-text {
+        margin: 0 12vw 30px 12vw; } }
     @media only screen and (max-width: 1200px) {
       .project-text {
-        padding: 0 0 30px 0; } }
-    @media only screen and (min-width: 1200px) {
+        margin: 0 12vw 30px 12vw; } }
+    @media only screen and (max-width: 1024px) {
       .project-text {
-        padding: 0 17.5vw 30px 17.5vw; } }
+        margin: 0 5vw 30px 5vw; } }
+    @media only screen and (max-width: 768px) {
+      .project-text {
+        margin: 0 0 30px 0; } }
     .project-text.columns {
       padding: 0; }
       @media only screen and (max-width: 1024px) {
@@ -2738,6 +2735,8 @@ section {
       margin: 0 0 0 50%;
       padding: 0;
       right: auto; }
+  .project--publication a {
+    border-bottom: 1px solid #2d91d2; }
   .project--publication .project-header.bright .link--button {
     border: 1px solid #2d91d2;
     color: #2d91d2;
@@ -2760,6 +2759,8 @@ section {
     color: #2d91d2; }
   .project--publication ::selection {
     background: rgba(45, 145, 210, 0.25); }
+  .project--prototype a {
+    border-bottom: 1px solid #41b496; }
   .project--prototype .project-header.bright .link--button {
     color: white;
     background: #41b496;
@@ -2780,6 +2781,8 @@ section {
     color: #41b496; }
   .project--prototype ::selection {
     background: rgba(65, 180, 150, 0.25); }
+  .project--workshop a {
+    border-bottom: 1px solid #dcc82d; }
   .project--workshop .project-header.bright .link--button {
     border: 1px solid #dcc82d;
     color: white;
@@ -2800,6 +2803,8 @@ section {
     color: #dcc82d; }
   .project--workshop ::selection {
     background: rgba(220, 200, 45, 0.25); }
+  .project--dataset a {
+    border-bottom: 1px solid #e60032; }
   .project--dataset .project-header.bright .link--button {
     border: 1px solid #e60032;
     color: white;
@@ -2821,94 +2826,49 @@ section {
   .project--dataset ::selection {
     background: rgba(230, 0, 50, 0.25); }
   .project a:not(.link--button) {
-    display: inline-block;
     line-height: 1.8em;
     position: relative;
     -webkit-transition: color 0.25s;
-    transition: color 0.25s; }
-    .project a:not(.link--button)::after {
-      -webkit-backface-visibility: hidden;
-              backface-visibility: hidden;
-      bottom: 0;
-      content: '';
-      height: 1px;
-      left: 0;
-      position: absolute;
-      -webkit-transform: scaleX(1) translateZ(0);
-              transform: scaleX(1) translateZ(0);
-      -webkit-transform-origin: left center;
-          -ms-transform-origin: left center;
-              transform-origin: left center;
-      -webkit-transition: -webkit-transform 0.25s;
-      transition: -webkit-transform 0.25s;
-      transition: transform 0.25s;
-      transition: transform 0.25s, -webkit-transform 0.25s;
-      width: 100%; }
-    .project a:not(.link--button):hover::after {
-      -webkit-transform: scaleX(0.9) translateZ(0);
-              transform: scaleX(0.9) translateZ(0); }
-  .project .html-content p, .project .markdown-content p {
-    margin: 0 17.5vw 15px 17.5vw; }
+    transition: color 0.25s;
+    -webkit-text-decoration-line: none;
+            text-decoration-line: none; }
+  .project .html-content h2, .project .markdown-content h2 {
+    line-height: 2.75rem; }
+  .project .html-content p, .project .html-content h1, .project .html-content h2, .project .html-content h3, .project .html-content h4, .project .html-content ul, .project .html-content ol, .project .markdown-content p, .project .markdown-content h1, .project .markdown-content h2, .project .markdown-content h3, .project .markdown-content h4, .project .markdown-content ul, .project .markdown-content ol {
+    margin: 0 17.5vw 30px 17.5vw; }
+    @media only screen and (max-width: 1600px) {
+      .project .html-content p, .project .html-content h1, .project .html-content h2, .project .html-content h3, .project .html-content h4, .project .html-content ul, .project .html-content ol, .project .markdown-content p, .project .markdown-content h1, .project .markdown-content h2, .project .markdown-content h3, .project .markdown-content h4, .project .markdown-content ul, .project .markdown-content ol {
+        margin: 0 12vw 30px 12vw; } }
+    @media only screen and (max-width: 1200px) {
+      .project .html-content p, .project .html-content h1, .project .html-content h2, .project .html-content h3, .project .html-content h4, .project .html-content ul, .project .html-content ol, .project .markdown-content p, .project .markdown-content h1, .project .markdown-content h2, .project .markdown-content h3, .project .markdown-content h4, .project .markdown-content ul, .project .markdown-content ol {
+        margin: 0 12vw 30px 12vw; } }
     @media only screen and (max-width: 1024px) {
-      .project .html-content p, .project .markdown-content p {
+      .project .html-content p, .project .html-content h1, .project .html-content h2, .project .html-content h3, .project .html-content h4, .project .html-content ul, .project .html-content ol, .project .markdown-content p, .project .markdown-content h1, .project .markdown-content h2, .project .markdown-content h3, .project .markdown-content h4, .project .markdown-content ul, .project .markdown-content ol {
         margin: 0 5vw 30px 5vw; } }
     @media only screen and (max-width: 768px) {
-      .project .html-content p, .project .markdown-content p {
+      .project .html-content p, .project .html-content h1, .project .html-content h2, .project .html-content h3, .project .html-content h4, .project .html-content ul, .project .html-content ol, .project .markdown-content p, .project .markdown-content h1, .project .markdown-content h2, .project .markdown-content h3, .project .markdown-content h4, .project .markdown-content ul, .project .markdown-content ol {
         margin: 0 0 30px 0; } }
-    .project .html-content p.blockquote, .project .markdown-content p.blockquote {
+    .project .html-content p.blockquote, .project .html-content h1.blockquote, .project .html-content h2.blockquote, .project .html-content h3.blockquote, .project .html-content h4.blockquote, .project .html-content ul.blockquote, .project .html-content ol.blockquote, .project .markdown-content p.blockquote, .project .markdown-content h1.blockquote, .project .markdown-content h2.blockquote, .project .markdown-content h3.blockquote, .project .markdown-content h4.blockquote, .project .markdown-content ul.blockquote, .project .markdown-content ol.blockquote {
       margin: 0 0 15px 0; }
   .project .html-content h1, .project .markdown-content h1 {
-    font-size: 32px;
-    margin: 0 17.5vw 50px 17.5vw; }
-    @media only screen and (max-width: 768px) {
-      .project .html-content h1, .project .markdown-content h1 {
-        margin: 0 15px 30px 15px; } }
-    @media only screen and (max-width: 1024px) {
-      .project .html-content h1, .project .markdown-content h1 {
-        margin: 0 5vw 30px 5vw; } }
+    font-size: 32px; }
   .project .html-content h2, .project .markdown-content h2 {
-    font-size: 32px;
-    margin: 0 17.5vw 30px 17.5vw; }
-    @media only screen and (max-width: 1024px) {
-      .project .html-content h2, .project .markdown-content h2 {
-        margin: 0 5vw 30px 5vw; } }
-    @media only screen and (max-width: 768px) {
-      .project .html-content h2, .project .markdown-content h2 {
-        margin: 0 0 30px 0; } }
-  .project .html-content h3, .project .markdown-content h3 {
-    margin: 0 17.5vw 15px 17.5vw; }
-    @media only screen and (max-width: 1024px) {
-      .project .html-content h3, .project .markdown-content h3 {
-        margin: 0 5vw 30px 5vw; } }
-    @media only screen and (max-width: 768px) {
-      .project .html-content h3, .project .markdown-content h3 {
-        margin: 0 0 30px 0; } }
+    font-size: 32px; }
   .project .html-content ul, .project .markdown-content ul {
-    margin: 0 17.5vw 50px 17.5vw;
     list-style-type: disc; }
-    @media only screen and (max-width: 1024px) {
-      .project .html-content ul, .project .markdown-content ul {
-        margin: 0 5vw 30px 5vw; } }
-    @media only screen and (max-width: 768px) {
-      .project .html-content ul, .project .markdown-content ul {
-        margin: 0 0 30px 0; } }
   .project .html-content ol, .project .markdown-content ol {
-    margin: 0 17.5vw 50px 17.5vw;
     list-style-type: disc; }
-    @media only screen and (max-width: 1024px) {
-      .project .html-content ol, .project .markdown-content ol {
-        margin: 0 5vw 30px 5vw; } }
-    @media only screen and (max-width: 768px) {
-      .project .html-content ol, .project .markdown-content ol {
-        margin: 0 0 30px 0; } }
   .project .html-content .project-image.small, .project .markdown-content .project-image.small {
     margin: 80px 17.5vw; }
+    @media only screen and (max-width: 1600px) {
+      .project .html-content .project-image.small, .project .markdown-content .project-image.small {
+        margin: 50px 12vw; } }
     @media only screen and (max-width: 1200px) {
       .project .html-content .project-image.small, .project .markdown-content .project-image.small {
-        margin: 50px 17.5vw; } }
+        margin: 50px 12vw; } }
     @media only screen and (max-width: 1024px) {
       .project .html-content .project-image.small, .project .markdown-content .project-image.small {
-        margin: 30px 17.5vw; } }
+        margin: 30px 12vw; } }
     @media only screen and (max-width: 768px) {
       .project .html-content .project-image.small, .project .markdown-content .project-image.small {
         margin: 15px 0; } }

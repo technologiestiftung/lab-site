@@ -1,9 +1,9 @@
 .intro {
     &-title {
-        color: $grey;
+        color: $black;
         font-family: 'plex-mono';
         font-size: $font-size-m;
-        text-transform: uppercase;
+        margin-left: 1px;
 
         @media only screen and (max-width: $screen-m) {
             font-size: $font-size-s;
