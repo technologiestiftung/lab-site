@@ -30,7 +30,12 @@
 .mission-statement {
     h1.section-headline {
         font-size: $font-size-xl;
-        margin-bottom: $spacing-m;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 32px;
+        line-height: 1.5em;
     }
 
     a {

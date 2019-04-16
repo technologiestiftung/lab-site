@@ -167,15 +167,15 @@
   }
 
   .labels > .label {
-    margin: 0;
+    margin: 0 !important;
   }
 
   .labels > .label:last-of-type {
-    margin: 0;
+    margin: 0 !important;
   }
   
   .label {
-    height: 32.2px;
+    height: 32.2px !important;
   }
   
   .xs {

@@ -1,47 +1,50 @@
     .tooltip {
         
-        background: $white;
+        background: $white !important;
         width: 170px;
         height: auto;
-        position: absolute;
+        position: absolute !important;
         top: 150px;
         left: 150px;
         display: flex;
         flex-direction: column;
-        padding: 12px 14px 12px 14px;
-        border: 1px solid $light-grey;
-        filter: drop-shadow(3px 5px 6px $light-grey);
-        animation: .25s fadeInFromNone ease;
+        padding: 12px 14px 12px 14px !important;
+        border: 1px solid $light-grey !important;
+        animation: .25s fadeInFromNone ease !important;
 
         &--title {
             font-weight: bold;
-            font-size: $font-size-s;
+            font-size: $font-size-s !important;
+            margin: 0 !important;
         }
 
         &--subtitle {
             font-size: $font-size-s;
+            margin: 0 !important;
         }
 
         &--datawrapper {
             display: flex;
             
             flex-direction: column;
-            margin-top: $spacing-xs;
+            margin-top: $spacing-xs !important;
 
             .attr {
-                opacity: 0.3;
-                font-size: $font-size-xs;
+                opacity: 1;
+                font-size: $font-size-s !important;
+                margin: 0 !important;
             }
 
             .value {
                 font-weight: bold;
-                font-size: $font-size-xs;
+                font-size: $font-size-s !important;
+                margin: 0 !important;
             }
 
             &--row {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: space-between !important;
             }
         }
     }

@@ -45,8 +45,9 @@ Parliamentary requests are an instrument of parliamentary scrutiny. They offer M
 The number of requests is increasing annually (only in election year 2016, the number was declining). In 2018 alone, over 3,000 inquiries were made to the Berlin administration. This can be specific information on specific events, e.g. [to the march on 18.2.2018](https://kleineanfragen.de/berlin/18/13668-frauenmarsch-17-february-2018), or general data sets, e.g. [the class sizes of Berlin schools](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/17/KlAnfr/ka17-12182.pdf).
 
 <div id= "word_count_linechart" alt = "Line chart showing the amount of requests per year."></div>
-TODO: Format title
-Number of requests per year
+
+{% include macro-subline-markdown.html caption="Number of requests per year" %}
+
 
 According to an [American study](http://sunlightfoundation.com/wp-content/uploads/2018/10/alena-white-paper-PDF.pdf), the amount of requests can be significantly reduced by providing open data. Thus, open data is not only a gain in transparency for citizens and parliamentarians, but also reduces the workload of administrative staff entrusted with answering parliamentary requests.
 
@@ -134,12 +135,11 @@ The Senate administrations Transport & Environment, Home Affairs & Sports, Educa
 
 <div id = 'barchart-wp17' alt="Stacked bar chart showing the percentage of requests each Senate Department received for election period 17."> </div>
 
-TODO: format title
-Requests to Senate Administrations (Election Period 17)
+{% include macro-subline-markdown.html caption="Requests to Senate Administrations (Election Period 17)" %}
 
 <div id = 'barchart-wp18' alt= 'Stacked bar chart showing the percentage of requests each Senate Department received for election period 18.'> </div>
-TODO: format title
-Requests to Senate Administrations (legislature 18)
+
+{% include macro-subline-markdown.html caption="Requests to Senate Administrations (legislature 18)" %}
 
 The **Senate Department for Home Affairs & Sports** received the most requests in both terms. These were mainly requests related to the police, fire brigade, crime, the protection of the Constitution and bathing companies.
 

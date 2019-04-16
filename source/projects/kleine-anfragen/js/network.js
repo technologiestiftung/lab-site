@@ -83,8 +83,9 @@ class Network {
         this.text_svg.append("text")
         .attr("x", x.range()[0] - 10)
         .attr("y", 18 + this.padding.top)
+        .attr('style', 'transform: translateY(5px)')
         .attr("text-anchor", "end")
-        .attr("font-size", "14px")
+        .attr("font-size", "16px")
         .style("opacity", 0.5)
         .text(word_count_label);
         
@@ -272,7 +273,8 @@ class Network {
             .style('display', 'block');
             
             function mouseover(){
-                div.style('display', 'inline');
+                div.style('display', 'block')
+                    .style('position', 'absolute');
             }
             function mousemove(){
                 var d = d3.select(this).data()[0]
@@ -282,9 +284,10 @@ class Network {
                 '<p class="attr">Anzahl</p>' +
                 '<p class="value">' + d.size + '</p>' +
                 '</div> </div>')
-                .style('left', (d3.event.pageX - 34) + 'px')
-                .style('top', (d3.event.pageY - 12) + 'px');
+                .style('left', (d3.event.pageX + 20) + 'px')
+                .style('top', (d3.event.pageY + 20) + 'px');
             }
+
             function mouseout(){
                 div.style('display', 'none');
             }
