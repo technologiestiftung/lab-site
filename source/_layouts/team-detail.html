@@ -3,7 +3,7 @@ layout: default
 ---
 <section class="team-detail {{page.type}}">
     <div class="team-detail__image--outer">
-        <div class="team-detail__image" style="background-image: url({{site.url}}{{page.image}});"></div>
+        <div class="team-detail__image" style="background-image: url(/{{page.image}});"></div>
       </div>
         <div class="team-detail__description">
             <div class="team-detail__description--name">{{ page.name }}</div>
@@ -17,12 +17,12 @@ layout: default
             <div class="team-detail__social">
                 {% if page.twitter %}
                     <a class="team-detail__social--twitter" href="https://twitter.com/{{ page.twitter }}" target="_blank">
-                    <img class="navigation-icon--twitter" src="{{ site.url }}/assets/icons/twitter-icon.svg" alt="Twitter" />
+                    <img class="navigation-icon--twitter" src="//assets/icons/twitter-icon.svg" alt="Twitter" />
                 </a>
                 {% endif %}
                 {% if page.github %}
                 <a class="team-detail__social--github" href="https://github.com/{{ page.github }}" target="_blank">
-                    <img class="navigation-icon--github" src="{{ site.url }}/assets/icons/github-icon.svg" alt="Github" />
+                    <img class="navigation-icon--github" src="//assets/icons/github-icon.svg" alt="Github" />
                 </a>
                 {% endif %}
             </div>

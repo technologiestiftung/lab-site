@@ -47,7 +47,7 @@
             {%- for author in page.authors -%}
             {%- for member in team -%}
             {%- if member.uid == author -%}
-                <a href="{{ site.url }}{{member.url}}" class="project-header__meta-column__item">{{member.name}}</a>
+                <a href="/{{member.url}}" class="project-header__meta-column__item">{{member.name}}</a>
                 {%- break -%}
                 {%- endif -%}
               {%- endfor -%}

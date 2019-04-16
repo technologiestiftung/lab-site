@@ -24,10 +24,10 @@
         <!-- FACEBOOK -->
         {%- endcomment -%}
         <meta property="fb:app_id" content="487094758334595">
-        <meta property="og:url" content="{{site.url}}">
+        <meta property="og:url" content="/">
         <meta property="og:type" content="website">
         <meta property="og:title" content="Ideation &amp; Prototyping Lab">
-          <meta property="og:image" content="{{site.url}}{{socialMediaImage}}">
+          <meta property="og:image" content="/{{socialMediaImage}}">
 
         <meta property="og:description" content="{%- if page.lang == 'de' -%}
           {{site.data.meta.decription.de}}
@@ -43,14 +43,14 @@
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@TSBBerlin">
         <meta name="twitter:creator" content="@seb_meier">
-        <meta name="twitter:url" content="{{site.url}}">
+        <meta name="twitter:url" content="/">
         <meta name="twitter:title" content="Ideation &amp; Prototyping Lab">
         <meta name="twitter:description" content="{%- if page.lang == 'de' -%}
           {{site.data.meta.decription.de}}
           {%- else -%}
           {{site.data.meta.decription.en}}
         {%- endif -%}">
-        <meta name="twitter:image" content="{{site.url}}{{socialMediaImage}}">
+        <meta name="twitter:image" content="/{{socialMediaImage}}">
 
           {%- comment -%}
           <!-- GOOGLE+/SCHEMA.ORG -->
@@ -61,15 +61,15 @@
           {%- else -%}
           {{site.data.meta.decription.en}}
         {%- endif -%}">
-        <meta itemprop="image" content="{{site.url}}{{socialMediaImage}}">
+        <meta itemprop="image" content="/{{socialMediaImage}}">
         {%- comment -%}
         <!-- CANONICAL URL -->
         {%- endcomment -%}
-        <link rel="canonical" href="{{site.url}}">
+        <link rel="canonical" href="/">
         {%- if jekyll.environment == 'production' -%}
-        <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/index.min.css" />
+        <link rel="stylesheet" type="text/css" href="/assets/css/index.min.css" />
         {%- else -%}
-        <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/index.min.css" />
+        <link rel="stylesheet" type="text/css" href="/assets/css/index.min.css" />
         {%- endif -%}
         <link rel="stylesheet" type="text/css" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.8/tiny-slider.css" />
         {%- if page.layout == "project" -%}
@@ -117,7 +117,7 @@
         {% include footer.html %}
         {% include funding.html %}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.8/min/tiny-slider.js"></script>
-        <script src="{{ site.url }}/assets/js/index.bundle.js" defer></script>
+        <script src="/assets/js/index.bundle.js" defer></script>
         {%- if page.layout == "project" -%}
         {%- comment -%}
         <!-- include assets only for projets.

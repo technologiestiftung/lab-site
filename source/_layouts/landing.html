@@ -24,7 +24,7 @@ layout: default
     {{site.data.meta.introtext.de}}
   {%- endif -%}
   </p>
-  <a class="link--button" href="{{site.url}}/about/{{page.lang}}">
+  <a class="link--button" href="//about/{{page.lang}}">
       {%- if page.lang == "en" -%}
         More about us
         {%- else -%}
@@ -50,14 +50,14 @@ layout: default
 
         <li class="featured-list__project">
           <h3 class="featured-list__project-title {{ pg.type }}">
-            <a href="{{site.url}}{{pg.url}}">{{ pg.title }}</a>
+            <a href="/{{pg.url}}">{{ pg.title }}</a>
           </h3>
           <span class="featured-list__project-subtext">
             {{ pg.subtitle }}
           </span>
           <img
           class="featured-list__project-image"
-          src="{{site.url}}{{ pg.featuredImage }}"
+          src="/{{ pg.featuredImage }}"
           alt="{{ pg.title }}"
           />
         </li>
@@ -65,7 +65,7 @@ layout: default
       {%- endfor -%}
   </ul>
 
-  <a class="link--button" href="{{site.url}}/projects/{{page.lang}}">
+  <a class="link--button" href="//projects/{{page.lang}}">
     {%- if page.lang == "en" -%}
     All projects
     {%- else -%}

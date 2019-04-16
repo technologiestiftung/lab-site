@@ -8,7 +8,7 @@
     {%- for pg in site.pages -%}
     {%- if pg.lang == include.lang -%}
     {%- if pg.layout == 'project' -%}
-    <li><a href="{{site.url}}{{pg.url}}">{{pg.title}}</a></li>
+    <li><a href="/{{pg.url}}">{{pg.title}}</a></li>
     {%- endif -%}
     {%- endif -%}
     {%- endfor -%}
