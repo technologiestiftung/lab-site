@@ -1,7 +1,9 @@
 
 <section>
 
+{%- comment -%}
   <!-- if a project has the variable visible false it should not be listed here -->
+{%- endcomment -%}
   <ul>
     {%- for pg in site.pages -%}
     {%- if pg.lang == include.lang -%}

@@ -8,7 +8,9 @@
   <h2 class="feed-headline section-headline headline--bold">Team</h2>
   <ul class="grid feed-list">
 
+    {%- comment -%}
     <!-- {{member.type}} -->
+    {%- endcomment -%}
 
       {% for member in team %}
       {%- if member.external == true -%}

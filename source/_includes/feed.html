@@ -22,6 +22,7 @@
                     <div class="project-image" style="background-image: url({{ pg.thumbnail }});"></div>
                 </div>
                 <div class="feed-list__project-date">
+                {%- comment -%}
                     <!--
                       https://shopify.github.io/liquid/filters/date/
                       https://ruby-doc.org/stdlib-2.6.1/libdoc/time/rdoc/Time.html#method-c-parse
@@ -31,6 +32,7 @@
                        {%- else -%}
                        {{ pg.date | date: "%Y-%m-%d" }}
                      {%- endif -%} -->
+                    {%- endcomment -%}
                      {%- include date-format.html element=pg -%}
                 </div>
                 <div class="feed-list__project-title">
