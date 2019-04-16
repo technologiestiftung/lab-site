@@ -1,3 +1,4 @@
+
 # Distribution Files
 dist/**
 build/**
@@ -5,6 +6,8 @@ build/**
 tmp
 # IDE & Editors
 .vscode
+# keep the snippet
+!.vscode/enclose-in-jekyll-comment.code-snippets
 # OSX
 *.DS_Store
 .AppleDouble

@@ -2,44 +2,64 @@ const featProjectsHandler = () => {
 
     let indexCurrent = 0;
     let intervalCurrent = 0;
+    let className = 'collapsed';
+    let intervalNew, intervallCurrent, untoggleAll
 
-    const featProjects = document.querySelectorAll('.featured-list__project');
+    const featProjects = document.querySelectorAll('.featured-list__project-subtext');
+    const featProj = document.querySelectorAll('.featured-list__project');
 
-    if (featProjects.length > 0) {
-        const untoggleAll = (htmlCollection) => {
+    if (featProj.length > 0) {
+        untoggleAll = (htmlCollection) => {
             for (let index = 0; index < htmlCollection.length; index++) {
                 const element = htmlCollection[index];
-                element.childNodes[1].classList.remove('hovered');
+                element.classList.add(className);
             };
         };
         
-        for (let index = 0; index < featProjects.length; index++) {
-            const element = featProjects[index];
-            element.addEventListener('mouseover', () => {
+        for (let index = 0; index < featProj.length; index++) {
+            const parent = featProj[index];
+            parent.addEventListener('mouseover', () => {
+                untoggleAll(featProj);
                 clearInterval(intervalCurrent);
-                untoggleAll(featProjects);
-                element.childNodes[1].classList.add('hovered');
+                clearInterval(intervalNew);
+                parent.classList.remove(className);
             });
-            element.addEventListener('mouseout', () => {
-                untoggleAll(featProjects);
-                element.childNodes[1].classList.remove('hovered');
+            parent.addEventListener('mouseout', () => {
+                clearInterval(intervalCurrent);
+                clearInterval(intervalNew);
+                
+                untoggleAll(featProj);
+                parent.classList.add(className);
+
+                intervalNew = setInterval(() => { 
+                    if (indexCurrent == featProj.length) {
+                        untoggleAll(featProj);
+                        indexCurrent = 0;
+                        featProj[indexCurrent].classList.remove(className);
+                        indexCurrent++
+                    } else {
+                        untoggleAll(featProj);
+                        featProj[indexCurrent].classList.remove(className);
+                        indexCurrent++
+                    }
+                }, 4000);
             });
         };
     
-        featProjects[indexCurrent].childNodes[1].classList.add('hovered');
+        // featProjects[indexCurrent].childNodes[1].classList.add(className);
     
         intervalCurrent = setInterval(() => { 
             if (indexCurrent == featProjects.length) {
-                untoggleAll(featProjects);
+                untoggleAll(featProj);
                 indexCurrent = 0;
-                featProjects[indexCurrent].childNodes[1].classList.add('hovered');
+                featProj[indexCurrent].classList.remove(className);
                 indexCurrent++
             } else {
-                untoggleAll(featProjects);
-                featProjects[indexCurrent].childNodes[1].classList.add('hovered');
+                untoggleAll(featProj);
+                featProj[indexCurrent].classList.remove(className);
                 indexCurrent++
             }
-        }, 5000);
+        }, 4000);
     }
 }
 

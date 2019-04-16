@@ -47,7 +47,7 @@
             {%- for author in page.authors -%}
             {%- for member in team -%}
             {%- if member.uid == author -%}
-                <a href="{{ site.url }}{{member.url}}" class="project-header__meta-column__item">{{member.name}}</a>
+                <a href="{{member.url}}" class="project-header__meta-column__item">{{member.name}}</a>
                 {%- break -%}
                 {%- endif -%}
               {%- endfor -%}
@@ -89,7 +89,9 @@
             </div>
         </div>
         {%- if page.materialsIncluded  -%}
+        {%- comment -%}
         <!-- there are no materials -->
+        {%- endcomment -%}
         <div class="project-header__meta-column project-header__meta-column--materials">
           <div class="project-header__meta-column__header">{%- if page.lang == "de" -%}
             Material

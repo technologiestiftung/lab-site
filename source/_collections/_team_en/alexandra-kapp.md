@@ -8,6 +8,7 @@ twitter: lxndrkp
 github: AlexandraKapp
 position: User Research & geodata
 type: publication # could also be "workshop", "dataset", "prototype"
+order: 1
 ---
 
 

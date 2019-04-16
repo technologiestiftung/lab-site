@@ -5,9 +5,21 @@
       "en": "Mission Statement"
     },
     "text":{
-      "de": "Dies ist ein Typoblindtext. An ihm kann man sehen, ob alle Buchstaben da sind und wie sie aussehen. Manchmal benutzt man Worte wie Hamburgefonts, Rafgenduks oder Handgloves, um Schriften zu testen. Manchmal Sätze, die alle Buchstaben des Alphabets enthalten - man nennt diese Sätze »Pangrams«.",
+      "de": "Das Ideation & Prototyping Lab ist das Entwicklungslabor der <a href ='https://www.technologiestiftung-berlin.de'> Technologiestiftung Berlin</a>. Wir entwickeln und testen digitale Tools und Lösungen, um gemeinsam mit Verwaltungen, Wissenschaft und Stadtgesellschaft den digitalen Wandel in Berlin zu gestalten.",
       "en": "One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections."
     }
+  },
+  "decription":{
+    "en":"We are exploring and prototyping digital tools in order to collaboratively shape Berlin’s future for citizens, the local government and the industry. #OpenData #OpenSource #OpenInnovation",
+    "de":"Wir erforschen und erproben digitale Werkzeuge um gemeinsam mit Bürger*innen, Verwaltung und Unternehmen die Zukunft Berlins zu gestalten. #OpenData #OpenSource #OpenInnovation"
+  },
+  "introtext":{
+    "de":"Wir entwickeln offene Technologie für bessere Städte.",
+    "en":"We develop & use open technologies to make cities a better place for all."
+  },
+  "fundingtext":{
+    "de":"Gefördert von der Senatsverwaltung für Wirtschaft, Energie und Betriebe und der Investitionsbank Berlin aus den Mitteln des Landes Berlin.",
+    "en":"Financial support provided by the Senate Department for Economics, Energy and Public Enterprises and the Investitionsbank Berlin via funds from the State of Berlin."
   },
   "navigation": [
     {

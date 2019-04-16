@@ -5,16 +5,16 @@
   <channel>
     <title>{{ site.name | xml_escape }}</title>
     <description>{{ site.description | xml_escape }}</description>
-    <link>{{ site.url }}</link>
-    <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
     {% for pg in site.pages %}
     {%- if pg.layout == 'project'  -%}
       <item>
         <title>{{ pg.title | xml_escape }}</title>
         <description>{{ pg.description | xml_escape }}</description>
         <pubDate>{{ pg.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-        <link>{{ site.url }}{{ pg.url }}</link>
-        <guid isPermaLink="true">{{ site.url }}{{ pg.url }}</guid>
+        <link>{{site.url}}/{{ pg.url }}</link>
+        <guid isPermaLink="true">{{site.url}}/{{ pg.url }}</guid>
       </item>
     {%- endif -%}
     {% endfor %}

@@ -8,6 +8,7 @@ twitter: seb_meier
 github: sebastian-meier
 position: Data science & geodaten
 type: dataset # could also be "workshop", "dataset", "prototype"
+order: 2
 ---
 
 

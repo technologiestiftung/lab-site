@@ -9,100 +9,137 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>{{ page.title }}</title>
+        <title>
+        {%- if page.layout == 'landing' -%}
+          {{site.title}}
+          {%- else -%}
+        {{site.title}} | {{ page.title }}
+        {%- endif -%}
+        </title>
+        {%- comment -%}
         <!-- {# Favicon #} -->
+        {%- endcomment -%}
         {% include favicon-links.html %}
+        {%- comment -%}
         <!-- FACEBOOK -->
+        {%- endcomment -%}
         <meta property="fb:app_id" content="487094758334595">
         <meta property="og:url" content="{{site.url}}">
         <meta property="og:type" content="website">
         <meta property="og:title" content="Ideation &amp; Prototyping Lab">
-          <meta property="og:image" content="{{site.url}}{{socialMediaImage}}">
+          <meta property="og:image" content="{{socialMediaImage}}">
 
         <meta property="og:description" content="{%- if page.lang == 'de' -%}
-          Wir erforschen und erproben digitale Werkzeuge um gemeinsam mit Bürger*innen, Verwaltung und Unternehmen die Zukunft Berlins zu gestalten. #OpenData #OpenSource #OpenInnovation
+          {{site.data.meta.decription.de}}
           {%- else -%}
-          We are exploring and prototyping digital tools in order to collaboratively shape Berlin’s future for citizens, the local government and the industry. #OpenData #OpenSource #OpenInnovation
+          {{site.data.meta.decription.en}}
         {%- endif -%}">
         <meta property="og:site_name" content="Ideation &amp; Prototyping Lab">
         <meta property="article:author" content="Sebastian Meier">
 
+        {%- comment -%}
         <!-- TWITTER -->
+        {%- endcomment -%}
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@TSBBerlin">
         <meta name="twitter:creator" content="@seb_meier">
         <meta name="twitter:url" content="{{site.url}}">
         <meta name="twitter:title" content="Ideation &amp; Prototyping Lab">
         <meta name="twitter:description" content="{%- if page.lang == 'de' -%}
-          Wir erforschen und erproben digitale Werkzeuge um gemeinsam mit Bürger*innen, Verwaltung und Unternehmen die Zukunft Berlins zu gestalten. #OpenData #OpenSource #OpenInnovation
+          {{site.data.meta.decription.de}}
           {%- else -%}
-          We are exploring and prototyping digital tools in order to collaboratively shape Berlin’s future for citizens, the local government and the industry. #OpenData #OpenSource #OpenInnovation
+          {{site.data.meta.decription.en}}
         {%- endif -%}">
-        <meta name="twitter:image" content="{{site.url}}{{socialMediaImage}}">
+        <meta name="twitter:image" content="{{socialMediaImage}}">
 
-        <!-- GOOGLE+/SCHEMA.ORG -->
-        <meta itemprop="name" content="Ideation &amp; Prototyping Lab">
+          {%- comment -%}
+          <!-- GOOGLE+/SCHEMA.ORG -->
+          {%- endcomment -%}
+          <meta itemprop="name" content="Ideation &amp; Prototyping Lab">
         <meta itemprop="description" content="{%- if page.lang == 'de' -%}
-          Wir erforschen und erproben digitale Werkzeuge um gemeinsam mit Bürger*innen, Verwaltung und Unternehmen die Zukunft Berlins zu gestalten. #OpenData #OpenSource #OpenInnovation
+          {{site.data.meta.decription.de}}
           {%- else -%}
-          We are exploring and prototyping digital tools in order to collaboratively shape Berlin’s future for citizens, the local government and the industry. #OpenData #OpenSource #OpenInnovation
+          {{site.data.meta.decription.en}}
         {%- endif -%}">
-        <meta itemprop="image" content="{{site.url}}{{socialMediaImage}}">
-
+        <meta itemprop="image" content="{{socialMediaImage}}">
+        {%- comment -%}
         <!-- CANONICAL URL -->
+        {%- endcomment -%}
         <link rel="canonical" href="{{site.url}}">
         {%- if jekyll.environment == 'production' -%}
-        <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/index.min.css" />
+        <link rel="stylesheet" type="text/css" href="/assets/css/index.min.css" />
         {%- else -%}
-        <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/index.min.css" />
+        <link rel="stylesheet" type="text/css" href="/assets/css/index.min.css" />
         {%- endif -%}
         <link rel="stylesheet" type="text/css" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.8/tiny-slider.css" />
         {%- if page.layout == "project" -%}
+{%- comment -%}
         <!-- include assets only for projets.
             all assets should be realtive to project folder-->
+{%- endcomment -%}
         {%- if page.assets  -%}
+       {%- comment -%}
         <!-- we have assets -->
+       {%- endcomment -%}
         {%- if page.assets.css -%}
+          {%- comment -%}
             <!-- we have css -->
+          {%- endcomment -%}
             {%- for cssfile in page.assets.css -%}
             <link rel="stylesheet" type="text/css" type="text/css" href="{{cssfile}}" />
             {%- endfor -%}
+            {%- comment -%}
             <!-- end of css -->
+            {%- endcomment -%}
             {%- endif -%}
             {%- endif -%}
 
         {%- else -%}
+            {%- comment -%}
             <!-- else -->
             <!-- not the project layout -->
+            {%- endcomment -%}
         {% endif %}
 
     </head>
     <body>
+        {%- comment -%}
         <!-- navigation -->
         <!-- TODO Nav not working yet -->
+        {%- endcomment -%}
         {% include navigation.html %}
 
         {{content}}
 
+        {%- comment -%}
         <!-- {# Footer #} -->
+        {%- endcomment -%}
         {% include footer.html %}
         {% include funding.html %}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.8/min/tiny-slider.js"></script>
-        <script src="{{ site.url }}/assets/js/index.bundle.js" defer></script>
+        <script src="/assets/js/index.bundle.js" defer></script>
         {%- if page.layout == "project" -%}
+        {%- comment -%}
         <!-- include assets only for projets.
             all assets should be realtive to project folder-->
+        {%- endcomment -%}
         {%- if page.assets  -%}
+        {%- comment -%}
         <!-- we have assets -->
+        {%- endcomment -%}
             {%- if page.assets.js -%}
+            {%- comment -%}
             <!-- we have js assets -->
+            {%- endcomment -%}
                 {%- for jsfile in page.assets.js -%}
                 <script src="{{jsfile}}" type="text/javascript" defer></script>
                 {%- endfor -%}
             {%- endif -%}
         {%- endif -%}
         {%- else -%}
+        {%- comment -%}
         <!-- not the project layout -->
+        {%- endcomment -%}
         {% endif %}
 
     </body>

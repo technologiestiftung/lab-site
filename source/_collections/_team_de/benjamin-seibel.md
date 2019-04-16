@@ -8,6 +8,7 @@ twitter: bnjmnsbl
 github: bnjmnsbl
 position: Leitung des Labs
 type: publication # could also be "workshop", "dataset", "prototype"
+order: 0
 ---
 
 

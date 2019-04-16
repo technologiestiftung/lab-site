@@ -9,7 +9,7 @@ github:
 position: Working Student
 type: workshop # could also be "workshop", "dataset", "prototype"
 external: true
-
+order: 2
 ---
 
 
