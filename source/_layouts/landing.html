@@ -19,9 +19,9 @@ layout: default
   {%- endif -%}</div>
   <p class="intro-text">
     {%- if page.lang == "en" -%}
-    We develop & use open technologies to make cities a better place for all.
+    {{site.data.meta.introtext.en}}
     {%- else -%}
-    Wir entwickeln offene Technologie für bessere Städte.
+    {{site.data.meta.introtext.de}}
   {%- endif -%}
   </p>
   <a class="link--button" href="{{site.url}}/about/{{page.lang}}">
