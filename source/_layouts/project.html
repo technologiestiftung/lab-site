@@ -3,7 +3,9 @@ layout: skeleton
 ---
 
 <main class="project project--{{ page.type }} loading"  markdown="1">
+    {%- comment -%}
     <!--  Project header -->
+    {%- endcomment -%}
     {% assign ext = page.path | split: "." | last %}
     {% include project-header.html %}
   {%- if ext == "html" -%}
