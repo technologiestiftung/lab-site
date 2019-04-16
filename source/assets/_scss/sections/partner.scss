@@ -32,4 +32,15 @@
         font-size: $font-size-xl;
         margin-bottom: $spacing-m;
     }
+
+    a {
+        border-bottom: 1px solid $color-publication;
+        color: black;
+        transition: color $time-s;
+
+        &:hover {
+            color: $color-publication;
+            transition: color $time-s;
+        }
+    }
 }

@@ -1548,6 +1548,14 @@ section {
   font-size: 32px;
   margin-bottom: 30px; }
 
+.mission-statement a {
+  border-bottom: 1px solid #2d91d2;
+  color: black;
+  transition: color 0.25s; }
+  .mission-statement a:hover {
+    color: #2d91d2;
+    transition: color 0.25s; }
+
 .timeline {
   display: flex;
   flex-direction: column;
