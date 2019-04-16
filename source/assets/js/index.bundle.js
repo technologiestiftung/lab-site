@@ -8856,51 +8856,67 @@ exports.default = void 0;
 var featProjectsHandler = function featProjectsHandler() {
   var indexCurrent = 0;
   var intervalCurrent = 0;
-  var featProjects = document.querySelectorAll('.featured-list__project');
+  var className = 'collapsed';
+  var intervalNew, intervallCurrent, untoggleAll;
+  var featProjects = document.querySelectorAll('.featured-list__project-subtext');
+  var featProj = document.querySelectorAll('.featured-list__project');
 
-  if (featProjects.length > 0) {
-    (function () {
-      var untoggleAll = function untoggleAll(htmlCollection) {
-        for (var index = 0; index < htmlCollection.length; index++) {
-          var element = htmlCollection[index];
-          element.childNodes[1].classList.remove('hovered');
-        }
-
-        ;
-      };
-
-      var _loop = function _loop(index) {
-        var element = featProjects[index];
-        element.addEventListener('mouseover', function () {
-          clearInterval(intervalCurrent);
-          untoggleAll(featProjects);
-          element.childNodes[1].classList.add('hovered');
-        });
-        element.addEventListener('mouseout', function () {
-          untoggleAll(featProjects);
-          element.childNodes[1].classList.remove('hovered');
-        });
-      };
-
-      for (var index = 0; index < featProjects.length; index++) {
-        _loop(index);
+  if (featProj.length > 0) {
+    untoggleAll = function untoggleAll(htmlCollection) {
+      for (var index = 0; index < htmlCollection.length; index++) {
+        var element = htmlCollection[index];
+        element.classList.add(className);
       }
 
       ;
-      featProjects[indexCurrent].childNodes[1].classList.add('hovered');
-      intervalCurrent = setInterval(function () {
-        if (indexCurrent == featProjects.length) {
-          untoggleAll(featProjects);
-          indexCurrent = 0;
-          featProjects[indexCurrent].childNodes[1].classList.add('hovered');
-          indexCurrent++;
-        } else {
-          untoggleAll(featProjects);
-          featProjects[indexCurrent].childNodes[1].classList.add('hovered');
-          indexCurrent++;
-        }
-      }, 5000);
-    })();
+    };
+
+    var _loop = function _loop(index) {
+      var parent = featProj[index];
+      parent.addEventListener('mouseover', function () {
+        untoggleAll(featProj);
+        clearInterval(intervalCurrent);
+        clearInterval(intervalNew);
+        parent.classList.remove(className);
+      });
+      parent.addEventListener('mouseout', function () {
+        clearInterval(intervalCurrent);
+        clearInterval(intervalNew);
+        untoggleAll(featProj);
+        parent.classList.add(className);
+        intervalNew = setInterval(function () {
+          if (indexCurrent == featProj.length) {
+            untoggleAll(featProj);
+            indexCurrent = 0;
+            featProj[indexCurrent].classList.remove(className);
+            indexCurrent++;
+          } else {
+            untoggleAll(featProj);
+            featProj[indexCurrent].classList.remove(className);
+            indexCurrent++;
+          }
+        }, 4000);
+      });
+    };
+
+    for (var index = 0; index < featProj.length; index++) {
+      _loop(index);
+    }
+
+    ; // featProjects[indexCurrent].childNodes[1].classList.add(className);
+
+    intervalCurrent = setInterval(function () {
+      if (indexCurrent == featProjects.length) {
+        untoggleAll(featProj);
+        indexCurrent = 0;
+        featProj[indexCurrent].classList.remove(className);
+        indexCurrent++;
+      } else {
+        untoggleAll(featProj);
+        featProj[indexCurrent].classList.remove(className);
+        indexCurrent++;
+      }
+    }, 4000);
   }
 };
 
@@ -37777,7 +37793,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56293" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61954" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

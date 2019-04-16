@@ -48,7 +48,7 @@ layout: default
       {% for pg in sorted_pages %}
       {%- if pg.layout == "project" and pg.lang == page.lang and pg.featured == true and pg.visible == true -%}
 
-        <li class="featured-list__project">
+        <li class="featured-list__project collapsed">
           <h3 class="featured-list__project-title {{ pg.type }}">
             <a href="{{site.url}}{{pg.url}}">{{ pg.title }}</a>
           </h3>
