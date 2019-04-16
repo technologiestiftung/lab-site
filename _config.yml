@@ -18,7 +18,7 @@
 # the base hostname & protocol for your site, e.g. http://example.com
 source: source
 url: https://lab.technologiestiftung-berlin.de
-title: Technologiestiftung Berlin
+title: Ideation & Prototyping Lab
 email: roboter@tsb.ara.uberspace.de
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this

@@ -9,7 +9,13 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>{{ page.title }}</title>
+        <title>
+        {%- if page.layout == 'landing' -%}
+          {{site.title}}
+          {%- else -%}
+        {{site.title}} | {{ page.title }}
+        {%- endif -%}
+        </title>
         {%- comment -%}
         <!-- {# Favicon #} -->
         {%- endcomment -%}
