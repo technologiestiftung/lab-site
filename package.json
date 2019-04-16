@@ -12,6 +12,7 @@
     "watch:css": "watch 'npm run build:css' source/assets/_scss source/assets/css/ --filter build-tools/watch-scss-filter.js",
     "dev": "npm-run-all --parallel watch:**",
     "jekyll": "bundle exec jekyll serve  --livereload",
+    "jekyll:static": "bundle exec jekyll serve",
     "watch:js": "parcel watch source/assets/js/index.js --no-cache --out-dir source/assets/js/ --out-file index.bundle.js --public-url .",
     "build:js": "parcel build source/assets/js/index.js --no-cache --out-dir source/assets/js/ --out-file index.bundle.js --public-url .",
     "new-project": "./project-generator/bin/run",
