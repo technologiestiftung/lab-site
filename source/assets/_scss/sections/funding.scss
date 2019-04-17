@@ -19,16 +19,24 @@
     @media only screen and (max-width: $screen-m) {
         flex-direction: column;
     }
+}
 
-    .copy-funding {
-        max-width: 430px;
-        font-size: $font-size-s;
-        line-height: $line-height-title;
-        color: $grey;
 
-        @media only screen and (max-width: $screen-m) {
-            margin: $spacing-xs 0 $spacing-s 0;
-            max-width: 100%;
-        }
+.col {
+    .logo-outer {
+        display: flex; 
+        justify-content: flex-start;
+        margin-top: 5px;
+    }
+}
+
+span.copy-funding {
+    font-size: $font-size-s;
+    color: $grey;
+    line-height: 12px !important;
+
+    @media only screen and (max-width: $screen-m) {
+        margin: $spacing-xs 0 $spacing-s 0;
+        max-width: 100%;
     }
 }

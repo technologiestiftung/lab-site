@@ -21,6 +21,10 @@
     "de":"Gefördert von der Senatsverwaltung für Wirtschaft, Energie und Betriebe und der Investitionsbank Berlin aus den Mitteln des Landes Berlin.",
     "en":"Financial support provided by the Senate Department for Economics, Energy and Public Enterprises and the Investitionsbank Berlin via funds from the State of Berlin."
   },
+  "projectbytext": {
+    "de": "Ein Projekt der",
+    "en": "A project of"
+  },
   "navigation": [
     {
       "name": "start",

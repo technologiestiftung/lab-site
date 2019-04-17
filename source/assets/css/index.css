@@ -1278,15 +1278,20 @@ section {
   @media only screen and (max-width: 768px) {
     .funding {
       flex-direction: column; } }
-  .funding .copy-funding {
-    max-width: 430px;
-    font-size: 12px;
-    line-height: 1.5em;
-    color: #adadad; }
-    @media only screen and (max-width: 768px) {
-      .funding .copy-funding {
-        margin: 5px 0 15px 0;
-        max-width: 100%; } }
+
+.col .logo-outer {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 5px; }
+
+span.copy-funding {
+  font-size: 12px;
+  color: #adadad;
+  line-height: 12px !important; }
+  @media only screen and (max-width: 768px) {
+    span.copy-funding {
+      margin: 5px 0 15px 0;
+      max-width: 100%; } }
 
 .intro-title {
   color: #000000;
@@ -1423,6 +1428,12 @@ section {
         z-index: -1; }
   .featured .link--button {
     margin: 0 15px 0 0; }
+
+section.feed:nth-last-of-type() {
+  margin: 12vw 12vw 90px 12vw; }
+  @media only screen and (max-width: 768px) {
+    section.feed:nth-last-of-type() {
+      margin: 175px 30px 80px 30px; } }
 
 .feed-title {
   color: #000000;
