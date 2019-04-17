@@ -2244,7 +2244,8 @@ section.feed:nth-last-of-type() {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  position: relative; }
+  position: relative;
+  padding-bottom: 50px; }
   .timeline-tooltip {
     position: absolute;
     width: auto;
