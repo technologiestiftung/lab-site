@@ -44,8 +44,9 @@ _Kleine Anfragen_ sind ein Instrument der **parlamentarischen Kontrolle**. Sie b
 Die Anzahl Anfragen steigt jährlich (nur im Wahljahr 2016 war die Anzahl rückläufig). Allein im **Jahr 2018 wurden über 3.000 Anfragen** an die Berliner Verwaltung gestellt. Dabei kann es sich um spezifische Informationen zu konkreten Ereignissen handeln, z.B. [zum Frauenmarsch am 18.2.2018](https://kleineanfragen.de/berlin/18/13668-frauenmarsch-17-februar-2018), oder um allgemeine Datensätze, z.B. [die Klassengrößen an Berliner Schulen](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/17/KlAnfr/ka17-12182.pdf).  
 
 <div id= "word_count_linechart" alt="Liniendiagramm mit Anzahlen an kleinen Anfragen nach Jahren"></div>
-TODO: Format title
-Anzahl Anfragen nach Jahren
+
+{% include macro-subline-markdown.html caption="Anzahl Anfragen nach Jahren" %}
+
 
 Laut einer [amerikanischen Studie](http://sunlightfoundation.com/wp-content/uploads/2018/10/alena-white-paper-PDF.pdf) lässt sich die Menge an Anfragen durch die Bereitstellung offener Daten signifikant reduzieren. Somit ist Open Data nicht nur ein **Transparenzgewinn** für Bürger\*innen und Abgeordnete, sondern **verringert auch den Arbeitsaufwand** für Verwaltungsbeschäftigte, die mit der Beantwortung parlamentarischer Anfragen betraut sind.  
 
@@ -131,12 +132,13 @@ Die Senatsverwaltungen der Bereiche Verkehr & Umwelt, Inneres & Sport, Bildung &
 
 <div id='barchart-wp17' alt="Balkendiagramm zur Aufteilung von kleinen Anfragen nach antwortender Senatsverwaltung für die Wahlperiode 17"></div>
 
-TODO: format title
-Anfragen an Senatsverwaltungen (Wahlperiode 17)
+{% include macro-subline-markdown.html caption="Anfragen an Senatsverwaltungen (Wahlperiode 17)" %}
 
 <div id='barchart-wp18' alt="Balkendiagramm zur Aufteilung von kleinen Anfragen nach antwortender Senatsverwaltung für die Wahlperiode 18"></div>
-TODO: format title
-Anfragen an Senatsverwaltungen (Wahlperiode 18)
+
+{% include macro-subline-markdown.html caption="Anfragen an Senatsverwaltungen (Wahlperiode 18)" %}
+
+
 
 Die **Senatsverwaltung für Inneres & Sport** hat in beiden Wahlperioden mit die meisten Anfragen erhalten. Dabei handelte es sich vor allem um Fragen mit Bezug zu Polizei, Feuerwehr, Kriminalität, Verfassungsschutz und Badebetrieben.
 

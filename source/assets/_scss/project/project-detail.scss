@@ -602,13 +602,35 @@
             margin: 0 0 $spacing-s 0;
             }
         }
+
+        blockquote {
+            p {
+                line-height: 1.5em !important;
+                margin-bottom: 5px;
+
+                &.author {
+                    opacity: 0.5;
+                    font-style: normal;
+                }
+            }
+        }
         
         h1 {
             font-size: $font-size-xl;
+            margin-bottom: 0px;
         }
         
         h2 {
             font-size: $font-size-xl;
+        }
+
+        h3 {
+            margin-bottom: 10px;
+            line-height: 1.4em;
+        }
+
+        h4 {
+            margin-bottom: 0px;
         }
 
 

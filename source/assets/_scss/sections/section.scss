@@ -1,5 +1,5 @@
 section {
-    margin: $spacing-page-m $spacing-page-m $spacing-xl $spacing-page-m;
+    margin: $spacing-page-m $spacing-page-m 90px $spacing-page-m;
 
 
     @media only screen and (max-width: $screen-m) {
@@ -11,6 +11,18 @@ section {
 
         @media only screen and (max-width: $screen-m) {
             margin: 0 $spacing-m 0 $spacing-m;
+        }
+    }
+
+    &.markdown-content:first-of-type, &.html-content:first-of-type {
+        margin: 0 $spacing-page-m $spacing-xl $spacing-page-m;
+    }
+
+    &:first-of-type {
+        margin: $spacing-page-m $spacing-page-m $spacing-xl $spacing-page-m;
+
+        @media only screen and (max-width: $screen-m) {
+            margin: $spacing-xxl $spacing-m 0 $spacing-m;
         }
     }
 }

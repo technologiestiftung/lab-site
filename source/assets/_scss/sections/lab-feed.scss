@@ -14,21 +14,11 @@
     }
     &-list {
 
-        margin-top: $spacing-l;
+        // margin-top: $spacing-l;
 
         &__project {
 
             &.team {
-                .feed-list__project-title {
-                    margin-top: $spacing-ms;
-                }
-                .feed-list__project-date {
-                    margin-top: $spacing-xs;
-                }
-            }
-
-            &.alumni {
-                cursor: auto;
                 .feed-list__project-title {
                     margin-top: $spacing-ms;
                 }
@@ -179,6 +169,18 @@
                 font-size: $font-size-l;
                 margin-top: $spacing-xs;
                 transition: color $time-s;
+            }
+
+
+            &.alumni {
+
+                cursor: auto;
+                .feed-list__project-title {
+                    margin-top: 0px;
+                }
+                .feed-list__project-date {
+                    margin-top: $spacing-xs;
+                }
             }
         }
     }

@@ -1,28 +1,37 @@
 .footer {
     bottom: 0;
     left: 0;
-    margin-bottom: $spacing-ms;
-    padding: 0 $spacing-page-m;
     position: relative;
     width: 100%;
     flex-direction: column;
-    border-bottom: 1px solid $light-grey;
+    border-top: 1px solid $light-grey;
+    margin-top: 30px !important;
 
-    @media only screen and (max-width: $screen-s) {
-        padding: 0 $spacing-m;
-    }
-
+    
     @media only screen and (max-width: $screen-m) {
+        padding: 0 0px;
         flex-direction: column;
-        padding: 0 $spacing-m;
     }
 
     &-outer {
         display: flex;
         justify-content: space-between;
+        border-bottom: 1px solid $light-grey;
+        padding: 20px 0 22px 0;
 
         @media only screen and (max-width: $screen-m) {
             flex-direction: column;
+        }
+
+        .footer-inner {
+            padding: 0 $spacing-page-m;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+            @media only screen and (max-width: $screen-m) {
+                padding: 0 30px;
+            }
         }
     }
 
@@ -66,7 +75,6 @@
 }
 
     .flex-row {
-        padding-bottom: $spacing-s;
 
         @media only screen and (max-width: $screen-s) {
             flex-direction: column;

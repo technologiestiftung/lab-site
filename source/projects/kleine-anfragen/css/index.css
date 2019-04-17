@@ -6,6 +6,10 @@
     font: 14px sans-serif;
     fill: #fff;
   }
+
+  .ticks {
+    
+  }
   
   .link {
     stroke: #aaa;
@@ -29,15 +33,8 @@
   
   .node:hover text {
    font-weight: 900; 
-    display: inline;
   }
-  
-  .track,
-  .track-inset,
-  .track-overlay {
-    stroke-linecap: round;
-  }
-  
+
   .track {
     stroke-opacity: 0.3;
     stroke-width: 10px;
@@ -45,7 +42,7 @@
   
   .track-inset {
     stroke: #ddd;
-    stroke-width: 8px;
+    stroke-width: 2px;
   }
   
   .track-overlay {
