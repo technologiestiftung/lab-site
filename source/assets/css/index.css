@@ -27,8 +27,7 @@ body {
   font-weight: normal;
   letter-spacing: 0.008em;
   min-height: 100vh;
-  position: relative;
-  line-height: 1.8em; }
+  position: relative; }
   body h1,
   body h2,
   body h3,
@@ -1271,27 +1270,31 @@ section {
     flex-direction: row;
     justify-content: space-between;
     width: 100%; }
+    @media only screen and (max-width: 1200px) {
+      .funding-inner {
+        flex-direction: column; } }
     @media only screen and (max-width: 768px) {
       .funding-inner {
-        flex-direction: column;
         padding: 0 30px; } }
   @media only screen and (max-width: 768px) {
     .funding {
       flex-direction: column; } }
 
-.col .logo-outer {
-  display: flex;
-  justify-content: flex-start;
-  margin-top: 5px; }
+.col {
+  margin-bottom: 20px; }
+  .col .logo-outer {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 5px; }
 
 span.copy-funding {
   font-size: 12px;
   color: #adadad;
-  line-height: 12px !important; }
+  line-height: 1.2em; }
   @media only screen and (max-width: 768px) {
     span.copy-funding {
       margin: 5px 0 15px 0;
-      max-width: 100%; } }
+      max-width: 60%; } }
 
 .intro-title {
   color: #000000;
@@ -1754,7 +1757,8 @@ section.feed:nth-last-of-type() {
     display: block;
     font-size: 20px;
     margin-top: 5px;
-    transition: color 0.25s; }
+    transition: color 0.25s;
+    line-height: 1.8em; }
   .team-detail__image {
     flex: 1;
     margin-right: 25px; }

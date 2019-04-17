@@ -162,6 +162,7 @@
         font-size: $font-size-l;
         margin-top: $spacing-xs;
         transition: color $time-s;
+        line-height: $line-height-text;
     }
 
     &__image {

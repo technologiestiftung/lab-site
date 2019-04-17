@@ -10,19 +10,12 @@
         background: white;
         animation: $time-m fadeInFromNone ease;
         display: flex;
-
-
         &__text {
             font-weight: bold;
         }
-
-
-
         &.active {
             opacity: 1;
-        }
-
-        
+        }        
     }
 
     .publication-gradient {

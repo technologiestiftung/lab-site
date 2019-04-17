@@ -27,8 +27,7 @@ body {
   font-weight: normal;
   letter-spacing: 0.008em;
   min-height: 100vh;
-  position: relative;
-  line-height: 1.8em; }
+  position: relative; }
   body h1,
   body h2,
   body h3,
@@ -1861,12 +1860,14 @@ section {
         -ms-flex-pack: justify;
             justify-content: space-between;
     width: 100%; }
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 1200px) {
       .funding-inner {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
             -ms-flex-direction: column;
-                flex-direction: column;
+                flex-direction: column; } }
+    @media only screen and (max-width: 768px) {
+      .funding-inner {
         padding: 0 30px; } }
   @media only screen and (max-width: 768px) {
     .funding {
@@ -1875,23 +1876,25 @@ section {
           -ms-flex-direction: column;
               flex-direction: column; } }
 
-.col .logo-outer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  margin-top: 5px; }
+.col {
+  margin-bottom: 20px; }
+  .col .logo-outer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-top: 5px; }
 
 span.copy-funding {
   font-size: 12px;
   color: #adadad;
-  line-height: 12px !important; }
+  line-height: 1.2em; }
   @media only screen and (max-width: 768px) {
     span.copy-funding {
       margin: 5px 0 15px 0;
-      max-width: 100%; } }
+      max-width: 60%; } }
 
 .intro-title {
   color: #000000;
@@ -2433,7 +2436,8 @@ section.feed:nth-last-of-type() {
     font-size: 20px;
     margin-top: 5px;
     -webkit-transition: color 0.25s;
-    transition: color 0.25s; }
+    transition: color 0.25s;
+    line-height: 1.8em; }
   .team-detail__image {
     -webkit-box-flex: 1;
         -ms-flex: 1;

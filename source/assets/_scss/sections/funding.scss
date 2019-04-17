@@ -6,8 +6,11 @@
         justify-content: space-between;
         width: 100%;
 
-        @media only screen and (max-width: $screen-m) {
+        @media only screen and (max-width: $screen-xl) {
             flex-direction: column;
+        }
+
+        @media only screen and (max-width: $screen-m) {
             padding: 0 30px;
         }
     }
@@ -23,6 +26,7 @@
 
 
 .col {
+    margin-bottom: 20px;
     .logo-outer {
         display: flex; 
         justify-content: flex-start;
@@ -33,10 +37,10 @@
 span.copy-funding {
     font-size: $font-size-s;
     color: $grey;
-    line-height: 12px !important;
+    line-height: $line-height-min;
 
     @media only screen and (max-width: $screen-m) {
         margin: $spacing-xs 0 $spacing-s 0;
-        max-width: 100%;
+        max-width: 60%;
     }
 }
