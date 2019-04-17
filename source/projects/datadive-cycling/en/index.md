@@ -9,6 +9,7 @@ colorMode: bright
 featuredImage: /projects/datadive-cycling/images/featured.jpg
 thumbnail: /projects/datadive-cycling/images/thumbnail.jpg
 heroImage: /projects/datadive-cycling/images/hero.jpg
+socialMediaImage: /projects/datadive-cycling/social_media.jpg
 visible: true
 featured: false
 authors:

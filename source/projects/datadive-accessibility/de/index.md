@@ -9,6 +9,7 @@ colorMode: bright
 featuredImage: /projects/datadive-accessibility/images/featured.jpg
 thumbnail: /projects/datadive-accessibility/images/thumbnail.jpg
 heroImage: /projects/datadive-accessibility/images/hero.jpg
+socialMediaImage: /projects/datadive-accessibility/social_media.jpg
 visible: true
 featured: false
 authors:

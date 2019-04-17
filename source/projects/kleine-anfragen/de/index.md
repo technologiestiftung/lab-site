@@ -9,6 +9,7 @@ colorMode: bright
 featuredImage: /projects/kleine-anfragen/images/featured.jpg
 thumbnail: /projects/kleine-anfragen/images/thumbnail.jpg
 heroImage: /projects/kleine-anfragen/images/hero.jpg
+socialMediaImage: /projects/kleine-anfragen/social_media.jpg
 visible: false
 featured: false
 authors:
@@ -30,6 +31,8 @@ materialsIncluded:
   - name: Source Code
     link: "https://github.com/technologiestiftung/kleine-anfragen"
 ---
+
+# ADD SOCIAL MEDIA IMAGE
 
 Welche Daten der öffentlichen Verwaltung sind für Bürger*innen, Politik und Wirtschaft relevant? Für die Umsetzung von Open Government Data ist die Beantwortung dieser Frage von zentraler Bedeutung. Denn angesichts knapper Ressourcen sind Verwaltungen häufig gezwungen, bei der Datenveröffentlichung Prioritäten zu setzen. Im Rahmen unseres Projekts [ODIS](http://odis-berlin.de/) unterstützen wir Verwaltungen bei der Auswahl und Aufbereitung offener Datensätze, so dass die Frage nach möglichen Mehrwerten auch für uns eine wichtige Rolle spielt. Einige Beispiele, wie Städte von Open Data profitieren können, haben wir [hier](https://lab.technologiestiftung-berlin.de/projects/od-for-cities/index.html) zusammengestellt. Um die Nachfrage nach öffentlichen Daten besser zu verstehen, haben wir nun einen weiteren Ansatz ausprobiert: **Die Analyse von _kleinen Anfragen_ aus dem Berliner Abgeordnetenhaus.**
 

@@ -9,6 +9,7 @@ colorMode: bright
 featuredImage: /projects/fisbroker-to-qgis/images/featured.jpg
 thumbnail: /projects/fisbroker-to-qgis/images/thumbnail.jpg
 heroImage: /projects/fisbroker-to-qgis/images/hero.jpg
+socialMediaImage: /projects/fisbroker-to-qgis/social_media.jpg
 visible: true
 featured: false
 authors:

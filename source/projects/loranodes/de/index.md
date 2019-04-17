@@ -8,6 +8,7 @@ type: prototype
 colorMode: bright
 thumbnail: /projects/loranodes/images/thumbnail.jpg
 heroImage: /projects/loranodes/images/hero.jpg
+socialMediaImage: /projects/loranodes/social_media.jpg
 visible: true
 featured: false
 authors:

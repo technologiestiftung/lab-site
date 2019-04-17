@@ -9,6 +9,7 @@ colorMode: dark
 featuredImage: /projects/iodc-recap/images/featured.jpg
 thumbnail: /projects/iodc-recap/images/thumbnail.jpg
 heroImage: /projects/iodc-recap/images/hero.jpg
+socialMediaImage: /projects/iodc-recap/social_media.jpg
 visible: true
 featured: false
 authors:

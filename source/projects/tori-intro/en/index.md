@@ -7,6 +7,7 @@ subtitle: Welcome to our lab!
 type: publication
 colorMode: bright
 thumbnail: /projects/tori-intro/images/thumbnail.jpg
+socialMediaImage: /projects/tori-intro/social_media.jpg
 visible: true
 featured: false
 authors:

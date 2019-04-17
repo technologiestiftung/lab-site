@@ -101,6 +101,16 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/css/main.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/main-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/css/main.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -187,6 +197,17 @@
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/images/hero.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/images/social_media.jpg": {
+		"ft": 16384,
+		"iS": 76491,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/images/social_media.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,

@@ -12,6 +12,7 @@ colorMode: bright
 featuredImage: /projects/bathing-water/images/featured-badewasser.jpg
 thumbnail: /projects/bathing-water/images/thumbnail.jpg
 heroImage: /projects/bathing-water/images/hero.jpg
+socialMediaImage: /projects/bathing-water/images/social_media.jpg
 visible: true
 featured: true
 authors:

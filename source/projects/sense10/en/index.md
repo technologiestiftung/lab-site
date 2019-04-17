@@ -8,6 +8,7 @@ type: prototype
 colorMode: dark
 thumbnail: /projects/sense10/images/thumbnail.jpg
 heroImage: /projects/sense10/images/sense10.jpg
+socialMediaImage: /projects/sense10/social_media.jpg
 visible: true
 featured: false
 authors:

@@ -8,6 +8,7 @@ type: publication
 colorMode: bright
 thumbnail: /projects/magic-mirror/images/thumbnail.jpg
 heroImage: /projects/magic-mirror/images/MagicMirror1.jpg
+socialMediaImage: /projects/magic-mirror/social_media.jpg
 visible: true
 featured: false
 authors:

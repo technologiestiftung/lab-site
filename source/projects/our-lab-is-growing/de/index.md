@@ -12,6 +12,7 @@ featuredImage:
 # thumbnail path needs to be absolute at the moment
 thumbnail: /projects/our-lab-is-growing/images/thumbnail.jpg
 heroImage: /projects/our-lab-is-growing/images/team_new.jpg #full page url
+socialMediaImage: /projects/our-lab-is-growing/social_media.jpg
 visible: true # if false the project will not be listed
 # somehow needs to be the name in url of the author page
 featured: false

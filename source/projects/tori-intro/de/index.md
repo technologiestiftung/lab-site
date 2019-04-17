@@ -7,6 +7,7 @@ subtitle: Unser neuestes Lab-Mitglied stellt sich vor
 type: publication
 colorMode: bright
 thumbnail: /projects/tori-intro/images/thumbnail.jpg
+socialMediaImage: /projects/tori-intro/social_media.jpg
 visible: true
 featured: false
 authors:

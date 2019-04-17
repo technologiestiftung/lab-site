@@ -9,6 +9,7 @@ colorMode: bright
 featuredImage: /projects/kleine-anfragen/images/featured.jpg
 thumbnail: /projects/kleine-anfragen/images/thumbnail.jpg
 heroImage: /projects/kleine-anfragen/images/hero.jpg
+socialMediaImage: /projects/kleine-anfragen/social_media.jpg
 visible: false
 featured: false
 authors:
@@ -31,6 +32,8 @@ materialsIncluded:
     link: "https://github.com/technologiestiftung/kleine-anfragen"
 
 ---
+
+# ADD SOCIAL MEDIA IMAGE
 
 Which public administration data are relevant to citizens, politics and the economy? For the implementation of Open Government Data, answering this question is of central importance. Given the scarce resources, administrations are often forced to prioritize data publishing. As part of our project [ODIS] (http://odis-berlin.de/) we support administrations in the selection and processing of open datasets, so that the question of possible added values ​​also plays an important role for us. We have put together [here] (https://lab.technologiestiftung-berlin.de/projects/od-for-cities/index.html) some examples of how cities can benefit from Open Data. In order to better understand the demand for public data, we have now tried another approach: **The analysis of _parliamentary requests_ from the Berlin House of Representatives.**
 

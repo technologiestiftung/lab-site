@@ -10,6 +10,7 @@ colorMode: bright
 featuredImage: /projects/crime-atlas/images/featured.jpg
 thumbnail: /projects/crime-atlas/images/thumbnail.jpg
 heroImage: /projects/crime-atlas/images/hero.jpg
+socialMediaImage: /projects/crime-atlas/images/social_media.jpg
 visible: true
 featured: false
 authors:

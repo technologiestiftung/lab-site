@@ -9,6 +9,7 @@ colorMode: dark
 featuredImage: /projects/odis-launch/images/featured.jpg
 thumbnail: /projects/odis-launch/images/thumbnail.jpg
 heroImage: /projects/odis-launch/images/hero.jpg
+socialMediaImage: /projects/odis-launch/social_media.jpg
 visible: true
 featured: false
 authors:

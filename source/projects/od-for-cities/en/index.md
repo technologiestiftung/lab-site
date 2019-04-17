@@ -8,6 +8,7 @@ type: publication
 colorMode: bright
 thumbnail: /projects/od-for-cities/images/thumbnail.jpg
 heroImage: /projects/od-for-cities/images/zuerich.png
+socialMediaImage: /projects/od-for-cities/social_media.jpg
 visible: true
 featured: false
 authors:
