@@ -2248,13 +2248,13 @@ section.feed:nth-last-of-type() {
   .timeline-tooltip {
     position: absolute;
     width: auto;
-    height: 30px;
     background: white;
     -webkit-animation: 0.5s fadeInFromNone ease;
             animation: 0.5s fadeInFromNone ease;
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    padding: 5px; }
     .timeline-tooltip__text {
       font-weight: bold; }
     .timeline-tooltip.active {

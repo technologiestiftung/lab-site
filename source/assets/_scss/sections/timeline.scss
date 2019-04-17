@@ -4,12 +4,13 @@
     position: relative;
 
     &-tooltip {
+        
         position: absolute;
         width: auto;
-        height: 30px;
         background: white;
         animation: $time-m fadeInFromNone ease;
         display: flex;
+        padding:5px;
         &__text {
             font-weight: bold;
         }
