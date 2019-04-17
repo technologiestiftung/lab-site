@@ -1,3 +1,8 @@
+# -*- encoding : utf-8 -*-
+if RUBY_VERSION =~ /2.6/ # assuming you're running Ruby ~2.6
+Encoding.default_external = Encoding::UTF_8
+Encoding.default_internal = Encoding::UTF_8
+end
 source "https://rubygems.org"
 
 # Hello! This is where you manage which Jekyll version is used to run.
@@ -8,9 +13,8 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "html-proofer"
 gem "jekyll", "~> 3.8.5"
-
+gem "html-proofer"
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 # gem "minima", "~> 2.0"
 
@@ -31,4 +35,3 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Performance-booster for watching directories on Windows
 gem "wdm", "~> 0.1.0" if Gem.win_platform?
-
