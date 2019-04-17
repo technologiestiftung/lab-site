@@ -3,7 +3,7 @@ name: Nadine Riede
 uid: nadine-riede
 image: /assets/images/nadine.jpg
 mail: Riede@technologiestiftung-berlin.de
-description: Text über Nadine
+description: " "
 twitter: Nadine Twitter
 github: 
 position: Events & Orgnaisation

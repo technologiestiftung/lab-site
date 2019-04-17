@@ -3,7 +3,7 @@ name: Sara Reichert
 uid: sara-reichert
 image: /assets/images/sara.jpg
 mail: Reichert@technologiestiftung-berlin.de
-description: Text über Sara
+description: " "
 twitter: Sara Twitter
 github: 
 position: Empowerment & Capacity Building
