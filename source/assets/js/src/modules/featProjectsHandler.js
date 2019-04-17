@@ -45,8 +45,7 @@ const featProjectsHandler = () => {
                 }, 4000);
             });
         };
-    
-        // featProjects[indexCurrent].childNodes[1].classList.add(className);
+
     
         intervalCurrent = setInterval(() => { 
             if (indexCurrent == featProjects.length) {
@@ -60,7 +59,10 @@ const featProjectsHandler = () => {
                 indexCurrent++
             }
         }, 4000);
+
+        featProj[0].classList.remove(className);
     }
+
 }
 
 export default featProjectsHandler;

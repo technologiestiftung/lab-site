@@ -11,13 +11,17 @@
     }
 
     &-text {
-        line-height: 1.5em;
+        line-height: 1.35em;
         font-size: $font-size-xl;
-        width: 50%;
+        width: 37%;
 
+
+        @media only screen and (max-width: $screen-xxl) {
+            width: 50%;
+        }
 
         @media only screen and (max-width: $screen-xl) {
-            width: 80%;
+            width: 60%;
         }
 
         @media only screen and (max-width: $screen-l) {
