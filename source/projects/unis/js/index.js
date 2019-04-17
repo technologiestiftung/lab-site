@@ -1,5 +1,5 @@
 var map_chart, bee_chart, tool_tip, table_ranking, brushed_tool_tip, map_chart_berlin, map_chart_berlin_legend, bee_chart_berlin, berlinStudents, berlinStudies, berlinAge,
-rankedByAge, rankedByStudents, rankedByStudies, filterDefault, filterSwitch = 'students', order = 'ascending', unis_berlin, typeGlobal, zoomTimer = 3;
+cell, rankedByAge, studentsSubheadline, tool_tip_berlin, brushed_tool_tip_berlin, tableItem, tableContent, tableItemValue, brush_extent, sumStudentsPercent, sumStudentsPercent, map_chart_legend, rankedByStudents, rankedByStudies, filterDefault, filterSwitch = 'students', order = 'ascending', unis_berlin, typeGlobal, zoomTimer = 3;
 
 if (navigator.userAgent.match(/AppleWebKit/) && ! navigator.userAgent.match(/Chrome/)) {
     if(document)
@@ -18,11 +18,11 @@ scale = d3.scaleLinear()
 var dataGlobal;
 const tau = 2 * Math.PI;
 
-projGer = d3.geoMercator()
+var projGer = d3.geoMercator()
     .scale(1 / tau)
     .translate([0, 0]);
 
-projBerlin = d3.geoMercator()
+var projBerlin = d3.geoMercator()
     .scale(1 / tau)
     .translate([0, 0]);
 
@@ -42,7 +42,7 @@ var calcArea = function(value) {
 } 
 
 
-update = (selection, type) => {
+var update = (selection, type) => {
 
     if (type == 'GER') {
         const filtered = dataGlobal.filter( uni => { 
@@ -71,7 +71,7 @@ update = (selection, type) => {
 
 }
 
-updateTooltip = (data, type) => {
+var updateTooltip = (data, type) => {
     if (type == 'bee') {
         tool_tip.update(data.datum);
         tool_tip_berlin.update(data.datum);
@@ -81,7 +81,7 @@ updateTooltip = (data, type) => {
     }
 }
 
-filterData = (key, data, order = 'descending') => {
+var filterData = (key, data, order = 'descending') => {
     var sorted;
 
     if (order == 'ascending') {
@@ -130,7 +130,7 @@ filterData = (key, data, order = 'descending') => {
     return temp;
 };
 
-rankedData = (key, data, order = 'descending') => {
+var rankedData = (key, data, order = 'descending') => {
     var sorted;
 
     if (order == 'ascending') {
@@ -205,7 +205,7 @@ rankedData = (key, data, order = 'descending') => {
 //     return temp;
 // };
 
-getBerlinUnis = (data) => {
+var getBerlinUnis = (data) => {
     var temp = [];
     data.forEach((uni, index) => {
         if (uni.county == "Berlin") {
@@ -251,12 +251,12 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
         .attr('width', 200)
         .attr('height', 200)
 
-    pointer = overlay.append('img')
+    var pointer = overlay.append('img')
         .attr('src', '../images/zoom.png')
         .attr('width', 54)
         .attr('height', 54)
 
-    hint = overlay.append('span')
+    var hint = overlay.append('span')
         .attr('class', 'hint')
 
     hint.text("Verändere den Bildausschnitt durch scrollen");
@@ -269,7 +269,9 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
 
     mapZoom = d3.zoom()
         .on("zoom", d => {
+
             freeZoom();
+
             zoomTimer -= 1;
 
 
@@ -300,7 +302,7 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
     tile = d3.tile()
         .size([width, height]);
         
-    path = d3.geoPath()
+    var path = d3.geoPath()
         .projection(proj)
         
     map_group = svg
@@ -343,15 +345,19 @@ const mapChart = function (_data, _geojson, _filterFunction, _filterKey, _contai
 
         if (scaleObj.scale > 50000 && type == 'GER') {
             // console.log(svgMap);
-            svgMapGer[0].childNodes[0].childNodes[2].childNodes[0].classList.add('hide')
+            //svgMapGer[0].childNodes[0].childNodes[2].childNodes[0].classList.add('hide')
+            d3.selectAll('.map-unis-germany path.contour').classed('hide', true);
         } else if (scaleObj.scale < 40000 && type == 'GER') {
-            svgMapGer[0].childNodes[0].childNodes[2].childNodes[0].classList.remove('hide')
+            //svgMapGer[0].childNodes[0].childNodes[2].childNodes[0].classList.remove('hide')
+            d3.selectAll('.map-unis-germany path.contour').classed('hide', false);
         } 
 
         if (scaleObj.scale > 350000 && type == 'BER') {
-            svgMapBer[0].childNodes[0].childNodes[2].childNodes[0].classList.add('hide')
+            //svgMapBer[0].childNodes[0].childNodes[2].childNodes[0].classList.add('hide')
+            d3.selectAll('.map-unis-berlin path.contour').classed('hide', true);
         } else if (scaleObj.scale < 200000 && type == 'BER') {
-            svgMapBer[0].childNodes[0].childNodes[2].childNodes[0].classList.remove('hide')
+            d3.selectAll('.map-unis-berlin path.contour').classed('hide', false);
+            //svgMapBer[0].childNodes[0].childNodes[2].childNodes[0].classList.remove('hide')
         } 
 
         proj
@@ -725,7 +731,7 @@ const beeChart = (_data, _filterFunction, _filterKey, _container, _type) => {
             arr.push(uni[filterKey]);
         })
 
-        extent = d3.extent(arr);
+        var extent = d3.extent(arr);
         
         y = d3.scaleLinear()
             .domain([extent[1], extent[0]])
@@ -782,7 +788,7 @@ const beeChart = (_data, _filterFunction, _filterKey, _container, _type) => {
     module.refresh = (id, event) => {
         id = parseInt(id.slice(4,7));
         const selection = type == 'GER' ? d3.selectAll(`circle[id="bee_${id}-ger"]`) : d3.selectAll(`circle[id="bee_${id}-ber"]`);
-        radius = event == 'mouseover' ?  selection.transition().duration(100).attr('r', '6px') : selection.transition().duration(100).attr('r', '2px');
+        (event == 'mouseover') ?  selection.transition().duration(100).attr('r', '6px') : selection.transition().duration(100).attr('r', '2px');
     }
 
     module.update = (selection) => {
@@ -1316,10 +1322,10 @@ d3.queue()
         var countkirchlich = 0;
 
         var privat = unis_berlin.filter(uni => uni.sponsor == 'privat, staatlich anerkannt');
-        var public = unis_berlin.filter(uni => uni.sponsor == 'öffentlich-rechtlich');
+        var publics = unis_berlin.filter(uni => uni.sponsor == 'öffentlich-rechtlich');
         var kirchlich = unis_berlin.filter(uni => uni.sponsor == 'kirchlich, staatlich anerkannt');
         privat.forEach(uni => { countPrivat += uni.count_students })
-        public.forEach(uni => { countPublic += uni.count_students })
+        publics.forEach(uni => { countPublic += uni.count_students })
         kirchlich.forEach(uni => { countkirchlich += uni.count_students })
                 
         map_chart = mapChart(unis, germany, '', filterKey, d3.select('#map_Chart'), projGer, 'GER');
@@ -1348,13 +1354,18 @@ d3.queue()
         table_ranking.init();
         table_ranking.update('count_students', filterDefault);
         table_ranking.updateBerlin('count_students', berlinStudents);
+
+        setTimeout(() => {
+            btnOldest.click();
+            btnSortOrder.click();
+        }, 1000)
     })
 
-round = (value) => {
+var round = (value) => {
     return Math.round(value * 100) / 100;
 }
 
-numberFormat = (num) => {
+var numberFormat = (num) => {
     var y = num.toString().split('.');
     if(num > 9999) {y[0] = y[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');}
     return y.join(',');
@@ -1431,8 +1442,3 @@ btnDiverse.addEventListener('click', () => {
     buttons.classed('active', false);
     d3.select('#filter--diverse').classed("active", d3.select('#filter--diverse').classed("active") ? false : true);
 });
-
-setTimeout(() => {
-    btnOldest.click();
-    btnSortOrder.click();
-}, 1000)

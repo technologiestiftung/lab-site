@@ -224,12 +224,12 @@
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
+		"mi": 0,
 		"oA": 0,
 		"oAP": "/js/index-min.js",
 		"oF": 0,
 		"sC": 3,
-		"tS": 0
+		"tS": 1
 		},
 	"/js/index_en.js": {
 		"bF": 0,
@@ -240,7 +240,7 @@
 		"oAP": "/js/index_en-min.js",
 		"oF": 0,
 		"sC": 3,
-		"tS": 0
+		"tS": 1
 		},
 	"/js/index_en_transpiled.js": {
 		"bF": 0,

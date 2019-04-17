@@ -1,5 +1,5 @@
 var map_chart, bee_chart, tool_tip, table_ranking, brushed_tool_tip, map_chart_berlin, map_chart_berlin_legend, bee_chart_berlin, berlinStudents, berlinStudies, berlinAge,
-rankedByAge, rankedByStudents, rankedByStudies, filterDefault, filterSwitch = 'students', order = 'ascending', unis_berlin, typeGlobal, zoomTimer = 3;
+cell, rankedByAge, studentsSubheadline, tool_tip_berlin, brushed_tool_tip_berlin, tableItem, tableContent, tableItemValue, brush_extent, sumStudentsPercent, sumStudentsPercent, map_chart_legend, rankedByStudents, rankedByStudies, filterDefault, filterSwitch = 'students', order = 'ascending', unis_berlin, typeGlobal, zoomTimer = 3;
 
 if (navigator.userAgent.match(/AppleWebKit/) && ! navigator.userAgent.match(/Chrome/)) {
     if(document)
@@ -18,11 +18,11 @@ scale = d3.scaleLinear()
 var dataGlobal;
 const tau = 2 * Math.PI;
 
-projGer = d3.geoMercator()
+var projGer = d3.geoMercator()
     .scale(1 / tau)
     .translate([0, 0]);
 
-projBerlin = d3.geoMercator()
+var projBerlin = d3.geoMercator()
     .scale(1 / tau)
     .translate([0, 0]);
 
@@ -42,7 +42,7 @@ var calcArea = function(value) {
 } 
 
 
-update = (selection, type) => {
+var update = (selection, type) => {
 
     if (type == 'GER') {
         const filtered = dataGlobal.filter( uni => { 
@@ -71,7 +71,7 @@ update = (selection, type) => {
 
 }
 
-updateTooltip = (data, type) => {
+var updateTooltip = (data, type) => {
     if (type == 'bee') {
         tool_tip.update(data.datum);
         tool_tip_berlin.update(data.datum);
@@ -81,7 +81,7 @@ updateTooltip = (data, type) => {
     }
 }
 
-filterData = (key, data, order = 'descending') => {
+var filterData = (key, data, order = 'descending') => {
     var sorted;
 
     if (order == 'ascending') {
@@ -130,7 +130,7 @@ filterData = (key, data, order = 'descending') => {
     return temp;
 };
 
-rankedData = (key, data, order = 'descending') => {
+var rankedData = (key, data, order = 'descending') => {
     var sorted;
 
     if (order == 'ascending') {
@@ -755,7 +755,7 @@ const beeChart = (_data, _filterFunction, _filterKey, _container, _type) => {
     module.refresh = (id, event) => {
         id = parseInt(id.slice(4,7));
         const selection = type == 'GER' ? d3.selectAll(`circle[id="bee_${id}-ger"]`) : d3.selectAll(`circle[id="bee_${id}-ber"]`);
-        radius = event == 'mouseover' ?  selection.transition().duration(100).attr('r', '6px') : selection.transition().duration(100).attr('r', '2px');
+        event == 'mouseover' ?  selection.transition().duration(100).attr('r', '6px') : selection.transition().duration(100).attr('r', '2px');
     }
 
     module.update = (selection) => {
@@ -1288,10 +1288,10 @@ d3.queue()
         var countkirchlich = 0;
 
         var privat = unis_berlin.filter(uni => uni.sponsor == 'private');
-        var public = unis_berlin.filter(uni => uni.sponsor == 'public');
+        var publics = unis_berlin.filter(uni => uni.sponsor == 'public');
         var kirchlich = unis_berlin.filter(uni => uni.sponsor == 'by church');
         privat.forEach(uni => { countPrivat += uni.count_students })
-        public.forEach(uni => { countPublic += uni.count_students })
+        publics.forEach(uni => { countPublic += uni.count_students })
         kirchlich.forEach(uni => { countkirchlich += uni.count_students })
                 
         map_chart = mapChart(unis, germany, '', filterKey, d3.select('#map_Chart'), projGer, 'GER');
