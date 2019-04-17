@@ -14,7 +14,7 @@ const numberFormat = (x) => {
 
 var Chart = (function(window, d3) {
 
-    var ready = false, svg, chartWrapper, category, circle, values, logValueScale, data, margin, sector, circleGroup, categories, labelsYear, marker, label, countMinMax, svgLegend, svgLegendCanvas, labelYear, xAxis, xScale, x, tooltip, swoopyArrow, swoopyText, hoverCircle, clientWidth, radiusLegend,
+    var ready = false, svg, chartWrapper, category, circle, values, legendWrapper, moneyMinMax, wrapperText, posY2, logValueScale, data, margin, sector, circleGroup, categories, labelsYear, marker, label, countMinMax, svgLegend, svgLegendCanvas, labelYear, xAxis, xScale, x, tooltip, swoopyArrow, swoopyText, hoverCircle, clientWidth, radiusLegend,
     posX1, posX2, posY1, PosY2,
 
     once = true,
