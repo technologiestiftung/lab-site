@@ -1,3 +1,5 @@
+/*globals d3 */
+
 const histodots = (params) => {
 
   let module = {},

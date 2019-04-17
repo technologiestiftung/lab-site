@@ -1,3 +1,5 @@
+/*globals d3 */
+
 const lineChart = (params) => {
 
   let module = {},
