@@ -59,6 +59,7 @@
 
         @media only screen and (max-width: $screen-xl) {
             background-size: 37px;
+            padding-left: 55px;
         }
 
         
@@ -66,7 +67,9 @@
             display: block;
 
             @media only screen and (max-width: $screen-xl) {
-                display: none
+                &.foundation__line{
+                    display: none
+                }
             }
 
             .bold {

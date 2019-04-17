@@ -1076,11 +1076,12 @@ section {
     white-space: nowrap; }
     @media only screen and (max-width: 1200px) {
       .navigation-logo {
-        background-size: 37px; } }
+        background-size: 37px;
+        padding-left: 55px; } }
     .navigation-logo__line {
       display: block; }
       @media only screen and (max-width: 1200px) {
-        .navigation-logo__line {
+        .navigation-logo__line.foundation__line {
           display: none; } }
       .navigation-logo__line .bold {
         font-weight: bold; }
