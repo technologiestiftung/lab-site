@@ -1455,6 +1455,9 @@ section.feed:nth-last-of-type() {
 .feed-list__project.team .feed-list__project-date {
   margin-top: 5px; }
 
+.feed-list__project.dataset .project-image__outer {
+  background-color: rgba(230, 0, 50, 0.8); }
+
 .feed-list__project.dataset .project-image {
   background-color: rgba(230, 0, 50, 0.6); }
   .feed-list__project.dataset .project-image:hover {
@@ -1465,6 +1468,9 @@ section.feed:nth-last-of-type() {
   @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
     .feed-list__project.dataset .project-image {
       box-shadow: inset 0 0 0 2000px rgba(230, 0, 50, 0.4); } }
+
+.feed-list__project.workshop .project-image__outer {
+  background-color: #dcc82d; }
 
 .feed-list__project.workshop .project-image {
   background-color: rgba(220, 200, 45, 0.6); }
@@ -1477,6 +1483,9 @@ section.feed:nth-last-of-type() {
     .feed-list__project.workshop .project-image {
       box-shadow: inset 0 0 0 2000px rgba(220, 200, 45, 0.4); } }
 
+.feed-list__project.publication .project-image__outer {
+  background-color: #2d91d2; }
+
 .feed-list__project.publication .project-image {
   background-color: rgba(45, 145, 210, 0.6); }
   .feed-list__project.publication .project-image:hover {
@@ -1487,6 +1496,9 @@ section.feed:nth-last-of-type() {
   @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
     .feed-list__project.publication .project-image {
       box-shadow: inset 0 0 0 2000px rgba(45, 145, 210, 0.4); } }
+
+.feed-list__project.prototype .project-image__outer {
+  background-color: #41b496; }
 
 .feed-list__project.prototype .project-image {
   background-color: rgba(65, 180, 150, 0.6); }
@@ -1511,6 +1523,11 @@ section.feed:nth-last-of-type() {
     position: relative;
     width: 100%;
     padding-bottom: 100%; }
+  @supports (-ms-ime-align: auto) {
+    .feed-list__project .project-image {
+      opacity: 0.8; }
+      .feed-list__project .project-image:hover {
+        opacity: 0.6; } }
 
 .feed-list__project:hover .img-wrapper img:last-of-type {
   opacity: 0; }

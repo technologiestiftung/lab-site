@@ -36,6 +36,9 @@ section.feed:nth-last-of-type() {
             }
 
             &.dataset {
+                .project-image__outer{
+                    background-color: $color-dataset-80;
+                }
                 .project-image {
                     &:hover {
                         background-color: $color-dataset-80;
@@ -51,6 +54,9 @@ section.feed:nth-last-of-type() {
             }
 
             &.workshop {
+                .project-image__outer{
+                    background-color: $color-workshop;
+                }
                 .project-image {
                     &:hover {
                         background-color: $color-workshop;
@@ -66,6 +72,9 @@ section.feed:nth-last-of-type() {
             }
 
             &.publication {
+                .project-image__outer{
+                    background-color: $color-publication;
+                }
                 .project-image {
                     &:hover {
                         background-color: $color-publication;
@@ -81,6 +90,9 @@ section.feed:nth-last-of-type() {
             }
 
             &.prototype {
+                .project-image__outer{
+                    background-color: $color-prototype;
+                }
                 .project-image {
                     
                     &:hover {
@@ -101,6 +113,14 @@ section.feed:nth-last-of-type() {
                     position: relative;
                     width: 100%;
                     padding-bottom: 100%;
+                }
+
+                @supports (-ms-ime-align: auto) {
+                    opacity: 0.8;
+
+                    &:hover{
+                        opacity: 0.6;
+                    }
                 }
 
                 height: 100%;
