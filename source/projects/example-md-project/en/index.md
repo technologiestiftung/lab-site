@@ -29,11 +29,14 @@ colorMode: bright
 # all paths should be absolut to the root of the source folder
 featuredImage: /projects/example-html-project/images/feature.png
 
-# REQUIRED: thumbnail path needs to be absolute at the moment. Also the image needs to be a quadrat 128 × 128
+# REQUIRED: thumbnail path needs to be absolute at the moment. Also the image needs to be a square 128 × 128
 thumbnail: /projects/example-html-project/images/thumbnail.png
 
-# REQUIRED: heo image path needs to be absolute at the moment. Also the image needs to be a aize …
+# REQUIRED: hero image path needs to be absolute at the moment. Also the image needs to be a a size of @fdnklg ???
 heroImage: /assets/images/placeholder.png #full page url
+
+# If the socialMediaImage key is not present it will use the default image
+# socialMediaImage: /assets/images/placeholder.png #full page url
 
 # if the post should be visible in the feed. You still can access it
 # DEFAULT?
