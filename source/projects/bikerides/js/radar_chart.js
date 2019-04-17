@@ -299,6 +299,8 @@ class Radarchart {
             this.title.append('text')
                 .text(this.titleName)
                 .classed('title', true)
+        }).catch(e=>{
+            throw e;
         })
 
         this.svg.select('.title-wrapper')

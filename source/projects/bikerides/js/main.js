@@ -300,6 +300,8 @@ function createWrapper() {
 
 d3.json('../assets/names_dict.json').then(data => {
     names_dict = data;
+}).catch(e=>{
+    throw e;
 })
 
 function createTooltipLineChart() {
@@ -610,6 +612,8 @@ function updateChart(file, config_new) {
                 radarChart[fi].updateGraphics(data[file][config_new.year], config_new);
             }
         })
+    }).catch(e=>{
+        throw e;
     })
 }
 
@@ -678,6 +682,8 @@ function renderChart(file, config_new) {
                 }
             })
         })
+    }).catch(e=>{
+        throw e;
     })
 };
 
@@ -699,6 +705,8 @@ function exampleChart(file, year, station, config_current, id) {
 
         radar_chart_week[id] = new Radarchart(data_station, config_current);
         radar_chart_week[id].init(id, station);
+    }).catch(e=>{
+        throw e;
     })
 
 }
@@ -876,6 +884,8 @@ function createStackedArea(file) {
             zero_based:true,
             width:wrapper_width
           })
+    }).catch(e=>{
+        throw e;
     })
 }
 
