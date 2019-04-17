@@ -1,6 +1,8 @@
 const filepath = "../assets/all_years.json";
 const filepath_v2 = "../assets/structure.json";
 
+let year_transformed;
+
 const values_array = ['Skalierung','Absolut', 'Relativ Median', 'Relativ Max'];
 const years_array = ['Jahr', 2017, 2016, 2015, 2014, 2013, 2012];
 const months_array = [0,1,2,3,4,5,6,7,8,9,10,11];
