@@ -300,6 +300,7 @@ class Radarchart {
                 .text(this.titleName)
                 .classed('title', true)
         }).catch(e=>{
+            console.log(303);
             throw e;
         })
 
