@@ -7,7 +7,12 @@
 {%- if page.layout == 'landing' -%}
     {%- assign title = site.data.meta.title.en -%}
   {%- else -%}
+    {%- if page.title -%}
     {%- assign title = site.data.meta.title.en | append: " | " | append: page.title  -%}
+    {%- else -%}
+    {%- assign title = site.data.meta.title.en -%}
+      code2
+    {%- endif -%}
 {%- endif -%}
 {%- comment -%}Get the description of the site or if it is a project of the page{%- endcomment -%}
 {%- if page.layout == 'project' -%}
