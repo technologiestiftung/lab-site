@@ -228,7 +228,7 @@ class Timeline {
     	});
 
         var height = 60 / this.vars.swimlanes.length;
-        console.log('inside timeline!')
+        // console.log('inside timeline!')
         height = Math.min(height, Infinity);
                 
     	this.vars.swimlanes.forEach( (lane, i) => {

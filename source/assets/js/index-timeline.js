@@ -28751,8 +28751,8 @@ function () {
       this.vars.processedTimelines.forEach(function (band) {
         _this4.findlane(band);
       });
-      var height = 60 / this.vars.swimlanes.length;
-      console.log('inside timeline!');
+      var height = 60 / this.vars.swimlanes.length; // console.log('inside timeline!')
+
       height = Math.min(height, Infinity);
       this.vars.swimlanes.forEach(function (lane, i) {
         lane.forEach(function (band) {

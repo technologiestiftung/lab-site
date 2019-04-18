@@ -1792,6 +1792,8 @@ section.feed:nth-last-of-type() {
       margin: 4px 10px 0 0; }
   .team-detail__description {
     flex: 1; }
+    .team-detail__description--text {
+      line-height: 1.8em; }
     .team-detail__description--name {
       font-weight: bold;
       font-size: 32px;
