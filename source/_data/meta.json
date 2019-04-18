@@ -1,4 +1,8 @@
 {
+  "title":{
+    "de": "Ideation & Prototyping Lab",
+    "en": "Ideation & Prototyping Lab"
+  },
   "missionStatement":{
     "title":{
       "de": "Leitbild",
@@ -9,7 +13,7 @@
       "en": "The Ideation & Prototyping Lab is the development space of the <a href ='https://www.technologiestiftung-berlin.de'> Technologiestiftung Berlin</a>. We develop and test digital tools and solutions in order to shape digital change in Berlin together with administrations, science and urban society."
     }
   },
-  "decription":{
+  "description":{
     "en":"We are exploring and prototyping digital tools in order to collaboratively shape Berlin’s future for citizens, the local government and the industry. #OpenData #OpenSource #OpenInnovation",
     "de":"Wir erforschen und erproben digitale Werkzeuge um gemeinsam mit Bürger*innen, Verwaltung und Unternehmen die Zukunft Berlins zu gestalten. #OpenData #OpenSource #OpenInnovation"
   },

@@ -18,7 +18,7 @@
 # the base hostname & protocol for your site, e.g. http://example.com
 source: source
 url: https://lab.technologiestiftung-berlin.de
-title: Ideation & Prototyping Lab
+title: Ideation & Prototyping Lab DEPRECATED USE site.data.meta.title
 email: roboter@tsb.ara.uberspace.de
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -39,7 +39,6 @@ defaults:
       path: "" # an empty string here means all files in the project
     values:
       lang: "de"
-      description: "Awesome Things Happening here"
   -
     scope:
       path: ""
