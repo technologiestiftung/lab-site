@@ -426,7 +426,7 @@ h4 {
   border-radius: 4px;
   display: inline-block;
   margin-top: 30px;
-  padding: 7px 12px 9px 12px;
+  padding: 12px 12px 14px 12px;
   transition: background 0.25s, color 0.25s;
   user-select: none; }
   .link--button:hover {
@@ -1449,6 +1449,9 @@ section.feed:nth-last-of-type() {
     .feed-title {
       font-size: 12px; } }
 
+.feed-list__project-title {
+  line-height: 1.5em; }
+
 .feed-list__project.team .feed-list__project-title {
   margin-top: 20px; }
 
@@ -1889,9 +1892,6 @@ section.feed:nth-last-of-type() {
     font-size: 12px;
     margin: 0;
     padding: 0; }
-    @media only screen and (max-width: 768px) {
-      .project blockquote {
-        padding: 0 2.5vw; } }
     .project blockquote p {
       font-size: 24px;
       font-style: italic;
@@ -2041,10 +2041,15 @@ section.feed:nth-last-of-type() {
     max-width: 100%;
     width: 100%; }
   .project-image__subtitle {
-    color: #5e5e5e;
+    opacity: .5;
     font-style: italic;
-    margin-top: 5px;
-    text-align: center; }
+    margin-top: 15px;
+    text-align: center;
+    line-height: 1.5em; }
+    @media screen and (max-width: 1024px) {
+      .project-image__subtitle {
+        margin-top: 15px;
+        font-size: 12px; } }
   .project-columns {
     display: grid;
     grid-gap: 50px;

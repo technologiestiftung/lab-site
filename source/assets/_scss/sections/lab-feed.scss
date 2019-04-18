@@ -26,6 +26,10 @@ section.feed:nth-last-of-type() {
 
         &__project {
 
+            &-title {
+                line-height: $line-height-title;
+            }
+
             &.team {
                 .feed-list__project-title {
                     margin-top: $spacing-ms;

@@ -20,7 +20,7 @@
         padding: 0;
 
         @media only screen and (max-width: $screen-m) {
-            padding: 0 $spacing-page-xs;
+            // padding: 0 $spacing-page-xs;
         }
 
         p {
@@ -251,10 +251,16 @@
         }
 
         &__subtitle {
-            color: $dark-grey;
+            opacity: .5;
             font-style: italic;
-            margin-top: $spacing-xs;
+            margin-top: $spacing-s;
             text-align: center;
+            line-height: $line-height-title;
+
+            @media screen and (max-width: $screen-l) {
+                margin-top: $spacing-s;
+                font-size: $font-size-s;
+            }
         }
     }
 
