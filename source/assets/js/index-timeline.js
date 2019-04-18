@@ -28794,7 +28794,10 @@ function () {
       this.vars.types.forEach(function (type) {
         var legendTypeWrapper = _this6.vars.legend.append('div').classed("".concat(type, "-legend-wrapper legend-wrapper"), true);
 
-        legendTypeWrapper.append('span').classed('legend__description', true).text(type).attr('style', "font: 16px plex-mono; color: ".concat(_this6.vars.colors[type], ";"));
+        var labelWrapper = legendTypeWrapper.append('div').classed('label-wrapper', true);
+        labelWrapper.append('div').classed('indicator', true).attr('style', "background: ".concat(_this6.vars.colors[type], ";"));
+        type = type == 'publication' ? 'article' : type;
+        labelWrapper.append('span').classed('legend__description', true).text(type);
       });
     }
   }, {
