@@ -1,21 +1,65 @@
+{%- comment -%} Preemtive checks for data {%- endcomment -%}
+{%- if page.socialMediaImage -%}
+{%- assign socialMediaImage = page.socialMediaImage -%}
+  {%- else -%}
+{%- assign socialMediaImage = "/icons/social_media.jpg" -%}
+{%- endif -%}
+
+{%- if page.layout == 'landing' -%}
+    {%- assign title = site.data.meta.title.en -%}
+  {%- else -%}
+    {%- assign title = site.data.meta.title.en | append: " | " | append: page.title  -%}
+{%- endif -%}
+
+{%- comment -%}
+Get the description of the site or if it is a project of the page
+{%- endcomment -%}
+{%- if page.layout == 'project' -%}
+{%- comment -%}we have a project{%- endcomment -%}
+<!-- project -->
+  {%- if page.description -%}
+    {%- assign description = page.description -%}
+  {%- else -%}
+    {%- if page.lang == 'de' -%}
+    {%- assign description = site.data.meta.description.de -%}
+    {%- else -%}
+    {%- assign description = site.data.meta.description.en -%}
+    {%- endif -%}
+  {%- endif -%}
+
+{%- else -%}
+<!-- not project -->
+  {%- if page.description  -%}
+    {%- assign description = page.description -%}
+  {%- else -%}
+    {%- if page.lang =='de' -%}
+      {%- assign description = site.data.meta.description.de -%}
+<!-- not project de -->
+    {%- else -%}
+<!-- not project de en -->
+
+      {%- assign description = site.data.meta.description.en -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endif -%}
+
+{%- comment -%}
+
+███████╗████████╗ █████╗ ██████╗ ████████╗
+██╔════╝╚══██╔══╝██╔══██╗██╔══██╗╚══██╔══╝
+███████╗   ██║   ███████║██████╔╝   ██║
+╚════██║   ██║   ██╔══██║██╔══██╗   ██║
+███████║   ██║   ██║  ██║██║  ██║   ██║
+╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝
+{%- endcomment -%}
+
 <!DOCTYPE html>
 <html lang="{{ page.lang }}">
-{%- if page.socialMediaImage == null -%}
-{%- assign socialMediaImage = "/icons/social_media.jpg" -%}
-  {%- else -%}
-{%- assign socialMediaImage = page.socialMediaImage -%}
-  {%- endif -%}
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>
-        {%- if page.layout == 'landing' -%}
-          {{site.title}}
-          {%- else -%}
-        {{site.title}} | {{ page.title }}
-        {%- endif -%}
-        </title>
+        <title>{{ title }}</title>
         {%- comment -%}
         <!-- {# Favicon #} -->
         {%- endcomment -%}
@@ -24,17 +68,13 @@
         <!-- FACEBOOK -->
         {%- endcomment -%}
         <meta property="fb:app_id" content="487094758334595">
-        <meta property="og:url" content="{{site.url}}">
+        <meta property="og:url" content="{{ site.url }}">
         <meta property="og:type" content="website">
-        <meta property="og:title" content="Ideation &amp; Prototyping Lab">
-          <meta property="og:image" content="{{socialMediaImage}}">
+        <meta property="og:title" content="{{ title }}">
+          <meta property="og:image" content="{{ socialMediaImage }}">
 
-        <meta property="og:description" content="{%- if page.lang == 'de' -%}
-          {{site.data.meta.decription.de}}
-          {%- else -%}
-          {{site.data.meta.decription.en}}
-        {%- endif -%}">
-        <meta property="og:site_name" content="Ideation &amp; Prototyping Lab">
+        <meta property="og:description" content="{{ description }}">
+        <meta property="og:site_name" content="{{ title }}">
         <meta property="article:author" content="Sebastian Meier">
 
         {%- comment -%}
@@ -43,29 +83,21 @@
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@TSBBerlin">
         <meta name="twitter:creator" content="@seb_meier">
-        <meta name="twitter:url" content="{{site.url}}">
-        <meta name="twitter:title" content="Ideation &amp; Prototyping Lab">
-        <meta name="twitter:description" content="{%- if page.lang == 'de' -%}
-          {{site.data.meta.decription.de}}
-          {%- else -%}
-          {{site.data.meta.decription.en}}
-        {%- endif -%}">
-        <meta name="twitter:image" content="{{socialMediaImage}}">
+        <meta name="twitter:url" content="{{ site.url }}">
+        <meta name="twitter:title" content="{{ title }}">
+        <meta name="twitter:description" content="{{ description }}">
+        <meta name="twitter:image" content="{{ socialMediaImage }}">
 
           {%- comment -%}
           <!-- GOOGLE+/SCHEMA.ORG -->
           {%- endcomment -%}
-          <meta itemprop="name" content="Ideation &amp; Prototyping Lab">
-        <meta itemprop="description" content="{%- if page.lang == 'de' -%}
-          {{site.data.meta.decription.de}}
-          {%- else -%}
-          {{site.data.meta.decription.en}}
-        {%- endif -%}">
-        <meta itemprop="image" content="{{socialMediaImage}}">
+          <meta itemprop="name" content="{{ title }}">
+        <meta itemprop="description" content="{{ description }}">
+        <meta itemprop="image" content="{{ socialMediaImage }}">
         {%- comment -%}
         <!-- CANONICAL URL -->
         {%- endcomment -%}
-        <link rel="canonical" href="{{site.url}}">
+        <link rel="canonical" href="{{ site.url }}">
         {%- if jekyll.environment == 'production' -%}
         <link rel="stylesheet" type="text/css" href="/assets/css/index.min.css" />
         {%- else -%}
@@ -73,10 +105,10 @@
         {%- endif -%}
         <link rel="stylesheet" type="text/css" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.8/tiny-slider.css" />
         {%- if page.layout == "project" -%}
-{%- comment -%}
+        {%- comment -%}
         <!-- include assets only for projets.
             all assets should be realtive to project folder-->
-{%- endcomment -%}
+        {%- endcomment -%}
         {%- if page.assets  -%}
        {%- comment -%}
         <!-- we have assets -->
@@ -86,7 +118,7 @@
             <!-- we have css -->
           {%- endcomment -%}
             {%- for cssfile in page.assets.css -%}
-            <link rel="stylesheet" type="text/css" type="text/css" href="{{cssfile}}" />
+            <link rel="stylesheet" type="text/css" type="text/css" href="{{ cssfile }}" />
             {%- endfor -%}
             {%- comment -%}
             <!-- end of css -->
@@ -109,7 +141,7 @@
         {%- endcomment -%}
         {% include navigation.html %}
 
-        {{content}}
+        {{ content }}
 
         {%- comment -%}
         <!-- {# Footer #} -->
@@ -135,7 +167,7 @@
             <!-- we have js assets -->
             {%- endcomment -%}
                 {%- for jsfile in page.assets.js -%}
-                <script src="{{jsfile}}" type="text/javascript" defer></script>
+                <script src="{{ jsfile }}" type="text/javascript" defer></script>
                 {%- endfor -%}
             {%- endif -%}
         {%- endif -%}
@@ -160,6 +192,5 @@
 </script>
 <noscript><p><img src="//piwik.technologiestiftung-berlin.de/piwik.php?idsite=5" style="border:0;" alt="" /></p></noscript>
 <!-- End MATOMO Code -->
-
     </body>
 </html>
