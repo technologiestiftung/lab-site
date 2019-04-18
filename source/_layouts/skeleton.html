@@ -4,19 +4,14 @@
   {%- else -%}
 {%- assign socialMediaImage = "/icons/social_media.jpg" -%}
 {%- endif -%}
-
 {%- if page.layout == 'landing' -%}
     {%- assign title = site.data.meta.title.en -%}
   {%- else -%}
     {%- assign title = site.data.meta.title.en | append: " | " | append: page.title  -%}
 {%- endif -%}
-
-{%- comment -%}
-Get the description of the site or if it is a project of the page
-{%- endcomment -%}
+{%- comment -%}Get the description of the site or if it is a project of the page{%- endcomment -%}
 {%- if page.layout == 'project' -%}
 {%- comment -%}we have a project{%- endcomment -%}
-<!-- project -->
   {%- if page.description -%}
     {%- assign description = page.description -%}
   {%- else -%}
@@ -28,23 +23,21 @@ Get the description of the site or if it is a project of the page
   {%- endif -%}
 
 {%- else -%}
-<!-- not project -->
-  {%- if page.description  -%}
+{%- comment -%} not project {%- endcomment -%}
+{%- if page.description  -%}
     {%- assign description = page.description -%}
   {%- else -%}
     {%- if page.lang =='de' -%}
       {%- assign description = site.data.meta.description.de -%}
-<!-- not project de -->
+    {%- comment -%}not project de {%- endcomment -%}
     {%- else -%}
-<!-- not project de en -->
-
+    {%- comment -%}not project de en{%- endcomment -%}
       {%- assign description = site.data.meta.description.en -%}
     {%- endif -%}
   {%- endif -%}
 {%- endif -%}
 
 {%- comment -%}
-
 ███████╗████████╗ █████╗ ██████╗ ████████╗
 ██╔════╝╚══██╔══╝██╔══██╗██╔══██╗╚══██╔══╝
 ███████╗   ██║   ███████║██████╔╝   ██║
