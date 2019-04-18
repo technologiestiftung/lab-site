@@ -5,13 +5,13 @@
     padding-bottom:50px;
 
     &-tooltip {
-
         position: absolute;
         width: auto;
         background: white;
         animation: $time-m fadeInFromNone ease;
         display: flex;
         padding:5px;
+        
         &__text {
             font-weight: bold;
         }
@@ -47,17 +47,49 @@
         width: 100%;
 
         display: flex;
-        justify-content: flex-end; 
+        justify-content: flex-end;
+        
+        @media screen and (max-width: $screen-m) {
+            justify-content: flex-start;
+        }
+        
+        @media screen and (max-width: $screen-s) {
+            flex-direction: column;
+            justify-content: flex-start;
+        }
 
         &-wrapper {
             margin-right: $spacing-m;
+
+            .indicator {
+                width: 7px;
+                height: 7px;
+                // border-radius: 100px;
+                transform: translateY(4px);
+                margin-right: 5px;
+            }
+
+            .label-wrapper {
+                display: flex;
+                flex-direction: row;
+                @media screen and (max-width: $screen-s) {
+                    margin-bottom: 5px;
+                }
+            }
+
+            .legend__description {
+                font-size: $font-size-s;
+                font-family: 'plex-mono';
+
+                @media screen and (max-width: $screen-m) {
+                    font-size: $font-size-s;
+                }
+            }
 
             &:last-of-type {
                 margin-right: 0;
             }
         }
-
-
     }
 
     .tick {

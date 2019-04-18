@@ -1646,8 +1646,32 @@ section.feed:nth-last-of-type() {
     width: 100%;
     display: flex;
     justify-content: flex-end; }
+    @media screen and (max-width: 768px) {
+      .timeline .legend {
+        justify-content: flex-start; } }
+    @media screen and (max-width: 520px) {
+      .timeline .legend {
+        flex-direction: column;
+        justify-content: flex-start; } }
     .timeline .legend-wrapper {
       margin-right: 30px; }
+      .timeline .legend-wrapper .indicator {
+        width: 7px;
+        height: 7px;
+        transform: translateY(4px);
+        margin-right: 5px; }
+      .timeline .legend-wrapper .label-wrapper {
+        display: flex;
+        flex-direction: row; }
+        @media screen and (max-width: 520px) {
+          .timeline .legend-wrapper .label-wrapper {
+            margin-bottom: 5px; } }
+      .timeline .legend-wrapper .legend__description {
+        font-size: 12px;
+        font-family: 'plex-mono'; }
+        @media screen and (max-width: 768px) {
+          .timeline .legend-wrapper .legend__description {
+            font-size: 12px; } }
       .timeline .legend-wrapper:last-of-type {
         margin-right: 0; }
   .timeline .tick {
@@ -1792,6 +1816,8 @@ section.feed:nth-last-of-type() {
       margin: 4px 10px 0 0; }
   .team-detail__description {
     flex: 1; }
+    .team-detail__description--text {
+      line-height: 1.8em; }
     .team-detail__description--name {
       font-weight: bold;
       font-size: 32px;

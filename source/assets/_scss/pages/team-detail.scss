@@ -188,6 +188,10 @@
     &__description {
         flex: 1;
 
+        &--text {
+            line-height: $line-height-text;
+        }
+
         &--name {
             font-weight: bold;
             font-size: $font-size-xl;

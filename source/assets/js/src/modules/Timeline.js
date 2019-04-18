@@ -228,7 +228,7 @@ class Timeline {
     	});
 
         var height = 60 / this.vars.swimlanes.length;
-        console.log('inside timeline!')
+        // console.log('inside timeline!')
         height = Math.min(height, Infinity);
                 
     	this.vars.swimlanes.forEach( (lane, i) => {
@@ -268,10 +268,19 @@ class Timeline {
                 .append('div')
                 .classed(`${type}-legend-wrapper legend-wrapper`, true)
 
-                legendTypeWrapper.append('span')
+                const labelWrapper = legendTypeWrapper.append('div')
+                    .classed('label-wrapper', true)
+
+                labelWrapper.append('div')
+                    .classed('indicator', true)
+                    .attr('style', `background: ${this.vars.colors[type]};`)
+
+                type = type == 'publication' ? 'article' : type;
+                
+                labelWrapper.append('span')
                     .classed('legend__description', true)
                     .text(type)
-                    .attr('style', `font: 16px plex-mono; color: ${this.vars.colors[type]};`)
+
         })
 
     }

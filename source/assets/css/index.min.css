@@ -2298,8 +2298,46 @@ section.feed:nth-last-of-type() {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end; }
+    @media screen and (max-width: 768px) {
+      .timeline .legend {
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start; } }
+    @media screen and (max-width: 520px) {
+      .timeline .legend {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start; } }
     .timeline .legend-wrapper {
       margin-right: 30px; }
+      .timeline .legend-wrapper .indicator {
+        width: 7px;
+        height: 7px;
+        -webkit-transform: translateY(4px);
+            -ms-transform: translateY(4px);
+                transform: translateY(4px);
+        margin-right: 5px; }
+      .timeline .legend-wrapper .label-wrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row; }
+        @media screen and (max-width: 520px) {
+          .timeline .legend-wrapper .label-wrapper {
+            margin-bottom: 5px; } }
+      .timeline .legend-wrapper .legend__description {
+        font-size: 12px;
+        font-family: 'plex-mono'; }
+        @media screen and (max-width: 768px) {
+          .timeline .legend-wrapper .legend__description {
+            font-size: 12px; } }
       .timeline .legend-wrapper:last-of-type {
         margin-right: 0; }
   .timeline .tick {
@@ -2480,6 +2518,8 @@ section.feed:nth-last-of-type() {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1; }
+    .team-detail__description--text {
+      line-height: 1.8em; }
     .team-detail__description--name {
       font-weight: bold;
       font-size: 32px;
