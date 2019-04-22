@@ -52,10 +52,10 @@
         content: "→ ";
         color: $color-publication;
         position: absolute;
-        transform: translate(-25px);
+        transform: translateX(-25px) translateY(6px);
 
         @media only screen and (max-width: $screen-m) {
-          transform: translate(-20px);
+          transform: translateX(-20px) translateY(6px);
         }
       }
     }
@@ -66,11 +66,11 @@
       li:before {
         content: "→ ";
         position: absolute;
-        transform: translate(-25px);
+        transform: translateX(-25px) translateY(6px);
         color: $color-workshop;
 
         @media only screen and (max-width: $screen-m) {
-          transform: translate(-20px);
+          transform: translateX(-20px) translateY(6px);
         }
       }
     }
@@ -81,11 +81,11 @@
       li:before {
         content: "→ ";
         position: absolute;
-        transform: translate(-25px);
+        transform: translateX(-25px) translateY(6px);
         color: $color-dataset;
 
         @media only screen and (max-width: $screen-m) {
-          transform: translate(-20px);
+          transform: translateX(-20px) translateY(6px);
         }
       }
     }
@@ -97,10 +97,10 @@
         color: $color-prototype;
         content: "→ ";
         position: absolute;
-        transform: translate(-25px);
+        transform: translateX(-25px) translateY(6px);
 
         @media only screen and (max-width: $screen-m) {
-          transform: translate(-20px);
+          transform: translateX(-20px) translateY(6px);
         }
       }
     }
