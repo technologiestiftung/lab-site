@@ -6,7 +6,7 @@ mail: Riede@technologiestiftung-berlin.de
 description: Text about Nadine
 twitter: Nadine Twitter
 github: 
-position: Events & Orgnaisation
+position: CityLAB Berlin
 type: prototype # could also be "workshop", "dataset", "prototype"
 order: 2
 ---

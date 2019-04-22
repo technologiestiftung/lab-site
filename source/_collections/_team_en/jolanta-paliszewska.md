@@ -6,7 +6,7 @@ mail: Paliszewska@technologiestiftung-berlin.de
 description: Here comes a short paragraph about Jolanta.
 twitter: JooolaPaaal
 github:
-position: Working Student
+position: Student Researcher
 type: workshop # could also be "workshop", "dataset", "prototype"
 external: true
 order: 2

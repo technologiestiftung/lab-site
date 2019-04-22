@@ -6,7 +6,7 @@ mail: Reichert@technologiestiftung-berlin.de
 description: Text about Sara
 twitter: Sara Twitter
 github: 
-position: Empowerment & Capacity Building
+position: CityLAB Berlin
 type: prototype # could also be "workshop", "dataset", "prototype"
 order: 2
 ---
