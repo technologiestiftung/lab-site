@@ -84,7 +84,7 @@ text.legend {
 
 .river-svg-wrapper {
   /* height: 100%; */
-  top: 424px;
+  top: 409px;
   left: -11px;
   z-index: -1000;
   width: 100%;
@@ -181,8 +181,8 @@ span#total-value {
 
 /*the container must be positioned relative:*/
 .custom-select {
-  position: relative;
-  letter-spacing: .5px; }
+  position: relative;   
+}
 
 .custom-select select {
   position: absolute;

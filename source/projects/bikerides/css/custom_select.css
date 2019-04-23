@@ -1,7 +1,7 @@
 /*the container must be positioned relative:*/
 .custom-select {
-  position: relative;
-  letter-spacing: .5px; }
+  position: relative;   
+}
 
 .custom-select select {
   position: absolute;
@@ -11,6 +11,7 @@
 .select-selected {
   background-color: #FCFCFC;
   color: black;
+  padding: 8px 16px;
 }
 
 /*style the arrow inside the select element:*/
@@ -32,7 +33,7 @@
 /*style the items (options), including the selected item:*/
 .select-items div, .select-selected {
   color: black;
-  padding: 2px 16px;
+  padding: 8px 16px;
   border: 1px solid;
   border-color: transparent #E4E4E4 #E4E4E4 #E4E4E4;
   font-size: 12px;
@@ -40,7 +41,9 @@
 }
 
 .select-selected {
-  border-color: #E4E4E4; }
+  border-color: #E4E4E4; 
+  padding: 8px 16px;
+}
 
 /*style items (options):*/
 .select-items {

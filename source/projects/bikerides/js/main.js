@@ -1187,6 +1187,10 @@ function closeAllSelect(elmnt) {
 then close all select boxes:*/
 document.addEventListener("click", closeAllSelect);
 
+console.log(document.querySelectorAll('.year')[0]);
+
+// document.querySelectorAll('.year')[0].click();
+
 
 const clientWidth = window.innerWidth;
 
