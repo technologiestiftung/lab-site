@@ -113,10 +113,9 @@ Zum Thema "Wohnen" wurden 2018 so viele Anfragen gestellt, wie in keinem Jahr zu
 
 Zum öffentlichen Nahverkehr gibt es Anfragen in Bezug auf "BVG" (149), "S-Bahn" (87), "Bahnhof" (79) und "U-Bahnhof" (49). Mit den aktuellen [Fahrplandaten des VBB](https://www.vbb.de/unsere-themen/vbbdigital/api-entwicklerinfos) ist ein wichtiger Datensatz online verfügbar. Darüber hinaus gibt es allerdings weitere Potenziale: beispielsweise werden die [Verspätungen](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/18/SchrAnfr/s18-10525.pdf) der BVG jährlich angefragt. Weitere Möglichkeiten für Open Data:
 
-* [BVG Verspätungen](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/18/SchrAnfr/s18-10525.pdf)
 * [Betriebshöfe BVG](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/18/SchrAnfr/s18-16673.pdf)
 * [ÖPNV-relevante Straftaten im Verkehrsmittel U-Bahn](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/18/SchrAnfr/s18-14924.pdf)
-[](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/18/SchrAnfr/s18-14924.pdf)*   [](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/18/SchrAnfr/s18-14924.pdf)[Kraftfahrzeuge der BVG](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/18/SchrAnfr/s18-13709.pdf)
+* [Kraftfahrzeuge der BVG](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/18/SchrAnfr/s18-13709.pdf)
 * [Ermittlung der Fahrgastzahlen bei BVG und S-Bahn](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/17/SchrAnfr/s17-16796.pdf)
 
 ### Flughäfen
