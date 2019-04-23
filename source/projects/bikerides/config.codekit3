@@ -266,7 +266,7 @@
 		"oAP": "/js/main-min.js",
 		"oF": 0,
 		"sC": 3,
-		"tS": 0
+		"tS": 1
 		},
 	"/js/main_en-min.js": {
 		"bF": 0,
@@ -288,7 +288,7 @@
 		"oAP": "/js/main_en-min.js",
 		"oF": 0,
 		"sC": 3,
-		"tS": 0
+		"tS": 1
 		},
 	"/js/radar_chart-min.js": {
 		"bF": 0,
@@ -310,7 +310,7 @@
 		"oAP": "/js/radar_chart-min.js",
 		"oF": 0,
 		"sC": 3,
-		"tS": 0
+		"tS": 1
 		},
 	"/js/radar_chart_en-min.js": {
 		"bF": 0,
@@ -332,7 +332,7 @@
 		"oAP": "/js/radar_chart_en-min.js",
 		"oF": 0,
 		"sC": 3,
-		"tS": 0
+		"tS": 1
 		}
 	},
 "hooks": [
