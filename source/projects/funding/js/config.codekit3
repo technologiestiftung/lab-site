@@ -17,6 +17,17 @@
 		"oAP": "/.Rhistory",
 		"oF": 0
 		},
+	"/index-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/index-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/index.js": {
 		"bF": 0,
 		"ft": 64,
@@ -27,6 +38,17 @@
 		"oF": 0,
 		"sC": 3,
 		"tS": 1
+		},
+	"/index_en-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/index_en-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
 		},
 	"/index_en.js": {
 		"bF": 0,

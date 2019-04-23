@@ -9,6 +9,17 @@
 	],
 "creatorBuild": "29156",
 "files": {
+	"/index-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/index-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/index.js": {
 		"bF": 0,
 		"ft": 64,
@@ -20,6 +31,17 @@
 		"sC": 3,
 		"tS": 1
 		},
+	"/main-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/main-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/main.js": {
 		"bF": 0,
 		"ft": 64,
@@ -30,6 +52,17 @@
 		"oF": 0,
 		"sC": 3,
 		"tS": 1
+		},
+	"/main_en-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/main_en-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
 		},
 	"/main_en.js": {
 		"bF": 0,
