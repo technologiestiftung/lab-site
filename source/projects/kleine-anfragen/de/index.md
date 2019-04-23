@@ -63,16 +63,6 @@ Methode
 Allgemeine (z.B. die, und, als) und berlinspezifische Worte (z.B. Senat, Berlin, Bezirk), die für die Analyse nicht relevant sind, wurden entfernt ( [Hier sind alle sogenannten Stopwords](https://github.com/technologiestiftung/kleine-anfragen/blob/master/data/stopwords_de.txt) gelistet). Die verbliebenen Worte wurden auf ihren Wortstamm reduziert (z.B. Kinder zu kind). Anschließend ließ sich die Worthäufigkeit auswerten. Um die Begriffe besser im Kontext zu verstehen, werden sie hier in einem Netzwerk dargestellt. Die **Punktgröße stellt die Häufigkeit eines Begriffs dar und die Linien die Verbindungen zwischen den Begriffen**. Je häufiger zwei Begriffe gemeinsam in einem Titel vorkommen, desto dicker ist die Verbindungslinie. Durch Klick auf ein Wort werden fünf beispielhafte Anfragen gelistet. Mit dem Slider "minimum Wortanzahl" kann eingestellt werden, wie häufig ein Wort mindestens vorkommen muss, um in der Grafik angezeigt zu werden.
 
 <div id='network' alt = "Netzwerkdarstellung von Worten in Titeln der kleinen Anfragen."></div>
-<div id='example-wrapper'>
-<p id ='example1'></p>
-<p id ='example2'></p>
-<p id ='example3'></p>
-<p id ='example4'></p>
-<p id ='example5'></p>
-</div>
-{% include macro-subline-markdown.html caption="Netzwerkdarstellung von Worten in Titeln der kleinen Anfragen" %}
-
-
 
 Die gefragtesten Themen
 -----------------------
@@ -123,10 +113,9 @@ Zum Thema "Wohnen" wurden 2018 so viele Anfragen gestellt, wie in keinem Jahr zu
 
 Zum öffentlichen Nahverkehr gibt es Anfragen in Bezug auf "BVG" (149), "S-Bahn" (87), "Bahnhof" (79) und "U-Bahnhof" (49). Mit den aktuellen [Fahrplandaten des VBB](https://www.vbb.de/unsere-themen/vbbdigital/api-entwicklerinfos) ist ein wichtiger Datensatz online verfügbar. Darüber hinaus gibt es allerdings weitere Potenziale: beispielsweise werden die [Verspätungen](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/18/SchrAnfr/s18-10525.pdf) der BVG jährlich angefragt. Weitere Möglichkeiten für Open Data:
 
-* [BVG Verspätungen](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/18/SchrAnfr/s18-10525.pdf)
 * [Betriebshöfe BVG](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/18/SchrAnfr/s18-16673.pdf)
 * [ÖPNV-relevante Straftaten im Verkehrsmittel U-Bahn](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/18/SchrAnfr/s18-14924.pdf)
-[](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/18/SchrAnfr/s18-14924.pdf)*   [](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/18/SchrAnfr/s18-14924.pdf)[Kraftfahrzeuge der BVG](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/18/SchrAnfr/s18-13709.pdf)
+* [Kraftfahrzeuge der BVG](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/18/SchrAnfr/s18-13709.pdf)
 * [Ermittlung der Fahrgastzahlen bei BVG und S-Bahn](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/17/SchrAnfr/s17-16796.pdf)
 
 ### Flughäfen
