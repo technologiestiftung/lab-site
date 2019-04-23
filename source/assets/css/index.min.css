@@ -2030,12 +2030,12 @@ span.copy-funding {
                   transform: translate3d(175px, 50px, 0); }
           @media only screen and (max-width: 520px) {
             .featured-list__project-title ~ .featured-list__project-image.translate {
-              -webkit-transform: translate3d(35px, -350px, 0);
-                      transform: translate3d(35px, -350px, 0); } }
+              -webkit-transform: translate3d(35px, -150px, 0);
+                      transform: translate3d(35px, -150px, 0); } }
           @media only screen and (max-width: 768px) {
             .featured-list__project-title ~ .featured-list__project-image.translate {
-              -webkit-transform: translate3d(115px, -10px, 0);
-                      transform: translate3d(115px, -10px, 0); } }
+              -webkit-transform: translate3d(115px, -100px, 0);
+                      transform: translate3d(115px, -100px, 0); } }
           @media only screen and (max-width: 1000px) {
             .featured-list__project-title ~ .featured-list__project-image.translate {
               -webkit-transform: translate3d(150px, 10px, 0);
@@ -2811,16 +2811,13 @@ section.feed:nth-last-of-type() {
             width: 100%; } }
       .project-text.columns p {
         -webkit-column-count: 2;
-           -moz-column-count: 2;
                 column-count: 2;
         grid-column-gap: 50px;
         -webkit-column-gap: 50px;
-           -moz-column-gap: 50px;
                 column-gap: 50px; }
         @media only screen and (max-width: 1024px) {
           .project-text.columns p {
             -webkit-column-count: 1;
-               -moz-column-count: 1;
                     column-count: 1; } }
   .project-image img {
     display: block;
@@ -2941,8 +2938,6 @@ section.feed:nth-last-of-type() {
     color: #2d91d2; }
   .project--publication .tns-controls button:hover {
     color: #2d91d2; }
-  .project--publication ::-moz-selection {
-    background: rgba(45, 145, 210, 0.25); }
   .project--publication ::selection {
     background: rgba(45, 145, 210, 0.25); }
   .project--prototype a {
@@ -2965,8 +2960,6 @@ section.feed:nth-last-of-type() {
     background: #41b496; }
   .project--prototype .tns-controls button:hover {
     color: #41b496; }
-  .project--prototype ::-moz-selection {
-    background: rgba(65, 180, 150, 0.25); }
   .project--prototype ::selection {
     background: rgba(65, 180, 150, 0.25); }
   .project--workshop a {
@@ -2989,8 +2982,6 @@ section.feed:nth-last-of-type() {
     background-color: #dcc82d; }
   .project--workshop .tns-controls button:hover {
     color: #dcc82d; }
-  .project--workshop ::-moz-selection {
-    background: rgba(220, 200, 45, 0.25); }
   .project--workshop ::selection {
     background: rgba(220, 200, 45, 0.25); }
   .project--dataset a {
@@ -3013,8 +3004,6 @@ section.feed:nth-last-of-type() {
     background-color: #e60032; }
   .project--dataset .tns-controls button:hover {
     color: #e60032; }
-  .project--dataset ::-moz-selection {
-    background: rgba(230, 0, 50, 0.25); }
   .project--dataset ::selection {
     background: rgba(230, 0, 50, 0.25); }
   .project a:not(.link--button) {

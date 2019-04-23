@@ -157,6 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
   featProjectsHandler();
   // createTimeline('timeline');
   createImageSliders('image-slider');
+  toggleFeaturedClass();
 });
 
 window.addEventListener('resize', evt => {
@@ -167,3 +168,16 @@ window.addEventListener('resize', evt => {
 });
 
 embedResize();
+
+function toggleFeaturedClass() {
+  const featured_list = document.querySelectorAll('.featured-list__project-image');
+  console.log(featured_list);
+
+  setTimeout(() => {
+    for (let index = 0; index < 4; index++) {
+      const element = featured_list[index];
+      element.classList.add('translate');
+    }
+  }, 50)
+
+}
