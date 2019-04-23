@@ -63,6 +63,16 @@ Methode
 Allgemeine (z.B. die, und, als) und berlinspezifische Worte (z.B. Senat, Berlin, Bezirk), die für die Analyse nicht relevant sind, wurden entfernt ( [Hier sind alle sogenannten Stopwords](https://github.com/technologiestiftung/kleine-anfragen/blob/master/data/stopwords_de.txt) gelistet). Die verbliebenen Worte wurden auf ihren Wortstamm reduziert (z.B. Kinder zu kind). Anschließend ließ sich die Worthäufigkeit auswerten. Um die Begriffe besser im Kontext zu verstehen, werden sie hier in einem Netzwerk dargestellt. Die **Punktgröße stellt die Häufigkeit eines Begriffs dar und die Linien die Verbindungen zwischen den Begriffen**. Je häufiger zwei Begriffe gemeinsam in einem Titel vorkommen, desto dicker ist die Verbindungslinie. Durch Klick auf ein Wort werden fünf beispielhafte Anfragen gelistet. Mit dem Slider "minimum Wortanzahl" kann eingestellt werden, wie häufig ein Wort mindestens vorkommen muss, um in der Grafik angezeigt zu werden.
 
 <div id='network' alt = "Netzwerkdarstellung von Worten in Titeln der kleinen Anfragen."></div>
+<div id='example-wrapper'>
+<p id ='example1'></p>
+<p id ='example2'></p>
+<p id ='example3'></p>
+<p id ='example4'></p>
+<p id ='example5'></p>
+</div>
+{% include macro-subline-markdown.html caption="Netzwerkdarstellung von Worten in Titeln der kleinen Anfragen" %}
+
+
 
 Die gefragtesten Themen
 -----------------------

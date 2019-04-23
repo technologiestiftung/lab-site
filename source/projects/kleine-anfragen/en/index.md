@@ -64,6 +64,13 @@ More than 15,000 inquiries are listed at [kleineAnfragen](https://kleineanfragen
 General words (e.g. die _(the)_, und _(and)_, als _(when)_) and words specific to Berlin (e.g. Senat _(Senate)_, Berlin, Bezirk _(district)_) that are not relevant for the analysis have been removed ([here are all so-called stopwords](https://github.com/technologiestiftung/small-requests/blob/master/data/stopwords_en.txt) listed). The remaining words were reduced to their word stem (for example, Kinder _(children)_ to 'kind'). Subsequently, the word frequency could be evaluated. To better understand the terms in context, they are presented here in a network (words are displayed in German). The point size represents the frequency of a term and the lines the connections between the terms. The more frequently two terms occur together in a title, the thicker is the connecting line. By clicking on a word, five exemplary queries are listed. With the slider "minimum word count" you can set the minimum number of times a word must appear in order to be displayed in the graphic.
 
 <div id = 'network' alt="Network graph of words contained in parliamentary query titles."></div>
+<div id='example-wrapper'>
+<p id ='example1'></p>
+<p id ='example2'></p>
+<p id ='example3'></p>
+<p id ='example4'></p>
+<p id ='example5'></p>
+</div>
 
 The most Popular Topics
 -----------------------

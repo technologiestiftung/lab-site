@@ -1,16 +1,3 @@
-
-  .example_rect rect{
-    fill: rgb(30,55,145);
-  }
-  .example_text text{
-    font: 14px sans-serif;
-    fill: #fff;
-  }
-
-  .ticks {
-    
-  }
-  
   .link {
     stroke: #aaa;
   }

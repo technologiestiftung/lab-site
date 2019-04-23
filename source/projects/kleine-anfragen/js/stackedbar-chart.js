@@ -14,7 +14,7 @@ class StackedBarChart {
     init (chart_name, csv_file, language) {
 
         var dataValue = function(d) { return d.absolute; }
-        var labelValue = function(d) { console.log(d.inistry_en); return  (language == "de") ? d.ministry : d.ministry_en; }
+        var labelValue = function(d) { return  (language == "de") ? d.ministry : d.ministry_en; }
         var percentValue = function(d) {return d.percentage}
         
         var color = d3.scaleOrdinal(['#e41a1c', '#1e3791', 'rgb(55,90,165)', 'rgb(45,145,210)', 'rgb(100,185,230)', 'rgb(110,205,245)']);
