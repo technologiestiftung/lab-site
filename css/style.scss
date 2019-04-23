@@ -1,6 +1,49 @@
 /* Fonts */
 
-@font-face { font-family: 'ClanOT-Medium'; font-weight: 400; src: url("https://www.technologiestiftung-berlin.de/typo3conf/sites/tsb/css/fonts/clanot/clanot-medium-webfont.eot"); src: url("https://www.technologiestiftung-berlin.de/typo3conf/sites/tsb/css/fonts/clanot/clanot-medium-webfont.eot?#iefix") format("embedded-opentype"), url("https://www.technologiestiftung-berlin.de/typo3conf/sites/tsb/css/fonts/clanot/clanot-medium-webfont.woff") format("woff"), url("https://www.technologiestiftung-berlin.de/typo3conf/sites/tsb/css/fonts/clanot/clanot-medium-webfont.ttf") format("truetype"), url("https://www.technologiestiftung-berlin.de/typo3conf/sites/tsb/css/fonts/clanot/clanot-medium-webfont.svg#clanot_medium") format("svg"); }
+
+@font-face { font-family: 'ClanOT-Medium'; font-weight: 400; src: url("https://www.technologiestiftung-berlin.de/typo3conf/ext/ccdm_tsbtemplate/Resources/Public/Bootstrap/css/fonts/clanot/clanot-medium-webfont.eot"); src: url("https://www.technologiestiftung-berlin.de/typo3conf/ext/ccdm_tsbtemplate/Resources/Public/Bootstrap/css/fonts/clanot/clanot-medium-webfont.eot?#iefix") format("embedded-opentype"), url("https://www.technologiestiftung-berlin.de/typo3conf/ext/ccdm_tsbtemplate/Resources/Public/Bootstrap/css/fonts/clanot/clanot-medium-webfont.woff") format("woff"), url("https://www.technologiestiftung-berlin.de/typo3conf/ext/ccdm_tsbtemplate/Resources/Public/Bootstrap/css/fonts/clanot/clanot-medium-webfont.ttf") format("truetype"), url("https://www.technologiestiftung-berlin.de/typo3conf/ext/ccdm_tsbtemplate/Resources/Public/Bootstrap/css/fonts/clanot/clanot-medium-webfont.svg#clanot_medium") format("svg"); }
+
+/* ibm-plex-mono-regular - latin */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/ibm-plex-mono-v2-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('IBM Plex Mono'), local('IBMPlexMono'),
+       url('../fonts/ibm-plex-mono-v2-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/ibm-plex-mono-v2-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/ibm-plex-mono-v2-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/ibm-plex-mono-v2-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/ibm-plex-mono-v2-latin-regular.svg#IBMPlexMono') format('svg'); /* Legacy iOS */
+}
+/* ibm-plex-mono-700 - latin */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/ibm-plex-mono-v2-latin-700.eot'); /* IE9 Compat Modes */
+  src: local('IBM Plex Mono Bold'), local('IBMPlexMono-Bold'),
+       url('../fonts/ibm-plex-mono-v2-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/ibm-plex-mono-v2-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/ibm-plex-mono-v2-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/ibm-plex-mono-v2-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/ibm-plex-mono-v2-latin-700.svg#IBMPlexMono') format('svg'); /* Legacy iOS */
+}
+
+/* ibm-plex-sans-regular - latin */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/ibm-plex-sans-v2-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('IBM Plex Sans'), local('IBMPlexSans'),
+       url('../fonts/ibm-plex-sans-v2-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/ibm-plex-sans-v2-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/ibm-plex-sans-v2-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/ibm-plex-sans-v2-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/ibm-plex-sans-v2-latin-regular.svg#IBMPlexSans') format('svg'); /* Legacy iOS */
+}
+
 
 /*! minireset.css v0.0.3 | MIT License | github.com/jgthms/minireset.css */
 html,
@@ -95,6 +138,17 @@ body{
 #tsb-ani-logo path,#tsb-ani-logo line{fill:transparent;opacity:1;stroke-width:6px;stroke-linejoin:round;stroke-linecap:round}#tsb-ani-logo path{stroke:transparent}#tsb-ani-logo .edge{stroke:#6ECDF5}#tsb-ani-logo .hedge{stroke:#E60433}
 #minilogo #tsb-ani-logo path,#tsb-ani-logo line{stroke-width:3px;}
 
+#minilogo{
+  width:350px;
+  max-width:90%;
+  float:left;
+  margin-top:15px;
+  svg{
+    width:100%;
+    height:auto;
+  }
+}
+
 #teaser{
   width:100%;
   background-color:#fff;
@@ -121,6 +175,14 @@ body{
   width:80%;
   max-width:600px;
   margin:0 auto;
+
+  a{
+    text-decoration:underline;
+    color:#000;
+    &:hover{
+      text-decoration:none;
+    }
+  }
 }
 
 @media (min-width: 768px) {
@@ -198,14 +260,88 @@ body{
   }
 }
 
+nav{
+  backround-color:white;
+}
+
+#nav{
+  clear:none;
+}
+
+#tsb-logo{
+  width:100%;
+  background-color:#fff;
+  overflow:visible;
+
+  .inner{
+    width:90%;
+    margin:0 auto;
+    text-align:right;
+    padding-top:20px;
+    padding-right:20px;
+  }
+
+  img{
+    width:100%;
+    max-width:150px;
+    height:auto;
+  }
+}
+
+@media (min-width: 550px) {
+  #tsb-logo{
+    width:100%;
+    background-color:#fff;
+    height:1px;
+
+    .inner{
+      width:90%;
+      max-width:1200px;
+      margin:0 auto;
+      text-align:left;
+      padding-left:20px;
+    }
+
+    img{
+      width:100%;
+      max-width:150px;
+      height:auto;
+    }
+  }
+}
+
+#burger{
+  position: absolute;
+  top:35px;
+  right:15px;
+  display: block;
+  width:38px;
+  height:35px;
+  background-image:url('../images/menu_toggle@2x.png');
+  background-repeat: no-repeat;
+  background-size: 38px 72px;
+  background-position: top center;
+}
+
+#burger.active{
+  background-position: bottom center;
+}
+
 #nav ul{
-  padding-top:20px;
+  position: absolute;
+  top:0;
+  right:0;
+  background-color:rgba(255,255,255,0.95);
+  padding:33px 80px 20px 20px;
+  display: none;
+  clear:none;
   float:right;
+  line-height:24px;
 }
 
 #nav li{
   float:left;
-  padding:0 20px 0 0;
+  padding:0 10px 0 0;
 }
 
 #nav a{
@@ -222,7 +358,95 @@ body{
 
 #nav li.lang{
   border-left:1px solid #999;
-  padding-left:20px;
+  padding-left:10px;
+}
+
+#nav li.opendata{
+  border-right:1px solid #999;
+  padding-right:16px;
+  margin-right:16px;
+  overflow:visible;
+  height:38px;
+  img{
+    width:26px;
+    height:28px;
+    margin:-4px 8px 0 0;
+    float:left;
+  }
+}
+
+#nav ul li,
+#nav ul li.opendata,
+#nav ul li.lang{
+  clear:both;
+  padding:0;
+  margin:0;
+  border:0;
+}
+
+#nav ul li.opendata{
+  padding-bottom:15px;
+}
+
+#nav ul li.lang{
+  padding-top:15px;
+}
+
+@media (min-width: 400px) {
+  #nav li{
+    padding:0 16px 0 0;
+  }
+
+  #nav li.lang{
+    padding-left:16px;
+  }
+}
+
+@media (min-width: 768px) {
+  #burger{
+    display: none;
+  }
+
+  #nav ul{
+    clear:both;
+    float:left;
+    display: block;
+    background:none;
+    position: inherit;
+    top:auto;
+    right:auto;
+    padding:20px 0 0 20px; 
+    line-height: inherit;
+  }
+
+  #nav ul li,
+  #nav ul li.opendata,
+  #nav ul li.lang{
+    clear:none;
+    padding:0 16px 0 0;
+    margin:0;
+    border:0;
+  }
+
+  #nav ul li.lang{
+    padding-left:16px;
+    border-left:1px solid #999;
+  }
+
+  #nav ul li.opendata{
+    padding-right:16px;
+    margin-right:16px;
+    border-right:1px solid #999;
+    height:18px;
+  }
+}
+
+@media (min-width: 1024px){
+  #nav ul{
+    clear:none;
+    float:right;
+    padding:20px 0 0 0; 
+  }
 }
 
 #projects{
@@ -255,7 +479,7 @@ body{
   margin:0 5px;
 }
 
-.button:hover{
+.button:hover, .button.active{
   background-color:#1e3791;
   color:#DEE3F7;
 }
@@ -350,6 +574,10 @@ body{
     margin:40px 5% 0 5%;
   }
 
+  #project-list li a{
+    min-height:380px;
+  }
+
   #project-list li.two-break{
     clear:both;
   }
@@ -360,6 +588,10 @@ body{
   #project-list li{
     margin: 40px 3% 0 3%;
     width: 27.3%;
+  }
+
+  #project-list li a{
+    min-height:390px;
   }
 
   #project-list li.two-break{
@@ -406,6 +638,23 @@ h2{
       text-decoration:underline;
     }
   }
+}
+
+#funding-foot{
+  width:100%;
+  background-color:#fff;
+  clear:both;
+  padding:30px 0;
+  font-family: 'Roboto Mono', monospace;
+  font-size:13px;
+  line-height: 24px;
+  color:#555;
+}
+
+#funding-foot-inner{
+  display: block;
+  margin:0 auto;
+  max-width:90%;
 }
 
 #footer .container > a img, #footer .contact-meta, #footer .contact-social{
@@ -470,15 +719,15 @@ hr.clear{
   visibility: hidden;
 }
 
-.ben img, .seb-m img, .seb-r img{
-  width:105px;
+#team-list img{
+  width:245px;
+  max-width:100%;
   height:auto;
 }
 
-.unicorn img{
+#team-list .unicorn img{
   width:250px;
   height:auto;
-  margin-left:-74px;
   margin-top:-20px;
 }
 
@@ -487,27 +736,31 @@ hr.clear{
 }
 
 #team h3{
-  font-family:'Kalam', sans-serif;
+  font-family:'ClanOT-Medium', sans-serif;
   font-weight:700;
-  font-size:30px;
-  padding-top:100px;
-  margin-left:-40px;
+  font-size:25px;
   float:left;
-  text-shadow: 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
-  color:#e60032;
+  clear:both;
+  margin-top:-20px;
+  margin-left:10px;
+  text-shadow: 1px 1px #F2F2F2, -1px -1px #F2F2F2, 1px -1px #F2F2F2, -1px 1px #F2F2F2;
+  color:#000;
 }
 
-#team .ben h3{
-  margin-left:-80px;  
+#team .unicorn{
+  padding-top:100px;
 }
 
 #team .unicorn h3{
-  padding-top:10px;
+  padding-top:40px;
+  margin-left:-36px;
+  clear:none;
 }
 
 #team .unicorn p{
   clear:both;
-  padding-top:50px;
+  padding-top:40px;
+  padding-left:20px;
 }
 
 #team a, #team p{
@@ -527,6 +780,7 @@ hr.clear{
 
 #team p{
   padding-left:10px;
+  line-height:1.6em;
 }
 
 #team-list li{
@@ -544,6 +798,10 @@ hr.clear{
     padding-top:60px;
     width:180px;
     margin-left:-50px;
+  }
+
+  #team-list .unicorn img{
+    margin-left:-74px;
   }
 }
 
@@ -608,15 +866,13 @@ hr.clear{
 /* ---- Page Head ---- */
 
 #page-head{
+  width:100%;
+  overflow-x:hidden;
   background-color: #fff;
   min-height: 40px;
   .left{
     float:left;
-    a{
-      margin-top:22px;
-      float:left;
-      margin-left:10px;
-    }
+    line-height:20px;
   }
   .right{
     clear:both;
@@ -649,10 +905,6 @@ hr.clear{
   }
 }
 
-#minilogo{
-  float:left;
-  margin-top:-20px;
-}
 
 /* ---- CONTENT ---- */
 
@@ -706,6 +958,7 @@ pre[class*="language-"]{
 }
 
 #github{
+  min-width: 250px;
   font-family: 'Roboto Mono', monospace;
   display: inline-block;
   max-width:100%;
@@ -794,6 +1047,8 @@ blockquote{
 }
 
 .special-section{
+  width:100%;
+  overflow-x:hidden;
   -webkit-box-shadow:   0px 0px 10px 0px rgba(0,0,0,0.2);
   -moz-box-shadow:      0px 0px 10px 0px rgba(0,0,0,0.2);
   box-shadow:           0px 0px 10px 0px rgba(0,0,0,0.2);
@@ -1048,6 +1303,9 @@ hr.divider{
     font-family: 'Roboto Mono', monospace;
     font-size:14px;
     line-height:24px;
+    a{
+      color:#000;
+    }
   }
   ul{
     list-style-type: circle;
