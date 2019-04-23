@@ -787,13 +787,13 @@ div.highlight {
 
 /* Literal.Number.Integer.Long */
 _:-ms-fullscreen, :root .grid.feed-list {
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   display: grid;
   grid-gap: 50px 25px;
   grid-template-columns: repeat(4, minmax(200px, 400px)); }
   @media only screen and (max-width: 1200px) {
     _:-ms-fullscreen, :root .grid.feed-list {
-      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
       grid-gap: 50px 25px;
       grid-template-columns: repeat(3, minmax(150px, 400px)); } }
   @media only screen and (max-width: 768px) {
@@ -1379,20 +1379,17 @@ span.copy-funding {
           font-family: 'plex-mono';
           transform: translateX(2px) translateY(-5px);
           line-height: 1.5em; }
-        .featured-list__project-title ~ .featured-list__project-image {
-          transform: translate3d(50px, 0, 0); }
+        .featured-list__project-title ~ .featured-list__project-image.translate {
+          transform: translate3d(175px, 50px, 0); }
           @media only screen and (max-width: 520px) {
-            .featured-list__project-title ~ .featured-list__project-image {
+            .featured-list__project-title ~ .featured-list__project-image.translate {
               transform: translate3d(35px, -350px, 0); } }
           @media only screen and (max-width: 768px) {
-            .featured-list__project-title ~ .featured-list__project-image {
+            .featured-list__project-title ~ .featured-list__project-image.translate {
               transform: translate3d(115px, -10px, 0); } }
           @media only screen and (max-width: 1000px) {
-            .featured-list__project-title ~ .featured-list__project-image {
+            .featured-list__project-title ~ .featured-list__project-image.translate {
               transform: translate3d(150px, 10px, 0); } }
-          @media only screen and (min-width: 1024px) {
-            .featured-list__project-title ~ .featured-list__project-image {
-              transform: translate3d(175px, 50px, 0); } }
         .featured-list__project-title.hovered ~ .featured-list__project {
           opacity: 1;
           display: flex;

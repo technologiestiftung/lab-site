@@ -805,8 +805,8 @@ div.highlight {
 
 /* Literal.Number.Integer.Long */
 _:-ms-fullscreen, :root .grid.feed-list {
-  -ms-grid-rows: 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   display: -ms-grid;
   display: grid;
   grid-gap: 50px 25px;
@@ -884,10 +884,34 @@ _:-ms-fullscreen > *:nth-child(23), :root .grid.feed-list > *:nth-child(23) {
 _:-ms-fullscreen > *:nth-child(24), :root .grid.feed-list > *:nth-child(24) {
   -ms-grid-row: 11;
   -ms-grid-column: 7; }
+_:-ms-fullscreen > *:nth-child(25), :root .grid.feed-list > *:nth-child(25) {
+  -ms-grid-row: 13;
+  -ms-grid-column: 1; }
+_:-ms-fullscreen > *:nth-child(26), :root .grid.feed-list > *:nth-child(26) {
+  -ms-grid-row: 13;
+  -ms-grid-column: 3; }
+_:-ms-fullscreen > *:nth-child(27), :root .grid.feed-list > *:nth-child(27) {
+  -ms-grid-row: 13;
+  -ms-grid-column: 5; }
+_:-ms-fullscreen > *:nth-child(28), :root .grid.feed-list > *:nth-child(28) {
+  -ms-grid-row: 13;
+  -ms-grid-column: 7; }
+_:-ms-fullscreen > *:nth-child(29), :root .grid.feed-list > *:nth-child(29) {
+  -ms-grid-row: 15;
+  -ms-grid-column: 1; }
+_:-ms-fullscreen > *:nth-child(30), :root .grid.feed-list > *:nth-child(30) {
+  -ms-grid-row: 15;
+  -ms-grid-column: 3; }
+_:-ms-fullscreen > *:nth-child(31), :root .grid.feed-list > *:nth-child(31) {
+  -ms-grid-row: 15;
+  -ms-grid-column: 5; }
+_:-ms-fullscreen > *:nth-child(32), :root .grid.feed-list > *:nth-child(32) {
+  -ms-grid-row: 15;
+  -ms-grid-column: 7; }
   @media only screen and (max-width: 1200px) {
     _:-ms-fullscreen, :root .grid.feed-list {
-      -ms-grid-rows: 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      -ms-grid-rows: 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
       grid-gap: 50px 25px;
       -ms-grid-columns: minmax(150px, 400px) 25px minmax(150px, 400px) 25px minmax(150px, 400px);
       grid-template-columns: repeat(3, minmax(150px, 400px)); }
@@ -962,6 +986,15 @@ _:-ms-fullscreen > *:nth-child(24), :root .grid.feed-list > *:nth-child(24) {
     -ms-grid-column: 3; }
     _:-ms-fullscreen > *:nth-child(24), :root .grid.feed-list > *:nth-child(24) {
     -ms-grid-row: 15;
+    -ms-grid-column: 5; }
+    _:-ms-fullscreen > *:nth-child(25), :root .grid.feed-list > *:nth-child(25) {
+    -ms-grid-row: 17;
+    -ms-grid-column: 1; }
+    _:-ms-fullscreen > *:nth-child(26), :root .grid.feed-list > *:nth-child(26) {
+    -ms-grid-row: 17;
+    -ms-grid-column: 3; }
+    _:-ms-fullscreen > *:nth-child(27), :root .grid.feed-list > *:nth-child(27) {
+    -ms-grid-row: 17;
     -ms-grid-column: 5; } }
   @media only screen and (max-width: 768px) {
     _:-ms-fullscreen, :root .grid.feed-list {
@@ -1992,25 +2025,21 @@ span.copy-funding {
               -ms-transform: translateX(2px) translateY(-5px);
                   transform: translateX(2px) translateY(-5px);
           line-height: 1.5em; }
-        .featured-list__project-title ~ .featured-list__project-image {
-          -webkit-transform: translate3d(50px, 0, 0);
-                  transform: translate3d(50px, 0, 0); }
+        .featured-list__project-title ~ .featured-list__project-image.translate {
+          -webkit-transform: translate3d(175px, 50px, 0);
+                  transform: translate3d(175px, 50px, 0); }
           @media only screen and (max-width: 520px) {
-            .featured-list__project-title ~ .featured-list__project-image {
+            .featured-list__project-title ~ .featured-list__project-image.translate {
               -webkit-transform: translate3d(35px, -350px, 0);
                       transform: translate3d(35px, -350px, 0); } }
           @media only screen and (max-width: 768px) {
-            .featured-list__project-title ~ .featured-list__project-image {
+            .featured-list__project-title ~ .featured-list__project-image.translate {
               -webkit-transform: translate3d(115px, -10px, 0);
                       transform: translate3d(115px, -10px, 0); } }
           @media only screen and (max-width: 1000px) {
-            .featured-list__project-title ~ .featured-list__project-image {
+            .featured-list__project-title ~ .featured-list__project-image.translate {
               -webkit-transform: translate3d(150px, 10px, 0);
                       transform: translate3d(150px, 10px, 0); } }
-          @media only screen and (min-width: 1024px) {
-            .featured-list__project-title ~ .featured-list__project-image {
-              -webkit-transform: translate3d(175px, 50px, 0);
-                      transform: translate3d(175px, 50px, 0); } }
         .featured-list__project-title.hovered ~ .featured-list__project {
           opacity: 1;
           display: -webkit-box;

@@ -12,11 +12,6 @@ layout: default
 {% assign sorted_pages = site.pages | sort: 'date' | reverse %}
 
 <section class="intro">
-  <div class="intro-title headline--uppercase">{%- if page.lang == "en" -%}
-    What we do
-    {%- else -%}
-    Was wir machen
-  {%- endif -%}</div>
   <p class="intro-text">
     {%- if page.lang == "en" -%}
     {{site.data.meta.introtext.en}}
@@ -33,11 +28,6 @@ layout: default
   </a>
 </section>
 <section class="featured">
-  <div class="headline--uppercase featured-title">{%- if page.lang == "en" -%}
-    What we're proud of
-    {%- else -%}
-    Worauf wir stolz sind
-  {%- endif -%}</div>
   <h2 class="featured-headline section-headline headline--bold">{%- if page.lang == "en" -%}
     Featured Projects
     {%- else -%}
