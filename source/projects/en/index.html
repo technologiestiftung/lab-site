@@ -1,0 +1,10 @@
+---
+layout: project-overview
+title: Projects
+lang: en
+permalink: /projects/en/
+---
+
+{% assign sorted_pages = site.pages | sort: 'date' | reverse %}
+
+{%- include feed.html sorted_pages=sorted_pages -%}

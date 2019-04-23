@@ -1,0 +1,109 @@
+.markdown-content {
+  // p {
+  //   img {
+  //     width: 100%;
+  //     max-width: 100%;
+  //   }
+  // }
+  .highlighter-rouge {
+    margin: 0 $spacing-s $spacing-l $spacing-s;
+  }
+
+  ul {
+    margin: 0 $spacing-page-l $spacing-l $spacing-page-l;
+    list-style-type: disc;
+
+    @media only screen and (max-width: $screen-l) {
+      margin: 0 $spacing-page-s $spacing-m $spacing-page-s;
+    }
+
+    @media only screen and (max-width: $screen-m) {
+      margin: 0 0 $spacing-m 0;
+    }
+  }
+
+  ol {
+    margin: 0 $spacing-page-l $spacing-l $spacing-page-l;
+    list-style-type: disc;
+
+    @media only screen and (max-width: $screen-l) {
+      margin: 0 $spacing-page-s $spacing-m $spacing-page-s;
+    }
+
+    @media only screen and (max-width: $screen-m) {
+      margin: 0 0 $spacing-m 0;
+    }
+  }
+
+
+  p {
+    &.blockquote {
+      margin: 0 0 $spacing-s 0;
+    }
+  }
+  
+}
+
+.project {
+
+  &--publication {
+    ul {
+      li:before {
+        content: "→ ";
+        color: $color-publication;
+        position: absolute;
+        transform: translateX(-25px) translateY(6px);
+
+        @media only screen and (max-width: $screen-m) {
+          transform: translateX(-20px) translateY(6px);
+        }
+      }
+    }
+  }
+
+  &--workshop {
+    ul {
+      li:before {
+        content: "→ ";
+        position: absolute;
+        transform: translateX(-25px) translateY(6px);
+        color: $color-workshop;
+
+        @media only screen and (max-width: $screen-m) {
+          transform: translateX(-20px) translateY(6px);
+        }
+      }
+    }
+  }
+
+  &--dataset {
+    ul {
+      li:before {
+        content: "→ ";
+        position: absolute;
+        transform: translateX(-25px) translateY(6px);
+        color: $color-dataset;
+
+        @media only screen and (max-width: $screen-m) {
+          transform: translateX(-20px) translateY(6px);
+        }
+      }
+    }
+  }
+
+  &--prototype {
+    ul {
+      li:before {
+        color: $color-prototype;
+        content: "→ ";
+        position: absolute;
+        transform: translateX(-25px) translateY(6px);
+
+        @media only screen and (max-width: $screen-m) {
+          transform: translateX(-20px) translateY(6px);
+        }
+      }
+    }
+  }
+
+}

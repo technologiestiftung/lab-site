@@ -1,0 +1,60 @@
+---
+layout: project
+description: Kita-Suche should support parents to find the best Kita for their children.
+  The innovative search- and filter-functionality as well as the map-based
+  representation are driven by data from the city of Berlin. Through examples
+  like this, the ideation and prototyping labs hopes to promote the benefits of
+  open data for citizens and the city itself.
+lang: en
+title: Berlin's Kitas
+subtitle: Map-based application for finding Kitas
+type: prototype
+colorMode: bright
+featuredImage: /projects/kitas/images/featured.png
+thumbnail: /projects/kitas/images/thumbnail.jpg
+heroImage: /projects/kitas/images/hero.jpg
+socialMediaImage: /projects/kitas/social_media.jpg
+visible: true
+featured: true
+authors:
+  - sebastian-meier
+externalUrl: https://www.kita-suche.berlin
+start: 2018-04-03
+end: 2018-05-02
+status: finished
+date: 2018-05-02
+assets:
+  js:
+    - ../../../assets/js/d3.v4.min.js
+    - ../js/topojson.v1.min.js
+    - ../js/index.min.js
+  css:
+    - ../css/index-min.css
+materialsIncluded:
+  - name: "GitHub"
+    link: "https://github.com/technologiestiftung/kita-explorer"
+
+redirect_from:
+  - /projects/kitas/index_en.html
+
+---
+
+<div id="kita-intro">
+  <p class="kita-number"><span class="kita-big">179.678 Children</span><br><span class="kita-small">between the age of 1 and 6 years</span></p>
+  <p class="kita-image"><img src="../images/Icon-kids@2x.png"></p>
+</div>
+
+<p>About 180.000 children between the age of 1 and 6 years are living in the city of Berlin (State: Dezember 2016). More than 2.500 Kitas (childcare/daycare) are serving those in need, spread throughout the city of Berlin.</p>
+
+<div class="special-section" id="map"></div>
+
+<p>Even though, some districts have a little more children per 50 inhabitants than the average district (e.g. Pankow and Lichtenberg), most districts show a similar pattern. Due to higher population density and district size, districts like Pankow and Mitte need to support a larger number of children than their neighbouring districts.</p>
+
+<div class="special-section" id="icons">
+  <div id="icon_controlls">
+      <span class="db db-left active">Number&nbsp;of&nbsp;children&nbsp;per&nbsp;50&nbsp;inhabitants</span>&shy;<span class="db db-right">Number&nbsp;of&nbsp;children&nbsp;per&nbsp;district</span><br><br>
+      <img src="../images/Icon-explain.png" alt="Icon für Kind">&nbsp;&nbsp;<span class="def">equals about 453 children between the age of 1 and 6 years</span>
+  </div>
+</div>
+
+<p>The senate administration for education, youth and family is already providing their citizens with access to information on all of Berlin's Kitas through a <a href="https://www.berlin.de/sen/jugend/familie-und-kinder/kindertagesbetreuung/kitas/verzeichnis/">search engine</a>. The Ideation &amp; Prototyping lab is continuously exploring novel user-friendly interfaces in order to enable citizens to explore their cities data vaults. As a result, we build a map-based <a href="http://www.kita-suche.berlin">search interface</a>, which allows citizens to find their local Kita.</p>

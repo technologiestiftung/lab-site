@@ -1,0 +1,237 @@
+---
+layout: project
+description: ""
+lang: de
+title: Hochschulen in Berlin und Deutschland
+subtitle: Alle Hochschulen Berlins und Deutschlands im Vergleich.
+type: prototype
+colorMode: dark
+featuredImage: /projects/unis/images/featured.jpg
+thumbnail: /projects/unis/images/thumbnail.jpg
+heroImage: https://www.berlin-university-alliance.de/commonalities/infrastructure/libraries/hu-leseterassen.jpg?width=1300&density=2
+socialMediaImage: /projects/unis/social_media.jpg
+visible: true
+featured: false
+authors:
+  - fabian-dinklage
+start: 2018-02-15
+end: 2018-03-18
+status: finished
+date: 2018-03-18
+assets:
+  js:
+    - ../js/index-min.js
+  css:
+    - ../css/index.css
+materialsIncluded:
+
+redirect_from:
+  - /projects/unis/index.html
+
+---
+
+<div class="container p-bottom">
+  <p class="copy">Berlin ist eine der größten und vielfältigsten Wissenschaftsregionen Europas. An vier Universitäten, sieben Fachhochschulen, vier Kunsthochschulen und 27 privaten Hochschulen studieren rund 200.000 Menschen aus aller Welt. Informationen zum Studienangebot in ganz Deutschland bietet der Hochschulkompass der Hochschulrektorenkonferenz. Auf dieser Datengrundlage zeigen wir hier Visualisierungen und Analysen zum Wissenschaftsstandort Berlin.</p>
+</div>
+
+<div class="tsbUni tile-analysis-wrapper">
+  <div class="tile-analysis">
+      <img class="icon" src="../images/students.png" alt="">
+      <div class="tile-analysis--part">
+          <span class="tile-analysis--title">Am <b>meisten</b> Studierende</span>
+          <div class="tile-analysis--content tile-analysis--part">
+              <span class="tile-analysis--count">39.292</span>
+              <span class="tile-analysis--sub">Freie Universität Berlin</span>
+          </div>
+      </div>
+      <div class="tile-analysis--part">
+          <span class="tile-analysis--title">Am <b>wenigsten</b> Studierende</span>
+          <div class="tile-analysis--content">
+              <span class="tile-analysis--count">103</span>
+              <span class="tile-analysis--sub">Hochschule für angewandte Pädagogik</span>
+          </div>
+      </div>
+  </div>
+
+  <div class="tile-analysis">
+      <img class="icon" src="../images/uni.png" alt="">
+      <div class="tile-analysis--part">
+          <span class="tile-analysis--title"><b>Älteste</b> Hochschule</span>
+          <div class="tile-analysis--content tile-analysis--part">
+              <span class="tile-analysis--count">1699</span>
+              <span class="tile-analysis--sub">Universität der Künste Berlin</span>
+          </div>
+      </div>
+      <div class="tile-analysis--part">
+          <span class="tile-analysis--title"><b>Jüngste</b> Hochschule</span>
+          <div class="tile-analysis--content">
+              <span class="tile-analysis--count">2014</span>
+              <span class="tile-analysis--sub">BAU Int. Berlin University of Applied Sciences</span>
+          </div>
+      </div>
+  </div>
+  <div class="tile-analysis--last">
+      <img class="icon" src="../images/sponsor.png" alt="">
+      <div class="tile-analysis--part">
+          <span class="tile-analysis--title">Anzahl Hochschulen nach Art der <b>Förderung</b> und Anzahl d. Studierenden insgesamt</span>
+          <div class="tile-analysis-wrapper--last">
+              <div class="tile-analysis--part">
+                  <div class="tile-analysis--content">
+                      <div class="count-wrapper">
+                          <span class="tile-analysis--count">11</span>
+                          <span class="tile-analysis--students"> / 155.933</span>
+                      </div>
+                      <span class="tile-analysis--sub">öffentlich rechtlich</span>
+                  </div>
+              </div>
+              <div class="tile-analysis--part">
+                  <div class="tile-analysis--content">
+                      <div class="count-wrapper">
+                          <span class="tile-analysis--count">24</span>
+                          <span class="tile-analysis--students"> / 21.268</span>
+                      </div>
+                      <span class="tile-analysis--sub">privat</span>
+                  </div>
+              </div>
+              <div class="tile-analysis--part">
+                  <div class="tile-analysis--content">
+                          <div class="count-wrapper">
+                              <span class="tile-analysis--count">1</span>
+                              <span class="tile-analysis--students"> / 2.746</span>
+                          </div>
+                      <span class="tile-analysis--sub">kirchlich</span>
+                  </div>
+              </div>
+      </div>
+      </div>
+  </div>
+</div>
+
+<div class="tsbUni special-section">
+    <div class="charts-section">
+        <div class="chart-wrapper first">
+            <h4>Berliner Hochschulen</h4>
+            <div class="chart-legend">
+                <span class="chart-legend__h3">Studierende pro Universität</span>
+                <div id="legend-berlin-bars" class="chart-legend__graph"></div>
+            </div>
+            <div id="mapChartBerlin"></div>
+            <div class="chart-subline">
+                <span>
+                    Diese Grafik zeigt Deutschlands Hochschulen <br/> und die Anzahl d. eingeschriebenen Studierenden.
+                </span>
+                <span>
+                    Quelle: <br/> <a class="link" href="http://hochschulkompass.de">Hochschulkompass</a>
+                </span>
+            </div>
+                <div id="tooltip-berlin" class="tooltip-unis"></div>
+        </div>
+        <div class="chart-wrapper">
+            <h4>Hochschulen Histogramm</h4>
+            <div class="chart-legend">
+                <span class="chart-legend__h3">Eingeschriebene Studierende</span>
+                <div class="chart-legend__unis">
+                    <div class="chart-legend__unis--oval"></div>
+                    <span class="chart-legend__subline">Ein Punkt, eine Universität</span>
+                </div>
+            </div>
+            <div id="beeChartBerlin"></div>
+            <div class="chart-subline">
+                <span>
+                    Diese Grafik zeigt die Verteilung der Universitäten <br/> anhand der Studierendenzahlen in einem Histogramm.
+                </span>
+                <span>Quelle: <br/> <a class="link" href="http://hochschulkompass.de">Hochschulkompass</a></span>
+            </div>
+            <div id="brushed-tooltip-berlin" class="tooltip-unis"></div>
+        </div>
+    </div>
+</div>
+
+<p style="margin-top: 30px;">
+    Insgesamt sind 2.8 Millionen Menschen in Deutschland zum Studium eingeschrieben, rund 20 Prozent davon allein an den zehn größten Universitäten des Landes. Da der Hochschulkompass Daten zu ganz Deutschland umfasst, zeigen wir hier die Auswertungen des Gesamtdatensatzes.
+</p>
+
+<div class="tsbUni special-section">
+    <div class="charts-section">
+        <div class="chart-wrapper first">
+            <h4>Die deutsche Hochschullandschaft</h4>
+            <div class="chart-legend">
+                <span class="chart-legend__h3">Studierende pro Universität</span>
+                <div id="legend-bars" class="chart-legend__graph"></div>
+            </div>
+            <div id="map_Chart"></div>
+            <div class="chart-subline">
+                <span>Diese Grafik zeigt Deutschlands Hochschulen <br/> und die Anzahl d. eingeschriebenen Studierenden.</span>
+                    <span>Quelle: <br/> <a class="link" href="http://hochschulkompass.de">Hochschulkompass</a></span>
+            </div>
+
+            <div id="_tooltip" class="tooltip-unis"></div>
+        </div>
+        <div class="chart-wrapper">
+            <h4>Hochschulen Histogramm</h4>
+            <div class="chart-legend">
+                <span class="chart-legend__h3">Eingeschriebene Studierende</span>
+                <div class="chart-legend__unis">
+                    <div class="chart-legend__unis--oval"></div>
+                    <span class="chart-legend__subline">Ein Punkt, eine Universität</span>
+                </div>
+            </div>
+            <div id="bee_Chart"></div>
+            <div class="chart-subline">
+                <span>Diese Grafik zeigt die Verteilung der Universitäten <br/> anhand der Studierendenzahlen in einem Histogramm.</span>
+                <span>Quelle: <br/> <a class="link" href="http://hochschulkompass.de">Hochschulkompass</a></span>
+            </div>
+            <div id="brushed-tooltip" class="tooltip-unis"></div>
+        </div>
+    </div>
+</div>
+
+<p style="margin-top: 30px;">
+    Entlang des Datensatzes haben wir eine Liste der Top 10 Universitäten für Berlin und Deutschland zusammengestellt:
+</p>
+
+<div class="tsbUni project-text container container-unis">
+    <h4>Die Top 10 Universitäten Deutschlands und Berlin im Vergleich</h4>
+
+    <div class="btn-group-wrapper">
+        <div class="buttons grouped">
+            <button class="link--button" id="filter--oldest">
+                Gründungsjahr
+            </button>
+            <button class="link--button"  id="filter--diverse">
+                Studiengänge
+            </button>
+            <button class="link--button"  id="filter--countStudents">
+                Studierende
+            </button>
+        </div>
+
+        <div class="buttons">
+            <button class="link--button"  id="filter--sortOrder">
+                Sortierung: aufsteigend
+            </button>
+        </div>
+    </div>
+
+    <div class="table-legend">
+        <span>Universität</span>
+        <span class="legend-value">Anzahl</span>
+    </div>
+    <div id="table-wrapper"></div>
+</div>
+
+
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+<script src="https://rawgit.com/Kcnarf/d3-beeswarm/master/build/d3-beeswarm.js"></script>
+<script src="https://unpkg.com/topojson-client@3"></script>
+
+<script src="../js/d3-beeswarm.js"></script>
+<!-- <script src="./js/d3.min.js"></script> -->
+<script src="https://d3js.org/d3-tile.v0.0.min.js"></script>
+<script src="../js/topojson.js"></script>
+
+
+
+

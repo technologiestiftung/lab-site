@@ -1,0 +1,94 @@
+---
+layout: project
+lang: de
+
+title: Der Rhythmus der Straße
+subtitle: Berlins Radverkehr visualisiert.
+# project needs the following frontmatter values:
+type: prototype # could also be "workshop", "dataset", "prototype"
+#
+colorMode: bright # or "dark" adds an additional class
+featuredImage: /projects/bikerides/images/featured.jpg
+# thumbnail path needs to be absolute at the moment
+thumbnail: /projects/bikerides/images/thumbnail.jpg
+heroImage: /projects/bikerides/images/hero.jpg #full page url
+visible: true # if false the project will not be listed
+# somehow needs to be the name in url of the author page
+socialMediaImage: /projects/bikerides/images/social_media.jpg
+featured: true
+authors:
+  - fabian-dinklage
+
+start: 2018-07-01
+end: 2018-09-11
+status: finished
+date: 2018-09-11
+
+assets:
+  js:
+    - "../js/d3.min.js"
+    - "../js/crossfilter.min.js"
+    - "../js/radar_chart.js"
+    - "../js/main.js"
+
+  css:
+  - "../css/radar-chart.css"
+  - "../css/tooltip.css"
+  - "../css/root.css"
+  - "../css/custom_select.css"
+
+materialsIncluded:
+  - name: "Datensatz"
+    link: "https://data.technologiestiftung-berlin.de/dataset/radverkehrsmengen"
+# if the post had a counterpart on the old site add these tags
+# for redirecting it
+redirect_from:
+  - /projects/bikerides/index.html
+---
+
+<p>
+    Seit 2015 erfasst die Berliner Senatsverwaltung den Radverkehr in der Stadt durch automatisierte <a href="https://www.stadtentwicklung.berlin.de/aktuell/pressebox/archiv_volltext.shtml?arch_1609/nachricht6200.html">Zählstellen</a>. Pünktlich zu unserem <a href="https://www.technologiestiftung-berlin.de/de/veranstaltungen/beitrag/radverkehr-40/Fahrrad-Meetup">Radverkehrs-Meetup</a> haben wir die Daten der insgesamt 26 Zählstellen aggregiert und aufbereitet (die Rohdaten finden sich <a href="https://data.technologiestiftung-berlin.de/dataset/radverkehrsmengen">hier</a>)
+</p>
+
+<p>
+  Unsere Visualisierung zeigt jährliche, wöchentliche und tägliche Fahrmuster. Das Netz-Diagramm einer Radzählstelle fasst jeweils 8760 Einträge zusammen (ein Eintrag pro Stunde für ein ganzes Jahr). Die Daten von jeder Station lassen sich in drei unterschiedlichen Detailstufen abbilden. Jede Darstellung zeigt nach Wahl <span class="color-median">Median-</span> oder <span class="color-max">Maximalwerte</span>. Durch das Hovern über einzelne Monate/Tage/Stunden werden absolute Werte zum jeweiligen Zeitpunkt angezeigt.
+</p>
+
+<div class="special-section polar-chart-wrapper" style="overflow: visible;"></div>
+
+<div class="project-text">
+  <h3 style="margin-bottom: 30px;">Erläuterungen</h3>
+
+  <div class="container p-bottom two-col-flex" >
+      <div>
+          <h4 class="p-top">Arbeitstage</h4>
+          <p style="margin-bottom: 75px;" class="copy">Unter der Woche ist der Pendelverkehr am Morgen und am frühen Abend deutlich zu erkennen. Auch in den späteren Abendstunden sind viele Radfahrer unterwegs. Nach Mitternacht nimmt der Verkehr deutlich ab.</p>
+      </div>
+      <div class="example-chart-wrapper" id="Wochentage-example"></div>
+  </div>
+
+  <div class="container p-bottom two-col-flex" >
+      <div>
+          <h4>Wochenende</h4>
+          <p class="copy">Am Wochenende ist die Anzahl der Radfahrer ausgeglichener. Der Tiefpunkt liegt hier zwischen 06:00 und 09:00 Uhr morgens – Kreuzberg schläft gerne aus.</p>
+      </div>
+      <div class="example-chart-wrapper" id="Wochenenden-example"></div>
+  </div>
+
+  <div class="container p-bottom two-col-flex" >
+      <div>
+          <h4 class= "p-top">Wochenansicht</h4>
+          <p class="copy">Grundsätzlich sind von Montag bis Freitag mehr Räder in Berlin unterwegs als am Wochenende. Am Dienstag scheint die Motivation, sich aufs Rad zu schwingen, am höchsten.</p>
+      </div>
+      <div class="example-chart-wrapper" id="Woche-example"></div>
+  </div>
+
+  <div class="container p-bottom two-col-flex" >
+      <div>
+          <h4>Monatsansicht</h4>
+          <p class="copy">Im Juni im und August sind die meisten Fahrräder auf den Berliner Straßen unterwegs. Ferienbedingt ist im Juli ein Rückgang zu verzeichnen. Zwischen November und März werden die Radwege nur wenig genutzt. Im Januar wagen sich bei Minustemperaturen nur Hartgesottene aufs Rad.</p>
+      </div>
+      <div class="example-chart-wrapper" id="Monat-example"></div>
+  </div>
+</div>
+<div class="special-section line-chart-wrapper" style="overflow: visible;"></div>

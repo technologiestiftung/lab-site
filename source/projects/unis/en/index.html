@@ -1,0 +1,245 @@
+---
+layout: project
+description: ""
+lang: en
+title: Universities of Berlin and Germany
+subtitle: We compared all universities in Berlin and Germany.
+type: prototype
+colorMode: dark
+featuredImage: /projects/unis/images/featured.jpg
+thumbnail: /projects/unis/images/thumbnail.jpg
+heroImage: https://www.berlin-university-alliance.de/commonalities/infrastructure/libraries/hu-leseterassen.jpg?width=1300&density=2
+socialMediaImage: /projects/unis/social_media.jpg
+visible: true
+featured: false
+authors:
+  - fabian-dinklage
+start: 2018-02-15
+end: 2018-03-18
+status: finished
+date: 2018-03-18
+assets:
+  js:
+    - ../js/index_en-min.js
+  css:
+    - ../css/index.css
+materialsIncluded:
+
+redirect_from:
+  - /projects/unis/index_en.html
+
+---
+
+<div class="container p-bottom">
+  <p class="copy">Berlin is one of the largest and most diverse scientific regions in Europe. Around 200,000 people from all over the world have come to Berlin to study at one of the city's four universities, seven technical colleges, four art colleges and 27 private colleges. The Hochschulkompass provided by the German Rectors' Conference offers information on courses of study throughout Germany. Using this data as a basis, we present visualizations and analyses of Berlin as a hub for science and research.</p>
+</div>
+
+<div class="tsbUni tile-analysis-wrapper">
+  <div class="tile-analysis">
+      <img class="icon" src="../images/students.png" alt="">
+      <div class="tile-analysis--part">
+          <span class="tile-analysis--title">The <b>most</b> students</span>
+          <div class="tile-analysis--content">
+              <span class="tile-analysis--count">39.292</span>
+              <span class="tile-analysis--sub">Freie Universität Berlin</span>
+          </div>
+      </div>
+      <div class="tile-analysis--part">
+          <span class="tile-analysis--title">The <b>fewest</b> Students</span>
+          <div class="tile-analysis--content">
+              <span class="tile-analysis--count">103</span>
+              <span class="tile-analysis--sub">Hochschule für angewandte Pädagogik</span>
+          </div>
+      </div>
+  </div>
+
+  <div class="tile-analysis">
+      <img class="icon" src="../images/uni.png" alt="">
+      <div class="tile-analysis--part">
+          <span class="tile-analysis--title"><b>Oldest</b> university</span>
+          <div class="tile-analysis--content">
+              <span class="tile-analysis--count">1699</span>
+              <span class="tile-analysis--sub">Universität der Künste Berlin</span>
+          </div>
+      </div>
+      <div class="tile-analysis--part">
+          <span class="tile-analysis--title"><b>Youngest</b> Hochschule</span>
+          <div class="tile-analysis--content">
+              <span class="tile-analysis--count">2014</span>
+              <span class="tile-analysis--sub">BAU Int. Berlin University of Applied Sciences</span>
+          </div>
+      </div>
+  </div>
+  <div class="tile-analysis--last">
+      <img class="icon" src="../images/sponsor.png" alt="">
+      <div class="tile-analysis--part">
+          <span class="tile-analysis--title">Number of universities by type of <b>funding</b> / students</span>
+          <div class="tile-analysis-wrapper--last">
+              <div class="tile-analysis--part">
+                  <div class="tile-analysis--content">
+                      <div class="count-wrapper">
+                          <span class="tile-analysis--count">11</span>
+                          <span class="tile-analysis--students"> / 155.933</span>
+                      </div>
+                      <span class="tile-analysis--sub">public</span>
+                  </div>
+              </div>
+              <div class="tile-analysis--part">
+                  <div class="tile-analysis--content">
+                      <div class="count-wrapper">
+                          <span class="tile-analysis--count">24</span>
+                          <span class="tile-analysis--students"> / 21.268</span>
+                      </div>
+                      <span class="tile-analysis--sub">private</span>
+                  </div>
+              </div>
+              <div class="tile-analysis--part">
+                  <div class="tile-analysis--content">
+                          <div class="count-wrapper">
+                              <span class="tile-analysis--count">1</span>
+                              <span class="tile-analysis--students"> / 2.746</span>
+                          </div>
+                      <span class="tile-analysis--sub">by church</span>
+                  </div>
+              </div>
+      </div>
+      </div>
+  </div>
+</div>
+
+<div class="tsbUni special-section">
+    <div class="charts-section">
+        <div class="chart-wrapper first">
+            <h4>Berlin Universities</h4>
+            <div class="chart-legend">
+                <span class="chart-legend__h3">Students per university</span>
+                <div id="legend-berlin-bars" class="chart-legend__graph"></div>
+            </div>
+            <div id="mapChartBerlin"></div>
+            <div class="chart-subline">
+                <span>
+                    This chart shows Germany's universities <br/>
+                    and the number of students enrolled.
+                </span>
+                <span>
+                    Source: <br/> <a class="link" href="http://hochschulkompass.de">Hochschulkompass</a>
+                </span>
+            </div>
+                <div id="tooltip-berlin" class="tooltip-unis"></div>
+        </div>
+        <div class="chart-wrapper">
+            <h4>University Enrollment Histogram</h4>
+            <div class="chart-legend">
+                <span class="chart-legend__h3">Enrolled students</span>
+                <div class="chart-legend__unis">
+                    <div class="chart-legend__unis--oval"></div>
+                    <span class="chart-legend__subline">One dot equals one university</span>
+                </div>
+            </div>
+            <div id="beeChartBerlin"></div>
+            <div class="chart-subline">
+                <span>
+                    This histogram shows the distribution of universities <br/>
+                    based on the number of students.
+                </span>
+                <span>Source: <br/> <a class="link" href="http://hochschulkompass.de">Hochschulkompass</a></span>
+            </div>
+            <div id="brushed-tooltip-berlin" class="tooltip-unis"></div>
+        </div>
+    </div>
+</div>
+
+<p style="margin-top: 30px;">
+    A total of 2.8 million people are enrolled in higher education in Germany, with around 20 percent of these students at the country's ten largest universities alone. Since the Higher Education Compass contains data on the whole of Germany, here we provide an overview of what the university landscape looks like across the entire country.
+</p>
+
+<div class="tsbUni special-section">
+    <div class="charts-section">
+        <div class="chart-wrapper first">
+            <h4>Universities of Germany</h4>
+            <div class="chart-legend">
+                <span class="chart-legend__h3">Students per university</span>
+                <div id="legend-bars" class="chart-legend__graph"></div>
+            </div>
+            <div id="map_Chart"></div>
+            <div class="chart-subline">
+                <span>
+                    This chart shows Germany's universities <br>
+                    and the number of students enrolled.
+                </span>
+                    <span>Source: <br/> <a class="link" href="http://hochschulkompass.de">Hochschulkompass</a></span>
+            </div>
+
+            <div id="_tooltip" class="tooltip-unis"></div>
+        </div>
+        <div class="chart-wrapper">
+            <h4>University Enrollment Histogram</h4>
+            <div class="chart-legend">
+                <span class="chart-legend__h3">Eingeschriebene Studierende</span>
+                <div class="chart-legend__unis">
+                    <div class="chart-legend__unis--oval"></div>
+                    <span class="chart-legend__subline">One dot equals one university</span>
+                </div>
+            </div>
+            <div id="bee_Chart"></div>
+            <div class="chart-subline">
+                <span>
+                    This histogram shows the distribution of universities </br>
+                    based on the number of students.
+                </span>
+                <span>Source: <br/> <a class="link" href="http://hochschulkompass.de">Hochschulkompass</a></span>
+            </div>
+            <div id="brushed-tooltip" class="tooltip-unis"></div>
+        </div>
+    </div>
+</div>
+
+<p style="margin-top: 30px;">
+    Along the data set we have compiled a list of the top 10 universities for Berlin and Germany:
+</p>
+
+<div class="tsbUni project-text container container-unis">
+    <h4>A comparison of the top 10 universities in Germany and Berlin</h4>
+
+    <div class="btn-group-wrapper">
+        <div class="buttons grouped">
+            <button class="link--button" id="filter--oldest">
+                Year of foundation
+            </button>
+            <button class="link--button"  id="filter--diverse">
+                Studies
+            </button>
+            <button class="link--button"  id="filter--countStudents">
+                Students
+            </button>
+        </div>
+
+        <div class="buttons">
+            <button class="link--button"  id="filter--sortOrder">
+                Sorting order: ascending
+            </button>
+        </div>
+    </div>
+
+    <div class="table-legend">
+        <span>University</span>
+        <span class="legend-value">Amount</span>
+    </div>
+    <div id="table-wrapper"></div>
+</div>
+
+
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+<script src="https://rawgit.com/Kcnarf/d3-beeswarm/master/build/d3-beeswarm.js"></script>
+<script src="https://unpkg.com/topojson-client@3"></script>
+
+<script src="../js/d3-beeswarm.js"></script>
+<!-- <script src="./js/d3.min.js"></script> -->
+<script src="https://d3js.org/d3-tile.v0.0.min.js"></script>
+<script src="../js/topojson.js"></script>
+
+
+
+

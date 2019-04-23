@@ -1,0 +1,244 @@
+---
+layout: project
+description: Ein NodeJS, Commandline und Webservice um CSV Dateien von z.B. Tippfehlern zu
+  säubern.
+lang: de
+title: "CSV-Tool: Ähnliche Texte"
+subtitle: CSV Dateien aufräumen und Tippfehler etc. entfernen
+type: prototype
+colorMode: bright
+featuredImage: /projects/csv-string-optimization/images/featured.jpg
+thumbnail: /projects/csv-string-optimization/images/thumbnail.jpg
+heroImage: /projects/csv-string-optimization/images/hero.gif
+socialMediaImage: /projects/csv-string-optimization/social_media.jpg
+visible: true
+featured: false
+authors:
+  - sebastian-meier
+start: 2018-03-13
+end: 2018-04-06
+status: finished
+date: 2018-04-06
+assets:
+  js:
+    - ../../../assets/js/d3.v4.min.js
+    - ../js/index.js
+  css:
+    - ../styles/index.css
+materialsIncluded:
+  - name: GitHub
+    link: "https://github.com/technologiestiftung/csv-string-optimization"
+redirect_from:
+  - /projects/csv-string-optimization/index.html
+
+---
+
+<p><i>In den letzten Wochen haben wir uns etwas intensiver mit der Berliner  <a href="https://www.berlin.de/sen/finanzen/service/zuwendungsdatenbank/?order=geber">Zuwendungsdatenbank</a> beschäftigt. Dabei sind wir auf ein typisches Open Data-Problem gestoßen: Weil Namen und Adressen der Zuwendungsempfänger händisch in die Verwaltungsdatenbank eingepflegt wurden, haben sich eine ganze Menge Tippfehler und Ungenauigkeiten in die Daten eingeschlichen. Wir haben deshalb ein kleines Tool entwickelt, dass in der Lage ist, solche Ungereimtheiten zu erkennen und für mehr Ordnung in CSV-Dateien zu sorgen. Hier könnt ihr es ausprobieren.</i></p>
+
+<p>Nehmen wir einmal an, der (fiktive) Verein „Kaninchenfreunde Karlshorst e.V.“ erhält eine finanzielle Förderung aus Landesmitteln und somit auch einen Eintrag in der Zuwendungsdatenbank. Im folgenden Jahr erhält der Verein vielleicht erneut eine Förderung. Diesmal vergisst die in der Verwaltung zuständige Person jedoch einen Punkt und trägt „Kaninchenfreunde Karlshorst e.V“ in die Datenbank ein. Aufgrund der unterschiedlichen Schreibweise würde eine Maschine davon ausgehen, dass es sich um zwei unterschiedliche Träger handelt. Da die Zuwendungsdatenbank mehrere tausend Einträge enthält, ist es mitunter recht schwierig, solche kleinen Vertipper nachträglich aufzuspüren. Hier hilft unser Tool weiter.</p>
+
+<div class="container p-bottom">
+  <h2>Ausgangsdatensatz</h2>
+  <p class="copy p-bottom">
+      Füge den Inhalt einer CSV-Datei in das Textfeld ein oder ziehe die Datei von deinem Rechner direkt auf das Textfeld. Beachte, dass die erste Zeile die Spaltennamen enthalten muss. Für einen ersten Test kannst Du auch die bereits eingetragenen Beispieldaten verwenden.<br />
+      <span class="small">In der Webversion sollten die Datensätze nicht zu groß sein (&lt;2MB) um schnelle Ergebnisse zu erzielen.</span>
+  </p>
+  <textarea id="field-csv" name="csv">
+name,id
+Berlin,88
+Berlin,90
+Brlin,92
+Börlen,100
+Berlin,102
+Brlin,104
+Brln,108
+"'Berlin'",108
+Hamburg,112
+Hamburh,112
+  </textarea>
+  <p class="copy center p-bottom p-top">
+      <span class="feedback" id="btn-refresh-message"></span>
+      <input id="btn-refresh" class="btn" type="button" value="Ausgangsdatensatz importieren"><br /><br />
+      Welches Trennzeichen wird in der Datei eingesetzt?<br />
+      <span class="small">Dies sollte eigentlich automatisch erkannt werden.</span><br />
+      <input id="field-delimiter" type="text" name="delimiter" value="," placeholder="," /><br /><br />
+      Welche Spalte soll analysiert werden?<br />
+      <span class="small">Bitte auswählen.</span><br />
+      <select id="field-column" value="column">
+          <option value="name">name</option>
+      </select>
+  </p>
+  <h2 id="algo-expand"><span>►</span>Vergleichs-Algorithmus</h2>
+  <p id="algo-expansion" class="copy p-bottom">
+      Welcher Algorithmus soll für den Vergleich genutzt werden?<br />
+      <span class="small">Eine Erklärung zu den beiden Methoden findest du weiter unten auf der Seite.</span><br />
+      <select id="field-method" name="method">
+          <option value="fingerprint">Fingerprint</option>
+          <option value="knn" selected="selected">KNN</option>
+      </select>
+      <br />
+      <span id="extra-fingerprint" class="copy p-bottom">
+          Zusatzparameter für den Fingerprint-Algorithmus:<br />
+          <span class="small">Art des Fingerprinting:</span><br />
+          <select id="field-finger_type" name="method">
+              <option value="normal" selected="selected">Normal</option>
+              <option value="phonetic">Phonetic</option>
+          </select><br />
+          <span class="small">Sprache:</span><br />
+          <select id="field-finger_lang" name="method">
+              <option value="german" selected="selected">Deutsch</option>
+              <option value="other">Other (vorzugsweise Englisch)</option>
+          </select><br />
+          <span class="small">Sollen die Wörter einem Stemming-Prozess unterzogen werden:</span><br />
+          <select id="field-finger_stemming" name="method">
+              <option value="false" selected="selected">Nein</option>
+              <option value="true">Ja</option>
+          </select>
+      </span>
+      <span id="extra-knn" class="copy p-bottom">
+          Zusatzparameter für den KNN-Algorithmus:<br />
+          <span class="small">Mindestanzahl an übereinstimmenden Zeichen (empfohlen: 6):</span><br />
+          <input id="field-ngram_size" type="text" name="ngram_size" value="2" placeholder="2" /><br />
+          <span class="small">Maximale Abweichung in Prozent (empfohlen: 10):</span><br />
+          <input id="field-limit" type="text" name="limit" value="40" placeholder="40" />
+      </span>
+  </p>
+  <p class="copy">
+      <span class="feedback" id="btn-analyse-message"></span>
+      <input id="btn-analyse" class="btn btn-send" type="button" value="Vergleich durchführen">
+  </p>
+</div>
+
+<div class="container p-bottom">
+  <h2>Korrektur-Template</h2>
+  <p class="copy p-bottom">
+      Das Tool gruppiert nun ähnlich geschriebene Wörter, die richtige Schreibweise lässt sich auswählen. Im nächsten Schritt werden dann alle Wörter einer Gruppe durch die richtige Schreibweise ersetzt. Soll ein Wort nicht zur Gruppe gehören, kann es entfernt werden.<br />
+      <span class="small">(Abhängig von der Größe des Ausgangsdatensatzes kann es etwas dauern bis das Template angezeigt wird.)</span>
+  </p>
+  <div id="table-container">
+      <table id="table-template"></table>
+  </div>
+  <textarea name="template" id="field-template"></textarea>
+  <p class="copy p-top">
+      <input type="button" id="btn-toggle" class="btn" value="Template-JSON anzeigen"><br /><br />
+      <span class="feedback" id="btn-clean-message"></span>
+      <input type="button" id="btn-clean" class="btn btn-send" value="CSV korrigieren">
+  </p>
+</div>
+
+<div class="container p-bottom">
+  <h2>Korrigierter Datensatz</h2>
+  <p class="copy p-bottom">
+      Im folgenden Textfeld sollten nur noch die korrekten Bezeichnungen auftauchen und alle Fehler entfernt worden sein.<br />
+      <span class="small">Je nach Größe der Datei kann das Säubern einen Augenblick in Anspruch nehmen.</span>
+  </p>
+  <textarea id="clean-csv"></textarea>
+</div>
+
+<div class="container p-bottom">
+  <h2 class="p-bottom">Was steckt hinter dem Tool?</h2>
+  <p class="copy p-bottom">Zur Erkennung von Ähnlichkeiten greift unser Tool je nach Einstellungen auf die Fingerprint- oder die KNN-Methode zurück.</p>
+  <h2>Fingerprint</h2>
+  <p class="copy p-bottom">
+      Die grundsätzliche Idee des Fingerprinting ist es einen Text auf seine essentiellen Bestandteile zu reduzieren und dadurch einen essentiellen Fingerabdruck zu generieren. Dieser Fingerabdruck wird dann mit anderen verglichen um gleiche Text zu identifizieren.
+  </p>
+  <h3>Normales Fingerprinting</h3>
+  <p class="copy">
+      Um dies anzuwenden gibt es zwei Möglichkeiten. In der normalen Variante werden folgende Schritte angewandt:
+  </p>
+  <ul class="p-bottom p-top">
+      <li>Leerzeichen am Anfang und Ende werden entfernt.</li>
+      <li>Umwandlung in Kleinbuchstaben.</li>
+      <li>Entfernen von Punktation und Leerzeichen.</li>
+      <li>Umwandeln von Sonderzeichen (e.g. ä > ae).</li>
+      <li>Entfernen von unsichtbaren Zeichen.</li>
+  </ul>
+  <p class="copy p-bottom">So wird dann z.B. aus</p>
+  <div class="language-js highlighter-rouge">
+    <div class="highlight">
+  <pre class="highlight"><code>
+      'Grips'-Theater gemeinnützige Gesellschaft
+      gripstheatergemeinnuetzigegesellschaft
+  </code></pre>
+    </div>
+  </div>
+  <p class="copy p-bottom p-top">Dies bedeutet, dass alle folgenden Varianten zum selben Fingerabdruck werden:</p>
+  <div class="language-js highlighter-rouge">
+      <div class="highlight">
+    <pre class="highlight"><code>
+      'Grips'-Theater gemeinnützige Gesellschaft
+      Grips-Theater gemeinnützige Gesellschaft
+       Grips Theater gemeinnützige Gesellschaft
+      Grips Theater gemeinnützigeGesellschaft
+
+      gripstheatergemeinnuetzigegesellschaft
+  </code></pre>
+      </div></div>
+  <p class="copy p-top p-bottom">Dieses Verfahren ist sehr schnell, kann aber Probleme wie komplexere Tippfehler häufig nicht erkennen.</p>
+  <h3>Phonetisches Fingerprinting</h3>
+  <p class="copy p-bottom">
+      Beim phonetischen Fingerabdruck werden Textelemente erst in ihre phonetischen Marker übersetzt. Hierdurch können häufig kleine Schreibfehler, weil z.B. jemand nach Gehör geschrieben hat erkannt werden.<br /><br />
+      So haben folgende Schreibweisen die selben phonetischen Marker:
+  </p>
+  <div class="language-js highlighter-rouge">
+      <div class="highlight">
+    <pre class="highlight"><code>
+
+      Sebastian
+      Sebästian
+      Sebastien
+
+      81826
+  </code></pre></div></div>
+  <p class="copy p-top p-bottom">
+      Um die Umwandlung vorzunehmen wurden in unserem Modul zwei Bibliotheken integriert: für deutsch die cologne-Sammlung und für andere Sprachen die metaphone-Sammlung.
+  </p>
+  <h2>KNN / Neighbour</h2>
+  <p class="copy p-bottom">
+      Die Nachbarschaftsmethode ist wesentlich komplexer und damit auch rechenintensiver, dafür aber auch genauer. Die Grundlage ist ein direkter Vergleich zweier Texte, bei dem die Distanz zwischen den Texten berechnet wird, genauer gesagt, die Levenshtein-Distanz. Diese beschreibt die Anzahl an Veränderungen am ersten Text (Löschen, Hinzufügen und Ersetzen von Zeichen), die notwendig sind um den anderen Text zu generieren. Um nicht jeden Text mit jedem anderen Text vergleichen zu müssen, wird vorher überprüft welche Texte überhaupt ähnliche Elemente enthalten. Hierzu wird der Text in kleine Bausteine aufgebrochen und diese werden miteinander verglichen. Umso länger die Bausteine umso schneller und umso kürzer die Bausteine umso genauer (Standardwert: 6).<br /><br />
+      Folgend ein Beispiel für die Aufteilung eines Textes in 6er Zeichenketten:
+  </p>
+  <div class="language-js highlighter-rouge">
+      <div class="highlight">
+    <pre class="highlight"><code>
+
+      Technologie
+      Techno
+       echnol
+        chnolo
+         hnolog
+          nologi
+           ologie
+
+      Technik
+      Techni
+       echnik
+
+      Technische
+      Techni
+       echnis
+        chnisc
+         hnisch
+          nische
+
+  </code></pre></div></div>
+  <p class="copy p-bottom p-top">
+      Im obrigen Beispiel würden Technik und Technische den gemeinsamen Baustein "Techni" haben.<br /><br />
+      Bei den Texten die eine Ähnlichkeit aufweisen, wird dann die konkrete Distanz berechnet. Hier sind ein paar Beispiele und die entsprechenden Distanzen:
+  </p>
+  <div class="language-js highlighter-rouge"><div class="highlight">
+    <pre class="highlight"><code>
+
+      Technik &lt;&gt; Technische = 4
+      Berlin &lt;&gt; Bern = 2
+      Senat &lt;&gt; Stern = 4
+  </code></pre></div></div>
+  <p class="copy p-bottom p-top">
+      Für die Bewertung der Levenshteinschen Distanz (LD) setzen wir auf das Verhältnis zur Textlänge. Ein sehr langer Text der eine LD von 2 hat ist möglicherweise derselbe, ein Wort von nur 5 Zeichen mit einer LD von 2 ist mit einer geringeren Wahrscheinlichkeit derselbe.
+  </p>
+  <p class="copy p-bottom">
+      Die hier eingesetzten Methoden haben wir uns nicht ausgedacht, sondern sind gängige Methoden um solche Problem zu lösen. Inspiriert wurde unser Vorgehen von den Funktionalitäten der quelloffenen Desktop-Anwendung <a href="https://github.com/OpenRefine/OpenRefine">Open Refine</a>, die sich bestens eignet um Datensätze zu säubern.
+  </p>
+  <h2>Nutzung/Installation</h2>
+  <p class="copy">Das Tool kann nicht nur hier im Browser genutzt, sondern läuft auch auf der Kommandozeile oder lässt sich in eigene Anwendungen integrieren. Entwickler*innen, die damit arbeiten wollen, können via NPM das entsprechende <a href="https://www.npmjs.com/package/csv-string-optimization">Node-Modul</a> installieren. Der Quellcode ist wie immer offen und unter untenstehendem Github-Link abrufbar. Wir freuen uns über Feedback und Weiterentwicklungen!</p>
+</div>

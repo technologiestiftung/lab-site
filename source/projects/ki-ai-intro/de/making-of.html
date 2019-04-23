@@ -1,0 +1,92 @@
+---
+layout: project
+description: "Rund zwei Wochen lang haben sich Sebastian und Fabian die Abende im Lab um die Ohren geschlagen, um unsere KI-Anwendung rechtzeitig zur Langen Nacht der Wissenschaften fertig zu stellen. Im Gespräch geben die beiden einen Einblick in den Entwicklungsprozess."
+lang: de
+title: "Mit den Augen der Maschine — Making of"
+subtitle: "HINTER DEN AUGEN DER MASCHINE - EIN MAKING OF"
+type: publication
+colorMode: dark
+thumbnail: /projects/ki-ai-intro/images/thumbnail.jpg
+heroImage: /projects/ki-ai-intro/images/MachineVision2.jpg
+socialMediaImage: /projects/ki-ai-intro/social_media.jpg
+visible: false
+featured: false
+authors:
+  - benjamin-seibel
+  - fabian-dinklage
+  - sebastian-meier
+start: 2018-04-07
+end: 2018-06-09
+status: finished
+date: 2018-06-09
+
+assets:
+  css:
+    - "../styles/index.css"
+
+materialsIncluded:
+  - name: "Flyer: Vorhersagen"
+    link: "/projects/ki-ai-intro/downloads/LNDW_1.pdf"
+  - name: "Flyer: Verkehr"
+    link: "/projects/ki-ai-intro/downloads/LNDW_2.pdf"
+  - name: "Flyer: Persönlichkeitsrechte"
+    link: "/projects/ki-ai-intro/downloads/LNDW_3.pdf"
+  - name: "Flyer: Privatsphäre"
+    link: "/projects/ki-ai-intro/downloads/LNDW_4.pdf"
+  - name: "Flyer: Medizin"
+    link: "/projects/ki-ai-intro/downloads/LNDW_5.pdf"
+  - name: "Flyer: Barrierefreiheit"
+    link: "/projects/ki-ai-intro/downloads/LNDW_6.pdf"
+  - name: GitHub
+    link: "https://github.com/technologiestiftung/lndw-2018"
+
+redirect_from:
+  - /projects/ki-ai-making-of/index.html
+  - /projects/ki-ai-making-of/
+
+---
+
+<p>Rund zwei Wochen lang haben sich <a href="https://twitter.com/seb_meier/">Sebastian</a> und <a href="https://twitter.com/fdnklg">Fabian</a> die Abende im Lab um die Ohren geschlagen, um unsere KI-Anwendung rechtzeitig zur <a href="https://www.langenachtderwissenschaften.de/">Langen Nacht der Wissenschaften</a> fertig zu stellen. Im Gespräch geben die beiden einen Einblick in den Entwicklungsprozess, den aktuellen Stand der Künstlichen Intelligenz und unerwartete Überraschungen bei der Zweckentfremdung von Thermodruckern.</p>
+
+{% include macro-image-section.html src="../images/Inside.jpg" caption="Opening the black box" %}
+
+<p><i>Erinnert ihr euch noch, wie die Idee zur Anwendung entstanden ist?</i></p>
+<p>Sebastian: Künstliche Intelligenz ist ein Thema, mit dem wir uns in den vergangenen Monaten bei der Stiftung intensiver beschäftigt haben. Zur Langen Nacht der Wissenschaften wollten wir ein Projekt machen, das dieses Thema auch für Laien anschaulich vermittelt. Das Thema Gesichtserkennung hat sich dafür angeboten. Unser Ziel war es, Besucher*innen dafür zu sensibilisieren, was heute bereits möglich ist, um so mit ihnen ins Gespräch zu kommen. Am Stand gibt es dann über unsere Flyer noch weitergehende Informationen über verschiedene Anwendungsszenarien der KI.´</p>  
+<p><i>Fabian, Du hast das Designkonzept gemacht. Worauf hast Du dabei Wert gelegt?</i></p>
+<p>Fabian: Na, vor allem sollte es gut aussehen (lacht). Wir haben uns einerseits an einer Sci-Fi-Ästhetik orientiert, gerade weil sich solche Anwendungen immer noch nach einer Zukunftsvision anfühlen. Dabei ist die Pointe ja gerade, dass KI und Gesichtserkennung längst Realität sind. Deshalb ist es auch ein schöner Kontrast, dass unser eher futuristisches Interface in einer selbst zusammengezimmerten Holzkiste steckt, was den DIY-Aspekt des ganzen unterstreicht. Auch die Schwarz-Weiß-Portraits aus dem Thermodrucker haben eher so einen Lo-Fi-Look.</p>  
+<p><i>Was steckt denn jetzt alles in der KI-Fotobox?</i></p>
+<p>Sebastian: In der Kiste versteckt sich zunächst mal ein Laptop mit Internetzugang und ein Monitor ohne Gehäuse (den wir aus unserem <a href="https://lab.technologiestiftung-berlin.de/projects/MagicMirror/index.html">Magic Mirror</a> geborgt haben). Die Navigation funktioniert über einen ins Gehäuse eingelassenen Touch-Button. Zwei Arduinos steuern außerdem das LED-Blitzlicht an der Webcam und den Thermodrucker. Auf der Rückseite sorgen zwei Lüfter für Kühlung. Softwareseitig läuft die Anwendung im Browser, ein Node.js-Backend kümmert sich um die Druckersteuerung und die API-Kommunikation. Die eigentliche Gesichtserkennung wird dann in der Cloud über die Azure Face-Recognition-API von Microsoft erledigt. </p>  
+
+{% include macro-image-section.html src="../images/Screen.png" caption="Bitte lächeln!" %}
+
+<p><i>Wie waren eure Erfahrungen mit der Verwendung dieser API? Ist das kompliziert?</i></p>
+<p>Sebastian: Nein, überhaupt nicht. Das komplizierteste war, die AGBs durchzulesen (lacht). Denn für uns war wichtig, dass die Daten unserer Besucher*innen in Europa verarbeitet und nach der Verwendung auch wirklich wieder gelöscht werden. Aber technisch ist es inzwischen wirklich einfach. Die Systeme der großen Anbieter sind natürlich auch entsprechend trainiert, das hätten wir nicht selbst leisten können, weil wir solche Trainingsdaten gar nicht haben. Wir haben alle möglichen Tests gemacht (verschiedene Hauttypen, Frauen/Männer, Haare/keine Haare) und waren mit den Ergebnissen recht zufrieden. </p>  
+<p><i>Was hat es mit dem erwähnten Thermodrucker auf sich?</i></p>
+<p>Fabian: Wir wollten, dass die Besucher*innen etwas mit nach Hause nehmen können, deshalb wird das fotografierte Portrait nach der Erkennung ausgedruckt. Den Thermodrucker fanden wir witzig, weil er eine sehr rauhe, maschinenhafte Ästhetik hat und es so ein bisschen wirkt, als ob man von der Maschine „abgefertigt“ wird wie ein Produkt. Solche Drucker werden ja sonst an der Supermarktkasse für Kassenbons genutzt. Technisch war das aber knifflig, weil diese Drucker für den Druck von Text gemacht sind und Bilddateien etwas mehr Speicher benötigen. Wir haben also ein paar Tage gebraucht, um das Datenhandling so in den Griff zu kriegen, dass der Drucker sich nicht ständig aufhängt.  </p>  
+
+{% include macro-image-section.html src="../images/print.jpg" caption="KI-Kassenbon aus dem Thermodrucker" %}
+
+<p><i>Wie war allgemein euer Eindruck von der Leistungsfähigkeit der KI?</i></p>
+<p>Sebastian: Insgesamt funktioniert die Gesichtserkennung schon ziemlich gut. Natürlich fallen einem trotzdem hin und wieder Eigenheiten auf. zum Beispiel erfassen wir in dem Projekt ja auch den Gesichtsausdruck, also ob jemand eher fröhlich, traurig oder wütend schaut. Und unser Eindruck war, dass die KI ältere Menschen häufiger als verärgert einschätzt. Das funktioniert übrigens auch umgekehrt: Wenn man wütend guckt, schätzt die Maschine einen älter. Empirisch belegen können wir das aber nicht (lacht).</p>
+<p>Fabian: Es ist ja schon so, dass sich das meiste hinter der Oberfläche der KI abspielt. Es lässt sich dann tatsächlich kaum nachvollziehen, wie die Maschine solche Dinge entscheidet. Das hat natürlich auch einen problematischen Aspekt. Umgekehrt kann man aber eben auch die Vorteile der KI nutzen, ohne sich mit allen Details auseinandersetzen zu müssen. </p>  
+<p><i>Ihr habt ungefähr zwei Wochen an dem Projekt gearbeitet. Wenn ihr jetzt nochmal von vorne anfangen könntet, was würdet ihr anders machen?</i></p>
+<p>Sebastian: Abgesehen von ein paar Anfängerfehlern bei der Holzarbeit hat eigentlich alles prima geklappt. Nur die Sache mit dem Thermodrucker würden wir uns rückblickend vielleicht nochmal überlegen. Das hat einige Nerven gekostet. Der Rest war eigentlich easy.  </p>  
+
+{% include macro-image-section.html src="../images/Team.jpg" caption="Mood: 97% Happy" %}
+
+<h3 style="padding-top:50px;">Übersicht:</h3>
+
+<div class="table-of-content-wrapper pt-20">
+    <div class="content-wrapper">
+        <img src="../images/icon-content-03.png" alt="">
+        <a href="./index.html"><span>KI Intro</span></a>
+    </div>
+    <div class="content-wrapper">
+        <img src="../images/icon-content-02.png" alt="">
+        <a href="./potentials-challenges.html"><span>KI-Szenarien (Infosheets zur LNDW)</span></a>
+    </div>
+    <div class="content-wrapper">
+        <img src="../images/icon-content-01.png" alt="">
+        <a href="./ethics.html"><span>KI und Ethik (Artikel)</span></a>
+    </div>
+</div>

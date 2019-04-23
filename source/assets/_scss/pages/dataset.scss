@@ -1,0 +1,62 @@
+.dataset {
+    margin-top: 0;
+
+    &-header {
+        img {
+            display: block;
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+
+    &-downloads {
+        display: grid;
+        grid-gap: $spacing-s;
+        grid-template-columns: repeat(4, 25%);
+        
+        @media only screen and (max-width: $screen-m) {
+            grid-template-columns: repeat(2, 50%);
+        }
+
+        &__item {
+            display: flex;
+            flex-direction: row;
+            margin: 0 $spacing-l 0 0;
+            padding: 0 0 0 0px;
+            position: relative;
+
+            @media only screen and (max-width: $screen-m) {
+                margin: 0 $spacing-l 0 0;
+            }
+
+            &:last-of-type {
+                margin: 0 0 0 0;
+            }
+
+            &--image {
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 25px;
+            }
+            &--name {
+                line-height: $line-height-min;
+            }
+            &--size {
+                color: $grey;
+                font-size: $font-size-s;
+                line-height: $line-height-min;
+            }
+        }
+    }
+
+    .data-table__row {
+        height: auto;
+        padding-bottom: $spacing-xs;
+        padding-top: $spacing-xs;
+
+        &-cell {
+            align-items: flex-start;
+        }
+    }
+}

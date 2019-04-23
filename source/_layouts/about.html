@@ -1,0 +1,67 @@
+---
+layout: default
+---
+
+<section class="mission-statement">
+  {%- if page.lang == "de" -%}
+  <h1 class="section-headline">{{site.data.meta.missionStatement.title.de}}</h1>
+  <p>
+    {{site.data.meta.missionStatement.text.de}}
+  </p>
+  {%- else -%}
+  <h1 class="section-headline">{{site.data.meta.missionStatement.title.en}}</h1>
+  <p>
+    {{site.data.meta.missionStatement.text.en}}
+  </p>
+  {%- endif -%}
+</section>
+{% include team-list.html %}
+
+<section class="feed">
+    <h2 class="feed-headline section-headline headline--bold">Alumni</h2>
+    <ul class="grid feed-list">
+
+        {% for alumnus in site.data.alumni %}
+        <li class="feed-list__project alumni">
+                <div class="feed-list__project-title">
+                    {{ alumnus.name }}
+                <div class="feed-list__project-date">
+                    {%- if page.lang == "de" -%}
+                    {{ alumnus.role.de }}{%- else -%}{{ alumnus.role.en }}
+                    {%- endif -%}
+                </div>
+                </div>
+        </li>
+        {% endfor %}
+
+    </ul>
+</section>
+
+<!-- <section class="partner">
+        <h2 class="partner-headline section-headline headline--bold">{%- if page.lang == "en" -%}
+            Partners
+            {%- else -%}
+            Partner
+          {%- endif -%}</h2>
+        <ul class="grid partner-list">
+            {% for partner in site.data.partners %}
+            <li class="partner-list__project">
+                <a href="#">
+                    <div class="partner-list__project-image">
+                        <img class="partner-list__project-image-logo partner-list__project-image-logo--{{ partner.name | slugify }}" src="{{ partner.image }}" alt="{{ partner.name }}">
+                    </div>
+                    <div class="partner-list__project-title">
+                        {{ partner.name }}
+                    </div>
+                    <div>
+                        {%- if page.lang == "de" -%}
+                        {{ partner.description.de }}
+                        {%- else -%}
+                        {{ partner.description.en }}
+                        {%- endif -%}
+                    </div>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </section> -->

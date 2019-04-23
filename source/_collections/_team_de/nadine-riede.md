@@ -1,0 +1,15 @@
+---
+name: Nadine Riede
+uid: nadine-riede
+image: /assets/images/nadine.jpg
+mail: Riede@technologiestiftung-berlin.de
+description: " "
+twitter: ""
+github: 
+position: CityLAB Berlin
+type: prototype # could also be "workshop", "dataset", "prototype"
+order: 2
+---
+
+
+Das ist als content zu haben

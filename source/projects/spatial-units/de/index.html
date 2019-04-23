@@ -1,0 +1,221 @@
+---
+layout: project
+description: Das Land Berlin ist in verschiedene räumliche Einheiten unterteilt von den
+  politischen Bezirksgrenzen über die statistischen lebensweltlich orientierten
+  Räume (LOR) bis hin zu Gebäuden.
+lang: de
+title: Berlins räumliche Einheiten
+subtitle: Einführung und Übersicht
+type: publication
+colorMode: bright
+featuredImage: /projects/spatial-units/images/featured.jpg
+thumbnail: /projects/spatial-units/images/thumbnail.jpg
+heroImage: /projects/spatial-units/images/social_media.jpg
+socialMediaImage: /projects/spatial-units/images/social_media.jpg
+visible: true
+featured: false
+authors:
+  - sebastian-meier
+start: 2018-02-01
+end: 2018-02-14
+status: finished
+date: 2018-02-14
+assets:
+  js:
+    - ../../../assets/js/d3.v4.min.js
+    - ../js/topojson.v1.min.js
+    - ../js/index.js
+  css:
+    - ../styles/index.css
+redirect_from:
+  - /projects/spatial-units/index.html
+
+---
+
+<p>Räumliche Informationen zum Land Berlin werden in verschiedenen Auflösungen und räumlichen Einheiten zur Verfügung gestellt. Wir haben die wichtigsten Einheiten für die Berliner Bürger*innen hier zusammengestellt und bereits in die gängigsten Formate umgewandelt, sodass diese gleich für Analysen und Visualisierungen genutzt werden können. Im Folgenden geben wir einen Überblick über die räumlichen Einheiten und ihre Bedeutung.</p>
+
+<div class="container">
+    <ul id="overview-list">
+        <li>
+            <a href="#section_lors">
+                <img src="../images/thumbs_lor@2x.jpg" srcset="../images/thumbs_lor.jpg, ../images/thumbs_lor@2x.jpg 2x" alt="LORs" />
+                <span><span>LORs</span></span>
+            </a>
+        </li>
+        <li>
+            <a href="#section_vz">
+                <img src="../images/thumbs_vz@2x.jpg" srcset="../images/thumbs_vz.jpg, ../images/thumbs_vz@2x.jpg 2x" alt="Verkehrszellen" />
+                <span><span>Verkehrszellen</span></span>
+            </a>
+        </li>
+        <li>
+            <a href="#section_flure">
+                <img src="../images/thumbs_flure@2x.jpg" srcset="../images/thumbs_flure.jpg, ../images/thumbs_flure@2x.jpg 2x" alt="Flure" />
+                <span><span>Flure</span></span>
+            </a>
+        </li>
+        <li>
+            <a href="#section_plz">
+                <img src="../images/thumbs_plz@2x.jpg" srcset="../images/thumbs_plz.jpg, ../images/thumbs_plz@2x.jpg 2x" alt="PLZ &amp; Ortsteile" />
+                <span><span>PLZ &amp; Ortsteile</span></span>
+            </a>
+        </li>
+        <li>
+            <a href="#section_buildings">
+                <img src="../images/thumbs_buildings@2x.jpg" srcset="../images/thumbs_buildings.jpg, ../images/thumbs_buildings@2x.jpg 2x" alt="Straßen, Gebäude &amp; Blöcke" />
+                <span><span>Straßen, Gebäude</span><br /><span style="border-top-right-radius: 0; border-top-left-radius: 0;">&amp; Blöcke</span></span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="container p-bottom" id="section_lors">
+    <h2 class="p-top">LORs</h2>
+    <p class="copy">Die meisten räumlichen Informationen, wie zum Beispiel Bevölkerungsdichte, werden als LORs zur Verfügung gestellt. LOR steht für <i>lebensweltlich orientierte Räume</i>. Die LORs stehen in drei Granularitäten zur Verfügung (niedrig nach hoch): <i>Prognoseräume, Bezirksregionen</i> und <i>Planungsräume</i>. Die Einheiten wurden von den bereits existierenden Sozialräumen abgeleitet, welche in Ihrer gröbsten Auflösung von den Berliner Bezirksgrenzen abgeleitet werden. Die räumlichen Einheiten versuchen natürliche und gebaute Grenzen, wie beispielsweise große Straßen und Flüsse, zu berücksichtigen. In ihrer höchsten Auflösung sind die Einheiten darüber hinaus an alten statistischen Einheiten angelehnt, wie z.B. den Verkehrszellen (<a href="#section_vz">siehe unten</a>). Aus statistischer Perspektive sollen die Einheiten möglichst homogen sein und gleichzeitig sicherstellen, dass genug Menschen in jedem Block leben, um deren Anonymität zu gewährleisten. Weitere Informationen zu den LORs finden Sie <a href="http://www.stadtentwicklung.berlin.de/planen/basisdaten_stadtentwicklung/lor/">hier</a>.</p>
+</div>
+
+<div class="container small layermix" data-labels="Bezirksgrenzen,Prognoseräume,Bezirksregionen,Planungsräume" data-layer="districts,predictionsspaces,districtspaces,planningspaces"></div>
+
+<div class="container p-bottom">
+    <ul class="download-list">
+        <li>
+            <a href="https://data.technologiestiftung-berlin.de/dataset/bezirksgrenzen">
+                <span class="download-icon"></span>
+                <span class="download-title">Bezirksgrenzen</span><br />
+                <span class="download-subtitle">CSV, GeoJSON, KML, SQLite, Postgres, gml, Shapefile</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://data.technologiestiftung-berlin.de/dataset/lor_prognoseraeume">
+                <span class="download-icon"></span>
+                <span class="download-title">Prognoseräume</span><br />
+                <span class="download-subtitle">CSV, GeoJSON, KML, SQLite, Postgres, gml, Shapefile</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://data.technologiestiftung-berlin.de/dataset/lor_bezirksregionen">
+                <span class="download-icon"></span>
+                <span class="download-title">Bezirksregionen</span><br />
+                <span class="download-subtitle">CSV, GeoJSON, KML, SQLite, Postgres, gml, Shapefile</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://data.technologiestiftung-berlin.de/dataset/lor_planungsgraeume">
+                <span class="download-icon"></span>
+                <span class="download-title">Planungsräume</span><br />
+                <span class="download-subtitle">CSV, GeoJSON, KML, SQLite, Postgres, gml, Shapefile</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="container p-top p-bottom" id="section_vz">
+    <h2 class="p-top">Verkehrszellen und Teilverkehrszellen</h2>
+    <p class="copy">Die Verkehrszellen waren vor der Einführung der LORs von größerer Bedeutung. Aber auch heute noch gibt es vereinzelte Informationen die für diese räumlichen Einheiten erhoben werden, hierzu zählen beispielsweise die Daten für <a href="https://www.berlin.de/sen/finanzen/service/zuwendungsdatenbank/">Zuwendungen und Förderungen</a> im Land Berlin. Dies hat häufig damit zu tun, dass die Verkehrszellen vor Einführung der LORs schon in europäischen Standardisierungsprozessen etabliert wurden.</p>
+</div>
+
+<div class="container small layermix" data-labels="Verkehrszellen,Teilverkehrszellen" data-layer="trafficcells,subtrafficcells"></div>
+
+<div class="container p-bottom">
+    <ul class="download-list">
+        <li>
+            <a href="https://data.technologiestiftung-berlin.de/dataset/verkehrszellen">
+                <span class="download-icon"></span>
+                <span class="download-title">Verkehrszellen</span><br />
+                <span class="download-subtitle">CSV, GeoJSON, KML, SQLite, Postgres, gml, Shapefile</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://data.technologiestiftung-berlin.de/dataset/teil_verkehrszellen">
+                <span class="download-icon"></span>
+                <span class="download-title">Teilverkehrszellen</span><br />
+                <span class="download-subtitle">CSV, GeoJSON, KML, SQLite, Postgres, gml, Shapefile</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="container p-bottom" id="section_flure">
+    <h2 class="p-top">Flure und Flurstücke</h2>
+    <p class="copy">Neben den LORs und Verkehrszellen, welche die wichtigsten räumlichen Einheiten für statistische Daten sind, gibt es weitere Einheiten für spezielle Verwendungszecke. Eine solche Einheit sind die Flure und Flurstücke. Diese werden vom Berliner Liegenschaftskataster genutzt um zu dokumentieren wem welches Stück Land in Berlin gehört. Darüber hinaus wird auf derselben räumlichen Einheit auch dokumentiert wieviel ein Flurstück statistisch Wert ist und was dort gebaut werden darf.</p>
+</div>
+
+<div class="container small layermix" data-labels="Flure" data-layer="corridors"></div>
+
+<div class="container p-bottom">
+    <ul class="download-list">
+        <li>
+            <a href="https://data.technologiestiftung-berlin.de/dataset/flure">
+                <span class="download-icon"></span>
+                <span class="download-title">Flure</span><br />
+                <span class="download-subtitle">CSV, GeoJSON, KML, SQLite, Postgres, gml, Shapefile</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://data.technologiestiftung-berlin.de/dataset/flurstuecke">
+                <span class="download-icon"></span>
+                <span class="download-title">Flurstücke</span><br />
+                <span class="download-subtitle">Postgres, GeoJSON, Shapefile</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="container p-bottom" id="section_plz">
+    <h2 class="p-top">Postleitzahlen und Ortsteile</h2>
+    <p class="copy">Ebenfalls häufig von Interesse sind die Postleitzahlregionen und die Ortsteile. Während sich die Ortsteile gut mit den LORs in Verbindung setzen lassen, sind die Postleitzahlgebiete die Sonderlinge unter den räumlichen Einheiten.</p>
+</div>
+
+<div class="container small layermix" data-labels="Postleitzahlen,Ortsteile" data-layer="postcode,cityparts"></div>
+
+<div class="container p-bottom">
+    <ul class="download-list">
+        <li>
+            <a href="https://data.technologiestiftung-berlin.de/dataset/plz">
+                <span class="download-icon"></span>
+                <span class="download-title">Postleitzahlen</span><br />
+                <span class="download-subtitle">CSV, GeoJSON, KML, SQLite, Postgres, gml, Shapefile</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://data.technologiestiftung-berlin.de/dataset/ortsteile">
+                <span class="download-icon"></span>
+                <span class="download-title">Ortsteile</span><br />
+                <span class="download-subtitle">CSV, GeoJSON, KML, SQLite, Postgres, gml, Shapefile</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="container p-bottom" id="section_buildings">
+    <h2 class="p-top">Straßen, Gebäude und Blöcke</h2>
+    <p class="copy">Die letzten drei Einheiten werden nur selben zu statistischen Zwecken genutzt, sind jedoch trotzdem wichtige räumliche Einheiten für das Land Berlin. Zum einen sind dies die Straßenflächen der Stadt und zum anderen die einzelnen Gebäude der Stadt. Blöcke sind Zusammenschlüsse von Gebäuden die in der Regel von mehreren Straßen umgrenzt werden.</p>
+</div>
+
+<div class="container p-bottom">
+    <ul class="download-list">
+        <li>
+            <a href="https://data.technologiestiftung-berlin.de/dataset/strassenflaechen">
+                <span class="download-icon"></span>
+                <span class="download-title">Straßen</span><br />
+                <span class="download-subtitle">CSV, GeoJSON, KML, SQLite, Postgres, gml, Shapefile</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://data.technologiestiftung-berlin.de/dataset/gebaeude">
+                <span class="download-icon"></span>
+                <span class="download-title">Gebäude</span><br />
+                <span class="download-subtitle">Postgres, GeoJSON, Shapefile</span>
+            </a>
+        </li>
+        <li style="clear:both;">
+            <a href="https://data.technologiestiftung-berlin.de/dataset/blockflaechen">
+                <span class="download-icon"></span>
+                <span class="download-title">Block- und Teilblockflächen</span><br />
+                <span class="download-subtitle">CSV, GeoJSON, KML, SQLite, Postgres, gml, Shapefile</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<p>Wer mehr erfahren möchte, das Amt für Statistik Berlin Brandenburg hat 2012 einen kleinen <a href="https://www.statistik-berlin-brandenburg.de/publikationen/aufsaetze/2012/HZ_201201-06.pdf">Bericht</a> zu den verschiedenen räumlichen und statistischen Einheiten geschrieben.</p>
+<p>Alle in dieser Übersicht aufgeführten Datensätzen finden Sie auf unserer <a href="https://data.technologiestiftung-berlin.de">Datenseite</a> in vielen gängigen Formaten direkt zum Herunterladen. Darüber hinaus finden Sie die Daten natürlich auch im Berliner <a href="http://fbinter.stadt-berlin.de/fb/index.jsp">FIS-Broker</a> als WFS-Downloads.</p>

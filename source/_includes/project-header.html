@@ -1,0 +1,109 @@
+{%- assign hero = page.heroImage -%}
+{%- if hero == null -%}
+  {%- assign hero = "/assets/images/placeholder-hero.png" -%}
+{%- endif -%}
+<header class="project-header {{ page.colorMode }}">
+    <div class="project-header__hero" style="background-image:url({{ hero }});">
+        <div class="gradient-overlay"></div>
+
+        <div class="project-header__title">
+            {%- if page.externalUrl -%}
+                <a class="link--button" href="{{ page.externalUrl }}">{%- if page.lang == "de" -%}
+                    Projekt besuchen
+                    {%- else -%}
+                    Launch Project
+                  {%- endif -%}</a>
+            {%- endif -%}
+
+            <div class="flex-row">
+                <h1 class="project-header__title--main headline--bold">
+                    {{ page.title }}
+                </h1>
+                <h2 class="project-header__title--sub">
+                    {{ page.subtitle }}
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-header__meta">
+        <div class="project-header__meta-column project-header__meta-column--researchers">
+            <div class="project-header__meta-column__header">{%- if page.lang == "de" -%}
+                Autor*in
+                {%- else -%}
+                Researchers
+              {%- endif -%}</div>
+            {%- comment -%}
+            <!--
+               Matching the id added to the frontend
+               wikth the team members
+              -->
+            {%- endcomment -%}
+            {%- if page.lang =='en' -%}
+              {%- assign team = site.team_en -%}
+              {%- else -%}
+              {%- assign team = site.team_de -%}
+              {%- endif -%}
+            {%- for author in page.authors -%}
+            {%- for member in team -%}
+            {%- if member.uid == author -%}
+                <a href="{{member.url}}" class="project-header__meta-column__item">{{member.name}}</a>
+                {%- break -%}
+                {%- endif -%}
+              {%- endfor -%}
+            {%- endfor -%}
+        </div>
+        <div class="project-header__meta-column project-header__meta-column--status">
+            <div class="project-header__meta-column__header">
+                {%- if page.lang =='en' -%}
+                    Project Type
+                    {%- else -%}
+                    Projektart
+                    {%- endif -%}
+            </div>
+            <div class="project-header__meta-column__item">
+                {%- if page.lang =='en' -%}
+                    {{ page.type }}
+                {%- else -%}
+                    {%- case page.type -%}
+                    {%- when 'publication' -%}
+                        Publikation
+                    {%- when 'prototype' -%}
+                        Prototyp
+                    {%- when 'workshop' -%}
+                        Workshop
+                    {%- when 'Dataset' -%}
+                        Datensatz
+                    {%- endcase -%}
+                {%- endif -%}
+            </div>
+        </div>
+        <div class="project-header__meta-column project-header__meta-column--date">
+            <div class="project-header__meta-column__header">{%- if page.lang == "de" -%}
+                Datum
+                {%- else -%}
+                Date
+              {%- endif -%}</div>
+            <div class="project-header__meta-column__item">
+                {%- include date-format.html element=page -%}
+            </div>
+        </div>
+        {%- if page.materialsIncluded  -%}
+        {%- comment -%}
+        <!-- there are no materials -->
+        {%- endcomment -%}
+        <div class="project-header__meta-column project-header__meta-column--materials">
+          <div class="project-header__meta-column__header">{%- if page.lang == "de" -%}
+            Material
+            {%- else -%}
+            Materials
+          {%- endif -%}</div>
+          {%- for materialIncluded in page.materialsIncluded -%}
+          <a href="{{ materialIncluded.link }}" class="project-header__meta-column__item">
+            {{ materialIncluded.name }}
+          </a>
+          {%- endfor -%}
+        </div>
+        {%- endif -%}
+    </div>
+</header>

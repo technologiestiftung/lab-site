@@ -1,0 +1,92 @@
+.link {
+    &--button {
+        background: rgba($black, 0);
+        border: 1px solid $black;
+        border-radius: 4px;
+        display: inline-block;
+        margin-top: $spacing-m;
+        padding: 12px 12px 14px 12px;
+        transition: background $time-s, color $time-s;
+        user-select: none;
+
+        &:hover {
+            background: rgba($black, 1);
+            color: $white;
+        }
+    }
+
+    &--normal {
+        display: inline-block;
+        line-height: 1.8em;
+        position: relative;
+        transition: color 0.25s;
+        border-bottom: 1px solid $color-publication;
+
+
+        // &::after {
+        //     background-color: $grey;
+        //     backface-visibility: hidden;
+        //     bottom: 0;
+        //     content: '';
+        //     height: $link-stroke-width;
+        //     left: 0;
+        //     position: absolute;
+        //     transform: scaleX(1) translateZ(0);
+        //     transform-origin: left center;
+        //     transition: transform 0.25s;
+        //     width: 100%;
+        // }
+
+        &:hover {
+            color: $grey;
+            &::after {
+                transform: scaleX(0.9) translateZ(0);
+            }
+        }
+
+        &.publication {
+            &::after {
+                background-color: $color-publication;
+            }
+            &:hover {
+                color: $color-publication;
+                &::after {
+                    background-color: $color-publication;
+                }
+            }
+        }
+        &.prototype {
+            &::after {
+                background-color: $color-prototype;
+            }
+            &:hover {
+                color: $color-prototype;
+                &::after {
+                    background-color: $color-prototype;
+                }
+            }
+        }
+        &.workshop {
+            &::after {
+                background-color: $color-workshop;
+            }
+            &:hover {
+                color: $color-workshop;
+                &::after {
+                    background-color: $color-workshop;
+                }
+            }
+        }
+        &.dataset {
+            &::after {
+                background-color: $color-dataset;
+            }
+            &:hover {
+                color: $color-dataset;
+                &::after {
+                    background-color: $color-dataset;
+                }
+            }
+        }
+    }
+}

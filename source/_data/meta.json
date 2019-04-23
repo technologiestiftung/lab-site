@@ -1,0 +1,69 @@
+{
+  "title":{
+    "de": "Ideation & Prototyping Lab",
+    "en": "Ideation & Prototyping Lab"
+  },
+  "missionStatement":{
+    "title":{
+      "de": "Leitbild",
+      "en": "Mission Statement"
+    },
+    "text":{
+      "de": "Das Ideation & Prototyping Lab ist das Entwicklungslabor der <a href ='https://www.technologiestiftung-berlin.de'> Technologiestiftung Berlin</a>. Wir entwickeln und testen digitale Tools und Lösungen für ein besseres Leben in Städten. Als gemeinnützige Institution arbeiten wir in offenen Innovationsprozessen gemeinsam mit öffentlicher Verwaltung, Wissenschaft und Stadtgesellschaft an der Gestaltung des digitalen Wandels. Wir sind das Team hinter der <a href='https://www.odis-berlin.de'>Open Data Informationsstelle</a> und betreiben das <a href='https://www.citylab-berlin.org'>CityLAB Berlin</a>.",
+      "en": "The Ideation & Prototyping Lab is the development space of the <a href ='https://www.technologiestiftung-berlin.de'> Technologiestiftung Berlin</a>. We develop and test digital tools and solutions in order to shape digital change in Berlin together with administrations, science and urban society. We are the team behind <a href='https://www.odis-berlin.de'>ODIS</a> and run the <a href='https://www.citylab-berlin.org'>CityLAB Berlin</a>."
+    }
+  },
+  "description":{
+    "en":"We are exploring and prototyping digital tools in order to collaboratively shape Berlin’s future for citizens, the local government and the industry. #OpenData #OpenSource #OpenInnovation",
+    "de":"Wir erforschen und erproben digitale Werkzeuge um gemeinsam mit Bürger*innen, Verwaltung und Unternehmen die Zukunft Berlins zu gestalten. #OpenData #OpenSource #OpenInnovation"
+  },
+  "introtext":{
+    "de":"Wir entwickeln offene Technologien für bessere Städte.",
+    "en":"We develop & use open technologies to make cities a better place for all."
+  },
+  "fundingtext":{
+    "de":"Gefördert von der Senatsverwaltung für Wirtschaft, Energie und Betriebe und der Investitionsbank Berlin aus den Mitteln des Landes Berlin.",
+    "en":"Financial support provided by the Senate Department for Economics, Energy and Public Enterprises and the Investitionsbank Berlin via funds from the State of Berlin."
+  },
+  "projectbytext": {
+    "de": "Ein Projekt der",
+    "en": "A project of"
+  },
+  "navigation": [
+    {
+      "name": "start",
+      "title": "Index Page",
+      "url": {
+        "de": "/",
+        "en": "/en"
+      }
+    },
+    {
+      "name": "about",
+      "title": "About Page",
+      "navigationTitle":{"de":"Über uns","en":"About us"},
+      "url": {
+        "de": "/about/de",
+        "en": "/about/en"
+      }
+    },
+    {
+      "name": "projects",
+      "title": "Projects Page",
+      "navigationTitle": {"de":"Projekte","en":"Projects"},
+      "url": {
+        "de": "/projects/de",
+        "en": "/projects/en"
+      }
+    },
+    {
+      "name": "datasets",
+      "title": "Data Page",
+      "navigationTitle": {"de":"Daten","en":"Datasets"},
+      "url": {
+        "de": "https://data.technologiestiftung-berlin.de/",
+        "en": "https://data.technologiestiftung-berlin.de/en"
+      }
+    }
+  ]
+}

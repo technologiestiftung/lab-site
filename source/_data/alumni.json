@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Florian Zia",
+    "role": {
+      "en": "Developer",
+      "de": "Entwickler"
+    }
+  },
+  {
+    "name": "Jolanta Paliszewska",
+    "role": {
+      "en": "Designer",
+      "de": "Designer"
+    }
+  },
+  {
+    "name": "Sebastian Rauer",
+    "role": {
+      "en": "Designer",
+      "de": "Designer"
+    }
+  }
+]

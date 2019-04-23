@@ -1,0 +1,46 @@
+.funding {
+    &-inner {
+        padding: 0 $spacing-page-m;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+
+        @media only screen and (max-width: $screen-xl) {
+            flex-direction: column;
+        }
+
+        @media only screen and (max-width: $screen-m) {
+            padding: 0 30px;
+        }
+    }
+
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0 22px 0;
+
+    @media only screen and (max-width: $screen-m) {
+        flex-direction: column;
+    }
+}
+
+
+.col {
+    margin-bottom: 20px;
+    .logo-outer {
+        display: flex; 
+        justify-content: flex-start;
+        margin-top: 5px;
+    }
+}
+
+span.copy-funding {
+    font-size: $font-size-s;
+    color: $grey;
+    line-height: $line-height-min;
+
+    @media only screen and (max-width: $screen-m) {
+        margin: $spacing-xs 0 $spacing-s 0;
+        max-width: 60%;
+    }
+}

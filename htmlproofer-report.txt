@@ -1,0 +1,429 @@
+Running ["ImageCheck", "ScriptCheck", "LinkCheck"] on ["./_site/"] on *.html... 
+
+
+Ran on 109 files!
+
+
+- ./_site/about/de/index.html
+  *  linking to internal hash # that does not exist (line 308)
+     <a href="#">
+                    <div class="partner-list__project-image">
+                        <img class="partner-list__project-image-logo partner-list__project-image-logo--partner" src="/assets/images/placeholder.png" alt="partner">
+                    </div>
+                    <div class="partner-list__project-title">
+                        partner
+                    </div>
+                    <div>partner partner partner partner</div>
+                </a>
+- ./_site/about/en/index.html
+  *  linking to internal hash # that does not exist (line 308)
+     <a href="#">
+                    <div class="partner-list__project-image">
+                        <img class="partner-list__project-image-logo partner-list__project-image-logo--partner" src="/assets/images/placeholder.png" alt="partner">
+                    </div>
+                    <div class="partner-list__project-title">
+                        partner
+                    </div>
+                    <div>partner partner partner partner</div>
+                </a>
+- ./_site/projects/datadive-accessibility/en/index.html
+  *  internally linking to pardok.parlament-berlin.de/starweb/adis/citat/VT/17/SchrAnfr/s17-17623.pdf, which does not exist (line 375)
+     <a href="pardok.parlament-berlin.de/starweb/adis/citat/VT/17/SchrAnfr/s17-17623.pdf">December 2015 Parliamentary enquiry on accessibile apartments (PDF)</a>
+- ./_site/projects/der-name-kommt-noch/de/index.html
+  *  image ../images/1_blog_picture.png does not have an alt attribute (line 204)
+  *  image ../images/3_blog_picture.png does not have an alt attribute (line 213)
+  *  image ../images/5_blog_picture.png does not have an alt attribute (line 224)
+  *  image ../images/7_blog_picture.svg does not have an alt attribute (line 248)
+  *  image ../images/9_blog_picture.svg does not have an alt attribute (line 237)
+- ./_site/projects/der-name-kommt-noch/en/index.html
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+- ./_site/projects/example-html-project/de/index.html
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+- ./_site/projects/example-html-project/en/index.html
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+- ./_site/projects/example-md-project/de/index.html
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+- ./_site/projects/example-md-project/en/index.html
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+- ./_site/projects/funding/de/index.html
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+- ./_site/projects/funding/en/index.html
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+- ./_site/projects/hinweise-zur-barrierefreiheit-auf-der-serviceportal-berlin.de/de/index.html
+  *  internally linking to www.service.berlin.de, which does not exist (line 178)
+     <a class="link--button" href="www.service.berlin.de">Projekt besuchen</a>
+- ./_site/projects/hinweise-zur-barrierefreiheit-auf-der-serviceportal-berlin.de/en/index.html
+  *  internally linking to www.service.berlin.de, which does not exist (line 178)
+     <a class="link--button" href="www.service.berlin.de">Launch Project</a>
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+- ./_site/projects/kartendarstellung/de/index.html
+  *  image /CI.png does not have an alt attribute (line 225)
+  *  internal image /CI.png does not exist (line 225)
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+- ./_site/projects/kartendarstellung/en/index.html
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+- ./_site/projects/ki-ai-intro/de/ethics.html
+  *  image ../images/icon-content-01.png does not have an alt attribute (line 268)
+  *  image ../images/icon-content-02.png does not have an alt attribute (line 272)
+  *  image ../images/icon-content-03.png does not have an alt attribute (line 276)
+  *  internally linking to ../ki-ai-making-of/index.html, which does not exist (line 246)
+     <a href="../ki-ai-making-of/index.html">genutzt</a>
+  *  internally linking to ../ki-ai-potentials-challenges/index.html, which does not exist (line 219)
+     <a href="../ki-ai-potentials-challenges/index.html">Anwendungsfelder</a>
+- ./_site/projects/ki-ai-intro/de/index.html
+  *  image ../images/icon-content-01.png does not have an alt attribute (line 243)
+  *  image ../images/icon-content-02.png does not have an alt attribute (line 235)
+  *  image ../images/icon-content-03.png does not have an alt attribute (line 239)
+- ./_site/projects/ki-ai-intro/de/making-of.html
+  *  image ../images/icon-content-01.png does not have an alt attribute (line 283)
+  *  image ../images/icon-content-02.png does not have an alt attribute (line 279)
+  *  image ../images/icon-content-03.png does not have an alt attribute (line 275)
+- ./_site/projects/ki-ai-intro/de/potentials-challenges.html
+  *  image ../images/icon-content-01.png does not have an alt attribute (line 364)
+  *  image ../images/icon-content-02.png does not have an alt attribute (line 356)
+  *  image ../images/icon-content-03.png does not have an alt attribute (line 360)
+  *  image ../images/ki/01.png does not have an alt attribute (line 222)
+  *  image ../images/ki/02.png does not have an alt attribute (line 244)
+  *  image ../images/ki/03.png does not have an alt attribute (line 267)
+  *  image ../images/ki/04.png does not have an alt attribute (line 285)
+  *  image ../images/ki/05.png does not have an alt attribute (line 311)
+  *  image ../images/ki/06.png does not have an alt attribute (line 331)
+  *  internally linking to ../images/LNDW_1.pdf, which does not exist (line 231)
+     <a href="../images/LNDW_1.pdf">Download</a>
+  *  internally linking to ../images/LNDW_2.pdf, which does not exist (line 252)
+     <a href="../images/LNDW_2.pdf">Download</a>
+  *  internally linking to ../images/LNDW_3.pdf, which does not exist (line 275)
+     <a href="../images/LNDW_3.pdf">Download</a>
+  *  internally linking to ../images/LNDW_4.pdf, which does not exist (line 293)
+     <a href="../images/LNDW_4.pdf">Download</a>
+  *  internally linking to ../images/LNDW_5.pdf, which does not exist (line 318)
+     <a href="../images/LNDW_5.pdf">Download</a>
+  *  internally linking to ../images/LNDW_6.pdf, which does not exist (line 340)
+     <a href="../images/LNDW_6.pdf">Download</a>
+  *  internally linking to ../ki-ai-ethics/index.html, which does not exist (line 219)
+     <a href="../ki-ai-ethics/index.html">vertiefenden Artikel </a>
+- ./_site/projects/ki-ai-intro/en/ethics.html
+  *  internally linking to ../ki-ai-making-of/index.html, which does not exist (line 246)
+     <a href="../ki-ai-making-of/index.html">genutzt</a>
+  *  internally linking to ../ki-ai-potentials-challenges/index.html, which does not exist (line 219)
+     <a href="../ki-ai-potentials-challenges/index.html">Anwendungsfelder</a>
+- ./_site/projects/ki-ai-intro/en/potentials-challenges.html
+  *  image ../images/ki/01.png does not have an alt attribute (line 222)
+  *  image ../images/ki/02.png does not have an alt attribute (line 244)
+  *  image ../images/ki/03.png does not have an alt attribute (line 267)
+  *  image ../images/ki/04.png does not have an alt attribute (line 285)
+  *  image ../images/ki/05.png does not have an alt attribute (line 311)
+  *  image ../images/ki/06.png does not have an alt attribute (line 331)
+  *  internally linking to ../images/LNDW_1.pdf, which does not exist (line 231)
+     <a href="../images/LNDW_1.pdf">Download</a>
+  *  internally linking to ../images/LNDW_2.pdf, which does not exist (line 252)
+     <a href="../images/LNDW_2.pdf">Download</a>
+  *  internally linking to ../images/LNDW_3.pdf, which does not exist (line 275)
+     <a href="../images/LNDW_3.pdf">Download</a>
+  *  internally linking to ../images/LNDW_4.pdf, which does not exist (line 293)
+     <a href="../images/LNDW_4.pdf">Download</a>
+  *  internally linking to ../images/LNDW_5.pdf, which does not exist (line 318)
+     <a href="../images/LNDW_5.pdf">Download</a>
+  *  internally linking to ../images/LNDW_6.pdf, which does not exist (line 340)
+     <a href="../images/LNDW_6.pdf">Download</a>
+  *  internally linking to ../ki-ai-ethics/index.html, which does not exist (line 219)
+     <a href="../ki-ai-ethics/index.html">vertiefenden Artikel </a>
+- ./_site/projects/kitas/de/index.html
+  *  image ../images/Icon-kids@2x.png does not have an alt attribute (line 209)
+- ./_site/projects/kitas/en/index.html
+  *  image ../images/Icon-kids@2x.png does not have an alt attribute (line 209)
+- ./_site/projects/kleine-anfragen/de/index.html
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+- ./_site/projects/kleine-anfragen/en/index.html
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+- ./_site/projects/meine-perspektive/de/index.html
+  *  image ../images/12_blog_picture.svg does not have an alt attribute (line 254)
+  *  image ../images/14_blog_picture.svg does not have an alt attribute (line 240)
+  *  image ../images/15_blog_picture.svg does not have an alt attribute (line 206)
+  *  image ../images/antidiskriminierungsstelle_sqat.png does not have an alt attribute (line 267)
+  *  image ../images/barrierefrei_stadt.svg does not have an alt attribute (line 278)
+  *  image ../images/example.png does not have an alt attribute (line 215)
+  *  internal image ../images/14_blog_picture.svg does not exist (line 240)
+- ./_site/projects/meine-perspektive/en/index.html
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+- ./_site/projects/our-lab-is-growing/de/index.html
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            
+          </a>
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            
+          </a>
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            
+          </a>
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            
+          </a>
+- ./_site/projects/testing-project/de/index.html
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+- ./_site/projects/testing-project/en/index.html
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+- ./_site/projects/unis/de/index.html
+  *  image ../images/sponsor.png does not have an alt attribute (line 244)
+  *  image ../images/students.png does not have an alt attribute (line 209)
+  *  image ../images/uni.png does not have an alt attribute (line 227)
+- ./_site/projects/unis/en/index.html
+  *  image ../images/sponsor.png does not have an alt attribute (line 244)
+  *  image ../images/students.png does not have an alt attribute (line 209)
+  *  image ../images/uni.png does not have an alt attribute (line 227)
+- ./_site/projects/was-verbindet-die-gebardensprachgemeinschaft-und-barrierefreiheit/de/index.html
+  *  image ../images/10_blog_picture.png does not have an alt attribute (line 225)
+  *  image ../images/9_blog_picture.png does not have an alt attribute (line 214)
+  *  image ../images/statistik.svg does not have an alt attribute (line 248)
+  *  image ../images/world.svg does not have an alt attribute (line 305)
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+- ./_site/projects/was-verbindet-die-gebardensprachgemeinschaft-und-barrierefreiheit/en/index.html
+  *  linking to internal hash # that does not exist (line 208)
+     <a href="#" class="project-header__meta-column__item">
+            Source Code
+          </a>
+  *  linking to internal hash # that does not exist (line 204)
+     <a href="#" class="project-header__meta-column__item">
+            video
+          </a>
+  *  linking to internal hash # that does not exist (line 202)
+     <a href="#" class="project-header__meta-column__item">
+            images
+          </a>
+  *  linking to internal hash # that does not exist (line 206)
+     <a href="#" class="project-header__meta-column__item">
+            press text
+          </a>
+htmlproofer 3.10.2 | Error:  HTML-Proofer found 142 failures!

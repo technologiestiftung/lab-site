@@ -1,0 +1,69 @@
+
+  .example_rect rect{
+    fill: rgb(30,55,145);
+  }
+  .example_text text{
+    font: 14px sans-serif;
+    fill: #fff;
+  }
+
+  .ticks {
+    
+  }
+  
+  .link {
+    stroke: #aaa;
+  }
+  
+  .node text {
+    fill: #000;
+    font-size: 10px;
+  }
+  
+  .node circle{
+    stroke:#fff;
+    stroke-width:3px;
+    fill: rgb(110,205,245);
+    opacity: 0.8;
+  }
+  
+  .node:hover circle {
+    fill: rgb(30,55,145);
+  }
+  
+  .node:hover text {
+   font-weight: 900; 
+  }
+
+  .track {
+    stroke-opacity: 0.3;
+    stroke-width: 10px;
+  }
+  
+  .track-inset {
+    stroke: #ddd;
+    stroke-width: 2px;
+  }
+  
+  .track-overlay {
+    pointer-events: stroke;
+    stroke-width: 50px;
+    stroke: transparent;
+    cursor: grab;
+  }
+  
+  .handle {
+    fill: #aaa;
+    stroke-opacity: 0.5;
+    stroke-width: 1.25px;
+  }
+
+  .line {
+    fill: none;
+    stroke:rgb(30,55,145);
+    stroke-width: 2px;
+  }  
+
+.legend_percent{
+  font-weight: 900; 
+}

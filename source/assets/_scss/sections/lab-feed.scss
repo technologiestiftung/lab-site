@@ -1,0 +1,219 @@
+section.feed:nth-last-of-type() {
+    margin: $spacing-page-m $spacing-page-m 90px $spacing-page-m;
+
+    @media only screen and (max-width: $screen-m) {
+        margin: $spacing-xxl $spacing-m $spacing-xl $spacing-m;
+    }
+}
+
+.feed {
+    &-title {
+        color: $black;
+        font-family: 'plex-mono';
+        font-size: $font-size-m;
+        margin-top: $spacing-s;
+        margin-left: 1px;
+
+        @media only screen and (max-width: $screen-m) {
+            font-size: $font-size-s;
+        }
+    }
+    &-headline {
+    }
+    &-list {
+
+        // margin-top: $spacing-l;
+
+        &__project {
+
+            &-title {
+                line-height: $line-height-title;
+            }
+
+            &.team {
+                .feed-list__project-title {
+                    margin-top: $spacing-ms;
+                }
+                .feed-list__project-date {
+                    margin-top: $spacing-xs;
+                }
+            }
+
+            &.dataset {
+                .project-image__outer{
+                    background-color: $color-dataset-80;
+                }
+                .project-image {
+                    &:hover {
+                        background-color: $color-dataset-80;
+                        @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+                            box-shadow:inset 0 0 0 2000px $color-dataset-60;
+                        }
+                    }
+                    background-color: $color-dataset-60;
+                    @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+                        box-shadow:inset 0 0 0 2000px $color-dataset-40;
+                    }
+                }
+            }
+
+            &.workshop {
+                .project-image__outer{
+                    background-color: $color-workshop;
+                }
+                .project-image {
+                    &:hover {
+                        background-color: $color-workshop;
+                        @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+                            box-shadow:inset 0 0 0 2000px $color-workshop-60;
+                        }
+                    }
+                    background-color: $color-workshop-60;
+                    @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+                        box-shadow:inset 0 0 0 2000px $color-workshop-40;
+                    }
+                }
+            }
+
+            &.publication {
+                .project-image__outer{
+                    background-color: $color-publication;
+                }
+                .project-image {
+                    &:hover {
+                        background-color: $color-publication;
+                        @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+                            box-shadow:inset 0 0 0 2000px $color-publication-60;
+                        }
+                    }
+                    background-color: $color-publication-60;
+                    @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+                        box-shadow:inset 0 0 0 2000px $color-publication-40;
+                    }
+                }
+            }
+
+            &.prototype {
+                .project-image__outer{
+                    background-color: $color-prototype;
+                }
+                .project-image {
+                    
+                    &:hover {
+                        background-color: $color-prototype;
+                        @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+                            box-shadow:inset 0 0 0 2000px $color-prototype-60;
+                        }
+                    }
+                    background-color: $color-prototype-60;
+                    @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+                        box-shadow:inset 0 0 0 2000px $color-prototype-40;
+                    }
+                }
+            }
+
+            .project-image {
+                &__outer {
+                    position: relative;
+                    width: 100%;
+                    padding-bottom: 100%;
+                }
+
+                @supports (-ms-ime-align: auto) {
+                    opacity: 0.8;
+
+                    &:hover{
+                        opacity: 0.6;
+                    }
+                }
+
+                height: 100%;
+                width: 100%;
+                position: absolute;
+
+                background-repeat: no-repeat;
+                background-size: contain;
+
+                background-blend-mode: multiply;
+
+                transition: all $time-s;
+            }
+
+
+            &:hover {
+                .img-wrapper {
+                    img:last-of-type {
+                        opacity: 0;
+                    }
+                }
+
+                &.prototype {
+                    .feed-list__project-title {
+                        color: $color-prototype;
+                    }
+                    .feed-list__project-date {
+                        color: $black;
+                    }
+                }
+
+                &.dataset {
+                    .feed-list__project-title {
+                        color: $color-dataset;
+                    }
+                    .feed-list__project-date {
+                        color: $black;
+                    }
+                }
+
+                &.workshop {
+                    .feed-list__project-title {
+                        color: $color-workshop;
+                    }
+                    .feed-list__project-date {
+                        color: $black;
+                    }
+                }
+
+                &.publication {
+                    .feed-list__project-title {
+                        color: $color-publication;
+                    }
+                    .feed-list__project-date {
+                        color: $black;
+                    }
+                }
+            }
+
+            &-date {
+                color: $black;
+                font-size: $font-size-s;
+                font-family: 'plex-mono';
+                line-height: $line-height-title;
+                text-transform: uppercase;
+                font-weight: bold;
+                letter-spacing: 1.5px;
+                transition: color $time-s;
+                margin-top: $spacing-s;
+            }
+
+            &-title {
+                display: block;
+                font-size: $font-size-l;
+                margin-top: $spacing-xs;
+                transition: color $time-s;
+            }
+
+
+            &.alumni {
+
+                cursor: auto;
+                .feed-list__project-title {
+                    margin-top: 0px;
+                }
+                .feed-list__project-date {
+                    margin-top: $spacing-xs;
+                }
+            }
+        }
+    }
+}

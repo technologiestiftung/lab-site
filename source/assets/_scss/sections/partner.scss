@@ -1,0 +1,51 @@
+.partner {
+    &-list {
+        &__project {
+            &-title {
+                margin-top: $spacing-s;
+                font-weight: bold;
+            }
+            &-image {
+                background: $light-grey;
+                height: 120px;
+                position: relative;
+
+                &-logo {
+                    left: 50%;
+                    max-height: 50%;
+                    max-width: 50%;
+                    position: absolute;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+
+                    &--open-data-informationsstelle {
+                        max-width: 75%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mission-statement {
+    h1.section-headline {
+        font-size: $font-size-xl;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 32px;
+        line-height: 1.5em;
+    }
+
+    a {
+        border-bottom: 1px solid $color-publication;
+        color: black;
+        transition: color $time-s;
+
+        &:hover {
+            color: $color-publication;
+            transition: color $time-s;
+        }
+    }
+}

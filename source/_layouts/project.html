@@ -1,0 +1,20 @@
+---
+layout: skeleton
+---
+
+<main class="project project--{{ page.type }}"  markdown="1">
+    {%- comment -%}
+    <!--  Project header -->
+    {%- endcomment -%}
+    {% assign ext = page.path | split: "." | last %}
+    {% include project-header.html %}
+  {%- if ext == "html" -%}
+  <section class="html-content">
+    {{ content }}
+  </section>
+    {%- else -%}
+    <section class="markdown-content">
+      {{ content }}
+    </section>
+  {%- endif -%}
+</main>

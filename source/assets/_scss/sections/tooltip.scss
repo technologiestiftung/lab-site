@@ -1,0 +1,83 @@
+    .tooltip {
+        
+        background: $white !important;
+        width: 170px;
+        height: auto;
+        position: absolute !important;
+        top: 150px;
+        left: 150px;
+        display: flex;
+        flex-direction: column;
+        padding: 12px 14px 12px 14px !important;
+        border: 1px solid $light-grey !important;
+        animation: .25s fadeInFromNone ease !important;
+
+        &--title {
+            font-weight: bold;
+            font-size: $font-size-s !important;
+            margin: 0 !important;
+        }
+
+        &--subtitle {
+            font-size: $font-size-s;
+            margin: 0 !important;
+        }
+
+        &--datawrapper {
+            display: flex;
+            
+            flex-direction: column;
+            margin-top: $spacing-xs !important;
+
+            .attr {
+                opacity: 1;
+                font-size: $font-size-s !important;
+                margin: 0 !important;
+            }
+
+            .value {
+                font-weight: bold;
+                font-size: $font-size-s !important;
+                margin: 0 !important;
+            }
+
+            &--row {
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: space-between !important;
+            }
+        }
+    }
+
+    @keyframes fadeInFromNone {
+        0% {
+        display: none;
+        opacity: 0; }
+        1% {
+        display: block;
+        opacity: 0; }
+        100% {
+        display: block;
+        opacity: 1; } }
+    
+    @keyframes fadeInFromNone {
+        0% {
+        display: none;
+        opacity: 0; }
+        1% {
+        display: block;
+        opacity: 0; } }
+    
+    .month-wrapper {
+        margin-right: 5px; }
+    
+    .station-wrapper {
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: .5px; }
+    
+    .time-wrapper {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 10px;
+        color: black; }

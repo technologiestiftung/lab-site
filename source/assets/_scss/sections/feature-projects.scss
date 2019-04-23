@@ -1,0 +1,200 @@
+.featured {
+    position: relative;
+    margin-top: $spacing-l;
+
+    &-headline {
+        margin-bottom: $spacing-m;
+    }
+
+    &-title {
+        color: $black;
+        font-family: 'plex-mono';
+        font-size: $font-size-m;
+        margin-left: 2px;
+        font-weight: 500;
+        letter-spacing: 2px;    
+
+        @media only screen and (max-width: $screen-m) {
+            font-size: $font-size-s;
+        }
+    }
+    &-list {
+        display: flex;
+        height: 210px;
+        flex-direction: column;
+        
+        @media only screen and (max-width: $screen-m) {
+            height: 180px;
+        }
+        
+        @media only screen and (max-width: $screen-s) {
+            height: 220px;
+        }
+
+        &__project {
+            margin-bottom: 5px;
+            cursor: default;
+            display: flex;
+            flex-direction: column;
+
+            &-title {
+                font-size: $font-size-xl;
+                position: relative;
+
+                @media only screen and (max-width: $screen-m) {
+                    font-size: $font-size-ll;
+                }
+
+                &.publication a {
+                    color: $color-publication;
+                }
+                &.prototype a {
+                    color: $color-prototype;
+                }
+
+                &.workshop a {
+                    color: $color-workshop;
+                }
+                &.dataset a {
+                    color: $color-dataset;
+                }
+
+                a {
+                    display: inline-block;
+                    // margin: 0 $spacing-xl 0 0;
+                    transition: color $time-m;
+                    width: 100%;
+
+                    // &::after {
+                    //     content: '→';
+                    //     margin-left: $spacing-s;
+                    //     pointer-events: none;
+                    //     position: absolute;
+                    //     transform: translate(0, 0);
+                    //     transition: transform $time-m;
+                    //     user-select: none;
+                    // }
+                }
+
+                & ~ .featured-list__project {
+                    // display:flex;
+                    // flex-direction:column;
+                    // justify-content:flex-start;
+                    // height:75px;
+
+                    &-subtext {
+                        font-family: 'plex-mono';
+                        transform: translateX(2px) translateY(-5px);
+                        line-height: $line-height-title;
+                    }
+
+                    &-image {
+                        transform: translate3d($spacing-l, 0, 0);
+
+                        @media only screen and (max-width: $screen-s) {
+                            transform: translate3d(35px, -350px, 0);
+                        }
+
+                        @media only screen and (max-width: $screen-m) {
+                            transform: translate3d(115px, -10px, 0);
+                        }
+
+                        @media only screen and (max-width: 1000px) {
+                            transform: translate3d(150px, 10px, 0);
+                        }
+
+                        @media only screen and (min-width: $screen-l) {
+                            transform: translate3d($spacing-xxl, 50px, 0);
+                        }
+                    }
+                }
+
+
+                &.hovered {
+                    & ~ .featured-list__project {
+                        opacity: 1;
+                        display: flex;
+                        transition: flex 0.3s 
+
+                        &-subtext {
+                            opacity: 1;
+                            display: block;
+                        }
+                        &-image {
+                            opacity: 1;
+
+                            @media only screen and (max-width: $screen-s) {
+                                transform: translate3d($spacing-xxl, -10px, 0);
+                            }
+
+                            @media only screen and (min-width: $screen-l) {
+                                transform: translate3d($spacing-xxl, -10px, 0);
+                            }
+                        }
+                    }
+
+                    a {
+                        &::after {
+                            transform: translate(10%, 0);
+                        }
+                    }
+                }
+
+            }
+
+
+            &.collapsed {
+
+                h3.featured-list__project-title.prototype a {
+                    color: black;
+                }
+                .featured-list__project-subtext {
+                    max-height: 0;
+                }
+
+                .featured-list__project-image {
+                    opacity: 0;
+                }
+
+            }
+
+            // &-subtext {
+            //     bottom: 0;
+            //     display: none;
+            //     font-size: $font-size-m;
+            //     left: 0;
+            //     line-height: $line-height-min;
+            //     opacity: 1;
+            //     pointer-events: none;
+            //     transform: translate3d(0, 2.5%, 0);
+            //     transition: opacity $time-s, transform $time-m;
+            // }
+            
+            &-subtext {
+                overflow:hidden;
+                transition:max-height 0.3s ease-out; // note that we're transitioning max-height, not height!
+                height:auto;
+                max-height:50px; // still have to hard-code a value!
+            }
+
+            &-image {
+                backface-visibility: hidden;
+                bottom: 0;
+                display: block;
+                height: auto;
+                opacity: 1;
+                pointer-events: none;
+                position: absolute;
+                right: 0;
+                transform: translate3d($spacing-page-m, $spacing-s, 0);
+                transition: opacity $time-m, transform $time-m;
+                width: 75%;
+                z-index: -1;
+            }
+        }
+    }
+
+    .link--button {
+        margin: 0 $spacing-s 0 0;
+    }
+}

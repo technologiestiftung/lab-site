@@ -1,0 +1,77 @@
+---
+layout: default
+---
+
+{%- comment -%}
+<!--
+  sort pages by date in liquid
+  https://gist.github.com/Phlow/1f27dfafdf2bbcc5c48e
+  we also could filter the project layouts
+ -->
+{%- endcomment -%}
+{% assign sorted_pages = site.pages | sort: 'date' | reverse %}
+
+<section class="intro">
+  <div class="intro-title headline--uppercase">{%- if page.lang == "en" -%}
+    What we do
+    {%- else -%}
+    Was wir machen
+  {%- endif -%}</div>
+  <p class="intro-text">
+    {%- if page.lang == "en" -%}
+    {{site.data.meta.introtext.en}}
+    {%- else -%}
+    {{site.data.meta.introtext.de}}
+  {%- endif -%}
+  </p>
+  <a class="link--button" href="/about/{{page.lang}}">
+      {%- if page.lang == "en" -%}
+        More about us
+        {%- else -%}
+        Mehr über uns
+      {%- endif -%}
+  </a>
+</section>
+<section class="featured">
+  <div class="headline--uppercase featured-title">{%- if page.lang == "en" -%}
+    What we're proud of
+    {%- else -%}
+    Worauf wir stolz sind
+  {%- endif -%}</div>
+  <h2 class="featured-headline section-headline headline--bold">{%- if page.lang == "en" -%}
+    Featured Projects
+    {%- else -%}
+    Besondere Projekte
+  {%- endif -%}</h2>
+
+  <ul class="featured-list">
+      {% for pg in sorted_pages %}
+      {%- if pg.layout == "project" and pg.lang == page.lang and pg.featured == true and pg.visible == true -%}
+
+        <li class="featured-list__project collapsed">
+          <h3 class="featured-list__project-title {{ pg.type }}">
+            <a href="{{pg.url}}">{{ pg.title }}</a>
+          </h3>
+          <span class="featured-list__project-subtext">
+            {{ pg.subtitle }}
+          </span>
+          <img
+          class="featured-list__project-image"
+          src="{{ pg.featuredImage }}"
+          alt="{{ pg.title }}"
+          />
+        </li>
+        {%- endif -%}
+      {%- endfor -%}
+  </ul>
+
+  <a class="link--button" href="/projects/{{page.lang}}">
+    {%- if page.lang == "en" -%}
+    All projects
+    {%- else -%}
+    Alle Projekte
+  {%- endif -%}
+  </a>
+</section>
+
+{%- include feed.html sorted_pages=sorted_pages -%}

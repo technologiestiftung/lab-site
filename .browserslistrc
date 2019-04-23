@@ -1,0 +1,9 @@
+# Browsers that we support
+# see https://github.com/browserslist/browserslist for infos
+last 5 version
+> 1%
+maintained node versions
+not dead
+IE 10
+IE 9
+IE 8

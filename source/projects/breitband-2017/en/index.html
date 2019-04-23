@@ -1,0 +1,248 @@
+---
+layout: project
+description: Statistical and visual analysis of Berlin's broadband expansion's open data sets
+lang: en
+title: Broadband Berlin 2017
+subtitle: Analysis of Berlin's broadband expansion
+type: prototype
+colorMode: dark
+featuredImage: /projects/breitband-2017/images/featured.jpg
+thumbnail: /projects/breitband-2017/images/thumbnail.jpg
+heroImage: /projects/breitband-2017/images/breitband-berlin.jpg
+socialMediaImage: /projects/breitband-2017/images/social_media.jpg
+visible: true
+featured: false
+authors:
+  - sebastian-meier
+externalUrl: https://www.breitband-berlin.de
+start: 2018-03-01
+end: 2018-03-15
+status: finished
+date: 2018-03-15
+assets:
+  js:
+    - ../js/breitband-min.js
+    - ../js/index-en.js
+  css:
+    - ../styles/bootstrap.min.css
+    - ../styles/main.css
+redirect_from:
+  - /projects/breitband-2017/index_en.html
+---
+<p>Berlin's senate's department for economics, energy and public enterprises together with the federal ministry for transport and digital infrastructure (BMVI) and TÜV Rheinland for the first time published <a href="https://daten.berlin.de/interaktion/artikel/breitbanddaten-f%C3%BCr-berlin">data</a> on the state of the broadband expansion in Berlin under an open license by the end of 2017. This process is exemplary for Berlin's open-by-default strategy, thereby, any third-party interaction that results in data, should produce open data (if the data does not include personal data). The new broadband data is available in Berlin's statistical districts (LORs). The historic data on broadband access in Berlin was based on city parts, not the LORs, therefore, it is difficult to compare the historic data and the latest results.</p>
+
+<div id="minimap" style="padding-top:50px;">
+  <div class="container">
+      <div class="row">
+          <div style="padding-top:20px;" class="col col-xs-12 col-sm-5 col-lg-5">
+              <div class="mapswitch-head">
+                  <h3>Broadband expansion</h3>
+                  <p>For the last 7 years, Berlin's senate is collecting data on the broadband expansion. The data shows, that around 2011 many former eastern districts were lacking high speed broadband access. By now many have caught up, even Pankow.</p>
+              </div>
+          </div>
+          <div class="col col-xs-12 col-sm-1 col-lg-2"></div>
+          <div style="padding-top:20px;" class="col col-xs-12 col-sm-6 col-lg-5">
+              <div class="row switchrow">
+                  <div class="col col-xs-12 red company-help">
+                      <span class="image image-interactive"></span><strong>2011 - 2017</strong>
+                      <p class="speed-info speed-info-16">For normal internet activities 16&nbsp;Mbit/s connections are enough.</p>
+                      <p class="speed-info speed-info-50">50&nbsp;Mbit/s are required for high definition streaming and professional applications.</p>
+                  </div>
+              </div>
+              <div class="row switchrow">
+                  <div class="col col-xs-12 col-sm-6" data-speed="16">
+                      <div class="mapswitch red">16Mbit/s</div>
+                      <div class="hidden-xs triangle bottom red"></div>
+                  </div>
+                  <div class="col col-xs-12 col-sm-6" data-speed="50">
+                      <div class="mapswitch light_red">50Mbit/s</div>
+                      <div class="hidden-xs triangle bottom red" style="display:none;"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col col-xs-12 col-sm-1"></div>
+      <div class="col col-xs-12 col-sm-2">
+          <div class="minimap mm-2011" data-year="2011"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-2">
+          <div class="minimap mm-2012" data-year="2012"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-2">
+          <div class="minimap mm-2013" data-year="2013"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-2">
+          <div class="minimap mm-2015" data-year="2015"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-2">
+          <div class="minimap mm-2017" data-year="2017"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-1"></div>
+  </div>
+  <div class="row">
+      <div class="datacol col col-xs-12">
+          <svg id="minimap-legend" height="50" width="240"></svg><br />
+          <span class="small">Availability for private users in percentage</span>
+      </div>
+  </div>
+</div>
+
+<div id="compare" style="padding-top:100px;">
+  <div class="container">
+      <div class="row">
+          <div style="padding-top:20px;padding-bottom:20px;" class="col col-xs-12 col-sm-4 col-lg-4">
+              <div class="red company-help pulse-help">
+                  <strong>Districts in detail</strong>
+                  <p>Availability for private users in percentage<br />16Mbit | 50Mbit</p>
+              </div>
+              <div id="compare-legend"></div>
+          </div>
+          <div class="chart"></div>
+      </div>
+  </div>
+</div>
+
+<p style="padding-top:100px;">The underlying data is split between private and business connections. Especially the business internet connections in central Berlin have progressed well and many users have access to high speed internet.</p>
+
+<div id="karte">
+<div id="map-gui">
+  <div class="selector">
+      <span class="selector-title">User types</span><br />
+      <select id="map-type">
+          <option value="b">Business</option>
+          <option value="p">Private</option>
+      </select>
+  </div>
+  <div class="selector">
+      <span class="selector-title">Technology</span><br />
+      <select id="map-technology">
+          <option value="alle">All</option>
+          <option class="b-disable" value="wireless" disabled="disabled">Wireless</option>
+          <option class="b-disable" value="wired" disabled="disabled">Wired</option>
+      </select>
+  </div>
+  <div class="selector">
+      <span class="selector-title">Speed</span><br />
+      <select id="map-speed">
+          <option value="100">100 Mbit/s</option>
+          <option value="50"> 50 Mbit/s</option>
+          <option value="30"> 30 Mbit/s</option>
+          <option class="b-disable" value="16" disabled="disabled"> 16 Mbit/s</option>
+          <option value="10" class="p-disable"> 10 Mbit/s</option>
+          <option class="b-disable" value="6" disabled="disabled">  6 Mbit/s</option>
+          <option value="2">  2 Mbit/s</option>
+          <option class="b-disable" value="1" disabled="disabled">  1 Mbit/s</option>
+      </select>
+  </div>
+</div>
+<div id="map"></div>
+<div id="map-legend-container">
+  <svg id="map-legend" height="50" width="240"></svg><br />
+  <span class="small">Availability in percentage</span>
+</div>
+</div>
+
+<p>A spatial analysis of the underlying data revealed several patterns. The historic data had a stronger difference of the high-speed expansion progress between former east and west Berlin districts. In the latest data, this pattern is not visible anymore. East as well as west districts both have a mix of low and high-speed areas. For business and private connections the central areas are better off than the outer areas. There is also a slight correlation between higher populated areas been prioritised. <i>Black line is the trendline.</i></p>
+
+<div id="correlation">
+  <div class="row">
+      <h3>Private connections, sorted by centrality<br /><span class="small">From left central to right outer areas</span></h3>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>100 Mbit/s</h4>
+          <div class="correlation" data-speed="p-all-100_mbit" data-type="dist"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>50 Mbit/s</h4>
+          <div class="correlation" data-speed="p-all-50_mbit" data-type="dist"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>16 Mbit/s</h4>
+          <div class="correlation" data-speed="p-all-16_mbit" data-type="dist"></div>
+      </div>
+  </div>
+  <div class="row">
+      <h3>Private connections, sorted by former east, border zone and west</h3>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>100 Mbit/s</h4>
+          <div class="correlation" data-speed="p-all-100_mbit" data-type="east"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>50 Mbit/s</h4>
+          <div class="correlation" data-speed="p-all-50_mbit" data-type="east"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>16 Mbit/s</h4>
+          <div class="correlation" data-speed="p-all-16_mbit" data-type="east"></div>
+      </div>
+  </div>
+  <div class="row">
+      <h3>Private connections, sorted by population<br /><span class="small">From left low population to right high population</span></h3>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>100 Mbit/s</h4>
+          <div class="correlation" data-speed="p-all-100_mbit" data-type="population"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>50 Mbit/s</h4>
+          <div class="correlation" data-speed="p-all-50_mbit" data-type="population"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>16 Mbit/s</h4>
+          <div class="correlation" data-speed="p-all-16_mbit" data-type="population"></div>
+      </div>
+  </div>
+  <div class="row">
+      <h3>Business connections, sorted by centrality<br /><span class="small">From left central to right outer areas</span></h3>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>100 Mbit/s</h4>
+          <div class="correlation" data-speed="b-100-alle" data-type="dist"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>50 Mbit/s</h4>
+          <div class="correlation" data-speed="b-50-alle" data-type="dist"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>10 Mbit/s</h4>
+          <div class="correlation" data-speed="b-10-alle" data-type="dist"></div>
+      </div>
+  </div>
+  <div class="row">
+      <h3>Business connections, sorted by former east, border zone and west</h3>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>100 Mbit/s</h4>
+          <div class="correlation" data-speed="b-100-alle" data-type="east"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>50 Mbit/s</h4>
+          <div class="correlation" data-speed="b-50-alle" data-type="east"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>10 Mbit/s</h4>
+          <div class="correlation" data-speed="b-10-alle" data-type="east"></div>
+      </div>
+  </div>
+  <div class="row">
+      <h3>Business connections, sorted by populations<br /><span class="small">From left low to right high population</span></h3>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>100 Mbit/s</h4>
+          <div class="correlation" data-speed="b-100-alle" data-type="population"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>50 Mbit/s</h4>
+          <div class="correlation" data-speed="b-50-alle" data-type="population"></div>
+      </div>
+      <div class="col col-xs-12 col-sm-4">
+          <h4>10 Mbit/s</h4>
+          <div class="correlation" data-speed="b-10-alle" data-type="population"></div>
+      </div>
+  </div>
+</div>
+
+<p style="padding-top:50px;">The slow expansion in the outer districts of Berlin is particularly serious in highly populated areas. Even though Pankow has caught up, the still underdeveloped district is Berlin's district with the highest population, thereby, a lot of people still have no access to high-speed internet. The situation is similar for Treptow-Köpenick and Lichtenberg.<br /><br /><i>For calculating the impact, the broadband availability was combined with population data. It is important to note that the resulting population numbers are not 100% correct, as we don't have data on a house by house level on neither population nor broadband speed. The results are only estimates and should be interpreted as trends.</i></p>
+
+<div id="population-gui">
+  <a class="population-button active" data-key="16">16 Mbit/s</a><a class="population-button" data-key="50">50 Mbit/s</a><a class="population-button" data-key="100">100 Mbit/s</a><br />
+  <span class="small">Citizens | undersupplied in percentage</span>
+</div>
+<div id="population"></div>

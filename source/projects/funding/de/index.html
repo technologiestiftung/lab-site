@@ -1,0 +1,105 @@
+---
+layout: project
+description: ""
+lang: de
+title: "Fördergelder in Berlin: Eine Übersicht"
+subtitle: ""
+type: prototype
+colorMode: bright
+featuredImage: /projects/funding/images/featured.jpg
+thumbnail: /projects/funding/images/thumbnail.jpg
+heroImage: /projects/funding/images/hero.jpg
+socialMediaImage: /projects/funding/social_media.jpg
+visible: true
+featured: false
+authors:
+  - fabian-dinklage
+start: 2018-01-01
+end: 2018-10-23
+status: finished
+date: 2018-10-23
+externalUrl: http://zuwendungsdatenbank.lab.technologiestiftung-berlin.de
+assets:
+  js:
+   - ../js/index-min.js
+  css:
+    - ../css/index.css
+redirect_from:
+  - /projects/funding/
+  - /projects/funding/index.html
+  - /projects/zuwendungsdatenbank/
+  - /projects/zuwendungsdatenbank/index.html
+
+---
+
+<p>
+  Die Berliner <a href="https://www.berlin.de/sen/finanzen/">Senatsverwaltung für Finanzen</a> veröffentlicht regelmäßig Daten über finanzielle Zuwendungen aus Landesmitteln. In einer <a href="http://www.berlin.de/sen/finanzen/service/zuwendungsdatenbank/">Zuwendungsdatenbank</a> lässt sich abfragen, wer öffentliche Förderungen in welcher Höhe erhalten hat. Diese Daten sind in vielfacher Hinsicht interessant – unter Transparenzgesichtspunkten, aber auch für weiterführende Analysen der Berliner Förderlandschaft.<br><br>
+
+  Wir haben uns in den letzten Monaten intensiv mit den Berliner Zuwendungsdaten beschäftigt. Herausgekommen ist ein umfassendes <a href="https://lab.technologiestiftung-berlin.de/projects/zuwendungsdatenbank/">Recherchetool</a>, das es erlaubt, die Zuwendungsdaten von 2009 bis 2017 nach vielfältigen Kriterien zu filtern und auszuwerten. Zusätzlich zeigen wir hier in  einer einführenden Übersicht, in welche Bereiche die Landesmittel fließen.
+</p>
+
+<h3>Zuwendungen des Landes Berlin:</h3>
+<p class="copy">Filtern nach Volumen oder Anzahl der Zuwendungen pro Jahr.</p>
+
+<div class="project-text">
+    <div class="btn-group flex flex-row">
+      <span id="btn_money_abs" class="link--button">
+        Volumen in Euro
+      </span>
+
+      <span id="btn_money_rel" class="link--button">
+        Volumen in %
+      </span>
+
+      <span id="btn_count_abs" class="link--button">
+        Anzahl absolut
+      </span>
+
+      <span id="btn_count_rel" class="link--button">
+        Anzahl in %
+      </span>
+    </div>
+</div>
+
+<div id="legend" class="project-text">
+    <h4 id="legend-title"></h4>
+</div>
+
+<div class="container">
+  <div id="tooltip">
+
+    <div class="tooltip--tile">
+        <div class="tooltip--title">
+            <span>Sektor</span>
+            <h4 id="category_title"></h4>
+          </div>
+
+          <div class="tooltip--title">
+            <span>Jahr</span>
+            <h4 id="date"></h4>
+          </div>
+    </div>
+
+    <div class="tooltip--tile">
+      <div class="tooltip--title ">
+        <span>Volumen</span>
+        <h4 id="money_value"></h4>
+      </div>
+
+      <div class="tooltip--title">
+        <span>Anzahl Zuwendungen</span>
+        <h4 id="count_value">Kategorie Name</h4>
+      </div>
+    </div>
+
+    <span id="money_value"></span>
+  </div>
+</div>
+
+<div class="vis container p-bottom"><div id="chart"></div></div>
+
+<p>
+  Die Visualisierung fasst mehr als 73.000 Förderungen der letzten 8 Jahre aufgeteilt nach den Förderungsbereichen zusammen. Wir haben uns zur Visualisierung für ein sogenanntes Bubble Chart entschieden, da so die drei entscheidenden Parameter (Zeit, Projektbereich, Fördersumme) übersichtlich in Verbindung gebracht werden können. Wer einen tiefergehenden Blick in die Zuwendungsdaten werfen möchte, dem empfehlen wir unser <a href="https://lab.technologiestiftung-berlin.de/projects/zuwendungsdatenbank/">Recherchetool</a>.
+</p>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>

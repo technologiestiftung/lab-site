@@ -1,0 +1,84 @@
+.footer {
+    bottom: 0;
+    left: 0;
+    position: relative;
+    width: 100%;
+    flex-direction: column;
+    border-top: 1px solid $light-grey;
+    margin-top: 30px !important;
+
+    
+    @media only screen and (max-width: $screen-m) {
+        padding: 0 0px;
+        flex-direction: column;
+    }
+
+    &-outer {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid $light-grey;
+        padding: 20px 0 22px 0;
+
+        @media only screen and (max-width: $screen-m) {
+            flex-direction: column;
+        }
+
+        .footer-inner {
+            padding: 0 $spacing-page-m;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+            @media only screen and (max-width: $screen-m) {
+                padding: 0 30px;
+            }
+        }
+    }
+
+    &-list {
+        display: flex;
+        
+
+        @media only screen and (max-width: $screen-m) {
+            flex-direction: column;
+
+        }
+
+        &__item {
+            padding: 0 $spacing-s;
+            
+            a {
+                transition: color $time-xs linear;
+                
+                &:hover {
+                    color: $grey;
+                }
+            }
+
+            @media only screen and (max-width: $screen-m) {
+                padding: 0;
+            }
+
+            &:first-of-type {
+                padding: 0 $spacing-s 0 0;
+
+                @media only screen and (max-width: $screen-s) {
+                    padding: 0;
+                }
+            }
+            
+            &:last-of-type {
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+    .flex-row {
+
+        @media only screen and (max-width: $screen-s) {
+            flex-direction: column;
+        }
+    }
+
+

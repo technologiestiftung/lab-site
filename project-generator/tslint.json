@@ -1,0 +1,11 @@
+{
+
+  "extends": [
+    "tslint:recommended",
+    "@oclif/tslint"
+  ],
+  "rules":{
+    "semicolon": true,
+    "quotemark":[true, "single"]
+  }
+}

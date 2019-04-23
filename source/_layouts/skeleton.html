@@ -1,0 +1,194 @@
+{%- comment -%} Preemtive checks for data {%- endcomment -%}
+{%- if page.socialMediaImage -%}
+{%- assign socialMediaImage = page.socialMediaImage -%}
+  {%- else -%}
+{%- assign socialMediaImage = "/icons/social_media.jpg" -%}
+{%- endif -%}
+{%- if page.layout == 'landing' -%}
+    {%- assign title = site.data.meta.title.en -%}
+  {%- else -%}
+    {%- if page.title -%}
+    {%- assign title = site.data.meta.title.en | append: " | " | append: page.title  -%}
+    {%- else -%}
+    {%- assign title = site.data.meta.title.en -%}
+      code2
+    {%- endif -%}
+{%- endif -%}
+{%- comment -%}Get the description of the site or if it is a project of the page{%- endcomment -%}
+{%- if page.layout == 'project' -%}
+{%- comment -%}we have a project{%- endcomment -%}
+  {%- if page.description -%}
+    {%- assign description = page.description -%}
+  {%- else -%}
+    {%- if page.lang == 'de' -%}
+    {%- assign description = site.data.meta.description.de -%}
+    {%- else -%}
+    {%- assign description = site.data.meta.description.en -%}
+    {%- endif -%}
+  {%- endif -%}
+
+{%- else -%}
+{%- comment -%} not project {%- endcomment -%}
+{%- if page.description  -%}
+    {%- assign description = page.description -%}
+  {%- else -%}
+    {%- if page.lang =='de' -%}
+      {%- assign description = site.data.meta.description.de -%}
+    {%- comment -%}not project de {%- endcomment -%}
+    {%- else -%}
+    {%- comment -%}not project de en{%- endcomment -%}
+      {%- assign description = site.data.meta.description.en -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endif -%}
+
+{%- comment -%}
+███████╗████████╗ █████╗ ██████╗ ████████╗
+██╔════╝╚══██╔══╝██╔══██╗██╔══██╗╚══██╔══╝
+███████╗   ██║   ███████║██████╔╝   ██║
+╚════██║   ██║   ██╔══██║██╔══██╗   ██║
+███████║   ██║   ██║  ██║██║  ██║   ██║
+╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝
+{%- endcomment -%}
+
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>{{ title }}</title>
+        {%- comment -%}
+        <!-- {# Favicon #} -->
+        {%- endcomment -%}
+        {% include favicon-links.html %}
+        {%- comment -%}
+        <!-- FACEBOOK -->
+        {%- endcomment -%}
+        <meta property="fb:app_id" content="487094758334595">
+        <meta property="og:url" content="{{ site.url }}">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="{{ title }}">
+          <meta property="og:image" content="{{ socialMediaImage }}">
+
+        <meta property="og:description" content="{{ description }}">
+        <meta property="og:site_name" content="{{ title }}">
+        <meta property="article:author" content="Sebastian Meier">
+
+        {%- comment -%}
+        <!-- TWITTER -->
+        {%- endcomment -%}
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@TSBBerlin">
+        <meta name="twitter:creator" content="@seb_meier">
+        <meta name="twitter:url" content="{{ site.url }}">
+        <meta name="twitter:title" content="{{ title }}">
+        <meta name="twitter:description" content="{{ description }}">
+        <meta name="twitter:image" content="{{ socialMediaImage }}">
+
+          {%- comment -%}
+          <!-- GOOGLE+/SCHEMA.ORG -->
+          {%- endcomment -%}
+          <meta itemprop="name" content="{{ title }}">
+        <meta itemprop="description" content="{{ description }}">
+        <meta itemprop="image" content="{{ socialMediaImage }}">
+        {%- comment -%}
+        <!-- CANONICAL URL -->
+        {%- endcomment -%}
+        <link rel="canonical" href="{{ site.url }}">
+        {%- if jekyll.environment == 'production' -%}
+        <link rel="stylesheet" type="text/css" href="/assets/css/index.min.css" />
+        {%- else -%}
+        <link rel="stylesheet" type="text/css" href="/assets/css/index.min.css" />
+        {%- endif -%}
+        <link rel="stylesheet" type="text/css" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.8/tiny-slider.css" />
+        {%- if page.layout == "project" -%}
+        {%- comment -%}
+        <!-- include assets only for projets.
+            all assets should be realtive to project folder-->
+        {%- endcomment -%}
+        {%- if page.assets  -%}
+       {%- comment -%}
+        <!-- we have assets -->
+       {%- endcomment -%}
+        {%- if page.assets.css -%}
+          {%- comment -%}
+            <!-- we have css -->
+          {%- endcomment -%}
+            {%- for cssfile in page.assets.css -%}
+            <link rel="stylesheet" type="text/css" type="text/css" href="{{ cssfile }}" />
+            {%- endfor -%}
+            {%- comment -%}
+            <!-- end of css -->
+            {%- endcomment -%}
+            {%- endif -%}
+            {%- endif -%}
+
+        {%- else -%}
+            {%- comment -%}
+            <!-- else -->
+            <!-- not the project layout -->
+            {%- endcomment -%}
+        {% endif %}
+
+    </head>
+    <body>
+        {%- comment -%}
+        <!-- navigation -->
+        <!-- TODO Nav not working yet -->
+        {%- endcomment -%}
+        {% include navigation.html %}
+
+        {{ content }}
+
+        {%- comment -%}
+        <!-- {# Footer #} -->
+        {%- endcomment -%}
+        {% include footer.html %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.8/min/tiny-slider.js"></script>
+
+        <script src="/assets/js/index.js" defer></script>
+        {%- if page.layout == 'landing' or page.layout == 'project-overview' -%}
+        <script src="/assets/js/index-timeline.js"></script>
+        {%- endif -%}
+        {%- if page.layout == "project" -%}
+        {%- comment -%}
+        <!-- include assets only for projets.
+            all assets should be realtive to project folder-->
+        {%- endcomment -%}
+        {%- if page.assets  -%}
+        {%- comment -%}
+        <!-- we have assets -->
+        {%- endcomment -%}
+            {%- if page.assets.js -%}
+            {%- comment -%}
+            <!-- we have js assets -->
+            {%- endcomment -%}
+                {%- for jsfile in page.assets.js -%}
+                <script src="{{ jsfile }}" type="text/javascript" defer></script>
+                {%- endfor -%}
+            {%- endif -%}
+        {%- endif -%}
+        {%- else -%}
+        {%- comment -%}
+        <!-- not the project layout -->
+        {%- endcomment -%}
+        {% endif %}
+
+<!-- MATOMO -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//piwik.technologiestiftung-berlin.de/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 5]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//piwik.technologiestiftung-berlin.de/piwik.php?idsite=5" style="border:0;" alt="" /></p></noscript>
+<!-- End MATOMO Code -->
+    </body>
+</html>

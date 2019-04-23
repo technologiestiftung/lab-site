@@ -1,0 +1,83 @@
+
+<nav id="navigation" class="navigation">
+    <a class="navigation-logo" href="{%- if page.lang == 'de' -%}/{%- else -%}/en{%- endif -%}">
+        <span class="navigation-logo__line lab__line">Ideation & Prototyping <span class="bold">Lab</span></span>
+        <span class="navigation-logo__line foundation__line"><span class="bold">Technologiestiftung</span> Berlin</span>
+    </a>
+
+  <div id="navigation-overlay" class="overlay">
+            <ul class="navigation-list-mobile">
+         {%- for item in site.data.meta.navigation -%}
+            {%- if item.navigationTitle -%}
+
+            <li class="navigation-list__item navigation-list__item--nav">
+                <a href="{{ item.url[page.lang] }}">{{ item.navigationTitle[page.lang] }}</a>
+            </li>
+            {%- endif -%}
+        {%- endfor -%}
+                    <li class="navigation-list__item navigation-list__item--lang">
+                        <a id="language-switch" class="navigation-language" href="/{%- if page.lang == 'en' -%}de{%- else -%}en{%- endif -%}">
+                            {%- if page.lang == "en" -%}
+                                Deutsch
+                            {%- else -%}
+                                English
+                            {%- endif -%}
+                        </a>
+
+                    </li>
+
+                    <li class="flex-row">
+                        <div class="navigation-list__item navigation-list__item--icon">
+                            <a href="https://twitter.com/tsbberlin" target="_blank">
+                                <img src="/assets/images/twitter.svg" alt="" />
+                            </a>
+                        </div>
+
+                        <div class="navigation-list__item navigation-list__item--icon">
+                            <a href="https://github.com/technologiestiftung" target="_blank">
+                                <img src="/assets/images/github.svg" alt="" />
+                            </a>
+                        </div>
+                    </li>
+            </ul>
+    </div>
+    <ul class="navigation-list">
+    {%- comment -%}
+        <!-- this is generate from data within the _data/meta.json -->
+    {%- endcomment -%}
+            {% for item in site.data.meta.navigation %}
+            {% if item.navigationTitle %}
+            <li class="navigation-list__item navigation-list__item--nav">
+                <a href="{{ item.url[page.lang] }}">{{ item.navigationTitle[page.lang] }}</a>
+            </li>
+            {% endif %}
+        {% endfor %}
+
+        <li class="navigation-list__item navigation-list__item--lang">
+            <a id="language-switch" class="navigation-language" href="/{% if page.lang == "en" %}de{% else %}en{% endif %}">
+                {%- if page.lang == "en" -%}
+                    Deutsch
+                {%- else -%}
+                    English
+                {%- endif -%}
+            </a>
+        </li>
+        <li class="navigation-list__item navigation-list__item--icon">
+            <a href="https://twitter.com/tsbberlin" target="_blank">
+                <img src="/assets/images/twitter.svg" alt="" />
+            </a>
+        </li>
+
+        <li class="navigation-list__item navigation-list__item--icon">
+            <a href="https://github.com/technologiestiftung" target="_blank">
+                <img src="/assets/images/github.svg" alt="" />
+            </a>
+        </li>
+
+    </ul>
+        <button id="navigation-icon" class="hamburger hamburger--spin" type="button">
+        <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+        </span>
+    </button>
+</nav>

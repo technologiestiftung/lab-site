@@ -1,23 +1,92 @@
 {
-  "name": "TSB-Lab-Site",
+  "name": "lab-site",
   "version": "1.0.0",
-  "description": "Website for the ideation and prototyping lab",
-  "main": "build.js",
+  "description": "[![Build Status](https://travis-ci.org/technologiestiftung/lab-site.svg?branch=master)](https://travis-ci.org/technologiestiftung/lab-site)",
+  "main": "index.js",
   "scripts": {
-    "build": "node scripts/build.js",
-    "publish": "git checkout master && git add . && git commit -a -m \"build\" && git push && git merge --strategy=ours gh-pages -m \"build\" && git add . && git commit -a -m \"after-build\" && git push && git checkout pages && git pull --allow-unrelated-histories && git merge master && git filter-branch --prune-empty --subdirectory-filter docs gh-pages && git add . && git commit -a -m \"build\" && git push",
-    "boilerplate": "node scripts/boilerplate.js"
+    "test": "jest",
+    "testWithCoverage": "jest --coverage",
+    "parcel": "parcel",
+    "prebuild:css": "node-sass --include-path source/assets/_scss source/assets/css/index.scss source/assets/css/index.css",
+    "build:css": "postcss --config postcss.config.js < source/assets/css/index.css > source/assets/css/index.min.css",
+    "watch:css": "watch 'npm run build:css' source/assets/_scss source/assets/css/ --filter build-tools/watch-scss-filter.js",
+    "dev": "npm-run-all --parallel watch:**",
+    "jekyll": "bundle exec jekyll serve  --livereload",
+    "jekyll:static": "bundle exec jekyll serve",
+    "watch:js": "parcel watch source/assets/js/src/* --no-cache --out-dir source/assets/js/  --public-url .",
+    "build:js": "parcel build source/assets/js/src/* --no-cache --out-dir source/assets/js/  --public-url .",
+    "new-project": "./project-generator/bin/run",
+    "new": "./project-generator/bin/run --prompt",
+    "new-project:interactive": "./project-generator/bin/run -p",
+    "new-project:help": "./project-generator/bin/run --help",
+    "htmlproofer": "bundle exec htmlproofer ./_site/ --disable-external > htmlproofer-report.txt 2>&1",
+    "build": "NODE_ENV=production npm-run-all --parallel build:**",
+    "broken-link-check": "npx broken-link-checker --recursive http://localhost:4000"
   },
+<<<<<<< HEAD:DEPRECATED/package.json
   "devDependencies": {
     "fs": "0.0.1-security",
     "grunt": "^1.0.3",
     "grunt-contrib-uglify": "^3.1.0",
     "grunt-contrib-watch": "^1.1.0",
     "ncp": "^2.0.0"
+=======
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/technologiestiftung/lab-site.git"
   },
-  "author": "Sebastian Meier @seb_meier",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/technologiestiftung/lab-site/issues"
+>>>>>>> migrate/new-labsite:package.json
+  },
+  "homepage": "https://github.com/technologiestiftung/lab-site#readme",
   "dependencies": {
+<<<<<<< HEAD:DEPRECATED/package.json
     "grunt-contrib-sass": "^1.0.0",
     "moment": "^2.20.1"
+=======
+    "babel-polyfill": "^6.26.0",
+    "d3": "^5.8.2",
+    "node-sass": "^4.11.0",
+    "parcel-bundler": "^1.11.0",
+    "postcss-preset-env": "^6.6.0",
+    "postcss-scss": "^2.0.0",
+    "whatwg-fetch": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/polyfill": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@types/jest": "^24.0.0",
+    "autoprefixer": "^9.5.0",
+    "core-js": "^2.6.5",
+    "cssnano": "^4.1.10",
+    "cz-conventional-changelog": "^2.1.0",
+    "delims": "^0.4.2",
+    "eslint": "^5.13.0",
+    "eslint-config-unobtrusive": "^1.2.2",
+    "eslint-plugin-jest": "^22.2.2",
+    "jest": "^24.1.0",
+    "meow": "^5.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^7.0.14",
+    "postcss-cli": "^6.1.2",
+    "postcss-hexrgba": "^1.0.1",
+    "postcss-unrgba": "^1.1.1",
+    "stylelint": "^9.10.1",
+    "stylelint-config-standard": "^18.2.0",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.1",
+    "watch": "^1.0.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+>>>>>>> migrate/new-labsite:package.json
   }
 }
