@@ -1,0 +1,55 @@
+{
+  "name": "textures",
+  "version": "1.2.0",
+  "description": "SVG patterns for Data Visualization",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/riccardoscalco/textures.git"
+  },
+  "keywords": [
+    "svg pattern",
+    "patterns",
+    "textures",
+    "d3",
+    "svg",
+    "dataviz",
+    "data visualisation",
+    "maps",
+    "visual"
+  ],
+  "author": {
+    "name": "Riccardo Scalco",
+    "email": "riccardoscalco@gmail.com",
+    "url": "http://riccardoscalco.github.io/"
+  },
+  "main": "dist/textures.js",
+  "module": "dist/textures.esm.js",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/riccardoscalco/textures/issues"
+  },
+  "homepage": "https://github.com/riccardoscalco/textures",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "d3-selection": "^1.1.0",
+    "faucet": "^0.0.1",
+    "jsdom": "^11.3.0",
+    "rollup": "^0.50.0",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-uglify": "^2.0.1",
+    "tape": "^4.8.0",
+    "xo": "^0.18.2"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "xo src/**/*.js && xo tests/**/*.js && tape tests/**/*.js | faucet",
+    "pretest": "rollup -c",
+    "pub": "np"
+  },
+  "files": [
+    "dist"
+  ]
+}

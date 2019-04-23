@@ -1,0 +1,445 @@
+body {
+  background-color: #F2F2F2; }
+
+/*
+font-family: "ClanOT-Medium";
+font-family: "ClanOT-Book";
+*/
+blockquote {
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  border-left: none; }
+
+span.image {
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat; }
+
+div.red {
+  background-color: #e60032;
+  color: #fff; }
+
+div.darkgrey {
+  background-color: #444444;
+  color: #fff; }
+
+div.light_red {
+  background-color: rgba(230, 0, 50, 0.3);
+  color: #e60032; }
+
+div.blue {
+  background-color: #1e3791;
+  color: #fff; }
+
+div.grey {
+  background-color: #f5f5f5;
+  color: #000; }
+
+div.white {
+  background-color: #fff;
+  color: #000; }
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -webkit-transform: rotate(360deg); }
+
+.triangle.right {
+  border-width: 15px 0 15px 26px; }
+
+.triangle.right.red {
+  background-color: transparent;
+  border-color: transparent transparent transparent #e60032; }
+
+.triangle.right.blue {
+  background-color: transparent;
+  border-color: transparent transparent transparent #1e3791; }
+
+.triangle.bottom {
+  border-width: 26px 15px 0 15px; }
+
+.triangle.bottom.red {
+  background-color: transparent;
+  border-color: #e60032 transparent transparent transparent; }
+
+.triangle.bottom.blue {
+  background-color: transparent;
+  border-color: #1e3791 transparent transparent transparent; }
+
+h1 {
+  font-family: "ClanOT-Medium", sans-serif;
+  font-weight: normal;
+  margin: 0 0 0.3em 0;
+  font-size: 2em;
+  line-height: 1.2em; }
+
+h3 {
+  font-family: "ClanOT-Medium", sans-serif;
+  font-weight: normal; }
+
+.storer-box {
+  margin-top: 100px; }
+
+.storer-box h2,
+.storer-box h1 {
+  margin: 20px; }
+
+.storer-box p {
+  margin: 0 20px 20px 20px; }
+
+/*-------- Minimap --------*/
+#entwicklung {
+  padding-top: 50px; }
+
+.datacol {
+  padding-top: 30px;
+  text-align: center; }
+
+.datacol svg {
+  margin-bottom: 5px; }
+
+.datacol svg path {
+  fill: none;
+  stroke: none; }
+
+.minimap svg path {
+  stroke: #ffffff;
+  stroke-width: 1px; }
+
+.datacol .small,
+.datacol svg text {
+  font-size: 12px; }
+
+.mapswitch-head {
+  padding-top: 0px; }
+
+.switchrow .col {
+  text-align: center;
+  cursor: pointer; }
+
+.switchrow .col p {
+  text-align: left; }
+
+.switchrow .col:hover .mapswitch {
+  background-color: #e60032;
+  color: #fff; }
+
+.switchrow .col {
+  padding: 0; }
+
+.switchrow .col div {
+  padding: 15px 0;
+  font-size: 20px;
+  font-family: "ClanOT-Medium", sans-serif;
+  font-weight: normal; }
+
+.minimap text {
+  font-size: 18px;
+  font-family: "ClanOT-Medium", sans-serif;
+  font-weight: normal; }
+
+.minimap {
+  max-width: 250px;
+  margin: 0 auto;
+  height: 300px; }
+
+#bezirke {
+  padding-top: 100px; }
+
+.speed-info.speed-info-50 {
+  display: none; }
+
+/*-------- D3 Tooltip --------*/
+.d3-tip {
+  display: none;
+  width: 250px;
+  z-index: 1000;
+  position: absolute;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+  padding: 8px 10px 0 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border: 2px solid rgba(0, 0, 0, 0.8);
+  border-radius: 2px;
+  pointer-events: none; }
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  pointer-events: none;
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: relative;
+  text-align: center;
+  bottom: -11px;
+  left: 50%; }
+
+.d3-tip.left:after {
+  left: -7px; }
+
+.d3-tip.right:after {
+  left: 100%; }
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0; }
+
+.d3-tip strong {
+  pointer-events: none;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 4px; }
+
+.d3-tip strong.center {
+  text-align: center;
+  display: block; }
+
+/*-------- Comparison --------*/
+#compare .chart .col {
+  margin-top: 0px;
+  height: 480px; }
+
+#compare-legend {
+  width: 100%;
+  float: left; }
+
+#compare .bezirke.real,
+#compare .bezirke.real * {
+  pointer-events: none !important; }
+
+#compare .bezirke.alpha path {
+  stroke: transparent !important;
+  stroke-width: 10 !important; }
+
+#compare text {
+  font-size: 11px; }
+
+#compare .company-help {
+  margin: 0px auto 20 auto; }
+
+#compare .menu {
+  /*padding: 20px;*/
+  float: left;
+  width: 100%;
+  font-size: 12px;
+  color: #000; }
+
+#compare .menu .entry.hover {
+  background: #ddd; }
+
+#compare .menu .entry {
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  padding: 3px;
+  float: left; }
+
+#compare .menu .entry * {
+  pointer-events: none; }
+
+#compare .menu .color {
+  /*color: #FFF;
+	font-weight: bold;
+	text-shadow: none;*/
+  margin-right: 7px;
+  margin: 2px;
+  float: left;
+  width: 20px;
+  height: 20px;
+  border-radius: 40px; }
+
+#compare .menu .labell {
+  margin: 4px;
+  float: left; }
+
+#compare .menu .close {
+  margin: 2px;
+  float: right;
+  opacity: 0;
+  color: #fff; }
+
+#compare .menu .active .close {
+  opacity: 1; }
+
+#compare .menu .active {
+  background: #E60032;
+  color: #FFF;
+  font-weight: bold; }
+
+#compare .chart .bezirke .ortsteil {
+  stroke: #E60032;
+  stroke-width: 2; }
+
+#compare .chart .ortsteil.normalbezirk {
+  display: none;
+  pointer-events: none; }
+
+#compare .chart.hover .ortsteil {
+  stroke: #ddd; }
+
+#compare .chart.hover .hover {
+  stroke: #E60032;
+  stroke-width: 3.5px; }
+
+#compare .ortsteil {
+  transition-timing-function: ease-in-out;
+  -webkit-transition: stroke 0.5s;
+  transition: stroke 0.5s;
+  stroke-linecap: round;
+  stroke-linejoin: round; }
+
+#compare .chart.active .bezirke .ortsteil {
+  stroke: #ddd;
+  pointer-events: none; }
+
+#compare .chart.active .bezirke.active .ortsteil {
+  stroke: #E60032; }
+
+#compare .chart.expand .bezirke.active .ortsteil {
+  display: inherit;
+  pointer-events: stroke; }
+
+/*#compare .chart.expand .bezirke.active .ortsteil.overbezirk,
+#compare .chart.expand .bezirke.active .ortsteil.overbezirk.hover,
+#compare .chart.expand.hover .bezirke.active .ortsteil.overbezirk,
+#compare .chart.expand.hover .bezirke.active .ortsteil.overbezirk.hover{
+	stroke:#e55f7c;
+	pointer-events:none;
+}*/
+#compare .chart.expand.hover .bezirke.active .ortsteil {
+  stroke: #B1B1B1; }
+
+#compare .chart.expand.hover .bezirke.active .hover {
+  /*stroke:#1E3791;*/
+  stroke: #E60032; }
+
+#compare .ortsteil {
+  fill: none;
+  cursor: pointer; }
+
+#compare .chart .axis path {
+  display: none; }
+
+#compare .chart .axis line {
+  shape-rendering: crispEdges;
+  stroke: #A0A0A0; }
+
+#compare .chart .axis .minor line {
+  stroke: #BFBFBF;
+  stroke-dasharray: 2,2; }
+
+#compare .chart .x.axis .tick line {
+  display: none; }
+
+#compare .chart .col svg {
+  width: 100%;
+  height: 100%; }
+
+.switchrow .col.company-help,
+#compare .company-help {
+  padding: 15px 15px 10px 15px;
+  height: auto; }
+
+#compare .company-help {
+  margin-bottom: 20px; }
+
+/*----- MAP ------*/
+#map svg {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 5px; }
+
+#map svg path {
+  fill: none;
+  stroke: none; }
+
+#map svg path {
+  stroke: #ffffff;
+  stroke-width: 1px; }
+
+#map svg text {
+  font-size: 12px; }
+
+#map-legend text {
+  font-size: 12px;
+  text-anchor: middle; }
+
+#map-legend-container {
+  width: 100%;
+  clear: both;
+  text-align: center; }
+
+#map-legend path {
+  fill: none;
+  stroke: none; }
+
+#karte {
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 100px; }
+
+#karte .selector {
+  text-align: left;
+  display: inline-block;
+  padding-right: 10px; }
+
+#karte .selector-title {
+  padding-bottom: 5px;
+  display: inline-block; }
+
+/*----- Correlation ------*/
+.correlation svg {
+  width: 100%; }
+
+.project main #correlation h4 {
+  max-width: none;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 10px 0 0 20px;
+  margin: 0; }
+
+.project main #correlation h3 {
+  max-width: none;
+  font-family: sans-serif;
+  text-align: center;
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold; }
+
+#correlation .row:hover {
+  background-color: rgba(0, 0, 0, 0.2); }
+
+#population-gui {
+  padding-top: 50px;
+  text-align: center; }
+
+#population-gui a {
+  padding: 7px 10px;
+  display: inline-block;
+  background-color: rgba(230, 0, 50, 0.3);
+  color: #e60032;
+  font-weight: bold;
+  margin: 0;
+  font-size: 16px; }
+  #population-gui a.active, #population-gui a:hover {
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #e60032;
+    color: white; }
+
+#correlation .row {
+  padding-top: 20px; }

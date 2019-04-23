@@ -1,0 +1,163 @@
+#trends{
+  font-family: Helvetica, Arial, sans-serif;
+  min-width:768px;
+  width:100%;
+  margin:0 auto;
+  clear:both;
+  padding-top:50px;
+}
+
+#trends svg{
+  margin-bottom:20px;
+}
+
+.col{
+  float:left;
+  min-width:256px;
+  width:33%;
+  text-align: right;
+}
+
+.col svg{
+  margin-right:5px;
+}
+
+.project main .col h2{
+  text-align: left;
+  padding:0;
+  margin:10px 0 10px 57px;
+}
+
+.col .top{
+  display: block;
+  height:5px;
+  min-width: 256px;
+  margin:0;
+  padding:0;
+  background-image:url('images/shadow_top@2x.png');
+  background-position: bottom right;
+  background-size: 256px 5px;
+  background-repeat: no-repeat;
+}
+
+.col .bottom{
+  display: block;
+  height:5px;
+  min-width: 256px;
+  margin:0;
+  padding:0;
+  background-image:url('images/shadow_bottom@2x.png');
+  background-position: top right;
+  background-size: 256px 5px;
+  background-repeat: no-repeat;
+}
+
+.col .mid{
+  margin:0;
+  padding:5px 10px 5px;
+  background-image:url('images/shadow_bg@2x.png');
+  background-position: right;
+  background-size: 256px 1px;
+  background-repeat: repeat-y;
+}
+
+.col.no-bg .top, .col.no-bg .bottom, .col.no-bg .mid{
+  background-image:none;
+}
+
+#trend-2{
+  display: none;
+}
+
+.col .mid .inner{
+  overflow-x:hidden;
+  max-height: 800px;
+  overflow-y: auto;
+}
+
+#trends text{
+  font-size:12px;
+  font-weight:700;
+}
+
+#trends path{
+  stroke-width:1px;
+  fill:transparent;
+  stroke:#000;
+}
+
+#children{
+  clear:both;
+  padding-top:100px;
+}
+
+#trends .bg-overlay{
+  cursor: pointer;
+}
+
+#trends .bg-normal{
+  fill:rgba(0,0,0,0.1);
+}
+
+#trends .bg-predict{
+  fill:rgba(33, 167, 202, 0.29);
+}
+
+#trends .active .bg-normal{
+  fill:rgba(0,0,0,0.3);
+}
+
+#trends .active .bg-predict{
+  fill:rgba(33, 167, 202, 0.6); 
+}
+
+#trend-info{
+  font-family: 'Roboto Mono', monospace;
+  font-size:14px;
+  line-height:24px;
+}
+
+#trend-info p{
+  text-align: left;
+  font-size:14px;
+  padding-left:13px;
+  padding-bottom:20px;
+}
+
+#trend-info img{
+  width:24px;
+  height: auto;
+  margin-right:20px;
+  float:left;
+  margin-top:9px;
+  margin-bottom:20px;
+}
+
+#trend-info .color-block{
+  margin-bottom: 20px;
+}
+
+.color-block{
+  float:left;
+  width:15px;
+  height:15px;
+  display: block;
+  margin-right:23px;
+  margin-top:11px;
+  margin-left:5px;
+}
+
+.color-block.blue{
+  background-color:rgba(33, 167, 202, 0.6);
+}
+
+.special-section{
+  padding:0 0 50px 0;
+  overflow-x:auto;
+}
+
+.tooltip line{
+  stroke-dasharray:2, 2;
+  stroke:#000;
+  stroke-width:1px;
+}

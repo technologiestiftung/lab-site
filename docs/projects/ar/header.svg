@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="115px" height="56px" preserveAspectRatio="none" viewBox="0 0 115 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>header@2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="115" height="55.4511719"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-4">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="Mask" fill-rule="nonzero"></g>
+            <g mask="url(#mask-2)">
+                <g transform="translate(-35.000000, -39.000000)">
+                    <polygon id="Fill-1" fill="#E11D35" points="0 54.5277 13.583 112.9527 62.15 70.9217 62.692 70.4537 0.943 54.0657"></polygon>
+                    <polygon id="Fill-2" fill="#3391CE" points="0.0003 54.5273 199.8493 107.2463 194.5453 46.4793 111.2293 0.0003"></polygon>
+                    <polygon id="Fill-3" fill="#253E8D" points="111.2283 0.0003 0.0003 54.5273 62.1503 70.9223 131.2433 11.1653 111.2293 0.0003"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

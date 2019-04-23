@@ -1,0 +1,22 @@
+{
+    "AUTHOR": "Fabian Dinklage",
+    "AUTHOR_BIO_DE": "...",
+    "AUTHOR_BIO_EN": "...",
+    "AUTHOR_IMAGE": "fabiandinklage",
+    "DATE": "23/10/2018",
+    "EMAIL": "dinklage@technologiestiftung-berlin.de",
+    "GITHUB_URL": "{{PROJECT}}",
+    "LIVE": true,
+    "PROJECT": "funding",
+    "PROJECT_DESCRIPTION_DE": "Visualisierung der Berliner Förderdaten nach Bereichen.",
+    "PROJECT_DESCRIPTION_EN": "A visualisation providing insights into Berlin's funding data.",
+    "PROJECT_TITLE_DE": "Fördergelder in Berlin: Eine Übersicht",
+    "PROJECT_TITLE_EN": "Berlin's Funding Data — An Overview",
+    "SHORT_SUBTITLE_DE": "Visualisierung der Berliner Förderdaten nach Bereichen.",
+    "SHORT_SUBTITLE_EN": "A visualisation providing insights into Berlin's funding data.",
+    "SHORT_TITLE_DE": "Fördergelder in Berlin: Eine Übersicht",
+    "SHORT_TITLE_EN": "Berlin's Funding Data — An Overview",
+    "TAG_DE": "Datenvisualisierung",
+    "TAG_EN": "Data Visualization",
+    "TWITTER_HANDLE": "fdnklg"
+}

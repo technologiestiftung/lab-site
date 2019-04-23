@@ -1,0 +1,23 @@
+{
+  "name": "TSB-Lab-Site",
+  "version": "1.0.0",
+  "description": "Website for the ideation and prototyping lab",
+  "main": "build.js",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "publish": "git checkout master && git add . && git commit -a -m \"build\" && git push && git merge --strategy=ours gh-pages -m \"build\" && git add . && git commit -a -m \"after-build\" && git push && git checkout pages && git pull --allow-unrelated-histories && git merge master && git filter-branch --prune-empty --subdirectory-filter docs gh-pages && git add . && git commit -a -m \"build\" && git push",
+    "boilerplate": "node scripts/boilerplate.js"
+  },
+  "devDependencies": {
+    "fs": "0.0.1-security",
+    "grunt": "^1.0.3",
+    "grunt-contrib-uglify": "^3.1.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "ncp": "^2.0.0"
+  },
+  "author": "Sebastian Meier @seb_meier",
+  "dependencies": {
+    "grunt-contrib-sass": "^1.0.0",
+    "moment": "^2.20.1"
+  }
+}

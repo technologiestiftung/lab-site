@@ -1,0 +1,92 @@
+.kita-number{
+                text-align: center;
+                width:100%;}
+            .kita-big{
+                font-weight: 700;
+                font-size: 40px;
+                color:#1e3791;}
+            .kita-small{
+                line-height:20px;
+                color:#000;
+                font-size: 12px;
+                font-weight: 300;}
+            #kita-intro img{
+                width:100%;
+                max-width:120px;}
+            .kita-image{
+                display:none;
+                text-align:center;}
+            #kita-intro{
+                font-family:'ClanOT-Medium', Helvetica, sans-serif;
+                max-width:500px;
+                margin: 0 auto;
+                padding-bottom:40px;}
+
+            @media (min-width: 768px) {
+                .kita-number{
+                    float:left;
+                    padding-top:45px;
+                    width:70%;                    
+                }
+                .kita-image{
+                    display: block;
+                }
+            }
+
+            #icons{
+                text-align: center;
+                padding-top:50px;}
+
+            #icons svg{
+                margin:0 auto;
+                width:90%;
+                max-width:912px;}
+
+            #icons text{
+                font-size:11px;
+                font-family:Arial, sans-serif;}
+
+            #icon_controlls{
+                font-family: 'Barlow', sans-serif;
+                padding-bottom: 20px;}
+
+            #icon_controlls img {
+                height: 20px;
+                width: 9.5px;}
+
+            .db {
+                font-weight: 700;
+                font-size: 14px;
+                background-color: #64B9E6;
+                border-radius: 5px;
+                padding: 5px 10px;
+                color: #fff;}
+
+            .db:hover, .db.active {
+                background-color: #1E3890;
+                cursor: pointer;}
+
+            .db.db-left {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                margin-right: 1px;}
+
+            .db.db-right {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;}
+
+            #map{
+                text-align:center;}
+
+            #map svg{
+                margin:0 auto;
+                width:90%;
+                max-width:850px;}
+
+            #map path{
+                fill:transparent;
+                stroke:#777777;}
+
+            #map circle{
+                stroke:transparent;
+                fill:rgba(0,0,0,0.4);}

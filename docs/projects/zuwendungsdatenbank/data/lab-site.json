@@ -1,0 +1,1771 @@
+[
+    {
+        "count": 1077,
+        "money": 4286827285,
+        "target": "Verkehr",
+        "years": [
+            {
+                "count": 18,
+                "countShare": 0.22,
+                "money": 117142119,
+                "moneyShare": 11.11
+            },
+            {
+                "count": 26,
+                "countShare": 0.3,
+                "money": 162701516,
+                "moneyShare": 14.91
+            },
+            {
+                "count": 37,
+                "countShare": 0.5,
+                "money": 182154044,
+                "moneyShare": 17.31
+            },
+            {
+                "count": 20,
+                "countShare": 0.26,
+                "money": 239778307,
+                "moneyShare": 18
+            },
+            {
+                "count": 229,
+                "countShare": 2.71,
+                "money": 824025630,
+                "moneyShare": 38.63
+            },
+            {
+                "count": 212,
+                "countShare": 2.56,
+                "money": 2025361267,
+                "moneyShare": 62.38
+            },
+            {
+                "count": 159,
+                "countShare": 1.98,
+                "money": 244879851,
+                "moneyShare": 20.05
+            },
+            {
+                "count": 229,
+                "countShare": 2.7,
+                "money": 255701228,
+                "moneyShare": 17.96
+            },
+            {
+                "count": 147,
+                "countShare": 1.72,
+                "money": 235083323,
+                "moneyShare": 14.78
+            }
+        ]
+    },
+    {
+        "count": 547,
+        "money": 2422485016,
+        "target": "Forschung",
+        "years": [
+            {
+                "count": 74,
+                "countShare": 0.91,
+                "money": 272423644,
+                "moneyShare": 25.83
+            },
+            {
+                "count": 54,
+                "countShare": 0.63,
+                "money": 263198255,
+                "moneyShare": 24.12
+            },
+            {
+                "count": 61,
+                "countShare": 0.83,
+                "money": 281136278,
+                "moneyShare": 26.71
+            },
+            {
+                "count": 46,
+                "countShare": 0.61,
+                "money": 243170533,
+                "moneyShare": 18.26
+            },
+            {
+                "count": 94,
+                "countShare": 1.11,
+                "money": 269169373,
+                "moneyShare": 12.62
+            },
+            {
+                "count": 90,
+                "countShare": 1.09,
+                "money": 283922515,
+                "moneyShare": 8.74
+            },
+            {
+                "count": 41,
+                "countShare": 0.51,
+                "money": 263882425,
+                "moneyShare": 21.61
+            },
+            {
+                "count": 44,
+                "countShare": 0.52,
+                "money": 268002937,
+                "moneyShare": 18.82
+            },
+            {
+                "count": 43,
+                "countShare": 0.5,
+                "money": 277579056,
+                "moneyShare": 17.45
+            }
+        ]
+    },
+    {
+        "count": 7604,
+        "money": 2192289492,
+        "target": "Wirtschaft",
+        "years": [
+            {
+                "count": 705,
+                "countShare": 8.63,
+                "money": 219369985,
+                "moneyShare": 20.8
+            },
+            {
+                "count": 484,
+                "countShare": 5.65,
+                "money": 148231866,
+                "moneyShare": 13.59
+            },
+            {
+                "count": 480,
+                "countShare": 6.54,
+                "money": 58697981,
+                "moneyShare": 5.58
+            },
+            {
+                "count": 627,
+                "countShare": 8.28,
+                "money": 318872333,
+                "moneyShare": 23.94
+            },
+            {
+                "count": 850,
+                "countShare": 10.05,
+                "money": 342616254,
+                "moneyShare": 16.06
+            },
+            {
+                "count": 854,
+                "countShare": 10.32,
+                "money": 358399934,
+                "moneyShare": 11.04
+            },
+            {
+                "count": 1060,
+                "countShare": 13.19,
+                "money": 131057140,
+                "moneyShare": 10.73
+            },
+            {
+                "count": 1237,
+                "countShare": 14.6,
+                "money": 272797524,
+                "moneyShare": 19.16
+            },
+            {
+                "count": 1307,
+                "countShare": 15.29,
+                "money": 342246475,
+                "moneyShare": 21.51
+            }
+        ]
+    },
+    {
+        "count": 4535,
+        "money": 979855231,
+        "target": "Kultur",
+        "years": [
+            {
+                "count": 358,
+                "countShare": 4.38,
+                "money": 82254444,
+                "moneyShare": 7.8
+            },
+            {
+                "count": 471,
+                "countShare": 5.5,
+                "money": 96492900,
+                "moneyShare": 8.84
+            },
+            {
+                "count": 362,
+                "countShare": 4.93,
+                "money": 100838186,
+                "moneyShare": 9.58
+            },
+            {
+                "count": 525,
+                "countShare": 6.93,
+                "money": 110110094,
+                "moneyShare": 8.27
+            },
+            {
+                "count": 531,
+                "countShare": 6.28,
+                "money": 117084400,
+                "moneyShare": 5.49
+            },
+            {
+                "count": 537,
+                "countShare": 6.49,
+                "money": 120154632,
+                "moneyShare": 3.7
+            },
+            {
+                "count": 532,
+                "countShare": 6.62,
+                "money": 118931647,
+                "moneyShare": 9.74
+            },
+            {
+                "count": 623,
+                "countShare": 7.35,
+                "money": 111931545,
+                "moneyShare": 7.86
+            },
+            {
+                "count": 596,
+                "countShare": 6.97,
+                "money": 122057383,
+                "moneyShare": 7.67
+            }
+        ]
+    },
+    {
+        "count": 28848,
+        "money": 889154188,
+        "target": "Arbeit",
+        "years": [
+            {
+                "count": 4917,
+                "countShare": 60.22,
+                "money": 120094259,
+                "moneyShare": 11.39
+            },
+            {
+                "count": 4465,
+                "countShare": 52.17,
+                "money": 142848467,
+                "moneyShare": 13.09
+            },
+            {
+                "count": 3184,
+                "countShare": 43.35,
+                "money": 102396276,
+                "moneyShare": 9.73
+            },
+            {
+                "count": 3011,
+                "countShare": 39.75,
+                "money": 65496371,
+                "moneyShare": 4.92
+            },
+            {
+                "count": 3291,
+                "countShare": 38.91,
+                "money": 192785316,
+                "moneyShare": 9.04
+            },
+            {
+                "count": 3091,
+                "countShare": 37.34,
+                "money": 83482071,
+                "moneyShare": 2.57
+            },
+            {
+                "count": 2626,
+                "countShare": 32.69,
+                "money": 68834801,
+                "moneyShare": 5.64
+            },
+            {
+                "count": 2366,
+                "countShare": 27.92,
+                "money": 63956079,
+                "moneyShare": 4.49
+            },
+            {
+                "count": 1897,
+                "countShare": 22.19,
+                "money": 49260548,
+                "moneyShare": 3.1
+            }
+        ]
+    },
+    {
+        "count": 6064,
+        "money": 631614499,
+        "target": "Jugend",
+        "years": [
+            {
+                "count": 446,
+                "countShare": 5.46,
+                "money": 48808057,
+                "moneyShare": 4.63
+            },
+            {
+                "count": 514,
+                "countShare": 6.01,
+                "money": 50138399,
+                "moneyShare": 4.6
+            },
+            {
+                "count": 550,
+                "countShare": 7.49,
+                "money": 54407576,
+                "moneyShare": 5.17
+            },
+            {
+                "count": 706,
+                "countShare": 9.32,
+                "money": 63174512,
+                "moneyShare": 4.74
+            },
+            {
+                "count": 734,
+                "countShare": 8.68,
+                "money": 71017219,
+                "moneyShare": 3.33
+            },
+            {
+                "count": 688,
+                "countShare": 8.31,
+                "money": 63697134,
+                "moneyShare": 1.96
+            },
+            {
+                "count": 718,
+                "countShare": 8.94,
+                "money": 71881272,
+                "moneyShare": 5.89
+            },
+            {
+                "count": 808,
+                "countShare": 9.54,
+                "money": 96990559,
+                "moneyShare": 6.81
+            },
+            {
+                "count": 900,
+                "countShare": 10.53,
+                "money": 111499771,
+                "moneyShare": 7.01
+            }
+        ]
+    },
+    {
+        "count": 123,
+        "money": 463529637,
+        "target": "Wissenschaft",
+        "years": [
+            {
+                "count": 5,
+                "countShare": 0.06,
+                "money": 2646179,
+                "moneyShare": 0.25
+            },
+            {
+                "count": 5,
+                "countShare": 0.06,
+                "money": 5261404,
+                "moneyShare": 0.48
+            },
+            {
+                "count": 6,
+                "countShare": 0.08,
+                "money": 9843295,
+                "moneyShare": 0.94
+            },
+            {
+                "count": 9,
+                "countShare": 0.12,
+                "money": 54281526,
+                "moneyShare": 4.08
+            },
+            {
+                "count": 8,
+                "countShare": 0.09,
+                "money": 72479156,
+                "moneyShare": 3.4
+            },
+            {
+                "count": 26,
+                "countShare": 0.31,
+                "money": 72884403,
+                "moneyShare": 2.24
+            },
+            {
+                "count": 18,
+                "countShare": 0.22,
+                "money": 74877457,
+                "moneyShare": 6.13
+            },
+            {
+                "count": 13,
+                "countShare": 0.15,
+                "money": 75993593,
+                "moneyShare": 5.34
+            },
+            {
+                "count": 33,
+                "countShare": 0.39,
+                "money": 95262624,
+                "moneyShare": 5.99
+            }
+        ]
+    },
+    {
+        "count": 5064,
+        "money": 398760556,
+        "target": "Soziales",
+        "years": [
+            {
+                "count": 569,
+                "countShare": 6.97,
+                "money": 40430479,
+                "moneyShare": 3.83
+            },
+            {
+                "count": 572,
+                "countShare": 6.68,
+                "money": 38496674,
+                "moneyShare": 3.53
+            },
+            {
+                "count": 594,
+                "countShare": 8.09,
+                "money": 40707061,
+                "moneyShare": 3.87
+            },
+            {
+                "count": 525,
+                "countShare": 6.93,
+                "money": 41676387,
+                "moneyShare": 3.13
+            },
+            {
+                "count": 558,
+                "countShare": 6.6,
+                "money": 44259583,
+                "moneyShare": 2.07
+            },
+            {
+                "count": 548,
+                "countShare": 6.62,
+                "money": 45199773,
+                "moneyShare": 1.39
+            },
+            {
+                "count": 566,
+                "countShare": 7.05,
+                "money": 44383753,
+                "moneyShare": 3.63
+            },
+            {
+                "count": 579,
+                "countShare": 6.83,
+                "money": 50012664,
+                "moneyShare": 3.51
+            },
+            {
+                "count": 553,
+                "countShare": 6.47,
+                "money": 53594182,
+                "moneyShare": 3.37
+            }
+        ]
+    },
+    {
+        "count": 2581,
+        "money": 336716831,
+        "target": "Gesundheit",
+        "years": [
+            {
+                "count": 251,
+                "countShare": 3.07,
+                "money": 30297209,
+                "moneyShare": 2.87
+            },
+            {
+                "count": 258,
+                "countShare": 3.01,
+                "money": 32727447,
+                "moneyShare": 3
+            },
+            {
+                "count": 274,
+                "countShare": 3.73,
+                "money": 32629783,
+                "moneyShare": 3.1
+            },
+            {
+                "count": 237,
+                "countShare": 3.13,
+                "money": 32579399,
+                "moneyShare": 2.45
+            },
+            {
+                "count": 248,
+                "countShare": 2.93,
+                "money": 32794949,
+                "moneyShare": 1.54
+            },
+            {
+                "count": 262,
+                "countShare": 3.16,
+                "money": 35745519,
+                "moneyShare": 1.1
+            },
+            {
+                "count": 254,
+                "countShare": 3.16,
+                "money": 34301337,
+                "moneyShare": 2.81
+            },
+            {
+                "count": 315,
+                "countShare": 3.72,
+                "money": 37466653,
+                "moneyShare": 2.63
+            },
+            {
+                "count": 482,
+                "countShare": 5.64,
+                "money": 68174535,
+                "moneyShare": 4.28
+            }
+        ]
+    },
+    {
+        "count": 7074,
+        "money": 289007133,
+        "target": "Sport",
+        "years": [
+            {
+                "count": 151,
+                "countShare": 1.85,
+                "money": 43559664,
+                "moneyShare": 4.13
+            },
+            {
+                "count": 902,
+                "countShare": 10.54,
+                "money": 30344547,
+                "moneyShare": 2.78
+            },
+            {
+                "count": 861,
+                "countShare": 11.72,
+                "money": 75393801,
+                "moneyShare": 7.16
+            },
+            {
+                "count": 842,
+                "countShare": 11.12,
+                "money": 22045514,
+                "moneyShare": 1.66
+            },
+            {
+                "count": 849,
+                "countShare": 10.04,
+                "money": 20929082,
+                "moneyShare": 0.98
+            },
+            {
+                "count": 821,
+                "countShare": 9.92,
+                "money": 20657549,
+                "moneyShare": 0.64
+            },
+            {
+                "count": 816,
+                "countShare": 10.16,
+                "money": 23898355,
+                "moneyShare": 1.96
+            },
+            {
+                "count": 923,
+                "countShare": 10.89,
+                "money": 24509013,
+                "moneyShare": 1.72
+            },
+            {
+                "count": 909,
+                "countShare": 10.63,
+                "money": 27669608,
+                "moneyShare": 1.74
+            }
+        ]
+    },
+    {
+        "count": 1497,
+        "money": 275626652,
+        "target": "Stadtentwicklung",
+        "years": [
+            {
+                "count": 98,
+                "countShare": 1.2,
+                "money": 18526401,
+                "moneyShare": 1.76
+            },
+            {
+                "count": 92,
+                "countShare": 1.07,
+                "money": 33563687,
+                "moneyShare": 3.08
+            },
+            {
+                "count": 83,
+                "countShare": 1.13,
+                "money": 23389284,
+                "moneyShare": 2.22
+            },
+            {
+                "count": 123,
+                "countShare": 1.62,
+                "money": 32199689,
+                "moneyShare": 2.42
+            },
+            {
+                "count": 170,
+                "countShare": 2.01,
+                "money": 27164304,
+                "moneyShare": 1.27
+            },
+            {
+                "count": 233,
+                "countShare": 2.81,
+                "money": 36722475,
+                "moneyShare": 1.13
+            },
+            {
+                "count": 216,
+                "countShare": 2.69,
+                "money": 38298644,
+                "moneyShare": 3.14
+            },
+            {
+                "count": 219,
+                "countShare": 2.58,
+                "money": 45540352,
+                "moneyShare": 3.2
+            },
+            {
+                "count": 263,
+                "countShare": 3.08,
+                "money": 20221816,
+                "moneyShare": 1.27
+            }
+        ]
+    },
+    {
+        "count": 1961,
+        "money": 251578799,
+        "target": "Bildung",
+        "years": [
+            {
+                "count": 80,
+                "countShare": 0.98,
+                "money": 10850988,
+                "moneyShare": 1.03
+            },
+            {
+                "count": 128,
+                "countShare": 1.5,
+                "money": 18864432,
+                "moneyShare": 1.73
+            },
+            {
+                "count": 180,
+                "countShare": 2.45,
+                "money": 24781256,
+                "moneyShare": 2.35
+            },
+            {
+                "count": 247,
+                "countShare": 3.26,
+                "money": 29766670,
+                "moneyShare": 2.24
+            },
+            {
+                "count": 223,
+                "countShare": 2.64,
+                "money": 30547554,
+                "moneyShare": 1.43
+            },
+            {
+                "count": 227,
+                "countShare": 2.74,
+                "money": 25998681,
+                "moneyShare": 0.8
+            },
+            {
+                "count": 270,
+                "countShare": 3.36,
+                "money": 32812083,
+                "moneyShare": 2.69
+            },
+            {
+                "count": 302,
+                "countShare": 3.56,
+                "money": 37572765,
+                "moneyShare": 2.64
+            },
+            {
+                "count": 304,
+                "countShare": 3.56,
+                "money": 40384370,
+                "moneyShare": 2.54
+            }
+        ]
+    },
+    {
+        "count": 1797,
+        "money": 153561819,
+        "target": "Frauen",
+        "years": [
+            {
+                "count": 208,
+                "countShare": 2.55,
+                "money": 16579745,
+                "moneyShare": 1.57
+            },
+            {
+                "count": 218,
+                "countShare": 2.55,
+                "money": 18749960,
+                "moneyShare": 1.72
+            },
+            {
+                "count": 223,
+                "countShare": 3.04,
+                "money": 17784622,
+                "moneyShare": 1.69
+            },
+            {
+                "count": 226,
+                "countShare": 2.98,
+                "money": 19707226,
+                "moneyShare": 1.48
+            },
+            {
+                "count": 202,
+                "countShare": 2.39,
+                "money": 17845612,
+                "moneyShare": 0.84
+            },
+            {
+                "count": 241,
+                "countShare": 2.91,
+                "money": 18909928,
+                "moneyShare": 0.58
+            },
+            {
+                "count": 234,
+                "countShare": 2.91,
+                "money": 21192689,
+                "moneyShare": 1.74
+            },
+            {
+                "count": 209,
+                "countShare": 2.47,
+                "money": 21802813,
+                "moneyShare": 1.53
+            },
+            {
+                "count": 36,
+                "countShare": 0.42,
+                "money": 989224,
+                "moneyShare": 0.06
+            }
+        ]
+    },
+    {
+        "count": 546,
+        "money": 131821788,
+        "target": "Umwelt",
+        "years": [
+            {
+                "count": 6,
+                "countShare": 0.07,
+                "money": 546321,
+                "moneyShare": 0.05
+            },
+            {
+                "count": 18,
+                "countShare": 0.21,
+                "money": 144543,
+                "moneyShare": 0.01
+            },
+            {
+                "count": 88,
+                "countShare": 1.2,
+                "money": 14524898,
+                "moneyShare": 1.38
+            },
+            {
+                "count": 74,
+                "countShare": 0.98,
+                "money": 22468266,
+                "moneyShare": 1.69
+            },
+            {
+                "count": 66,
+                "countShare": 0.78,
+                "money": 12993200,
+                "moneyShare": 0.61
+            },
+            {
+                "count": 63,
+                "countShare": 0.76,
+                "money": 13489820,
+                "moneyShare": 0.42
+            },
+            {
+                "count": 60,
+                "countShare": 0.75,
+                "money": 10253923,
+                "moneyShare": 0.84
+            },
+            {
+                "count": 60,
+                "countShare": 0.71,
+                "money": 7024582,
+                "moneyShare": 0.49
+            },
+            {
+                "count": 111,
+                "countShare": 1.3,
+                "money": 50376235,
+                "moneyShare": 3.17
+            }
+        ]
+    },
+    {
+        "count": 1684,
+        "money": 117508257,
+        "target": "Integration",
+        "years": [
+            {
+                "count": 132,
+                "countShare": 1.62,
+                "money": 6369892,
+                "moneyShare": 0.6
+            },
+            {
+                "count": 156,
+                "countShare": 1.82,
+                "money": 11453284,
+                "moneyShare": 1.05
+            },
+            {
+                "count": 156,
+                "countShare": 2.12,
+                "money": 8478567,
+                "moneyShare": 0.81
+            },
+            {
+                "count": 144,
+                "countShare": 1.9,
+                "money": 8362583,
+                "moneyShare": 0.63
+            },
+            {
+                "count": 163,
+                "countShare": 1.93,
+                "money": 10404499,
+                "moneyShare": 0.49
+            },
+            {
+                "count": 162,
+                "countShare": 1.96,
+                "money": 11782033,
+                "moneyShare": 0.36
+            },
+            {
+                "count": 201,
+                "countShare": 2.5,
+                "money": 15753638,
+                "moneyShare": 1.29
+            },
+            {
+                "count": 246,
+                "countShare": 2.9,
+                "money": 19212290,
+                "moneyShare": 1.35
+            },
+            {
+                "count": 324,
+                "countShare": 3.79,
+                "money": 25691471,
+                "moneyShare": 1.61
+            }
+        ]
+    },
+    {
+        "count": 105,
+        "money": 71445219,
+        "target": "Finanzen",
+        "years": [
+            {
+                "count": 13,
+                "countShare": 0.16,
+                "money": 11013000,
+                "moneyShare": 1.04
+            },
+            {
+                "count": 11,
+                "countShare": 0.13,
+                "money": 8044478,
+                "moneyShare": 0.74
+            },
+            {
+                "count": 10,
+                "countShare": 0.14,
+                "money": 7725000,
+                "moneyShare": 0.73
+            },
+            {
+                "count": 11,
+                "countShare": 0.15,
+                "money": 6262000,
+                "moneyShare": 0.47
+            },
+            {
+                "count": 11,
+                "countShare": 0.13,
+                "money": 6285000,
+                "moneyShare": 0.29
+            },
+            {
+                "count": 12,
+                "countShare": 0.14,
+                "money": 11249500,
+                "moneyShare": 0.35
+            },
+            {
+                "count": 11,
+                "countShare": 0.14,
+                "money": 6235000,
+                "moneyShare": 0.51
+            },
+            {
+                "count": 12,
+                "countShare": 0.14,
+                "money": 6974500,
+                "moneyShare": 0.49
+            },
+            {
+                "count": 14,
+                "countShare": 0.16,
+                "money": 7656741,
+                "moneyShare": 0.48
+            }
+        ]
+    },
+    {
+        "count": 157,
+        "money": 37113999,
+        "target": "Bauen, Wohnen",
+        "years": [
+            {
+                "count": 12,
+                "countShare": 0.15,
+                "money": 1677540,
+                "moneyShare": 0.16
+            },
+            {
+                "count": 11,
+                "countShare": 0.13,
+                "money": 11567468,
+                "moneyShare": 1.06
+            },
+            {
+                "count": 32,
+                "countShare": 0.44,
+                "money": 3755479,
+                "moneyShare": 0.36
+            },
+            {
+                "count": 34,
+                "countShare": 0.45,
+                "money": 3382640,
+                "moneyShare": 0.25
+            },
+            {
+                "count": 12,
+                "countShare": 0.14,
+                "money": 1445904,
+                "moneyShare": 0.07
+            },
+            {
+                "count": 10,
+                "countShare": 0.12,
+                "money": 1993333,
+                "moneyShare": 0.06
+            },
+            {
+                "count": 18,
+                "countShare": 0.22,
+                "money": 4535217,
+                "moneyShare": 0.37
+            },
+            {
+                "count": 21,
+                "countShare": 0.25,
+                "money": 6912933,
+                "moneyShare": 0.49
+            },
+            {
+                "count": 7,
+                "countShare": 0.08,
+                "money": 1843485,
+                "moneyShare": 0.12
+            }
+        ]
+    },
+    {
+        "count": 450,
+        "money": 36180344,
+        "target": "Denkmalschutz",
+        "years": [
+            {
+                "count": 40,
+                "countShare": 0.49,
+                "money": 1856424,
+                "moneyShare": 0.18
+            },
+            {
+                "count": 47,
+                "countShare": 0.55,
+                "money": 8289094,
+                "moneyShare": 0.76
+            },
+            {
+                "count": 56,
+                "countShare": 0.76,
+                "money": 2538983,
+                "moneyShare": 0.24
+            },
+            {
+                "count": 62,
+                "countShare": 0.82,
+                "money": 7929945,
+                "moneyShare": 0.6
+            },
+            {
+                "count": 47,
+                "countShare": 0.56,
+                "money": 3046173,
+                "moneyShare": 0.14
+            },
+            {
+                "count": 52,
+                "countShare": 0.63,
+                "money": 5135899,
+                "moneyShare": 0.16
+            },
+            {
+                "count": 49,
+                "countShare": 0.61,
+                "money": 2386204,
+                "moneyShare": 0.2
+            },
+            {
+                "count": 49,
+                "countShare": 0.58,
+                "money": 2310711,
+                "moneyShare": 0.16
+            },
+            {
+                "count": 48,
+                "countShare": 0.56,
+                "money": 2686911,
+                "moneyShare": 0.17
+            }
+        ]
+    },
+    {
+        "count": 245,
+        "money": 29519678,
+        "target": "Gleichstellung",
+        "years": [
+            {
+                "count": 2,
+                "countShare": 0.02,
+                "money": 18608,
+                "moneyShare": 0.002
+            },
+            {
+                "count": 2,
+                "countShare": 0.02,
+                "money": 241000,
+                "moneyShare": 0.02
+            },
+            {
+                "count": 4,
+                "countShare": 0.05,
+                "money": 232342,
+                "moneyShare": 0.02
+            },
+            {
+                "count": 1,
+                "countShare": 0.01,
+                "money": 12000,
+                "moneyShare": 0.001
+            },
+            {
+                "count": 1,
+                "countShare": 0.01,
+                "money": 13400,
+                "moneyShare": 0.001
+            },
+            {
+                "count": 1,
+                "countShare": 0.01,
+                "money": 20000,
+                "moneyShare": 0.001
+            },
+            {
+                "count": 3,
+                "countShare": 0.04,
+                "money": 16503,
+                "moneyShare": 0.001
+            },
+            {
+                "count": 2,
+                "countShare": 0.02,
+                "money": 10031,
+                "moneyShare": 0.001
+            },
+            {
+                "count": 229,
+                "countShare": 2.68,
+                "money": 28955794,
+                "moneyShare": 1.82
+            }
+        ]
+    },
+    {
+        "count": 189,
+        "money": 28434866,
+        "target": "Kirchengem.",
+        "years": [
+            {
+                "count": 13,
+                "countShare": 0.16,
+                "money": 2366447,
+                "moneyShare": 0.22
+            },
+            {
+                "count": 18,
+                "countShare": 0.21,
+                "money": 2364155,
+                "moneyShare": 0.22
+            },
+            {
+                "count": 19,
+                "countShare": 0.26,
+                "money": 3073987,
+                "moneyShare": 0.29
+            },
+            {
+                "count": 17,
+                "countShare": 0.22,
+                "money": 1317972,
+                "moneyShare": 0.1
+            },
+            {
+                "count": 23,
+                "countShare": 0.27,
+                "money": 3064322,
+                "moneyShare": 0.14
+            },
+            {
+                "count": 15,
+                "countShare": 0.18,
+                "money": 1674323,
+                "moneyShare": 0.05
+            },
+            {
+                "count": 25,
+                "countShare": 0.31,
+                "money": 1849522,
+                "moneyShare": 0.15
+            },
+            {
+                "count": 30,
+                "countShare": 0.35,
+                "money": 4290639,
+                "moneyShare": 0.3
+            },
+            {
+                "count": 29,
+                "countShare": 0.34,
+                "money": 8433499,
+                "moneyShare": 0.53
+            }
+        ]
+    },
+    {
+        "count": 237,
+        "money": 26134464,
+        "target": "Justiz",
+        "years": [
+            {
+                "count": 22,
+                "countShare": 0.27,
+                "money": 2641219,
+                "moneyShare": 0.25
+            },
+            {
+                "count": 22,
+                "countShare": 0.26,
+                "money": 2646350,
+                "moneyShare": 0.24
+            },
+            {
+                "count": 20,
+                "countShare": 0.27,
+                "money": 2109390,
+                "moneyShare": 0.2
+            },
+            {
+                "count": 21,
+                "countShare": 0.28,
+                "money": 2231553,
+                "moneyShare": 0.17
+            },
+            {
+                "count": 21,
+                "countShare": 0.25,
+                "money": 2494488,
+                "moneyShare": 0.12
+            },
+            {
+                "count": 23,
+                "countShare": 0.28,
+                "money": 2675742,
+                "moneyShare": 0.08
+            },
+            {
+                "count": 34,
+                "countShare": 0.42,
+                "money": 2843207,
+                "moneyShare": 0.23
+            },
+            {
+                "count": 37,
+                "countShare": 0.44,
+                "money": 4227558,
+                "moneyShare": 0.3
+            },
+            {
+                "count": 37,
+                "countShare": 0.43,
+                "money": 4264957,
+                "moneyShare": 0.27
+            }
+        ]
+    },
+    {
+        "count": 387,
+        "money": 26118706,
+        "target": "Antidiskriminierung",
+        "years": [
+            {
+                "count": 13,
+                "countShare": 0.16,
+                "money": 973298,
+                "moneyShare": 0.09
+            },
+            {
+                "count": 19,
+                "countShare": 0.22,
+                "money": 930565,
+                "moneyShare": 0.09
+            },
+            {
+                "count": 17,
+                "countShare": 0.23,
+                "money": 1004899,
+                "moneyShare": 0.1
+            },
+            {
+                "count": 25,
+                "countShare": 0.33,
+                "money": 1795019,
+                "moneyShare": 0.13
+            },
+            {
+                "count": 28,
+                "countShare": 0.33,
+                "money": 1704509,
+                "moneyShare": 0.08
+            },
+            {
+                "count": 64,
+                "countShare": 0.77,
+                "money": 3970109,
+                "moneyShare": 0.12
+            },
+            {
+                "count": 65,
+                "countShare": 0.81,
+                "money": 4364139,
+                "moneyShare": 0.36
+            },
+            {
+                "count": 73,
+                "countShare": 0.86,
+                "money": 5147387,
+                "moneyShare": 0.36
+            },
+            {
+                "count": 83,
+                "countShare": 0.97,
+                "money": 6228781,
+                "moneyShare": 0.39
+            }
+        ]
+    },
+    {
+        "count": 198,
+        "money": 17137885,
+        "target": "Sicherheit, Ordnung",
+        "years": [
+            {
+                "count": 17,
+                "countShare": 0.21,
+                "money": 1053505,
+                "moneyShare": 0.1
+            },
+            {
+                "count": 14,
+                "countShare": 0.16,
+                "money": 1140913,
+                "moneyShare": 0.1
+            },
+            {
+                "count": 18,
+                "countShare": 0.25,
+                "money": 1909272,
+                "moneyShare": 0.18
+            },
+            {
+                "count": 21,
+                "countShare": 0.28,
+                "money": 1733423,
+                "moneyShare": 0.13
+            },
+            {
+                "count": 19,
+                "countShare": 0.22,
+                "money": 4267297,
+                "moneyShare": 0.2
+            },
+            {
+                "count": 16,
+                "countShare": 0.19,
+                "money": 829500,
+                "moneyShare": 0.03
+            },
+            {
+                "count": 19,
+                "countShare": 0.24,
+                "money": 1398112,
+                "moneyShare": 0.11
+            },
+            {
+                "count": 33,
+                "countShare": 0.39,
+                "money": 2053605,
+                "moneyShare": 0.14
+            },
+            {
+                "count": 41,
+                "countShare": 0.48,
+                "money": 2752258,
+                "moneyShare": 0.17
+            }
+        ]
+    },
+    {
+        "count": 94,
+        "money": 15923098,
+        "target": "Verbraucherschutz",
+        "years": [
+            {
+                "count": 7,
+                "countShare": 0.09,
+                "money": 1554589,
+                "moneyShare": 0.15
+            },
+            {
+                "count": 6,
+                "countShare": 0.07,
+                "money": 1416950,
+                "moneyShare": 0.13
+            },
+            {
+                "count": 9,
+                "countShare": 0.12,
+                "money": 1457475,
+                "moneyShare": 0.14
+            },
+            {
+                "count": 5,
+                "countShare": 0.07,
+                "money": 1529773,
+                "moneyShare": 0.11
+            },
+            {
+                "count": 7,
+                "countShare": 0.08,
+                "money": 1321274,
+                "moneyShare": 0.06
+            },
+            {
+                "count": 12,
+                "countShare": 0.14,
+                "money": 2064130,
+                "moneyShare": 0.06
+            },
+            {
+                "count": 14,
+                "countShare": 0.17,
+                "money": 1659747,
+                "moneyShare": 0.14
+            },
+            {
+                "count": 19,
+                "countShare": 0.22,
+                "money": 2434680,
+                "moneyShare": 0.17
+            },
+            {
+                "count": 15,
+                "countShare": 0.18,
+                "money": 2484480,
+                "moneyShare": 0.16
+            }
+        ]
+    },
+    {
+        "count": 138,
+        "money": 4057667,
+        "target": "Familie",
+        "years": [
+            {
+                "count": 4,
+                "countShare": 0.05,
+                "money": 71057,
+                "moneyShare": 0.01
+            },
+            {
+                "count": 39,
+                "countShare": 0.46,
+                "money": 231529,
+                "moneyShare": 0.02
+            },
+            {
+                "count": 12,
+                "countShare": 0.16,
+                "money": 288482,
+                "moneyShare": 0.03
+            },
+            {
+                "count": 6,
+                "countShare": 0.08,
+                "money": 143153,
+                "moneyShare": 0.01
+            },
+            {
+                "count": 12,
+                "countShare": 0.14,
+                "money": 289827,
+                "moneyShare": 0.01
+            },
+            {
+                "count": 10,
+                "countShare": 0.12,
+                "money": 234956,
+                "moneyShare": 0.01
+            },
+            {
+                "count": 11,
+                "countShare": 0.14,
+                "money": 230707,
+                "moneyShare": 0.02
+            },
+            {
+                "count": 15,
+                "countShare": 0.18,
+                "money": 568625,
+                "moneyShare": 0.04
+            },
+            {
+                "count": 29,
+                "countShare": 0.34,
+                "money": 1999331,
+                "moneyShare": 0.13
+            }
+        ]
+    },
+    {
+        "count": 71,
+        "money": 3545256,
+        "target": "Europa",
+        "years": [
+            {
+                "count": 0,
+                "countShare": 0,
+                "money": 0,
+                "moneyShare": 0
+            },
+            {
+                "count": 0,
+                "countShare": 0,
+                "money": 0,
+                "moneyShare": 0
+            },
+            {
+                "count": 5,
+                "countShare": 0.07,
+                "money": 362250,
+                "moneyShare": 0.03
+            },
+            {
+                "count": 9,
+                "countShare": 0.12,
+                "money": 551672,
+                "moneyShare": 0.04
+            },
+            {
+                "count": 12,
+                "countShare": 0.14,
+                "money": 438931,
+                "moneyShare": 0.02
+            },
+            {
+                "count": 9,
+                "countShare": 0.11,
+                "money": 472339,
+                "moneyShare": 0.01
+            },
+            {
+                "count": 14,
+                "countShare": 0.17,
+                "money": 446840,
+                "moneyShare": 0.04
+            },
+            {
+                "count": 9,
+                "countShare": 0.11,
+                "money": 436530,
+                "moneyShare": 0.03
+            },
+            {
+                "count": 13,
+                "countShare": 0.15,
+                "money": 836694,
+                "moneyShare": 0.05
+            }
+        ]
+    },
+    {
+        "count": 60,
+        "money": 1649938,
+        "target": "Pflege",
+        "years": [
+            {
+                "count": 0,
+                "countShare": 0,
+                "money": 0,
+                "moneyShare": 0
+            },
+            {
+                "count": 0,
+                "countShare": 0,
+                "money": 0,
+                "moneyShare": 0
+            },
+            {
+                "count": 0,
+                "countShare": 0,
+                "money": 0,
+                "moneyShare": 0
+            },
+            {
+                "count": 0,
+                "countShare": 0,
+                "money": 0,
+                "moneyShare": 0
+            },
+            {
+                "count": 0,
+                "countShare": 0,
+                "money": 0,
+                "moneyShare": 0
+            },
+            {
+                "count": 0,
+                "countShare": 0,
+                "money": 0,
+                "moneyShare": 0
+            },
+            {
+                "count": 0,
+                "countShare": 0,
+                "money": 0,
+                "moneyShare": 0
+            },
+            {
+                "count": 0,
+                "countShare": 0,
+                "money": 0,
+                "moneyShare": 0
+            },
+            {
+                "count": 60,
+                "countShare": 0.7,
+                "money": 1649938,
+                "moneyShare": 0.1
+            }
+        ]
+    },
+    {
+        "count": 37,
+        "money": 1118663,
+        "target": "Bürgersch. Engagement",
+        "years": [
+            {
+                "count": 0,
+                "countShare": 0,
+                "money": 0,
+                "moneyShare": 0
+            },
+            {
+                "count": 0,
+                "countShare": 0,
+                "money": 0,
+                "moneyShare": 0
+            },
+            {
+                "count": 0,
+                "countShare": 0,
+                "money": 0,
+                "moneyShare": 0
+            },
+            {
+                "count": 0,
+                "countShare": 0,
+                "money": 0,
+                "moneyShare": 0
+            },
+            {
+                "count": 0,
+                "countShare": 0,
+                "money": 0,
+                "moneyShare": 0
+            },
+            {
+                "count": 0,
+                "countShare": 0,
+                "money": 0,
+                "moneyShare": 0
+            },
+            {
+                "count": 0,
+                "countShare": 0,
+                "money": 0,
+                "moneyShare": 0
+            },
+            {
+                "count": 0,
+                "countShare": 0,
+                "money": 0,
+                "moneyShare": 0
+            },
+            {
+                "count": 37,
+                "countShare": 0.43,
+                "money": 1118663,
+                "moneyShare": 0.07
+            }
+        ]
+    },
+    {
+        "count": 2,
+        "money": 15000,
+        "target": "Tierschutz",
+        "years": [
+            {
+                "count": 0,
+                "countShare": 0,
+                "money": 0,
+                "moneyShare": 0
+            },
+            {
+                "count": 0,
+                "countShare": 0,
+                "money": 0,
+                "moneyShare": 0
+            },
+            {
+                "count": 0,
+                "countShare": 0,
+                "money": 0,
+                "moneyShare": 0
+            },
+            {
+                "count": 0,
+                "countShare": 0,
+                "money": 0,
+                "moneyShare": 0
+            },
+            {
+                "count": 0,
+                "countShare": 0,
+                "money": 0,
+                "moneyShare": 0
+            },
+            {
+                "count": 0,
+                "countShare": 0,
+                "money": 0,
+                "moneyShare": 0
+            },
+            {
+                "count": 0,
+                "countShare": 0,
+                "money": 0,
+                "moneyShare": 0
+            },
+            {
+                "count": 1,
+                "countShare": 0.01,
+                "money": 7500,
+                "moneyShare": 0.001
+            },
+            {
+                "count": 1,
+                "countShare": 0.01,
+                "money": 7500,
+                "moneyShare": 0.0005
+            }
+        ]
+    }
+]
