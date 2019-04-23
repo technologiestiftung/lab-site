@@ -2636,6 +2636,7 @@ section.feed:nth-last-of-type() {
       color: #ffffff; }
     .project-header.dark .gradient-overlay {
       position: absolute;
+      left: 0px;
       width: 100%;
       height: 80vh;
       background: -webkit-linear-gradient(top, rgba(137, 255, 241, 0) 50%, rgba(0, 0, 0, 0.7) 100%);
@@ -2643,6 +2644,7 @@ section.feed:nth-last-of-type() {
       border-bottom: 1px solid #e8e8e8; }
     .project-header.bright .gradient-overlay {
       position: absolute;
+      left: 0px;
       width: 100%;
       height: 80vh;
       background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 100%);
@@ -2667,6 +2669,7 @@ section.feed:nth-last-of-type() {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
+      left: 0px;
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
           -ms-flex-direction: column;

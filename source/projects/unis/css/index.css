@@ -343,7 +343,8 @@ body.safari .tsbUni .chart-legend {
   flex-wrap: wrap;
   margin: 0 auto;
   justify-content: space-between;
-  margin: 0 12vw 30px 12vw; }
+  /* margin: 0 12vw 30px 12vw;  */
+}
 
 .tsbUni .tile-analysis {
   margin-bottom: 20px;
@@ -353,7 +354,7 @@ body.safari .tsbUni .chart-legend {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 100%;
+  width: 33%;
   line-height: 1.25rem;
   border: #e6e6e6 1px solid; }
 
@@ -377,7 +378,7 @@ body.safari .tsbUni .chart-legend {
   background: white;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 33%;
   border: #e6e6e6 1px solid; }
 
 .tsbUni .tile-analysis--last > div {
@@ -401,7 +402,7 @@ body.safari .tsbUni .chart-legend {
   flex-direction: column;
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  width: 33%;
   border: #e6e6e6 1px solid; }
 
 .tsbUni .tile-analysis--students {
@@ -423,7 +424,8 @@ body.safari .tsbUni .chart-legend {
   font-weight: bold; }
 
 .tsbUni .count-wrapper {
-  margin-top: 10px; }
+  /* margin-top: 10px;  */
+}
 
 .tsbUni .tile-analysis--part {
   width: 230px;
