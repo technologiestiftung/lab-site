@@ -150,7 +150,7 @@ The **Senate Department for Environment, Transport and Climate Protection (WP18)
 The **Senate Department for Education, Youth and Family** (or previously Education, Youth and Science) received the third-most requests. Topics included schools, children, youth, day-care centers, and underage refugees.
 
 
-Possibilities for an open data strategy
+Implications for an open data strategy
 -----------------------
 
 A considerable number of the parliamentary inquiries submitted to government bodies in Berlin are answered by administrations using data as support for their answers. About one third of the more than 15,000 answers contain tables, which is usually an indication that a corresponding database (or at least dataset) exists somewhere. In addition, answers often provide aggregate numbers and statistics that suggest interesting underlying raw data: For example, [this request](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/18/SchrAnfr/s18-10513.pdf) mentions that there are regular school-based statistical surveys showing that roughly 18.2% of kids in Berlin schools can't swim. These statistical surveys could be broken down by districts, schools or grade levels to form a relevant dataset.
