@@ -301,8 +301,8 @@ class Radarchart {
         })
 
         this.svg.select('.title-wrapper')
-            // .style('transform', `translateY(${this.height + this.margin.top + this.margin.bottom - 10}px) translateX(${(this.width + this.margin.left + this.margin.right) / 2}px)`)
-            .attr('transform', `translate(${this.height + this.margin.top + this.margin.bottom - 10}, ${(this.width + this.margin.left + this.margin.right) / 2})`)
+
+            .attr('transform', `translate(${(this.width + this.margin.left + this.margin.right) / 2},${this.height + this.margin.top + this.margin.bottom - 10})`)
             // .style('transform', "translateY(125px) translateX(67px)")
         }
 

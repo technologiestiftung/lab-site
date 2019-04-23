@@ -753,13 +753,13 @@ function createLegend(item_index) {
         legend_wrapper.append('text')
             .classed('legend_text', true)
             .text('Median Wert d.')
-            .attr('transform', 'translateX(15,15)')
+            .attr('transform', 'translate(15,15)')
             
         
         legend_wrapper.append('text')
             .classed('legend_text', true)
             .text('Anzahl Fahrradfahrer')
-            .attr('transform', 'translateX(15,28)')
+            .attr('transform', 'translate(15,28)')
 
         let legend_max_circle = legend_wrapper.append('circle')
             .classed('legend_median', true)
@@ -771,12 +771,12 @@ function createLegend(item_index) {
         legend_wrapper.append('text')
             .classed('legend_text', true)
             .text('Höchster Wert d.')
-            .attr('transform', 'translateX(15,55)')
+            .attr('transform', 'translate(15,55)')
         
         legend_wrapper.append('text')
             .classed('legend_text', true)
             .text('Anzahl Fahrradfahrer')
-            .attr('transform', 'translateX(15,68)')
+            .attr('transform', 'translate(15,68)')
     }
 }
 
@@ -791,23 +791,23 @@ function createSrc(item_index) {
         src_wrapper.append('text')
             .classed('legend_text', true)
             .text('Quelle:')
-            .attr('transform', 'translateX(15,15)')
+            .attr('transform', 'translate(15,15)')
             .style('font-weight', 'bold')
 
         src_wrapper.append('text')
             .classed('legend_text', true)
             .text('Senatsverwaltung')
-            .attr('transform', 'translateX(15,28)')
+            .attr('transform', 'translate(15,28)')
 
         src_wrapper.append('text')
             .classed('legend_text', true)
             .text('für Umwelt und')
-            .attr('transform', 'translateX(15,41)')
+            .attr('transform', 'translate(15,41)')
 
         src_wrapper.append('text')
             .classed('legend_text', true)
             .text('Stadtentwicklung')
-            .attr('transform', 'translateX(15,53)')
+            .attr('transform', 'translate(15,53)')
     }
 }
 
