@@ -89,7 +89,23 @@
                     }
 
                     &-image {
-                        transform: translate3d($spacing-l, 0, 0);
+                        // transform: translate3d($spacing-xxl, 50px, 0);
+
+                        // @media only screen and (max-width: $screen-s) {
+                        //     transform: translate3d(35px, -350px, 0);
+                        // }
+
+                        // @media only screen and (max-width: $screen-m) {
+                        //     transform: translate3d(115px, -10px, 0);
+                        // }
+
+                        // @media only screen and (max-width: 1000px) {
+                        //     transform: translate3d(150px, 10px, 0);
+                        // }
+                    }
+
+                    &-image.translate {
+                        transform: translate3d($spacing-xxl, 50px, 0);
 
                         @media only screen and (max-width: $screen-s) {
                             transform: translate3d(35px, -350px, 0);
@@ -101,10 +117,6 @@
 
                         @media only screen and (max-width: 1000px) {
                             transform: translate3d(150px, 10px, 0);
-                        }
-
-                        @media only screen and (min-width: $screen-l) {
-                            transform: translate3d($spacing-xxl, 50px, 0);
                         }
                     }
                 }
@@ -157,18 +169,6 @@
                 }
 
             }
-
-            // &-subtext {
-            //     bottom: 0;
-            //     display: none;
-            //     font-size: $font-size-m;
-            //     left: 0;
-            //     line-height: $line-height-min;
-            //     opacity: 1;
-            //     pointer-events: none;
-            //     transform: translate3d(0, 2.5%, 0);
-            //     transition: opacity $time-s, transform $time-m;
-            // }
             
             &-subtext {
                 overflow:hidden;
