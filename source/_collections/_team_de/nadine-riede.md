@@ -4,9 +4,9 @@ uid: nadine-riede
 image: /assets/images/nadine.jpg
 mail: Riede@technologiestiftung-berlin.de
 description: " "
-twitter: Nadine Twitter
+twitter: ""
 github: 
-position: Events & Orgnaisation
+position: CityLAB Berlin
 type: prototype # could also be "workshop", "dataset", "prototype"
 order: 2
 ---

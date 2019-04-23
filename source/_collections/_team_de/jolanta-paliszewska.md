@@ -3,10 +3,10 @@ name: Jolanta Paliszewska
 uid: jolanta-paliszewska
 image: /assets/images/jolanta.jpg
 mail: Paliszewska@technologiestiftung-berlin.de
-description: Hier steht ein kurzer Absatz über Jolanta.
+description: Interface Design Studentin, FH Potsdam
 twitter: JooolaPaaal
 github:
-position: Working Student
+position: Student Researcher
 type: workshop # could also be "workshop", "dataset", "prototype"
 external: true
 order: 2

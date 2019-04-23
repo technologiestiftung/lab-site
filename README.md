@@ -1,7 +1,7 @@
 
 # Website of the Ideation & Prototyping Lab @technologiestiftung Berlin
 
-[![Build Status](https://travis-ci.org/technologiestiftung/lab-site.svg?branch=master)](https://travis-ci.org/technologiestiftung/lab-site)
+[![Build Status](https://travis-ci.org/technologiestiftung/lab-site.svg?branch=master)](https://travis-ci.org/technologiestiftung/lab-site) [![Netlify Status](https://api.netlify.com/api/v1/badges/d95d4572-9a48-4a6b-a4c3-5ed33451d030/deploy-status)](https://app.netlify.com/sites/tsb-labsite/deploys)
 
 ## Table Of Contents
 
@@ -30,6 +30,7 @@
   - [Tools](#tools)
     - [VSCode](#vscode)
   - [License](#license)
+  - [Support](#support)
 
 <!-- /code_chunk_output -->
 
