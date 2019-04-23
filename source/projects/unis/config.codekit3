@@ -9,6 +9,16 @@
 	],
 "creatorBuild": "29156",
 "files": {
+	"/css/index.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/index-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/css/index.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -230,6 +240,17 @@
 		"oF": 0,
 		"sC": 3,
 		"tS": 1
+		},
+	"/js/index_en-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/index_en-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
 		},
 	"/js/index_en.js": {
 		"bF": 0,
