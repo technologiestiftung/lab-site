@@ -2021,10 +2021,10 @@ span.copy-funding {
           width: 100%; }
         .featured-list__project-title ~ .featured-list__project-subtext {
           font-family: 'plex-mono';
-          -webkit-transform: translateX(2px) translateY(-5px);
-              -ms-transform: translateX(2px) translateY(-5px);
-                  transform: translateX(2px) translateY(-5px);
-          line-height: 1.5em; }
+          -webkit-transform: translateX(1px) translateY(1px);
+              -ms-transform: translateX(1px) translateY(1px);
+                  transform: translateX(1px) translateY(1px);
+          line-height: 1.3em; }
         .featured-list__project-title ~ .featured-list__project-image.translate {
           -webkit-transform: translate3d(175px, 50px, 0);
                   transform: translate3d(175px, 50px, 0); }
@@ -2811,13 +2811,16 @@ section.feed:nth-last-of-type() {
             width: 100%; } }
       .project-text.columns p {
         -webkit-column-count: 2;
+           -moz-column-count: 2;
                 column-count: 2;
         grid-column-gap: 50px;
         -webkit-column-gap: 50px;
+           -moz-column-gap: 50px;
                 column-gap: 50px; }
         @media only screen and (max-width: 1024px) {
           .project-text.columns p {
             -webkit-column-count: 1;
+               -moz-column-count: 1;
                     column-count: 1; } }
   .project-image img {
     display: block;
@@ -2938,6 +2941,8 @@ section.feed:nth-last-of-type() {
     color: #2d91d2; }
   .project--publication .tns-controls button:hover {
     color: #2d91d2; }
+  .project--publication ::-moz-selection {
+    background: rgba(45, 145, 210, 0.25); }
   .project--publication ::selection {
     background: rgba(45, 145, 210, 0.25); }
   .project--prototype a {
@@ -2960,6 +2965,8 @@ section.feed:nth-last-of-type() {
     background: #41b496; }
   .project--prototype .tns-controls button:hover {
     color: #41b496; }
+  .project--prototype ::-moz-selection {
+    background: rgba(65, 180, 150, 0.25); }
   .project--prototype ::selection {
     background: rgba(65, 180, 150, 0.25); }
   .project--workshop a {
@@ -2982,6 +2989,8 @@ section.feed:nth-last-of-type() {
     background-color: #dcc82d; }
   .project--workshop .tns-controls button:hover {
     color: #dcc82d; }
+  .project--workshop ::-moz-selection {
+    background: rgba(220, 200, 45, 0.25); }
   .project--workshop ::selection {
     background: rgba(220, 200, 45, 0.25); }
   .project--dataset a {
@@ -3004,6 +3013,8 @@ section.feed:nth-last-of-type() {
     background-color: #e60032; }
   .project--dataset .tns-controls button:hover {
     color: #e60032; }
+  .project--dataset ::-moz-selection {
+    background: rgba(230, 0, 50, 0.25); }
   .project--dataset ::selection {
     background: rgba(230, 0, 50, 0.25); }
   .project a:not(.link--button) {

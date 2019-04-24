@@ -1377,8 +1377,8 @@ span.copy-funding {
           width: 100%; }
         .featured-list__project-title ~ .featured-list__project-subtext {
           font-family: 'plex-mono';
-          transform: translateX(2px) translateY(-5px);
-          line-height: 1.5em; }
+          transform: translateX(1px) translateY(1px);
+          line-height: 1.3em; }
         .featured-list__project-title ~ .featured-list__project-image.translate {
           transform: translate3d(175px, 50px, 0); }
           @media only screen and (max-width: 520px) {
