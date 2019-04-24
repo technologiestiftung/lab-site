@@ -106,15 +106,26 @@
 
         }
 
+        &--outer {
+            position: absolute;
+            width: 100%;
+            height: auto;
+            bottom: 20px;
+        }
+
         &__title {
-            display: flex;
-            left: 0px;
             flex-direction: column;
             margin: $spacing-m 0;
             padding: 0 $spacing-page-m;
-            position: absolute;
             width: 100%;
             bottom: 0px;
+
+            @media only screen and (min-width: $screen-xl) {
+                padding: 0;
+                margin: $spacing-m auto $spacing-m auto;
+                max-width: $max-width;
+            }
+        
 
             @media only screen and (max-width: $screen-m) {
                 padding: $spacing-l $spacing-m;
@@ -154,6 +165,10 @@
                 line-height: $line-height-mobile;
             }
         }
+        &__meta--outer {
+            
+        }
+
         &__meta {
             padding-top: $spacing-xl;
             display: flex;
@@ -162,8 +177,11 @@
             flex-wrap: wrap;
 
             @media only screen and (min-width: $screen-xl) {
-                padding: $spacing-xl $spacing-page-m;
+                margin: $spacing-l auto $spacing-l auto;
+                width: $max-width;
+                padding: 0;
             }
+        
 
             @media only screen and (max-width: $screen-m) {
                 padding: $spacing-l $spacing-m;
@@ -194,7 +212,7 @@
 
     &-text {
         color: $black;
-        margin: 0 $spacing-page-l $spacing-m $spacing-page-l;
+        margin: 0 $spacing-page-m $spacing-m $spacing-page-m;
 
         h3 {
             color: $black;
@@ -594,15 +612,7 @@
 
 
         p, h1, h2, h3, h4, ul, ol {
-            margin: 0 $spacing-page-l $spacing-m $spacing-page-l;
-        
-            @media only screen and (max-width: $screen-xxl) {
             margin: 0 $spacing-page-m $spacing-m $spacing-page-m;
-            }
-        
-            @media only screen and (max-width: $screen-xl) {
-            margin: 0 $spacing-page-m $spacing-m $spacing-page-m;
-            }
         
             @media only screen and (max-width: $screen-l) {
             margin: 0 $spacing-page-s $spacing-m $spacing-page-s;
