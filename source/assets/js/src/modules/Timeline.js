@@ -23,10 +23,11 @@ import {
 } from 'd3';
 
 class Timeline {
-    constructor(domElement) {
+    constructor(domElement, language) {
         this.vars = {
             container: domElement,
             wrapper: null,
+            lang: language,
             width: null,
             height: null,
             minX: null,
@@ -38,6 +39,8 @@ class Timeline {
             catchAll: null,
             elmW: null,
             parser: null,   
+            overlay: null,
+            hint: null,
             xAxis: null,
             xAxisElm: null,
             prototype: null,
@@ -91,6 +94,7 @@ class Timeline {
                 this.setupBars();
                 this.setupTooltip();
                 this.setupZoom();
+                this.setupOverlay();
             })
     }
 
@@ -190,6 +194,31 @@ class Timeline {
     	return;
     }
 
+    setupOverlay() {
+        const timeline_svg = d3Select('.svgs');
+
+        const langSwitch = d3Select('#language-switch').node().textContent;
+
+        const content_text = langSwitch !== 'Deutsch' ? 'Projektleiste aktivieren' : 'Activate timeline';
+
+        this.vars.overlay = timeline_svg.append('div')
+            .classed('overlay-outer', true)
+
+        this.vars.hint = this.vars.overlay.append('div')
+            .classed('overlay-hint', true)
+            .on('click', function() {
+                d3Select('.overlay-outer').style('display', 'none')
+            })
+
+        const contentWrapper = this.vars.hint.append('div')
+            .classed('overlay-hint-content', true)
+        
+        contentWrapper.append('span')
+            .classed('overlay-text', true)
+            .text(content_text)
+
+    }
+
     setupTooltip() {
         
         this.vars.tooltip = d3Select('body')
@@ -199,7 +228,6 @@ class Timeline {
         this.vars.tooltipTitle = this.vars.tooltip
             .append('span')
             .classed('timeline-tooltip__text', true)
-
     }
 
     updateTooltip(name) {
@@ -292,7 +320,6 @@ class Timeline {
         const container_width = document.getElementsByClassName('timeline__wrapper')[0].getBoundingClientRect().width;
 
         // document.getElementsByClassName('.timeline__wrapper').getBoundingClientRect()
-
         // timeline_svg.attr('width', container_width);
 
         this.vars.width = container_width;

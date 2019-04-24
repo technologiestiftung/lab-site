@@ -6,6 +6,12 @@
         justify-content: space-between;
         width: 100%;
 
+        @media only screen and (min-width: $screen-xl) {
+            margin: 0 auto 0 auto;
+            padding: 0;
+            max-width: $max-width;
+        }
+
         @media only screen and (max-width: $screen-xl) {
             flex-direction: column;
         }

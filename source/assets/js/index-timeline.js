@@ -28543,6 +28543,8 @@ exports.default = void 0;
 
 var _d = require("d3");
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -28552,45 +28554,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 var Timeline =
 /*#__PURE__*/
 function () {
-  function Timeline(domElement) {
+  function Timeline(domElement, language) {
+    var _this$vars;
+
     _classCallCheck(this, Timeline);
 
-    this.vars = {
+    this.vars = (_this$vars = {
       container: domElement,
       wrapper: null,
+      lang: language,
       width: null,
       height: null,
       minX: null,
       maxX: null,
-      x: null,
-      lang: null,
-      elmX: null,
-      svgs: null,
-      catchAll: null,
-      elmW: null,
-      parser: null,
-      xAxis: null,
-      xAxisElm: null,
-      prototype: null,
-      workshop: null,
-      dataset: null,
-      publication: null,
-      circleRadius: 5,
-      tooltip: null,
-      tooltipTitle: null,
-      svgDefs: null,
-      legend: null,
-      swimlanes: [],
-      processedTimelines: [],
-      timelines: [],
-      types: ['workshop', 'dataset', 'publication', 'prototype'],
-      colors: {
-        'prototype': '#41b496',
-        'dataset': '#e60032',
-        'workshop': '#dcc82d',
-        'publication': '#2d91d2'
-      }
-    };
+      x: null
+    }, _defineProperty(_this$vars, "lang", null), _defineProperty(_this$vars, "elmX", null), _defineProperty(_this$vars, "svgs", null), _defineProperty(_this$vars, "catchAll", null), _defineProperty(_this$vars, "elmW", null), _defineProperty(_this$vars, "parser", null), _defineProperty(_this$vars, "overlay", null), _defineProperty(_this$vars, "hint", null), _defineProperty(_this$vars, "xAxis", null), _defineProperty(_this$vars, "xAxisElm", null), _defineProperty(_this$vars, "prototype", null), _defineProperty(_this$vars, "workshop", null), _defineProperty(_this$vars, "dataset", null), _defineProperty(_this$vars, "publication", null), _defineProperty(_this$vars, "circleRadius", 5), _defineProperty(_this$vars, "tooltip", null), _defineProperty(_this$vars, "tooltipTitle", null), _defineProperty(_this$vars, "svgDefs", null), _defineProperty(_this$vars, "legend", null), _defineProperty(_this$vars, "swimlanes", []), _defineProperty(_this$vars, "processedTimelines", []), _defineProperty(_this$vars, "timelines", []), _defineProperty(_this$vars, "types", ['workshop', 'dataset', 'publication', 'prototype']), _defineProperty(_this$vars, "colors", {
+      'prototype': '#41b496',
+      'dataset': '#e60032',
+      'workshop': '#dcc82d',
+      'publication': '#2d91d2'
+    }), _this$vars);
     this.timeline = this.timeline.bind(this);
     this.findlane = this.findlane.bind(this);
     this.updateTooltip = this.updateTooltip.bind(this);
@@ -28631,6 +28614,8 @@ function () {
         _this.setupTooltip();
 
         _this.setupZoom();
+
+        _this.setupOverlay();
       });
     }
   }, {
@@ -28723,6 +28708,19 @@ function () {
 
       this.vars.swimlanes[x] = [band];
       return;
+    }
+  }, {
+    key: "setupOverlay",
+    value: function setupOverlay() {
+      var timeline_svg = (0, _d.select)('.svgs');
+      var langSwitch = (0, _d.select)('#language-switch').node().textContent;
+      var content_text = langSwitch !== 'Deutsch' ? 'Projektleiste aktivieren' : 'Activate timeline';
+      this.vars.overlay = timeline_svg.append('div').classed('overlay-outer', true);
+      this.vars.hint = this.vars.overlay.append('div').classed('overlay-hint', true).on('click', function () {
+        (0, _d.select)('.overlay-outer').style('display', 'none');
+      });
+      var contentWrapper = this.vars.hint.append('div').classed('overlay-hint-content', true);
+      contentWrapper.append('span').classed('overlay-text', true).text(content_text);
     }
   }, {
     key: "setupTooltip",
