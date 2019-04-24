@@ -23,10 +23,11 @@ import {
 } from 'd3';
 
 class Timeline {
-    constructor(domElement) {
+    constructor(domElement, language) {
         this.vars = {
             container: domElement,
             wrapper: null,
+            lang: language,
             width: null,
             height: null,
             minX: null,
@@ -196,6 +197,10 @@ class Timeline {
     setupOverlay() {
         const timeline_svg = d3Select('.svgs');
 
+        const langSwitch = d3Select('#language-switch').node().textContent;
+
+        const content_text = langSwitch !== 'Deutsch' ? 'Projektleiste aktivieren' : 'Activate timeline';
+
         this.vars.overlay = timeline_svg.append('div')
             .classed('overlay-outer', true)
 
@@ -210,7 +215,7 @@ class Timeline {
         
         contentWrapper.append('span')
             .classed('overlay-text', true)
-            .text('Projektleiste aktivieren')
+            .text(content_text)
 
     }
 
