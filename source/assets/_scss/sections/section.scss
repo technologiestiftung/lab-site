@@ -1,5 +1,5 @@
 section {
-    margin: $spacing-page-m $spacing-page-m 0px $spacing-page-m;
+    margin: $spacing-page-l $spacing-page-m 0px $spacing-page-m;
 
 
     @media only screen and (max-width: $screen-m) {
@@ -26,7 +26,7 @@ section {
     }
 
     &.markdown-content:first-of-type, &.html-content:first-of-type {
-        margin: 0 $spacing-page-m $spacing-xl $spacing-page-m;
+        margin: 0 $spacing-page-l $spacing-xl $spacing-page-m;
         max-width: $max-width;
 
         @media only screen and (max-width: $screen-m) {

@@ -1484,7 +1484,7 @@ _:-ms-fullscreen > *:nth-child(8), :root .grid > *:nth-child(8) {
     -ms-grid-column: 1; } }
 
 section {
-  margin: 12vw 12vw 0px 12vw; }
+  margin: 17.5vw 12vw 0px 12vw; }
   @media only screen and (max-width: 768px) {
     section {
       margin: 175px 30px 0px 30px; } }
@@ -1502,7 +1502,7 @@ section {
       section:last-of-type {
         margin: 0 30px 0 30px; } }
   section.markdown-content:first-of-type, section.html-content:first-of-type {
-    margin: 0 12vw 80px 12vw;
+    margin: 0 17.5vw 80px 12vw;
     max-width: 1020px; }
     @media only screen and (max-width: 768px) {
       section.markdown-content:first-of-type, section.html-content:first-of-type {
@@ -2330,7 +2330,7 @@ section.team-grid .section-headline {
     margin-bottom: 80px !important; } }
 
 section.project-feed {
-  margin-top: 80px !important; }
+  margin-top: 17.5vw !important; }
   section.project-feed .section-headline {
     margin-bottom: 20px; }
   @media screen and (max-width: 768px) {
@@ -2338,7 +2338,7 @@ section.project-feed {
       margin-top: 80px !important; } }
   @media only screen and (min-width: 1200px) {
     section.project-feed {
-      margin: 80px auto 0px auto;
+      margin: 12vw auto 0px auto !important;
       max-width: 1020px; } }
 
 @media screen and (max-width: 768px) {

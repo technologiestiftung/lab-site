@@ -39,7 +39,7 @@ section.team-grid {
 }
 
 section.project-feed {
-    margin-top: $spacing-xl !important;
+    margin-top: $spacing-page-l !important;
 
     .section-headline {
         margin-bottom: 20px;
@@ -50,7 +50,7 @@ section.project-feed {
     }
 
     @media only screen and (min-width: $screen-xl) {
-        margin: $spacing-xl auto 0px auto;
+        margin: $spacing-page-m auto 0px auto !important;
         max-width: $max-width;
     }
 }
