@@ -450,7 +450,6 @@ h4 {
     color: #ffffff; }
 
 .link--normal {
-  display: inline-block;
   line-height: 1.8em;
   position: relative;
   -webkit-transition: color 0.25s;
@@ -1502,8 +1501,12 @@ section {
       section:last-of-type {
         margin: 0 30px 0 30px; } }
   section.markdown-content:first-of-type, section.html-content:first-of-type {
-    margin: 0 17.5vw 80px 12vw;
+    margin: 0 12vw 80px 12vw;
     max-width: 1020px; }
+    @media only screen and (min-width: 1200px) {
+      section.markdown-content:first-of-type, section.html-content:first-of-type {
+        margin: 0px auto 0px auto;
+        width: 1020px; } }
     @media only screen and (max-width: 768px) {
       section.markdown-content:first-of-type, section.html-content:first-of-type {
         margin: 0 30px 0 30px; } }
@@ -2330,7 +2333,7 @@ section.team-grid .section-headline {
     margin-bottom: 80px !important; } }
 
 section.project-feed {
-  margin-top: 17.5vw !important; }
+  margin-top: 80px !important; }
   section.project-feed .section-headline {
     margin-bottom: 20px; }
   @media screen and (max-width: 768px) {
@@ -2338,7 +2341,7 @@ section.project-feed {
       margin-top: 80px !important; } }
   @media only screen and (min-width: 1200px) {
     section.project-feed {
-      margin: 12vw auto 0px auto !important;
+      margin: 80px auto 0px auto !important;
       max-width: 1020px; } }
 
 @media screen and (max-width: 768px) {
@@ -2845,20 +2848,25 @@ section.mission-statement a {
       position: relative;
       background-position: center;
       background-size: cover; }
+    .project-header--outer {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      bottom: 20px; }
     .project-header__title {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      left: 0px;
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
           -ms-flex-direction: column;
               flex-direction: column;
       margin: 30px 0;
       padding: 0 12vw;
-      position: absolute;
       width: 100%;
       bottom: 0px; }
+      @media only screen and (min-width: 1200px) {
+        .project-header__title {
+          padding: 0;
+          margin: 30px auto 30px auto;
+          max-width: 1020px; } }
       @media only screen and (max-width: 768px) {
         .project-header__title {
           padding: 50px 30px;
@@ -2907,7 +2915,9 @@ section.mission-statement a {
           flex-wrap: wrap; }
       @media only screen and (min-width: 1200px) {
         .project-header__meta {
-          padding: 80px 12vw; } }
+          margin: 50px auto 50px auto;
+          width: 1020px;
+          padding: 0; } }
       @media only screen and (max-width: 768px) {
         .project-header__meta {
           padding: 50px 30px; } }
@@ -2935,7 +2945,7 @@ section.mission-statement a {
             margin-bottom: 0; }
   .project-text {
     color: #000000;
-    margin: 0 17.5vw 30px 17.5vw; }
+    margin: 0 12vw 30px 12vw; }
     .project-text h3 {
       color: #000000;
       margin: 0 !important; }
@@ -3176,13 +3186,7 @@ section.mission-statement a {
   .project .html-content h2, .project .markdown-content h2 {
     line-height: 2.75rem; }
   .project .html-content p, .project .html-content h1, .project .html-content h2, .project .html-content h3, .project .html-content h4, .project .html-content ul, .project .html-content ol, .project .markdown-content p, .project .markdown-content h1, .project .markdown-content h2, .project .markdown-content h3, .project .markdown-content h4, .project .markdown-content ul, .project .markdown-content ol {
-    margin: 0 17.5vw 30px 17.5vw; }
-    @media only screen and (max-width: 1600px) {
-      .project .html-content p, .project .html-content h1, .project .html-content h2, .project .html-content h3, .project .html-content h4, .project .html-content ul, .project .html-content ol, .project .markdown-content p, .project .markdown-content h1, .project .markdown-content h2, .project .markdown-content h3, .project .markdown-content h4, .project .markdown-content ul, .project .markdown-content ol {
-        margin: 0 12vw 30px 12vw; } }
-    @media only screen and (max-width: 1200px) {
-      .project .html-content p, .project .html-content h1, .project .html-content h2, .project .html-content h3, .project .html-content h4, .project .html-content ul, .project .html-content ol, .project .markdown-content p, .project .markdown-content h1, .project .markdown-content h2, .project .markdown-content h3, .project .markdown-content h4, .project .markdown-content ul, .project .markdown-content ol {
-        margin: 0 12vw 30px 12vw; } }
+    margin: 0 12vw 30px 12vw; }
     @media only screen and (max-width: 1024px) {
       .project .html-content p, .project .html-content h1, .project .html-content h2, .project .html-content h3, .project .html-content h4, .project .html-content ul, .project .html-content ol, .project .markdown-content p, .project .markdown-content h1, .project .markdown-content h2, .project .markdown-content h3, .project .markdown-content h4, .project .markdown-content ul, .project .markdown-content ol {
         margin: 0 5vw 30px 5vw; } }
