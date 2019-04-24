@@ -139,16 +139,19 @@
                 font-size: $font-size-xl;
                 font-weight: bold;
                 margin-right: 40px;
+
+                @media screen and (max-width: $screen-m) {
+                    font-size: $font-size-ll;
+                    line-height: $line-height-mobile;
+                }
             }
             &--sub {
                 align-self: flex-start;
                 flex: 1;
-                font-size: $font-size-ll;
                 margin-top: 8px;
                 color: white;
                 font-size: $font-size-l;
-
-
+                line-height: $line-height-mobile;
             }
         }
         &__meta {
