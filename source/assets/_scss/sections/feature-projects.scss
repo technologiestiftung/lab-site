@@ -28,7 +28,7 @@
         }
         
         @media only screen and (max-width: $screen-s) {
-            height: 220px;
+            height: 210px;
         }
 
         &__project {
@@ -74,7 +74,7 @@
                     // height:75px;
 
                     &-subtext {
-                        font-family: 'plex-mono';
+                        font-family: 'plex-sans';
                         transform: translateX(1px) translateY(1px);
                         line-height: 1.3em;
                     }
@@ -83,19 +83,11 @@
                     }
 
                     &-image.translate {
-                        transform: translate3d($spacing-xxl, 50px, 0);
-
-                        @media only screen and (max-width: $screen-s) {
-                            transform: translate3d(35px, -150px, 0);
-                        }
-
-                        @media only screen and (max-width: $screen-m) {
-                            transform: translate3d(115px, -100px, 0);
-                        }
-
                         @media only screen and (max-width: 1000px) {
-                            transform: translate3d(150px, 10px, 0);
+                            transform: translate3d(40px, 40px, 0);
                         }
+
+                        transform: translate3d($spacing-xxl, 50px, 0);
                     }
                 }
 
@@ -113,13 +105,11 @@
                         &-image {
                             opacity: 1;
 
-                            @media only screen and (max-width: $screen-s) {
-                                transform: translate3d($spacing-xxl, -10px, 0);
+                            @media only screen and (max-width: 1000px) {
+                                transform: translate3d(40px, 40px, 0);
                             }
-
-                            @media only screen and (min-width: $screen-l) {
-                                transform: translate3d($spacing-xxl, -10px, 0);
-                            }
+    
+                            transform: translate3d($spacing-xxl, 50px, 0);
                         }
                     }
 
@@ -152,7 +142,7 @@
                 overflow:hidden;
                 transition:max-height 0.3s ease-out; // note that we're transitioning max-height, not height!
                 height:auto;
-                max-height:50px; // still have to hard-code a value!
+                max-height: 70px; // still have to hard-code a value!
             }
 
             &-image {
@@ -164,7 +154,6 @@
                 pointer-events: none;
                 position: absolute;
                 right: 0;
-                transform: translate3d($spacing-page-m, $spacing-s, 0);
                 transition: opacity $time-m, transform $time-m;
                 width: 75%;
                 z-index: -1;

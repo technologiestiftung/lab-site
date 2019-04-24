@@ -9,7 +9,7 @@ section.feed:nth-last-of-type() {
 .feed {
     &-title {
         color: $black;
-        font-family: 'plex-mono';
+        font-family: 'plex-sans';
         font-size: $font-size-m;
         margin-top: $spacing-s;
         margin-left: 1px;
@@ -18,8 +18,10 @@ section.feed:nth-last-of-type() {
             font-size: $font-size-s;
         }
     }
+
     &-headline {
     }
+    
     &-list {
 
         // margin-top: $spacing-l;
@@ -187,7 +189,7 @@ section.feed:nth-last-of-type() {
             &-date {
                 color: $black;
                 font-size: $font-size-s;
-                font-family: 'plex-mono';
+                font-family: 'plex-sans';
                 line-height: $line-height-title;
                 text-transform: uppercase;
                 letter-spacing: 1.5px;

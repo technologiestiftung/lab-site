@@ -1,4 +1,12 @@
 .intro {
+    &:first-of-type {
+        @media screen and (max-width: $screen-m) {
+            margin-top: $spacing-xl;
+            margin-bottom: $spacing-xl;
+        }
+    }
+
+
     &-title {
         color: $black;
         font-family: 'plex-mono';
