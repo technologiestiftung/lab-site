@@ -1,4 +1,4 @@
-<section class="feed">
+<section class="feed project-feed">
     <!-- <div class="feed-title headline--uppercase">Lab Feed</div> -->
     <h2 class="feed-headline section-headline headline--bold">{%- if page.lang == "en" -%}
         From the lab
@@ -44,5 +44,13 @@
         {%- endif -%}
         {%- endfor -%}
     </ul>
+
+    <a class="link--button" href="/projects/{{page.lang}}">
+      {%- if page.lang == "en" -%}
+      All projects
+      {%- else -%}
+      Alle Projekte
+    {%- endif -%}
+    </a>
 
 </section>

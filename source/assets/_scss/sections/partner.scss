@@ -27,15 +27,49 @@
     }
 }
 
-.mission-statement {
-    h1.section-headline {
-        font-size: $font-size-xl;
+section.team-grid {
+    .section-headline {
+        margin-bottom: 21px;
+    }
+
+    @media screen and (max-width: $screen-m) {
+        margin-top: $spacing-xl !important;
+        margin-bottom: $spacing-xl !important;
+    }
+}
+
+section.project-feed {
+    .section-headline {
         margin-bottom: 20px;
     }
 
+    @media screen and (max-width: $screen-m) {
+        margin-top: $spacing-xl !important;
+    }
+}
+
+section.mission-statement {
+
+    &:first-of-type {
+        @media screen and (max-width: $screen-m) {
+            margin-top: $spacing-xl;
+            margin-bottom: $spacing-xl;
+        }
+    }
+
+    
+    h1.section-headline {
+        font-size: $font-size-xl;
+        margin-bottom: $spacing-s;
+    }
+
     p {
-        font-size: 32px;
+        font-size: $font-size-ll;
         line-height: 1.5em;
+
+        @media screen and (max-width: $screen-m) {
+            font-size: $font-size-l;
+        }
     }
 
     a {

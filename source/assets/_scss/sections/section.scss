@@ -36,9 +36,10 @@ section {
     &-headline {
         font-size: $font-size-xl;
         font-weight: bold;
+        line-height: $line-height-mobile;
 
         @media only screen and (max-width: $screen-m) {
-            font-size: $font-size-ll;
+            font-size: $font-size-xl;
         }
     }
 

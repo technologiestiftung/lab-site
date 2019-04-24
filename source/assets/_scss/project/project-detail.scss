@@ -139,16 +139,19 @@
                 font-size: $font-size-xl;
                 font-weight: bold;
                 margin-right: 40px;
+
+                @media screen and (max-width: $screen-m) {
+                    font-size: $font-size-ll;
+                    line-height: $line-height-mobile;
+                }
             }
             &--sub {
                 align-self: flex-start;
                 flex: 1;
-                font-size: $font-size-ll;
                 margin-top: 8px;
                 color: white;
                 font-size: $font-size-l;
-
-
+                line-height: $line-height-mobile;
             }
         }
         &__meta {
@@ -372,38 +375,37 @@
 
         .project-header.bright {
             .link--button {
-                    border: 1px solid $color-publication;
-                    color: $color-publication;
-                    background: rgba(0,0,0,0);
-                    font-size: $font-size-s;
-                    background: $color-publication;
+                    
+                    color: $black;
+                    border: 1px solid $black;
+                    background: transparent;
 
                     &:hover {
-                        color: $color-publication;
-                        background: transparent;
-                        border: 1px solid $color-publication;
+                        color: white;
+                        background: $black;
                     }
             }
         }
 
 
+
         a:not(.link--button) {
             &::after {
-                background-color: $color-publication;
+                background-color: $black;
             }
             &:hover {
-                color: $color-publication;
+                color: $black;
             }
         }
 
         .project-header__meta-column__item {
             &::after {
-                background-color: $color-publication;
+                background-color: $black;
             }
         }
 
         .link--button:hover {
-            color: $color-publication;
+            color: $black;
         }
 
         .tns {
@@ -429,14 +431,13 @@
         .project-header.bright {
             .link--button {
                     
-                    color: white;
-                    background: $color-prototype;
-                    border: 1px solid $color-prototype;
+                    color: $black;
+                    border: 1px solid $black;
+                    background: transparent;
 
                     &:hover {
-                        color: $color-prototype;
-                        background: transparent;
-                        border: 1px solid $color-prototype;
+                        color: white;
+                        background: $black;
                     }
             }
         }
@@ -479,17 +480,18 @@
 
         .project-header.bright {
             .link--button {
-                    border: 1px solid $color-workshop;
-                    color: white;
-                    background: $color-workshop;
+                    
+                    color: $black;
+                    border: 1px solid $black;
+                    background: transparent;
 
                     &:hover {
-                        border: 1px solid $color-workshop;
-                        color: $white;
-                        background: transparent;
+                        color: white;
+                        background: $black;
                     }
             }
         }
+
 
 
         a:not(.link--button) {
@@ -530,17 +532,18 @@
 
         .project-header.bright {
             .link--button {
-                    border: 1px solid $color-dataset;
-                    color: white;
-                    background: $color-dataset;
+                    
+                    color: $black;
+                    border: 1px solid $black;
+                    background: transparent;
 
                     &:hover {
-                        color: $color-dataset;
-                        border: 1px solid $color-dataset;
-                        background: transparent;
+                        color: white;
+                        background: $black;
                     }
             }
         }
+
 
 
         a:not(.link--button) {
@@ -588,6 +591,8 @@
             line-height: 2.75rem;
         }
 
+
+
         p, h1, h2, h3, h4, ul, ol {
             margin: 0 $spacing-page-l $spacing-m $spacing-page-l;
         
@@ -608,7 +613,9 @@
             }
         
             &.blockquote {
-            margin: 0 0 $spacing-s 0;
+                @media only screen and (max-width: $screen-m) {
+                    margin: 0 0 $spacing-s 0;
+                }
             }
         }
 

@@ -31,17 +31,19 @@
 
             @media only screen and (max-width: $screen-m) {
                 padding: 0 30px;
+                flex-direction: column;
             }
         }
     }
 
     &-list {
         display: flex;
+
         
 
         @media only screen and (max-width: $screen-m) {
             flex-direction: column;
-
+            margin-top: $spacing-s;
         }
 
         &__item {
@@ -56,19 +58,16 @@
             }
 
             @media only screen and (max-width: $screen-m) {
-                padding: 0;
+                padding: 0 0 $spacing-xs 0;
             }
 
             &:first-of-type {
-                padding: 0 $spacing-s 0 0;
-
-                @media only screen and (max-width: $screen-s) {
-                    padding: 0;
-                }
+                padding: 0 0 $spacing-xs 0;
             }
             
             &:last-of-type {
                 padding-right: 0;
+                padding-bottom: 0;
             }
         }
     }

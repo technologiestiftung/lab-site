@@ -4,6 +4,13 @@
     grid-template-columns: repeat(2, 50%);
     grid-template-rows: 1%;
 
+    &:first-of-type {
+        @media screen and (max-width: $screen-m) {
+            margin-top: $spacing-xl;
+            margin-bottom: $spacing-xl;
+        }
+    }
+
     @media only screen and (max-width: $screen-m) {
         grid-template-areas: inherit;
         grid-template-columns: repeat(1, 100%);
@@ -148,10 +155,9 @@
     &-date {
         color: $grey;
         font-size: $font-size-s;
-        font-family: 'plex-mono';
+        font-family: 'plex-sans';
         line-height: $line-height-title;
         text-transform: uppercase;
-        font-weight: bold;
         letter-spacing: 1.5px;
         // margin-top: $spacing-ms;
         transition: color $time-s;
@@ -183,6 +189,10 @@
         &--github, &--twitter {
             margin: 4px 10px 0 0;
         }
+
+        &--github {
+            transform: translateY(-3px);
+        }
     }
 
     &__description {
@@ -194,17 +204,24 @@
 
         &--name {
             font-weight: bold;
-            font-size: $font-size-xl;
             margin-bottom: $spacing-xs;
+            font-size: $font-size-ll;
+            line-height: $line-height-title;
+
+            @media screen and (max-width: $screen-m) {
+                line-height: $line-height-title;
+                font-size: $font-size-ll;
+            }
         }
         &--position {
             color: $black;
+            line-height: $line-height-title;
+            margin-top: $spacing-xs;
             margin-bottom: $spacing-m;
             text-transform: uppercase;
             font-family: 'plex-mono';
             font-size: $font-size-s;
             letter-spacing: $letter-spacing-uppercase;
-            font-weight: 600;
         }
     }
 }
