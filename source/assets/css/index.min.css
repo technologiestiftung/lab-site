@@ -1299,12 +1299,12 @@ _:-ms-fullscreen > *:nth-child(8), :root .grid > *:nth-child(8) {
       grid-template-columns: repeat(3, minmax(150px, 400px)); } }
   @media only screen and (max-width: 768px) {
     .grid {
-      grid-gap: 50px 25px;
+      grid-gap: 25px 25px;
       -ms-grid-columns: minmax(150px, 400px) 25px minmax(150px, 400px);
       grid-template-columns: repeat(2, minmax(150px, 400px)); } }
   @media only screen and (max-width: 520px) {
     .grid {
-      grid-gap: 50px 25px;
+      grid-gap: 25px 25px;
       -ms-grid-columns: minmax(150px, 500px);
       grid-template-columns: repeat(1, minmax(150px, 500px)); } }
 
@@ -1861,14 +1861,14 @@ section {
   .footer-list {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
-    margin-top: 15px; }
+    display: flex; }
     @media only screen and (max-width: 768px) {
       .footer-list {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
             -ms-flex-direction: column;
-                flex-direction: column; } }
+                flex-direction: column;
+        margin-top: 15px; } }
     .footer-list__item {
       padding: 0 15px; }
       .footer-list__item a {
@@ -2244,7 +2244,8 @@ section.feed:nth-last-of-type() {
   letter-spacing: 1.5px;
   -webkit-transition: color 0.25s;
   transition: color 0.25s;
-  margin-top: 15px; }
+  margin-top: 15px;
+  font-weight: normal; }
 
 .feed-list__project-title {
   display: block;

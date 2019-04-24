@@ -38,12 +38,12 @@
 
     &-list {
         display: flex;
-        margin-top: $spacing-s;
+
         
 
         @media only screen and (max-width: $screen-m) {
             flex-direction: column;
-
+            margin-top: $spacing-s;
         }
 
         &__item {

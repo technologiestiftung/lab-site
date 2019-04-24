@@ -195,6 +195,7 @@ section.feed:nth-last-of-type() {
                 letter-spacing: 1.5px;
                 transition: color $time-s;
                 margin-top: $spacing-s;
+                font-weight: normal;
             }
 
             &-title {
