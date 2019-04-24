@@ -2438,6 +2438,10 @@ section.feed:nth-last-of-type() {
 .team-detail > *:nth-child(2) {
   -ms-grid-row: 1;
   -ms-grid-column: 2; }
+  @media screen and (max-width: 768px) {
+    .team-detail:first-of-type {
+      margin-top: 80px;
+      margin-bottom: 80px; } }
   @media only screen and (max-width: 768px) {
     .team-detail {
           grid-template-areas: inherit;
@@ -2556,6 +2560,10 @@ section.feed:nth-last-of-type() {
     margin-top: 30px; }
     .team-detail__social--github, .team-detail__social--twitter {
       margin: 4px 10px 0 0; }
+    .team-detail__social--github {
+      -webkit-transform: translateY(-3px);
+          -ms-transform: translateY(-3px);
+              transform: translateY(-3px); }
   .team-detail__description {
     -webkit-box-flex: 1;
         -ms-flex: 1;
@@ -2564,16 +2572,22 @@ section.feed:nth-last-of-type() {
       line-height: 1.8em; }
     .team-detail__description--name {
       font-weight: bold;
-      font-size: 32px;
-      margin-bottom: 5px; }
+      margin-bottom: 5px;
+      font-size: 24px;
+      line-height: 1.5em; }
+      @media screen and (max-width: 768px) {
+        .team-detail__description--name {
+          line-height: 1.5em;
+          font-size: 24px; } }
     .team-detail__description--position {
       color: #000000;
+      line-height: 1.5em;
+      margin-top: 5px;
       margin-bottom: 30px;
       text-transform: uppercase;
       font-family: 'plex-mono';
       font-size: 12px;
-      letter-spacing: 1.5px;
-      font-weight: 600; }
+      letter-spacing: 1.5px; }
 
 .dataset {
   margin-top: 0; }

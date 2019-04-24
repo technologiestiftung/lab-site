@@ -1715,6 +1715,10 @@ section.feed:nth-last-of-type() {
   width: auto;
   grid-template-columns: repeat(2, 50%);
   grid-template-rows: 1%; }
+  @media screen and (max-width: 768px) {
+    .team-detail:first-of-type {
+      margin-top: 80px;
+      margin-bottom: 80px; } }
   @media only screen and (max-width: 768px) {
     .team-detail {
       grid-template-areas: inherit;
@@ -1821,22 +1825,30 @@ section.feed:nth-last-of-type() {
     margin-top: 30px; }
     .team-detail__social--github, .team-detail__social--twitter {
       margin: 4px 10px 0 0; }
+    .team-detail__social--github {
+      transform: translateY(-3px); }
   .team-detail__description {
     flex: 1; }
     .team-detail__description--text {
       line-height: 1.8em; }
     .team-detail__description--name {
       font-weight: bold;
-      font-size: 32px;
-      margin-bottom: 5px; }
+      margin-bottom: 5px;
+      font-size: 24px;
+      line-height: 1.5em; }
+      @media screen and (max-width: 768px) {
+        .team-detail__description--name {
+          line-height: 1.5em;
+          font-size: 24px; } }
     .team-detail__description--position {
       color: #000000;
+      line-height: 1.5em;
+      margin-top: 5px;
       margin-bottom: 30px;
       text-transform: uppercase;
       font-family: 'plex-mono';
       font-size: 12px;
-      letter-spacing: 1.5px;
-      font-weight: 600; }
+      letter-spacing: 1.5px; }
 
 .dataset {
   margin-top: 0; }
