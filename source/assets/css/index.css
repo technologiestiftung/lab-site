@@ -426,7 +426,7 @@ h4 {
   border-radius: 4px;
   display: inline-block;
   margin-top: 30px;
-  padding: 12px 12px 14px 12px;
+  padding: 12px 12px 12px 12px;
   transition: background 0.25s, color 0.25s;
   user-select: none; }
   .link--button:hover {
@@ -1103,6 +1103,10 @@ section {
       .navigation-list-mobile a {
         font-size: 32px;
         margin-bottom: 50px; }
+        @media only screen and (max-width: 768px) {
+          .navigation-list-mobile a {
+            font-size: 20px;
+            margin-bottom: 30px; } }
     @media only screen and (max-width: 1200px) {
       .navigation-list {
         display: none; } }
@@ -1359,7 +1363,8 @@ span.copy-funding {
       flex-direction: column; }
       .featured-list__project-title {
         font-size: 32px;
-        position: relative; }
+        position: relative;
+        font-weight: bold; }
         @media only screen and (max-width: 768px) {
           .featured-list__project-title {
             font-size: 24px; } }
@@ -1565,13 +1570,13 @@ section.feed:nth-last-of-type() {
   font-family: 'plex-mono';
   line-height: 1.5em;
   text-transform: uppercase;
-  font-weight: bold;
   letter-spacing: 1.5px;
   transition: color 0.25s;
   margin-top: 15px; }
 
 .feed-list__project-title {
   display: block;
+  font-weight: bold;
   font-size: 20px;
   margin-top: 5px;
   transition: color 0.25s; }
@@ -1796,7 +1801,6 @@ section.feed:nth-last-of-type() {
     font-family: 'plex-mono';
     line-height: 1.5em;
     text-transform: uppercase;
-    font-weight: bold;
     letter-spacing: 1.5px;
     transition: color 0.25s; }
   .team-detail-title {

@@ -95,6 +95,12 @@
             a {
                 font-size: $font-size-xl;
                 margin-bottom: $spacing-l;
+
+                @media only screen and (max-width: $screen-m) {
+                    font-size: $font-size-l;
+                    margin-bottom: $spacing-m;
+                }
+        
             }
 
         }
