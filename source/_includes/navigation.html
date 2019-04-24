@@ -1,9 +1,10 @@
 
 <nav id="navigation" class="navigation navigation--hasShadow">
-    <a class="navigation-logo" href="{%- if page.lang == 'de' -%}/{%- else -%}/en{%- endif -%}">
-        <span class="navigation-logo__line lab__line">Ideation & Prototyping <span class="bold">Lab</span></span>
-        <span class="navigation-logo__line foundation__line"><span class="bold">Technologiestiftung</span> Berlin</span>
-    </a>
+    <div class="navigation-inner">
+        <a class="navigation-logo" href="{%- if page.lang == 'de' -%}/{%- else -%}/en{%- endif -%}">
+            <span class="navigation-logo__line lab__line">Ideation & Prototyping <span class="bold">Lab</span></span>
+            <span class="navigation-logo__line foundation__line"><span class="bold">Technologiestiftung</span> Berlin</span>
+        </a>
 
   <div id="navigation-overlay" class="overlay">
             <ul class="navigation-list-mobile">
@@ -80,4 +81,6 @@
                 <span class="hamburger-inner"></span>
         </span>
     </button>
+</div>
+
 </nav>

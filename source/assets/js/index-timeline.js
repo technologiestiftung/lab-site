@@ -28569,6 +28569,8 @@ function () {
       catchAll: null,
       elmW: null,
       parser: null,
+      overlay: null,
+      hint: null,
       xAxis: null,
       xAxisElm: null,
       prototype: null,
@@ -28631,6 +28633,8 @@ function () {
         _this.setupTooltip();
 
         _this.setupZoom();
+
+        _this.setupOverlay();
       });
     }
   }, {
@@ -28723,6 +28727,17 @@ function () {
 
       this.vars.swimlanes[x] = [band];
       return;
+    }
+  }, {
+    key: "setupOverlay",
+    value: function setupOverlay() {
+      var timeline_svg = (0, _d.select)('.svgs');
+      this.vars.overlay = timeline_svg.append('div').classed('overlay-outer', true);
+      this.vars.hint = this.vars.overlay.append('div').classed('overlay-hint', true).on('click', function () {
+        (0, _d.select)('.overlay-outer').style('display', 'none');
+      });
+      var contentWrapper = this.vars.hint.append('div').classed('overlay-hint-content', true);
+      contentWrapper.append('span').classed('overlay-text', true).text('Projektleiste aktivieren');
     }
   }, {
     key: "setupTooltip",

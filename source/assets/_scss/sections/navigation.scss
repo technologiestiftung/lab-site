@@ -12,12 +12,27 @@
     width: 100%;
     z-index: 999999;
 
+    @media only screen and (min-width: $screen-xl) {
+        padding: 0;
+    }
 
     .icon-svg-path {
         fill: $black;
         transition: fill $time-xs linear;
         &:hover {
             fill: $grey;
+        }
+    }
+
+    &-inner {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        @media only screen and (min-width: $screen-xl) {
+            padding: 0;
+            margin: $spacing-s auto $spacing-s auto;
+            width: $max-width;
         }
     }
 
