@@ -15,9 +15,9 @@ featured: false
 authors:
   - alexandra-kapp
 start: 2019-02-01
-end: 2019-04-01
+end: 2019-04-29
 status: finished
-date: 2019-04-01
+date: 2019-04-29
 assets:
   js:
     - ../js/index_en.js
@@ -32,8 +32,6 @@ materialsIncluded:
     link: "https://github.com/technologiestiftung/kleine-anfragen"
 
 ---
-
-# ADD SOCIAL MEDIA IMAGE
 
 Which public administration data are relevant for citizens, politics and the economy? For the implementation of Open Government Data, answering this question is of central importance. Given their oft-scarce resources, administrations are often forced to prioritize data publishing. As part of our project [ODIS](http://odis-berlin.de/), we support administrations in the selection and processing of open datasets. As a result of this work, we frequently find ourselves reflecting on the possible "added value" that open data can provide for a government. We previously published [here](https://lab.technologiestiftung-berlin.de/projects/od-for-cities/index.html) some examples of how cities can benefit from Open Data. To further enhance our understanding of the demand for open data, we have now tried an additional approach: **the analysis of _parliamentary inquiries_ from the Berlin House of Representatives (Berliner Abgeordnetenhaus).**
 
@@ -64,6 +62,15 @@ More than 15,000 inquiries are listed on the [kleineAnfragen website](https://kl
 Filler words (e.g. die _(the)_, und _(and)_, als _(when)_) and words specific to Berlin (e.g. Senat _(Senate)_, Berlin, Bezirk _(district)_) that are not relevant for the analysis have been removed ([here is a list of all of the "stopwords" used in this analysis](https://github.com/technologiestiftung/kleine-anfragen/blob/master/data/stopwords_de.txt)). The remaining words were reduced to their word stem (for example, Kinder _(children)_ to 'kind'). After this data cleaning, it became possible to evaluate word frequency. To better understand the terms in context, they are presented below in a network visualization (words are displayed in the original German). The point size represents the frequency of a term, while the lines represent the connections between the terms. The more frequently two terms occur together in a title, the thicker the connecting line. When you click on a word, five example queries using this word in their title are listed below the graphic. To achieve a more filtered view, use the slider "minimum word count" to set the minimum number of times a word must appear in order to be displayed in the graphic.
 
 <div id = 'network' alt="Network graph of words contained in parliamentary query titles."></div>
+<div id ='example-wrapper'>
+  <p id="example1"></p>
+  <p id="example2"></p>
+  <p id="example3"></p>
+  <p id="example4"></p>
+  <p id="example5"></p>
+</div>
+{% include macro-subline-markdown.html caption="Network graph of words contained in parliamentary query titles" %}
+
 
 The most popular Topics
 -----------------------

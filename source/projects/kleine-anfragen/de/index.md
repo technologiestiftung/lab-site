@@ -15,9 +15,9 @@ featured: false
 authors:
   - alexandra-kapp
 start: 2019-02-01
-end: 2019-04-01
+end: 2019-04-29
 status: finished
-date: 2019-04-01
+date: 2019-04-29
 assets:
   js:
     - ../js/index.js
@@ -31,8 +31,6 @@ materialsIncluded:
   - name: Source Code
     link: "https://github.com/technologiestiftung/kleine-anfragen"
 ---
-
-# ADD SOCIAL MEDIA IMAGE
 
 Welche Daten der öffentlichen Verwaltung sind für Bürger*innen, Politik und Wirtschaft relevant? Für die Umsetzung von Open Government Data ist die Beantwortung dieser Frage von zentraler Bedeutung. Denn angesichts knapper Ressourcen sind Verwaltungen häufig gezwungen, bei der Datenveröffentlichung Prioritäten zu setzen. Im Rahmen unseres Projekts [ODIS](http://odis-berlin.de/) unterstützen wir Verwaltungen bei der Auswahl und Aufbereitung offener Datensätze, so dass die Frage nach möglichen Mehrwerten auch für uns eine wichtige Rolle spielt. Einige Beispiele, wie Städte von Open Data profitieren können, haben wir [hier](https://lab.technologiestiftung-berlin.de/projects/od-for-cities/index.html) zusammengestellt. Um die Nachfrage nach öffentlichen Daten besser zu verstehen, haben wir nun einen weiteren Ansatz ausprobiert: **Die Analyse von _kleinen Anfragen_ aus dem Berliner Abgeordnetenhaus.**
 
@@ -63,6 +61,14 @@ Methode
 Allgemeine (z.B. die, und, als) und berlinspezifische Worte (z.B. Senat, Berlin, Bezirk), die für die Analyse nicht relevant sind, wurden entfernt ( [Hier sind alle sogenannten Stopwords](https://github.com/technologiestiftung/kleine-anfragen/blob/master/data/stopwords_de.txt) gelistet). Die verbliebenen Worte wurden auf ihren Wortstamm reduziert (z.B. Kinder zu kind). Anschließend ließ sich die Worthäufigkeit auswerten. Um die Begriffe besser im Kontext zu verstehen, werden sie hier in einem Netzwerk dargestellt. Die **Punktgröße stellt die Häufigkeit eines Begriffs dar und die Linien die Verbindungen zwischen den Begriffen**. Je häufiger zwei Begriffe gemeinsam in einem Titel vorkommen, desto dicker ist die Verbindungslinie. Durch Klick auf ein Wort werden fünf beispielhafte Anfragen gelistet. Mit dem Slider "minimum Wortanzahl" kann eingestellt werden, wie häufig ein Wort mindestens vorkommen muss, um in der Grafik angezeigt zu werden.
 
 <div id='network' alt = "Netzwerkdarstellung von Worten in Titeln der kleinen Anfragen."></div>
+<div id ='example-wrapper'>
+  <p id="example1"></p>
+  <p id="example2"></p>
+  <p id="example3"></p>
+  <p id="example4"></p>
+  <p id="example5"></p>
+</div>
+{% include macro-subline-markdown.html caption="Netzwerkdarstellung von Worten in Titeln der kleinen Anfragen" %}
 
 Die gefragtesten Themen
 -----------------------

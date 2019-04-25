@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded',function() {
     const padding_total = parseFloat(style['paddingLeft'].replace('px', '')) * 2;
     const width_temp = parseFloat(style['width']);
     const width = width_temp - padding_total;
-    
+
     let network_config  = {
         width: width,
         height: 600,
