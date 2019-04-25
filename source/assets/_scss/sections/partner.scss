@@ -32,34 +32,52 @@ section.team-grid {
         margin-bottom: 21px;
     }
 
-    @media screen and (max-width: $screen-m) {
+    @media screen and (max-width: $screen-xl) {
         margin-top: $spacing-xl !important;
         margin-bottom: $spacing-xl !important;
     }
 }
 
-section.project-feed {
-    margin-top: $spacing-xl !important;
 
+section.project-feed.projects {
+    &:first-of-type {
+        @media only screen and (min-width: $screen-xl) {
+            margin: $spacing-page-m auto 0px auto;
+        }
+    }
+}
+
+section.project-feed.landing {
+    margin-top: $spacing-xll;
+}
+
+section.project-feed {
     .section-headline {
         margin-bottom: 20px;
     }
 
-    @media screen and (max-width: $screen-m) {
-        margin-top: $spacing-xl !important;
+    &:first-of-type {
+        @media screen and (max-width: $screen-m) {
+            margin-top: $spacing-xll !important;
+            margin-bottom: $spacing-xl !important;
+        }
     }
 
-    @media only screen and (min-width: $screen-xl) {
-        margin: $spacing-xl auto 0px auto !important;
-        max-width: $max-width;
-    }
+    
 }
+
+
+//     // @media only screen and (min-width: $screen-xl) {
+//     //     margin: $spacing-xl auto 0px auto !important;
+//     //     max-width: $max-width;
+//     // }
+// }
 
 section.mission-statement {
 
     &:first-of-type {
         @media screen and (max-width: $screen-m) {
-            margin-top: $spacing-xl;
+            margin-top: $spacing-xll;
             margin-bottom: $spacing-xl;
         }
     }

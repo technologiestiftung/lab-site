@@ -10,6 +10,7 @@ layout: default
  -->
 {%- endcomment -%}
 {% assign sorted_pages = site.pages | sort: 'date' | reverse %}
+{% assign location = 'landing' %}
 
 <section class="intro">
   <p class="intro-text">
@@ -59,4 +60,4 @@ layout: default
   </a>
 </section>
 
-{%- include feed.html sorted_pages=sorted_pages -%}
+{%- include feed.html sorted_pages=sorted_pages location=location -%}

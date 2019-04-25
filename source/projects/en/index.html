@@ -6,5 +6,6 @@ permalink: /projects/en/
 ---
 
 {% assign sorted_pages = site.pages | sort: 'date' | reverse %}
+{% assign location = 'projects' %}
 
-{%- include feed.html sorted_pages=sorted_pages -%}
+{%- include feed.html sorted_pages=sorted_pages location=location -%}

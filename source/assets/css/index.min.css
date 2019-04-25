@@ -1993,7 +1993,7 @@ span.copy-funding {
 
 @media screen and (max-width: 768px) {
   .intro:first-of-type {
-    margin-top: 80px;
+    margin-top: 100px;
     margin-bottom: 80px; } }
 
 .intro-title {
@@ -2327,26 +2327,29 @@ section.feed:nth-last-of-type() {
 section.team-grid .section-headline {
   margin-bottom: 21px; }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
   section.team-grid {
     margin-top: 80px !important;
     margin-bottom: 80px !important; } }
 
-section.project-feed {
-  margin-top: 80px !important; }
-  section.project-feed .section-headline {
-    margin-bottom: 20px; }
-  @media screen and (max-width: 768px) {
-    section.project-feed {
-      margin-top: 80px !important; } }
-  @media only screen and (min-width: 1200px) {
-    section.project-feed {
-      margin: 80px auto 0px auto !important;
-      max-width: 1020px; } }
+@media only screen and (min-width: 1200px) {
+  section.project-feed.projects:first-of-type {
+    margin: 12vw auto 0px auto; } }
+
+section.project-feed.landing {
+  margin-top: 100px; }
+
+section.project-feed .section-headline {
+  margin-bottom: 20px; }
+
+@media screen and (max-width: 768px) {
+  section.project-feed:first-of-type {
+    margin-top: 100px !important;
+    margin-bottom: 80px !important; } }
 
 @media screen and (max-width: 768px) {
   section.mission-statement:first-of-type {
-    margin-top: 80px;
+    margin-top: 100px;
     margin-bottom: 80px; } }
 
 section.mission-statement h1.section-headline {
