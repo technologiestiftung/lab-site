@@ -9,6 +9,7 @@ colorMode: bright
 thumbnail: /projects/od-for-cities/images/thumbnail.jpg
 heroImage: ""
 socialMediaImage: /projects/od-for-cities/social_media.jpg
+heroImage: /projects/rueckblick/images/lab-logo-hero.png
 visible: true
 featured: false
 authors:
