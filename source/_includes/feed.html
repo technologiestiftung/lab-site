@@ -46,12 +46,19 @@
         {%- endfor -%}
     </ul>
 
-    <a class="link--button" href="/projects/{{page.lang}}">
-      {%- if page.lang == "en" -%}
-      All projects
+    {%- if location == "landing" -%}
+      <a class="link--button" href="/projects/{{page.lang}}">
+        {%- if page.lang == "en" -%}
+        All projects
+        {%- else -%}
+        Alle Projekte
+      {%- endif -%}
+      </a>
+
       {%- else -%}
-      Alle Projekte
+
+
     {%- endif -%}
-    </a>
+
 
 </section>
