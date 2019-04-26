@@ -53,9 +53,11 @@ ODIS - Praxisnaher Open Data-Support für Behörden
 
 Der Aufbau eines urbanen Open Data-Ökosystems und die Entwicklung entsprechender Anwendungen sind aber kein rein technisches Projekt. Ein Großteil unserer täglichen Arbeit besteht darin, gemeinsam mit öffentlichen Verwaltungen bestehende Strukturen und Prozesse neu zu denken und so zu gestalten, dass Grundlagen für digitale Innovation geschaffen werden. Unterstützt von der Berliner Senatsverwaltung für Wirtschaft, Energie und Betriebe haben wir zu diesem Zweck die [“Open Data Informationsstelle” (ODIS)](https://www.odis-berlin.de) ins Leben gerufen – ein digitales Service Team, das Behörden bei der Umsetzung von Open Data-Strategien unterstützt. 
 
+{% include macro-image-section-markdown.html src="../images/odis.jpg" caption="Open Data in the making" %}
+
 Seit Mai 2018 bietet ODIS den Berliner Verwaltungen Hands-on-Unterstützung beim Aufbau von Dateninfrastrukturen und der Bereitstellung von Daten über das offizielle [Open Data-Portal](https://daten.berlin.de) des Landes. Unser Open Data-Team um [Tori Dykes](https://twitter.com/toridykes) und [Alexandra Kapp](https://twitter.com/lxndrkp) arbeitet sich seitdem mit unermüdlichem Engagement durch die Bezirks- und Hauptverwaltungen, organisiert Workshops und Netzwerkveranstaltungen, unterstützt, berät und informiert mit viel Geduld und Sachverstand. Neben der allgemeinen strategischen Arbeit setzt ODIS auch immer wieder thematische Schwerpunkte, etwa mit “Data Dives” zu Themen wie [Radverkehr](https://lab.technologiestiftung-berlin.de/projects/datadive-cycling/de/) oder [Barrierefreiheit](https://lab.technologiestiftung-berlin.de/projects/datadive-accessibility/de/) und dazugehörigen [Visualisierungsprojekten](https://lab.technologiestiftung-berlin.de/projects/bikerides/de/). Ein besonderer Fokus in diesem Jahr liegt auf der Verbesserung des Geodatenaustauschs zwischen Bezirks- und Hauptverwaltungen. 
 
-{% include macro-image-section-markdown.html src="../images/odis.jpg" caption="Open Data in the making" %}
+{% include macro-image-section-markdown.html src="../images/bikerides.jpg" caption="Offene Fahrraddaten visualisiert" %}
 
 Digitalisierung praktisch werden lassen
 ----------------------------------------
