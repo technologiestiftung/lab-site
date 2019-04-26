@@ -18,8 +18,6 @@ end: 2018-04-19
 status: finished
 date: 2018-04-19
 
-redirect_from:
-  - /projects/od-for-cities/index_en.html
 ---
 
 _Recently, the head of the German Cities and Communes Association (“Deutscher Städte- und Gemeindebund”) caused waves with his pronouncement that [German towns should be selling their data](https://www.swr.de/swraktuell/idee-des-staedte-und-gemeindebundes-daten-verkaufen-fuer-die-buerger/-/id=396/did=21471578/nid=396/1nforlg/index.html), rather than simply giving it away for free. The ensuing conversation has made it clear that despite the open data movement having long since entered mainstream acceptance, many people still remain unconvinced of its value. To that end, this blog post represents an effort to summarize some of the key benefits cities can enjoy by making their data freely available for all to use:_
