@@ -6,9 +6,9 @@ title: Rückblick – Highlights aus unserem ersten Jahr
 subtitle: Projekte aus dem Ideation & Prototyping Lab
 type: publication
 colorMode: bright
-thumbnail: /projects/od-for-cities/images/thumbnail.jpg
+thumbnail: /projects/rueckblick/images/thumbnail.jpg
 heroImage: ""
-socialMediaImage: /projects/od-for-cities/social_media.jpg
+socialMediaImage: /projects/rueckblick/images/lab-logo-hero.png
 heroImage: /projects/rueckblick/images/lab-logo-hero.png
 visible: true
 featured: false
