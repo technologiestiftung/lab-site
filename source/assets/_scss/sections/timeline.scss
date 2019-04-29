@@ -4,10 +4,6 @@
     position: relative;
     padding-bottom:50px;
 
-    @media screen and (max-width: $screen-m) {
-        touch-action: none;
-    }
-
     &-tooltip {
         position: absolute;
         width: auto;

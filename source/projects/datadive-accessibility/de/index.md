@@ -23,8 +23,6 @@ redirect_from:
 
 ---
 
-Die Seite BrokenLifts informiert darüber, welche Aufzüge in Berlin aktuell außer Betrieb sind
-
 _Ein Data Dive ist die ausführliche Analyse eines Themas aus datenzentrierter Perspektive, wobei wir uns auf Themen konzentrieren wollen, die von großem öffentlichen Interesse sind. Im Wesentlichen verfolgen wir dabei zwei Fragen: Erstens, welche Daten sind erforderlich oder nützlich, um ein umfassendes Verständnis für dieses Thema zu entwickeln? Zweitens, wie steht es um deren Verfügbarkeit – sind die Daten offen zugänglich, sind sie maschinenlesbar und letztlich: existieren sie überhaupt? So wollen wir einerseits vorhandene Ressourcen leichter auffindbar machen und andererseits zeigen, wo es einen Bedarf an mehr und besseren Datenquellen gibt. Unser erster Data Dive hat Art und Verfügbarkeit von Radverkehrsdaten analysiert und ist [hier](https://lab.technologiestiftung-berlin.de/projects/datadive_cycling/index.html) zu lesen._
 
 Eintauchen in Daten für die Barrierefreiheit

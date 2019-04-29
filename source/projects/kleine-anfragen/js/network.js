@@ -5,7 +5,7 @@ class Network {
         this.height = config.height;
         this.padding = config.padding,
         this.r = config.r,
-        this.slider_height = this.padding.bottom + this.padding.top + 18,
+        this.slider_height = this.padding.bottom + 2 * this.padding.top + 28,
         
         this.config = config;
         this.svg, this.slider_svg, this.nodes_g, this.links_g;
@@ -51,6 +51,12 @@ class Network {
             word_count_label = "minimum word count"
         }
         
+        var label = this.slider_svg.append("text")
+        .attr("text-anchor", "middle")
+        .attr("x", this.width / 2)
+        .attr("y", this.slider_height - this.padding.bottom)
+        .text(word_count_label);
+
         var slider = this.slider_svg.append("g")
         .attr("class", "slider")
         .attr("transform", "translate(" + this.padding.left + "," + (18) + ")");
@@ -80,8 +86,6 @@ class Network {
         .attr("r", 9);
         
         
-        for (var i = 0; i < 5; i++){ 
-            
             var _this = this
             d3.json(json_file, function(error, graph) {
                 if (error) throw error;
@@ -217,8 +221,8 @@ class Network {
                 // tooltips
                 var div = d3.select(`#${network_name}`).append('div')
                 .attr('class', 'tooltip')
-                .style('display', 'block');
-                
+                .style('display', 'none');
+
                 function mouseover(){
                     div.style('display', 'block')
                     .style('position', 'absolute');
@@ -248,5 +252,4 @@ class Network {
                 update(50);
             });
         }
-    }
 }
