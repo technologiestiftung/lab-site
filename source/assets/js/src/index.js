@@ -171,12 +171,15 @@ embedResize();
 
 function toggleFeaturedClass() {
   const featured_list = document.querySelectorAll('.featured-list__project-image');
-  console.log(featured_list);
 
   setTimeout(() => {
     for (let index = 0; index < 4; index++) {
       const element = featured_list[index];
-      element.classList.add('translate');
+
+      if (element != undefined) {
+        element.classList.add('translate');
+      }
+
     }
   }, 50)
 
