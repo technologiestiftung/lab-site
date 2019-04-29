@@ -7,7 +7,6 @@ subtitle: Projekte aus dem Ideation & Prototyping Lab
 type: publication
 colorMode: bright
 thumbnail: /projects/rueckblick/images/thumbnail.jpg
-heroImage: ""
 socialMediaImage: /projects/rueckblick/images/lab-logo-hero.png
 heroImage: /projects/rueckblick/images/lab-logo-hero.png
 visible: true
