@@ -38,6 +38,60 @@ layout: default
     </ul>
 </section>
 
+<style>
+p.supports-description {
+  padding-bottom: 1em;
+}
+
+img.supporters-image {
+  padding: 40px;
+  max-width: 200px;
+  align-self: center;
+}
+
+li.supporters-list > .supporters-block {
+  height: 125px;
+}
+
+.supporters-image__wrapper {
+  height: 100px;
+  display: flex;
+}
+</style>
+<section class="supporters">
+  <h2 class="supporters-headline section-headline headline--bold">Supporters</h2>
+  <p class="supports-description">
+    {%- if page.lang == "de" -%}
+    {{site.data.supporters.thanks.de}}
+    {%- else -%}
+    {{site.data.supporters.thanks.en}}
+    {%- endif -%}
+  </p>
+  <ul class="grid">
+    {%- for supporter in site.data.supporters.data -%}
+
+      <li class="supporters-list">
+
+        <div class="supporters-block">
+
+          <div class="supporters-list__title feed-list__project-title">{{supporter.title}}</div>
+          <div class="supporters-list__subtitle feed-list__project-date">
+            {%- if page.lang == "de" -%}
+            {{supporter.subtitle.de}}
+            {%- else -%}
+            {{supporter.subtitle.en}}
+            {%- endif -%}
+          </div>
+        </div>
+        <div class="supporters-image__wrapper">
+
+          <img class="supporters-image" src="{{supporter.image}}" alt="{{supporter.title}}">
+        </div>
+      </li>
+    {%- endfor -%}
+  </ul>
+
+</section>
 <!-- <section class="partner">
         <h2 class="partner-headline section-headline headline--bold">{%- if page.lang == "en" -%}
             Partners
