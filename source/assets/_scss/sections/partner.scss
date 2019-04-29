@@ -108,3 +108,47 @@ section.mission-statement {
         }
     }
 }
+
+.supporters {
+    .section-headline {
+        margin-bottom: 21px;
+    }
+
+    &-list {
+        &__subtitle {
+            line-height: 1.6em;
+        }
+    }
+
+    p.supports-description {
+        padding-bottom: 1em;
+        font-size: $font-size-ll;
+        line-height: 1.5em;
+    }
+
+    img.supporters-image {
+        align-self: center;
+
+        &.github {
+            width: 90px;
+            transform: translateX(-6px);
+        }
+
+        &.netlify {
+            width: 100px;
+        }
+
+        &.browserstack {
+            width: 150px;
+        }
+    }
+    
+    li.supporters-list > .supporters-block {
+        height: 140px;
+    }
+    
+    .supporters-image__wrapper {
+        height: 60px;
+        display: flex;
+    }
+}
