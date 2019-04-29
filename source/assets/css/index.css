@@ -1702,9 +1702,6 @@ section.mission-statement a {
   flex-direction: column;
   position: relative;
   padding-bottom: 50px; }
-  @media screen and (max-width: 768px) {
-    .timeline {
-      touch-action: none; } }
   .timeline-tooltip {
     position: absolute;
     width: auto;
