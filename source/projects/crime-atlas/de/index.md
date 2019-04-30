@@ -3,7 +3,7 @@ layout: project
 description: Der Kriminalitätsatlas gilt als Vorzeigeprojekt für die Veröffentlichung von
   Open Data
 lang: de
-title: "Der Kriminalitätsatlas als ein Open Data Best Practice"
+title: "Der Kriminalitätsatlas als Open Data Best Practice"
 subtitle: Ein Vorzeigeprojekt der Polizei
 type: publication
 colorMode: bright
