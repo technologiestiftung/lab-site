@@ -1,0 +1,35 @@
+{
+  "thanks":{
+    "de":"Wir bedanken uns bei diesen tollen Unternehmen für die Unterstützung mit Non-Profit Accounts.",
+    "en":"Thanks to these great companies for supporting us in our effort with non-profit accounts."
+  },
+  "data":[
+    {
+      "title":"GitHub",
+      "subtitle":{
+        "en":"Providing us with version control for all our projects.",
+        "de":"Unterstützt uns mit Versionskontrolle für all unsere Projekte."
+      },
+      "class": "github",
+      "image":"/assets/images/supporters/github-logo.png",
+      "image-source":"https://github.com/logos"
+    },
+    {
+      "title":"Netlify",
+      "subtitle": {
+        "en":"Providing us with hosting and continous deployment for our web projects.",
+      "de":"Unterstützt uns mit Hosting und kontinuierlichem Deployment unserer Webprojekte."},
+      "class": "netlify",
+      "image":"/assets/images/supporters/netlify-full-logo-light.png",
+      "image-source":"https://www.netlify.com/press/"
+    },
+    {
+      "title":"BrowserStack",
+      "subtitle": {"en":"Providing us the capability to test our sites for any kind of browser.",
+      "de": "Unterstützt uns mit der Möglichkeit, unsere Seiten auf jeder Art von Gerät zu testen."},
+      "class": "browserstack",
+      "image":"https://p14.zdusercontent.com/attachment/1015988/Hjnr3apa9OCplUi1GbaLiCVa7?token=eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..QA4hJSE7NQfMjFDK1w6tog.0-YOVfCRjxpeHUf5tjKutEEoQn-U5peEUgQ6ZxBZugOJrShlKGm0lCgAURhV9T8Y-dIiFS9xTpdJ0UVPzSL1k4ka4emU3lzjerjHwhHt3Yl65Fs3S4JUWOhHvmiiG9-C0DvY7PJAEpwtGMNf-auRy84MUiYSMIriQzwkTTBJ7rdm7laryRnCGntFYfhs_GgGK38QEk8ZUhmx6M45yPoGTYrwjFPN85D3YmUA1zsEYEYKpIYOE2zdWT38wtQ6yyNWFTi6GyVQZ-p8nXAGbE5ZQR8XlKU2CquvZurSDtFeWhM.BIRFSvq27MoywSgtua3tYw",
+      "image-source":"https://p14.zdusercontent.com/attachment/1015988/Hjnr3apa9OCplUi1GbaLiCVa7?token=eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..QA4hJSE7NQfMjFDK1w6tog.0-YOVfCRjxpeHUf5tjKutEEoQn-U5peEUgQ6ZxBZugOJrShlKGm0lCgAURhV9T8Y-dIiFS9xTpdJ0UVPzSL1k4ka4emU3lzjerjHwhHt3Yl65Fs3S4JUWOhHvmiiG9-C0DvY7PJAEpwtGMNf-auRy84MUiYSMIriQzwkTTBJ7rdm7laryRnCGntFYfhs_GgGK38QEk8ZUhmx6M45yPoGTYrwjFPN85D3YmUA1zsEYEYKpIYOE2zdWT38wtQ6yyNWFTi6GyVQZ-p8nXAGbE5ZQR8XlKU2CquvZurSDtFeWhM.BIRFSvq27MoywSgtua3tYw"
+    }
+  ]
+}

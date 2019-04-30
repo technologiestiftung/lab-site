@@ -34,7 +34,7 @@ body {
   body p {
     font-size: 16px;
     font-weight: normal;
-    line-height: 1.8em;
+    line-height: 1.6em;
     margin: 0; }
   body h1,
   body h2,
@@ -2373,6 +2373,40 @@ section.mission-statement a {
     -webkit-transition: color 0.25s;
     transition: color 0.25s; }
 
+.supporters .section-headline {
+  margin-bottom: 21px; }
+
+.supporters-list__subtitle {
+  line-height: 1.6em; }
+
+.supporters p.supports-description {
+  padding-bottom: 1em;
+  font-size: 24px;
+  line-height: 1.5em; }
+
+.supporters img.supporters-image {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center; }
+  .supporters img.supporters-image.github {
+    width: 90px;
+    -webkit-transform: translateX(-6px);
+        -ms-transform: translateX(-6px);
+            transform: translateX(-6px); }
+  .supporters img.supporters-image.netlify {
+    width: 100px; }
+  .supporters img.supporters-image.browserstack {
+    width: 150px; }
+
+.supporters li.supporters-list > .supporters-block {
+  height: 140px; }
+
+.supporters .supporters-image__wrapper {
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
 .timeline {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2672,7 +2706,7 @@ section.mission-statement a {
     margin-top: 5px;
     -webkit-transition: color 0.25s;
     transition: color 0.25s;
-    line-height: 1.8em; }
+    line-height: 1.6em; }
   .team-detail__image {
     -webkit-box-flex: 1;
         -ms-flex: 1;
@@ -2701,7 +2735,7 @@ section.mission-statement a {
         -ms-flex: 1;
             flex: 1; }
     .team-detail__description--text {
-      line-height: 1.8em; }
+      line-height: 1.6em; }
     .team-detail__description--name {
       font-weight: bold;
       margin-bottom: 5px;
@@ -3176,7 +3210,7 @@ section.mission-statement a {
   .project--dataset ::selection {
     background: rgba(230, 0, 50, 0.25); }
   .project a:not(.link--button) {
-    line-height: 1.8em;
+    line-height: 1.6em;
     position: relative;
     -webkit-transition: color 0.25s;
     transition: color 0.25s;

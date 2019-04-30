@@ -38,6 +38,40 @@ layout: default
     </ul>
 </section>
 
+
+<section class="supporters">
+  <h2 class="supporters-headline section-headline headline--bold">Supporters</h2>
+  <p class="supports-description">
+    {%- if page.lang == "de" -%}
+    {{site.data.supporters.thanks.de}}
+    {%- else -%}
+    {{site.data.supporters.thanks.en}}
+    {%- endif -%}
+  </p>
+  <ul class="grid">
+    {%- for supporter in site.data.supporters.data -%}
+
+      <li class="supporters-list">
+
+        <div class="supporters-block">
+
+          <div class="supporters-image__wrapper">
+            <img class="supporters-image {{supporter.class}}" src="{{supporter.image}}" alt="{{supporter.title}}">
+          </div>
+          <!-- <div class="supporters-list__title feed-list__project-title">{{supporter.title}}</div> -->
+          <div class="supporters-list__subtitle">
+            {%- if page.lang == "de" -%}
+            {{supporter.subtitle.de}}
+            {%- else -%}
+            {{supporter.subtitle.en}}
+            {%- endif -%}
+          </div>
+        </div>
+      </li>
+    {%- endfor -%}
+  </ul>
+
+</section>
 <!-- <section class="partner">
         <h2 class="partner-headline section-headline headline--bold">{%- if page.lang == "en" -%}
             Partners
