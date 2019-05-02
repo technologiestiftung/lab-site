@@ -69,7 +69,7 @@
         <meta property="og:url" content="{{ site.url }}">
         <meta property="og:type" content="website">
         <meta property="og:title" content="{{ title }}">
-          <meta property="og:image" content="{{ socialMediaImage }}">
+          <meta property="og:image" content="{{site.url}}{{ socialMediaImage }}">
 
         <meta property="og:description" content="{{ description }}">
         <meta property="og:site_name" content="{{ title }}">
@@ -84,14 +84,14 @@
         <meta name="twitter:url" content="{{ site.url }}">
         <meta name="twitter:title" content="{{ title }}">
         <meta name="twitter:description" content="{{ description }}">
-        <meta name="twitter:image" content="{{ socialMediaImage }}">
+        <meta name="twitter:image" content="{{site.url}}{{ socialMediaImage }}">
 
           {%- comment -%}
           <!-- GOOGLE+/SCHEMA.ORG -->
           {%- endcomment -%}
           <meta itemprop="name" content="{{ title }}">
         <meta itemprop="description" content="{{ description }}">
-        <meta itemprop="image" content="{{ socialMediaImage }}">
+        <meta itemprop="image" content="{{site.url}}{{ socialMediaImage }}">
         {%- comment -%}
         <!-- CANONICAL URL -->
         {%- endcomment -%}
