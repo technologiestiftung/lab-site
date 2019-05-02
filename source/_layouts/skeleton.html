@@ -66,7 +66,7 @@
         <!-- FACEBOOK -->
         {%- endcomment -%}
         <meta property="fb:app_id" content="487094758334595">
-        <meta property="og:url" content="{{ site.url }}">
+        <meta property="og:url" content="{{ site.url }}{{page.url}}">
         <meta property="og:type" content="website">
         <meta property="og:title" content="{{ title }}">
           <meta property="og:image" content="{{site.url}}{{ socialMediaImage }}">
@@ -81,7 +81,7 @@
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@TSBBerlin">
         <meta name="twitter:creator" content="@seb_meier">
-        <meta name="twitter:url" content="{{ site.url }}">
+        <meta name="twitter:url" content="{{ site.url }}{{page.url}}">
         <meta name="twitter:title" content="{{ title }}">
         <meta name="twitter:description" content="{{ description }}">
         <meta name="twitter:image" content="{{site.url}}{{ socialMediaImage }}">
