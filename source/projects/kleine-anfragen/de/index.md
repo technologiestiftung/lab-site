@@ -1,8 +1,8 @@
 ---
 layout: project
-description: "Mit 'kleinen Anfragen' können Abgeordnete Informationen bei der Berliner Regierung anfragen. Wir haben diese Anfragen analysiert, um relevante Themen zu identifizieren und das darin verborgene Potenzial für Open Data zu ergründen."
+description: "Mit schriftlichen Anfragen können Abgeordnete Informationen bei der Berliner Regierung anfragen. Wir haben diese Anfragen analysiert, um relevante Themen zu identifizieren und das darin verborgene Potenzial für Open Data zu ergründen."
 lang: de
-title: "'Kleine Anfragen' analysiert"
+title: "'Schriftliche Anfragen' analysiert"
 subtitle: "Für welche Daten interessiert sich die Berliner Politik?"
 type: publication
 colorMode: bright
@@ -32,26 +32,26 @@ materialsIncluded:
     link: "https://github.com/technologiestiftung/kleine-anfragen"
 ---
 
-Welche Daten der öffentlichen Verwaltung sind für Bürger*innen, Politik und Wirtschaft relevant? Für die Umsetzung von Open Government Data ist die Beantwortung dieser Frage von zentraler Bedeutung. Denn angesichts knapper Ressourcen sind Verwaltungen häufig gezwungen, bei der Datenveröffentlichung Prioritäten zu setzen. Im Rahmen unseres Projekts [ODIS](http://odis-berlin.de/) unterstützen wir Verwaltungen bei der Auswahl und Aufbereitung offener Datensätze, so dass die Frage nach möglichen Mehrwerten auch für uns eine wichtige Rolle spielt. Einige Beispiele, wie Städte von Open Data profitieren können, haben wir [hier](https://lab.technologiestiftung-berlin.de/projects/od-for-cities/index.html) zusammengestellt. Um die Nachfrage nach öffentlichen Daten besser zu verstehen, haben wir nun einen weiteren Ansatz ausprobiert: **Die Analyse von _kleinen Anfragen_ aus dem Berliner Abgeordnetenhaus.**
+Welche Daten der öffentlichen Verwaltung sind für Bürger*innen, Politik und Wirtschaft relevant? Für die Umsetzung von Open Government Data ist die Beantwortung dieser Frage von zentraler Bedeutung. Denn angesichts knapper Ressourcen sind Verwaltungen häufig gezwungen, bei der Datenveröffentlichung Prioritäten zu setzen. Im Rahmen unseres Projekts [ODIS](http://odis-berlin.de/) unterstützen wir Verwaltungen bei der Auswahl und Aufbereitung offener Datensätze, so dass die Frage nach möglichen Mehrwerten auch für uns eine wichtige Rolle spielt. Einige Beispiele, wie Städte von Open Data profitieren können, haben wir [hier](https://lab.technologiestiftung-berlin.de/projects/od-for-cities/index.html) zusammengestellt. Um die Nachfrage nach öffentlichen Daten besser zu verstehen, haben wir nun einen weiteren Ansatz ausprobiert: **Die Analyse von _schriftlichen Anfragen_ aus dem Berliner Abgeordnetenhaus.**
 
-Was sind kleine Anfragen?
+Was sind schriftliche Anfragen?
 -------------------------
 
-_Kleine Anfragen_ sind ein Instrument der **parlamentarischen Kontrolle**. Sie bieten Abgeordneten eine Möglichkeit, Informationen bei der Regierung anzufordern. Innerhalb von fünf Wochen muss eine solche Anfrage beantwortet werden. Die Antworten werden in der [Parlamentsdokumentation](http://pardok.parlament-berlin.de/starweb/AHAB/) online bereitgestellt. Die Plattform [kleineAnfragen](https://kleineanfragen.de/) der [Open Knowledge Foundation](https://okfn.de/) stellt die gesammelten Antworten und Metadaten der Anfragen maschinenlesbar zum Download bereit. Damit eröffnet sich ein riesiger Fundus an Informationen zu:  
+_Schriftliche Anfragen_ sind ein Instrument der **parlamentarischen Kontrolle**. Sie bieten Abgeordneten eine Möglichkeit, Informationen bei der Regierung anzufordern. Innerhalb von drei Wochen muss eine solche Anfrage beantwortet werden. Die Antworten werden in der [Parlamentsdokumentation](http://pardok.parlament-berlin.de/starweb/AHAB/) online bereitgestellt. Die Plattform [kleineAnfragen](https://kleineanfragen.de/) der [Open Knowledge Foundation](https://okfn.de/) stellt die gesammelten Antworten und Metadaten der Anfragen maschinenlesbar zum Download bereit. Damit eröffnet sich ein riesiger Fundus an Informationen zu:  
 
 1. Themen, die für Politik und Bevölkerung von Interesse sind
 2. Daten, die potenziell als Open Data bereitgestellt werden können
 
 Die Anzahl Anfragen steigt jährlich (nur im Wahljahr 2016 war die Anzahl rückläufig). Allein im **Jahr 2018 wurden über 3.000 Anfragen** an die Berliner Verwaltung gestellt. Dabei kann es sich um spezifische Informationen zu konkreten Ereignissen handeln, z.B. [zum Frauenmarsch am 18.2.2018](https://kleineanfragen.de/berlin/18/13668-frauenmarsch-17-februar-2018), oder um allgemeine Datensätze, z.B. [die Klassengrößen an Berliner Schulen](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/17/KlAnfr/ka17-12182.pdf).  
 
-<div id= "word_count_linechart" alt="Liniendiagramm mit Anzahlen an kleinen Anfragen nach Jahren"></div>
+<div id= "word_count_linechart" alt="Liniendiagramm mit Anzahlen an schriftlichen Anfragen nach Jahren"></div>
 
 {% include macro-subline-markdown.html caption="Anzahl Anfragen nach Jahren" %}
 
 
 Laut einer [amerikanischen Studie](http://sunlightfoundation.com/wp-content/uploads/2018/10/alena-white-paper-PDF.pdf) lässt sich die Menge an Anfragen durch die Bereitstellung offener Daten signifikant reduzieren. Somit ist Open Data nicht nur ein **Transparenzgewinn** für Bürger\*innen und Abgeordnete, sondern **verringert auch den Arbeitsaufwand** für Verwaltungsbeschäftigte, die mit der Beantwortung parlamentarischer Anfragen betraut sind.  
 
-In einer Datenanalyse haben wir die kleinen Anfragen aus dem Berliner Abgeordnetenhaus untersucht, um herauszufinden, **welche Themen besonders stark nachgefragt werden** und welches **Potenzial für Open Data** in den Anfragen steckt.
+In einer Datenanalyse haben wir die schriftlichen Anfragen aus dem Berliner Abgeordnetenhaus untersucht, um herauszufinden, **welche Themen besonders stark nachgefragt werden** und welches **Potenzial für Open Data** in den Anfragen steckt.
 
 Methode
 -------
@@ -60,7 +60,7 @@ Methode
 
 Allgemeine (z.B. die, und, als) und berlinspezifische Worte (z.B. Senat, Berlin, Bezirk), die für die Analyse nicht relevant sind, wurden entfernt ( [Hier sind alle sogenannten Stopwords](https://github.com/technologiestiftung/kleine-anfragen/blob/master/data/stopwords_de.txt) gelistet). Die verbliebenen Worte wurden auf ihren Wortstamm reduziert (z.B. Kinder zu kind). Anschließend ließ sich die Worthäufigkeit auswerten. Um die Begriffe besser im Kontext zu verstehen, werden sie hier in einem Netzwerk dargestellt. Die **Punktgröße stellt die Häufigkeit eines Begriffs dar und die Linien die Verbindungen zwischen den Begriffen**. Je häufiger zwei Begriffe gemeinsam in einem Titel vorkommen, desto dicker ist die Verbindungslinie. Durch Klick auf ein Wort werden fünf beispielhafte Anfragen gelistet. Mit dem Slider "minimum Wortanzahl" kann eingestellt werden, wie häufig ein Wort mindestens vorkommen muss, um in der Grafik angezeigt zu werden.
 
-<div id='network' alt = "Netzwerkdarstellung von Worten in Titeln der kleinen Anfragen."></div>
+<div id='network' alt = "Netzwerkdarstellung von Worten in Titeln der schriftlichen Anfragen."></div>
 <div id ='example-wrapper'>
   <p id="example1"></p>
   <p id="example2"></p>
@@ -68,7 +68,7 @@ Allgemeine (z.B. die, und, als) und berlinspezifische Worte (z.B. Senat, Berlin,
   <p id="example4"></p>
   <p id="example5"></p>
 </div>
-{% include macro-subline-markdown.html caption="Netzwerkdarstellung von Worten in Titeln der kleinen Anfragen" %}
+{% include macro-subline-markdown.html caption="Netzwerkdarstellung von Worten in Titeln der schriftlichen Anfragen" %}
 
 Die gefragtesten Themen
 -----------------------
@@ -138,11 +138,11 @@ Die gefragtesten Senatsverwaltungen
 
 Die Senatsverwaltungen der Bereiche Verkehr & Umwelt, Inneres & Sport, Bildung & Jugend und Soziales erhielten die meisten Anfragen. _(Anm. Senatsverwaltungen mit dem Zusatz (WP17) wurden in der Wahlperiode 18 umstrukturiert oder umbenannt.)_
 
-<div id='barchart-wp17' alt="Balkendiagramm zur Aufteilung von kleinen Anfragen nach antwortender Senatsverwaltung für die Wahlperiode 17"></div>
+<div id='barchart-wp17' alt="Balkendiagramm zur Aufteilung von schriftlichen Anfragen nach antwortender Senatsverwaltung für die Wahlperiode 17"></div>
 
 {% include macro-subline-markdown.html caption="Anfragen an Senatsverwaltungen (Wahlperiode 17)" %}
 
-<div id='barchart-wp18' alt="Balkendiagramm zur Aufteilung von kleinen Anfragen nach antwortender Senatsverwaltung für die Wahlperiode 18"></div>
+<div id='barchart-wp18' alt="Balkendiagramm zur Aufteilung von schriftlichen Anfragen nach antwortender Senatsverwaltung für die Wahlperiode 18"></div>
 
 {% include macro-subline-markdown.html caption="Anfragen an Senatsverwaltungen (Wahlperiode 18)" %}
 
@@ -157,9 +157,9 @@ Die **Senatsverwaltung für Bildung, Jugend und Familie** (bzw. zuvor Bildung, J
 Potenziale für eine Open Data-Strategie
 -----------------------
 
-Nicht alle, aber ein beträchtlicher Teil der kleinen Anfragen wird von Verwaltungen datengestützt beantwortet. Rund ein Drittel der über 15.000 Antworten enthält Tabellen, was in der Regel ein Hinweis auf eine entsprechend vorhandene Datengrundlage ist. Zusätzlich werden in den Antworten häufig aggregierte Zahlen und Statistiken herausgegeben, die auf interessante zugrundeliegende Rohdaten hinweisen: Beispielsweise wird in [dieser Anfrage](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/18/SchrAnfr/s18-10513.pdf) erwähnt, dass es regelmäßige statistische Erhebungen zum Schulschwimmen gibt, aus denen eine Nichtschwimmerquote von 18.2% hervorgeht. Diese statistischen Erhebungen könnten aufgeschlüsselt nach Bezirken, Schulen oder Klassenstufen ein relevanter Datensatz sein.
+Nicht alle, aber ein beträchtlicher Teil der schriftlichen Anfragen wird von Verwaltungen datengestützt beantwortet. Rund ein Drittel der über 15.000 Antworten enthält Tabellen, was in der Regel ein Hinweis auf eine entsprechend vorhandene Datengrundlage ist. Zusätzlich werden in den Antworten häufig aggregierte Zahlen und Statistiken herausgegeben, die auf interessante zugrundeliegende Rohdaten hinweisen: Beispielsweise wird in [dieser Anfrage](http://pardok.parlament-berlin.de/starweb/adis/citat/VT/18/SchrAnfr/s18-10513.pdf) erwähnt, dass es regelmäßige statistische Erhebungen zum Schulschwimmen gibt, aus denen eine Nichtschwimmerquote von 18.2% hervorgeht. Diese statistischen Erhebungen könnten aufgeschlüsselt nach Bezirken, Schulen oder Klassenstufen ein relevanter Datensatz sein.
   
-Zwar werden die Antworten auf kleine Anfragen grundsätzlich über das [parlamentarische Dokumentationssystem](http://pardok.parlament-berlin.de/) veröffentlicht, jedoch bislang nur im wenig datenfreundlichen PDF-Format. Eine **begleitende Veröffentlichung von Rohdaten in maschinenlesbaren, Open Data-konformen Formaten (CSV)** könnte die Weiterverwendbarkeit deutlich erhöhen. Grundsätzlich wäre es auch denkbar, solche Daten **direkt über das [Berliner Open Data Portal](http://daten.berlin.de) zu publizieren**. Perspektivisch könnten **offene Schnittstellen in die Verwaltung** es ermöglichen, dass Abgeordnete (und Bürger*innen) Datenbestände direkt abfragen und sich der Umweg einer parlamentarischen Anfrage erübrigt. Dies wäre nicht zuletzt auch für die Verwaltungsbeschäfitgten selbst eine deutliche Entlastung.   
+Zwar werden die Antworten auf schriftliche Anfragen grundsätzlich über das [parlamentarische Dokumentationssystem](http://pardok.parlament-berlin.de/) veröffentlicht, jedoch bislang nur im wenig datenfreundlichen PDF-Format. Eine **begleitende Veröffentlichung von Rohdaten in maschinenlesbaren, Open Data-konformen Formaten (CSV)** könnte die Weiterverwendbarkeit deutlich erhöhen. Grundsätzlich wäre es auch denkbar, solche Daten **direkt über das [Berliner Open Data Portal](http://daten.berlin.de) zu publizieren**. Perspektivisch könnten **offene Schnittstellen in die Verwaltung** es ermöglichen, dass Abgeordnete (und Bürger*innen) Datenbestände direkt abfragen und sich der Umweg einer parlamentarischen Anfrage erübrigt. Dies wäre nicht zuletzt auch für die Verwaltungsbeschäfitgten selbst eine deutliche Entlastung.   
 
 Einschränkungen der Analyse
 ---------------------------

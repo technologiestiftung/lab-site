@@ -1,6 +1,6 @@
 ---
 layout: project
-description: "Members of Parliament can request information from the Berlin Government with parliamentary requests ('kleine Anfragen'). We analyzed these requests, to identify relevant topics and find potential data sets for Open Data."
+description: "Members of Parliament can request information from the Berlin Government with parliamentary requests ('schriftliche Anfragen'). We analyzed these requests, to identify relevant topics and find potential data sets for Open Data."
 lang: en
 title: "Analyzing Parliamentary Requests"
 subtitle: "Which data are Berlin's politicians interested in?"
@@ -35,7 +35,7 @@ materialsIncluded:
 
 Which public administration data are relevant for citizens, politics and the economy? For the implementation of Open Government Data, answering this question is of central importance. Given their oft-scarce resources, administrations are often forced to prioritize data publishing. As part of our project [ODIS](http://odis-berlin.de/), we support administrations in the selection and processing of open datasets. As a result of this work, we frequently find ourselves reflecting on the possible "added value" that open data can provide for a government. We previously published [here](https://lab.technologiestiftung-berlin.de/projects/od-for-cities/index.html) some examples of how cities can benefit from Open Data. To further enhance our understanding of the demand for open data, we have now tried an additional approach: **the analysis of _parliamentary inquiries_ from the Berlin House of Representatives (Berliner Abgeordnetenhaus).**
 
-What are parliamentary inquiries _(kleine Anfragen)_?
+What are parliamentary inquiries _(schriftliche Anfragen)_?
 -------------------------
   
 Parliamentary requests are an instrument of parliamentary scrutiny. They offer MPs a way to request information from the government on various aspects of the government's activities (for example, information on specific policy initiatives or on government spending). The government must deliver a response within five weeks of receiving the request. The answers are freely accessible as individual PDFs thorugh the online [parliament documentation system](http://pardok.parlament-berlin.de/starweb/AHAB/). The platform [kleineAnfragen](https://kleineanfragen.de/) of the [Open Knowledge Foundation](https://okfn.de/) collects all of these answers and their corresponding metadata and offers a machine-readable download of the responses. This collection opens up a huge amount of information about:
