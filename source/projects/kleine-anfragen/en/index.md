@@ -144,11 +144,11 @@ The senate departments for Transport & Environment, Home Affairs & Sports, Educa
 
 <div id = 'barchart-wp17' alt="Stacked bar chart showing the percentage of requests each Senate Department received for election period 17."> </div>
 
-{% include macro-subline-markdown.html caption="Inquiries sent to Senate Administrations (Legislative Term 17)" %}
+{% include macro-subline-markdown.html caption="Inquiries sent to Senate Departments (Legislative Term 17)" %}
 
 <div id = 'barchart-wp18' alt= 'Stacked bar chart showing the percentage of requests each Senate Department received for election period 18.'> </div>
 
-{% include macro-subline-markdown.html caption="Inquiries sent to Senate Administrations (Legislative Term 18)" %}
+{% include macro-subline-markdown.html caption="Inquiries sent to Senate Departments (Legislative Term 18)" %}
 
 The **Senate Department for Domestic Affairs & Sports** received the most requests in both terms. These were mainly requests related to the police, fire department, crime, the protection of the constitution and public swimming facilities.
 
@@ -156,6 +156,12 @@ The **Senate Department for Environment, Transport and Climate Protection (WP18)
 
 The **Senate Department for Education, Youth and Family** (or previously Education, Youth and Science) received the third-most requests. Topics included schools, children, youth, day-care centers, and underage refugees.
 
+
+Which party makes the most inquiries?
+-----------------------------------
+
+Opposition parties post the most inquires in both legislative terms, but a significant proportion is coming from the ruling parties as well. Thus, during the legislative period 17, 2400 inquiries were made by Die Grünen and Die Piraten, but the CDU and SPD also each made over 1000 inquiries.
+In the current legislature, most requests come from the strongest opposition party, the CDU (over 1700). However, the ruling parties SPD, Die Grünen and Die Linke also already each made almost 1000 requests. The obvious assumption that fewer inquiries are made to Senate Departments by party members of the same party can not be confirmed in this way. Although there is a tendency, especially in the legislative term 17, many requests are made to Senate Departments under the leadership of the same party (Exact numbers are available [here](https://github.com/technologiestiftung/kleine-anfragen/blob/master/ notebooks/analysis.ipynb) in the analysis).
 
 Implications for an open data strategy
 -----------------------

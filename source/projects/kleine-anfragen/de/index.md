@@ -154,6 +154,12 @@ Die **Senatsverwaltung für Umwelt, Verkehr und Klimaschutz (WP18)** erhielt in 
 
 Die **Senatsverwaltung für Bildung, Jugend und Familie** (bzw. zuvor Bildung, Jugend und Wissenschaft) erhielt die drittmeisten Anfragen. Themen waren hier Schule, Kinder, Jugend, Kitas und minderjährige Flüchtlinge.
 
+Welche Partei stellt am meisten Anfragen?
+-----------------------------------
+
+Die Oppositionsparteien stellen in beiden Wahlperioden die meisten Anfragen, jedoch kommt auch von den regierenden Parteien ein beträchtlicher Anteil. So wurden in der Wahlperiode 17 um die 2400 Anfragen von jeweils den Grünen und den Piraten gestellt, aber CDU und SPD stellten ebenfalls je über 1000 Anfragen.
+In der aktuellen Wahlperiode kommen die meisten Anfragen von der stärksten Oppositionspartei, der CDU (über 1700). Die regierenden Parteien SPD, die Grünen und die Linke stellten jedoch ebenfalls bereits jeweils knapp 1000 Anfragen. Die naheliegende Vermutung, dass an Senatsverwaltungen weniger Anfragen von Parteimitgliedern der gleichen Partei gestellt werden, kann so nicht bestätigt werden. Es gibt zwar eine dahingehende Tendenz, besonders in Wahlperiode 17, jedoch werden auch viele Anfragen an Senatsverwaltungen unter Führung der gleichen Partei gestellt (Genaue Zahlen gibt es [hier](https://github.com/technologiestiftung/kleine-anfragen/blob/master/notebooks/analysis.ipynb) in der Analyse).
+
 Potenziale für eine Open Data-Strategie
 -----------------------
 
