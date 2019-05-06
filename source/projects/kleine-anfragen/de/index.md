@@ -2,7 +2,7 @@
 layout: project
 description: "Mit schriftlichen Anfragen können Abgeordnete Informationen bei der Berliner Regierung anfragen. Wir haben diese Anfragen analysiert, um relevante Themen zu identifizieren und das darin verborgene Potenzial für Open Data zu ergründen."
 lang: de
-title: "'Schriftliche Anfragen' analysiert"
+title: "Schriftliche Anfragen analysiert"
 subtitle: "Für welche Daten interessiert sich die Berliner Politik?"
 type: publication
 colorMode: bright
@@ -10,14 +10,14 @@ featuredImage: /projects/kleine-anfragen/images/featured.jpg
 thumbnail: /projects/kleine-anfragen/images/thumbnail.jpg
 heroImage: /projects/kleine-anfragen/images/hero.jpg
 socialMediaImage: /projects/kleine-anfragen/social_media.jpg
-visible: false
+visible: true
 featured: false
 authors:
   - alexandra-kapp
 start: 2019-02-01
-end: 2019-04-29
+end: 2019-05-06
 status: finished
-date: 2019-04-29
+date: 2019-05-06
 assets:
   js:
     - ../js/index.js
