@@ -1,6 +1,6 @@
 ---
 layout: project
-description: "Members of Parliament can request information from the Berlin Government with parliamentary requests ('kleine Anfragen'). We analyzed these requests, to identify relevant topics and find potential data sets for Open Data."
+description: "Members of Parliament can request information from the Berlin Government with parliamentary requests ('schriftliche Anfragen'). We analyzed these requests, to identify relevant topics and find potential data sets for Open Data."
 lang: en
 title: "Analyzing Parliamentary Requests"
 subtitle: "Which data are Berlin's politicians interested in?"
@@ -10,14 +10,14 @@ featuredImage: /projects/kleine-anfragen/images/featured.jpg
 thumbnail: /projects/kleine-anfragen/images/thumbnail.jpg
 heroImage: /projects/kleine-anfragen/images/hero.jpg
 socialMediaImage: /projects/kleine-anfragen/social_media.jpg
-visible: false
+visible: true
 featured: false
 authors:
   - alexandra-kapp
 start: 2019-02-01
-end: 2019-04-29
+end: 2019-05-06
 status: finished
-date: 2019-04-29
+date: 2019-05-06
 assets:
   js:
     - ../js/index_en.js
@@ -35,7 +35,7 @@ materialsIncluded:
 
 Which public administration data are relevant for citizens, politics and the economy? For the implementation of Open Government Data, answering this question is of central importance. Given their oft-scarce resources, administrations are often forced to prioritize data publishing. As part of our project [ODIS](http://odis-berlin.de/), we support administrations in the selection and processing of open datasets. As a result of this work, we frequently find ourselves reflecting on the possible "added value" that open data can provide for a government. We previously published [here](https://lab.technologiestiftung-berlin.de/projects/od-for-cities/index.html) some examples of how cities can benefit from Open Data. To further enhance our understanding of the demand for open data, we have now tried an additional approach: **the analysis of _parliamentary inquiries_ from the Berlin House of Representatives (Berliner Abgeordnetenhaus).**
 
-What are parliamentary inquiries _(kleine Anfragen)_?
+What are parliamentary inquiries _(schriftliche Anfragen)_?
 -------------------------
   
 Parliamentary requests are an instrument of parliamentary scrutiny. They offer MPs a way to request information from the government on various aspects of the government's activities (for example, information on specific policy initiatives or on government spending). The government must deliver a response within five weeks of receiving the request. The answers are freely accessible as individual PDFs thorugh the online [parliament documentation system](http://pardok.parlament-berlin.de/starweb/AHAB/). The platform [kleineAnfragen](https://kleineanfragen.de/) of the [Open Knowledge Foundation](https://okfn.de/) collects all of these answers and their corresponding metadata and offers a machine-readable download of the responses. This collection opens up a huge amount of information about:
@@ -144,11 +144,11 @@ The senate departments for Transport & Environment, Home Affairs & Sports, Educa
 
 <div id = 'barchart-wp17' alt="Stacked bar chart showing the percentage of requests each Senate Department received for election period 17."> </div>
 
-{% include macro-subline-markdown.html caption="Inquiries sent to Senate Administrations (Legislative Term 17)" %}
+{% include macro-subline-markdown.html caption="Inquiries sent to Senate Departments (Legislative Term 17)" %}
 
 <div id = 'barchart-wp18' alt= 'Stacked bar chart showing the percentage of requests each Senate Department received for election period 18.'> </div>
 
-{% include macro-subline-markdown.html caption="Inquiries sent to Senate Administrations (Legislative Term 18)" %}
+{% include macro-subline-markdown.html caption="Inquiries sent to Senate Departments (Legislative Term 18)" %}
 
 The **Senate Department for Domestic Affairs & Sports** received the most requests in both terms. These were mainly requests related to the police, fire department, crime, the protection of the constitution and public swimming facilities.
 
@@ -156,6 +156,12 @@ The **Senate Department for Environment, Transport and Climate Protection (WP18)
 
 The **Senate Department for Education, Youth and Family** (or previously Education, Youth and Science) received the third-most requests. Topics included schools, children, youth, day-care centers, and underage refugees.
 
+
+Which party makes the most inquiries?
+-----------------------------------
+
+Opposition parties post the most inquires in both legislative terms, but a significant proportion is coming from the ruling parties as well. Thus, during the legislative period 17, 2400 inquiries were made by Die Grünen and Die Piraten, but the CDU and SPD also each made over 1000 inquiries.
+In the current legislature, most requests come from the strongest opposition party, the CDU (over 1700). However, the ruling parties SPD, Die Grünen and Die Linke also already each made almost 1000 requests. The obvious assumption that fewer inquiries are made to Senate Departments by party members of the same party can not be confirmed in this way. Although there is a tendency, especially in the legislative term 17, many requests are made to Senate Departments under the leadership of the same party (Exact numbers are available [here](https://github.com/technologiestiftung/kleine-anfragen/blob/master/ notebooks/analysis.ipynb) in the analysis).
 
 Implications for an open data strategy
 -----------------------
