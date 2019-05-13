@@ -235,7 +235,7 @@ class Radarchart {
             .attr('x1', (this.margin.left))
             .attr('y1', (this.margin.top))
             .attr('x2', (d,i) => { 
-                return (this.width / 2) * (this.factor * Math.sin(i  * this.radians / this.total + Math.PI)) + this.margin.left;
+                return (this.width / 2) * (this.factor * Math.sin(i * this.radians / this.total + Math.PI)) + this.margin.left;
             })
             .attr('y2', (d,i) => { 
                 return (this.height / 2) * (this.factor * Math.cos (i * this.radians / this.total + Math.PI)) + this.margin.top;
