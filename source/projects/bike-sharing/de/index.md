@@ -28,54 +28,71 @@ materialsIncluded:
 
 ---
 
-In Berlin steht man im Schnitt 154 Stunden im Stau. Damit führt Berlin die Liste als Stau-Hauptstadt an. Zusätzlich müssen umweltfreundlichere  Lösungen und damit neue Verkehrskonzepte her. Letztes Jahr wurde bereits das Mobilitätsgesetz verabschiedet, dass den Weg für umfangreiche Maßnahmen zu einer besseren Fahrradinfrastruktur bereitet. Neben privaten Fahrrädern nehmen immer mehr Leihräder Platz Berlins Straßen ein. Dies wird nicht nur positiv aufgenommen, sondern ist immer wieder Anlass für Beschwerden, da Gehwege und Plätze blockiert werden. Nun sind auch E-Tretroller ein aktuelles Thema, was die Debatte um die Platzverteilung auf Berlins Straßen erneut befeuert. 
+In Berlin steht man im Schnitt 154 Stunden im Stau. Damit führt Berlin die Liste als Stau-Hauptstadt an. Es muss nicht mehr die Debatte geführt werden, ob neue Verkehrskonzepte benötigt werden, sondern wie diese aussehen sollten. Letztes Jahr wurde bereits das Mobilitätsgesetz verabschiedet, dass den Weg für umfangreiche Maßnahmen zu einer besseren Fahrradinfrastruktur bereitet. Neben privaten Fahrrädern nehmen immer mehr Leihräder Platz auf Berlins Straßen ein. Seit wenigen Monaten ist Uber mit der Marke _Jump_ der neuste Anbieter. Die Leihfahrräder werden nicht nur positiv aufgenommen, sondern sind auch Anlass für Beschwerden, da Gehwege und Plätze blockiert werden. Nun dürfen seit Ende Mai auch E-Tretroller nach einer hitzigen Debatte von Befürworter\*innen und Gegner\*innen auf deutsche Straßen. Es wird befürchtet, dass unkontrolliert abgestellte E-Scooter die Gehwege pflastern werden.
 
-Anbieter können Fahrräder und Roller ohne Genehmigung in der Stadt abstellen und die Verwaltung hat keine Kontrolle über die Standorte der Räder. Daher gibt es in einigen Städten, beispielsweise Los Angeles, USA, bereits verpflichtende Standards die eingehalten werden müssen. MDS: Mobility Data Specification - definiert zum einen wie Daten der Fahrräder offen bereitgestellt werden müssen zum anderen werden Städte ermächtigt digital Verbotszonen einzurichten und Auswertungen von historischen Daten zu erhalten. [Hier](https://radforschung.org/log/rollersharing-was-staedte-lernen-koennen/) wird die Spezifikation und deren Nutzen ausführlich erläutert. Zusammengefasst: "Mit der Übernahme des Vorgehens und der Mobility Data Specification aus Los Angeles, erhalten Städte Echtzeit-Einblick auf die Scootersituation und können verhältnismäßig regulierend eingreifen – eine Reaktion auf Feedback und nötige Infrastukturverbesserungen sind aber auch dringend notwendig. Das bringt uns in der Mobilitätswende wieder ein Stückchen nach vorn."
+Anbieter können Fahrräder und Roller ohne Genehmigung in der Stadt abstellen und die Verwaltung hat keine Kontrolle über die Standorte der Räder. Es steckt jedoch ein riesiges Potenzial an Daten für die Stadtplanung und Verkehrssteuerung in diesen Daten. In anderen Städten wird dieses Potenzial besser genutzt, beispielsweise Los Angeles (USA), die mit der Mobility Data Specification (MDS) verpflichtende Standards für Anbieter vorgeben.
 
-Einige Fahrradanbieter stellen bereits Datenschnittstellen bereit (APIs), sodass die Standorte der Fahrräder öffentlich verfügbar sind. Für Berlin haben wir uns nun angeschaut, wie die aktuelle Datenlage der Fahrradanbieter aussieht, um herauszufinden welchen Nutzen die Mobility Data Specification MDS für Berlin bringen würde, oder ob man die aktuellen APIs bereits ausreichen.
+### MDS: Mobility Data Specification
+
+MDS definiert zum einen wie Daten der Fahrräder offen bereitgestellt werden müssen, zum anderen werden Städte ermächtigt digital Verbotszonen einzurichten und Auswertungen von historischen Daten zu erhalten. [Hier](https://radforschung.org/log/rollersharing-was-staedte-lernen-koennen/) wird die Spezifikation und deren Nutzen ausführlich erläutert. Zusammengefasst: "Mit der Übernahme des Vorgehens und der Mobility Data Specification aus Los Angeles, erhalten Städte Echtzeit-Einblick auf die ¢[Fahrrad- und] Scootersituation und können verhältnismäßig regulierend eingreifen – eine Reaktion auf Feedback und nötige Infrastukturverbesserungen sind aber auch dringend notwendig. Das bringt uns in der Mobilitätswende wieder ein Stückchen nach vorn."
+
+Einige Fahrradanbieter stellen bereits Datenschnittstellen bereit (APIs), sodass die Standorte der Fahrräder öffentlich verfügbar sind. Für Berlin haben wir uns in einem aktuellen Projekt angeschaut, wie die Datenlage der Fahrradanbieter aussieht. Wir wollen herausfinden, welche Informationen man über die Daten bereits erhalten kann und welchen Nutzen die Mobility Data Specification für Berlin bringen würde.
 
 ## Die Kandidaten
-Wir haben die fünf Fahrradanbieter, die aktuell in Berlin Fahrräder bereitstellen angeschaut: DB Bike Nextbike (Deezer), (Lidlbike), Donkey Bike, Mobike und Lime Bike.
+Wir haben die sechs Fahrradanbieter, die aktuell in Berlin Fahrräder bereitstellen angeschaut: Nextbike (Deezer), DB Bike (Lidlbike), Donkey Bike, Mobike, Lime Bike und Uber (Jump).
 
-Grundsätzlich lässt sich sagen: Jeder Anbieter stellt die Fahrraddaten anders bereit. Das heißt im Umkehrschluss, dass man sich für jeden Anbieter einzeln die API anschauen muss und abwandeln, um sie in eine gemeinsame Darstellung oder Datenbank zu bekommen. Allein das bedeutet erstmal ein zeitlicher Mehraufwand.
+Einzig für Nextbike und DB Bike gibt es offiziell eine API die bereitgestellt wird und dokumentiert ist. Für die anderen Anbieter gibt es eine [inoffizielle Dokumentation](https://github.com/ubahnverleih/WoBike) über die es möglich ist die Daten zu erhalten.
+
+Grundsätzlich lässt sich sagen: Jeder Anbieter stellt die Fahrraddaten anders bereit. Das heißt im Umkehrschluss, dass man sich für jeden Anbieter einzeln die API anschauen muss und abwandeln, um sie in eine gemeinsame Darstellung oder Datenbank zu verarbeiten. Allein das bedeutet erstmal ein zeitlicher Mehraufwand.
 
 Jede API birgt dann wieder eigene Probleme und Schwierigkeiten. Hier im Detail:
 ### Der Musterschüler: Nextbike
 
 {% include macro-image-section-markdown-small.html src="../images/nextbike.jpg" caption="Nextbike Fahrrad" %}
 
-Nextbike (in Berlin Deezer) setzt mit die GBFS (General Bike Feed Specification)um, die Teil der MDS Spezifikation ist.
-Ohne zusätzlichen Schlüssel (API Key) können mittels einer Abfrage alle Fahrradstandorte in Berlin abgefragt werden. Die Umsetzung dieser API lief am unkompliziertesten und fehlerfrei. 
+Nextbike (in Berlin Deezer) setzt den Standard GBFS (General Bike Feed Specification) um, der Teil der MDS Spezifikation ist. Diese Spezifikation ist zum einen bereits gut [dokumentiert](https://github.com/NABSA/gbfs/blob/master/gbfs.md) und zum anderen sehr einfach zu benutzen. Ohne zusätzlichen Schlüssel (API Key) können mittels einer Abfrage alle Fahrradstandorte in Berlin abgefragt werden. Die Umsetzung dieser API lief am unkompliziertesten und fehlerfrei.
 
 ### Mit API Schlüssel und Paginierung: DB Bike
 
 {% include macro-image-section-markdown-small.html src="../images/lidlbike.jpg" caption="Lidlbike Fahrrad" %}
 
-Für die DB Fahrräder (in Berlin Lidlbike) wird ein API Key benötigt. Dieser kann sehr einfach angefragt werden und stellt grundsätzlich kein Problem dar. Jedoch werden die Daten mit Paginierung zurück gegeben, sodass pro Seite maximal 50 Fahrräder angezeigt werden, sodass bei ca. 2000 Fahrrädern 40 Anfragen notwendig sind. Dies braucht zum einen mehr Zeit, zum anderen erreicht man damit die maximale Anfrageanzahl von 30 Anfragen pro Minute, wenn man die Standorte aller Fahrräder auf einmal erhalten möchte.
-Bei unserem Test sind immer wieder Fehlermeldungen unterschiedlicher Art aufgetreten.
+Für die DB Fahrräder (in Berlin Lidlbike) wird ein API Key benötigt. Dieser kann sehr einfach angefragt werden und stellt grundsätzlich kein Problem dar. Jedoch werden die Daten mit Paginierung zurück gegeben, sodass pro Seite maximal 50 Fahrräder angezeigt werden. Bei ca. 2000 Fahrrädern sind somit 40 Anfragen notwendig. Dies braucht zum einen mehr Zeit, zum anderen überschreitet man damit die maximale Anfrageanzahl von 30 Anfragen pro Minute, wenn man die Standorte aller Fahrräder auf einmal erhalten möchte.
+Bei unserem Test sind dabei häufiger Fehlermeldungen unterschiedlicher Art aufgetreten.
 Positiv lässt sich die sehr gute Dokumentation anmerken.
 
 ### Begrenzter Radius: Mobike
 
 {% include macro-image-section-markdown-small.html src="../images/mobike.jpg" caption="Mobike Fahrräder" %}
 
-Für Mobike konnten wir keine offizielle Dokumentation finden. Ein anderer Nutzer hat eine [knappe Dokumentation](https://github.com/ubahnverleih/WoBike/blob/master/Mobike.md) bereitgestellt, auf deren Basis wir gearbeitet haben:
-Die Schnittstelle von Mobike liefert nur Fahrräder in einem Radius von 500 Metern. Somit haben wir ein Netz von 240 Radiuszentren berechnet, die den Berliner Ring abdecken. Entsprechend sind 240 Abfragen notwendig, um alle Fahrräder zu erhalten. Dies dauert nicht zum einen relativ lang mit ein bis zwei Minuten, zum anderen werden häufig Fehlermeldungen zurück gegeben.
-
-### Keine Daten: Donkey Republic Bike
-Donkey Republic Bike stellt keine API zur Verfügung. 
+Für Mobike konnten wir keine offizielle Dokumentation finden. Ein Nutzer hat eine [inoffizielle Dokumentation](https://github.com/ubahnverleih/WoBike/blob/master/Mobike.md) bereitgestellt, auf deren Basis wir gearbeitet haben:
+Die Schnittstelle von Mobike liefert nur Fahrräder in einem Radius von 500 Metern. Somit haben wir ein Netz von 240 Radiuszentren berechnet, die den Berliner Ring abdecken. Entsprechend sind 240 Abfragen notwendig, um alle Fahrräder zu erhalten. Dies dauert mit ein bis zwei Minuten nicht nur vergleichsweise lang, sondern führt auch immer wieder dazu, dass Fehlermeldungen zurück gegeben werden.
 
 ### Komplizierte Validierung und unklare Daten: Lime Bike
 
 {% include macro-image-section-markdown-small.html src="../images/limebike.jpg" caption="Limebike Fahrrad" %}
 
-Für Limebike konnten wir ebenfalls keine offizielle Dokumentation finden, dafür diese [inoffizielle Dokumentation](https://github.com/ubahnverleih/WoBike/blob/master/Lime.md). Der Zugang zur API erfolgt über einen komplizierten Login Prozess, bei dem im ersten Schritt ein Code angefordert werden muss, der per SMS zugeschickt wird. Mit diesem Code kann dann im nächsten Schritt einen Token angefordert werden. Zusätzlich zum Token wird ein Websession Cookie benötigt, mit dem man schließlich die Daten erhält. 
-Jedoch ist unklar, für welches Gebiet die Daten zurückgegeben werden. Man kann zwar mit zwei Koordinaten eine Bounding Box definieren, jedoch werden auch Fahrräder außerhalb dieser Bounding Box zurückgegeben. Zusätzlich kann eine User Latitude und User Longitude angegeben werden, doch auch hier ist unklar, inwiefern sich dies auf die zurückgegeben Daten auswirkt. Zusätzlich ist die die Rückgabe auf 50 Fahrräder beschränkt.
+Für Limebike konnten wir ebenfalls nur eine [inoffizielle Dokumentation](https://github.com/ubahnverleih/WoBike/blob/master/Lime.md). Der Zugang zur API erfolgt über einen komplizierten Login Prozess, bei dem im ersten Schritt ein Code angefordert werden muss, der per SMS zugeschickt wird. Mit diesem Code kann dann im nächsten Schritt einen Token angefordert werden. Zusätzlich zum Token wird ein Websession Cookie benötigt, mit dem man schließlich die Daten erhält. 
+Jedoch ist unklar, für welches Gebiet die Daten zurückgegeben werden. Man kann zwar mit zwei Koordinaten eine Bounding Box definieren, jedoch werden auch Fahrräder außerhalb dieser Bounding Box zurückgegeben. Zusätzlich kann eine User Latitude und User Longitude angegeben werden, doch auch hier ist unklar, inwiefern sich dies auf die zurückgegeben Daten auswirkt. Pro Anfrage erhält man maximal Informationen zu 50 Fahrrädern.
+
+### Keine Daten: Donkey Republic Bike
+Für Donkey Republic Bike konnten wir keine API oder andere offenen Daten finden.
+
+#### Jump ?
+GBFS in USA. In Dt?
 
 ## Fazit
-Die aktuelle Lage der Datenschnittstellen ist durchwachsen. Nicht alle Anbieter stellen die Daten öffentlich bereit. Es war mühsam für alle Anbieter herauszufinden, wie die Daten bereitgestellt werden, da nicht immer eine gute Dokumentation vorlag. Auch bei guter Dokumentation muss für jeden Anbieter die Abfrage anders gestaltet werden und es müssen Workarounds gefunden werden, wenn man Informationen zu allen Fahrrädern haben möchte.
-Somit wäre unserer Meinung nach eine verbindliche Vorgabe eines einheitlichen Standards in Berlin sinnvoll. Es wird damit deutlich einfacher einen Überblick über die Leihfahrräder und Tretroller zu erhalten. Potenzielle zukünftige Vorgaben, wie eingegrenzte Abstellflächen, könnten dadurch einfach umgesetzt und kontrolliert werden. 
+Die aktuelle Lage der Datenschnittstellen ist durchwachsen. Nur zwei Anbieter stellen die Daten offiziell öffentlich bereit. Für die anderen Anbieter ist es ein mühsamer Prozess die Daten zu erhalten, möglicherweise sogar nicht gewünscht von den Anbietern. Selbst bei DB Bike, wo eine gute Dokumentation vorliegt müssen Workarounds gefunden werden, wenn man Informationen zu allen Fahrrädern erhalten möchte.
+Wie in den zahlreichen Artikeln zu MDS bereits erläutert wurde (beispielsweise von [Radforschung](https://radforschung.org/log/mds-fuer-kommunen-erklaert/), [Zukunft Mobilität](https://www.zukunft-mobilitaet.net/169402/analyse/rollersharing-regulierung-kommunen-international-mobility-data-specification/) oder [Remix](https://blog.remix.com/mds-gbfs-and-how-cities-can-ask-for-data-from-micromobility-providers-7957ca639f16), bietet die einheitliche Bereitstellung der Daten zu Leihfahrrädern und -scootern diverse Vorteile. Hier noch einmal auf einen Blick zusammengefasst: 
 
-Zusätzlich ist der Vorteil für die Anbieter, dass keine Dokumentation geschrieben und gepflegt werden muss, sondern auf den offiziellen Standard verwiesen werden kann.
+- Open Data Bereitstellung der Echtzeitdaten
+  - Es können Apps bereitgestellt werden, die alle Anbieter auf einmal anzeigen
+  - Echtzeitrückmeldung der vollständigen Mobilitätssituation werden ermöglicht
 
-# TODO: rechtliche Lage
+- Bereitstellung von historische Daten für die Verwaltung
+  - Analyse der Daten für bessere Verkehrsplanung und -Steuerung
+
+- Aktives Einwirken in die Verkehrssteuerung durch digitale Parkverbotszonen
+
+- Für Anbieter ist der Vorteil, dass keine eigene Dokumentation geschrieben und gepflegt werden muss
+
+Die bisherige Bereitstellung der Daten bietet nicht annähernd die Analyse und Gestaltungsmöglichkeiten für die Berliner Verwaltung, die durch die MDS gewährleistet wäre. Wie von der Initiative [Radforschung](https://radforschung.org/log/) festgestellt wird, gibt es aktuell keine rechtliche Grundlage mit der Kommunen das Einhalten einer solchen Spezifikation fordern werden kann. Jedoch weisen sie darauf hin, dass das freiwillige Angebot von aktuell auf den Markt strömenden E-Scooter Anbietern wahrgenommen werden sollte, die Daten in entsprechendem Format bereitzustellen. Das ist besonders relevant für Berlin, da nach [dieser Analyse](https://radforschung.org/log/roller-in-die-staedte/) damit zu rechnen ist, dass besonders hier von einigen Anbietern demnächst die E-Scooter auf den Straßen zu finden sein werden.
