@@ -9081,6 +9081,15 @@ function toggleFeaturedClass() {
       var element = featured_list[index];
 
       if (element != undefined) {
+        element.classList.remove('hidden');
+      }
+    }
+  }, 150);
+  setTimeout(function () {
+    for (var index = 0; index < 4; index++) {
+      var element = featured_list[index];
+
+      if (element != undefined) {
         element.classList.add('translate');
       }
     }
@@ -9114,7 +9123,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56182" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60626" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -89,6 +89,11 @@
 
                         transform: translate3d($spacing-xxl, 50px, 0);
                     }
+
+                    &-image.hidden {
+                        opacity: 0;
+                        transition: opacity .25s linear;
+                    }
                 }
 
 
