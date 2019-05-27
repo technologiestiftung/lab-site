@@ -75,10 +75,16 @@ Für Limebike konnten wir ebenfalls nur eine [inoffizielle Dokumentation](https:
 Jedoch ist unklar, für welches Gebiet die Daten zurückgegeben werden. Man kann zwar mit zwei Koordinaten eine Bounding Box definieren, jedoch werden auch Fahrräder außerhalb dieser Bounding Box zurückgegeben. Zusätzlich kann eine User Latitude und User Longitude angegeben werden, doch auch hier ist unklar, inwiefern sich dies auf die zurückgegeben Daten auswirkt. Pro Anfrage erhält man maximal Informationen zu 50 Fahrrädern.
 
 ### Keine Daten: Donkey Republic Bike
+
+% include macro-image-section-markdown-small.html src="../images/donkey.jpg" caption="Donkey Republic Fahrrad" %}
+
 Für Donkey Republic Bike konnten wir keine API oder andere offenen Daten finden.
 
-#### Jump ?
-GBFS in USA. In Dt?
+#### GBFS - aber wo? Jump
+
+% include macro-image-section-markdown-small.html src="../images/jump.jpg" caption="Jump Fahrrad" %}
+
+Jump stellt seine Daten über den GBFS Standard zur Verfügung. Leider waren die Links zu den API URLs nur für ein paar amerikanische Städte auffindbar. Für Berlin konnten wir diese nicht ausfindig machen - auch eine Anfrage über die Support E-Mail half leider nicht weiter.
 
 ## Fazit
 Die aktuelle Lage der Datenschnittstellen ist durchwachsen. Nur zwei Anbieter stellen die Daten offiziell öffentlich bereit. Für die anderen Anbieter ist es ein mühsamer Prozess die Daten zu erhalten, möglicherweise sogar nicht gewünscht von den Anbietern. Selbst bei DB Bike, wo eine gute Dokumentation vorliegt müssen Workarounds gefunden werden, wenn man Informationen zu allen Fahrrädern erhalten möchte.
