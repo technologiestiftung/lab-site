@@ -46,7 +46,7 @@ Einzig für Nextbike und DB Bike gibt es offiziell eine API die bereitgestellt w
 Grundsätzlich lässt sich sagen: Jeder Anbieter stellt die Fahrraddaten anders bereit. Das heißt im Umkehrschluss, dass man sich für jeden Anbieter einzeln die API anschauen und abwandeln muss, um sie in einer gesamten Darstellung oder Analyse zu verarbeiten. Allein das bedeutet erstmal ein zeitlicher Mehraufwand.
 
 Jede API birgt dann wieder eigene Probleme und Schwierigkeiten. Hier im Detail:
-### Kategorie 1: Der Musterschüler
+### Kategorie 1: Der Musterschüler mit GBFS Standard
 
 Nextbike (in Berlin Deezer) setzt den Standard GBFS (General Bike Feed Specification) um. Diese Spezifikation ist bereits gut [dokumentiert](https://github.com/NABSA/gbfs/blob/master/gbfs.md), sehr einfach zu benutzen und zusätzlich Teil der MDS Spezifikation. Ohne zusätzlichen Schlüssel (API Key) können mittels einer Abfrage alle Fahrrad- und Stationsstandorte in Berlin abgefragt werden. Die Abfrage dieser API lief am unkompliziertesten und fehlerfrei.
 
@@ -56,7 +56,7 @@ Für die DB Fahrräder (in Berlin Lidlbike) wird ein API Key benötigt, der sehr
 Probleme treten dann auf, wenn man die Daten für ganz Berlin abfragen möchte: die Daten werden mit Paginierung zurück gegeben, sodass pro Seite maximal 50 Fahrräder angezeigt werden. Bei ca. 2000 Fahrrädern sind somit 40 Anfragen notwendig. Damit wird die maximale Anfrageanzahl von 30 Anfragen pro Minute überschritten. Bei unserem Test sind bei der Abfrage häufiger Fehlermeldungen unterschiedlicher Art aufgetreten.
 Positiv lässt sich die sehr gute Dokumentation anmerken.
 
-### Kategorie 3: Keine offiziellen Daten
+### Kategorie 3: Keine offiziellen offenen Daten
 
 Für Mobike konnten wir keine offizielle Dokumentation finden. Ein Nutzer hat eine [inoffizielle Dokumentation](https://github.com/ubahnverleih/WoBike/blob/master/Mobike.md) bereitgestellt, auf deren Basis wir gearbeitet haben:
 Die Schnittstelle von Mobike liefert nur Fahrräder in einem Radius von 500 Metern. Somit haben wir ein Netz von 240 Radiuszentren berechnet, die den Berliner Ring abdecken. Entsprechend sind 240 Abfragen notwendig, um alle Fahrräder zu erhalten. Dies dauert mit ein bis zwei Minuten nicht nur vergleichsweise lang, sondern führt auch immer wieder dazu, dass Fehlermeldungen zurück gegeben werden.
