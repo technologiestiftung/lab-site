@@ -38,7 +38,7 @@ MDS definiert zum einen wie Daten der Fahrräder offen bereitgestellt werden mü
 
 Einige Fahrradanbieter stellen bereits Datenschnittstellen bereit (APIs), sodass die Standorte der Fahrräder öffentlich verfügbar sind. Für Berlin haben wir uns in einem aktuellen Projekt angeschaut, wie die Datenlage der Fahrradanbieter aussieht. Wir wollen herausfinden, welche Informationen man über die Daten bereits erhalten kann und welchen Nutzen die Mobility Data Specification für Berlin bringen würde.
 
-## Die Kandidaten
+## Die Anbieter
 Wir haben die sechs Fahrradanbieter, die aktuell in Berlin Fahrräder bereitstellen angeschaut: Nextbike (Deezer), DB Bike (Lidlbike), Donkey Bike, Mobike, Lime Bike und Uber (Jump).
 
 Einzig für Nextbike und DB Bike gibt es offiziell eine API die bereitgestellt wird und dokumentiert ist. Für die anderen Anbieter gibt es eine [inoffizielle Dokumentation](https://github.com/ubahnverleih/WoBike) über die es möglich ist die Daten zu erhalten.
@@ -46,43 +46,25 @@ Einzig für Nextbike und DB Bike gibt es offiziell eine API die bereitgestellt w
 Grundsätzlich lässt sich sagen: Jeder Anbieter stellt die Fahrraddaten anders bereit. Das heißt im Umkehrschluss, dass man sich für jeden Anbieter einzeln die API anschauen und abwandeln muss, um sie in einer gesamten Darstellung oder Analyse zu verarbeiten. Allein das bedeutet erstmal ein zeitlicher Mehraufwand.
 
 Jede API birgt dann wieder eigene Probleme und Schwierigkeiten. Hier im Detail:
-### Der Musterschüler: Nextbike
-
-{% include macro-image-section-markdown-small.html src="../images/nextbike.jpg" caption="Nextbike Fahrräder" %}
+### Kategorie 1: Der Musterschüler
 
 Nextbike (in Berlin Deezer) setzt den Standard GBFS (General Bike Feed Specification) um. Diese Spezifikation ist bereits gut [dokumentiert](https://github.com/NABSA/gbfs/blob/master/gbfs.md), sehr einfach zu benutzen und zusätzlich Teil der MDS Spezifikation. Ohne zusätzlichen Schlüssel (API Key) können mittels einer Abfrage alle Fahrrad- und Stationsstandorte in Berlin abgefragt werden. Die Abfrage dieser API lief am unkompliziertesten und fehlerfrei.
 
-### Mit API Schlüssel und Paginierung: DB Bike
-
-{% include macro-image-section-markdown-small.html src="../images/lidlbike.jpg" caption="Lidlbike Fahrrad" %}
+### Kategorie 2: Offene Daten nach eigenem Datenschema
 
 Für die DB Fahrräder (in Berlin Lidlbike) wird ein API Key benötigt, der sehr einfach über das [DB API-Portal](https://developer.deutschebahn.com/store/site/pages/home.jag) zu erhalten ist. 
 Probleme treten dann auf, wenn man die Daten für ganz Berlin abfragen möchte: die Daten werden mit Paginierung zurück gegeben, sodass pro Seite maximal 50 Fahrräder angezeigt werden. Bei ca. 2000 Fahrrädern sind somit 40 Anfragen notwendig. Damit wird die maximale Anfrageanzahl von 30 Anfragen pro Minute überschritten. Bei unserem Test sind bei der Abfrage häufiger Fehlermeldungen unterschiedlicher Art aufgetreten.
 Positiv lässt sich die sehr gute Dokumentation anmerken.
 
-### Begrenzter Radius: Mobike
-
-{% include macro-image-section-markdown-small.html src="../images/mobike.jpg" caption="Mobike Fahrräder" %}
+### Kategorie 3: Keine offiziellen Daten
 
 Für Mobike konnten wir keine offizielle Dokumentation finden. Ein Nutzer hat eine [inoffizielle Dokumentation](https://github.com/ubahnverleih/WoBike/blob/master/Mobike.md) bereitgestellt, auf deren Basis wir gearbeitet haben:
 Die Schnittstelle von Mobike liefert nur Fahrräder in einem Radius von 500 Metern. Somit haben wir ein Netz von 240 Radiuszentren berechnet, die den Berliner Ring abdecken. Entsprechend sind 240 Abfragen notwendig, um alle Fahrräder zu erhalten. Dies dauert mit ein bis zwei Minuten nicht nur vergleichsweise lang, sondern führt auch immer wieder dazu, dass Fehlermeldungen zurück gegeben werden.
 
-### Komplizierte Validierung und unklare Daten: Lime Bike
-
-{% include macro-image-section-markdown-small.html src="../images/limebike.jpg" caption="Limebike Fahrrad" %}
-
 Für Limebike konnten wir ebenfalls nur eine [inoffizielle Dokumentation](https://github.com/ubahnverleih/WoBike/blob/master/Lime.md) auffinden. Der Zugang zur API erfolgt über einen komplizierten Login Prozess, bei dem im ersten Schritt ein Code angefordert werden muss, der per SMS zugeschickt wird. Mit diesem Code kann dann im nächsten Schritt einen Token angefordert werden. Zusätzlich zum Token wird ein Websession Cookie benötigt, mit dem man schließlich die Daten erhält. 
 Das Gebiet, für die man die Daten erhält ist nicht vollständig ersichtlich, das es nicht 100% mit dem gesetzten Parameter der Bounding Box oder der User Latitude / Longitude übereinstimmt. Pro Anfrage erhält man maximal Informationen zu 50 Fahrrädern.
 
-### Keine Daten: Donkey Republic Bike
-
-{% include macro-image-section-markdown-small.html src="../images/donkey.jpg" caption="Donkey Republic Fahrrad" %}
-
 Für Donkey Republic Bike konnten wir keine API oder andere offenen Daten finden.
-
-#### GBFS - aber wo? Jump
-
-{% include macro-image-section-markdown-small.html src="../images/jump.jpg" caption="Jump Fahrrad" %}
 
 Jump stellt seine Daten über den GBFS Standard zur Verfügung. Leider waren die Links zu den API URLs nur für einige wenige amerikanische Städte auffindbar. Für Berlin konnten wir diese nicht ausfindig machen - auch eine Anfrage an den Support half leider nicht weiter.
 
