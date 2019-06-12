@@ -28,21 +28,23 @@ materialsIncluded:
 
 ---
 
-In Berlin steht man im Schnitt 154 Stunden im Stau. Damit führt Berlin die Liste als Stau-Hauptstadt an. Es muss nicht mehr die Debatte geführt werden, ob neue Verkehrskonzepte benötigt werden, sondern wie diese aussehen sollten. Letztes Jahr wurde bereits das Mobilitätsgesetz verabschiedet, dass den Weg für umfangreiche Maßnahmen zu einer besseren Fahrradinfrastruktur bereitet. Neben privaten Fahrrädern nehmen immer mehr Leihräder Platz auf Berlins Straßen ein. Seit wenigen Monaten ist Uber mit der Marke _Jump_ der neuste Anbieter. Die Leihfahrräder werden nicht nur positiv aufgenommen, sondern sind auch Anlass für Beschwerden, da Gehwege und Plätze blockiert werden. Nun dürfen nach dem Bundesratsbeschluss von Ende Mai auch E-Tretroller nach einer hitzigen Debatte von Befürworter\*innen und Gegner\*innen ab 15. Juni auf deutsche Straßen. Es wird befürchtet, dass unkontrolliert abgestellte E-Scooter die Gehwege pflastern werden.
+In Berlin steht man im Schnitt 154 Stunden im Stau. Damit führt Berlin die Liste als Stau-Hauptstadt an. Es muss nicht mehr die Debatte geführt werden, ob neue Verkehrskonzepte benötigt werden, sondern wie diese aussehen sollten. Letztes Jahr wurde bereits das Mobilitätsgesetz verabschiedet, dass den Weg für umfangreiche Maßnahmen zu einer besseren Fahrradinfrastruktur bereitet. Neben privaten Fahrrädern nehmen immer mehr Leihräder Platz auf Berlins Straßen ein. Seit wenigen Monaten ist Uber mit der Marke _Jump_ der neuste Anbieter. Die Leihfahrräder werden nicht nur positiv aufgenommen, sondern sind auch Anlass für Beschwerden, da Gehwege und Plätze blockiert werden. 
+
+Nun dürfen nach dem Bundesratsbeschluss von Ende Mai auch E-Tretroller nach einer hitzigen Debatte von Befürworter\*innen und Gegner\*innen ab 15. Juni auf deutsche Straßen. Es wird befürchtet, dass unkontrolliert abgestellte E-Scooter die Gehwege pflastern werden.
 
 [Laut diesem Artikel gilt](https://www.gruenderszene.de/automotive-mobility/mobilitaet-jelbi-scooter): *"Die Scooter dürfen nicht im Weg stehen (schon gar nicht vor Eingängen von U-Bahnen und Fahrstühlen), mehr als vier auf einer Stelle sind nicht erlaubt (sonst gilt das als antragspflichtige Sondernutzung öffentlichen Straßenlands) und defekte Fahrzeuge müssen binnen 24 Stunden entfernt werden, teilt die Verwaltung mit. Für Kontrollen sind (in erster Linie) die Ordnungsämter der Bezirke zuständig."*
 
 Doch wie sieht diese Kontrolle aus? Die mühsame manuelle Arbeit von Ordnungsamtmitarbeiter*innen ließe sich einfach automatisieren, indem die Standortdaten der Fahrzeuge dem Ordnungsamt in Echtzeit und digital zur Verfügung gestellt werden würden. In anderen Städten wird dieses Potenzial besser genutzt, beispielsweise Los Angeles (USA), die mit der Mobility Data Specification (MDS) verpflichtende Standards für Anbieter vorgeben:
 
-### MDS: Mobility Data Specification
+## MDS: Mobility Data Specification
 
-MDS definiert zum einen wie **Daten der Fahrräder offen bereitgestellt** werden müssen, zum anderen werden Städte ermächtigt *digital Verbotszonen* einzurichten und Auswertungen von **historischen Daten** zu erhalten. Somit ist dies zusätzlich zur Open Data Thematik eine Möglichkeit der smarten Stadtplanung und -verwaltung. 
+MDS definiert zum einen wie **Daten der Fahrräder offen bereitgestellt** werden müssen, zum anderen werden Städte ermächtigt **digital Verbotszonen** einzurichten und Auswertungen von **historischen Daten** zu erhalten. Somit ist dies zusätzlich zur Open Data Thematik eine Möglichkeit der smarten Stadtplanung und -verwaltung. 
 
-[Hier](https://radforschung.org/log/rollersharing-was-staedte-lernen-koennen/) wird die Spezifikation und deren Nutzen ausführlich erläutert. Zusammengefasst: 
-*"Mit der Übernahme des Vorgehens und der Mobility Data Specification aus Los Angeles, erhalten Städte Echtzeit-Einblick auf die [Fahrrad- und] Scootersituation und können verhältnismäßig regulierend eingreifen – eine Reaktion auf Feedback und nötige Infrastukturverbesserungen sind aber auch dringend notwendig. Das bringt uns in der Mobilitätswende wieder ein Stückchen nach vorn."*
+[Hier](https://github.com/CityOfLosAngeles/mobility-data-specification) ist die Dokumentation und [hier](https://radforschung.org/log/rollersharing-was-staedte-lernen-koennen/) wird die Spezifikation und deren Nutzen ausführlich erläutert.
 
-Da Fahrrad- und E-Scooter-Anbieter von der kostenfreien Nutzung des öffentlichen Straßenraumes profitieren ist es nur fair, wenn sie ihre Daten wiederum der Stadt zur Verfügung stellen und eine effizientere Planung und Verwaltung des Stadtraums ermöglichen.
-Auch die Anbieter profitieren von solchen Regelungen, beispielsweise wie Nextbike, die in [Kooperation mit der Stadt Berlin Fahrrad-Stationen an geeigneten Standorten anbringen](https://www.berliner-zeitung.de/berlin/verkehr/mietfahrraeder-in-berlin-mehr-als-350-nextbike-stationen-warten-noch-auf-genehmigung-32534102).
+In Berlin gibt es bisher keine entsprechenden Vorgaben zur Bereitstellung der Daten. Anbieter können ihre Fahrzeuge ohne Genehmigung auf öffentlichen Straßen bereitstellen.
+
+## Bestehende Datenschnittstellen
 
 Einige Fahrradanbieter stellen bereits Datenschnittstellen bereit (APIs), sodass die Standorte der Fahrräder öffentlich verfügbar sind. Für Berlin haben wir uns in einem **aktuellen Projekt angeschaut, wie die Datenlage der Fahrradanbieter** aussieht. Wir wollen herausfinden, welche Informationen man über die Daten bereits erhalten kann und welchen Nutzen die Mobility Data Specification für Berlin bringen würde.
 
@@ -91,3 +93,10 @@ Analyse der Daten für bessere Verkehrsplanung und -Steuerung.
 **Kein Dokumentationsaufwand für Anbieter:** Für die existierende Spezifikation muss keine eigene Dokumentation erstellt, gepflegt und bereitgestellt werden.
 
 Die bisherige Bereitstellung der Daten bietet nicht annähernd die Analyse und Gestaltungsmöglichkeiten für die Berliner Verwaltung, die durch eine Spezifikation wie MDS gewährleistet wäre. Wie von der Initiative [Radforschung](https://radforschung.org/log/) festgestellt wurde, gibt es aktuell keine rechtliche Grundlage mit der Kommunen das Einhalten einer solchen Spezifikation fordern können. Jedoch weisen sie darauf hin, dass das freiwillige Angebot von aktuell auf den Markt strömenden E-Scooter Anbietern wahrgenommen werden sollte, die Daten in entsprechendem Format bereitzustellen. Das ist besonders relevant für Berlin, da nach [dieser Analyse](https://radforschung.org/log/roller-in-die-staedte/) damit zu rechnen ist, dass besonders hier von einigen Anbietern demnächst die E-Scooter auf den Straßen zu finden sein werden.
+
+Die Umsetzung der Spezifikation bedeutet für die Stadt erstmal keinen direkten Mehraufwand, da die Bereitstellung der Daten über die Anbieter erfolgen muss. Die Verwendung der bereitgestellten Daten kann über existierende Open Source Projekte wie beispielsweise [Remix](https://www.remix.com/new-mobility) leicht umgesetzt werden. 
+
+Was mit den gewonnen offenen Daten möglich ist, [zeigt beispielsweise die Stadt Austin in Texas, USA](https://medium.com/civiqueso/explore-dockless-data-with-austin-transportation-4a308aa5c18).
+
+Da Fahrrad- und E-Scooter-Anbieter von der kostenfreien Nutzung des öffentlichen Straßenraumes profitieren ist es nur fair, wenn sie ihre Daten wiederum der Stadt zur Verfügung stellen und eine effizientere Planung und Verwaltung des Stadtraums ermöglichen.
+Auch die Anbieter profitieren von solchen Regelungen, beispielsweise wie Nextbike, die in [Kooperation mit der Stadt Berlin Fahrrad-Stationen an geeigneten Standorten anbringen](https://www.berliner-zeitung.de/berlin/verkehr/mietfahrraeder-in-berlin-mehr-als-350-nextbike-stationen-warten-noch-auf-genehmigung-32534102).
