@@ -1,12 +1,12 @@
 ---
 layout: project
-description: ""
+description: "In einem aktuellen Projekt wurden die Datenschnittstellen (APIs) der Bike Sharing Anbieter getestet, um Vorteile für die Stadt Berlin von offenen Bike Sharing Daten und einheitlichen Standards zu ermitteln."
 lang: de
 title: Bike Sharing Anbieter in Berlin
 subtitle: Datenbereitstellung im Test und der Nutzen einheitlicher Standards
 type: publication
 colorMode: bright
-featuredImage: /projects/bike-sharing/images/featured.jpg
+featuredImage: 
 thumbnail: /projects/bike-sharing/images/thumbnail.jpg
 heroImage: /projects/bike-sharing/images/hero.jpg
 socialMediaImage: /icons/social_media.jpg
@@ -14,10 +14,10 @@ visible: false
 featured: false
 authors:
   - alexandra-kapp
-start: 2019-04-08
-end: 2019-04-08
+start: 2019-05-15
+end: 2019-05-15
 status: ongoing
-date: 2019-04-08
+date: 2019-05-15
 
 materialsIncluded:
 
@@ -55,7 +55,7 @@ Einzig für Nextbike und DB Bike gibt es offiziell eine API die bereitgestellt w
 
 Grundsätzlich lässt sich sagen: Jeder Anbieter stellt die Fahrraddaten anders bereit. Das heißt im Umkehrschluss, dass man sich für jeden Anbieter einzeln die API anschauen und abwandeln muss, um sie in einer gesamten Darstellung oder Analyse zu verarbeiten. Allein das bedeutet erstmal ein zeitlicher Mehraufwand.
 
-Jede API birgt dann wieder eigene Probleme und Schwierigkeiten. Hier im Detail:
+Jede API birgt dann wieder eigene Probleme und Schwierigkeiten. Hier im Detail ([Der Code des Projekts findet sich hier](https://github.com/technologiestiftung/bike-sharing)):
 ### Kategorie 1: Der Musterschüler mit GBFS Standard
 
 Nextbike (in Berlin Deezer) setzt den Standard GBFS (General Bike Feed Specification) um. Diese Spezifikation ist bereits gut [dokumentiert](https://github.com/NABSA/gbfs/blob/master/gbfs.md), sehr einfach zu benutzen und zusätzlich Teil der MDS Spezifikation. Ohne zusätzlichen Schlüssel (API Key) können mittels einer Abfrage alle Fahrrad- und Stationsstandorte in Berlin abgefragt werden. Die Abfrage dieser API lief am unkompliziertesten und fehlerfrei.
