@@ -10,7 +10,7 @@ featuredImage:
 thumbnail: /projects/bike-sharing/images/thumbnail.jpg
 heroImage: /projects/bike-sharing/images/hero.jpg
 socialMediaImage: /icons/social_media.jpg
-visible: false
+visible: true
 featured: false
 authors:
   - alexandra-kapp
