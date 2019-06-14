@@ -1,9 +1,9 @@
 ---
 layout: project
-description: "In a recent project, the data interfaces (APIs) of the bike sharing providers were tested to determine benefits for the city of Berlin from open bike sharing data and consistent standards."
+description: "In a recent project, we evaluated the data interfaces (APIs) of bike sharing operators to assess how Berlin could benefit from unified standards for shared mobility data."
 lang: en
-title: Bike Sharing Provider in Berlin
-subtitle: Data provision in the test and the benefits of uniform standards
+title: Assessing open bike sharing data in Berlin
+subtitle: How is data currently being published, and how might the city benefit from the introduction of data standards?
 type: publication
 colorMode: bright
 featuredImage:
