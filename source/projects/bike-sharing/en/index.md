@@ -14,10 +14,10 @@ visible: true
 featured: false
 authors:
   - alexandra-kapp
-start: 2019-05-17
-end: 2019-05-17
+start: 2019-06-17
+end: 2019-06-17
 status: ongoing
-date: 2019-05-17
+date: 2019-06-17
 
 materialsIncluded:
 
