@@ -1,0 +1,207 @@
+---
+layout: post
+description: ""
+lang: en
+title: Core data sets
+subtitle: An overview about the most important datasets of Berlin
+type: publication
+colorMode: bright
+featuredImage: /projects/odis-datasets/images/featured.jpg
+thumbnail: /projects/odis-datasets/images/thumbnail.jpg
+heroImage: /projects/odis-datasets/images/hero.jpg
+socialMediaImage: /assets/images/social_media.jpg
+visible: false
+featured: false
+authors:
+  - fabian-dinklage
+start: 2019-07-03
+end: 2019-07-03
+status: finished
+date: 2019-07-03
+assets:
+  js:
+    - "../js/index.js"
+  css:
+    - "../css/index.css"
+materialsIncluded:
+  - name: images
+    link: "#"
+  - name: video
+    link: "#"
+  - name: press text
+    link: "#"
+  - name: Source Code
+    link: "#"
+redirect_from:
+  - /projects/123456789/
+  - /old-site-path/my-amazing-post/
+
+---
+
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+	<script src="https://kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.7/d3.min.js"></script>
+</head>
+
+<main class="project project--{{ page.type }}"  markdown="1">
+	<section class="mission-statement">
+		<div class="html-content">
+			<h2>Berlins Kerndatensätze</h2>
+			<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+		</div>
+	</section>
+	<section class="html-content">
+
+		<table style="width:100%" id="data-table">
+		</table>
+	</section>
+</main>
+
+<script>
+	const sheet = "https://spreadsheets.google.com/feeds/list/1i6c9bhLcVP4h_5X6hhl4V-fHLIXc3xqgy_o38PlT2j0/od6/public/values?alt=json";
+	const table = d3.select('#data-table');
+	const tableNode = document.getElementById('data-table')
+	let tableHead, tableBody
+	let lang = 'en'
+	
+
+	const dict = {
+		'de': [
+			{'head': 'Datensatz'},
+			{'head': 'Beschreibung'},
+			{'head': 'Kategorie'},
+			{'head': 'Score'},
+			{'head': 'Einordnung'},
+			{'head': 'Link'}
+		],
+		'en': [
+			{'head': 'Dataset'},
+			{'head': 'Description'},
+			{'head': 'Category'},
+			{'head': 'Score'},
+			{'head': 'Order'},
+			{'head': 'Link'}
+		],
+	}
+
+	const colorScale = d3.scaleLinear()
+		.domain([0,15])
+		.range([0,4])
+
+	const colors = ['#d7191c', '#fdae61', '#ffffbf', '#a6d96a', '#1a9641'];
+
+	const setColumns = () => {
+		tableHead = table.append('tr');
+
+		tableHead.selectAll('th')
+			.data(dict[lang])
+			.enter()
+			.append('th')
+			.text(d => { return d.head })
+	}
+
+	const injectData = (dataArray) => {
+
+		tableBody = table.append('tbody');
+
+
+		dataArray.forEach(row => {
+			console.log(row);
+
+			let tableRow = tableBody.append('tr');
+
+			tableRow.append('td')
+				.text(row.gsx$datensatz.$t)
+				.style('font-weight', 'bold')
+
+			tableRow.append('td')
+				.text(row.gsx$beschreibung.$t)
+
+			tableRow.append('td')
+				.text(row.gsx$kategorie.$t)
+
+			let scoreCell = tableRow.append('td')
+				.text(row.gsx$gesamtscoreohnenachfragemin5max15.$t)
+				.style('text-align', 'center')
+
+			scoreCell.append('div')
+				.attr('class', 'color-dot')
+				.style('background', colors[Math.round(colorScale(parseInt(row.gsx$gesamtscoreohnenachfragemin5max15.$t)))])
+
+			tableRow.append('td')
+				.text(row.gsx$einordnung.$t)
+
+
+			if (row.gsx$link.$t.length > 0) {
+				let linkRow = tableRow.append('td')
+
+				linkRow.append('a')
+					.classed('file', true)
+					.attr('href', row.gsx$link.$t)
+					.attr('target', '_blank')
+					
+			}
+
+		})
+	}
+
+
+	axios.get(sheet).then(res => {
+		const data = res.data.feed.entry;
+		setColumns(data[0])
+		injectData(data);	
+		sorttable.makeSortable(tableNode)
+	})
+</script>
+
+<style>
+		table#data-table  {
+			border-collapse: collapse;
+		}
+		
+		tr { 
+			border: solid #e8e8e8;
+			border-width: 1px 0;
+		}
+
+		th {
+			cursor: pointer;
+		}
+
+		td {
+			padding: 15px 20px;
+			position: relative;
+		}
+
+		td:first-of-type {
+			padding: 15px 20px 15px 0;
+		}
+
+		tr:first-of-type {
+			border-width: 0px 0;
+		}
+
+		.color-dot {
+			width: 30px;
+			height: 30px;
+			border-radius: 100px;
+			position: absolute;
+			top: calc(50% - 15px);
+			left: 14px;
+			z-index: -1;
+		}
+
+		a.file {
+			background: url(../images/file.svg);
+			background-size: 20px 25px;
+			display: block;
+			text-indent: -9999px;
+			width: 20px;
+			cursor: pointer;
+			height: 25px;
+			color: #FFFFFF;
+			text-decoration: none;
+			border-bottom: none !important;
+		}
+</style>

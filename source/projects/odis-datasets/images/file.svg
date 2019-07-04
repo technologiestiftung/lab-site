@@ -1,0 +1,12 @@
+
+<svg width="20px" height="25px" viewBox="0 0 20 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="datensatz-hover" transform="translate(-1286.000000, -1098.000000)" fill-rule="nonzero" stroke-width="1.3">
+            <path d="M1285.14854,1101.65217 L1285.14854,1119.01884 L1301.12447,1119.01884 L1307.24854,1112.73774 L1307.24854,1101.65217 L1285.14854,1101.65217 Z" id="Rectangle-Copy-2" stroke="#000000" fill="#FFFFFF" transform="translate(1296.198536, 1110.335504) rotate(-90.000000) translate(-1296.198536, -1110.335504) "></path>
+            <polyline id="Path-9-Copy" stroke="#000000" points="1298.8652 1099.8367 1298.8652 1105.7855 1305.53187 1105.7855"></polyline>
+            <path d="M1296.19854,1107.89453 L1296.19854,1115.74592" id="Line-5-Copy" stroke="#000000"></path>
+            <path d="" id="Path-10" stroke="#979797"></path>
+            <polyline id="Path-11" stroke="#000000" transform="translate(1296.198536, 1112.617858) rotate(-315.000000) translate(-1296.198536, -1112.617858) " points="1293.53187 1115.28452 1298.79854 1115.21786 1298.8652 1109.95119"></polyline>
+        </g>
+    </g>
+</svg>
