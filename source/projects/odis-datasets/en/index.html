@@ -38,31 +38,57 @@ redirect_from:
 
 ---
 
+<!-- Todos: 
+
+- Content einsetzen
+- Content übersetzen
+
+-->
+
 <head>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
 	<script src="https://kryogenix.org/code/browser/sorttable/sorttable.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.7/d3.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"></script>
 </head>
 
 <main class="project project--{{ page.type }}"  markdown="1">
 	<section class="mission-statement">
 		<div class="html-content">
-			<h2>Berlins Kerndatensätze</h2>
-			<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+			<h1 class="section-headline">Berlins Kerndatensätze</h1>
+			<p>This is just a short intro into the topic, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+
+			<h2 class="subHeadline">Another paragraph sub headline</h2>
+
+			<p class="small">This is just a short intro into the topic, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
+			</p>
+
+			<h2 class="subHeadline">Another paragraph sub headline</h2>
+
+			<p class="small">This is just a short intro into the topic, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum 		<a style="margin-bottom: 20px;" href="https://docs.google.com/spreadsheets/d/1i6c9bhLcVP4h_5X6hhl4V-fHLIXc3xqgy_o38PlT2j0/edit#gid=0">Detailed spreadsheet</a>
+			</p>
+
+			<div class="table-legend--wrapper">
+				<span class="title">Data accessibility</span>
+				<div class="table-legend" id="table-legend">
+				</div>
+			</div>
+
 		</div>
 	</section>
 	<section class="html-content">
-
-		<table style="width:100%" id="data-table">
-		</table>
+		<table style="width:100%" id="data-table"></table>
 	</section>
+
+	<div class="tooltip-wrapper"></div>
+
 </main>
 
 <script>
 	const sheet = "https://spreadsheets.google.com/feeds/list/1i6c9bhLcVP4h_5X6hhl4V-fHLIXc3xqgy_o38PlT2j0/od6/public/values?alt=json";
 	const table = d3.select('#data-table');
 	const tableNode = document.getElementById('data-table')
-	let tableHead, tableBody
+	let tableHead, tableBody, bodyWidth;
 	let lang = 'en'
 	
 
@@ -72,7 +98,7 @@ redirect_from:
 			{'head': 'Beschreibung'},
 			{'head': 'Kategorie'},
 			{'head': 'Score'},
-			{'head': 'Einordnung'},
+			{'head': 'Zugang'},
 			{'head': 'Link'}
 		],
 		'en': [
@@ -80,34 +106,126 @@ redirect_from:
 			{'head': 'Description'},
 			{'head': 'Category'},
 			{'head': 'Score'},
-			{'head': 'Order'},
+			{'head': 'Access'},
 			{'head': 'Link'}
 		],
 	}
 
-	const colorScale = d3.scaleLinear()
-		.domain([0,15])
-		.range([0,4])
-
-	const colors = ['#d7191c', '#fdae61', '#ffffbf', '#a6d96a', '#1a9641'];
-
-	const setColumns = () => {
-		tableHead = table.append('tr');
-
-		tableHead.selectAll('th')
-			.data(dict[lang])
-			.enter()
-			.append('th')
-			.text(d => { return d.head })
+	const dictTooltip = {
+		'de': {
+			'Score': {
+				'title': "Bewertung",
+				'lines': ['Gesamtscore (ohne Nachfrage)', '(min: 5, max: 15)']
+			},
+			'Access': {
+				'title': "Zugänglichkeit",
+				'lines': ["0: nicht vorhanden oder unbekannt", "1: vorhanden, aber nicht öffentlich zugänglich", "2: öffentlich zugänglich, aber nicht maschinenlesbar", "3: maschinenlesbar, aber mit Einschränkungen", "4: Open Data konform"]
+			}
+		},
+		'en': {
+			'Score': {
+				'title': "Score",
+				'lines': ['Gesamtscore (ohne Nachfrage)', '(min: 5, max: 15)']
+			},
+			'Access': {
+				'title': "Access",
+				'lines': ["0: nicht vorhanden oder unbekannt", "1: vorhanden, aber nicht öffentlich zugänglich", "2: öffentlich zugänglich, aber nicht maschinenlesbar", "3: maschinenlesbar, aber mit Einschränkungen", "4: Open Data konform"]
+			}
+		}
 	}
 
-	const injectData = (dataArray) => {
+	const colors = ['#ED745E', '#ED9A5E', '#EDE15E', '#C8D66A', '#87C76C'];
+
+	function setColumns() {
+		tableHead = table.append('tr');
+
+		let dictMobile = [];
+
+		dictMobile.push(dict[lang][0])
+		dictMobile.push(dict[lang][3])
+		dictMobile.push(dict[lang][4])
+		dictMobile.push(dict[lang][5])
+
+		let dictCurrent = bodyWidth > 1000 ? dict[lang] : dictMobile;
+
+		tableHead.selectAll('th')
+			.data(dictCurrent)
+			.enter()
+			.append('th')
+			.attr('id', function(d) { return d.head })
+			.append('span')
+			.classed('th-title', true)
+			.text(function(d) { return d.head })
+	}
+
+	function createTooltip() {
+		
+	}
+
+	function toggleTooltip(d,i,n) {
+		let tooltip = d3.select('.tooltip-wrapper')
+		// let label = d3.select(`#${id}`);
+
+
+		tooltip.classed('active', true);
+
+		d3.selectAll('.tooltipLine').remove()
+		d3.selectAll('.tooltipTitle').remove()
+
+		tooltip
+			.attr('style', `top: ${d3.event.pageY - 220}px; left: ${d3.event.pageX - 190}px`)
+
+		tooltip.append('span')
+			.classed('tooltipTitle', true)
+			.text(dictTooltip[lang][d.head].title)
+
+		dictTooltip[lang][d.head].lines.forEach(function(line) {
+			tooltip.append('span')
+				.classed('tooltipLine', true)
+				.text(line)
+
+			
+		})
+		
+	}
+
+	function handleMouseOut(d,i,n) {
+		let tooltip = d3.select('.tooltip-wrapper')
+		tooltip.classed('active', false);
+	}
+
+	function addTooltipLabel(id) {
+		let tooltipLabelWrapper = d3.select(`#${id}`).append('div')
+			.classed('tooltip-btn', true)
+			.on('mouseover', toggleTooltip)
+			.on('mouseout', handleMouseOut)
+
+		tooltipLabelWrapper.append('span')
+			.text('i')
+	}
+
+	function tableLegend() {
+		const tableWrapper = d3.select('#table-legend')
+
+		tableWrapper.append('span')
+			.text('Very low')
+
+		colors.forEach(function (color) {
+			tableWrapper.append('div')
+				.classed('legend-dot', true)
+				.style('background-color', color)
+		})
+
+		tableWrapper.append('span')
+			.text('Very high')
+	}
+
+	function injectData(dataArray) {
 
 		tableBody = table.append('tbody');
 
 
-		dataArray.forEach(row => {
-			console.log(row);
+		dataArray.forEach(function (row) {
 
 			let tableRow = tableBody.append('tr');
 
@@ -115,93 +233,243 @@ redirect_from:
 				.text(row.gsx$datensatz.$t)
 				.style('font-weight', 'bold')
 
-			tableRow.append('td')
-				.text(row.gsx$beschreibung.$t)
+			if (bodyWidth > 1000) {
+				tableRow.append('td')
+					.text(row.gsx$beschreibung.$t)
+	
+				tableRow.append('td')
+					.text(row.gsx$kategorie.$t)
+			}
+
 
 			tableRow.append('td')
-				.text(row.gsx$kategorie.$t)
-
-			let scoreCell = tableRow.append('td')
-				.text(row.gsx$gesamtscoreohnenachfragemin5max15.$t)
 				.style('text-align', 'center')
-
-			scoreCell.append('div')
+				.text(row.gsx$gesamtscoreohnenachfragemin5max15.$t)
+				
+			let scoreCell = tableRow.append('td')
+				
+			let colorDotDiv = scoreCell.append('div')
 				.attr('class', 'color-dot')
-				.style('background', colors[Math.round(colorScale(parseInt(row.gsx$gesamtscoreohnenachfragemin5max15.$t)))])
+				.style('background', colors[parseInt(row.gsx$einordnung.$t)])
 
-			tableRow.append('td')
+			colorDotDiv.append('span')
 				.text(row.gsx$einordnung.$t)
 
+			let linkRow = tableRow.append('td')
 
 			if (row.gsx$link.$t.length > 0) {
-				let linkRow = tableRow.append('td')
 
 				linkRow.append('a')
 					.classed('file', true)
 					.attr('href', row.gsx$link.$t)
 					.attr('target', '_blank')
 					
+			} else {
+				linkRow.append('a')
 			}
 
 		})
 	}
 
 
-	axios.get(sheet).then(res => {
+	axios.get(sheet).then(function(res) {
 		const data = res.data.feed.entry;
+
+		bodyWidth = d3.select('body').node().getBoundingClientRect().width;
+
 		setColumns(data[0])
 		injectData(data);	
+		tableLegend();
+
+		addTooltipLabel('Score');
+		addTooltipLabel('Access');
+
 		sorttable.makeSortable(tableNode)
+	})
+	.catch(function(e) {
+		console.log(e);
 	})
 </script>
 
 <style>
-		table#data-table  {
-			border-collapse: collapse;
-		}
-		
-		tr { 
-			border: solid #e8e8e8;
-			border-width: 1px 0;
+	table#data-table  {
+		border-collapse: collapse;
+		white-space: normal!important;
+	}
+	
+	tr { 
+		border: solid #e8e8e8;
+		border-width: 1px 0;
+		line-height: 140%;
+	}
+
+	th {
+		cursor: pointer;
+	}
+
+	th#Score {
+		width: 95px;
+	}
+
+	th#Access {
+		width: 95px;
+	}
+
+	td {
+		padding: 12px 0px;
+		position: relative;
+		word-wrap: break-word;
+
+	}
+
+	td:first-of-type {
+		padding: 15px 20px 15px 0;
+		max-width: 200px;
+	}
+
+	tr:first-of-type {
+		border-width: 0px 0;
+	}
+
+	.color-dot {
+		width: 30px;
+		height: 30px;
+		border-radius: 100px;
+		position: absolute;
+		top: calc(50% - 15px);
+		left: 10px;
+		z-index: -1;
+		display: flex;
+    	justify-content: center;
+	}
+
+	.color-dot span {
+		transform: translateY(3px);
+	}
+
+	a.file {
+		background: url(../images/file.svg);
+		background-size: 20px 25px;
+		display: block;
+		text-indent: -9999px;
+		width: 20px;
+		cursor: pointer;
+		height: 25px;
+		color: #FFFFFF;
+		text-decoration: none;
+		border-bottom: none !important;
+	}
+
+	.table-legend--wrapper {
+		margin: 0 12vw 30px 12vw;
+	}
+
+	.table-legend--wrapper > span {
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+	.table-legend {
+		display: flex;
+		flex-direction: row;
+		margin-top: 10px;
+	}
+
+	.legend-dot {
+		margin-right: 10px;
+		width: 20px;
+		height: 20px;
+		border-radius: 100px;
+	}
+
+	.legend-dot:first-of-type {
+		margin-left: 10px;
+	}
+
+	section.mission-statement h2.subHeadline {
+		font-size: 20px !important;
+		margin-bottom: 0 !important;
+		line-height: 1.4em;
+		font-weight: bold;
+	}
+
+	section.mission-statement p.small {
+		font-size: 16px;
+		line-height: 1.6em;
+	}
+
+
+	@media only screen and (max-width: 768px) {
+		.table-legend--wrapper {
+			margin: 0 0 30px 0;
 		}
 
-		th {
-			cursor: pointer;
+		section.mission-statement h2.subHeadline {
+			font-size: 20px !important;
+			margin-bottom: 10px !important;
+			font-weight: bold;
+			line-height: 1.4em;
 		}
+	}
 
-		td {
-			padding: 15px 20px;
-			position: relative;
-		}
+	.tooltip-btn {
+		width: 22px;
+		height: 22px;
+		background: white;
+		color: black;
+		position: relative;
+		border-radius: 3px;
+		border: 1px solid black;
+		transition: all .125s ease;
+		float: left;
+		margin-left: 7px;
+	}
 
-		td:first-of-type {
-			padding: 15px 20px 15px 0;
-		}
+	.tooltip-btn span {
+		position: absolute;
+		font-weight: normal;
+		left: 8px;
+		top: -1px;
+	}
 
-		tr:first-of-type {
-			border-width: 0px 0;
-		}
+	.tooltip-btn:hover {
+		background: black;
+		color: white;
+		transition: all .125s ease;
+	}
 
-		.color-dot {
-			width: 30px;
-			height: 30px;
-			border-radius: 100px;
-			position: absolute;
-			top: calc(50% - 15px);
-			left: 14px;
-			z-index: -1;
-		}
+	.tooltip-wrapper {
+		width: 380px;
+		height: 200px;
+		position: absolute;
+		display: none;
+		flex-direction: column;
+		padding: 12px 14px 12px 14px !important;
+		border: 1px solid #e8e8e8 !important;
+		background: white;
+		z-index: 100;
+		opacity: 0;
+		transition: all .125s ease;
+	}
 
-		a.file {
-			background: url(../images/file.svg);
-			background-size: 20px 25px;
-			display: block;
-			text-indent: -9999px;
-			width: 20px;
-			cursor: pointer;
-			height: 25px;
-			color: #FFFFFF;
-			text-decoration: none;
-			border-bottom: none !important;
-		}
+	.active {
+		display: flex;
+		opacity: 1;
+		transform: translateY(-5px);
+		transition: all .125s ease;
+	}
+
+	span.tooltipLine {
+		margin-bottom: 5px;
+	}
+
+	.th-title {
+		float: left;
+	}
+
+	.tooltipTitle {
+		font-weight: bold;
+		margin-bottom: 10px;
+	}
+
 </style>
