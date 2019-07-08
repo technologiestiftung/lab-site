@@ -175,8 +175,6 @@ redirect_from:
 			tooltip.append('span')
 				.classed('tooltipLine', true)
 				.text(line)
-
-			
 		})
 
 		let tooltipHeight = tooltip.node().clientHeight
@@ -279,8 +277,10 @@ redirect_from:
 		injectData(data);	
 		tableLegend();
 
-		addTooltipLabel('Score');
-		addTooltipLabel('Access');
+		if (bodyWidth > 499) {
+			addTooltipLabel('Score');
+			addTooltipLabel('Access');
+		}
 
 		sorttable.makeSortable(tableNode)
 	})
