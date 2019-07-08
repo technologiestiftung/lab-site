@@ -323,6 +323,7 @@ redirect_from:
 	td:first-of-type {
 		padding: 15px 20px 15px 0;
 		max-width: 200px;
+		min-width: 150px;
 	}
 
 	tr:first-of-type {
@@ -468,6 +469,46 @@ redirect_from:
 	.tooltipTitle {
 		font-weight: bold;
 		margin-bottom: 10px;
+	}
+
+	@media screen and (max-width: 330px) {
+		table {
+			font-size: 12px !important;
+		}
+		td:first-of-type {
+			max-width: 150px;
+		}
+
+		.color-dot {
+			top: calc(50% - 11px);
+		}
+
+		.color-dot span {
+			transform: translateY(3px);
+		}
+
+		.color-dot {
+			width: 20px;
+			height: 20px;
+		}
+
+
+		a.file {
+			background: url(../images/file.svg);
+			background-size: 15px 25px;
+			display: block;
+			text-indent: -9999px;
+			width: 15px;
+			cursor: pointer;
+			height: 25px;
+			color: #FFFFFF;
+			text-decoration: none;
+			border-bottom: none !important;
+		}
+
+		.legend-dot {
+			height: 17px;
+		}
 	}
 
 </style>
