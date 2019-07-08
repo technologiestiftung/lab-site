@@ -204,6 +204,7 @@ redirect_from:
 		const tableWrapper = d3.select('#table-legend')
 
 		tableWrapper.append('span')
+			.classed('legend-label', true)
 			.text('Very low')
 
 		colors.forEach(function (color) {
@@ -213,6 +214,7 @@ redirect_from:
 		})
 
 		tableWrapper.append('span')
+			.classed('legend-label', true)
 			.text('Very high')
 	}
 
@@ -471,7 +473,23 @@ redirect_from:
 		margin-bottom: 10px;
 	}
 
-	@media screen and (max-width: 330px) {
+	@media screen and (max-width: 1024px) {
+		.table-legend--wrapper {
+			margin: 0 5vw 30px 5vw;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		.table-legend--wrapper {
+			margin: 0 0 30px 0;
+		}
+	}
+
+	@media screen and (max-width: 400px) {
+		.table-legend--wrapper {
+			margin: 0 5vw 30px 0;
+		}
+
 		table {
 			font-size: 12px !important;
 		}
@@ -492,6 +510,16 @@ redirect_from:
 			height: 20px;
 		}
 
+		.legend-dot {
+			width: 18px;
+			height: 18px;
+		}
+
+		.legend-label {
+			font-size: 12px;
+			padding-top: 2px;
+		}
+
 
 		a.file {
 			background: url(../images/file.svg);
@@ -507,7 +535,7 @@ redirect_from:
 		}
 
 		.legend-dot {
-			height: 17px;
+			height: 18px;
 		}
 	}
 
