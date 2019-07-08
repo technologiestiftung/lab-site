@@ -158,22 +158,14 @@ redirect_from:
 			.text(function(d) { return d.head })
 	}
 
-	function createTooltip() {
-		
-	}
-
 	function toggleTooltip(d,i,n) {
 		let tooltip = d3.select('.tooltip-wrapper')
 		// let label = d3.select(`#${id}`);
-
 
 		tooltip.classed('active', true);
 
 		d3.selectAll('.tooltipLine').remove()
 		d3.selectAll('.tooltipTitle').remove()
-
-		tooltip
-			.attr('style', `top: ${d3.event.pageY - 220}px; left: ${d3.event.pageX - 190}px`)
 
 		tooltip.append('span')
 			.classed('tooltipTitle', true)
@@ -186,6 +178,12 @@ redirect_from:
 
 			
 		})
+
+		let tooltipHeight = tooltip.node().clientHeight
+		let tooltipWidth = tooltip.node().clientWidth
+
+		tooltip
+			.attr('style', `top: ${d3.event.pageY - tooltipHeight - 30}px; left: ${d3.event.pageX - (tooltipWidth / 2)}px`)
 		
 	}
 
@@ -439,8 +437,8 @@ redirect_from:
 	}
 
 	.tooltip-wrapper {
-		width: 380px;
-		height: 200px;
+		width: 320px;
+		height: auto;
 		position: absolute;
 		display: none;
 		flex-direction: column;
