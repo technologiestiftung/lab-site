@@ -70,7 +70,7 @@ redirect_from:
 			<p class="small">Rating individual datasets based on these five criteria allowed us to create a total score for each dataset that captured its potential; this is displayed in the table under the <b>“Score”</b> column. We also assessed the availability of individual datasets as machine-readable, open data; the results of this assessment are displayed in the <b>“Availability”</b> column. The scale is structured as follows:
 			</p>
 
-			<p class="small" style="margin-left: 200px">0: The data either does not exist or its status is unknown				<br>
+			<p class="small">0: The data either does not exist or its status is unknown				<br>
 				1: The data exists, but it’s not publicly accessible in any form <br>
 				2: The data is publicly accessible but not machine-readable 				<br>
 				3: The data is machine readable but has limitations (such as insufficient quality or granularity)<br>
@@ -104,7 +104,7 @@ redirect_from:
 </main>
 
 <script>
-	const sheet = "https://spreadsheets.google.com/feeds/list/1i6c9bhLcVP4h_5X6hhl4V-fHLIXc3xqgy_o38PlT2j0/od6/public/values?alt=json";
+	const sheet = "https://spreadsheets.google.com/feeds/list/1a4TvQ7jSGCoWnSPMKUoLo5LepSXLXFY-6t7PiKLQaSI/od6/public/values?alt=json";
 	const table = d3.select('#data-table');
 	const tableNode = document.getElementById('data-table')
 	let tableHead, tableBody, bodyWidth;
@@ -136,7 +136,7 @@ redirect_from:
 				'title': "Bewertung",
 				'lines': ['Gesamtscore (ohne Nachfrage)', '(min: 5, max: 15)']
 			},
-			'Access': {
+			'Availability': {
 				'title': "Zugänglichkeit",
 				'lines': ["0: nicht vorhanden oder unbekannt", "1: vorhanden, aber nicht öffentlich zugänglich", "2: öffentlich zugänglich, aber nicht maschinenlesbar", "3: maschinenlesbar, aber mit Einschränkungen", "4: Open Data konform"]
 			}
@@ -146,7 +146,7 @@ redirect_from:
 				'title': "Score",
 				'lines': ['Gesamtscore (ohne Nachfrage)', '(min: 5, max: 15)']
 			},
-			'Access': {
+			'Availability': {
 				'title': "Access",
 				'lines': ["0: nicht vorhanden oder unbekannt", "1: vorhanden, aber nicht öffentlich zugänglich", "2: öffentlich zugänglich, aber nicht maschinenlesbar", "3: maschinenlesbar, aber mit Einschränkungen", "4: Open Data konform"]
 			}
@@ -177,7 +177,7 @@ redirect_from:
 			.text(function(d) { return d.head })
 	}
 
-	function toggleTooltip(d,i,n) {
+	function toggleTooltip(id = null, row = null) {
 		let tooltip = d3.select('.tooltip-wrapper')
 		// let label = d3.select(`#${id}`);
 
@@ -185,23 +185,57 @@ redirect_from:
 
 		d3.selectAll('.tooltipLine').remove()
 		d3.selectAll('.tooltipTitle').remove()
+		d3.selectAll('.tooltipSpan').remove()
 
-		tooltip.append('span')
-			.classed('tooltipTitle', true)
-			.text(dictTooltip[lang][d.head].title)
+		if (id != 0 && row != 0) {
+			// console.log(id, row);
 
-		dictTooltip[lang][d.head].lines.forEach(function(line) {
 			tooltip.append('span')
 				.classed('tooltipLine', true)
-				.text(line)
-		})
+				.text(`Value for businesses: ${row['gsx$valueforbusinesses1-3'].$t}`)
+
+
+			tooltip.append('span')
+				.classed('tooltipLine', true)
+				.text(`Value fir civil society: ${row['gsx$valueforcivilsociety1-3'].$t}`)
+
+
+			tooltip.append('span')
+				.classed('tooltipLine', true)
+				.text(`Government efficiancy: ${row['gsx$possiblegovernmentefficiencygains1-3'].$t}`)
+
+
+			tooltip.append('span')
+				.classed('tooltipLine', true)
+				.text(`Relevance for transparency: ${row['gsx$relevancefortransparency1-3'].$t}`)
+
+
+			tooltip.append('span')
+				.classed('tooltipLine', true)
+				.text(`Value for research: ${row['gsx$valueforresearch1-3'].$t}`)
+
+
+		} else {
+			console.log(id, row);
+			tooltip.append('span')
+				.classed('tooltipTitle', true)
+				.text(dictTooltip[lang][id.head].title)
+	
+			dictTooltip[lang][id.head].lines.forEach(function(line) {
+				tooltip.append('span')
+					.classed('tooltipLine', true)
+					.text(line)
+			})
+	
+		}
 
 		let tooltipHeight = tooltip.node().clientHeight
 		let tooltipWidth = tooltip.node().clientWidth
-
+	
 		tooltip
 			.attr('style', `top: ${d3.event.pageY - tooltipHeight - 30}px; left: ${d3.event.pageX - (tooltipWidth / 2)}px`)
 		
+
 	}
 
 	function handleMouseOut(d,i,n) {
@@ -241,36 +275,39 @@ redirect_from:
 
 		tableBody = table.append('tbody');
 
-
-		dataArray.forEach(function (row) {
+		dataArray.forEach(function (row, index) {
 
 			let tableRow = tableBody.append('tr');
 
 			tableRow.append('td')
-				.text(row.gsx$datensatz.$t)
+				.text(row.gsx$dataset.$t)
 				.style('font-weight', 'bold')
 
 			if (bodyWidth > 1000) {
 				tableRow.append('td')
-					.text(row.gsx$beschreibung.$t)
+					.text(row.gsx$description.$t)
 	
 				tableRow.append('td')
-					.text(row.gsx$kategorie.$t)
+					.text(row.gsx$category.$t)
 			}
 
 
 			tableRow.append('td')
 				.style('text-align', 'center')
-				.text(row.gsx$gesamtscoreohnenachfragemin5max15.$t)
+				.attr('id', `id-${index}`)
+				.classed('score-td', true)
+				.text(row.gsx$totalscore.$t)
+				.on('mouseover', () => { return toggleTooltip(`id-${index}`, row) })
+				.on('mouseout', handleMouseOut)
 				
 			let scoreCell = tableRow.append('td')
 				
 			let colorDotDiv = scoreCell.append('div')
 				.attr('class', 'color-dot')
-				.style('background', colors[parseInt(row.gsx$einordnung.$t)])
+				.style('background', colors[parseInt(row.gsx$availability.$t)])
 
 			colorDotDiv.append('span')
-				.text(row.gsx$einordnung.$t)
+				.text(row.gsx$availability.$t)
 
 			let linkRow = tableRow.append('td')
 
@@ -294,13 +331,15 @@ redirect_from:
 
 		bodyWidth = d3.select('body').node().getBoundingClientRect().width;
 
+		console.log(data[0])
+
 		setColumns(data[0])
 		injectData(data);	
 		tableLegend();
 
 		if (bodyWidth > 499) {
 			addTooltipLabel('Score');
-			addTooltipLabel('Access');
+			addTooltipLabel('Availability');
 		}
 
 		sorttable.makeSortable(tableNode)
@@ -328,6 +367,10 @@ redirect_from:
 
 	th#Score {
 		width: 95px;
+	}
+
+	td.score-td {
+		cursor: pointer;
 	}
 
 	th#Access {
@@ -430,6 +473,18 @@ redirect_from:
 			font-weight: bold;
 			line-height: 1.4em;
 		}
+	}
+
+	th#category {
+		min-width: 250px;
+	}
+
+	th#Availability {
+		min-width: 150px;
+	}
+
+	th#Link {
+		min-width: 50px;
 	}
 
 	.tooltip-btn {
