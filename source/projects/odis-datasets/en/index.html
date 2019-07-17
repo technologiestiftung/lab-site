@@ -138,17 +138,17 @@ redirect_from:
 			},
 			'Availability': {
 				'title': "Zugänglichkeit",
-				'lines': ["0: nicht vorhanden oder unbekannt", "1: vorhanden, aber nicht öffentlich zugänglich", "2: öffentlich zugänglich, aber nicht maschinenlesbar", "3: maschinenlesbar, aber mit Einschränkungen", "4: Open Data konform"]
+				'lines': ["0: nicht vorhanden/unbekannt", "1: vorhanden, aber nicht öffentlich", "2: öffentlich aber nicht maschinenlesbar", "3: maschinenlesbar mit Einschränkungen", "4: Open Data konform"]
 			}
 		},
 		'en': {
 			'Score': {
 				'title': "Score",
-				'lines': ['Gesamtscore (ohne Nachfrage)', '(min: 5, max: 15)']
+				'lines': ['Total score', '(min: 5, max: 15)']
 			},
 			'Availability': {
 				'title': "Access",
-				'lines': ["0: nicht vorhanden oder unbekannt", "1: vorhanden, aber nicht öffentlich zugänglich", "2: öffentlich zugänglich, aber nicht maschinenlesbar", "3: maschinenlesbar, aber mit Einschränkungen", "4: Open Data konform"]
+				'lines': ["0: Non-existent/Unknown", "1: Closed data", "2: Non-machine-readable data", "3: Machine-readable data with limitations", "4: Fully Open Data"]
 			}
 		}
 	}
@@ -197,23 +197,20 @@ redirect_from:
 
 			tooltip.append('span')
 				.classed('tooltipLine', true)
-				.text(`Value fir civil society: ${row['gsx$valueforcivilsociety1-3'].$t}`)
-
-
-			tooltip.append('span')
-				.classed('tooltipLine', true)
-				.text(`Government efficiancy: ${row['gsx$possiblegovernmentefficiencygains1-3'].$t}`)
-
-
-			tooltip.append('span')
-				.classed('tooltipLine', true)
-				.text(`Relevance for transparency: ${row['gsx$relevancefortransparency1-3'].$t}`)
-
+				.text(`Value for civil society: ${row['gsx$valueforcivilsociety1-3'].$t}`)
 
 			tooltip.append('span')
 				.classed('tooltipLine', true)
 				.text(`Value for research: ${row['gsx$valueforresearch1-3'].$t}`)
 
+			tooltip.append('span')
+				.classed('tooltipLine', true)
+				.text(`Government efficiency: ${row['gsx$possiblegovernmentefficiencygains1-3'].$t}`)
+
+
+			tooltip.append('span')
+				.classed('tooltipLine', true)
+				.text(`Transparency relevance: ${row['gsx$relevancefortransparency1-3'].$t}`)
 
 		} else {
 			console.log(id, row);
