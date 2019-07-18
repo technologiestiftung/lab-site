@@ -184,25 +184,25 @@ redirect_from:
 
 			tooltip.append('span')
 				.classed('tooltipLine', true)
-				.text(`Value for businesses: ${row['gsx$weiterverwendungspotenzialwirtschaftlich1-3'].$t}`)
+				.text(`Mehrwert für Wirtschaft: ${row['gsx$weiterverwendungspotenzialwirtschaftlich1-3'].$t}`)
 
 
 			tooltip.append('span')
 				.classed('tooltipLine', true)
-				.text(`Value for civil society: ${row['gsx$weiterverwendungspotenzialzivilgesellschaft1-3'].$t}`)
+				.text(`Mehrwert für Zivilgesellschaft: ${row['gsx$weiterverwendungspotenzialzivilgesellschaft1-3'].$t}`)
 
 			tooltip.append('span')
 				.classed('tooltipLine', true)
-				.text(`Value for research: ${row['gsx$weiterverwendungspotenzialwissenschaftlich1-3'].$t}`)
+				.text(`Mehrwert für Wissenschaft: ${row['gsx$weiterverwendungspotenzialwissenschaftlich1-3'].$t}`)
 
 			tooltip.append('span')
 				.classed('tooltipLine', true)
-				.text(`Government efficiency: ${row['gsx$effizienzundkostenersparnisverwaltung1-3'].$t}`)
+				.text(`Effizienzgewinn: ${row['gsx$effizienzundkostenersparnisverwaltung1-3'].$t}`)
 
 
 			tooltip.append('span')
 				.classed('tooltipLine', true)
-				.text(`Transparency relevance: ${row['gsx$transparenzpotenzial1-3'].$t}`)
+				.text(`Transparenzpotenzial: ${row['gsx$transparenzpotenzial1-3'].$t}`)
 
 		} else {
 			console.log(id, row);
@@ -247,7 +247,7 @@ redirect_from:
 
 		tableWrapper.append('span')
 			.classed('legend-label', true)
-			.text('Very low')
+			.text('Sehr niedrig')
 
 		colors.forEach(function (color) {
 			tableWrapper.append('div')
@@ -257,7 +257,7 @@ redirect_from:
 
 		tableWrapper.append('span')
 			.classed('legend-label', true)
-			.text('Very high')
+			.text('Sehr hoch')
 	}
 
 	function injectData(dataArray) {
