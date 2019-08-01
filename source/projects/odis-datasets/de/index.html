@@ -33,7 +33,576 @@ materialsIncluded:
   - name: Source Code
     link: "#"
 redirect_from:
-  - /projects/123456789/
-  - /old-site-path/my-amazing-post/
 
 ---
+
+
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+	<script src="https://kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.7/d3.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"></script>
+</head>
+
+<main class="project project--{{ page.type }}"  markdown="1">
+	<section class="mission-statement">
+		<div class="html-content">
+			<h1 class="section-headline">Berlins Kerndatensätze</h1>
+			<p>Die Berliner Verwaltung beherbergt einen riesigen Schatz an Datensätzen. Im Zuge der Umsetzung des Berliner E-Government-Gesetzes muss die Verwaltung diese Daten offen und maschinenlesbar zur Verfügung stellen. Aber wo soll mit dieser Aufgabe konkret begonnen werden?
+			</p>
+
+			<p>Um die Berliner Open Data-Strategie in die Praxis zu überführen und die Mehrwerte offener Daten zu realisieren, ist es notwendig Prioritäten zu setzen. Aus diesem Grund haben wir eine Liste von “Kerndatensätzen” für Berlin erstellt. Damit sind Daten gemeint, die für die Stadt und Gesellschaft einen besonders großen Mehrwert bieten. 
+			</p>
+
+			<h2 class="subHeadline">Erläuterungen zur Tabelle der Kerndatensätze</h2>
+
+			<p class="small">Die Tabelle unten beinhaltet 100 Datensätze, die wir im Rahmen unseres Projekts als besonders wertvoll für die Stadt identifiziert haben. Kriterien für die Relevanz eines Datensatzes waren 1) das Verwendungspotenzial für Wissenschaft, Wirtschaft und die Zivilgesellschaft, 2) der mögliche Effizienzgewinn für die Verwaltung, und 3) der Beitrag der Daten zur Transparenz der Verwaltung. Eine ausführliche Erklärung der Zusammenstellung der Kerndatensätze ist in der begleitenden Veröffentlichung zu lesen. 
+			</p>
+
+			<p class="small">Aus der Berechnung dieser Kriterien ergibt sich die Bewertung in der Spalte <b>“Score”</b>. Wir haben auch die Verfügbarkeit der Daten als maschinenlesbare, offene Daten bewertet. Diese Einstufung ist in der Spalte <b>"Zugang"</b> zu sehen. Die Stufen sind wie folgt definiert:
+			</p>
+
+			<p class="small">0: Daten sind nicht vorhanden oder der Status ist unbekannt<br>
+				1: Daten sind vorhanden, aber nicht öffentlich zugänglich <br>
+				2: Daten sind öffentlich zugänglich, aber nicht maschinenlesbar<br>
+				3: Daten sind maschinenlesbar, aber mit Einschränkungen (inklusive unzureichender Qualität oder Granularität)<br>
+				4: Daten sind Open Data-konform veröffentlicht<br>				
+			</p>
+
+			<p class="small">Wo eine Quelle bekannt ist, haben wir einen entsprechenden Link zu den Daten (oder zu Informationen über die Daten) in der Spalte <b>“Link”</b> hinzugefügt. 
+			</p>
+
+			<p class="small">Diese 100 Datensätze haben wir als relevante Daten für ein breites Publikum identifiziert: es gibt aber natürlich wesentlich mehr Datensätze, die für spezifische Gruppen wichtig sind und ebenfalls veröffentlicht werden sollten. Wir freuen uns auf Feedback auf diese Liste und eine lebendige Diskussion über die Rolle, die Open Data in Berlin spielen kann. 
+			</p>
+
+			<p class="small">Hat sich der Status eines Datensatzes aktualisiert oder funktioniert ein Link nicht mehr? Fehlt ein wichtiger Datensatz in unserer Liste? Anmerkungen können gerne an <a href="mailto: dykes@technologiestiftung-berlin.de">dykes@technologiestiftung-berlin.de</a> geschickt werden. 
+			</p>
+			
+
+			<div class="table-legend--wrapper">
+				<span class="title">Verfügbarkeit der Daten</span>
+				<div class="table-legend" id="table-legend">
+				</div>
+			</div>
+
+		</div>
+	</section>
+	<section class="html-content">
+		<table style="width:100%" id="data-table"></table>
+	</section>
+
+	<div class="tooltip-wrapper"></div>
+
+</main>
+
+<script>
+	const sheet = "https://spreadsheets.google.com/feeds/list/1i6c9bhLcVP4h_5X6hhl4V-fHLIXc3xqgy_o38PlT2j0/od6/public/values?alt=json";
+	const table = d3.select('#data-table');
+	const tableNode = document.getElementById('data-table')
+	let tableHead, tableBody, bodyWidth;
+	let lang = 'de'
+	
+
+	const dict = {
+		'de': [
+			{'head': 'Datensatz'},
+			{'head': 'Beschreibung'},
+			{'head': 'Kategorie'},
+			{'head': 'Score'},
+			{'head': 'Zugang'},
+			{'head': 'Link'}
+		],
+		'en': [
+			{'head': 'Dataset'},
+			{'head': 'Description'},
+			{'head': 'Category'},
+			{'head': 'Score'},
+			{'head': 'Availability'},
+			{'head': 'Link'}
+		],
+	}
+
+	const dictTooltip = {
+		'de': {
+			'Score': {
+				'title': "Bewertung",
+				'lines': ['Min: 5, Max: 15']
+			},
+			'Zugang': {
+				'title': "Zugang",
+				'lines': ["0: nicht vorhanden/unbekannt", "1: vorhanden, aber nicht öffentlich", "2: öffentlich aber nicht maschinenlesbar", "3: maschinenlesbar mit Einschränkungen", "4: Open Data konform"]
+			}
+		},
+		'en': {
+			'Score': {
+				'title': "Score",
+				'lines': ['Min: 5, Max: 15']
+			},
+			'Zugang': {
+				'title': "Access",
+				'lines': ["0: Non-existent/Unknown", "1: Closed data", "2: Non-machine-readable data", "3: Machine-readable data with limitations", "4: Fully Open Data"]
+			}
+		}
+	}
+
+	const colors = ['#ED745E', '#ED9A5E', '#EDE15E', '#C8D66A', '#87C76C'];
+
+	function setColumns() {
+		tableHead = table.append('tr');
+
+		let dictMobile = [];
+
+		dictMobile.push(dict[lang][0])
+		dictMobile.push(dict[lang][3])
+		dictMobile.push(dict[lang][4])
+		dictMobile.push(dict[lang][5])
+
+		let dictCurrent = bodyWidth > 1000 ? dict[lang] : dictMobile;
+
+		tableHead.selectAll('th')
+			.data(dictCurrent)
+			.enter()
+			.append('th')
+			.attr('id', function(d) { return d.head })
+			.append('span')
+			.classed('th-title', true)
+			.text(function(d) { return d.head })
+	}
+
+	function toggleTooltip(id = null, row = null) {
+		let tooltip = d3.select('.tooltip-wrapper')
+		// let label = d3.select(`#${id}`);
+
+		tooltip.classed('active', true);
+
+		d3.selectAll('.tooltipLine').remove()
+		d3.selectAll('.tooltipTitle').remove()
+		d3.selectAll('.tooltipSpan').remove()
+
+		if (id != 0 && row != 0) {
+			// console.log(id, row);
+
+			tooltip.append('span')
+				.classed('tooltipLine', true)
+				.text(`Mehrwert für Wirtschaft: ${row['gsx$weiterverwendungspotenzialwirtschaftlich1-3'].$t}`)
+
+
+			tooltip.append('span')
+				.classed('tooltipLine', true)
+				.text(`Mehrwert für Zivilgesellschaft: ${row['gsx$weiterverwendungspotenzialzivilgesellschaft1-3'].$t}`)
+
+			tooltip.append('span')
+				.classed('tooltipLine', true)
+				.text(`Mehrwert für Wissenschaft: ${row['gsx$weiterverwendungspotenzialwissenschaftlich1-3'].$t}`)
+
+			tooltip.append('span')
+				.classed('tooltipLine', true)
+				.text(`Effizienzgewinn: ${row['gsx$effizienzundkostenersparnisverwaltung1-3'].$t}`)
+
+
+			tooltip.append('span')
+				.classed('tooltipLine', true)
+				.text(`Transparenzpotenzial: ${row['gsx$transparenzpotenzial1-3'].$t}`)
+
+		} else {
+			console.log(id, row);
+			tooltip.append('span')
+				.classed('tooltipTitle', true)
+				.text(dictTooltip[lang][id.head].title)
+	
+			dictTooltip[lang][id.head].lines.forEach(function(line) {
+				tooltip.append('span')
+					.classed('tooltipLine', true)
+					.text(line)
+			})
+	
+		}
+
+		let tooltipHeight = tooltip.node().clientHeight
+		let tooltipWidth = tooltip.node().clientWidth
+	
+		tooltip
+			.attr('style', `top: ${d3.event.pageY - tooltipHeight - 30}px; left: ${d3.event.pageX - (tooltipWidth / 2)}px`)
+		
+
+	}
+
+	function handleMouseOut(d,i,n) {
+		let tooltip = d3.select('.tooltip-wrapper')
+		tooltip.classed('active', false);
+	}
+
+	function addTooltipLabel(id) {
+		let tooltipLabelWrapper = d3.select(`#${id}`).append('div')
+			.classed('tooltip-btn', true)
+			.on('mouseover', toggleTooltip)
+			.on('mouseout', handleMouseOut)
+
+		tooltipLabelWrapper.append('span')
+			.text('i')
+	}
+
+	function tableLegend() {
+		const tableWrapper = d3.select('#table-legend')
+
+		tableWrapper.append('span')
+			.classed('legend-label', true)
+			.text('Sehr niedrig')
+
+		colors.forEach(function (color) {
+			tableWrapper.append('div')
+				.classed('legend-dot', true)
+				.style('background-color', color)
+		})
+
+		tableWrapper.append('span')
+			.classed('legend-label', true)
+			.text('Sehr hoch')
+	}
+
+	function injectData(dataArray) {
+
+		tableBody = table.append('tbody');
+
+		dataArray.forEach(function (row, index) {
+
+			let tableRow = tableBody.append('tr');
+
+			tableRow.append('td')
+				.text(row.gsx$datensatz.$t)
+				.style('font-weight', 'bold')
+
+			if (bodyWidth > 1000) {
+				tableRow.append('td')
+					.text(row.gsx$beschreibung.$t)
+	
+				tableRow.append('td')
+					.text(row.gsx$kategorie.$t)
+			}
+
+
+			tableRow.append('td')
+				.style('text-align', 'center')
+				.attr('id', `id-${index}`)
+				.classed('score-td', true)
+				.text(row.gsx$gesamtscoreohnenachfragemin5max15.$t)
+				.on('mouseover', () => { return toggleTooltip(`id-${index}`, row) })
+				.on('mouseout', handleMouseOut)
+				
+			let scoreCell = tableRow.append('td')
+				
+			let colorDotDiv = scoreCell.append('div')
+				.attr('class', 'color-dot')
+				.style('background', colors[parseInt(row.gsx$einordnung.$t)])
+
+			colorDotDiv.append('span')
+				.text(row.gsx$einordnung.$t)
+
+			let linkRow = tableRow.append('td')
+
+			if (row.gsx$link.$t.length > 0) {
+
+				linkRow.append('a')
+					.classed('file', true)
+					.attr('href', row.gsx$link.$t)
+					.attr('target', '_blank')
+					
+			} else {
+				linkRow.append('a')
+			}
+
+		})
+	}
+
+
+	axios.get(sheet).then(function(res) {
+    const data = res.data.feed.entry;
+    
+    console.log(data);
+
+		bodyWidth = d3.select('body').node().getBoundingClientRect().width;
+
+		console.log(data[0])
+
+		setColumns(data[0])
+		injectData(data);	
+		tableLegend();
+
+		if (bodyWidth > 499) {
+			addTooltipLabel('Score');
+			addTooltipLabel('Zugang');
+		}
+
+		sorttable.makeSortable(tableNode)
+	})
+	.catch(function(e) {
+		console.log(e);
+	})
+</script>
+
+<style>
+	table#data-table  {
+		border-collapse: collapse;
+		white-space: normal!important;
+	}
+	
+	tr { 
+		border: solid #e8e8e8;
+		border-width: 1px 0;
+		line-height: 140%;
+	}
+
+	th {
+		cursor: pointer;
+	}
+
+	th#Score {
+		width: 95px;
+	}
+
+	td.score-td {
+		cursor: pointer;
+	}
+
+	th#Zugang {
+		width: 110px;
+	}
+
+	td {
+		padding: 12px 0px;
+		position: relative;
+		word-wrap: break-word;
+
+	}
+
+	td:first-of-type {
+		padding: 15px 20px 15px 0;
+		max-width: 200px;
+		min-width: 150px;
+	}
+
+	tr:first-of-type {
+		border-width: 0px 0;
+	}
+
+	.color-dot {
+		width: 30px;
+		height: 30px;
+		border-radius: 100px;
+		position: absolute;
+		top: calc(50% - 15px);
+		left: 10px;
+		z-index: -1;
+		display: flex;
+    	justify-content: center;
+	}
+
+	.color-dot span {
+		transform: translateY(3px);
+	}
+
+	a.file {
+		background: url(../images/file.svg);
+		background-size: 20px 25px;
+		display: block;
+		text-indent: -9999px;
+		width: 20px;
+		cursor: pointer;
+		height: 25px;
+		color: #FFFFFF;
+		text-decoration: none;
+		border-bottom: none !important;
+	}
+
+	.table-legend--wrapper {
+		margin: 0 12vw 30px 12vw;
+	}
+
+	.table-legend--wrapper > span {
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+	.table-legend {
+		display: flex;
+		flex-direction: row;
+		margin-top: 10px;
+	}
+
+	.legend-dot {
+		margin-right: 10px;
+		width: 20px;
+		height: 20px;
+		border-radius: 100px;
+	}
+
+	.legend-dot:first-of-type {
+		margin-left: 10px;
+	}
+
+	section.mission-statement h2.subHeadline {
+		font-size: 20px !important;
+		margin-bottom: 0 !important;
+		line-height: 1.4em;
+		font-weight: bold;
+	}
+
+	section.mission-statement p.small {
+		font-size: 16px;
+		line-height: 1.6em;
+	}
+
+
+	@media only screen and (max-width: 768px) {
+		.table-legend--wrapper {
+			margin: 0 0 30px 0;
+		}
+
+		section.mission-statement h2.subHeadline {
+			font-size: 20px !important;
+			margin-bottom: 10px !important;
+			font-weight: bold;
+			line-height: 1.4em;
+		}
+	}
+
+	th#category {
+		min-width: 250px;
+	}
+
+	th#Availability {
+		min-width: 150px;
+	}
+
+	th#Link {
+		min-width: 50px;
+	}
+
+	.tooltip-btn {
+		width: 22px;
+		height: 22px;
+		background: white;
+		color: black;
+		position: relative;
+		border-radius: 3px;
+		border: 1px solid black;
+		transition: all .125s ease;
+		float: left;
+		margin-left: 7px;
+	}
+
+	.tooltip-btn span {
+		position: absolute;
+		font-weight: normal;
+		left: 8px;
+		top: -1px;
+	}
+
+	.tooltip-btn:hover {
+		background: black;
+		color: white;
+		transition: all .125s ease;
+	}
+
+	.tooltip-wrapper {
+		width: 320px;
+		height: auto;
+		position: absolute;
+		display: none;
+		flex-direction: column;
+		padding: 12px 14px 12px 14px !important;
+		border: 1px solid #e8e8e8 !important;
+		background: white;
+		z-index: 100;
+		opacity: 0;
+		transition: all .125s ease;
+	}
+
+	.active {
+		display: flex;
+		opacity: 1;
+		transform: translateY(-5px);
+		transition: all .125s ease;
+	}
+
+	span.tooltipLine {
+		margin-bottom: 5px;
+	}
+
+	.th-title {
+		float: left;
+	}
+
+	.tooltipTitle {
+		font-weight: bold;
+		margin-bottom: 10px;
+	}
+
+	@media screen and (max-width: 1024px) {
+		.table-legend--wrapper {
+			margin: 0 5vw 30px 5vw;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		.table-legend--wrapper {
+			margin: 0 0 30px 0;
+		}
+	}
+
+	@media screen and (max-width: 400px) {
+		.table-legend--wrapper {
+			margin: 0 5vw 30px 0;
+		}
+
+		table {
+			font-size: 12px !important;
+		}
+		td:first-of-type {
+			max-width: 150px;
+		}
+
+		.color-dot {
+			top: calc(50% - 11px);
+		}
+
+		.color-dot span {
+			transform: translateY(3px);
+		}
+
+		.color-dot {
+			width: 20px;
+			height: 20px;
+		}
+
+		.legend-dot {
+			width: 18px;
+			height: 18px;
+		}
+
+		.legend-label {
+			font-size: 12px;
+			padding-top: 2px;
+		}
+
+
+		a.file {
+			background: url(../images/file.svg);
+			background-size: 15px 25px;
+			display: block;
+			text-indent: -9999px;
+			width: 15px;
+			cursor: pointer;
+			height: 25px;
+			color: #FFFFFF;
+			text-decoration: none;
+			border-bottom: none !important;
+		}
+
+		.legend-dot {
+			height: 18px;
+		}
+	}
+
+</style>
+

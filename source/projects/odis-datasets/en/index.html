@@ -33,8 +33,6 @@ materialsIncluded:
   - name: Source Code
     link: "#"
 redirect_from:
-  - /projects/123456789/
-  - /old-site-path/my-amazing-post/
 
 ---
 
@@ -55,21 +53,40 @@ redirect_from:
 <main class="project project--{{ page.type }}"  markdown="1">
 	<section class="mission-statement">
 		<div class="html-content">
-			<h1 class="section-headline">Berlins Kerndatensätze</h1>
-			<p>This is just a short intro into the topic, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
-
-			<h2 class="subHeadline">Another paragraph sub headline</h2>
-
-			<p class="small">This is just a short intro into the topic, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
+			<h1 class="section-headline">Berlin’s Core Datasets</h1>
+			<p>The Berlin city administration possesses a treasure trove of potentially valuable data. The city’s E-Government Law (passed in 2016) stipulates that the government and all of its associated departments and agencies are obligated to make their data available as machine-readable open data. But often the question remains: where exactly should government entities start with open data?
 			</p>
 
-			<h2 class="subHeadline">Another paragraph sub headline</h2>
-
-			<p class="small">This is just a short intro into the topic, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum 		<a style="margin-bottom: 20px;" href="https://docs.google.com/spreadsheets/d/1i6c9bhLcVP4h_5X6hhl4V-fHLIXc3xqgy_o38PlT2j0/edit#gid=0">Detailed spreadsheet</a>
+			<p>In order to bring open data from theory into practice as well as to better demonstrate the value of open data, it can be extremely helpful to first set priorities – which are the datasets that the city most needs as open data? While Berlin has been publishing open data for several years, this is still a question we hear posed often. Thus, we created this list of “core” datasets for Berlin, which contains the datasets we believe offer the city and its inhabitants the greatest possible value. 
 			</p>
+
+			<h2 class="subHeadline">About the core datasets table</h2>
+
+			<p class="small">The below table contains 100 datasets that we identified as being particularly valuable for Berlin when published as open data. We evaluated these datasets based on their potential reuse for the research, business, and civil society sectors; the possible efficiency gains for the government as a result of publishing these datasets; and the contribution of these datasets toward building a more transparent and democratic society. For a more complete explanation of how we assembled this list, see the accompanying publication we released with this project. 
+			</p>
+
+			<p class="small">Rating individual datasets based on these five criteria allowed us to create a total score for each dataset that captured its potential; this is displayed in the table under the <b>“Score”</b> column. We also assessed the availability of individual datasets as machine-readable, open data; the results of this assessment are displayed in the <b>“Availability”</b> column. The scale is structured as follows:
+			</p>
+
+			<p class="small">0: The data either does not exist or its status is unknown				<br>
+				1: The data exists, but it’s not publicly accessible in any form <br>
+				2: The data is publicly accessible but not machine-readable 				<br>
+				3: The data is machine readable but has limitations (such as insufficient quality or granularity)<br>
+				4: The data is available as fully open and high-quality data<br>				
+			</p>
+
+			<p class="small">For the cases where a source for the data (or at least, information about the data) was known, the corresponding link is included in the <b>“Link”</b> column. 
+			</p>
+
+			<p class="small">Important to note: We chose these 100 datasets because we evaluated them to present the greatest potential value for the largest number of people. There are, of course, many more datasets that perhaps have more narrow appeal, but which nevertheless should be published as open data. The goal of this list was not to cover all datasets, but simply those with the largest potential. We are highly interested in feedback on this list, as well as a lively discussion on the role that open data can play in Berlin. 
+			</p>
+
+			<p class="small">Has the availability of a certain dataset changed, or is one of our links outdated? Or, do you feel like a critical dataset is missing from this list? Feel free to send corrections and comments to <a href="mailto: dykes@technologiestiftung-berlin.de"> dykes@technologiestiftung-berlin.de</a>. 
+			</p>
+			
 
 			<div class="table-legend--wrapper">
-				<span class="title">Data accessibility</span>
+				<span class="title">Data availability</span>
 				<div class="table-legend" id="table-legend">
 				</div>
 			</div>
@@ -85,7 +102,7 @@ redirect_from:
 </main>
 
 <script>
-	const sheet = "https://spreadsheets.google.com/feeds/list/1i6c9bhLcVP4h_5X6hhl4V-fHLIXc3xqgy_o38PlT2j0/od6/public/values?alt=json";
+	const sheet = "https://spreadsheets.google.com/feeds/list/1a4TvQ7jSGCoWnSPMKUoLo5LepSXLXFY-6t7PiKLQaSI/od6/public/values?alt=json";
 	const table = d3.select('#data-table');
 	const tableNode = document.getElementById('data-table')
 	let tableHead, tableBody, bodyWidth;
@@ -106,7 +123,7 @@ redirect_from:
 			{'head': 'Description'},
 			{'head': 'Category'},
 			{'head': 'Score'},
-			{'head': 'Access'},
+			{'head': 'Availability'},
 			{'head': 'Link'}
 		],
 	}
@@ -115,21 +132,21 @@ redirect_from:
 		'de': {
 			'Score': {
 				'title': "Bewertung",
-				'lines': ['Gesamtscore (ohne Nachfrage)', '(min: 5, max: 15)']
+				'lines': ['Min: 5, Max: 15']
 			},
-			'Access': {
+			'Availability': {
 				'title': "Zugänglichkeit",
-				'lines': ["0: nicht vorhanden oder unbekannt", "1: vorhanden, aber nicht öffentlich zugänglich", "2: öffentlich zugänglich, aber nicht maschinenlesbar", "3: maschinenlesbar, aber mit Einschränkungen", "4: Open Data konform"]
+				'lines': ["0: nicht vorhanden/unbekannt", "1: vorhanden, aber nicht öffentlich", "2: öffentlich aber nicht maschinenlesbar", "3: maschinenlesbar mit Einschränkungen", "4: Open Data konform"]
 			}
 		},
 		'en': {
 			'Score': {
 				'title': "Score",
-				'lines': ['Gesamtscore (ohne Nachfrage)', '(min: 5, max: 15)']
+				'lines': ['Min: 5, Max: 15']
 			},
-			'Access': {
+			'Availability': {
 				'title': "Access",
-				'lines': ["0: nicht vorhanden oder unbekannt", "1: vorhanden, aber nicht öffentlich zugänglich", "2: öffentlich zugänglich, aber nicht maschinenlesbar", "3: maschinenlesbar, aber mit Einschränkungen", "4: Open Data konform"]
+				'lines': ["0: Non-existent/Unknown", "1: Closed data", "2: Non-machine-readable data", "3: Machine-readable data with limitations", "4: Fully Open Data"]
 			}
 		}
 	}
@@ -158,7 +175,7 @@ redirect_from:
 			.text(function(d) { return d.head })
 	}
 
-	function toggleTooltip(d,i,n) {
+	function toggleTooltip(id = null, row = null) {
 		let tooltip = d3.select('.tooltip-wrapper')
 		// let label = d3.select(`#${id}`);
 
@@ -166,23 +183,54 @@ redirect_from:
 
 		d3.selectAll('.tooltipLine').remove()
 		d3.selectAll('.tooltipTitle').remove()
+		d3.selectAll('.tooltipSpan').remove()
 
-		tooltip.append('span')
-			.classed('tooltipTitle', true)
-			.text(dictTooltip[lang][d.head].title)
+		if (id != 0 && row != 0) {
+			// console.log(id, row);
 
-		dictTooltip[lang][d.head].lines.forEach(function(line) {
 			tooltip.append('span')
 				.classed('tooltipLine', true)
-				.text(line)
-		})
+				.text(`Value for businesses: ${row['gsx$valueforbusinesses1-3'].$t}`)
+
+
+			tooltip.append('span')
+				.classed('tooltipLine', true)
+				.text(`Value for civil society: ${row['gsx$valueforcivilsociety1-3'].$t}`)
+
+			tooltip.append('span')
+				.classed('tooltipLine', true)
+				.text(`Value for research: ${row['gsx$valueforresearch1-3'].$t}`)
+
+			tooltip.append('span')
+				.classed('tooltipLine', true)
+				.text(`Government efficiency: ${row['gsx$possiblegovernmentefficiencygains1-3'].$t}`)
+
+
+			tooltip.append('span')
+				.classed('tooltipLine', true)
+				.text(`Transparency relevance: ${row['gsx$relevancefortransparency1-3'].$t}`)
+
+		} else {
+			console.log(id, row);
+			tooltip.append('span')
+				.classed('tooltipTitle', true)
+				.text(dictTooltip[lang][id.head].title)
+	
+			dictTooltip[lang][id.head].lines.forEach(function(line) {
+				tooltip.append('span')
+					.classed('tooltipLine', true)
+					.text(line)
+			})
+	
+		}
 
 		let tooltipHeight = tooltip.node().clientHeight
 		let tooltipWidth = tooltip.node().clientWidth
-
+	
 		tooltip
 			.attr('style', `top: ${d3.event.pageY - tooltipHeight - 30}px; left: ${d3.event.pageX - (tooltipWidth / 2)}px`)
 		
+
 	}
 
 	function handleMouseOut(d,i,n) {
@@ -222,36 +270,39 @@ redirect_from:
 
 		tableBody = table.append('tbody');
 
-
-		dataArray.forEach(function (row) {
+		dataArray.forEach(function (row, index) {
 
 			let tableRow = tableBody.append('tr');
 
 			tableRow.append('td')
-				.text(row.gsx$datensatz.$t)
+				.text(row.gsx$dataset.$t)
 				.style('font-weight', 'bold')
 
 			if (bodyWidth > 1000) {
 				tableRow.append('td')
-					.text(row.gsx$beschreibung.$t)
+					.text(row.gsx$description.$t)
 	
 				tableRow.append('td')
-					.text(row.gsx$kategorie.$t)
+					.text(row.gsx$category.$t)
 			}
 
 
 			tableRow.append('td')
 				.style('text-align', 'center')
-				.text(row.gsx$gesamtscoreohnenachfragemin5max15.$t)
+				.attr('id', `id-${index}`)
+				.classed('score-td', true)
+				.text(row.gsx$totalscore.$t)
+				.on('mouseover', () => { return toggleTooltip(`id-${index}`, row) })
+				.on('mouseout', handleMouseOut)
 				
 			let scoreCell = tableRow.append('td')
 				
 			let colorDotDiv = scoreCell.append('div')
 				.attr('class', 'color-dot')
-				.style('background', colors[parseInt(row.gsx$einordnung.$t)])
+				.style('background', colors[parseInt(row.gsx$availability.$t)])
 
 			colorDotDiv.append('span')
-				.text(row.gsx$einordnung.$t)
+				.text(row.gsx$availability.$t)
 
 			let linkRow = tableRow.append('td')
 
@@ -275,13 +326,15 @@ redirect_from:
 
 		bodyWidth = d3.select('body').node().getBoundingClientRect().width;
 
+		console.log(data[0])
+
 		setColumns(data[0])
 		injectData(data);	
 		tableLegend();
 
 		if (bodyWidth > 499) {
 			addTooltipLabel('Score');
-			addTooltipLabel('Access');
+			addTooltipLabel('Availability');
 		}
 
 		sorttable.makeSortable(tableNode)
@@ -309,6 +362,10 @@ redirect_from:
 
 	th#Score {
 		width: 95px;
+	}
+
+	td.score-td {
+		cursor: pointer;
 	}
 
 	th#Access {
@@ -411,6 +468,18 @@ redirect_from:
 			font-weight: bold;
 			line-height: 1.4em;
 		}
+	}
+
+	th#category {
+		min-width: 250px;
+	}
+
+	th#Availability {
+		min-width: 150px;
+	}
+
+	th#Link {
+		min-width: 50px;
 	}
 
 	.tooltip-btn {
