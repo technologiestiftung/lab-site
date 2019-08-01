@@ -1,5 +1,6 @@
 let svg;
 let linechart;
+let map;
 
 document.addEventListener('DOMContentLoaded',function() {
   
@@ -34,6 +35,31 @@ document.addEventListener('DOMContentLoaded',function() {
 }
 
     linechart = new Linechart(line_config).init();
+
+    let mapvbb_config = {
+        div: 'mapvbb',
+        file: startsubway,
+        value: 'start_count',
+        hovertext: "Anzahl Fahrten: ",
+        geometry: 'point',
+        width: width,
+        height: 400,
+    }
+
+    map = new Map(mapvbb_config).init();
+
+
+    let map_config = {
+        div: 'map',
+        file: counts,
+        value: 'counts',
+        hovertext: "Anzahl Fahrten: ",
+        geometry: 'polygon',
+        width: width,
+        height: 400,
+    }
+
+    map = new Map(map_config).init();
 
 
     
