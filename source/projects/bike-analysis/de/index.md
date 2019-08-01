@@ -14,10 +14,10 @@ visible: false
 featured: false
 authors:
   - alexandra-kapp
-start: 2019-07-10
-end: 2019-07-10
+start: 2019-04-01
+end: 2019-08-02
 status: ongoing
-date: 2019-07-10
+date: 2019-08-02
 assets:
   js:
     - 'https://d3js.org/d3.v4.min.js'
@@ -63,6 +63,7 @@ Täglich summieren sich die gefahren Kilometer auf durchschnittlich 8181 km (Med
 Unter der Woche starten die meisten Fahrten morgens zwischen 8 und 10 Uhr sowie nachmittags gegen 18 Uhr. Am Wochenende verteilen sich die meisten Fahrten über die Mittagszeit.
 
 <div id= "word_count_linechart" alt="Liniendiagramm mit Anzahlen an schriftlichen Anfragen nach Jahren"></div>
+{% include macro-subline-markdown.html caption="Summierte Anzahl an Fahrten nach Tag und Uhrzeit." %}
 <p></p>
 
 Vergleicht man diese Ergebnisse mit der [Analyse von Civity](http://scooters.civity.de/) zu E-Scootern zeigen sich deutliche Unterschiede im Nutzungsverhalten: 
@@ -77,12 +78,14 @@ Leihfarräder sollen auch als Transportmittel der "letzten Meile" dienen. Daher 
 Ca. 14% der von uns registrierten Fahrten starten in der Nähe (100m Radius) einer Haltestelle. Besonders viele Fahrten starten am Hauptbahnhof, dem Potsdamer Platz und Bahnhof Zoo.
 
 <div class="map" id= "mapvbb" alt=""></div>
+{% include macro-subline-markdown.html caption="Anzahl Fahrten, die an entsprechender Haltestelle beginnen." %}
 <p></p>
 
 ## Die meisten Fahrten gibt es zu und vom Alexanderplatz
 Das Angebot aller Anbieter beschränkt sich auf den Ring. Die meisten Fahrten starten in Mitte und Friedrichshain-Kreuzberg. Besonders am Alexanderplatz und an der Oranienburgerstr. starten die meisten Fahrten.
   
 <div class= "map" id= "map" alt=""></div>
+{% include macro-subline-markdown.html caption="Anzahl Fahrten, die in entsprechendem Planungsraum starten." %}
 <p></p>
 
 # Datenursprung
