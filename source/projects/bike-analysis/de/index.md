@@ -48,9 +48,9 @@ Wir haben über die Monate Mai-Juli Daten zu drei verschiedenen Anbietern (Nextb
 Die nachfolgende Tabelle gibt an, wieviele Fahrräder der einzelnen Anbieter täglich verfügbar waren - im Median und in maximaler Anzahl. Die gesamte Anzahl aller eingesetzten Räder im Untersuchungs­zeitraum ist ebenfalls angegeben.
 <div class = 'project-text'>
 <table class = 'table'> <tr> <th></th> <th>Gesamt</th><th>Nextbike</th> <th>Lidlbike</th> <th>Mobike</th></tr> 
-<tr> <td>Median</td> <td>7.450</td><td>1.095</td> <td>2.813</td> <td>3.533</td> </tr> 
-<tr> <td>Max.</td> <td>8.078</td><td>1.409</td> <td>3.048</td> <td>3.966</td></tr> 
-<tr> <td>Gesamter Zeitraum</td> <td>15.375</td><td>2.396</td> <td>3.633</td> <td>9.346</td></tr> 
+<tr> <td>Median (tägl. verfügbar)</td> <td>7.450</td><td>1.095</td> <td>2.813</td> <td>3.533</td> </tr> 
+<tr> <td>Max. (tägl. verfügbar)</td> <td>8.078</td><td>1.409</td> <td>3.048</td> <td>3.966</td></tr> 
+<tr> <td>Räder über gesamten Zeitraum</td> <td>15.375</td><td>2.396</td> <td>3.633</td> <td>9.346</td></tr> 
 </table>
 </div>
 Die Daten von Mobike wurden für die weitere Streckenanalysen entfernt, da diese zu unzuverlässig waren. Die weiteren Analysen basieren auf den Daten von Lidlbike und Nextbike (ca. 4.000 täglich verfügbare Fahrräder).
