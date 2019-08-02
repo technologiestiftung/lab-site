@@ -74,9 +74,9 @@ E-Scooter entsprechen nicht den typischen Berufsverkehr-Mustern: am Wochenende g
 
 An einem Tag werden im Median 30% der Fahrräder auch bewegt. Jedes Fahrrad fährt im Schnitt 1,8 Fahrten pro Tag.
 
-## 14% der Fahrten starten / enden an U-/S-Bahnhaltestellen
+## 15% der Fahrten starten / enden an U-/S-Bahnhaltestellen
 Leihfarräder sollen auch als Transportmittel der "letzten Meile" dienen, d.h. für die letzten Meter zwischen ÖPNV und Start- oder Ankunftsort. Daher ist interessant zu betrachten, wie häufig Fahrräder an U- und S-Bahnhaltestellen ausgeliehen werden.
-Ca. 14% der von uns registrierten Fahrten starten in der Nähe (100m Radius) einer Haltestelle. Besonders viele Fahrten starten am Hauptbahnhof, dem Potsdamer Platz und Bahnhof Zoo.
+Ca. 15% der von uns registrierten Fahrten starten in der Nähe (100 m Radius) einer Haltestelle. Besonders viele Fahrten starten am Hauptbahnhof, dem Potsdamer Platz und Bahnhof Zoo.
 
 Die folgende Karte zeigt, von welchen Haltestellen wie häufig Fahrräder ausgeliehen werden.
 
