@@ -69,7 +69,6 @@ class Linechart {
             } else if (type == TYPE_TIME){
                 var parseXvalue = d3.timeParse("%H:%M:%S");
             } else if (type== TYPE_INT){
-                //TODO: Fix bug - scale is not working
                 var parseXvalue = function(d) {return +d};
             } else {
                 throw Error ('Type not implemented.')
@@ -127,9 +126,15 @@ class Linechart {
             .attr("r", 7.5);   
             
             focus.append("text")
+            .attr("id", "text_time")
             .attr("x", 15)
-            .attr("dy", ".31em")
-            .attr("class", "text");   
+            .attr("class", "text"); 
+            
+            focus.append("text")
+            .attr("id", "text_count")
+            .attr("x", 15)
+            .attr("dy", "2em")
+            .attr("class", "text");
             
             svg_linechart.append("rect")
             //.attr("transform", "translate(" + margin.left + "," + margin.top + ")")
@@ -147,7 +152,8 @@ class Linechart {
                 d1 = data[i],
                 d = x0 - d0.yaxis > d1.yaxis - x0 ? d1 : d0;
                 focus.attr("transform", "translate(" + x_line(d.xaxis) + "," + y_line(d.yaxis) + ")");
-                focus.select("text").html(function() { return d.yaxis; });
+                focus.select("#text_time").text(function() { return + d.time + " Uhr"; });
+                focus.select("#text_count").text(function() { return d.yaxis; });
                 focus.select(".x-hover-line").attr("y2", height_line - y_line(d.yaxis));
                 focus.select(".y-hover-line").attr("x2", width_line + width_line);
             }

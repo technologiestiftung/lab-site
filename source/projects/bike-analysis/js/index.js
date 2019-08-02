@@ -39,7 +39,8 @@ document.addEventListener('DOMContentLoaded',function() {
     let mapvbb_config = {
         div: 'mapvbb',
         file: startsubway,
-        value: 'start_count',
+        value: ['start_count', 'Bauwerk Name'],
+        scaleMax: 1000,
         hovertext: "Anzahl Fahrten: ",
         geometry: 'point',
         width: width,
@@ -52,7 +53,7 @@ document.addEventListener('DOMContentLoaded',function() {
     let map_config = {
         div: 'map',
         file: counts,
-        value: 'counts',
+        value: ['counts', 'PLRNAME'],
         hovertext: "Anzahl Fahrten: ",
         geometry: 'polygon',
         width: width,

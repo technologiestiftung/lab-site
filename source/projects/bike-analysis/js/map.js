@@ -4,6 +4,7 @@ class Map {
         this.file = config.file;
         this.value = config.value;
         this.hovertext = config.hovertext;
+        this.scaleMax = config.scaleMax;
         this.geometry = config.geometry;
         this.margin = {top: 20, right: 20, bottom: 20, left: 50},
         this.width = config.width;
@@ -28,11 +29,15 @@ class Map {
         var value = this.value;
         var hovertext = this.hovertext;
         var geometry = this.geometry;
-        var max = d3.max(this.file.features, function(d) {return d.properties[value];});
-        var colorScale = d3.scaleLinear()
+        if (this.scaleMax) {
+            var max = this.scaleMax
+        } else {
+        var max = d3.max(this.file.features, function(d) {return d.properties[value[0]];});
+        }
+        const colorScale = d3.scaleLinear()
         .domain([0, max])
-        .range(['#D8D8D8', '#e60032']);
-            
+        .range(['#2d91d2', '#e60032']);
+
             //add Sbahn-Ring
             L.geoJSON(ring, 
                 {
@@ -59,7 +64,7 @@ class Map {
             L.geoJSON(this.file,variables).addTo(map); 
             
             function onEachFeature(feature, layer) {
-                var popupContent = hovertext + feature.properties[value];
+                var popupContent = feature.properties[value[1]] + "<br>" + hovertext + feature.properties[value[0]];
 
                 if (feature.properties && feature.properties.popupContent) {
                     popupContent += feature.properties.popupContent;
@@ -75,22 +80,19 @@ class Map {
             function style(feature) {
                 return {
                     radius: 5,
-                    fillColor: colorScale(feature.properties[value]),
+                    fillColor: colorScale(feature.properties[value[0]]),
                     weight: 0.5,
                     opacity: 1,
                     color: 'white',
-                    fillOpacity: 0.7,
+                    fillOpacity: 0.5,
                 };
                 
             }
 
-
-
-    
             function ringstyle() {
                 return {
                     fillOpacity: 0,
-                    weight: 0.5,
+                    weight: 5,
                     opacity: 1,
                     color: 'grey',
                 };
