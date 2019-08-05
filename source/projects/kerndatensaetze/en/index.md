@@ -58,7 +58,7 @@ For each of these five criteria, we rated the datasets on a 1 - 3 scale, which r
 
 We then used this scale to rate every dataset in our list of 200+. After many rounds of internal and external deliberation, we were able to land at a final list of 100 datasets which, using our criteria, had the highest scores and which thus (in our opinion) demonstrate the greatest possible value for Berlin. 
 
-For the final list, we also evaluated one additional facet of the data: the current availability of the data (i.e., does the data exist as closed or open data – or does it not exist at all?). We developed an additonal 0 - 4 scale for evaluating the data availability. We decided to develop our own scale here, rather than use an existing one like the 5-Star Model, as we found it important to differentiate between degrees of closedness as well as degrees of openness – scales like the 5-Star Model wouldn't have offered us the nuance we wanted to differentiate between completely closed data, and data that is openly provided in non-machine-readable forms, for example. 
+For the final list, we also evaluated one additional facet of the data: the current availability of the data (i.e., does the data exist as closed or open data – or does it not exist at all?). We developed an additonal 0 - 4 scale for evaluating the data availability. We decided to develop our own scale here, rather than use an existing one like the 5-Star Model, as we found it important to differentiate between degrees of closedness as well as degrees of openness – scales like the 5-Star Model wouldn't have offered us the nuance we wanted to be able to differentiate between completely closed data and data that is openly provided in non-machine-readable forms, for example. 
 
 The scale for assessing dataset availability is as follows:
 
@@ -68,24 +68,47 @@ The scale for assessing dataset availability is as follows:
 **3:** The data is **machine readable but has limitations** (such as insufficient quality or granularity)<br>
 **4:** The data is available as  **fully open and high-quality data**
 
-Using the list
+
+Understanding the list
 --------------------------------------
 
 Our primary goal of this list was to provide a clear direction for open data publishing in Berlin. All too often, when talking with government employees about open data, they express a general support for the topic (or at least acknoweldge they're not explicitly against it), but they struggle to relate the broad call for more open government data to their own work – "Yes, Berlin should publish more data, but what do you want from *me*?"
 
 The list has the added advantage of providing a clearer picture of where there are major gaps – as well as major successes – in Berlin's open data landscape. By sorting our list by "Availability", for example, you can easily see which are the most prominent datasets where there is no open data to date (for example, various traffic-related datasets or data on daycare centers), or where Berlin already has solid open data available (for example, data related to public transit stations or lines, or demographic data).
 
+Our goal was not, however, to provide an authoritative, all-encompassing list of all datasets Berlin should publish as open data. Simply because a dataset doesn't exist here is not reason to argue it doesn't need to be published as open data. This list is just supposed to represent the datasets that have the potential to bring the most value to the greatest number of actors. 
+
+Another important consideration with our list: not every dataset we included is currently in a position to be easily published as open data in Berlin. We identified the following datasets as having potential legal restrictions associated with their publishing, due to the data's connection to businesses or individuals: 
+
+- List of practicing doctors in Berlin
+- Food product inspections (e.g., results of health inspections of restaurants or grocery stores) 
+- Public procurement proceedings (i.e., calls for tender and awarded contracts)
+- Property ownership registry
+- Registered demonstrations (e.g., names of organizers)
+
+We debated whether or not it made sense to include these datasets, but ultimately decided they should stay. Our reasons for that decision were:
+
+**1)** We genuinely believe publishing these datasets would be in the interest of society in Berlin as a whole, regardless of the possible legal conflicts. <br>
+**2)** A few of these datasets (such as food inspections and property ownership) are also in-demand from other groups in Berlin and across Geramny – if we didn't include them, inevitably someone would ask why they were missing from our list. <br>
+**3)** Moreover, there are examples across the globe of these datasets being published in some form as open data – its not unprecedented or unreasonable to think that these datasets *could* be published as open data. <br>
+**4)** Even if it's not possible in the short term to publish this data, we still think it's important to have a conversation about the potential these datasets have, and whether it really makes sense to keep this data closed. 
+
+Closing Thoughts
+----------------
+
+We don't expect that everyone agrees 100 percent with the datasets we identified as most useful for Berlin. As previously mentioned, our goal was not to create a single, authoritative list, but rather, to provide a launching point for further discussions on the value of open data. As such, we hope that our list starts a vibrant conversation in Berlin about what open data the city most need, and we welcome critiques and comments on our list.  
+
 Further Resources
 -----------------
 
 The following are resources from Germany and North America that we used as a basis for our rating methodology for this project. 
 
-Criteria for high-value datasets:
+*Criteria for high-value datasets:*
 
 * **[Report on high-value datasets from EU institutions](https://joinup.ec.europa.eu/sites/default/files/document/2014-06/ISA%20Programme%20-%202014%20-%20Report%20on%20high-value%20datasets%20from%20EU%20institutions.pdf)** <br> (EU-issued report, English)
 * **[Canada Open Government Working Group: High Value Datasets Criteria](https://joinup.ec.europa.eu/sites/default/files/document/2014-06/ISA%20Programme%20-%202014%20-%20Report%20on%20high-value%20datasets%20from%20EU%20institutions.pdf)** <br> (Federal Government of Canada, English)
 
-Criteria for dataset prioritization:
+*Criteria for dataset prioritization:*
 
 * **[Open Data Prioritization Toolkit](https://s3.amazonaws.com/sitesusa/wp-content/uploads/sites/1151/filebase/cio_document_library/Open%20Data%20Prioritization%20Toolkit%20Summary.html#toolkit)** <br> (Chief Information Officer Council of the United States, English)
 * **[Open Data Handbook](http://ny.github.io/open-data-handbook/guidelines.html)** <br> (State of New York, USA, English)
