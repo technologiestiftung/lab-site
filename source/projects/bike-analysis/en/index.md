@@ -6,11 +6,10 @@ title: "Bike flows in Berlin"
 subtitle: "What information does Bike-Sharing data provide?"
 type: publication
 colorMode: bright
-featuredImage: /projects/bike-analysis/images/featured.jpg
-thumbnail: /projects/bike-analysis/images/thumbnail.jpg
-heroImage: /projects/bike-analysis/images/hero.jpg
-socialMediaImage: /assets/images/social_media.jpg
-visible: false
+thumbnail: /projects/bike-analysis/images/thumbnail.png
+heroImage: /projects/bike-analysis/images/hero.png
+socialMediaImage: /assets/images/social_media.png
+visible: true
 featured: false
 authors:
   - alexandra-kapp
