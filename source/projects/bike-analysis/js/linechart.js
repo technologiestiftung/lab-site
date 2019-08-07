@@ -9,6 +9,7 @@ class Linechart {
         this.ylabel = config.ylabel;
         this.tickValues = config.tickValues;
         this.map = config.map;
+        this.unit = config.unit;
         this.width_line = this.width - this.margin.left - this.margin.right;
         this.height_line = this.height- this.margin.top - this.margin.bottom;
         this.config = config;
@@ -54,6 +55,7 @@ class Linechart {
         var width = this.width
         var tickValues = this.tickValues
         var map = this.map
+        var unit = this.unit
         
         // Get the data
         d3.csv(this.file, function(error, data) {
@@ -152,7 +154,7 @@ class Linechart {
                 d1 = data[i],
                 d = x0 - d0.yaxis > d1.yaxis - x0 ? d1 : d0;
                 focus.attr("transform", "translate(" + x_line(d.xaxis) + "," + y_line(d.yaxis) + ")");
-                focus.select("#text_time").text(function() { return + d.time + " Uhr"; });
+                focus.select("#text_time").text(function() { return d.time + " " + unit; });
                 focus.select("#text_count").text(function() { return d.yaxis; });
                 focus.select(".x-hover-line").attr("y2", height_line - y_line(d.yaxis));
                 focus.select(".y-hover-line").attr("x2", width_line + width_line);

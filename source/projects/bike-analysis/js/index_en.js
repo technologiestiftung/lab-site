@@ -11,16 +11,18 @@ document.addEventListener('DOMContentLoaded',function() {
 
     var map = function (x) {
         var weekday = {
-            0: 'Montag',
-            24: 'Dienstag',
-            48: 'Mittwoch',
-            72: 'Donnerstag',
-            96: 'Freitag',
-            120: 'Samstag',
-            148: 'Sonntag'
+            0: 'Monday',
+            24: 'Tuesday',
+            48: 'Wednesday',
+            72: 'Thursday',
+            96: 'Friday',
+            120: 'Saturday',
+            148: 'Sunday'
         }
         return weekday[x]
     }
+    
+    //TODO: include language 
     
     // Line Chart
     let line_config  = {
@@ -28,9 +30,9 @@ document.addEventListener('DOMContentLoaded',function() {
     file: '../data/week_usage.csv',
     width: width,
     height: 400,
-    unit: "Uhr",
+    unit: "o'clock",
     xtype: 'int', //define the type of x-Axis scale (date, year, time, int, float)
-    ylabel: 'Anzahl Fahrten',
+    ylabel: 'Ride count ',
     tickValues: [0, 24, 48, 72, 96, 120, 148], // define specific tick values
     map: map // if sth else than tickValue shall be displayed on xAxis, use map function
 }
@@ -42,7 +44,7 @@ document.addEventListener('DOMContentLoaded',function() {
         file: startsubway,
         value: ['start_count', 'Bauwerk Name'],
         scaleMax: 1000,
-        hovertext: "Anzahl Fahrten: ",
+        hovertext: 'Ride count: ',
         geometry: 'point',
         width: width,
         height: 400,
@@ -55,7 +57,7 @@ document.addEventListener('DOMContentLoaded',function() {
         div: 'map',
         file: counts,
         value: ['counts', 'PLRNAME'],
-        hovertext: "Anzahl Fahrten: ",
+        hovertext: "Ride count: ",
         geometry: 'polygon',
         width: width,
         height: 400,

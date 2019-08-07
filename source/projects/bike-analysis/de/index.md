@@ -1,6 +1,6 @@
 ---
 layout: project
-description: ""
+description: "Die Daten Fahrten mit Fahrrädern von Bike-Sharing Anbietern wurden für einen Zeitraum von dreieinhalb Monaten gesammelt und ausgewertet, um Rückschlüsse auf Mobilitätsverhalten gewinnen zu können."
 lang: de
 title: Wie bewegt sich Berlin?
 subtitle: Welche Informationen Bike-Sharing Daten liefern
@@ -15,9 +15,9 @@ featured: false
 authors:
   - alexandra-kapp
 start: 2019-04-01
-end: 2019-08-02
+end: 2019-08-08
 status: ongoing
-date: 2019-08-02
+date: 2019-08-08
 assets:
   js:
     - 'https://d3js.org/d3.v4.min.js'
