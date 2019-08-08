@@ -28,6 +28,7 @@ assets:
     - ../js/map.js
   css:
     - ../styles/index.css
+    - ../styles/linechart.css
     - https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
 materialsIncluded:
   - name: Source Code

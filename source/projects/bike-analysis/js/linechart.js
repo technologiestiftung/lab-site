@@ -2,7 +2,7 @@ class Linechart {
     constructor(config) {
         this.div = config.div;
         this.file = config.file;
-        this.margin = {top: 20, right: 20, bottom: 20, left: 50},
+        this.margin = {top: 20, right: 20, bottom: 30, left: 50},
         this.width = config.width;
         this.height = config.height;
         this.xtype = config.xtype;
@@ -117,7 +117,8 @@ class Linechart {
             focus.append("line")
             .attr("class", "x-hover-line hover-line")
             .attr("y1", 0)
-            .attr("y2", height_line);
+            .attr("y2", height_line)
+            .attr("stroke", "#2d91d2");
             
             focus.append("line")
             .attr("class", "y-hover-line hover-line")
@@ -151,11 +152,12 @@ class Linechart {
                 var x0 = x_line.invert(d3.mouse(this)[0]),
                 i = bisectDate(data, x0, 1),
                 d0 = data[i - 1],
-                d1 = data[i],
-                d = x0 - d0.yaxis > d1.yaxis - x0 ? d1 : d0;
+                d1 = data[i]
+
+                var d = x0 - d0.yaxis > d1.yaxis - x0 ? d1 : d0;
                 focus.attr("transform", "translate(" + x_line(d.xaxis) + "," + y_line(d.yaxis) + ")");
                 focus.select("#text_time").text(function() { return d.time + " " + unit; });
-                focus.select("#text_count").text(function() { return d.yaxis; });
+                focus.select("#text_count").text(function() { return `${d.yaxis} Fahrten`; });
                 focus.select(".x-hover-line").attr("y2", height_line - y_line(d.yaxis));
                 focus.select(".y-hover-line").attr("x2", width_line + width_line);
             }

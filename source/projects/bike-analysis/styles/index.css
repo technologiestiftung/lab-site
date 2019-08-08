@@ -1,17 +1,17 @@
 .line {
     fill: none;
-    stroke:rgb(30,55,145);
+    stroke: #2d91d2;
     stroke-width: 2px;
   }  
 
 .focus circle {
     fill: None;
-    stroke: rgb(110,205,245);
+    stroke: #2d91d2;
     stroke-width: 5px;
   }
 
   .hover-line {
-    stroke: rgb(110,205,245);
+    stroke: #2d91d2;
     stroke-width: 2px;
     stroke-dasharray: 3,3;
   }
