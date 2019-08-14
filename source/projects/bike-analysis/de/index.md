@@ -2,7 +2,7 @@
 layout: project
 description: "Die Daten Fahrten mit Fahrrädern von Bike-Sharing Anbietern wurden für einen Zeitraum von dreieinhalb Monaten gesammelt und ausgewertet, um Rückschlüsse auf Mobilitätsverhalten gewinnen zu können."
 lang: de
-title: Wie bewegt sich Berlin?
+title: Fahrradrouten von Leihfarrädern
 subtitle: Welche Informationen Bike-Sharing Daten liefern
 type: publication
 colorMode: bright
@@ -90,6 +90,13 @@ Das Angebot aller Anbieter beschränkt sich auf den Ring. Die meisten Fahrten st
 <p></p>
 
 Wie in den Daten zu sehen ist, profitieren aktuell Einwohner*innen außerhalb des Rings kaum von den Leihfahrrad-Angebote Berlins. Das "Problem der letzten Meile" ist aber hauptsächlich außerhalb des Rings ein tatsächliches Problem. Plätze mit vielen Leihfarrädern, wie beispielsweise bestimmte U- oder S-Bahnhöfe, deuten zudem darauf hin, wo dringend zusätzliche Fahrradabstellplätze gebraucht werden.
+
+## Visualisierung 
+Eine Visualisierung der einzelnen Fahrten gibt es [hier.](https://fabiandinklage.com/projects/bikesharing/) Die Routen von Lidlbikes und Nextbikes können für einzelne Tage und Uhrzeiten angeschaut werden.
+
+{% include macro-image-section-markdown-link.html src="../images/viz.png" link="https://fabiandinklage.com/projects/bikesharing/" %}
+
+{% include macro-subline-markdown.html caption="Screenshot der Visualisierung einzelner Fahrradrouten." %}
 
 # Datenquellen
 Die Datenschnittstellen von Mobike, Lidlbike und Nextbike wurden über im Zeitraum vom 1. April bis 11. Juli alle vier Minuten abgefragt ([Details zur API Abfrage hier](https://lab.technologiestiftung-berlin.de/projects/bike-sharing/de/)) und die Standorte der Fahrräder abgespeichert. Anhand der Standortdaten zu verfügbaren Daten wurden Start- und Endpunkte einzelner Fahrten abgeleitet. Mithilfe von [OSRM](http://project-osrm.org/) wurde ein Routing für alle Fahrten erstellt. Der Datensatz wurde nach bestem Wissen bereinigt, um Ausreißer und nicht plausible Daten zu entfernen. Dazu gehören Fahrten unter 200 m, Start- und Endpunkte außerhalb von Berlin und Fahrten die schneller als 30 km/h waren. Daraus resultieren knapp 0,6 Millionen Fahrten. Die Daten von Mobike wurden für diese Streckenanalysen entfernt, da diese Daten sehr fehlerbehaftet und nicht plausibel waren. Somit resultieren 300.000 Fahrten von Lidlbike und Nextbike für die drei Monate, auf deren Basis die Analysen erstellt wurden.
