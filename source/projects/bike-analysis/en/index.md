@@ -14,9 +14,9 @@ featured: false
 authors:
   - alexandra-kapp
 start: 2019-04-01
-end: 2019-08-08
+end: 2019-08-21
 status: ongoing
-date: 2019-08-08
+date: 2019-08-21
 assets:
   js:
     - 'https://d3js.org/d3.v4.min.js'
@@ -28,6 +28,7 @@ assets:
     - ../js/map.js
   css:
     - ../styles/index.css
+    - ../styles/linechart.css
     - https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
 materialsIncluded:
   - name: Source Code
@@ -88,7 +89,15 @@ Currently, bike-share offerings are generally limited to within the Berlin S-Bah
 
 As can be seen from the data, residents outside the ring hardly benefit at all from Berlin's current bike-share offerings. Yet when we talk about the problem of the "last mile", it is precisely these residents outside the ring who suffer from this problem (e.g., extended distances between people's homes and the next reliable public transit stop) most acutely. <b>The data shows us that if this is truly a problem the Berlin government and/or the bike-sharing operators want to address, then there needs to be significant work done to expand offerings beyond the ring.</b>
 
-The data can also be useful when it comes to planning space for bike racks and other parking options: Areas that see higher concentrations of rental bicycles, such as certain underground or S-Bahn stations, can also be good indicators of where there is a pressing need for additional spaces to park or secure bikes. 
+The data can also be useful when it comes to planning space for bike racks and other parking options: Areas that see higher concentrations of rental bicycles, such as certain underground or S-Bahn stations, can also be good indicators of where there is a pressing need for additional spaces to park or secure bikes.
+
+## Visualization
+A visualization of the individual rides is available [here.](https://fabiandinklage.com/projects/bikesharing/) The routes of Lidlbikes and Nextbikes can be viewed for individual days and times.
+
+{% include macro-image-section-markdown-link.html src = "../images/viz.png" link = "https://fabiandinklage.com/projects/bikesharing/"%}
+
+{% include macro-subline-markdown.html caption = "Screenshot of the visualization of individual bicycle routes." %}
 
 # Data sources
 To gather this data, we queried the APIs from Mobike, Lidlbike and Nextbike every four minutes for the location of bicycles during the period of April 1 to July 11 ([more information on the APIs is available here](https://lab.technologiestiftung-berlin.de/projects/bike-sharing/de/)). We derived start and end points for the trips based on the location data contained in the database and calculated probable routes using [OSRM](http://project-osrm.org/). The dataset was cleaned to remove outliers and implausible data. This includes journeys under 200 meters, journeys with start and end points outside of Berlin, and journeys faster than 30 km/h. This resulted in a dataset of almost 0.6 million trips. The data from Mobike was excluded from the analyses here, as these data were very error-prone and, in many cases, simply implausible. This resulted in a dataset containing 300,000 rides using Lidlbike and Nextbike over a three-month period. For more details on how the data was prepared, see the Jupyter Notebooks [here](https://github.com/technologiestiftung/bike-sharing/blob/master/README.md).
+

@@ -28,7 +28,8 @@ document.addEventListener('DOMContentLoaded',function() {
     file: '../data/week_usage.csv',
     width: width,
     height: 400,
-    unit: "Uhr",
+    xunit: "Uhr",
+    yunit: "Fahrten",
     xtype: 'int', //define the type of x-Axis scale (date, year, time, int, float)
     ylabel: 'Anzahl Fahrten',
     tickValues: [0, 24, 48, 72, 96, 120, 148], // define specific tick values

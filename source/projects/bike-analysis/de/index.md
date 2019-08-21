@@ -14,9 +14,9 @@ featured: false
 authors:
   - alexandra-kapp
 start: 2019-04-01
-end: 2019-08-08
+end: 2019-08-21
 status: ongoing
-date: 2019-08-08
+date: 2019-08-21
 assets:
   js:
     - 'https://d3js.org/d3.v4.min.js'
@@ -68,6 +68,8 @@ Unter der Woche starten die meisten Fahrten morgens zwischen 8 und 10 Uhr sowie 
 
 Vergleicht man diese Ergebnisse mit der [Analyse von Civity](http://scooters.civity.de/) zu E-Scootern zeigen sich deutliche Unterschiede im Nutzungsverhalten:
 E-Scooter entsprechen nicht den typischen Berufsverkehr-Mustern: am Wochenende gibt es mehr Fahrten als unter der Woche und unter der Woche gibt es keine Morgen- und Abendpeaks. Diese Muster lassen sich im Gegensatz dazu bei den Leihfahrrädern feststellen.
+
+Dies macht deutlich, dass sich die Nutzergruppen für Bike-Sharing und E-Scooter-Sharing nicht zwangsläufig überschneiden und dass diese beiden Entwicklungen bei der Analyse und sogar der Regulierung möglicherweise getrennt behandelt werden müssen.
 
 ## 30% der verfügbaren Fahrräder werden täglich genutzt
 An einem Tag werden im Median 30% der Fahrräder auch bewegt. Jedes Fahrrad fährt im Schnitt 1,8 Fahrten pro Tag.
