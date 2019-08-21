@@ -94,9 +94,9 @@ Das Angebot aller Anbieter beschränkt sich auf den Ring. Die meisten Fahrten st
 Wie in den Daten zu sehen ist, profitieren aktuell Einwohner*innen außerhalb des Rings kaum von den Leihfahrrad-Angebote Berlins. Das "Problem der letzten Meile" ist aber hauptsächlich außerhalb des Rings ein tatsächliches Problem. Plätze mit vielen Leihfarrädern, wie beispielsweise bestimmte U- oder S-Bahnhöfe, deuten zudem darauf hin, wo dringend zusätzliche Fahrradabstellplätze gebraucht werden.
 
 ## Visualisierung 
-Eine Visualisierung der einzelnen Fahrten gibt es [hier.](https://fabiandinklage.com/projects/bikesharing/) Die Routen von Lidlbikes und Nextbikes können für einzelne Tage und Uhrzeiten angeschaut werden.
+Eine Visualisierung der einzelnen Fahrten wurde im Rahmen eines [CityLAB](https://www.citylab-berlin.org/) Projekts erstellt und ist [hier](https://bikesharing.citylab-berlin.org/) verfügbar. Die Routen von Lidlbikes und Nextbikes können für einzelne Tage und Uhrzeiten angeschaut werden.
 
-{% include macro-image-section-markdown-link.html src="../images/viz.png" link="https://fabiandinklage.com/projects/bikesharing/" %}
+{% include macro-image-section-markdown-link.html src="../images/viz.png" link="https://bikesharing.citylab-berlin.org/" %}
 
 {% include macro-subline-markdown.html caption="Screenshot der Visualisierung einzelner Fahrradrouten." %}
 

@@ -92,9 +92,9 @@ As can be seen from the data, residents outside the ring hardly benefit at all f
 The data can also be useful when it comes to planning space for bike racks and other parking options: Areas that see higher concentrations of rental bicycles, such as certain underground or S-Bahn stations, can also be good indicators of where there is a pressing need for additional spaces to park or secure bikes.
 
 ## Visualization
-A visualization of the individual rides is available [here.](https://fabiandinklage.com/projects/bikesharing/) The routes of Lidlbikes and Nextbikes can be viewed for individual days and times.
+A visualization of the individual rides was created as a [CityLAB](https://www.citylab-berlin.org/) project and is available [here.](https://bikesharing.citylab-berlin.org/) The routes of Lidlbikes and Nextbikes can be viewed for individual days and times.
 
-{% include macro-image-section-markdown-link.html src = "../images/viz.png" link = "https://fabiandinklage.com/projects/bikesharing/"%}
+{% include macro-image-section-markdown-link.html src = "../images/viz.png" link = "https://bikesharing.citylab-berlin.org/"%}
 
 {% include macro-subline-markdown.html caption = "Screenshot of the visualization of individual bicycle routes." %}
 
