@@ -1,14 +1,14 @@
 ---
 layout: project
-description: "Die Daten Fahrten mit Fahrrädern von Bike-Sharing Anbietern wurden für einen Zeitraum von dreieinhalb Monaten gesammelt und ausgewertet, um Rückschlüsse auf Mobilitätsverhalten gewinnen zu können."
+description: "Die Daten der Fahrten mit Bike-Sharing Rädern wurden für einen Zeitraum von dreieinhalb Monaten gesammelt und ausgewertet."
 lang: de
-title: Routen von Leihfarrädern
+title: Gefahrene Routen mit Leihfarrädern
 subtitle: Welche Informationen Bike-Sharing Daten liefern
 type: publication
 colorMode: bright
 thumbnail: /projects/bike-analysis/images/thumbnail.png
 heroImage: /projects/bike-analysis/images/hero.png
-socialMediaImage: /assets/images/social_media.png
+socialMediaImage: /projects/bike-analysis/images/social_media.png
 visible: true
 featured: false
 authors:

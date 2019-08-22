@@ -1,6 +1,6 @@
 ---
 layout: project
-description: "Data on bike rides with bike-sharing providers was collected and evaluated for a period of 3.5 in order to draw conclusions about mobility behaviour."
+description: "Data on bike rides with bike-sharing providers was collected and evaluated for a period of 3 months in order to draw conclusions about mobility behaviour."
 lang: en
 title: "Bike-share flows in Berlin"
 subtitle: "What kinds of information and insights can we glean from bike-sharing data?"
@@ -8,7 +8,7 @@ type: publication
 colorMode: bright
 thumbnail: /projects/bike-analysis/images/thumbnail.png
 heroImage: /projects/bike-analysis/images/hero.png
-socialMediaImage: /assets/images/social_media.png
+socialMediaImage: projects/bike-analysis/images/social_media.png
 visible: true
 featured: false
 authors:
