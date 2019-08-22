@@ -2,7 +2,7 @@
 layout: project
 description: "Die Daten von Fahrten mit Bike-Sharing Rädern wurden für einen Zeitraum von 3 Monaten gesammelt und ausgewertet."
 lang: de
-title: "Leihfarräder in Berlin: Erste Auswertungen"
+title: "Leihfahrräder in Berlin: Erste Auswertungen"
 subtitle: Welche Erkenntnisse liefern Bike-Sharing-Daten?
 type: publication
 colorMode: bright
@@ -75,7 +75,7 @@ Dies macht deutlich, dass sich die Nutzergruppen für Bike-Sharing und E-Scooter
 An einem Tag werden im Median 30% der Fahrräder auch bewegt. Jedes Fahrrad fährt im Schnitt 1,8 Fahrten pro Tag.
 
 ## 15% der Fahrten starten / enden an U-/S-Bahnhaltestellen
-Leihfarräder sollen auch als Transportmittel der "letzten Meile" dienen, d.h. für die letzten Meter zwischen ÖPNV und Start- oder Ankunftsort. Daher ist interessant zu betrachten, wie häufig Fahrräder an U- und S-Bahnhaltestellen ausgeliehen werden.
+Leihfahrräder sollen auch als Transportmittel der "letzten Meile" dienen, d.h. für die letzten Meter zwischen ÖPNV und Start- oder Ankunftsort. Daher ist interessant zu betrachten, wie häufig Fahrräder an U- und S-Bahnhaltestellen ausgeliehen werden.
 Ca. 15% der von uns registrierten Fahrten starten in der Nähe (100 m Radius) einer Haltestelle. Besonders viele Fahrten starten am Hauptbahnhof, dem Potsdamer Platz und Bahnhof Zoo.
 
 Die folgende Karte zeigt, von welchen Haltestellen wie häufig Fahrräder ausgeliehen werden.
@@ -91,7 +91,7 @@ Das Angebot aller Anbieter beschränkt sich auf den Ring. Die meisten Fahrten st
 {% include macro-subline-markdown.html caption="Anzahl Fahrten, die in entsprechendem Planungsraum starten." %}
 <p></p>
 
-Wie in den Daten zu sehen ist, profitieren aktuell Einwohner*innen außerhalb des Rings kaum von den Leihfahrrad-Angebote Berlins. Das "Problem der letzten Meile" ist aber hauptsächlich außerhalb des Rings ein tatsächliches Problem. Plätze mit vielen Leihfarrädern, wie beispielsweise bestimmte U- oder S-Bahnhöfe, deuten zudem darauf hin, wo dringend zusätzliche Fahrradabstellplätze gebraucht werden.
+Wie in den Daten zu sehen ist, profitieren aktuell Einwohner*innen außerhalb des Rings kaum von den Leihfahrrad-Angebote Berlins. Das "Problem der letzten Meile" ist aber hauptsächlich außerhalb des Rings ein tatsächliches Problem. Plätze mit vielen Leihfahrrädern, wie beispielsweise bestimmte U- oder S-Bahnhöfe, deuten zudem darauf hin, wo dringend zusätzliche Fahrradabstellplätze gebraucht werden.
 
 ## Visualisierung 
 Eine Visualisierung der einzelnen Fahrten wurde im Rahmen eines [CityLAB](https://www.citylab-berlin.org/) Projekts erstellt und ist [hier](https://bikesharing.citylab-berlin.org/) verfügbar. Die Routen von Lidlbikes und Nextbikes können für einzelne Tage und Uhrzeiten angeschaut werden.
