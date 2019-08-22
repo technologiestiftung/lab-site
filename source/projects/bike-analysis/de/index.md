@@ -1,9 +1,9 @@
 ---
 layout: project
-description: "Die Daten von Fahrten mit Bike-Sharing Rädern wurden für einen Zeitraum von dreieinhalb Monaten gesammelt und ausgewertet."
+description: "Die Daten von Fahrten mit Bike-Sharing Rädern wurden für einen Zeitraum von 3 Monaten gesammelt und ausgewertet."
 lang: de
-title: Gefahrene Routen mit Leihfarrädern
-subtitle: Welche Informationen Bike-Sharing Daten liefern
+title: "Leihfarräder in Berlin: Erste Auswertungen"
+subtitle: Welche Erkenntnisse liefern Bike-Sharing-Daten?
 type: publication
 colorMode: bright
 thumbnail: /projects/bike-analysis/images/thumbnail.png
@@ -14,9 +14,9 @@ featured: false
 authors:
   - alexandra-kapp
 start: 2019-04-01
-end: 2019-08-21
+end: 2019-08-22
 status: ongoing
-date: 2019-08-21
+date: 2019-08-22
 assets:
   js:
     - 'https://d3js.org/d3.v4.min.js'
@@ -32,7 +32,7 @@ assets:
     - https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
 materialsIncluded:
   - name: Source Code
-    link: "#"
+    link: "https://github.com/technologiestiftung/bike-sharing"
 
 ---
 <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"

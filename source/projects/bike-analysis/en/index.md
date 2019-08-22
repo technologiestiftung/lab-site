@@ -1,6 +1,6 @@
 ---
 layout: project
-description: "Data on bike rides with bike-sharing providers was collected and evaluated for a period of 3 months in order to draw conclusions about mobility behaviour."
+description: "Data on bike rides with bike-sharing providers was collected and evaluated for a period of 3 months."
 lang: en
 title: "Bike-share flows in Berlin"
 subtitle: "What kinds of information and insights can we glean from bike-sharing data?"
@@ -8,15 +8,15 @@ type: publication
 colorMode: bright
 thumbnail: /projects/bike-analysis/images/thumbnail.png
 heroImage: /projects/bike-analysis/images/hero.png
-socialMediaImage: projects/bike-analysis/images/social_media.png
+socialMediaImage: projects/bike-analysis/images/social_media.jpg
 visible: true
 featured: false
 authors:
   - alexandra-kapp
 start: 2019-04-01
-end: 2019-08-21
+end: 2019-08-22
 status: ongoing
-date: 2019-08-21
+date: 2019-08-22
 assets:
   js:
     - 'https://d3js.org/d3.v4.min.js'
@@ -32,7 +32,7 @@ assets:
     - https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
 materialsIncluded:
   - name: Source Code
-    link: "#"
+    link: "https://github.com/technologiestiftung/bike-sharing"
 
 ---
 <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
