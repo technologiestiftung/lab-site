@@ -4,7 +4,7 @@ description: "In a workshop with stakeholders, we explored the topic of data-sha
 lang: en
 title: "Shared mobility, shared data?"
 subtitle: "In a workshop with stakeholders, we explored the topic of data-sharing agreements between shared mobility providers and the city of Berlin."
-type: publication
+type: workshop
 colorMode: bright
 thumbnail: /projects/bike-workshop/images/thumbnail.png
 heroImage: /projects/bike-workshop/images/hero.png
