@@ -21,6 +21,9 @@ assets:
   js:
   css:
     - ../styles/index.css
+materialsIncluded:
+  - name: Workshop-Folien
+    link: "https://github.com/technologiestiftung/lab-site/blob/master/source/projects/bike-workshop/Slides/mds_workshop.pdf"
 
 ---
 *Wir setzen unsere Arbeit zu den Daten der Mobilitätsanbieter in Berlin fort und gehen der Frage nach, wie die Stadt durch diese Daten profitieren kann. Zuvor haben wir die Verfügbarkeit und Qualität von öffentlich zugänglichen APIs von [Bike-Sharing-Anbietern](https://lab.technologiestiftung-berlin.de/projects/bike-sharing/de/) bewertet und die von diesen APIs gesammelten Daten analysiert, um zu sehen, welche [Erkenntnisse wir über die Nutzung von Bike-Sharing in Berlin](https://lab.technologiestiftung-berlin.de/projects/bike-analysis/de/) gewinnen können.* 
