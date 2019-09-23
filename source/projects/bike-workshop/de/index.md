@@ -1,10 +1,10 @@
 ---
 layout: project
-description: "In einem Workshop mit Interessengruppen haben wir uns mit dem Thema Datenaustauschvereinbarungen zwischen gemeinsamen Mobilitätsanbietern und der Stadt beschäftigt."
+description: "In einem Workshop mit Interessengruppen haben wir uns das Thema Datenaustauschvereinbarungen zwischen Shared-Mobility-Providers und der Stadt ausgearbeitet."
 lang: de
 title: "Bedeutet 'Shared Mobility' gleich 'Shared Data'?"
-subtitle: "In einem Workshop mit Interessengruppen haben wir uns mit dem Thema Datenaustauschvereinbarungen zwischen gemeinsamen Mobilitätsanbietern und der Stadt beschäftigt."
-type: publication
+subtitle: "In einem Workshop mit Interessengruppen haben wir uns das Thema Datenaustauschvereinbarungen zwischen Shared-Mobility-Providers und der Stadt ausgearbeitet."
+type: workshop
 colorMode: bright
 thumbnail: /projects/bike-workshop/images/thumbnail.png
 heroImage: /projects/bike-workshop/images/hero.png
@@ -13,10 +13,10 @@ visible: true
 featured: false
 authors:
   - victoria-dykes
-start: 2019-09-20
-end: 2019-09-20
+start: 2019-09-23
+end: 2019-09-23
 status: ongoing
-date: 2019-09-20
+date: 2019-09-23
 assets:
   js:
   css:
@@ -63,9 +63,9 @@ Zwei der Berliner Bezirke waren im Workshop vertreten und sahen erhebliches Pote
 
 Diese Bedenken wurden bereits zuvor von Verwaltungsmitarbeiter\*innen geäußert: Sie sind sich einig, dass die möglichen Erkenntnisse aus diesen Daten äußerst wertvoll wären, aber sie sind sich weniger sicher, dass die Verwaltung selbst in der Lage wäre, diese Erkenntnisse zu erlangen. Das Argument ist, dass der Verwaltung genügend Personal für solche Aufgaben fehlt und den Verwaltungsmitarbeiter\*innen darüber hinaus die technischen Fähigkeiten fehlen, Mobilitätsdaten sinnvoll zu verarbeiten und zu analysieren. Es ist klar, dass eine erfolgreiche Umsetzung von MDS in Berlin mit der Einführung von Softwaretools einhergehen muss, die es den Regierungsmitarbeiter\*innen ermöglichen, diese Daten zu verstehen und zu analysieren – auch wenn ihnen selbst die Fähigkeit fehlt mit den Rohdaten zu arbeiten. 
 
-**4.	Die Berliner Landesregierung – konkret die Senatsverwaltung für Umwelt, Verkehr und Klimaschutz (SenUVK) – muss für dieses Thema wahrscheinlich die Führung übernehmen, jedoch ist unklar, in welchem Bereich die Verantwortung liegt.**
+**4. Die Zuständigkeit für die Erarbeitung einer Kooperationsvereinbarung mit den Sharing-Anbietern läge bei der Senatsverwaltung für Umwelt, Verkehr und Klimaschutz (SenUVK), jedoch ist aktuell unklar, welche Abteilung dort für datenbasierte Services zuständig ist.**
 
-Die Workshop-Teilnehmer\*innen aus der Stadtverwaltung warne sich einig, dass SenUVK – die für mobilitätsbezogene Themen zuständige Zweigstelle der Hauptverwaltung – Gespräche darüber führen sollte, wie eine Vereinbarung zwischen der Stadt und den Anbietern aussehen kann und welche Datenstandards eingeführt werden sollten (man kann sich leicht vorstellen, wie chaotisch die Situation in Berlin werden würde, wenn jeder der zwölf Bezirke für die eigene Datenvereinbarungen zuständig wäre). Weniger klar ist, wer konkret – d. h. welche Abteilung – diese Aktivitäten leiten soll. Laut den Mitarbeitern von SenUVK gibt es keine offensichtliche Antwort, und aufgrund mangelnder Personalressourcen werden sich kaum freiwillige Abteilungen finden. 
+Die Workshop-Teilnehmer*innen aus der Verwaltung waren sich einig, dass die SenUVK beim Thema Datenstandards vorangehen und einen Rahmen für die Bezirke vorgeben müsste (wenn jeder Bezirk eine eigene Datenvereinbarung erlässt, wäre Chaos vorprogrammiert). Weniger klar war jedoch, wer konkret – d. h. welche Abteilung oder Referat – zuständig sein könnte. Die Nutzung von Echtzeit-Mobilitätsdaten zur Verkehrsplanung und -steuerung ist ein relativ neues Feld und aktuell fehlt es der Verwaltung offenbar an Personal und Know-How, um hier vertiefend tätig zu werden.
 
 ## Wie geht es weiter?
 

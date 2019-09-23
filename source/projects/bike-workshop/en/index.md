@@ -1,9 +1,9 @@
 ---
 layout: project
-description: "In a workshop with stakeholders, we explored the topic of data-sharing agreements between shared mobility providers and the city."
+description: "In a workshop with stakeholders, we explored the topic of data-sharing agreements between shared mobility providers and the city of Berlin."
 lang: en
 title: "Shared mobility, shared data?"
-subtitle: "In a workshop with stakeholders, we explored the topic of data-sharing agreements between shared mobility providers and the city"
+subtitle: "In a workshop with stakeholders, we explored the topic of data-sharing agreements between shared mobility providers and the city of Berlin."
 type: publication
 colorMode: bright
 thumbnail: /projects/bike-workshop/images/thumbnail.png
@@ -13,10 +13,10 @@ visible: true
 featured: false
 authors:
   - victoria-dykes
-start: 2019-09-20
-end: 2019-09-20
+start: 2019-09-23
+end: 2019-09-23
 status: ongoing
-date: 2019-09-20
+date: 2019-09-23
 assets:
   js:
   css:
@@ -65,12 +65,8 @@ It’s a sentiment we’ve heard multiple times from government officials when t
 
 **4.	The central government in Berlin – specifically, the Senate Department for Environment, Traffic, and Climate Protection (SenUVK) – likely needs to lead on this topic, but it’s unclear where exactly the responsibility rests.**
 
-At the workshop, participants from the city administration generally agreed that the SenUVK – the branch of the central government responsible for mobility-related topics – should lead discussions about what a data-sharing agreement between the city and providers should look like and what kind of data standards should be put in place (one can easily imagine how chaotic the situation in Berlin would become if instead each of the 12 boroughs were responsible for managing their own data-sharing activities). What’s less clear is who specifically – i.e., which department – should lead these activities. According to representatives at the workshop from the SenUVK, there isn’t an obvious answer, and given that they are just as strapped for personnel as other government departments, it seems unlikely in the status quo that any department would volunteer to take on this additional work.  
+At the workshop, participants from the city administration generally agreed that the SenUVK – the branch of the central government responsible for mobility-related topics – should lead discussions about what a data-sharing agreement between the city and providers should look like and what kind of data standards should be put in place (one can easily imagine how chaotic the situation in Berlin would become if instead each of the 12 boroughs were responsible for managing their own data-sharing activities). What’s less clear is who specifically – i.e., which department – should lead these activities. The usage of real-time mobility data is a novel concept for the city administration, and as such the administration lacks personnel with the necessary skills and expertise to analyze this data. 
 
 ## Where do we go from here?
 
 In general, we’ll continue working on tools that show the value of open data, specifically in a mobility context. Since data skills (or the lack thereof) are a chief concern among government officials, we’ll also look for ways to build up these capacities among government employees, such as by finding a borough with whom we can work on a pilot project to digitally create no-park zones (i.e., as GeoJSON files) and transmit these files to shared mobility providers. And finally, we will work on drafting our own suggestion for a data-sharing agreement between the city administration and mobility providers to serve as a basis for further discussions. 
-
-
-
-
