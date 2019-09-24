@@ -6,17 +6,17 @@ title: Was ist dieses LoRaWan überhaupt?
 subtitle: 40 Jahre nach der Geburtsstunde des Internet, versetzt das LoRaWan die Tech-Szene in helle Aufregeung
 type: prototype
 colorMode: bright
-thumbnail: /projects/lorawan/images/[thumbnail].jpg
-heroImage: /projects/lorawan/images/[hero].jpg
-socialMediaImage: /projects/lorawan/images/[social_media].jpg
+thumbnail: /projects/lorawan/images/thumbnail.jpg
+heroImage: /projects/lorawan/images/hero.jpg
+socialMediaImage: /projects/lorawan/images/social_media.jpg
 visible: true
 featured: false
 authors:
   - julia-zimmermann
 start: 2019-09-24
 end: 2019-09-27
-status: wip
-date: -
+status: ongoing
+date: 2019-09-24
 
 materialsIncluded:
   - name: "GitHub"
@@ -25,13 +25,7 @@ materialsIncluded:
 redirect_from:
   - /projects/LORAWAN/index.html
 
-.markdown-preview-enhanced.enableEmojiSyntax {
-  true
-  }
 
-.markdown-preview-enhanced.automaticallyShowPreviewOfMarkdownBeingEdited {
-  true
-}
 
 ---
 
