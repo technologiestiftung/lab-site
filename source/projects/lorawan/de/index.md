@@ -29,6 +29,8 @@ redirect_from:
 
 ---
 
+## Test
+
  Die letzten Tage  hatte ich endlich Gelegenheit, mich mal wieder etwas praktischer mit dem Thema LoRaWAN zu beschäftigen. Unsere ersten [Gehversuche](https://github.com/technologiestiftung/LoRaWAN) im freien Internet der Dinge sind schon einige Monate her und in der Zwischenzeit haben wir uns bei der Technologiestiftung eher mit dem Aufbau von [Infrastruktur](https://www.technologiestiftung-berlin.de/de/blog/gewinnspiel-lorawan-gateways-gewinnerinnen-stehen-fest/) und der [Community-Organisation](https://www.technologiestiftung-berlin.de/de/blog/anwendungen-netze-und-bildung/) rund um LoRa befasst. Jetzt aber haben wir unsere [Hacking Box](https://www.technologiestiftung-berlin.de/hackingbox/) um zwanzig LoRa-Nodes erweitert, die natürlich auch eingerichtet und getestet werden wollten. Freiwillige vor!
 
 {% include macro-image-section-markdown.html src="../images/Node.jpg" caption="Frisch geschlüpft" %}
