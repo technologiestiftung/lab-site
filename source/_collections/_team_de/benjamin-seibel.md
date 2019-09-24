@@ -1,5 +1,5 @@
 ---
-name: Benjamin Seibel
+name: Dr. Benjamin Seibel
 uid: benjamin-seibel
 image: /assets/images/benjamin.jpg
 mail: Seibel@technologiestiftung-berlin.de
