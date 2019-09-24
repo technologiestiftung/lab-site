@@ -1,14 +1,14 @@
 ---
 layout: project
-description: No byte will be wasted
+description: LoRaWan, Technology & Digital Transformation
 lang: en
-title: New LoRa nodes are go!
-subtitle: Testing our fresh Arduino Mega/Dragino Devices
+title: What is the LoRaWan, anyway?
+subtitle: 40 years after the birth of the Internet, the LoRaWan is putting the tech scene in a state of excitement.
 type: prototype
 colorMode: bright
 thumbnail: /projects/lorawan/images/[thumbnail].jpg
 heroImage: /projects/lorawan/images/[hero].jpg
-socialMediaImage: /projects/lorawan/[social_media].jpg
+socialMediaImage: /projects/lorawan/images/[social_media].jpg
 visible: true
 featured: false
 authors:
