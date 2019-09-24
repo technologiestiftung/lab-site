@@ -8,7 +8,7 @@ type: workshop
 colorMode: bright
 thumbnail: /projects/bike-workshop/images/thumbnail.png
 heroImage: /projects/bike-workshop/images/hero.png
-socialMediaImage: /projects/bike-workshop/social_media.png
+socialMediaImage: /projects/bike-workshop/images/social_media.png
 visible: true
 featured: false
 authors:
