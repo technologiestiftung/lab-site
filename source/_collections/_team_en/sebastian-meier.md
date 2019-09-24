@@ -1,5 +1,5 @@
 ---
-name: Sebastian Meier
+name: Dr. Sebastian Meier
 uid: sebastian-meier
 image: /assets/images/sebastian.jpg
 mail: Meier@technologiestiftung-berlin.de

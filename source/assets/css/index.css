@@ -1441,6 +1441,9 @@ span.copy-funding {
           @media only screen and (max-width: 1000px) {
             .featured-list__project-title ~ .featured-list__project-image.translate {
               transform: translate3d(40px, 40px, 0); } }
+        .featured-list__project-title ~ .featured-list__project-image.hidden {
+          opacity: 0;
+          transition: opacity .25s linear; }
         .featured-list__project-title.hovered ~ .featured-list__project {
           opacity: 1;
           display: flex;

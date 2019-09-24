@@ -1209,8 +1209,8 @@ const table = () => {
             .text( d => { return d.sponsor; })
     }
         
-        
 
+    
     module.update = (filterCurrent, filteredData) => {
 
         tableItem = tableItems.selectAll('div')

@@ -177,6 +177,17 @@ function toggleFeaturedClass() {
       const element = featured_list[index];
 
       if (element != undefined) {
+        element.classList.remove('hidden');
+      }
+
+    }
+  }, 150)
+
+  setTimeout(() => {
+    for (let index = 0; index < 4; index++) {
+      const element = featured_list[index];
+
+      if (element != undefined) {
         element.classList.add('translate');
       }
 

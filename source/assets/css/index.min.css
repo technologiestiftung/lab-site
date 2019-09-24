@@ -2096,6 +2096,10 @@ span.copy-funding {
             .featured-list__project-title ~ .featured-list__project-image.translate {
               -webkit-transform: translate3d(40px, 40px, 0);
                       transform: translate3d(40px, 40px, 0); } }
+        .featured-list__project-title ~ .featured-list__project-image.hidden {
+          opacity: 0;
+          -webkit-transition: opacity .25s linear;
+          transition: opacity .25s linear; }
         .featured-list__project-title.hovered ~ .featured-list__project {
           opacity: 1;
           display: -webkit-box;
