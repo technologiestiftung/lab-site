@@ -2,12 +2,12 @@
 layout: project
 description: LoRaWan, Technology & Digital Transformation
 lang: de
-title: Was ist dieses LoRaWan überhaupt?
+title: LoRaWhat?! Let's talk about – LoRaWan!
 subtitle: 40 Jahre nach der Geburtsstunde des Internet, versetzt das LoRaWan die Tech-Szene in helle Aufregeung
-type: prototype
+type: publication
 colorMode: bright
-thumbnail: /projects/lorawan/images/thumbnail.jpg
-heroImage: /projects/lorawan/images/hero.jpg
+thumbnail: /projects/lorawan/images/featuredImage.png
+heroImage: /projects/lorawan/images/hero.png
 socialMediaImage: /projects/lorawan/images/social_media.jpg
 visible: true
 featured: false

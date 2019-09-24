@@ -2,7 +2,7 @@
 layout: project
 description: LoRaWan, Technology & Digital Transformation
 lang: en
-title: What is the LoRaWan, anyway?
+title: LoRaWhat?! Let's talk about – LoRaWan!
 subtitle: 40 years after the birth of the Internet, the LoRaWan is putting the tech scene in a state of excitement.
 type: prototype
 colorMode: bright
