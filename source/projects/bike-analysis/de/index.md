@@ -43,18 +43,20 @@ _In den letzten Monaten haben wir uns im Lab intensiver mit den [Bike- und Scoot
 
 Mehr als 10.000 Leihfahrräder stehen durch diverse Anbieter auf Berlins Straßen bereit. Für welche Strecken werden die Räder genutzt? Wie hoch ist deren Auslastung? Zu welchen Zeiten werden sie hauptsächlich verwendet? All das sind relevante Fragen für die Stadt.
 
-Wir haben über die letzten dreieinhalb Monate Daten zu drei verschiedenen Anbietern (Nextbike, Lidlbike und Mobike) gesammelt und ausgewertet. Von diesen drei Anbietern stehen täglich um die 8.000 Fahrräder bereit (Im Median hat Nextbike täglich ca. 1.095 Fahrräder im Einsatz, Lidlbike 2.813 und Mobike 3.533.)
+Wir haben über die letzten dreieinhalb Monate Daten zu drei verschiedenen Anbietern (Nextbike, Lidlbike und Mobike) gesammelt und ausgewertet. 
 
-Die nachfolgende Tabelle gibt an, wieviele Fahrräder der einzelnen Anbieter täglich verfügbar waren - im Median und in maximaler Anzahl. Die gesamte Anzahl aller eingesetzten Räder im Untersuchungs­zeitraum ist ebenfalls angegeben.
+Die gesamte Anzahl aller vorhandenen Räder im Untersuchungs­zeitraum zeigt die folgende Tabelle:
 
 <div class = 'project-text'>
 <table class = 'table'> <tr> <th></th> <th>Gesamt</th><th>Nextbike</th> <th>Lidlbike</th> <th>Mobike</th></tr>
-<tr> <td>Median (tägl. verfügbar)</td> <td>7.450</td><td>1.095</td> <td>2.813</td> <td>3.533</td> </tr>
-<tr> <td>Max. (tägl. verfügbar)</td> <td>8.078</td><td>1.409</td> <td>3.048</td> <td>3.966</td></tr>
-<tr> <td>Räder über gesamten Zeitraum</td> <td>15.375</td><td>2.396</td> <td>3.633</td> <td>9.346</td></tr>
+<tr> <td>Fahrräder insgesamt</td> <td>15.375</td><td>2.396</td> <td>3.633</td> <td>9.346</td></tr>
 </table>
 </div>
-Die Daten von Mobike wurden für die weiteren Streckenanalysen entfernt, da diese zu unzuverlässig waren. Die weiteren Analysen basieren auf den Daten von Lidlbike und Nextbike (ca. 4.000 täglich verfügbare Fahrräder).
+Die Daten von Mobike wurden für die weiteren Streckenanalysen entfernt, da diese zu unzuverlässig waren. 
+
+Die weiteren Analysen basieren auf den Daten von Lidlbike und Nextbike.
+
+In den Daten von Nextbike sind keine Fahrräder erfasst, die an Stationen ausgeliehen oder zurückgegeben wurden (lediglich "free-floating" Fahrräder). Somit sind die Auswertungen nur eingeschränkt gültig.
 
 Täglich summieren sich die gefahren Kilometer mit Fahrrädern der beiden Anbieter auf durchschnittlich 8181 km (Median: 8760 km). Mit durchschnittlich 2830 Fahrten à 2,9 km (Median: 2,4 km) pro Tag. Im Median dauert eine Fahrt 30 min (im Durchschnitt 1h 36 min, was für einige Ausreißer mit sehr langen Ausleihzeiten spricht).
 
@@ -103,3 +105,5 @@ Eine Visualisierung der einzelnen Fahrten wurde im Rahmen eines [CityLAB](https:
 # Datenquellen
 Die Datenschnittstellen von Mobike, Lidlbike und Nextbike wurden über im Zeitraum vom 1. April bis 11. Juli alle vier Minuten abgefragt ([Details zur API Abfrage hier](https://lab.technologiestiftung-berlin.de/projects/bike-sharing/de/)) und die Standorte der Fahrräder abgespeichert. Anhand der Standortdaten zu verfügbaren Daten wurden Start- und Endpunkte einzelner Fahrten abgeleitet. Mithilfe von [OSRM](http://project-osrm.org/) wurde ein Routing für alle Fahrten erstellt. Der Datensatz wurde nach bestem Wissen bereinigt, um Ausreißer und nicht plausible Daten zu entfernen. Dazu gehören Fahrten unter 200 m, Start- und Endpunkte außerhalb von Berlin und Fahrten die schneller als 30 km/h waren. Daraus resultieren knapp 0,6 Millionen Fahrten. Die Daten von Mobike wurden für diese Streckenanalysen entfernt, da diese Daten sehr fehlerbehaftet und nicht plausibel waren. Somit resultieren 300.000 Fahrten von Lidlbike und Nextbike für die drei Monate, auf deren Basis die Analysen erstellt wurden.
 Für mehr Details siehe die Jupyter Notebooks [hier](https://github.com/technologiestiftung/bike-sharing/blob/master/README.md).
+
+_Anmerkung: Der Artikel wurde am 25.9.2019 editiert: Die Datengrundlage von nextbike Fahrrädern wurde genauer auf reine "free-floating" Fahrräder spezifiziert._
