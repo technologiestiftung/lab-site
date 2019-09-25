@@ -32,7 +32,7 @@ redirect_from:
 *Wer sein Fahrrad, Hund oder gar sein Kind tracken möchte, der landet bei der Suche nach einem passendem **GPS-Tracker** schnell bei preisintensiven SIM-Karten-Trackern auf Abonnement-Basis. Mit Hilfe der letzten zwei Workshops der offenen Werkstatt im [CityLAB Berlin](https://www.citylab-berlin.org/) wollten wir demonstrieren, dass GPS-Tracking nicht teuer sein muss. Denn es gibt eine viel reichweitenstärkeres und ressourcenschonenderes Netz, welches man zum Tracken nutzen kann: das **LoRaWan**.*
 
 
-## LoRaWAN in der Theorie
+## LoRaWan in der Theorie
 
 Das **Long Range Wide Area Network** ist ein im Jahr 2007 von Nicolas Sornin entwickeltes Standard-Netzwerkübertragungsprotokoll, welches zur Klasse der **Low Power Wide Area Networks** gehört. Demnach ist das LoRaWan darauf ausgelegt Datenpakete über große Distanzen (200 m bis 20 km), mit einem nur sehr geringen Energieverbrauch im sog. ISM-Band (Industrial, Scientific und Medical Frequenzbereich) bei 868 MHz Frequenzband in Europa und 915 MHz in Nordamerika zu übertragen. Wegen seiner Eigenschaften hat sich der Einsatz von LoRaWan zur Kommunikation zwischen verschiedensten **Sensoren und IoT-Anwendungen in der Industrie-Branche** bereits bewährt. So werden zum Beispiel Messwerte von Wetterstationen, Wassertanks, LKW-Reifen, Mülltonnenaber oder auch Feinstaubmessgeräten durch Sensoren erfasst und über mit Hilfe der LoRaWan-Technologie in andere Netzwerke, wie das Internet, übertragen. Dabei ist die LoRaWan-Architektur recht simpel:
 
@@ -59,7 +59,7 @@ Im letztem Workshop haben wir einen optimierten Tracker gebaut. Entgegen zu den 
 &nbsp;
 
 ### Ein kleiner Vorgeschmack
-<img src="../images/Nano_Xbee_Image.jpg" style="margin-left:6%; margin-right:4%; float:right; width:56%" alt="GPS-LoRa-Tracker CityLAB">
+<img src="../images/Nano_Xbee_Image.jpg" style="margin-left:6%; margin-right:4%; float:right; width:52%" alt="GPS-LoRa-Tracker CityLAB">
 
 Für diesen LoRa-GPS-Tracker benötigt man die folgenden Hardware-Komponenten:
 * 9V Batterien + Ladegerät (Bestellung [HIER](https://www.amazon.de/Ladeger%C3%A4t-Keenstone-aufladbare-Batterien-USB-Ladekabel-6-St-3-Slots-Ladegeraet/dp/B07BRKJV3J/ref=sr_1_2?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=9+volt+batterie+800mAh+keenstone&qid=1568196073&s=computers&sr=8-2) möglich)
