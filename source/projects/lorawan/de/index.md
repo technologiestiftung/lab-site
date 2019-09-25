@@ -29,11 +29,22 @@ redirect_from:
 
 ---
 
-## Test
+*Wer sein Fahrrad, Hund oder gar sein Kind tracken möchte, der landet bei der Suche nach einem passendem **GPS-Tracker** schnell bei preisintensiven SIM-Karten-Trackern auf Abonnement-Basis. Mit Hilfe der letzten zwei Workshops der offenen Werkstatt im [CityLAB Berlin](https://www.citylab-berlin.org/) wollten wir demonstrieren, dass GPS-Tracking nicht teuer sein muss. Denn es gibt eine viel reichweitenstärkeres und ressourcenschonenderes Netz, welches man zum Tracken nutzen kann: das **LoRaWan**.*
 
- Die letzten Tage  hatte ich endlich Gelegenheit, mich mal wieder etwas praktischer mit dem Thema LoRaWAN zu beschäftigen. Unsere ersten [Gehversuche](https://github.com/technologiestiftung/LoRaWAN) im freien Internet der Dinge sind schon einige Monate her und in der Zwischenzeit haben wir uns bei der Technologiestiftung eher mit dem Aufbau von [Infrastruktur](https://www.technologiestiftung-berlin.de/de/blog/gewinnspiel-lorawan-gateways-gewinnerinnen-stehen-fest/) und der [Community-Organisation](https://www.technologiestiftung-berlin.de/de/blog/anwendungen-netze-und-bildung/) rund um LoRa befasst. Jetzt aber haben wir unsere [Hacking Box](https://www.technologiestiftung-berlin.de/hackingbox/) um zwanzig LoRa-Nodes erweitert, die natürlich auch eingerichtet und getestet werden wollten. Freiwillige vor!
 
-{% include macro-image-section-markdown.html src="../images/Node.jpg" caption="Frisch geschlüpft" %}
+## LoRaWAN – Wie Internet, nur anders
+
+Das **Long Range Wide Area Network** ist ein im Jahr 2007 von Nicolas Sornin entwickeltes Netzwerkübertragungsprotokoll, welches zur Klasse der **Low Power Wide Area Networks** gehört. Demnach ist das LoRaWan darauf ausgelegt Datenpakete über große Distanzen (200 m bis 20 km), mit einem nur sehr geringen Energieverbrauch im kostenlosen 868-MHz-Frequenzband zu kommunizieren. Wegen seiner Eigenschaften hat sich der Einsatz von LoRaWan zur Kommunikation zwischen verschiedensten Sensoren und IoT-Anwendungen in der Industrie-Branche bereits bewährt. So werden zum Beispiel Messwerte von Wetterstationen, Wassertanks, LKW-Reifen, Mülltonnenaber oder auch Feinstaubmessgeräten durch Sensoren erfasst und über mit Hilfe der LoRaWan-Technologie in andere Netzwerke, wie das Internet, übertragen. Dabei ist die LoRaWan-Architektur recht simpel:
+
+{% include macro-image-section-markdown.html src="../images/lora_architecture.png" caption="LoRaWan Architecture" %}
+
+
+Wer sich jetzt fragt, warum wir dann überhaupt für noch für Internet bezahlen, wenn es doch anscheinend ein kostenloses Netzt gibt, den müssen wir leider enttäuschen. Denn die **Datenübertragungsrate des LoRaWan reicht von 292 Bit/s bis maximal 50 kBit/s** und eignet sich Dadurch vorrangig für den Einsatz verschiedenster IoT-Anwendungen und -Geräte.
+
+ Die letzten zwei Workshops der offenen Werkstatt im [CityLAB Berlin](https://www.citylab-berlin.org/) widmeten sich dem Thema **GPS Tracking mit LoRaWan**. Dabei wurden die Teilnehmer\*innen mit entsprechender Hard- und Software durch unsere [Bauanleitung auf GitHub](https://github.com/technologiestiftung/workshops/blob/master/HowTo_GPSTracker.md) geführt und mit Hilfe von Lora-Nodes aus unserer [Hacking Box](https://www.technologiestiftung-berlin.de/hackingbox/), aber auch kleineren Bauteilen wie der [Dragino LoRaBee](https://www.dragino.com/products/lora/item/109-lora-bee.html), Daten über das LoRa-Netz übertragen.
+
+Dieser Beitrag soll etwas Licht ins Dunkle bringen und klären: was  dieses LoRaWan überhaupt ist, was hat es mit TTN auf sich hat und wo Beides (bereits) Anwendung findet.*
+
 
 Die Nodes bestehen aus einem Arduino Mega 2560 und einem [LoRa-Shield](http://wiki.dragino.com/index.php?title=Lora_Shield) von Dragino (teils mit, teils ohne GPS). Wir haben sie bei [The Things Network (TTN)](https://thethingsnetwork.org) registriert, mit Device-Adressen versorgt und für jedes der zwanzig Geräte ein eigenes .ino-File angelegt. Damit lassen sie sich nach einem Workshop schnell wieder in ihren Ursprungszustand zurückversetzen. Standardmäßig versenden die Nodes jetzt nach dem Einschalten eine kurze Nachricht mit einer individuellen Kennung. So sieht man 1.) dass sie ordnungsgemäß funktionieren und hat 2.) gleich ein Template, um weitere Anwendungen zu entwickeln.
 
