@@ -43,18 +43,18 @@ _In the last few months, the Ideation & Prototyping Lab has been working intensi
 
 There are more than 10,000 rental bikes on Berlin's streets that have been made available through various providers. These thousands of bikes – and the large quantities of data they generate – have the potential to answer a variety of useful questions for the city: For which routes are the bikes used? How often are the bikes being used? What time of day are most journeys?
 
-Over the last 3.5 months, we have collected and evaluated data from three different bike-share providers in Berlin (Nextbike, Lidlbike and Mobike). These three providers have around 8,000 bikes available daily (for Nextbike, the median value is around 1,095 bikes daily, for Lidlbike 2,813, and for Mobike 3,533).
+Over the last 3.5 months, we have collected and evaluated data from three different bike-share providers in Berlin (Nextbike, Lidlbike and Mobike). 
 
-The following table shows the median and maximum values for how many bicycles were available daily from the individual providers, as well as the total number of bicycles deployed during the period of analysis.
+The following table shows the total number of bicycles deployed during the period of analysis.
 
 <div class = 'project-text'>
 <table class = 'table'> <tr> <th></th> <th>Total</th><th>Nextbike</th> <th>Lidlbike</th> <th>Mobike</th></tr>
-<tr> <td>Median (available daily)</td> <td>7,450</td><td>1,095</td> <td>2,813</td> <td>3,533</td> </tr>
-<tr> <td>Max. (daily available)</td> <td>8,078</td><td>1,409</td> <td>3,048</td> <td>3,966</td></tr>
 <tr> <td>Unique bikes over the entire period</td> <td>15,375</td><td>2,396</td> <td>3,633</td> <td>9.346</td></tr>
 </table>
 </div>
-After reviewing the data, we decided to exclude Mobike's data from any further analyses due to its unreliability. All additional analyses in this post are based on data from Lidlbike and Nextbike (correspondong to the roughly roughly 4,000 bikes available daily through these two providers).
+After reviewing the data, we decided to exclude Mobike's data from any further analyses due to its unreliability. All additional analyses in this post are based on data from Lidlbike and Nextbike.
+
+The nextbike data only includes data of free-floating bikes: there is no data for bikes being rented or returned at stations. Therefore, the analysis has only limited validity.
 
 The average daily distance travelled with all bicycles from both providers is 8,181 km (median: 8,760 km) with an average of 2,830 rides of 2.9 km each (median: 2.4 km) per day. The median trip length is 30 min, but the average length is 1 hour and 36 min, which indicates there are some outliers in the datasets representing unusually long rental periods. 
 
@@ -101,3 +101,4 @@ A visualization of the individual rides was created as a [CityLAB](https://www.c
 # Data sources
 To gather this data, we queried the APIs from Mobike, Lidlbike and Nextbike every four minutes for the location of bicycles during the period of April 1 to July 11 ([more information on the APIs is available here](https://lab.technologiestiftung-berlin.de/projects/bike-sharing/de/)). We derived start and end points for the trips based on the location data contained in the database and calculated probable routes using [OSRM](http://project-osrm.org/). The dataset was cleaned to remove outliers and implausible data. This includes journeys under 200 meters, journeys with start and end points outside of Berlin, and journeys faster than 30 km/h. This resulted in a dataset of almost 0.6 million trips. The data from Mobike was excluded from the analyses here, as these data were very error-prone and, in many cases, simply implausible. This resulted in a dataset containing 300,000 rides using Lidlbike and Nextbike over a three-month period. For more details on how the data was prepared, see the Jupyter Notebooks [here](https://github.com/technologiestiftung/bike-sharing/blob/master/README.md).
 
+_Note: The article was edited on 2019-9-25: the data of nextbike was specified to only include "free-floating" bikes._
