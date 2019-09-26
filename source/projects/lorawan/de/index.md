@@ -54,7 +54,7 @@ Die Rede ist hier von Geräten, die mit wenig Energieverbrauch, möglichst klein
 
 ## LoRaWan mit dem CityLAB erleben
 
-Die letzten zwei Workshops der offenen Werkstatt im [CityLAB Berlin](https://www.citylab-berlin.org/) widmeten sich dem Thema **GPS Tracking mit LoRaWan**. Dabei wurden die Teilnehmer\*innen mit entsprechender Hard- und Software durch unsere [Bauanleitung auf GitHub](https://github.com/technologiestiftung/workshops/blob/master/HowTo_GPSTracker.md) geführt und mit Hilfe von LoRa-Nodes, aber auch kleineren Bauteilen wie der [Dragino LoRaBee](https://www.dragino.com/products/lora/item/109-lora-bee.html), Daten über das LoRa-Netz übertragen. 
+Die letzten zwei Workshops der offenen Werkstatt im [CityLAB Berlin](https://www.citylab-berlin.org/) widmeten sich dem Thema **GPS Tracking mit LoRaWan**. Dabei wurden die Teilnehmer\*innen mit entsprechender Hard- und Software durch unsere [Bauanleitung auf GitHub](https://github.com/technologiestiftung/werkstatt) geführt und mit Hilfe von LoRa-Nodes, aber auch kleineren Bauteilen wie der [Dragino LoRaBee](https://www.dragino.com/products/lora/item/109-lora-bee.html), Daten über das LoRa-Netz übertragen. 
 
 Im letzten Workshop haben wir einen optimierten Tracker gebaut. Entgegen zu den LoRa-Nodes, wurden die individuell Bauteile zusammengestellt, sodass wir am Ende eine sehr robuste Variante (gelötet) mit sehr kleinem Packmaß gebaut haben.
 
@@ -77,7 +77,7 @@ Zusammengerechnet kommen wir pro Tracker auf **Kosten von nur 30€** und liegen
 
 Sobald alle Bauteile fest miteinander verlötet sind, ist der Hardware-Teil abgeschlossen. Softwareseitig gilt es nun, den Tracker im **[The Things Network (TTN)](https://thethingsnetwork.org)** zu registrieren und dadurch eine entsprechende Device Adress, sowie einen Network-Session- und einen App-Key zuzuordnen. Diese drei Schlüsselattribute benötigen wir schließlich für den Programmcode (unter Arduino auch *Sketch* genannt), der auf den Arduino Nano V3 Mikrocontroller gespielt wird. Eine **ausführliche Anleitung zur Registrierung der Endnode in der TTN Konsole** inkl. Screenshots von der Benutzeroberfläche findet man auf [adafruit.com](https://learn.adafruit.com/the-things-network-for-feather?view=all).  
 
-Sobald das Device einmal registriert ist, können die nötigen **drei Variablen, die im Sketch ergänzt werden müssen**, in der TTN-Konsole ausgelesen werden. Den Sketch aka. Programmcode findet ihr [hier auf GitHub](https://github.com/technologiestiftung/workshops/blob/master/codes_sketches/) – Name: *GPSTracker_LoRa_Nano_V2.ino*
+Sobald das Device einmal registriert ist, können die nötigen **drei Variablen, die im Sketch ergänzt werden müssen**, in der TTN-Konsole ausgelesen werden. Den Sketch aka. Programmcode findet ihr [hier auf GitHub](https://github.com/technologiestiftung/werkstatt/tree/master/codes_sketches) – Name: *GPSTracker_LoRa_Nano_V2.ino*
 
 Folgende Zeilen müssen im Code angepasst werden:
 
@@ -106,7 +106,7 @@ const lmic_pinmap lmic_pins = {
     .dio = {2, 6, 7},
     };
 ```
-Das Pinmapping muss nur dann angepasst werden, wenn ihr von unserem Schaltplan abweicht. Der Schaltplan, wie auch die aufürhliche Anleitung ist auf GitHub im Markdown ["How To GPS Tacker (optimized)"](https://github.com/technologiestiftung/workshops/HowTo_GPSTracker_optimized.md) zu finden.
+Das Pinmapping muss nur dann angepasst werden, wenn ihr von unserem Schaltplan abweicht. Der Schaltplan, wie auch die aufürhliche Anleitung ist auf GitHub im Markdown ["How To GPS Tacker (optimized)"](https://github.com/technologiestiftung/werkstatt/blob/master/HowTo_GPSTracker_optimized.md) zu finden.
 
 **Last but not least** muss der Sketch nun noch auf den Arduino Nano übertragen werden. Dazu am besten vorher einmal auf **Verify** (Haken oben links in der IDE) klicken und den Code kompilieren. Wenn keine Fehlermeldung erscheint, dann kann der Sketch direkt mit klick auf **Upload** auf das Board geladen werden. Fertig!
 

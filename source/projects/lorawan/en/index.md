@@ -50,11 +50,9 @@ Anyone who now wonders why we still pay at all for mobile network & internet whe
 We are talking here about devices that send small a data packets (keyword: narrow band) in regular intervals - usually at intervals of a few minutes, **not in real time** - over long distances with low energy consumption. No data-intensive packets, such as photos or videos, may be transmitted at too short intervals, since the Federal Network Agency regulates how much **Airtime** the LoRaWan may occupy on the 868 MHz frequency: **Maximum 1%**. Nevertheless, the fields of application for LoRaWan are versatile.  
 
 
-&nbsp;
-
 ## Explore LoRaWan together with the CityLAB
 
-The last two workshops of the so called 'Offene Werkstatt' in [CityLAB Berlin](https://www.citylab-berlin.org/) were dedicated to the topic **GPS Tracking with LoRaWan**. The participants were guided through our [instruction on GitHub](https://github.com/technologiestiftung/workshops/blob/master/HowTo_GPSTracker.md) with appropriate hard- and software and finally – with the help of LoRa-Nodes, but also smaller components like the [Dragino LoRaBee](https://www.dragino.com/products/lora/item/109-lora-bee.html) – data was transferred via the LoRa-Net. 
+The last two workshops of the so called 'Offene Werkstatt' in [CityLAB Berlin](https://www.citylab-berlin.org/) were dedicated to the topic **GPS Tracking with LoRaWan**. The participants were guided through our [instruction on GitHub](https://github.com/technologiestiftung/werkstatt) with appropriate hard- and software and finally – with the help of LoRa-Nodes, but also smaller components like the [Dragino LoRaBee](https://www.dragino.com/products/lora/item/109-lora-bee.html) – data was transferred via the LoRa-Net. 
 
 In the last workshop we built an optimized tracker. In contrast to the LoRa nodes, the individual components were put together so that we ended up building a very robust variant (soldered) with a very small packing size.
 
@@ -65,22 +63,17 @@ In the last workshop we built an optimized tracker. In contrast to the LoRa node
 <!-- <img src="../images/Nano_Xbee_Image.jpg" style="margin-left:6%; margin-right:4%; float:right; width:60%" alt="GPS-LoRa-Tracker CityLAB"> -->
 
 The following hardware components are required for this LoRa GPS tracker:
-* 9V batteries + charger (order [HERE](https://www.amazon.de/Ladeger%C3%A4t-Keenstone-aufladbare-Batterien-USB-Ladekabel-6-St-3-Slots-Ladegeraet/dp/B07BRKJV3J/ref=sr_1_2?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=9+volt+battery+800mAh+keenstone&qid=1568196073&s=computers&sr=8-2) possible)
-
-* Battery clip (order [HERE](https://www.amazon.de/KEESIN-Batterieknopf-2-1x5-5mm-Netzstecker-Batteriehalter/dp/B06Y41ZRVJ/ref=sr_1_4?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=batterieclips&qid=1568195706&s=computers&sr=1-4) possible)
-
-* GPS module with antenna (order [HERE](https://www.az-delivery.de/products/neo-6m-gps-modul?_pos=3&_sid=1c09a6176&_ss=r&ls=de) possible)
-
-* Arduino Nano (Order [HERE](https://www.amazon.de/AZDelivery-Atmega328-gratis-Arduino-kompatibel/dp/B078S8BJ8T/ref=sr_1_9?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=arduino+nano&qid=1568196529&s=ce-de&sr=1-9) possible)
-
-* LoRa Bee (order [HERE](https://www.exp-tech.de/module/wireless/funk/7769/dragino-lora-bee-868) possible)
+* 9V batteries + charger
+* Battery clip 
+* GPS module with antenna 
+* Arduino Nano V3 (Clone)
+* Dragino LoRa Bee 868 (Europe)
 
 Taken together we come up with **costs of only 30€** per tracker and are thus far below the price of the usual GPS trackers, which usually start at 50€.  
-&nbsp;
 
 As soon as all components are soldered together, the hardware part is finished. On the software side it is now necessary to register the tracker in **[The Things Network (TTN)](https://thethingsnetwork.org)** and thus assign a corresponding device address, as well as a network session key and an app key. Finally we need these three key attributes for the program code (also called *Sketch* under Arduino), which is played on the Arduino Nano V3 microcontroller. Detailed instructions for registering the endnode in the TTN console** including screenshots of the user interface can be found at [adafruit.com](https://learn.adafruit.com/the-things-network-for-feather?view=all).  
 
-Once the device is registered, the necessary **three variables that need to be added in the sketch** can be scraped from the TTN console. You can find the Sketch aka. program code [here on GitHub](https://github.com/technologiestiftung/workshops/blob/master/codes_sketches/) - name: *GPSTracker_LoRa_Nano_V2.ino*
+Once the device is registered, the necessary **three variables that need to be added in the sketch** can be scraped from the TTN console. You can find the Sketch aka. program code [here on GitHub]((https://github.com/technologiestiftung/werkstatt/tree/master/codes_sketches)) - name: *GPSTracker_LoRa_Nano_V2.ino*
 
 The following lines have to be adjusted in the code:
 
@@ -110,7 +103,7 @@ const lmic_pinmap lmic_pins = {
     };
 ```
 
-The pin mapping only needs to be adjusted if you deviate from our circuit diagram. The schematic as well as the instructions can be found on Github in the Markdown ["How To GPS Tacker (optimized)"](https://github.com/technologiestiftung/workshops/HowTo_GPSTracker_optimized.md).
+The pin mapping only needs to be adjusted if you deviate from our circuit diagram. The schematic as well as the instructions can be found on Github in the Markdown ["How To GPS Tacker (optimized)"](https://github.com/technologiestiftung/werkstatt/blob/master/HowTo_GPSTracker_optimized.md).
 
 **Last but not least** the sketch has now to be transferred to the Arduino Nano. To do this, click on **Verify** (hook in the upper left corner of the IDE) and compile the code. If no error message appears, the sketch can be loaded directly onto the board by clicking on **Upload**. Done!
 
