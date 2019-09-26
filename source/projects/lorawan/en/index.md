@@ -67,7 +67,7 @@ The following hardware components are required for this LoRa GPS tracker:
 * Battery clip 
 * GPS module with antenna 
 * Arduino Nano V3 (Clone)
-* Dragino LoRa Bee 868 (Europe)
+* Dragino LoRa Bee 868 (European frequency)
 
 Taken together we come up with **costs of only 30€** per tracker and are thus far below the price of the usual GPS trackers, which usually start at 50€.  
 

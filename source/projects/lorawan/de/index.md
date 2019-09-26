@@ -50,15 +50,12 @@ Wer sich jetzt fragt, warum wir dann überhaupt noch für Mobilfunknetz & Intern
 
 Die Rede ist hier von Geräten, die mit wenig Energieverbrauch, möglichst kleine Datenpaket (Stichwort: Schmalband) in geregelten Abständen – meist in Abstand von wenigen Minuten, **nicht in Echtzeit** – über große Distanzen versenden. Es können bzw. dürfen keine datenintensive Pakete, wie bspw. Fotos oder Videos in zu kleinen Zeitabständen übertragen werden, da durch die Bundesnetzagentur geregelt ist, wie viel **Airtime** das LoRaWan auf der 868-MHz-Frequenz belegen darf: **maximal 1 %**. Dennoch sind die Einsatzfelder für LoRaWan vielseitig.  
 
-&nbsp;
-
 ## LoRaWan mit dem CityLAB erleben
 
 Die letzten zwei Workshops der offenen Werkstatt im [CityLAB Berlin](https://www.citylab-berlin.org/) widmeten sich dem Thema **GPS Tracking mit LoRaWan**. Dabei wurden die Teilnehmer\*innen mit entsprechender Hard- und Software durch unsere [Bauanleitung auf GitHub](https://github.com/technologiestiftung/werkstatt) geführt und mit Hilfe von LoRa-Nodes, aber auch kleineren Bauteilen wie der [Dragino LoRaBee](https://www.dragino.com/products/lora/item/109-lora-bee.html), Daten über das LoRa-Netz übertragen. 
 
 Im letzten Workshop haben wir einen optimierten Tracker gebaut. Entgegen zu den LoRa-Nodes, wurden die individuell Bauteile zusammengestellt, sodass wir am Ende eine sehr robuste Variante (gelötet) mit sehr kleinem Packmaß gebaut haben.
 
-&nbsp;
 
 ### Ein kleiner Vorgeschmack
 {% include macro-image-section-markdown-small.html src="../images/Nano_Xbee_Image.jpg" caption="GPS-LoRa-Tracker CityLAB"%}
@@ -69,11 +66,10 @@ Für diesen LoRa-GPS-Tracker benötigt man die folgenden Hardware-Komponenten:
 * 9V Batterien + Ladegerät
 * Battericlip 
 * GPS-Modul mit Antenne
-* Arduino Nano
-* LoRa Bee
+* Arduino Nano V3 (Clone)
+* Dragino LoRa Bee 868 (Europäische Frequenz)
   
 Zusammengerechnet kommen wir pro Tracker auf **Kosten von nur 30€** und liegen damit weit unter dem Preis der gängigen GPS-Tracker, die i. d. R. bei 50€ anfangen.  
-&nbsp;
 
 Sobald alle Bauteile fest miteinander verlötet sind, ist der Hardware-Teil abgeschlossen. Softwareseitig gilt es nun, den Tracker im **[The Things Network (TTN)](https://thethingsnetwork.org)** zu registrieren und dadurch eine entsprechende Device Adress, sowie einen Network-Session- und einen App-Key zuzuordnen. Diese drei Schlüsselattribute benötigen wir schließlich für den Programmcode (unter Arduino auch *Sketch* genannt), der auf den Arduino Nano V3 Mikrocontroller gespielt wird. Eine **ausführliche Anleitung zur Registrierung der Endnode in der TTN Konsole** inkl. Screenshots von der Benutzeroberfläche findet man auf [adafruit.com](https://learn.adafruit.com/the-things-network-for-feather?view=all).  
 
