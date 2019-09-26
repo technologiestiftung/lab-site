@@ -32,7 +32,9 @@ redirect_from:
 
 The **Long Range Wide Area Network** is a standard network transmission protocol developed by Nicolas Sornin in 2007, which belongs to the **Low Power Wide Area Networks** class. Accordingly, the LoRaWan is designed to transmit data packets over long distances (200 m to 20 km) with very low energy consumption in the so-called ISM band (Industrial, Scientific and Medical Frequency Range) at 868 MHz in Europe and 915 MHz in North America. Because of its characteristics, the use of LoRaWan for communication between various **sensors and IoT applications in the industrial sector** has already proven itself. For example, measured values from weather stations, water tanks, truck tires, refuse bins or even fine dust measuring devices are recorded by sensors and transmitted via LoRaWan technology to other networks such as the Internet. The LoRaWan architecture is quite simple:
 
-<img src="../images/lora_architecture.png" style="margin:4%; width:90%" alt="LoRaWan Architecture">
+{% include macro-image-section-markdown-small.html src="../images/lora_architecture.png" caption="LoRaWan Architecture"%}
+
+<!-- <img src="../images/lora_architecture.png" style="margin:4%; width:90%" alt="LoRaWan Architecture"> -->
 
 The device, also called end node, sends the measured data to a LoRaWan gateway via the LoRaWan protocol. The gateway in turn sends the data to a network server to which ones own personal application, such as an analytics tool, a card or a database, is connected and can be read and controlled by the user. 
 
@@ -40,7 +42,9 @@ The device, also called end node, sends the measured data to a LoRaWan gateway v
 
 Anyone who now wonders why we still pay at all for mobile network & internet when there seems to be a free network, will unfortunately be disappointed. Because the **data transmission rate of the LoRaWan ranges from 292 bit/s to a maximum of 50 kBit/s** and is therefore primarily suitable for the use of various IoT applications and sensors. In addition, LoRa has a high capacity: up to **one million nodes per application** are conceivable.
 
-<img src="../images/lorawan-use-cases.jpg" style="margin-left:6%; margin-right:4%; float:right; width:56%" alt="LoRaWan Use Cases">
+{% include macro-image-section-markdown-small.html src="../images/lorawan-use-cases.jpg" caption="LoRaWan Use Cases"%}
+
+<!-- <img src="../images/lorawan-use-cases.jpg" style="margin-left:6%; margin-right:4%; float:right; width:70%" alt="LoRaWan Use Cases"> -->
 
 We are talking here about devices that send small a data packets (keyword: narrow band) in regular intervals - usually at intervals of a few minutes, **not in real time** - over long distances with low energy consumption. No data-intensive packets, such as photos or videos, may be transmitted at too short intervals, since the Federal Network Agency regulates how much **Airtime** the LoRaWan may occupy on the 868 MHz frequency: **Maximum 1%**. Nevertheless, the fields of application for LoRaWan are versatile.  
 
@@ -55,7 +59,9 @@ In the last workshop we built an optimized tracker. In contrast to the LoRa node
 
 
 ### A little foretaste
-<img src="../images/Nano_Xbee_Image.jpg" style="margin-left:6%; margin-right:4%; float:right; width:52%" alt="GPS-LoRa-Tracker CityLAB">
+{% include macro-image-section-markdown-small.html src="../images/Nano_Xbee_Image.jpg" caption="GPS-LoRa-Tracker CityLAB"%}
+
+<!-- <img src="../images/Nano_Xbee_Image.jpg" style="margin-left:6%; margin-right:4%; float:right; width:60%" alt="GPS-LoRa-Tracker CityLAB"> -->
 
 The following hardware components are required for this LoRa GPS tracker:
 * 9V batteries + charger (order [HERE](https://www.amazon.de/Ladeger%C3%A4t-Keenstone-aufladbare-Batterien-USB-Ladekabel-6-St-3-Slots-Ladegeraet/dp/B07BRKJV3J/ref=sr_1_2?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=9+volt+battery+800mAh+keenstone&qid=1568196073&s=computers&sr=8-2) possible)

@@ -36,7 +36,9 @@ redirect_from:
 
 Das **Long Range Wide Area Network** ist ein im Jahr 2007 von Nicolas Sornin entwickeltes Standard-Netzwerkübertragungsprotokoll, welches zur Klasse der **Low Power Wide Area Networks** gehört. Demnach ist das LoRaWan darauf ausgelegt Datenpakete über große Distanzen (200 m bis 20 km), mit einem nur sehr geringen Energieverbrauch im sog. ISM-Band (Industrial, Scientific und Medical Frequenzbereich) bei 868 MHz Frequenzband in Europa und 915 MHz in Nordamerika zu übertragen. Wegen seiner Eigenschaften hat sich der Einsatz von LoRaWan zur Kommunikation zwischen verschiedensten **Sensoren und IoT-Anwendungen in der Industrie-Branche** bereits bewährt. So werden zum Beispiel Messwerte von Wetterstationen, Wassertanks, LKW-Reifen, Mülltonnenaber oder auch Feinstaubmessgeräten durch Sensoren erfasst und über mit Hilfe der LoRaWan-Technologie in andere Netzwerke, wie das Internet, übertragen. Dabei ist die LoRaWan-Architektur recht simpel:
 
-<img src="../images/lora_architecture.png" style="margin:4%; width:90%" alt="LoRaWan Architecture">
+{% include macro-image-section-markdown-small.html src="../images/lora_architecture.png" caption="LoRaWan Architecture"%}
+
+<!-- <img src="../images/lora_architecture.png" style="margin:4%; width:90%" alt="LoRaWan Architecture"> -->
 
 Das Device, auch End-Node genannt sendet über LoRaWan-Protokoll die gemessen Daten an ein LoRaWan-Gateway. Das Gateway wiederum sendet die Daten an einen Network-Server, an welchem wiederum die eigene, persönliche Applikation, wie bspw. ein Analytics-Tool, eine Karte oder eine Datenbank angebunden ist udn vom Nutzer ausgelesen und gesteuert werden können. 
 
@@ -44,7 +46,9 @@ Das Device, auch End-Node genannt sendet über LoRaWan-Protokoll die gemessen Da
 
 Wer sich jetzt fragt, warum wir dann überhaupt noch für Mobilfunknetz & Internet bezahlen, wenn es doch anscheinend ein kostenloses Netz gibt, den müssen wir leider enttäuschen. Denn die **Datenübertragungsrate des LoRaWan reicht von 292 Bit/s bis maximal 50 kBit/s** und eignet sich Dadurch vorrangig für den Einsatz verschiedenster IoT-Anwendungen und -Sensoren. Darüber hinaus weißt LoRa eine hohe Kapazität auf: bis zu **eine Million Knoten pro Anwendung** sind denkbar.
 
-<img src="../images/lorawan-use-cases.jpg" style="margin-left:6%; margin-right:4%; float:right; width:56%" alt="LoRaWan Use Cases">
+{% include macro-image-section-markdown-small.html src="../images/lorawan-use-cases.jpg" caption="LoRaWan Use Cases"%}
+
+<!-- <img src="../images/lorawan-use-cases.jpg" style="margin-left:6%; margin-right:4%; float:right; width:70%" alt="LoRaWan Use Cases"> -->
 
 Die Rede ist hier von Geräten, die mit wenig Energieverbrauch, möglichst kleine Datenpaket (Stichwort: Schmalband) in geregelten Abständen – meist in Abstand von wenigen Minuten, **nicht in Echtzeit** – über große Distanzen versenden. Es können bzw. dürfen keine datenintensive Pakete, wie bspw. Fotos oder Videos in zu kleinen Zeitabständen übertragen werden, da durch die Bundesnetzagentur geregelt ist, wie viel **Airtime** das LoRaWan auf der 868-MHz-Frequenz belegen darf: **maximal 1%**. Dennoch sind die Einsatzfelder für LoRaWan vielseitig.  
 
@@ -59,7 +63,9 @@ Im letztem Workshop haben wir einen optimierten Tracker gebaut. Entgegen zu den 
 &nbsp;
 
 ### Ein kleiner Vorgeschmack
-<img src="../images/Nano_Xbee_Image.jpg" style="margin-left:6%; margin-right:4%; float:right; width:52%" alt="GPS-LoRa-Tracker CityLAB">
+{% include macro-image-section-markdown-small.html src="../images/Nano_Xbee_Image.jpg" caption="GPS-LoRa-Tracker CityLAB"%}
+
+<!-- <img src="../images/Nano_Xbee_Image.jpg" style="margin-left:6%; margin-right:4%; float:right; width:60%" alt="GPS-LoRa-Tracker CityLAB"> -->
 
 Für diesen LoRa-GPS-Tracker benötigt man die folgenden Hardware-Komponenten:
 * 9V Batterien + Ladegerät (Bestellung [HIER](https://www.amazon.de/Ladeger%C3%A4t-Keenstone-aufladbare-Batterien-USB-Ladekabel-6-St-3-Slots-Ladegeraet/dp/B07BRKJV3J/ref=sr_1_2?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=9+volt+batterie+800mAh+keenstone&qid=1568196073&s=computers&sr=8-2) möglich)
