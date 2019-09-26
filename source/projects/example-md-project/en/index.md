@@ -54,6 +54,7 @@ authors:
   - fabian-moron-zirfas
   - sebastian-meier
   - alexandra-kapp
+  - julia-zimmermann
 
 # If you have an external URL
 # add it here
