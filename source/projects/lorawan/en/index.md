@@ -58,7 +58,7 @@ In the last workshop we built an optimized tracker. In contrast to the LoRa node
 
 
 ### A little foretaste
-{% include macro-image-section-markdown-small.html src="../images/Nano_Xbee_Image.jpg" caption="GPS-LoRa-Tracker CityLAB"%}
+{% include macro-image-section-markdown-small.html src="../images/Nano_Xbee_Image.jpg" caption="GPS-LoRa-Tracker, as it was built at the Offene Werkstatt"%}
 
 <!-- <img src="../images/Nano_Xbee_Image.jpg" style="margin-left:6%; margin-right:4%; float:right; width:60%" alt="GPS-LoRa-Tracker CityLAB"> -->
 

@@ -58,7 +58,7 @@ Im letzten Workshop haben wir einen optimierten Tracker gebaut. Entgegen zu den 
 
 
 ### Ein kleiner Vorgeschmack
-{% include macro-image-section-markdown-small.html src="../images/Nano_Xbee_Image.jpg" caption="GPS-LoRa-Tracker CityLAB"%}
+{% include macro-image-section-markdown-small.html src="../images/Nano_Xbee_Image.jpg" caption="GPS-LoRa-Tracker, wie er bei der Offenen Werkstatt gebaut wurde"%}
 
 <!-- <img src="../images/Nano_Xbee_Image.jpg" style="margin-left:6%; margin-right:4%; float:right; width:60%" alt="GPS-LoRa-Tracker CityLAB"> -->
 
