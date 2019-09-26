@@ -3,30 +3,31 @@ layout: project
 description: LoRaWan, Technology & Digital Transformation
 lang: en
 title: LoRaWhat?! Let's talk about – LoRaWan!
-subtitle: 40 years after the birth of the Internet, the LoRaWan is putting the tech scene in a state of excitement.
-type: prototype
+subtitle: Almost 40 years after the birth of the Internet, the LoRaWan creates completely new possibilities for data transmission.
+type: publication
 colorMode: bright
-thumbnail: /projects/lorawan/images/thumbnail.jpg
-heroImage: /projects/lorawan/images/hero.jpg
-socialMediaImage: /projects/lorawan/images/social_media.jpg
+thumbnail: /projects/lorawan/images/thumbnail.png
+heroImage: /projects/lorawan/images/hero.png
+socialMediaImage: /projects/lorawan/images/featuredImage.jpg
 visible: true
 featured: false
 authors:
   - julia-zimmermann
 start: 2019-09-24
-end: 2019-09-27
-status: ongoing
-date: 2019-09-24
+end: 2019-09-26
+status: finished
+date: 2019-09-26
 
 materialsIncluded:
-  - name": "GitHub"
+  - name: "GitHub"
     link: "https://github.com/technologiestiftung/workshops"
 
 redirect_from:
   - /projects/LORAWAN/index_en.html
+  - 
 ---
 
-*If you want to track your bike, dog or even your child, you will quickly end up with price-intensive SIM card trackers on a subscription basis when looking for a suitable **GPS tracker**. With the help of the last two workshops of the open workshop in [CityLAB Berlin](https://www.citylab-berlin.org/) we wanted to demonstrate that GPS tracking doesn't have to be expensive. Because there is a much wider and more resource-saving network which can be used for tracking: the **LoRaWan**.*
+*If you want to track your bike or even your dog, you will quickly end up with price-intensive SIM card trackers on a subscription basis when looking for a suitable **GPS tracker**. With the help of the last two workshops of the open workshop in [CityLAB Berlin](https://www.citylab-berlin.org/) we wanted to demonstrate that GPS tracking doesn't have to be expensive. Because there is a much wider and more resource-saving network which can be used for tracking: the **LoRaWan**.*
 
 ## LoRaWan in theory
 
