@@ -1,7 +1,7 @@
 ---
 name: Julia Zimmermann
 uid: julia-zimmermann
-image: /assets/images/paceholder.png
+image: /assets/images/placeholder.png
 mail: zimmermann@technologiestiftung-berlin.de
 description: Julia Zimmermann is a research associate in the Ideation and Prototyping Lab at the Technologiestiftung Berlin and supports the team of the Open Data Informationsstelle (ODIS). She studies Information Systems and Digital Transformation (M.Sc.) at the University of Potsdam. 
 twitter: juliazet0
