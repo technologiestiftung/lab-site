@@ -27,7 +27,7 @@ redirect_from:
 
 ---
 
-*Wer sein Fahrrad oder gar seinen Hund tracken möchte, der landet bei der Suche nach einem passenden **GPS-Tracker** schnell bei preisintensiven SIM-Karten-Trackern auf Abonnement-Basis. Mit Hilfe der letzten zwei Workshops der offenen Werkstatt im [CityLAB Berlin](https://www.citylab-berlin.org/) wollten wir demonstrieren, dass GPS-Tracking nicht teuer sein muss. Denn es gibt ein viel reichweitenstärkeres und ressourcenschonenderes Netz, welches man zum Tracken nutzen kann: das **LoRaWan**.*
+*Wer sein Fahrrad oder gar seinen Hund tracken möchte, der landet bei der Suche nach einem passenden **GPS-Tracker** schnell bei preisintensiven SIM-Karten-Trackern auf Abonnement-Basis. Mit Hilfe der letzten zwei Workshops der offenen Werkstatt im [CityLAB Berlin](https://www.citylab-berlin.org/) wollten wir demonstrieren, dass GPS-Tracking nicht teuer sein muss. Denn im Vergleich zum Mobilfunk und Internet, gibt es ein viel reichweitenstärkeres und ressourcenschonenderes Netz: das **LoRaWan**.*
 
 
 ## LoRaWan in der Theorie
