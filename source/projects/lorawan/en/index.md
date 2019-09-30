@@ -33,7 +33,7 @@ redirect_from:
 
 The **Long Range Wide Area Network** is a standard network transmission protocol developed by Nicolas Sornin in 2007, which belongs to the **Low Power Wide Area Networks** class. Accordingly, the LoRaWan is designed to transmit data packets over long distances (200 m to 20 km) with very low energy consumption in the so-called ISM band (Industrial, Scientific and Medical Frequency Range) at 868 MHz in Europe and 915 MHz in North America. Because of its characteristics, the use of LoRaWan for communication between various **sensors and IoT applications in the industrial sector** has already proven itself. For example, measured values from weather stations, water tanks, truck tires, refuse bins or even fine dust measuring devices are recorded by sensors and transmitted via LoRaWan technology to other networks such as the Internet. The LoRaWan architecture is quite simple:
 
-{% include macro-image-section-markdown-small.html src="../images/lora_architecture.png" caption="LoRaWan Architecture (bearbeitet durch TSB | Sekundärquelle: http://jensd.be)"%}
+{% include macro-image-section-markdown-small.html src="../images/lora_architecture.png" caption="LoRaWan Architecture (modified by TSB | secondary source: http://jensd.be)"%}
 
 <!-- <img src="../images/lora_architecture.png" style="margin:4%; width:90%" alt="LoRaWan Architecture"> -->
 
@@ -110,4 +110,4 @@ The pin mapping only needs to be adjusted if you deviate from our circuit diagra
 
 If you want to experiment at home and set up a weather station on your terrace, you can ** borrow a Lora-Node + accessories for free via [Hacking Box](https://www.technologiestiftung-berlin.de/hackingbox/).** Otherwise we are always open for suggestions, discussions, questions, hints and tips about GPS-Tracking with LoRaWan!
 
-If you have any questions about LoRaWan and IoT networks, our colleague [Christian Hammel](mailto:Hammel@technologiestiftung-berlin.de) will be happy to help you.
+If you have any questions about LoRaWan and IoT networks, our colleague [Christian Hammel](mailto:Hammel@technologiestiftung-berlin.de) will be happy to help you. If you have any questions regarding the work of the *Werkstatt at CityLAB* or the *Ideation & Prototyping Lab*, [Sara Reichert](mailto:Reichert@technologiestiftung-berlin.de) and [Julia Zimmermann](mailto:Zimmermann@technologiestiftung-berlin.de) are looking forward to your message.

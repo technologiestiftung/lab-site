@@ -34,7 +34,7 @@ redirect_from:
 
 Das **Long Range Wide Area Network** ist ein im Jahr 2007 von Nicolas Sornin entwickeltes Standard-Netzwerkübertragungsprotokoll, welches zur Klasse der **Low Power Wide Area Networks** gehört. Demnach ist das LoRaWan darauf ausgelegt Datenpakete über große Distanzen (200 m bis 20 km), mit einem nur sehr geringen Energieverbrauch im sog. ISM-Band (Industrial, Scientific und Medical Frequenzbereich) bei 868 MHz Frequenzband in Europa und 915 MHz in Nordamerika zu übertragen. Wegen seiner Eigenschaften hat sich der Einsatz von LoRaWan zur Kommunikation zwischen verschiedensten **Sensoren und IoT-Anwendungen in der Industrie-Branche** bereits bewährt. So werden zum Beispiel Messwerte von Wetterstationen, Wassertanks, Lkw-Reifen, Mülltonnen oder auch Feinstaubmessgeräten durch Sensoren erfasst und über mit Hilfe der LoRaWan-Technologie in andere Netzwerke, wie das Internet, übertragen. Dabei ist die LoRaWan-Architektur recht simpel:
 
-{% include macro-image-section-markdown-small.html src="../images/lora_architecture.png" caption="LoRaWan Architecture (modified by TSB | secondary source: http://jensd.be)"%}
+{% include macro-image-section-markdown-small.html src="../images/lora_architecture.png" caption="LoRaWan Architecture (bearbeitet durch TSB | Sekundärquelle: http://jensd.be)"%}
 
 <!-- <img src="../images/lora_architecture.png" style="margin:4%; width:90%" alt="LoRaWan Architecture"> -->
 
@@ -109,4 +109,4 @@ Das Pinmapping muss nur dann angepasst werden, wenn ihr von unserem Schaltplan a
 
 Wer zu Hause selber etwas experimentieren und beispielsweise eine Wetterstation auf der heimischen Terrasse einrichten möchte, der kann sich **eine Lora-Node + Zubehör kostenlos via [Hacking Box](https://www.technologiestiftung-berlin.de/hackingbox/) ausleihen.** Ansonsten haben wir für Anregungen, Diskussionen, Rückfragen, Hinweise und Tipps rund um das Thema GPS-Tracking mit LoRaWan immer ein offenes Ohr!
 
-Bei Fragen rund um das Thema LoRaWan und IoT-Netze steht der Kollege [Christian Hammel](mailto:Hammel@technologiestiftung-berlin.de) mit Rat und Tat zur Seite.
+Bei Fragen rund um das Thema *LoRaWan und IoT-Netze* steht der Kollege [Christian Hammel](mailto:Hammel@technologiestiftung-berlin.de) mit Rat und Tat zur Seite. Sollten Fragen zur Arbeit der *Werkstatt im CityLAB* oder zum *Ideation & Prototyping Lab* aufgekommen sein, helfen [Sara Reichert](mailto:Reichert@technologiestiftung-berlin.de) bzw. [Julia Zimmermann](mailto:Zimmermann@technologiestiftung-berlin.de) gerne weiter.
