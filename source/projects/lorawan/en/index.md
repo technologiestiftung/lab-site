@@ -24,7 +24,7 @@ materialsIncluded:
 
 redirect_from:
   - /projects/LORAWAN/index_en.html
-  - 
+  
 ---
 
 *If you want to use a **GPS tracker** to keep tabs on your bike or even your dog, you'll quickly find yourself looking at pricey SIM card trackers available only on a subscription basis. With the help of the last two events hosted at the the [CityLAB Berlin's](https://www.citylab-berlin.org/) "Open Workshop", we wanted to demonstrate that GPS tracking doesn't have to be expensive. Indeed, there is a network out there that both has greater reach and is more resource-efficient than mobile internet: **LoRaWan**.*
@@ -35,8 +35,6 @@ The **Long Range Wide Area Network** (LoRaWan) is a standard network transmissio
 
 {% include macro-image-section-markdown-small.html src="../images/lora_architecture.png" caption="LoRaWan Architecture (modified by TSB | secondary source: http://jensd.be)"%}
 
-<!-- <img src="../images/lora_architecture.png" style="margin:4%; width:90%" alt="LoRaWan Architecture"> -->
-
 The device, also called an end node, sends the measured data to a LoRaWan gateway via the LoRaWan protocol. The gateway in turn sends the data to a network server connected to the user's own personal application, such as an analytics tool, a card or a database; the data can then be read and controlled by the user. 
 
 ## Areas of application
@@ -44,8 +42,6 @@ The device, also called an end node, sends the measured data to a LoRaWan gatewa
 Anyone now wondering why we still pay for mobile network & internet when there seems to be a perfectly good alternative – and free – network available is unfortunately going to be disappointed: the **data transfer rate of the LoRaWan only ranges from 292 bit/s to a maximum of 51 kBit/s**. When using the LMIC library, which we used in our example code below to transfer data, 13 bytes of the maximum 51 bytes are reserved for so-called overhead data, i.e. metadata. The maximum data packets are therefore much smaller compared to Ethernet (easily up to 1,500 MBit/s) or the internet (100 MBit/s usual for home use), which is why LoRaWan is primarily suitable for the use of various **IoT applications and sensors**.
 
 {% include macro-image-section-markdown-small.html src="../images/lorawan-use-cases.jpg" caption="LoRaWan Use Cases (© The Things Network)"%}
-
-<!-- <img src="../images/lorawan-use-cases.jpg" style="margin-left:6%; margin-right:4%; float:right; width:70%" alt="LoRaWan Use Cases"> -->
 
 With LoRaWan, we're talking about devices that can send small data packets (keyword: narrow band) at regular intervals (usually every few minutes, but **not in real time**) over long distances with low energy consumption. It isn't possible to send data-intensive packets (like photos or videos) at short time intervals, as the Federal Network Agency (German: *Bundesnetzagentur*) regulates how much **airtime** LoRaWan can occupy on the 868 MHz frequency: **a maximum of 1%**. Nevertheless, the fields of application for LoRaWan are versatile, as the network has a very high capacity: up to **one million nodes per application** are possible.
 
@@ -59,8 +55,6 @@ In the most recent workshop, we built an optimized tracker. In contrast to the L
 
 ### A little preview
 {% include macro-image-section-markdown-small.html src="../images/Nano_Xbee_Image.png" caption="GPS-LoRa-Tracker, as it was built at the Offene Werkstatt (© TSB)"%}
-
-<!-- <img src="../images/Nano_Xbee_Image.png" style="margin-left:6%; margin-right:4%; float:right; width:60%" alt="GPS-LoRa-Tracker CityLAB"> -->
 
 The following hardware components are required for this LoRa GPS tracker:
 * 9V batteries + charger
