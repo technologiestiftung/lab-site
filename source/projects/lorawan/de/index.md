@@ -7,7 +7,7 @@ subtitle: Knapp 40 Jahre nach der Geburtsstunde des Internet, schafft das LoRaWa
 type: publication
 colorMode: bright
 thumbnail: /projects/lorawan/images/thumbnail.png
-heroImage: /projects/lorawan/images/hero.png
+heroImage: /projects/lorawan/images/hero_mid.png
 socialMediaImage: /projects/lorawan/images/featuredImage.jpg
 visible: true
 featured: false
@@ -58,9 +58,9 @@ Im letzten Workshop haben wir einen optimierten Tracker gebaut. Entgegen zu den 
 
 
 ### Ein kleiner Vorgeschmack
-{% include macro-image-section-markdown-small.html src="../images/Nano_Xbee_Image.jpg" caption="GPS-LoRa-Tracker, wie er bei der Offenen Werkstatt gebaut wurde (© TSB)"%}
+{% include macro-image-section-markdown-small.html src="../images/Nano_Xbee_Image.png" caption="GPS-LoRa-Tracker, wie er bei der Offenen Werkstatt gebaut wurde (© TSB)"%}
 
-<!-- <img src="../images/Nano_Xbee_Image.jpg" style="margin-left:6%; margin-right:4%; float:right; width:60%" alt="GPS-LoRa-Tracker CityLAB"> -->
+<!-- <img src="../images/Nano_Xbee_Image.png" style="margin-left:6%; margin-right:4%; float:right; width:60%" alt="GPS-LoRa-Tracker CityLAB"> -->
 
 Für diesen LoRa-GPS-Tracker benötigt man die folgenden Hardware-Komponenten:
 * 9V Batterien + Ladegerät
