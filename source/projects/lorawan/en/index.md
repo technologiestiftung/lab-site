@@ -14,13 +14,13 @@ featured: false
 authors:
   - julia-zimmermann
 start: 2019-09-24
-end: 2019-09-26
+end: 2019-09-30
 status: finished
-date: 2019-09-26
+date: 2019-09-30
 
 materialsIncluded:
   - name: "GitHub"
-    link: "https://github.com/technologiestiftung/workshops"
+    link: "https://github.com/technologiestiftung/werkstatt"
 
 redirect_from:
   - /projects/LORAWAN/index_en.html
@@ -33,7 +33,7 @@ redirect_from:
 
 The **Long Range Wide Area Network** is a standard network transmission protocol developed by Nicolas Sornin in 2007, which belongs to the **Low Power Wide Area Networks** class. Accordingly, the LoRaWan is designed to transmit data packets over long distances (200 m to 20 km) with very low energy consumption in the so-called ISM band (Industrial, Scientific and Medical Frequency Range) at 868 MHz in Europe and 915 MHz in North America. Because of its characteristics, the use of LoRaWan for communication between various **sensors and IoT applications in the industrial sector** has already proven itself. For example, measured values from weather stations, water tanks, truck tires, refuse bins or even fine dust measuring devices are recorded by sensors and transmitted via LoRaWan technology to other networks such as the Internet. The LoRaWan architecture is quite simple:
 
-{% include macro-image-section-markdown-small.html src="../images/lora_architecture.png" caption="LoRaWan Architecture"%}
+{% include macro-image-section-markdown-small.html src="../images/lora_architecture.png" caption="LoRaWan Architecture (bearbeitet durch TSB | Sekundärquelle: http://jensd.be)"%}
 
 <!-- <img src="../images/lora_architecture.png" style="margin:4%; width:90%" alt="LoRaWan Architecture"> -->
 
@@ -41,13 +41,13 @@ The device, also called end node, sends the measured data to a LoRaWan gateway v
 
 ## Fields of application in practice
 
-Anyone who now wonders why we still pay at all for mobile network & internet when there seems to be a free network, will unfortunately be disappointed. Because the **data transmission rate of the LoRaWan ranges from 292 bit/s to a maximum of 50 kBit/s** and is therefore primarily suitable for the use of various IoT applications and sensors. In addition, LoRa has a high capacity: up to **one million nodes per application** are conceivable.
+Anyone who now wonders why we still pay at all for mobile network & internet when there seems to be a free network, will unfortunately be disappointed: the **data transfer rate of the LoRaWan only ranges from 292 bit/s to a maximum of 51 kBit/s**. Using the LMIC library, which was included in our code example below to transfer the data, 13 bytes of the maximum 51 bytes are reserved again for so-called overhead data, respectively metadata. The data packets are therefore much smaller compared to Ethernet (easily up to 1,500 MBit/s) or the Internet (100 MBit/s usual for home use), which is why the LoRaWan is primarily suitable for the use of various **IoT applications and sensors**.
 
-{% include macro-image-section-markdown-small.html src="../images/lorawan-use-cases.jpg" caption="LoRaWan Use Cases"%}
+{% include macro-image-section-markdown-small.html src="../images/lorawan-use-cases.jpg" caption="LoRaWan Use Cases (© The Things Network)"%}
 
 <!-- <img src="../images/lorawan-use-cases.jpg" style="margin-left:6%; margin-right:4%; float:right; width:70%" alt="LoRaWan Use Cases"> -->
 
-We are talking here about devices that send small a data packets (keyword: narrow band) in regular intervals - usually at intervals of a few minutes, **not in real time** - over long distances with low energy consumption. No data-intensive packets, such as photos or videos, may be transmitted at too short intervals, since the Federal Network Agency regulates how much **Airtime** the LoRaWan may occupy on the 868 MHz frequency: **Maximum 1%**. Nevertheless, the fields of application for LoRaWan are versatile.  
+We are talking here about devices that send small a data packets (keyword: narrow band) in regular intervals - usually at intervals of a few minutes, **not in real time** - over long distances with low energy consumption. No data-intensive packets, such as photos or videos, may be transmitted at too short intervals, since the Federal Network Agency regulates how much **Airtime** the LoRaWan may occupy on the 868 MHz frequency: **Maximum 1%**. Nevertheless, the fields of application for LoRaWan are versatile, as the network has a very high capacity: up to **one million nodes per application** are conceivable.
 
 
 ## Explore LoRaWan together with the CityLAB
@@ -58,7 +58,7 @@ In the last workshop we built an optimized tracker. In contrast to the LoRa node
 
 
 ### A little foretaste
-{% include macro-image-section-markdown-small.html src="../images/Nano_Xbee_Image.jpg" caption="GPS-LoRa-Tracker, as it was built at the Offene Werkstatt"%}
+{% include macro-image-section-markdown-small.html src="../images/Nano_Xbee_Image.jpg" caption="GPS-LoRa-Tracker, as it was built at the Offene Werkstatt (© TSB)"%}
 
 <!-- <img src="../images/Nano_Xbee_Image.jpg" style="margin-left:6%; margin-right:4%; float:right; width:60%" alt="GPS-LoRa-Tracker CityLAB"> -->
 
@@ -71,7 +71,7 @@ The following hardware components are required for this LoRa GPS tracker:
 
 Taken together we come up with **costs of only 30€** per tracker and are thus far below the price of the usual GPS trackers, which usually start at 50€.  
 
-As soon as all components are soldered together, the hardware part is finished. On the software side it is now necessary to register the tracker in **[The Things Network (TTN)](https://thethingsnetwork.org)** and thus assign a corresponding device address, as well as a network session key and an app key. Finally we need these three key attributes for the program code (also called *Sketch* under Arduino), which is played on the Arduino Nano V3 microcontroller. Detailed instructions for registering the endnode in the TTN console** including screenshots of the user interface can be found at [adafruit.com](https://learn.adafruit.com/the-things-network-for-feather?view=all).  
+As soon as all components are soldered together, the hardware part is finished. On the software side it is now necessary to register the tracker in **[The Things Network (TTN)](https://thethingsnetwork.org)** and thus assign a corresponding device address, as well as a network session key and an app key. Finally we need these three key attributes for the program code (also called *Sketch* under Arduino), which is played on the Arduino Nano V3 microcontroller. Detailed instructions for **registering the endnode in the TTN console by using ABP** and including screenshots of the user interface can be found [here](https://www.thethingsnetwork.org/docs/devices/registration.html#personalize-device-for-abp) at The Things Network.
 
 Once the device is registered, the necessary **three variables that need to be added in the sketch** can be scraped from the TTN console. You can find the Sketch aka. program code [here on GitHub]((https://github.com/technologiestiftung/werkstatt/tree/master/codes_sketches)) - name: *GPSTracker_LoRa_Nano_V2.ino*
 
@@ -109,3 +109,5 @@ The pin mapping only needs to be adjusted if you deviate from our circuit diagra
 
 
 If you want to experiment at home and set up a weather station on your terrace, you can ** borrow a Lora-Node + accessories for free via [Hacking Box](https://www.technologiestiftung-berlin.de/hackingbox/).** Otherwise we are always open for suggestions, discussions, questions, hints and tips about GPS-Tracking with LoRaWan!
+
+If you have any questions about LoRaWan and IoT networks, our colleague [Christian Hammel](mailto:Hammel@technologiestiftung-berlin.de) will be happy to help you.
