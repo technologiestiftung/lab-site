@@ -992,6 +992,16 @@ section {
       section:first-of-type {
         margin: 175px 30px 0 30px; } }
 
+.content-wrapper {
+  margin: 17.5vw 12vw 80px 12vw; }
+  @media only screen and (min-width: 1200px) {
+    .content-wrapper {
+      margin: 12vw auto 0px auto;
+      max-width: 1020px; } }
+  @media only screen and (max-width: 768px) {
+    .content-wrapper {
+      margin: 175px 30px 0 30px; } }
+
 .section-headline {
   font-size: 32px;
   font-weight: bold;
