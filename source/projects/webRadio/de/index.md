@@ -14,9 +14,9 @@ featured: false
 authors:
   - julia-zimmermann
 start: 2019-11-12
-end: 2019-11-14
+end: 2019-11-13
 status: ongoing
-date: 2019-11-14
+date: 2019-11-13
 
 assets:
   css:
@@ -77,7 +77,7 @@ Discovery started
 $ [bluetooth]# scan off
 Discovery stopped
 
-//mit dem WebRadio pairen (!= verbinden)
+//mit dem Radio pairen (!= verbinden)
 $ [bluetooth]# pair 12:34:56:78:9A:BC
 Attempting to pair with 12:34:56:78:9A:BC
 [CHG] Device 12:34:56:78:9A:BC Connected: yes
@@ -106,7 +106,7 @@ $ vlc meinePlaylist.m3u
 ```
 öffnet der bereits vorinstalliert VLC-Mediaplayer die eigens erstellte Playlist "meinePlaylist". Alle darin befindlichen Dateien wie mp3-Dateien oder weitere Playlists, beispielsweise die Playlist eures Lieblings-Web-Radios, werden mit dem Command nacheinander abgespielt. In die Playlist muss demnach lediglich eine URL zu entsprechenden Web-Radiosender hinterlegt werden.
 
-**Last but not least: das Shell-Skript in den Autostart einbinden.** Um ein Programm in den Autostart des Raspberry's einzubinden gibt es verschiedene Möglichkeiten. In unserem How To haben wir eine **.dektop-Datei** erstellt, um unser Skript mit jedem Hochfahren des RasPi's auszuführen. 
+**Last but not least: das Shell-Skript in den Autostart einbinden.** Um ein Programm in den Autostart des Raspberry's einzubinden gibt es verschiedene Möglichkeiten. In unserem Tutorial haben wir eine **.dektop-Datei** erstellt, um unser Skript mit jedem Hochfahren des RasPi's auszuführen. 
 ```shell
 $ sudo geany /etc/xdg/autostart/NameDerDatei.desktop&
 ```

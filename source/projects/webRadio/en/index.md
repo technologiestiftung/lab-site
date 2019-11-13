@@ -1,113 +1,135 @@
 ---
 layout: project
-description: LoRaWan, Technology & Digital Transformation
+description: Raspberry Pi, Automation, Hacking & Web Radio
 lang: en
-title: LoRaWhat?! Let's talk about – LoRaWan!
-subtitle: Almost 40 years after the birth of the internet, LoRaWan is creating entirely new possibilities for the transmission of data.
+title: Automation & Hacking with Raspberry Pi
+subtitle: The latest Ideation & Protyping Lab tutorial highlights the depths of automation and explains 'How to hack your Bluetooth radio to Autoplay Web Radio'.
 type: publication
 colorMode: bright
-thumbnail: /projects/lorawan/images/thumbnail.png
-heroImage: /projects/lorawan/images/hero_mid.png
-socialMediaImage: /projects/lorawan/images/featuredImage.jpg
+thumbnail: /projects/webRadio/images/thumbnail_second.jpg
+heroImage: /projects/webRadio/images/hero.jpg
+socialMediaImage: /projects/webRadio/images/featuredImage.jpg
 visible: true
 featured: false
 authors:
   - julia-zimmermann
-start: 2019-09-24
-end: 2019-09-30
-status: finished
-date: 2019-09-30
+start: 2019-11-12
+end: 2019-11-13
+status: ongoing
+date: 2019-11-13
+
+assets:
+  css:
+    - ../styles/index.css
 
 materialsIncluded:
   - name: "GitHub"
-    link: "https://github.com/technologiestiftung/werkstatt"
+    link: "https://github.com/technologiestiftung/werkstatt/blob/master/HowTo_WebRadio.md"
 
 redirect_from:
-  - /projects/LORAWAN/index_en.html
-  
+  - /projects/webRadio/index.html
+
 ---
 
-*If you want to use a **GPS tracker** to keep tabs on your bike or even your dog, you'll quickly find yourself looking at pricey SIM card trackers available only on a subscription basis. With the help of the last two events hosted at the the [CityLAB Berlin's](https://www.citylab-berlin.org/) "Open Workshop", we wanted to demonstrate that GPS tracking doesn't have to be expensive. Indeed, there is a network out there that both has greater reach and is more resource-efficient than mobile internet: **LoRaWan**.*
+The Ideation & Prototyping Lab also wants to keep pace in the age of increasing automation and has therefore transformed the Bluetooth radio belonging to [CityLAB Berlin](https://www.citylab-berlin.org/) into a web radio. The resulting tutorial deals with the **Raspberry Pi**, its **autostart configuration** & **Bluetooth radios**. This articel describes how all these thing are connected to each other and how to hack an autoplay web radio with the help of a RasPi. You can find the detailed tutorial on [GitHub](https://github.com/technologiestiftung/werkstatt/blob/master/HowTo_WebRadio.md)*.
 
-## LoRaWan in theory
+## Basic Idea
+In times of increasing automation we wanted to look behind the scenes once more and hack a bluetooth-capable radio to an autoplay web eadio with the help of a Raspberry Pi 3 and a **autostart program**. The communication from the laptop to the RasPi is done via SSH - from the RasPi to the radio via Bluetooth. The whole configuration (Bluetooth, VLC mediaplayer command, delays etc.) was written into a **Shell-Script** which was finally linked to the autostart file of the Raspberry. 
 
-The **Long Range Wide Area Network** (LoRaWan) is a standard network transmission protocol developed by Nicolas Sornin in 2007, which belongs to the **Low Power Wide Area Networks** class. Accordingly, LoRaWan is designed to transmit data packets over long distances (ranging from 200 m to 20 km) with very low energy consumption in the so-called ISM band (Industrial, Scientific and Medical Frequency Range) at 868 MHz in Europe and 915 MHz in North America. Because of these characteristics, the use of LoRaWan for communication between various **sensors and IoT applications in the industrial sector** has already proven itself. For example, sensors can record measurement values from weather stations, water tanks, truck tires, garbage bins or even particulate matter measuring devices and transmit this data via LoRaWan technology to other networks such as the internet. The LoRaWan architecture is quite simple:
+## Necessary Hard- and Software
+Realization of this project ist pretty easy due one need not too much hardware:
+* a laptop
+* a Raspberry 3 and
+* a bluetooth-capable radio
 
-{% include macro-image-section-markdown-small.html src="../images/lora_architecture.png" caption="LoRaWan Architecture (modified by TSB | secondary source: http://jensd.be)"%}
+Of course the tutorial also works with other single board computers based on Linux - as long as they have an internal chipset for the WI-FI and Bluetooth function.
 
-The device, also called an end node, sends the measured data to a LoRaWan gateway via the LoRaWan protocol. The gateway in turn sends the data to a network server connected to the user's own personal application, such as an analytics tool, a card or a database; the data can then be read and controlled by the user. 
+First, an operating system must be set up on the RasPi, in our case Rasbian, so that one can finally use the laptop to communicate with the Raspberry. After the successful installation of the operating system, the configuration of the Raspberry can be started. Depending on whether the RasPi is to be operated headless (via SSH) or with head (via keyboard and monitor), the **network protocol Secure Shell (SSH) serves as communication interface** to our RasPi. In our tutorial we descriped the operation of a headless RasPi using SSH and, in addition, higlighted the cryptographic encryption procedure of the SSH.
 
-## Areas of application
+{% include macro-image-section-markdown.html src="../images/webRadio_network.jpeg" caption="Schnittstellen zwischen den einzelnen Devices (©eigene Darstellung, Technologiestiftung Berlin) "%}
 
-Anyone now wondering why we still pay for mobile network & internet when there seems to be a perfectly good alternative – and free – network available is unfortunately going to be disappointed: the **data transfer rate of the LoRaWan only ranges from 292 bit/s to a maximum of 51 kBit/s**. When using the LMIC library, which we used in our example code below to transfer data, 13 bytes of the maximum 51 bytes are reserved for so-called overhead data, i.e. metadata. The maximum data packets are therefore much smaller compared to Ethernet (easily up to 1,500 MBit/s) or the internet (100 MBit/s usual for home use), which is why LoRaWan is primarily suitable for the use of various **IoT applications and sensors**.
+## Connect RasPi with the radio
+Most of us connect to other devices via Bluetooth on a daily basis - simply by using the Graphic User Interface (GUI) with keyboard and mouse. Of course, this is way faster. However, in our workshop we only connect with a few terminal commands, because this is basically the **magic of automation**. If you save the commands in a shell script and include this small script in the autostart of the Raspberry, the Raspberry automagically connects to the Bluetooth radio at the next boot. 
 
-{% include macro-image-section-markdown-small.html src="../images/lorawan-use-cases.jpg" caption="LoRaWan Use Cases (© The Things Network)"%}
+To connect to the radio, the following commands are necessary (the MAC address of the radio must be replaced with that of your own radio):
+```shell
+$ bluetoothctl
+Agent registered
 
-With LoRaWan, we're talking about devices that can send small data packets (keyword: narrow band) at regular intervals (usually every few minutes, but **not in real time**) over long distances with low energy consumption. It isn't possible to send data-intensive packets (like photos or videos) at short time intervals, as the Federal Network Agency (German: *Bundesnetzagentur*) regulates how much **airtime** LoRaWan can occupy on the 868 MHz frequency: **a maximum of 1%**. Nevertheless, the fields of application for LoRaWan are versatile, as the network has a very high capacity: up to **one million nodes per application** are possible.
+$ [bluetooth]# power on
+changing power on succeeded
 
+$ [bluetooth]# default-agent
+Default agent request successful
 
-## Explore LoRaWan together with the CityLAB
+$ [bluetooth]# pairable on
+changing pairable on succeeded
 
-The last two editions of the so called "Open Workshop" (German: *Offene Werkstatt*) at the [CityLAB Berlin](https://www.citylab-berlin.org/) were dedicated to the topic of **GPS Tracking with LoRaWan**. Participants were equipped with our [instructions on GitHub](https://github.com/technologiestiftung/werkstatt) as well as with the necessary hardware, software and other components like the [Dragino LoRaBee](https://www.dragino.com/products/lora/item/109-lora-bee.html) to transfer location data via the LoRa-Net.
+//important .command in case you want to connect twice to one and the same device
+$ [bluetooth]# remove 12:34:56:78:9A:BC
+changing pairable on succeeded
 
-In the most recent workshop, we built an optimized tracker. In contrast to the LoRa nodes, this tracker featured individual components that were put together, leading to a more robust (thanks to soldering) as well as compact version of the tracker.
+// scan environment for Bluetooth devices; MAC address of radio should appear
+$ [bluetooth]# scan on
+Discovery started
+[CHG] Device 12:34:56:78:9A:BC 12-34-56-78-9A-BC
 
+$ [bluetooth]# scan off
+Discovery stopped
 
-### A little preview
-{% include macro-image-section-markdown-small.html src="../images/Nano_Xbee_Image.png" caption="GPS-LoRa-Tracker, as it was built at the Offene Werkstatt (© TSB)"%}
+//pair to radio (!= connect)
+$ [bluetooth]# pair 12:34:56:78:9A:BC
+Attempting to pair with 12:34:56:78:9A:BC
+[CHG] Device 12:34:56:78:9A:BC Connected: yes
+[CHG] Device 12:34:56:78:9A:BC ServicesResolved: yes
+[CHG] Device 12:34:56:78:9A:BC Paired: yes
+Pairing successful
 
-The following hardware components are required for this LoRa GPS tracker:
-* 9V batteries + charger
-* Battery clip 
-* GPS module with antenna 
-* Arduino Nano V3 (Clone)
-* Dragino LoRa Bee 868 (European frequency)
+//check if the pairing really worked; radio should be listed
+$ [bluetooth]# devices
+Device 12:34:56:78:9A:BC MeinRadioName
 
-Added up, these parts amount to **just 30€** per tracker – far below the price of the normal GPS trackers, which usually start at 50€.  
+//automatically connect to the device (radio) when it is switched on
+$ [bluetooth]# trust 12:34:56:78:9A:BC
+[CHG] Device 12:34:56:78:9A:BC Trusted: yes
+Changing 12:34:56:78:9A:BC trust succeeded
 
-As soon as all these components are soldered together, the hardware part is finished. On the software side, it's now necessary to register the tracker in **[The Things Network (TTN)](https://thethingsnetwork.org)** and through that assign to our device a corresponding device address, as well as a network session key and an app key. We'll need these three keys for the program code (also called *Sketch* under Arduino), which will be loaded onto the Arduino Nano V3 microcontroller. Detailed instructions for **how to register your end node in the TTN console**, including screenshots of the user interface, can be found [here](https://www.thethingsnetwork.org/docs/devices/registration.html#personalize-device-for-abp) at The Things Network.
-
-Once the device is registered, you can get **the aforementioned three variables** (device address, network session key and app key) from the TTN console. You can find the Sketch (i.e., the program code) [here on GitHub](https://github.com/technologiestiftung/werkstatt/tree/master/codes_sketches) – name: *GPSTracker_LoRa_Nano_V2.ino*
-
-The following lines need to be adjusted in the code:
-
-```js
-//*** get the values right out of your personal TTN console, format msb! ***
-static u1_t NWKSKEY[16] = {
-    0xB2, 0x5F, 0x35, 0x64,
-    0xB4, 0x89, 0xB8, 0x09,
-    0x08, 0x12, 0x7D, 0xAC,
-    0x0F, 0xC6, 0xF1, 0x5C
-    }; 
-    
-static u1_t APPSKEY[16] = {
-    0xB2, 0x5B, 0x16, 0x81,
-    0x53, 0x70, 0x49, 0xBF,
-    0x24, 0xBD, 0x55, 0xB2,
-    0xB5, 0xF6, 0xCB, 0x46
-    }; 
-
-// ATTENTION: DEVICE ADRESS begins with prefix 0x
-// *** get the values right out of your personal TTN console, format hex-style! ***
-static const u4_t DEVADDR = 0X26011BF4
+//finally: connect to radio
+$ [bluetooth]# connect 12:34:56:78:9A:BC
 ```
 
-You should also check the pin mapping of the Dragino LoRa Bee before uploading the sketch. Based on our circuit diagram, you should have the following pin mapping:
+## Web Radio per Autostart abspielen
 
-```js
-const lmic_pinmap lmic_pins = {
-    .nss = 10,
-    .rxtx = LMIC_UNUSED_PIN,
-    .rst = 9,
-    .dio = {2, 6, 7},
-    };
+To make result is audible, we have added another command to the shell script.
+```shell
+$ vlc myPlaylist.m3u
 ```
+Using this command, the already pre-installed VLC media player of your RasPi opens playlist "myPlaylist". With this command, all files like mp3 files or other playlists, for example the playlist of your favorite web radio, are played one after the other. The playlist only needs to contain a URL to the corresponding web radio station.
 
-The pin mapping only needs to be adjusted if you deviate from our circuit diagram. The diagram as well as the instructions can be found on Github in the document ["How To GPS Tacker (optimized)"](https://github.com/technologiestiftung/werkstatt/blob/master/HowTo_GPSTracker_optimized.md).
+**Last but not least: include the shell script in the autostart** To include a program in the autostart of the Raspberry, there are several ways. In our tutorial we've created a **.dektop file** to run our script every time the RasPi is booting up. 
+```shell
+$ sudo geany /etc/xdg/autostart/nameOfYourFile.desktop&
+```
+Nice to know: by using the commercial "and" at the end of the command, you can still operate the terminal even though the text editor is open.
+The .desktop files have a prescribed schematic structure which has to be considered.
+```
+[Desktop Entry]
+Type=Application
+Name=anyName
+Terminal=false
+Exec=sh /usr/bin/myScript.sh
+```
+After the attribute "Exec=..." the command to be executed at autostart is specified. Since we need several commands for the connection via Bluetooth and the playback of the web radio station, we would like to line a shell script "myScript.sh" which contains all the commands.
 
-**Last but not least** the Sketch has now to be transferred to the Arduino Nano. To do this, click on **Verify** (the checkmark in the upper left corner of the editor) and compile the code. If no error message appears, the sketch can be loaded directly onto the board by clicking on **Upload**. Done!
+## Little Teaser
 
+If you got quite excited and would like to become active yourself, you can find further instructions in the detailed [tutorial on GitHub](https://github.com/technologiestiftung/werkstatt/blob/master/HowTo_WebRadio.md). Among other things it explains how:
+* the IP of the RasPi can be queried
+* the RasPi can be controlled via SSH
+* the .desktop autostart file should be created and stored
+* the audio output of the Raspberry can be set up
+* and much more.
 
-If you want to experiment at home and set up a weather station on your terrace, you can **borrow a Lora-Node + accessories for free via the [Hacking Box](https://www.technologiestiftung-berlin.de/hackingbox/).** Otherwise we are always open for suggestions, discussions, questions, hints and tips about GPS-Tracking with LoRaWan!
+For those who don`t have a RasPi at home, one can borrow **RasPi's + accessories for free via [Hacking Box](https://www.technologiestiftung-berlin.de/hackingbox/).** In addition, the [CityLAB Berlin](https://www.citylab-berlin.org/) offers monthly participative workshops on topics such as Internet of Things, microcontrollers, Smart Home and hardware hacking. 
 
-If you have any questions about LoRaWan and IoT networks, our colleague [Christian Hammel](mailto:Hammel@technologiestiftung-berlin.de) would be happy to help you. If you have any questions regarding the work of the *Werkstatt* at the CityLAB or the *Ideation & Prototyping Lab*, [Sara Reichert](mailto:Reichert@technologiestiftung-berlin.de) and [Julia Zimmermann](mailto:Zimmermann@technologiestiftung-berlin.de) are looking forward to your message.
+If you have any questions about *RasPi & Web Radio*, [Julia Zimmermann](mailto:Zimmermann@technologiestiftung-berlin.de) will be happy to help you.
