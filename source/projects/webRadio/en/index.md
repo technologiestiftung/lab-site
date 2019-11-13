@@ -33,7 +33,7 @@ redirect_from:
 
 The **Long Range Wide Area Network** (LoRaWan) is a standard network transmission protocol developed by Nicolas Sornin in 2007, which belongs to the **Low Power Wide Area Networks** class. Accordingly, LoRaWan is designed to transmit data packets over long distances (ranging from 200 m to 20 km) with very low energy consumption in the so-called ISM band (Industrial, Scientific and Medical Frequency Range) at 868 MHz in Europe and 915 MHz in North America. Because of these characteristics, the use of LoRaWan for communication between various **sensors and IoT applications in the industrial sector** has already proven itself. For example, sensors can record measurement values from weather stations, water tanks, truck tires, garbage bins or even particulate matter measuring devices and transmit this data via LoRaWan technology to other networks such as the internet. The LoRaWan architecture is quite simple:
 
-{% include macro-image-section-markdown.html src="../images/lora_architecture.png" caption="LoRaWan Architecture (modified by TSB | secondary source: http://jensd.be)"%}
+{% include macro-image-section-markdown-small.html src="../images/lora_architecture.png" caption="LoRaWan Architecture (modified by TSB | secondary source: http://jensd.be)"%}
 
 The device, also called an end node, sends the measured data to a LoRaWan gateway via the LoRaWan protocol. The gateway in turn sends the data to a network server connected to the user's own personal application, such as an analytics tool, a card or a database; the data can then be read and controlled by the user. 
 
@@ -41,7 +41,7 @@ The device, also called an end node, sends the measured data to a LoRaWan gatewa
 
 Anyone now wondering why we still pay for mobile network & internet when there seems to be a perfectly good alternative – and free – network available is unfortunately going to be disappointed: the **data transfer rate of the LoRaWan only ranges from 292 bit/s to a maximum of 51 kBit/s**. When using the LMIC library, which we used in our example code below to transfer data, 13 bytes of the maximum 51 bytes are reserved for so-called overhead data, i.e. metadata. The maximum data packets are therefore much smaller compared to Ethernet (easily up to 1,500 MBit/s) or the internet (100 MBit/s usual for home use), which is why LoRaWan is primarily suitable for the use of various **IoT applications and sensors**.
 
-{% include macro-image-section-markdown.html src="../images/lorawan-use-cases.jpg" caption="LoRaWan Use Cases (© The Things Network)"%}
+{% include macro-image-section-markdown-small.html src="../images/lorawan-use-cases.jpg" caption="LoRaWan Use Cases (© The Things Network)"%}
 
 With LoRaWan, we're talking about devices that can send small data packets (keyword: narrow band) at regular intervals (usually every few minutes, but **not in real time**) over long distances with low energy consumption. It isn't possible to send data-intensive packets (like photos or videos) at short time intervals, as the Federal Network Agency (German: *Bundesnetzagentur*) regulates how much **airtime** LoRaWan can occupy on the 868 MHz frequency: **a maximum of 1%**. Nevertheless, the fields of application for LoRaWan are versatile, as the network has a very high capacity: up to **one million nodes per application** are possible.
 
@@ -54,7 +54,7 @@ In the most recent workshop, we built an optimized tracker. In contrast to the L
 
 
 ### A little preview
-{% include macro-image-section-markdown.html src="../images/Nano_Xbee_Image.png" caption="GPS-LoRa-Tracker, as it was built at the Offene Werkstatt (© TSB)"%}
+{% include macro-image-section-markdown-small.html src="../images/Nano_Xbee_Image.png" caption="GPS-LoRa-Tracker, as it was built at the Offene Werkstatt (© TSB)"%}
 
 The following hardware components are required for this LoRa GPS tracker:
 * 9V batteries + charger
