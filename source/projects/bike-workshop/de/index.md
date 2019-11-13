@@ -5,7 +5,7 @@ lang: de
 title: "Bedeutet 'Shared Mobility' gleich 'Shared Data'?"
 subtitle: "In einem Workshop mit Interessengruppen haben wir uns das Thema Datenaustauschvereinbarungen zwischen Shared-Mobility-Providers und der Stadt ausgearbeitet."
 type: workshop
-colorMode: bright
+colorMode: dark
 thumbnail: /projects/bike-workshop/images/thumbnail.png
 heroImage: /projects/bike-workshop/images/hero.png
 socialMediaImage: /projects/bike-workshop/images/social_media.png
