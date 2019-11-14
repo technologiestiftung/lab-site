@@ -28,7 +28,7 @@ class StackedBarChart {
             data = data.map(function(d) {
                 return { value: dataValue(d), label: labelValue(d), percent: percentValue(d) };
             });
-            
+
             var sumVals = d3.sum(data, function(d) { return d.value; });
             var barScale = d3.scaleLinear()
             .domain([0, sumVals])
@@ -73,7 +73,7 @@ class StackedBarChart {
                 return data.slice(0, i).reduce(function (a, d) { return a + barScale(d.value); }, 1) + (_this.padding / 2);
             })
             .attr("x", 0.1 * _this.width)
-            .attr("height", function(d) { return Math.max(barScale(d.value) - (_this.padding / 2), 1); })
+            .attr("height", function(d) { console.log(d.value);return Math.max(barScale(d.value) - (_this.padding / 2), 1); })
             .attr("width", _this.barWidth)
             .attr("fill", function(d) {return color(d.label); });
             
@@ -85,8 +85,8 @@ class StackedBarChart {
                 return data.slice(0, i).reduce(function (a, d) { return a + barScale(d.value); }, (Math.max((barScale(d.value) - (_this.padding / 2)), 1) / 2)) + (_this.padding / 2) + 5;
             };
             
-            var legendLines = _this.g.selectAll("line.legend").data(data, function(d) { return d.label; });
-            legendLines.enter().append("line").attr("class", "legend");
+            var legend = _this.g.selectAll("line.legend").data(data, function(d) { return d.label; });
+            legend.enter().append("line").attr("class", "legend");
             _this.g.selectAll("line.legend")
             .transition()
             .duration(750)
@@ -97,8 +97,7 @@ class StackedBarChart {
             .attr("stroke", "#000000")
             .attr("stroke-width", 0.5);
             
-            var legendText = _this.g.selectAll("text.legend_percent").data(data, function(d) { return d.percent; });
-            legendText.enter().append("text").attr("class", "legend_percent")
+            legend.enter().append("text").attr("class", "legend_percent")
             _this.g.selectAll("text.legend_percent")
             .transition()
             .duration(750)
@@ -107,8 +106,7 @@ class StackedBarChart {
             .attr("x", 0.15 * _this.width + _this.barWidth)
             .text(function(d) { return d.percent})
             
-            var legendText = _this.g.selectAll("text.legend_sen").data(data, function(d) { return d.label; });
-            legendText.enter().append("text").attr("class", "legend_sen")
+            legend.enter().append("text").attr("class", "legend_sen")
             _this.g.selectAll("text.legend_sen")
             .transition()
             .duration(750)
