@@ -31,7 +31,7 @@ redirect_from:
 
 ---
 
-*Auch das Ideation & Prototyping Lab möchten im Zeitalter der zunehmenden Automation Schritt halten und hat daher das hauseigene Bluetooth-Radio des [CityLAB Berlin](https://www.citylab-berlin.org/) zum Web Radio transformatiert. Das dabei entstandene Tutorial beschäftigt sich mit dem **Raspberry Pi**, dessen **Autostart-Konfiguration** & **Bluetooth Radios**. Wie das Alles zusammenhängt und wie man sich mit Hilfe eines RasPi's ein Autoplay Web Radio hackt, das soll in diesem Artikel beschrieben werden. Das ausführlich Tutorial findet ihr auf [GitHub](https://github.com/technologiestiftung/werkstatt/blob/master/HowTo_WebRadio.md)*.
+*Auch das Ideation & Prototyping Lab möchten im Zeitalter der zunehmenden Automation Schritt halten und hat daher das hauseigene Bluetooth-Radio des [CityLAB Berlin](https://www.citylab-berlin.org/) zum Web Radio transformatiert. Das dabei entstandene Tutorial beschäftigt sich mit dem **Raspberry Pi** (RasPi), dessen **Autostart-Konfiguration** & **Bluetooth Radios**. Wie das Alles zusammenhängt und wie man sich mit Hilfe eines RasPi's ein Autoplay Web Radio hackt, das soll in diesem Artikel beschrieben werden. Das ausführlich Tutorial findet ihr auf [GitHub](https://github.com/technologiestiftung/werkstatt/blob/master/HowTo_WebRadio.md)*.
 
 ## Die Idee
 In Zeiten der zunehmenden Automation wollten wir einmal mehr hinter die Kulissen blicken und ein bluetooth-fähiges Radio mit Hilfe eines Raspberry Pi 3 und einem **Autostart-Programm** zu einem Autoplay Web Radio hacken. Die Kommunikation vom Laptop zum RasPi erfolgt dabei über SSH - vom RasPi zum Radio über Bluetooth. Die gesamte Konfiguration (Bluetooth, VLC-Mediaplayer Command, Delays etc.) wurde in ein **Shell-Skript** geschrieben, welches schließlich mit der Autostart-Datei des Raspberry's verknüpft wurde. 
@@ -51,48 +51,48 @@ Damit der Laptop mit dem Raspberry kommunizieren kann, muss zunächst einmal ein
 ## RasPi mit dem Radio verbinden
 Die meisten von uns verbinden sich tagtäglich via Bluetooth mit anderen Devices – ganz einfach unter Nutzung des Graphic User Interface (GUI) mit Tastatur und Maus. Das ist in der Regel auch schneller, doch in unserem Workshop stellen wir die Verbindung lediglich mit ein paar Terminal-Command her, denn genau hier liegt die **Magie der Automation**. Speichert man die Commands in einem Shell-Skript und bindet dieses kleine Skript in den Autostart des Raspberry's ein, verbindet sich der Raspberry beim nächsten Hochfahren automagically mit dem Bluetooth-Radio. 
 
-Zum Verbinden mit dem Radio sind folgenden Befehle notwendig (wobei die angegebene MAC-Adresse des Radios durch die des eigenen Radios ausgetauscht werden muss):
+Zum Verbinden mit dem Radio sind folgenden Befehle notwendig, wobei die angegebene MAC-Adresse des Radios durch die des eigenen Radios ausgetauscht werden muss (Kommentare werden nicht im Terminal angezeigt):
 ```shell
 $ bluetoothctl
-Agent registered
+> Agent registered
 
 $ [bluetooth]# power on
-changing power on succeeded
+> changing power on succeeded
 
 $ [bluetooth]# default-agent
-Default agent request successful
+> Default agent request successful
 
 $ [bluetooth]# pairable on
-changing pairable on succeeded
+> changing pairable on succeeded
 
 //wichtiger command, falls man sich erneut(!) mit dem gleichen Gerät verbinden möchte
 $ [bluetooth]# remove 12:34:56:78:9A:BC
-changing pairable on succeeded
+> changing pairable on succeeded
 
 // Umgebung nach Bluetooth-Devices scannen; MAC-Adresse des Radios sollte erscheinen
 $ [bluetooth]# scan on
-Discovery started
-[CHG] Device 12:34:56:78:9A:BC 12-34-56-78-9A-BC
+> Discovery started
+> [CHG] Device 12:34:56:78:9A:BC 12-34-56-78-9A-BC
 
 $ [bluetooth]# scan off
-Discovery stopped
+> Discovery stopped
 
 //mit dem Radio pairen (!= verbinden)
 $ [bluetooth]# pair 12:34:56:78:9A:BC
-Attempting to pair with 12:34:56:78:9A:BC
-[CHG] Device 12:34:56:78:9A:BC Connected: yes
-[CHG] Device 12:34:56:78:9A:BC ServicesResolved: yes
-[CHG] Device 12:34:56:78:9A:BC Paired: yes
-Pairing successful
+> Attempting to pair with 12:34:56:78:9A:BC
+> [CHG] Device 12:34:56:78:9A:BC Connected: yes
+> [CHG] Device 12:34:56:78:9A:BC ServicesResolved: yes
+> [CHG] Device 12:34:56:78:9A:BC Paired: yes
+> Pairing successful
 
 //überprüfen ob das Pairing wirklich geklappt hat; Radio sollte gelistet werden
 $ [bluetooth]# devices
-Device 12:34:56:78:9A:BC MeinRadioName
+> Device 12:34:56:78:9A:BC MeinRadioName
 
 //automatisch mit dem Gerät (Radio) verbinden, wenn es eingeschaltet wird
 $ [bluetooth]# trust 12:34:56:78:9A:BC
-[CHG] Device 12:34:56:78:9A:BC Trusted: yes
-Changing 12:34:56:78:9A:BC trust succeeded
+> [CHG] Device 12:34:56:78:9A:BC Trusted: yes
+> Changing 12:34:56:78:9A:BC trust succeeded
 
 //Finally: mit dem Radio verbinden
 $ [bluetooth]# connect 12:34:56:78:9A:BC
@@ -112,25 +112,25 @@ $ sudo geany /etc/xdg/autostart/NameDerDatei.desktop&
 ```
 Nice To Know: durch das kaufmännische "Und" am Ende des Befehls, könnt ihr das Terminal weiterhin bedienen, obwohl der Texteditor geöffnet ist.
 Die .desktop-Dateien haben eine vorgeschriebene schematische Struktur, die es zu berücksichtigen gilt.
-```
+```plain
 [Desktop Entry]
 Type=Application
 Name=irgendeinName
 Terminal=false
-Exec=sh /usr/bin/meinSkript.sh
+Exec=/bin/sh /usr/bin/meinSkript.sh
 ```
 Nach dem Attribut "Exec=..." wird der beim Autostart auszuführende Befehl angegeben. Da wir für die Verbindung via Bluetooth und das Abspielen des Web-Radiosenders mehrere Befehle benötigen, verlinken wir an dieser Stelle also zu unserem bereits erstellten Shell Skript "meinSkript.sh".
 
 ## Ausblick
 
 Wer jetzt neugierig geworden ist und gerne selber aktive werden möchte, findet weitere Instruktionen im ausführlichen [Tutorial auf GitHub](https://github.com/technologiestiftung/werkstatt/blob/master/HowTo_WebRadio.md). Darin wird unter anderem erklärt wie:
-* die IP des RasPi's abfragt werden kann
-* der RasPi über SSH angesteuert werden kann
-* die .desktop-Autostart-Datei angelegt und abgelegt werden sollte
-* der Audio-Ausgang des Raspberry eingerichtet werden kann
+* die IP des RasPi's abfragt werden kann.
+* der RasPi über SSH angesteuert werden kann.
+* die .desktop-Autostart-Datei angelegt und abgelegt werden sollte.
+* der Audio-Ausgang des Raspberry eingerichtet werden kann.
 * uvm.
 
 
-Wer zu Hause etwas experimentieren jedoch keinen eigenen RasPi besitz, der kann sich **RasPi's + Zubehör kostenlos via [Hacking Box](https://www.technologiestiftung-berlin.de/hackingbox/) ausleihen.** Darüber hinaus bietet das [CityLAB Berlin](https://www.citylab-berlin.org/) monatlich stattfindende, partizipative Workshops zu Themen wie Internet of Things, Mikrokontroller, Smart Home und Hardware Hacking an. 
+Wer zu Hause etwas experimentieren möchte, jedoch keinen eigenen RasPi besitz, der kann sich **RasPi's + Zubehör kostenlos via [Hacking Box](https://www.technologiestiftung-berlin.de/hackingbox/) ausleihen.** Darüber hinaus bietet das [CityLAB Berlin](https://www.citylab-berlin.org/) monatlich stattfindende, partizipative Workshops zu Themen wie Internet of Things, Mikrokontroller, Smart Home und Hardware Hacking an. 
 
 Bei Fragen rund um das Thema *RasPi & Web Radio* hilft [Julia Zimmermann](mailto:Zimmermann@technologiestiftung-berlin.de) gerne weiter.

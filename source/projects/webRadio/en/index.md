@@ -31,7 +31,7 @@ redirect_from:
 
 ---
 
-The Ideation & Prototyping Lab also wants to keep pace in the age of increasing automation and has therefore transformed the Bluetooth radio belonging to [CityLAB Berlin](https://www.citylab-berlin.org/) into a web radio. The resulting tutorial deals with the **Raspberry Pi**, its **autostart configuration** & **Bluetooth radios**. This articel describes how all these thing are connected to each other and how to hack an autoplay web radio with the help of a RasPi. You can find the detailed tutorial on [GitHub](https://github.com/technologiestiftung/werkstatt/blob/master/HowTo_WebRadio.md)*.
+The Ideation & Prototyping Lab also wants to keep pace in the age of increasing automation and has therefore transformed the Bluetooth radio belonging to [CityLAB Berlin](https://www.citylab-berlin.org/) into a web radio. The resulting tutorial deals with the **Raspberry Pi** (RasPi), its **autostart configuration** & **Bluetooth radios**. This articel describes how all these thing are connected to each other and how to hack an autoplay web radio with the help of a RasPi. You can find the detailed tutorial on [GitHub](https://github.com/technologiestiftung/werkstatt/blob/master/HowTo_WebRadio.md)*.
 
 ## Basic Idea
 In times of increasing automation we wanted to look behind the scenes once more and hack a bluetooth-capable radio to an autoplay web eadio with the help of a Raspberry Pi 3 and a **autostart program**. The communication from the laptop to the RasPi is done via SSH - from the RasPi to the radio via Bluetooth. The whole configuration (Bluetooth, VLC mediaplayer command, delays etc.) was written into a **Shell-Script** which was finally linked to the autostart file of the Raspberry. 
@@ -51,48 +51,48 @@ First, an operating system must be set up on the RasPi, in our case Rasbian, so 
 ## Connect RasPi with the radio
 Most of us connect to other devices via Bluetooth on a daily basis - simply by using the Graphic User Interface (GUI) with keyboard and mouse. Of course, this is way faster. However, in our workshop we only connect with a few terminal commands, because this is basically the **magic of automation**. If you save the commands in a shell script and include this small script in the autostart of the Raspberry, the Raspberry automagically connects to the Bluetooth radio at the next boot. 
 
-To connect to the radio, the following commands are necessary (the MAC address of the radio must be replaced with that of your own radio):
+To connect to the radio, the following commands are necessary whereby the MAC address of the radio must be replaced with that of your own radio (comments are not shown within the terminal):
 ```shell
 $ bluetoothctl
-Agent registered
+> Agent registered
 
 $ [bluetooth]# power on
-changing power on succeeded
+> changing power on succeeded
 
 $ [bluetooth]# default-agent
-Default agent request successful
+> Default agent request successful
 
 $ [bluetooth]# pairable on
-changing pairable on succeeded
+> changing pairable on succeeded
 
 //important .command in case you want to connect twice to one and the same device
 $ [bluetooth]# remove 12:34:56:78:9A:BC
-changing pairable on succeeded
+> changing pairable on succeeded
 
 // scan environment for Bluetooth devices; MAC address of radio should appear
 $ [bluetooth]# scan on
-Discovery started
-[CHG] Device 12:34:56:78:9A:BC 12-34-56-78-9A-BC
+> Discovery started
+> [CHG] Device 12:34:56:78:9A:BC 12-34-56-78-9A-BC
 
 $ [bluetooth]# scan off
-Discovery stopped
+> Discovery stopped
 
 //pair to radio (!= connect)
 $ [bluetooth]# pair 12:34:56:78:9A:BC
-Attempting to pair with 12:34:56:78:9A:BC
-[CHG] Device 12:34:56:78:9A:BC Connected: yes
-[CHG] Device 12:34:56:78:9A:BC ServicesResolved: yes
-[CHG] Device 12:34:56:78:9A:BC Paired: yes
-Pairing successful
+> Attempting to pair with 12:34:56:78:9A:BC
+> [CHG] Device 12:34:56:78:9A:BC Connected: yes
+> [CHG] Device 12:34:56:78:9A:BC ServicesResolved: yes
+> [CHG] Device 12:34:56:78:9A:BC Paired: yes
+> Pairing successful
 
 //check if the pairing really worked; radio should be listed
 $ [bluetooth]# devices
-Device 12:34:56:78:9A:BC MeinRadioName
+> Device 12:34:56:78:9A:BC MeinRadioName
 
 //automatically connect to the device (radio) when it is switched on
 $ [bluetooth]# trust 12:34:56:78:9A:BC
-[CHG] Device 12:34:56:78:9A:BC Trusted: yes
-Changing 12:34:56:78:9A:BC trust succeeded
+> [CHG] Device 12:34:56:78:9A:BC Trusted: yes
+> Changing 12:34:56:78:9A:BC trust succeeded
 
 //finally: connect to radio
 $ [bluetooth]# connect 12:34:56:78:9A:BC
@@ -112,12 +112,12 @@ $ sudo geany /etc/xdg/autostart/nameOfYourFile.desktop&
 ```
 Nice to know: by using the commercial "and" at the end of the command, you can still operate the terminal even though the text editor is open.
 The .desktop files have a prescribed schematic structure which has to be considered.
-```
+```plain
 [Desktop Entry]
 Type=Application
 Name=anyName
 Terminal=false
-Exec=sh /usr/bin/myScript.sh
+Exec=/bin/sh /usr/bin/myScript.sh
 ```
 After the attribute "Exec=..." the command to be executed at autostart is specified. Since we need several commands for the connection via Bluetooth and the playback of the web radio station, we would like to line a shell script "myScript.sh" which contains all the commands.
 
