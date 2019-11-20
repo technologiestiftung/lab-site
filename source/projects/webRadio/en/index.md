@@ -14,9 +14,9 @@ featured: false
 authors:
   - julia-zimmermann
 start: 2019-11-12
-end: 2019-11-13
-status: ongoing
-date: 2019-11-13
+end: 2019-11-20
+status: finished
+date: 2019-11-20
 
 assets:
   css:
@@ -51,66 +51,76 @@ First, an operating system must be set up on the RasPi, in our case Rasbian, so 
 ## Connect RasPi with the radio
 Most of us connect to other devices via Bluetooth on a daily basis - simply by using the Graphic User Interface (GUI) with keyboard and mouse. Of course, this is way faster. However, in our workshop we only connect with a few terminal commands, because this is basically the **magic of automation**. If you save the commands in a shell script and include this small script in the autostart of the Raspberry, the Raspberry automagically connects to the Bluetooth radio at the next boot. 
 
-To connect to the radio, the following commands are necessary whereby the MAC address of the radio must be replaced with that of your own radio (comments are not shown within the terminal):
+To connect to the radio some commands are necessary. Please have in mind that the MAC address of the radio has to be replaced by the MAC address of your own radio. First open the Bluetooth control.
+*Note: **$** stands for a command; **>** for the returning terminal prompt*
+
 ```shell
 $ bluetoothctl
 > Agent registered
-
-$ [bluetooth]# power on
+```
+This command starts your own Bluetooth shell **[bluetoothctl]#**. All subsequent **$ commands** are to be understood as [bluetooth]# commands.
+```
+$ power on
 > changing power on succeeded
 
-$ [bluetooth]# default-agent
+$ default-agent
 > Default agent request successful
 
-$ [bluetooth]# pairable on
+$ pairable on
 > changing pairable on succeeded
-
-//important .command in case you want to connect twice to one and the same device
-$ [bluetooth]# remove 12:34:56:78:9A:BC
+```
+This command is important in case you want to connect twice to one and the same device.
+```
+$ remove 12:34:56:78:9A:BC
 > changing pairable on succeeded
-
-// scan environment for Bluetooth devices; MAC address of radio should appear
-$ [bluetooth]# scan on
+```
+Next, we want to scan the environment for Bluetooth devices. At this point, the MAC address of radio should appear.
+```
+$ scan on
 > Discovery started
 > [CHG] Device 12:34:56:78:9A:BC 12-34-56-78-9A-BC
 
-$ [bluetooth]# scan off
+$ scan off
 > Discovery stopped
-
-//pair to radio (!= connect)
-$ [bluetooth]# pair 12:34:56:78:9A:BC
+```
+As soon as the radio shows up, you can pair with it. By pairing, the radio is added to the list of known Bluetooth devices.
+```
+$ pair 12:34:56:78:9A:BC
 > Attempting to pair with 12:34:56:78:9A:BC
 > [CHG] Device 12:34:56:78:9A:BC Connected: yes
 > [CHG] Device 12:34:56:78:9A:BC ServicesResolved: yes
 > [CHG] Device 12:34:56:78:9A:BC Paired: yes
 > Pairing successful
-
-//check if the pairing really worked; radio should be listed
-$ [bluetooth]# devices
-> Device 12:34:56:78:9A:BC MeinRadioName
-
-//automatically connect to the device (radio) when it is switched on
-$ [bluetooth]# trust 12:34:56:78:9A:BC
+```
+The following command checks whether the pairing really worked. If yes, your radio should be listed.
+```
+$ devices
+> Device 12:34:56:78:9A:BC MyRadioName
+```
+To let your RasPi automatically connect to your radio when it is switched on, you need to trust the device.
+```
+$ trust 12:34:56:78:9A:BC
 > [CHG] Device 12:34:56:78:9A:BC Trusted: yes
 > Changing 12:34:56:78:9A:BC trust succeeded
-
-//finally: connect to radio
-$ [bluetooth]# connect 12:34:56:78:9A:BC
+```
+Finally: connect to radio.
+```
+$ connect 12:34:56:78:9A:BC
 ```
 
 ## Web Radio per Autostart abspielen
 
-To make result is audible, we have added another command to the shell script.
+To make result is audible, we have added another command to the shell script. *Note: we're back in the default shell.*
 ```shell
 $ vlc myPlaylist.m3u
 ```
 Using this command, the already pre-installed VLC media player of your RasPi opens playlist "myPlaylist". With this command, all files like mp3 files or other playlists, for example the playlist of your favorite web radio, are played one after the other. The playlist only needs to contain a URL to the corresponding web radio station.
 
-**Last but not least: include the shell script in the autostart** To include a program in the autostart of the Raspberry, there are several ways. In our tutorial we've created a **.dektop file** to run our script every time the RasPi is booting up. 
+**Last but not least: include the shell script in the autostart** To include a program in the autostart of the Raspberry, there are several ways. In our tutorial we've created a **.desktop file** to run our script every time the RasPi is booting up. 
 ```shell
 $ sudo geany /etc/xdg/autostart/nameOfYourFile.desktop&
 ```
-Nice to know: by using the commercial "and" at the end of the command, you can still operate the terminal even though the text editor is open.
+*Nice to know: by using the commercial "and" at the end of the command, you can still operate the terminal even though the text editor is open.*
 The .desktop files have a prescribed schematic structure which has to be considered.
 ```plain
 [Desktop Entry]

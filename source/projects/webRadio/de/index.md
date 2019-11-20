@@ -14,9 +14,9 @@ featured: false
 authors:
   - julia-zimmermann
 start: 2019-11-12
-end: 2019-11-13
-status: ongoing
-date: 2019-11-13
+end: 2019-11-20
+status: finished
+date: 2019-11-20
 
 assets:
   css:
@@ -51,66 +51,76 @@ Damit der Laptop mit dem Raspberry kommunizieren kann, muss zunächst einmal ein
 ## RasPi mit dem Radio verbinden
 Die meisten von uns verbinden sich tagtäglich via Bluetooth mit anderen Devices – ganz einfach unter Nutzung des Graphic User Interface (GUI) mit Tastatur und Maus. Das ist in der Regel auch schneller, doch in unserem Workshop stellen wir die Verbindung lediglich mit ein paar Terminal-Command her, denn genau hier liegt die **Magie der Automation**. Speichert man die Commands in einem Shell-Skript und bindet dieses kleine Skript in den Autostart des Raspberry's ein, verbindet sich der Raspberry beim nächsten Hochfahren automagically mit dem Bluetooth-Radio. 
 
-Zum Verbinden mit dem Radio sind folgenden Befehle notwendig, wobei die angegebene MAC-Adresse des Radios durch die des eigenen Radios ausgetauscht werden muss (Kommentare werden nicht im Terminal angezeigt):
+Zum Verbinden mit dem Radio sind einige Befehle notwendig, wobei die angegebene MAC-Adresse des Radios durch die des eigenen Radios ausgetauscht werden muss. Zunächst öffnet man die Bluetooth-Steuerung.
+*Hinweis: **$** kennzeichnet einen Befehl; **>** die Rückgabe des Terminals.*
+
 ```shell
 $ bluetoothctl
 > Agent registered
-
-$ [bluetooth]# power on
+```
+Mit diesem Command started eine eigene Bluetooth-Shell **[bluetoothctl]#**. Alle nachfolgenden **$-Commands** sind als [bluetooth]#-Commands zu verstehen.
+```
+$ power on
 > changing power on succeeded
 
-$ [bluetooth]# default-agent
+$ default-agent
 > Default agent request successful
 
-$ [bluetooth]# pairable on
+$ pairable on
 > changing pairable on succeeded
-
-//wichtiger command, falls man sich erneut(!) mit dem gleichen Gerät verbinden möchte
-$ [bluetooth]# remove 12:34:56:78:9A:BC
+```
+Wichtiger command, falls man sich erneut(!) mit dem gleichen Gerät verbinden möchte:
+```
+$ remove 12:34:56:78:9A:BC
 > changing pairable on succeeded
-
-// Umgebung nach Bluetooth-Devices scannen; MAC-Adresse des Radios sollte erscheinen
-$ [bluetooth]# scan on
+```
+Als nächstes wird die Umgebung nach Bluetooth-Devices gescannt. An dieser Stelle sollte die MAC-Adresse des eigenen Radios erscheinen.
+```
+$ scan on
 > Discovery started
 > [CHG] Device 12:34:56:78:9A:BC 12-34-56-78-9A-BC
 
-$ [bluetooth]# scan off
+$ scan off
 > Discovery stopped
-
-//mit dem Radio pairen (!= verbinden)
-$ [bluetooth]# pair 12:34:56:78:9A:BC
+```
+Sobald das Radio im Scan auftaucht, kann man sich damit pairen. Durch das pairen wird das Radio ist die Liste der bekannten Bluetooth.Devices aufgenommen.
+```
+$ pair 12:34:56:78:9A:BC
 > Attempting to pair with 12:34:56:78:9A:BC
 > [CHG] Device 12:34:56:78:9A:BC Connected: yes
 > [CHG] Device 12:34:56:78:9A:BC ServicesResolved: yes
 > [CHG] Device 12:34:56:78:9A:BC Paired: yes
 > Pairing successful
-
-//überprüfen ob das Pairing wirklich geklappt hat; Radio sollte gelistet werden
-$ [bluetooth]# devices
+```
+Mit dem nachfolgenden Command wird überprüft, ob das Pairing wirklich geklappt hat. Das Radio sollte gelistet werden.
+```
+$ devices
 > Device 12:34:56:78:9A:BC MeinRadioName
-
-//automatisch mit dem Gerät (Radio) verbinden, wenn es eingeschaltet wird
-$ [bluetooth]# trust 12:34:56:78:9A:BC
+```
+Damit sich der RasPi automatisch mit dem Radio verbindet, sobald es eingeschaltet wird, ist folgender Command nötig:
+```
+$ trust 12:34:56:78:9A:BC
 > [CHG] Device 12:34:56:78:9A:BC Trusted: yes
 > Changing 12:34:56:78:9A:BC trust succeeded
-
-//Finally: mit dem Radio verbinden
-$ [bluetooth]# connect 12:34:56:78:9A:BC
+```
+Finally: mit dem Radio verbinden.
+```
+$ connect 12:34:56:78:9A:BC
 ```
 
 ## Web Radio per Autostart abspielen
 
-Damit der Aha-Effekt größer und das Ergebnis hörbar ist, haben wir das Shell-Skript um einen weiteren Command ergänzt. Mit dem Command
+Damit der Aha-Effekt größer und das Ergebnis hörbar ist, haben wir das Shell-Skript um einen weiteren Command ergänzt. Mit dem Command. *Hinweis: wir befinden uns wieder in der default Shell.*
 ```shell
 $ vlc meinePlaylist.m3u
 ```
 öffnet der bereits vorinstalliert VLC-Mediaplayer die eigens erstellte Playlist "meinePlaylist". Alle darin befindlichen Dateien wie mp3-Dateien oder weitere Playlists, beispielsweise die Playlist eures Lieblings-Web-Radios, werden mit dem Command nacheinander abgespielt. In die Playlist muss demnach lediglich eine URL zu entsprechenden Web-Radiosender hinterlegt werden.
 
-**Last but not least: das Shell-Skript in den Autostart einbinden.** Um ein Programm in den Autostart des Raspberry's einzubinden gibt es verschiedene Möglichkeiten. In unserem Tutorial haben wir eine **.dektop-Datei** erstellt, um unser Skript mit jedem Hochfahren des RasPi's auszuführen. 
+**Last but not least: das Shell-Skript in den Autostart einbinden.** Um ein Programm in den Autostart des Raspberry's einzubinden gibt es verschiedene Möglichkeiten. In unserem Tutorial haben wir eine **.desktop-Datei** erstellt, um unser Skript mit jedem Hochfahren des RasPi's auszuführen. 
 ```shell
 $ sudo geany /etc/xdg/autostart/NameDerDatei.desktop&
 ```
-Nice To Know: durch das kaufmännische "Und" am Ende des Befehls, könnt ihr das Terminal weiterhin bedienen, obwohl der Texteditor geöffnet ist.
+*Nice To Know: durch das kaufmännische "Und" am Ende des Befehls, könnt ihr das Terminal weiterhin bedienen, obwohl der Texteditor geöffnet ist.*
 Die .desktop-Dateien haben eine vorgeschriebene schematische Struktur, die es zu berücksichtigen gilt.
 ```plain
 [Desktop Entry]
