@@ -44,12 +44,12 @@ Hardwareseitig ist dieses Projekt sehr leicht zu realisieren, da man lediglich:
 
 benötigt. Die Anleitung funktioniert natürlich auch mit anderen Einplatinencomputern unter Linux – solange diese ein boardinternes Chipset für die WLAN- und Bluetooth-Funktion verbaut haben.
 
-Damit der Laptop mit dem Raspberry kommunizieren kann, muss zunächst einmal ein Betriebssysteme auf den RasPi aufgesetzt werden – in unserem Falle Rasbian. Nach erfolgreicher Installation des Betriebssystems kann mit der Konfiguration des Raspberry's begonnen werden. Je nachdem ob der RasPi headless (via SSH) oder mit head (via Tastatur und Monitor) betrieben werden soll, dient das **Netzwerkprotokoll Secure Shell (SSH) als Kommunikationsschnittstelle** zu unserem RasPi. In unserem Tutorial wurde die headless Inbetriebnahme unter Nutzung von SSH beschrieben und darüber hinaus das kryptografische Verschlüsselungsverfahren der SSH beleuchtet.
+Damit der Laptop mit dem Raspberry kommunizieren kann, muss zunächst einmal ein Betriebssystem auf den RasPi aufgesetzt werden – in unserem Falle Rasbian. Nach erfolgreicher Installation des Betriebssystems kann mit der Konfiguration des Raspberry's begonnen werden. Je nachdem ob der RasPi headless (via SSH) oder mit head (via Tastatur und Monitor) betrieben werden soll, dient das **Netzwerkprotokoll Secure Shell (SSH) als Kommunikationsschnittstelle** zu unserem RasPi. In unserem Tutorial wurde die headless Inbetriebnahme unter Nutzung von SSH beschrieben und darüber hinaus das kryptografische Verschlüsselungsverfahren der SSH beleuchtet.
 
 {% include macro-image-section-markdown.html src="../images/webRadio_network.jpeg" caption="Schnittstellen zwischen den einzelnen Devices (©eigene Darstellung, Technologiestiftung Berlin) "%}
 
 ## RasPi mit dem Radio verbinden
-Die meisten von uns verbinden sich tagtäglich via Bluetooth mit anderen Devices – ganz einfach unter Nutzung des Graphic User Interface (GUI) mit Tastatur und Maus. Das ist in der Regel auch schneller, doch in unserem Workshop stellen wir die Verbindung lediglich mit ein paar Terminal-Command her, denn genau hier liegt die **Magie der Automation**. Speichert man die Commands in einem Shell-Skript und bindet dieses kleine Skript in den Autostart des Raspberry's ein, verbindet sich der Raspberry beim nächsten Hochfahren automagically mit dem Bluetooth-Radio. 
+Die meisten von uns verbinden sich tagtäglich via Bluetooth mit anderen Devices – ganz einfach unter Nutzung des Graphic User Interface (GUI) mit Tastatur und Maus. Das ist in der Regel auch schneller, doch in unserem Workshop stellen wir die Verbindung lediglich mit ein paar Terminal-Commands her, denn genau hier liegt die **Magie der Automation**. Speichert man die Commands in einem Shell-Skript und bindet dieses kleine Skript in den Autostart des Raspberrys ein, verbindet sich der Raspberry beim nächsten Hochfahren automagically mit dem Bluetooth-Radio. 
 
 Zum Verbinden mit dem Radio sind einige Befehle notwendig, wobei die angegebene MAC-Adresse des Radios durch die des eigenen Radios ausgetauscht werden muss. Zunächst öffnet man die Bluetooth-Steuerung.
 *Hinweis: **$** kennzeichnet einen Befehl; **>** die Rückgabe des Terminals.*
@@ -114,7 +114,7 @@ Damit der Aha-Effekt größer und das Ergebnis hörbar ist, haben wir das Shell-
 ```shell
 $ vlc meinePlaylist.m3u
 ```
-öffnet der bereits vorinstalliert VLC-Mediaplayer die eigens erstellte Playlist "meinePlaylist". Alle darin befindlichen Dateien wie mp3-Dateien oder weitere Playlists, beispielsweise die Playlist eures Lieblings-Web-Radios, werden mit dem Command nacheinander abgespielt. In die Playlist muss demnach lediglich eine URL zu entsprechenden Web-Radiosender hinterlegt werden.
+öffnet der bereits vorinstalliert VLC-Mediaplayer die eigens erstellte Playlist "meinePlaylist". Alle darin befindlichen Dateien wie mp3-Dateien oder weitere Playlists, beispielsweise die Playlist eures Lieblings-Web-Radios, werden mit dem Command nacheinander abgespielt. In die Playlist muss demnach lediglich eine URL zum entsprechenden Web-Radiosender hinterlegt werden.
 
 **Last but not least: das Shell-Skript in den Autostart einbinden.** Um ein Programm in den Autostart des Raspberry's einzubinden gibt es verschiedene Möglichkeiten. In unserem Tutorial haben wir eine **.desktop-Datei** erstellt, um unser Skript mit jedem Hochfahren des RasPi's auszuführen. 
 ```shell
@@ -133,7 +133,7 @@ Nach dem Attribut "Exec=..." wird der beim Autostart auszuführende Befehl angeg
 
 ## Ausblick
 
-Wer jetzt neugierig geworden ist und gerne selber aktive werden möchte, findet weitere Instruktionen im ausführlichen [Tutorial auf GitHub](https://github.com/technologiestiftung/werkstatt/blob/master/HowTo_WebRadio.md). Darin wird unter anderem erklärt wie:
+Wer jetzt neugierig geworden ist und gerne selber aktiv werden möchte, findet weitere Instruktionen im ausführlichen [Tutorial auf GitHub](https://github.com/technologiestiftung/werkstatt/blob/master/HowTo_WebRadio.md). Darin wird unter anderem erklärt wie:
 * die IP des RasPi's abfragt werden kann.
 * der RasPi über SSH angesteuert werden kann.
 * die .desktop-Autostart-Datei angelegt und abgelegt werden sollte.
@@ -141,6 +141,6 @@ Wer jetzt neugierig geworden ist und gerne selber aktive werden möchte, findet 
 * uvm.
 
 
-Wer zu Hause etwas experimentieren möchte, jedoch keinen eigenen RasPi besitz, der kann sich **RasPi's + Zubehör kostenlos via [Hacking Box](https://www.technologiestiftung-berlin.de/hackingbox/) ausleihen.** Darüber hinaus bietet das [CityLAB Berlin](https://www.citylab-berlin.org/) monatlich stattfindende, partizipative Workshops zu Themen wie Internet of Things, Mikrokontroller, Smart Home und Hardware Hacking an. 
+Wer zu Hause etwas experimentieren möchte, jedoch keinen eigenen RasPi besitzt, der kann sich **RasPis + Zubehör kostenlos via [Hacking Box](https://www.technologiestiftung-berlin.de/hackingbox/) ausleihen.** Darüber hinaus bietet das [CityLAB Berlin](https://www.citylab-berlin.org/) monatlich stattfindende, partizipative Workshops zu Themen wie Internet of Things, Mikrokontroller, Smart Home und Hardware Hacking an. 
 
 Bei Fragen rund um das Thema *RasPi & Web Radio* hilft [Julia Zimmermann](mailto:Zimmermann@technologiestiftung-berlin.de) gerne weiter.
