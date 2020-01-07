@@ -104,7 +104,6 @@ If you run into problems with the eventmachine (incompatible library version) th
 ```
 gem uninstall eventmachine
 gem install eventmachine --platform ruby
->>>>>>> migrate/new-labsite:README.md
 ```
 
 ## How To
