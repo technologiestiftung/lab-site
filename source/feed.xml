@@ -10,6 +10,7 @@
     {% for pg in site.pages %}
     {%- if pg.layout == 'project'  -%}
         {%- if pg.lang == 'de' -%}
+    {%- if pg.visible == true -%}
 
       <item>
         <title>{{ pg.title | xml_escape }}</title>
@@ -18,6 +19,8 @@
         <link>{{site.url}}{{ pg.url }}</link>
         <guid isPermaLink="true">{{site.url}}{{ pg.url }}</guid>
       </item>
+            {%- endif -%}
+
       {%- endif -%}
     {%- endif -%}
     {% endfor %}
