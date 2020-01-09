@@ -15,8 +15,8 @@
         <title>{{ pg.title | xml_escape }}</title>
         <description>{{ pg.description | xml_escape }}</description>
         <pubDate>{{ pg.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-        <link>{{site.url}}/{{ pg.url }}</link>
-        <guid isPermaLink="true">{{site.url}}/{{ pg.url }}</guid>
+        <link>{{site.url}}{{ pg.url }}</link>
+        <guid isPermaLink="true">{{site.url}}{{ pg.url }}</guid>
       </item>
       {%- endif -%}
     {%- endif -%}
