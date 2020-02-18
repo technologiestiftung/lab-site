@@ -22,7 +22,7 @@
       - [Assign](#assign)
       - [Include](#include)
       - [Variables](#variables)
-      - [HTML in [M⬇︎]](#html-in-m%E2%AC%87%EF%B8%8E)
+      - [HTML in [M⬇︎]](#html-in-m%e2%ac%87%ef%b8%8e)
       - [Example Projects for Reference](#example-projects-for-reference)
     - [Project Assets](#project-assets)
       - [Images](#images)
@@ -39,13 +39,16 @@
 
 ## Prerequisites
 
-- Node.js (install it using [nodenv →](https://github.com/nodenv/nodenv))
-- Jekyll with Ruby:
+- Node.js (install it using [nvm](https://github.com/nvm-sh/nvm))
+- Ruby (install it using [rbenv](https://github.com/rbenv/rbenv))
+
+Make sure to add the needed code snippets for nvm and rbenv to your `.bash_profile` or `.zshrc`. You will also have to install [ruby-build](https://github.com/rbenv/ruby-build#readme) as a rbenv plugin.
 
 
-To setup Ruby:
 
-Non admin computers you need to change the ruby `.gem` folder location
+
+
+<!-- Non admin computers you need to change the ruby `.gem` folder location
 
 With bash, run:
 
@@ -70,9 +73,11 @@ Admin computers can install [Ruby Version Manager (rvm) →](https://rvm.io).
 
 - needs `gpg` in `$PATH`: `brew install gpg`
 
+-->
+
 ## Setup Jekyll & Run Jekyll
 
-**!Note:** This assumes you have Node.js installed with `nodenv` and node version 10.15.0 is installed (`nodenv install 10.15.0`).
+**!Note:** This assumes you have Node.js installed with `nvm` and Node.js lts (currently at 12.16.0) installed (`nvm install --lts`). To set a default run `nvm alias default v12.16.0`
 
 ```bash
 cd /path/to/lab-site/
@@ -80,7 +85,7 @@ cd /path/to/lab-site/
 # install the ruby bundler tool
 gem install bundler
 # sometimes a specific version is required
-gem install bundler -v 1.17.2
+# gem install bundler -v 1.17.2
 # install all needed node.js dependencies
 npm install && cd project-generator && npm install
 # go back into the root
@@ -92,7 +97,7 @@ bundle install
 # now for each session
 # whenever you want to run Jekyll
 # run
-bundle exec jekyll server --livereload
+bundle exec jekyll serve --livereload
 # or even simpler
 npm run jekyll
 # to generate a new project run in a new session
