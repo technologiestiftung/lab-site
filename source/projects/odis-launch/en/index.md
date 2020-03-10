@@ -13,7 +13,7 @@ socialMediaImage: /projects/odis-launch/social_media.jpg
 visible: true
 featured: false
 authors:
-  - victoria-dykes
+  - victoria-boeck
 externalUrl: null
 start: 2018-05-05
 end: 2018-05-22
@@ -31,7 +31,7 @@ It’s easy to identify problems in the system. It’s much harder to actually d
 Introducing ODIS
 ----------------
 
-  
+
 
 Recognizing that there will be no single, all-encompassing solution to improving Open Data processes in Berlin, the Technologiestiftung in cooperation with the Senate Department for Economics, Energy and Public Enterprises (Senatsverwaltung für Wirtschaft, Energie und Betriebe) is opening an “Open Data Information Center” (in German, “Open Data Informationsstelle”, or ODIS for short). In this document, we’d like to explain a little more what our motivation for creating ODIS was, and what we’re hoping to learn and achieve through it.
 
@@ -52,7 +52,7 @@ When trying to navigate the oft-bewildering world of Open Data (from understandi
 Guiding Questions
 -----------------
 
-  
+
 
 As mentioned above, our three starting points are not the extent of what we want to achieve with ODIS. How exactly ODIS and its focuses will evolve remains to be seen. We want this to be an iterative, dynamic process whereby our focus areas are shaped by the needs and demands of the city employees and our initiatives are shaped by our experiences of what actually works and what doesn’t. As part of the process of reflecting on what the goals and focuses of ODIS should be, we identified a lengthy list of guiding questions we’d like to answer – or at least reflect upon – as part of our work. In the interest of making the motivations and goals behind ODIS more transparent, we’ve pulled a few of the questions from this list that we thought best characterized the big picture behind ODIS, particularly the challenges we foresee and the opportunities with which we will be presented.
 
