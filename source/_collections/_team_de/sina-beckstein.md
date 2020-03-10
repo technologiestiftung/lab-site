@@ -3,7 +3,7 @@ name: Sina Beckstein
 uid: sina-beckstein
 image: /assets/images/placeholder.jpg
 mail: beckstein@technologiestiftung-berlin.de
-description: Lorem Ipusm.
+description: Lorem Ipusm juhu!
 twitter: SinaBeckstein
 github:
 position: Open Data Researcher
