@@ -15,9 +15,9 @@
         <title>{{ pg.title | xml_escape }}</title>
         <description>
         {% if pg.content contains '<!--more-->' %}
-          {{ pg.content | split:'<!--more-->' | first | strip_html | xml_escape}}
+          {{ pg.content | split:'<!--more-->' | first | markdownify | strip_html | xml_escape}}
         {% else %}
-          {{ pg.content | strip_html | truncatewords: 50 | xml_escape }}
+          {{ pg.content | markdownify |  strip_html | truncatewords: 50 | xml_escape }}
         {% endif %}
         </description>
         <pubDate>{{ pg.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
