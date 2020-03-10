@@ -2,7 +2,7 @@
 name: Joshua Pacheco
 uid: joshua-pacheco
 image: /assets/images/placeholder.jpg
-mail: Pachecos@technologiestiftung-berlin.de
+mail: Pacheco@technologiestiftung-berlin.de
 description: Lorem Ipsum.
 twitter: joshuapachecos
 github:
