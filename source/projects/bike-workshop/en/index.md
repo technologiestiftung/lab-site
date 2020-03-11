@@ -12,7 +12,7 @@ socialMediaImage: /projects/bike-workshop/images/social_media.png
 visible: true
 featured: false
 authors:
-  - victoria-dykes
+  - victoria-boeck
 start: 2019-09-23
 end: 2019-09-23
 status: ongoing
