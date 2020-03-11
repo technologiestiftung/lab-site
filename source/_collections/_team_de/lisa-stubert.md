@@ -1,9 +1,10 @@
 ---
 name: Lisa Stubert
 uid: lisa-stubert
-image: /assets/images/placeholder.jpg
+image: /assets/images/lisa.jpg
 mail: Stubert@technologiestiftung-berlin.de
-description: Lorem Ipsum
+description: Lisa Stubert ist wissenschaftliche Mitarbeiterin im Ideation & Prototyping Lab der Technologiestiftung Berlin im Bereich Open Data. Nach einem naturwissenschaftlichen Bachelorstudium hat sie ihren Master in Geoinformation und Visualisierung an der Universität Potsdam abgeschlossen. Ihr Fokus liegt darauf komplexe Zusammenhänge zwischen Daten zu finden, um Sachverhalte und Prozesse in unserer Umwelt besser verstehen und modellieren zu können.
+
 twitter: 
 github:
 position: Open Data Researcher
