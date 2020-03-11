@@ -13,7 +13,7 @@ socialMediaImage: /projects/datadive-cycling/social_media.jpg
 visible: true
 featured: false
 authors:
-  - victoria-dykes
+  - victoria-boeck
 start: 2018-09-02
 end: 2018-09-17
 status: finished
@@ -35,7 +35,7 @@ To begin this series, we have decided to look at the subject of bicycle-related 
 
 In the below sections, we list the key datasets needed to form a comprehensive overview of what the status quo of cycling in Berlin is. One general note: several of the datasets below exist in the FIS-Broker, Berlin’s main repository for geospatial data. In theory most data in the FIS-Broker is open data that can be downloaded and reused via a WFS server; in practice, the platform is extremely challenging and unintuitive to use and extracting data out of it is not trivial. To better enable the re-use of this open data, the Technologiestiftung Lab has extracted some of the core geospatial datasets mentioned here and made them available via our [data portal](https://data.technologiestiftung-berlin.de/en) in a variety of common data formats (e.g., GeoJSON, KML, etc.) The Lab is also working on tools to make it easier for FIS-Broker data to be extracted and used.
 
-If you notice information here that seems to be incorrect, or if you are aware of relevant data sources that we did not identify, please feel free to reach out to [dykes@technologestiftung-berlin.de](mailto:dykes@technologiestiftung-berlin.de) with corrections or suggested updates.
+If you notice information here that seems to be incorrect, or if you are aware of relevant data sources that we did not identify, please feel free to reach out to [boeck@technologiestiftung-berlin.de](mailto:boeck@technologiestiftung-berlin.de) with corrections or suggested updates.
 
 Bike infrastructure data
 ------------------------

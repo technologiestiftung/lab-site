@@ -2,7 +2,7 @@
 layout: project
 description: Herzlich Willkommen
 lang: de
-title: "Neu im Team: Tori Dykes"
+title: "Neu im Team: Tori Boeck"
 subtitle: Unser neuestes Lab-Mitglied stellt sich vor
 type: publication
 colorMode: bright
@@ -11,7 +11,7 @@ socialMediaImage: /projects/tori-intro/social_media.jpg
 visible: true
 featured: false
 authors:
-  - victoria-dykes
+  - victoria-boeck
 start: 2018-03-19
 end: 2018-03-19
 status: finished
@@ -23,7 +23,7 @@ redirect_from:
 
 
 
-Hallo zusammen! Ich bin Victoria (Tori) Dykes, und ich bin das neueste Mitglied des Ideation & Prototyping Labs bei der Technologiestiftung Berlin.
+Hallo zusammen! Ich bin Victoria (Tori) Boeck, und ich bin das neueste Mitglied des Ideation & Prototyping Labs bei der Technologiestiftung Berlin.
 
 Ich werde dem Team dabei helfen, das Open Data-Angebot aus einer Policy-Perspektive zu erweitern (ich habe Public Policy und Politikwissenschaft studiert). Meine Hauptaufgabe ist es, direkt mit der Berliner Verwaltung zusammenzuarbeiten um eine "Informationsstelle Open Data" aufzubauen. Das Ziel dieser Stelle ist es, alle Mitarbeiter\*innen des Landes in Bezug auf Open Data-Vorgänge zu unterstützen, von der Beratung über Datenstrukturen und Verwendbarkeit der Daten, bis hin zur Entwicklung von Apps und anderen Prototypen. Als ein Teil dieser Initiative werden wir verschiedene Veranstaltungen organisieren, um den Beschäftigten der Berliner Verwaltung die Chance zu geben, miteinander zu netzwerken, Erfahrungen auszutauschen und mit der Berliner Open Data-Community zu interagieren. Die erste Veranstaltung planen wir noch im Frühjahr und wir werden sie hier (und auch durch andere Kanäle) ankündigen.
 
