@@ -12,7 +12,7 @@ socialMediaImage: /projects/od-for-cities/social_media.jpg
 visible: true
 featured: false
 authors:
-  - victoria-dykes
+  - victoria-boeck
 start: 2018-04-01
 end: 2018-04-19
 status: finished
