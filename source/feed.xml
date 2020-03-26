@@ -3,19 +3,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.name | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
+    <title>{{ site.data.meta.title.de | xml_escape }}</title>
+    <description>{{ site.data.meta.description.de | xml_escape }}</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
     {% for pg in site.pages %}
     {%- if pg.layout == 'project'  -%}
+        {%- if pg.lang == 'de' -%}
+    {%- if pg.visible == true -%}
+
       <item>
         <title>{{ pg.title | xml_escape }}</title>
-        <description>{{ pg.description | xml_escape }}</description>
+        <description>
+        {% if pg.content contains '<!--more-->' %}
+          {{ pg.content | split:'<!--more-->' | first | markdownify | strip_html | xml_escape}}
+        {% else %}
+          {{ pg.content | markdownify | strip_html | truncatewords: 50 | xml_escape }}
+        {% endif %}
+        </description>
         <pubDate>{{ pg.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-        <link>{{site.url}}/{{ pg.url }}</link>
-        <guid isPermaLink="true">{{site.url}}/{{ pg.url }}</guid>
+        <link>{{site.url}}{{ pg.url }}</link>
+        <guid isPermaLink="true">{{site.url}}{{ pg.url }}</guid>
       </item>
+            {%- endif -%}
+
+      {%- endif -%}
     {%- endif -%}
     {% endfor %}
   </channel>

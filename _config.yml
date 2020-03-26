@@ -21,9 +21,8 @@ url: https://lab.technologiestiftung-berlin.de
 title: Ideation & Prototyping Lab DEPRECATED USE site.data.meta.title
 email: roboter@tsb.ara.uberspace.de
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Das Ideation & Prototyping Lab ist das Entwicklungslabor der Technologiestiftung Berlin.
+  Als gemeinnützige Institution arbeiten wir in offenen Innovationsprozessen an der Gestaltung des digitalen Wandels und erproben neue Werkzeuge für ein besseres Leben in Städten.
 # baseurl: "" # the subpath of your site, e.g. /blog
 twitter_username:
 github_username:  tsboter
@@ -85,7 +84,7 @@ kramdown:
 # https://jekyllrb.com/docs/collections/
 collections_dir: _collections
 # host: 127.0.0.1
-host: localhost
+# host: localhost
 collections:
   team_de:
     output: true

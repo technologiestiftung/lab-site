@@ -1,0 +1,43 @@
+g.tick > text {
+    font-family: 'plex-sans';
+    opacity: .5;
+    font-size: 12px;
+}
+
+.axis-title {
+    letter-spacing: .5px;
+    font-family: 'plex-sans';
+    opacity: .5;
+    font-size: 12px;
+}
+
+g.tick > line {
+    opacity: .5;
+}
+
+#text_count {
+    font-family: 'plex-sans';
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+#text_time {
+    font-family: 'plex-sans';
+    letter-spacing: 1px;
+    font-size: 12px;
+}
+
+.x-hover-line {
+    stroke: black;
+    stroke-width: 1px;
+}
+
+.focus circle {
+    stroke-width: 2px;
+    stroke: black;
+}
+
+path.domain {
+    opacity: 0;
+}
