@@ -13,7 +13,7 @@ socialMediaImage: /projects/datadive-accessibility/social_media.jpg
 visible: true
 featured: false
 authors:
-  - victoria-dykes
+  - victoria-boeck
 start: 2019-02-05
 end: 2019-02-20
 status: finished
@@ -32,7 +32,7 @@ With the term accessibility (Barrierefreiheit in German), we are talking about t
 
 In the below sections, we list key datasets that would be useful for anyone who is interested in the topic of accessibility and having disabilities in Berlin. This data could be useful for people to build apps that help disabled people in their everyday lives, for example, or useful for assessing the extent to which services and institutions in Berlin are currently meeting the needs of individuals with disabilities.
 
-If you notice information here that seems to be incorrect, or if you are aware of relevant data sources that we did not identify, please feel free to reach out to [dykes@technologestiftung-berlin.de](mailto:dykes@technologiestiftung-berlin.de) with corrections or suggested updates.
+If you notice information here that seems to be incorrect, or if you are aware of relevant data sources that we did not identify, please feel free to reach out to [boeck@technologiestiftung-berlin.de](mailto:boeck@technologiestiftung-berlin.de) with corrections or suggested updates.
 
 _A special thanks to Jolanta Paliszewska for her research assistance with this data dive!_
 

@@ -13,7 +13,7 @@ socialMediaImage: /projects/crime-atlas/images/social_media.jpg
 visible: true
 featured: false
 authors:
-  - victoria-dykes
+  - victoria-boeck
 start: 2018-11-27
 end: 2018-12-12
 status: finished
