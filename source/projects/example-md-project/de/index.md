@@ -48,7 +48,7 @@ featured: true
 # at least one isd needed
 authors:
   - benjamin-seibel
-  - victoria-dykes
+  - victoria-boeck
   - fabian-dinklage
   - fabian-moron-zirfas
   - sebastian-meier

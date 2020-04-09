@@ -13,7 +13,7 @@ socialMediaImage: /projects/odis-launch/social_media.jpg
 visible: true
 featured: false
 authors:
-  - victoria-dykes
+  - victoria-boeck
 externalUrl: null
 start: 2018-05-05
 end: 2018-05-22

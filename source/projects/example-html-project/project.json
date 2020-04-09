@@ -6,7 +6,7 @@
         "description": "This is the best project ever and here is why …",
         "heroImage": "../../../assets/images/lakes.jpg",
         "thumbnail": "../../../assets/images/placeholder-rect.png",
-        "authors": ["Victoria Dykes", "Benjamin Seibel", "Sebastian Meier"],
+        "authors": ["Victoria Boeck", "Benjamin Seibel", "Sebastian Meier"],
         "type": "workshop",
         "currentStatus": "ongoing",
         "materialsIncluded": [
@@ -26,7 +26,7 @@
         "description": "Dies ist das beste Projekt jemals, denn …",
         "heroImage": "../../../assets/images/lakes.jpg",
         "thumbnail": "../../../assets/images/placeholder-rect.png",
-        "authors": ["Victoria Dykes", "Benjamin Seibel", "Sebastian Meier"],
+        "authors": ["Victoria Boeck", "Benjamin Seibel", "Sebastian Meier"],
         "type": "workshop",
         "currentStatus": "ongoing",
         "materialsIncluded": [

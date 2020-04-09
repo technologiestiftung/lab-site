@@ -13,7 +13,7 @@ socialMediaImage: /projects/datadive-accessibility/social_media.jpg
 visible: true
 featured: false
 authors:
-  - victoria-dykes
+  - victoria-boeck
 start: 2019-02-05
 end: 2019-02-20
 status: finished
@@ -32,7 +32,7 @@ Eintauchen in Daten für die Barrierefreiheit
 
 In den folgenden Abschnitten listen wir Datensätze auf, die für eine Analyse Barrierefreiheit und des Lebens mit einer Behinderung wesentlich sind. Diese Daten wären zum Beispiel für Apps nützlich, die das Alltagsleben für Menschen mit Behinderung erleichtern oder für eine Bewertung, inwiefern Services und Institutionen in Berlin den Bedürfnissen dieser Menschen entsprechen.
 
-Falls ihr Fehler entdeckt, Verbesserungs- oder Ergänzungsvorschläge habt oder weitere relevante Datenquellen zum Thema kennt, meldet euch gerne unter [dykes@technologestiftung-berlin.de](mailto:dykes@technologiestiftung-berlin.de).
+Falls ihr Fehler entdeckt, Verbesserungs- oder Ergänzungsvorschläge habt oder weitere relevante Datenquellen zum Thema kennt, meldet euch gerne unter [boeck@technologiestiftung-berlin.de](mailto:boeck@technologiestiftung-berlin.de).
 
 _Einen besonderen Dank an Jolanta Paliszewska für ihre Unterstützung bei der Aufbereitung dieses Data Dive!_
 
