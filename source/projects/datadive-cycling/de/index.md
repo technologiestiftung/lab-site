@@ -13,7 +13,7 @@ socialMediaImage: /projects/datadive-cycling/social_media.jpg
 visible: true
 featured: false
 authors:
-  - victoria-dykes
+  - victoria-boeck
 start: 2018-09-02
 end: 2018-09-17
 status: finished
@@ -36,7 +36,7 @@ Radverkehr ist ein Thema, das viele Berliner\*innen bewegt, zumal der Bedarf nac
 
 In den nachfolgenden Abschnitten versuchen wir, die jeweils wesentlichen Datensätze zu benennen und wo immer möglich auch zu verlinken. Viele der Datensätze stammen aus dem [FIS-Broker](https://www.stadtentwicklung.berlin.de/geoinformation/fis-broker/), dem zentralen Geodatenportal des Landes Berlin. Theoretisch sind die meisten Datensätze des FIS-Brokers frei zugänglich. In der Praxis ist die Plattform leider nicht sehr benutzerfreundlich, was vor allem unerfahrene Anwender\*innen vor Probleme stellt. Um eine leichtere Weiterverwendung zu ermöglichen, haben wir die wichtigsten Datensätze in gängige Formate (GeoJSON, KML, etc.) konvertiert und bieten sie über unsere [Daten-Seite](https://data.technologiestiftung-berlin.de) zum Download an. Wir arbeiten übrigens gerade an einem Werkzeug, um diese Konvertierung zukünftig zu automatisieren – dazu bald mehr.
 
-Falls ihr Fehler entdeckt, Verbesserungs- oder Ergänzungsvorschläge habt oder weitere relevante Datenquellen zum Thema kennt, meldet euch gerne unter [dykes@technologestiftung-berlin.de](mailto:dykes@technologiestiftung-berlin.de)
+Falls ihr Fehler entdeckt, Verbesserungs- oder Ergänzungsvorschläge habt oder weitere relevante Datenquellen zum Thema kennt, meldet euch gerne unter [boeck@technologiestiftung-berlin.de](mailto:boeck@technologiestiftung-berlin.de)
 
 Radinfrastrukturdaten
 ---------------------

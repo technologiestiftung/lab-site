@@ -13,7 +13,7 @@ socialMediaImage: /projects/iodc-recap/social_media.jpg
 visible: true
 featured: false
 authors:
-  - victoria-dykes
+  - victoria-boeck
 start: 2018-10-01
 end: 2018-10-16
 status: finished

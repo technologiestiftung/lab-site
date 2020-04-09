@@ -11,10 +11,10 @@
 
 <!-- code_chunk_output -->
 
-- [Website of the Ideation & Prototyping Lab @technologiestiftung Berlin](#website-of-the-ideation--prototyping-lab-technologiestiftung-berlin)
+- [Website of the Ideation &amp; Prototyping Lab @technologiestiftung Berlin](#website-of-the-ideation-amp-prototyping-lab-technologiestiftung-berlin)
   - [Table Of Contents](#table-of-contents)
   - [Prerequisites](#prerequisites)
-  - [Setup Jekyll & Run Jekyll](#setup-jekyll--run-jekyll)
+  - [Setup Jekyll &amp; Run Jekyll](#setup-jekyll-amp-run-jekyll)
   - [How To](#how-to)
     - [Create a New Project](#create-a-new-project)
     - [Editing Content](#editing-content)
@@ -26,8 +26,9 @@
       - [Example Projects for Reference](#example-projects-for-reference)
     - [Project Assets](#project-assets)
       - [Images](#images)
-      - [JS & CSS](#js--css)
+      - [JS &amp; CSS](#js-amp-css)
   - [YAML Frontmatter](#yaml-frontmatter)
+  - [RSS Feed](#rss-feed)
   - [Project Generator](#project-generator)
   - [Tools](#tools)
     - [VSCode](#vscode)
@@ -310,6 +311,11 @@ All variables for your project are located in the YAML frontmatter. You can see 
 
 - A quick guide on yaml can be found [here →](https://learnxinyminutes.com/docs/yaml/)
 - The whole specification for YAML is [here →](https://yaml.org/spec/1.2/spec.html)
+
+## RSS Feed
+
+There is an RSS Feed included for DE and EN content. If you want to add an excerpt to your post you can by adding a `<!--more-->` HTML comment to your text. If not the content of your text will we truncated at 50 words and is followed by an `…`
+
 
 ## Project Generator
 
