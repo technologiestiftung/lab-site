@@ -56,23 +56,20 @@ No specialist or legal advice is offered, but advice and support in learning ski
 
 In the first phase of the pilot project, an offer for the following administrative services will be available at all 3 locations:
 
-## Citizen Services
+**Citizen Services**
+* Registration office (dates)
+* eID (electronic identification) registration and possible uses
+* Registration KITA / KITA voucher
+* Criminal record
+* Apartment registration and registration
 
-- Registration office (dates)
-- eID (electronic identification) registration and possible uses
-- Registration KITA / KITA voucher
-- Criminal record
-- Apartment registration and registration
+**Benefits for migrants**
+* Residency permit
+* Work permit for students
 
-## Benefits for migrants
-
-- Residency permit
-- Work permit for students
-
-## Organizational services
-
-- Set up email
-- Make doctor's appointments online
+**Organizational services**
+* Set up email
+* Make doctor's appointments online
 
 ![Digital media skills in the library](/projects/medienkompetenzen/images/thumbnail.jpg)
 
@@ -85,16 +82,16 @@ A cooperation project from:
 
 **Project managers:**
 
-Judith Galka  
+**Judith Galka**  
 Zentral- und Landesbibliothek Berlin  
 Referentin des Vorstands | Generaldirektors
 
-Edmundo Galindo  
+**Edmundo Galindo**  
 Technologiestiftung Berlin  
 Ideation & Prototyping Lab  
 UX/UI Research & Design
 
-Dr. Sebastian Meier  
+**Dr. Sebastian Meier**  
 Technologiestiftung Berlin  
 Ideation & Prototyping Lab  
 Lead Data Scientist

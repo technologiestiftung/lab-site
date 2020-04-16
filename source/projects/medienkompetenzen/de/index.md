@@ -56,23 +56,20 @@ Es wird keine Fach- oder Rechtsberatung angeboten, sondern Beratung und Unterst�
 
 In der ersten Phase des Pilotprojektes wird an allen 3 Standorten ein Angebot für folgende Verwaltungsleistungen zur Verfügung stehen:
 
-## Services der Bürgerämter
+**Services der Bürgerämter**
+* Bürgeramt Anmeldung (Termine)
+* eID (elektronische Identifikation) Anmeldung und Nutzungsmöglichkeiten
+* Anmeldung KITA / KITA Gutschein
+* Führungszeugnis
+* Wohnung An- und Ummeldung
 
-- Bürgeramt Anmeldung (Termine)
-- eID (elektronische Identifikation) Anmeldung und Nutzungsmöglichkeiten
-- Anmeldung KITA / KITA Gutschein
-- Führungszeugnis
-- Wohnung An- und Ummeldung
+**Leistungen für Migranti*nnen**
+* Aufenthaltsgenehmigung
+* Arbeitsgenehmigung für Student\*innen
 
-## Leistungen für Migranti*nnen
-
-- Aufenthaltsgenehmigung
-- Arbeitsgenehmigung für Student\*innen
-
-## Organisatorische Dienstleistungen
-
-- E-Mail Einrichten
-- Arzttermine online machen
+**Organisatorische Dienstleistungen**
+* E-Mail Einrichten
+* Arzttermine online machen
 
 ![Digital- Medienkompetenzen in der Bibliothek](/projects/medienkompetenzen/images/thumbnail.jpg)
 
@@ -84,16 +81,16 @@ Ein Kooperationsprojekt der [Zentral- und Landesbibliothek Berlin (ZLB)](https:/
 
 **Projektverantwortliche:**
 
-Judith Galka  
+**Judith Galka**  
 Zentral- und Landesbibliothek Berlin  
 Referentin des Vorstands | Generaldirektors
 
-Edmundo Galindo  
+**Edmundo Galindo**  
 Technologiestiftung Berlin  
 Ideation & Prototyping Lab  
 UX/UI Research & Design
 
-Dr. Sebastian Meier  
+**Dr. Sebastian Meier**  
 Technologiestiftung Berlin  
 Ideation & Prototyping Lab  
 Lead Data Scientist
