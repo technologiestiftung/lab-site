@@ -31,7 +31,7 @@ The teaching of skills to participate in the increasingly digital society is a b
 
 A not inconsiderable number of citizens cannot confidently handle digital communication technology. This means that many of the services that are now necessary to cope with everyday processes remain closed to them. Berlin therefore needs a modern infrastructure in order to open access to digital processes to all parts of the population regardless of income and education. The public libraries want to fulfill this educational mandate.
 
-![/projects/medienkompetenzen/images/amerikagedenkbibliothek.jpeg](Website%20I%20P%20Lab%2001%20Einf%20hrung/AmerikaGedenkbibliothek004.jpeg)
+![Terminal station at the AmerikaGedenkbibliothek](/projects/medienkompetenzen/images/amerikagedenkbibliothek.jpeg)
 
 Zentral- und Landesbibliothek Berlin (ZLB) - Amerika-Gedenkbibliothek
 
@@ -54,7 +54,7 @@ No specialist or legal advice is offered, but advice and support in learning ski
 - how digital sovereignty can be spread
 - What contribution can be made in the project framework to digital services of general interest
 
-![/projects/medienkompetenzen/images/workshop.jpg](Website%20I%20P%20Lab%2001%20Einf%20hrung/IMG_0784.jpg)
+![In workshops we asked participants: Which state online services would you like? And what kind of support do you need?](/projects/medienkompetenzen/images/dienstleistungen.jpg)
 
 ## online services
 
@@ -78,7 +78,7 @@ In the first phase of the pilot project, an offer for the following administrati
 - Set up email
 - Make doctor's appointments online
 
-![/projects/medienkompetenzen/images/workshop.jpg](Website%20I%20P%20Lab%2001%20Einf%20hrung/thumbnail.jpg)
+![Digital media skills in the library](/projects/medienkompetenzen/images/thumbnail.jpg)
 
 ## Project goal
 
@@ -107,6 +107,6 @@ Lead Data Scientist
 
 ---
 
-[Edmundo Galindo](galindo@technologiestiftung-berlin.de) will be happy to help with any questions about the project.
+[Edmundo Galindo](mailto:galindo@technologiestiftung-berlin.de) will be happy to help with any questions about the project.
 
 ---

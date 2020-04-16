@@ -31,7 +31,7 @@ Die Vermittlung von Kompetenzen zur Teilhabe an der zunehmend digitalen Gesellsc
 
 Einem nicht geringen Teil der Bürger*innen ist kein souveräner Umgang mit digitaler Kommunikationstechnik möglich. Damit bleiben ihnen viele Dienstleistungen und Services, die zur Bewältigung alltäglicher Prozesse mittlerweile notwendig sind, verschlossen. Berlin braucht deshalb eine moderne Infrastruktur, um allen Teilen der Bevölkerung unabhängig von Einkommen und Bildung den Zugang zu digitalen Prozessen zu öffnen. Die öffentlichen Bibliotheken wollen diesem Bildungsauftrag nachkommen.
 
-![AmerikaGedenkbibliothek](/projects/medienkompetenzen/images/amerikagedenkbibliothek.jpeg)
+![Terminalstation in der AmerikaGedenkbibliothek](/projects/medienkompetenzen/images/amerikagedenkbibliothek.jpeg)
 
 Zentral- und Landesbibliothek Berlin (ZLB) - Amerika-Gedenkbibliothek
 
@@ -54,7 +54,7 @@ Es wird keine Fach- oder Rechtsberatung angeboten, sondern Beratung und Unterst�
 - wie digitale Souveränität verbreitet werden kann
 - welcher Beitrag im Projektrahmen zur Digitalen Daseinsvorsorge geleistet werden kann
 
-![/projects/medienkompetenzen/images/workshop.jpg](Website%20I%20P%20Lab%2001%20Einf%20hrung/IMG_0784.jpg)
+![In Workshops fragten wir Teilnehmer*innen: Welche staatlichen Online-Dienstleistungen wünschen Sie sich? Und welche Betreuung benötigen Sie dabei?](/projects/medienkompetenzen/images/dienstleistungen.jpg)
 
 ## Online-Dienstleistungen
 
@@ -78,7 +78,7 @@ In der ersten Phase des Pilotprojektes wird an allen 3 Standorten ein Angebot f�
 - E-Mail Einrichten
 - Arzttermine online machen
 
-![/projects/medienkompetenzen/images/workshop.jpg](Website%20I%20P%20Lab%2001%20Einf%20hrung/thumbnail.jpg)
+![Digital- Medienkompetenzen in der Bibliothek](/projects/medienkompetenzen/images/thumbnail.jpg)
 
 ## Projektziel
 
@@ -107,6 +107,6 @@ Lead Data Scientist
 
 ---
 
-Bei Fragen rund um das Projekt hilft [Edmundo Galindo](galindo@technologiestiftung-berlin.de) gerne weiter.
+Bei Fragen rund um das Projekt hilft [Edmundo Galindo](mailto:galindo@technologiestiftung-berlin.de) gerne weiter.
 
 ---
