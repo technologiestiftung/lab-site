@@ -31,7 +31,7 @@ Die Vermittlung von Kompetenzen zur Teilhabe an der zunehmend digitalen Gesellsc
 
 Einem nicht geringen Teil der Bürger*innen ist kein souveräner Umgang mit digitaler Kommunikationstechnik möglich. Damit bleiben ihnen viele Dienstleistungen und Services, die zur Bewältigung alltäglicher Prozesse mittlerweile notwendig sind, verschlossen. Berlin braucht deshalb eine moderne Infrastruktur, um allen Teilen der Bevölkerung unabhängig von Einkommen und Bildung den Zugang zu digitalen Prozessen zu öffnen. Die öffentlichen Bibliotheken wollen diesem Bildungsauftrag nachkommen.
 
-![/projects/medienkompetenzen/images/amerikagedenkbibliothek.jpeg](Website%20I%20P%20Lab%2001%20Einf%20hrung/AmerikaGedenkbibliothek004.jpeg)
+![AmerikaGedenkbibliothek](/projects/medienkompetenzen/images/amerikagedenkbibliothek.jpeg)
 
 Zentral- und Landesbibliothek Berlin (ZLB) - Amerika-Gedenkbibliothek
 
