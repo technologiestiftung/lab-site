@@ -3,7 +3,7 @@ layout: project
 description: Die Zentral- und Landesbibliothek Berlin (ZLB) und die Technologiestiftung Berlin entwickeln gemeinsam ein Pilotprojekt mit dem Ziel, Bürgerinnen Grundwissen zu Medien- und Digitalkompetenzen zu vermitteln, damit Bürgerinnen die zunehmenden Serviceangebote staatlicher Dienstleistungen sicher und selbständig erledigen können und dabei eine vollwertige gesellschaftliche Teilhabe, auch dort, wo sich diese auf digitale Prozesse stützt, erlangen können.
 lang: de
 title: Alles wird digital. Alles! Alle können digital. Alle?
-subtitle: Erlangen von Medien- und Digitalkompetenzen in der Bibliothek
+subtitle: Die Vermittlung von Medien- und Digitalkompetenzen in der Bibliothek ist das Ziel des gemeinsamen Pilotprojektes von der Zentral- und Landesbibliothek Berlin (ZLB) und die Technologiestiftung Berlin.
 type: prototype
 colorMode: bright
 featuredImage: 
@@ -21,35 +21,31 @@ date: 2020-04-14
 
 ---
 
-# Alles wird digital. Alles. Alle können digital. Alle?
-
 ## Bibliotheken und Digitalkompetenz
 
-Der Zugang zu Informationen und damit auch der Zugang zu gesellschaftlicher Teilhabe sind Kernstücke der Arbeit öffentlicher Bibliotheken. Sie leisten einen wichtigen Beitrag zur Erfüllung des Grundrechts "sich aus allgemein zugänglichen Quellen ungehindert zu unterrichten" (Grundgesetzt Artikel 5, Absatz 1). Dazu gehören auch Befähigungsaufgaben, also Kompetenzvermittlung oder Unterstützung beim Erlernen neuer Kulturtechniken.
+Der Zugang zu Informationen und damit auch der Zugang zu gesellschaftlicher Teilhabe sind Kernstücke der Arbeit öffentlicher Bibliotheken. Sie leisten einen wichtigen Beitrag zur Erfüllung des Grundrechts „sich aus allgemein zugänglichen Quellen ungehindert zu unterrichten” (Grundgesetzt Artikel 5, Absatz 1). Dazu gehören auch Befähigungsaufgaben, also Kompetenzvermittlung oder Unterstützung beim Erlernen neuer Kulturtechniken.
 
 Die Vermittlung von Kompetenzen zur Teilhabe an der zunehmend digitalen Gesellschaft ist für Bibliotheken ein breites Betätigungsfeld. Besonders in Hinblick auf die Entwicklungen im Bereich eGovernment oder dem Online Zugangsgesetz entsteht hier ein wichtiges strategisches Handlungsfeld für öffentliche Bibliotheken.
 
-Einem nicht geringen Teil der Bürger*innen ist kein souveräner Umgang mit digitaler Kommunikationstechnik möglich. Damit bleiben ihnen viele Dienstleistungen und Services, die zur Bewältigung alltäglicher Prozesse mittlerweile notwendig sind, verschlossen. Berlin braucht deshalb eine moderne Infrastruktur, um allen Teilen der Bevölkerung unabhängig von Einkommen und Bildung den Zugang zu digitalen Prozessen zu öffnen. Die öffentlichen Bibliotheken wollen diesem Bildungsauftrag nachkommen.
+Einem nicht geringen Teil der Bürger\_innen ist kein souveräner Umgang mit digitaler Kommunikationstechnik möglich. Damit bleiben ihnen viele Dienstleistungen und Services, die zur Bewältigung alltäglicher Prozesse mittlerweile notwendig sind, verschlossen. Berlin braucht deshalb eine moderne Infrastruktur, um allen Teilen der Bevölkerung unabhängig von Einkommen und Bildung den Zugang zu digitalen Prozessen zu öffnen. Die öffentlichen Bibliotheken wollen diesem Bildungsauftrag nachkommen.
 
-![Terminalstation in der AmerikaGedenkbibliothek](/projects/medienkompetenzen/images/amerikagedenkbibliothek.jpeg)
-
-Zentral- und Landesbibliothek Berlin (ZLB) - Amerika-Gedenkbibliothek
+![Zentral- und Landesbibliothek Berlin (ZLB) - Amerika-Gedenkbibliothek](/projects/medienkompetenzen/images/amerikagedenkbibliothek.jpeg)
 
 ## Pilotprojekt
 
-**Die Zentral- und Landesbibliothek Berlin (ZLB)** und die **Technologiestiftung Berlin** entwickeln gemeinsam ein Pilotprojekt mit dem Ziel, Bürger*innen Grundwissen zu Medien- und Digitalkompetenzen zu vermitteln, damit Bürger*innen die zunehmenden Serviceangebote staatlicher Dienstleistungen sicher und selbständig erledigen können und dabei eine vollwertige gesellschaftliche Teilhabe, auch dort, wo sich diese auf digitale Prozesse stützt, erlangen können.
+**Die Zentral- und Landesbibliothek Berlin (ZLB)** und die **Technologiestiftung Berlin** entwickeln gemeinsam ein Pilotprojekt mit dem Ziel, Bürger\_innen Grundwissen zu Medien- und Digitalkompetenzen zu vermitteln, damit Bürger\_innen die zunehmenden Serviceangebote staatlicher Dienstleistungen sicher und selbständig erledigen können und dabei eine vollwertige gesellschaftliche Teilhabe, auch dort, wo sich diese auf digitale Prozesse stützt, erlangen können.
 
 ## Planung und Organisation
 
-Drei Bibliotheken in Berlin (Buch, Berlin/Mitte und Neukölln) werden das Pilotprojekt starten. An jedem dieser Standorte wird ein voll ausgestatteter und geschützter digitaler Arbeitsplatz, mit Beratungsleistung durch Mitarbeiter*innen der Bibliothek zur Verfügung stehen. Die betreuenden Bibliotheksmitarbeiter*innen erhalten im Projektrahmen eine gezielte Schulung. Nutzer*innen bekommen so Hilfe, um zu erlernen, wie sie online Verwaltungsleistungen wie z.B.: Beantragung eines Führungszeugnisses, Kita-Gutscheine, Terminanfragen beim Bürgeramt etc. anfordern und bearbeiten können. 
+Drei Bibliotheken in Berlin (Buch, Berlin/Mitte und Neukölln) werden das Pilotprojekt starten. An jedem dieser Standorte wird ein voll ausgestatteter und geschützter digitaler Arbeitsplatz, mit Beratungsleistung durch Mitarbeiter\_innen der Bibliothek zur Verfügung stehen. Die betreuenden Bibliotheksmitarbeiter\_innen erhalten im Projektrahmen eine gezielte Schulung. Nutzer\_innen bekommen so Hilfe, um zu erlernen, wie sie online Verwaltungsleistungen wie z.B.: Beantragung eines Führungszeugnisses, Kita-Gutscheine, Terminanfragen beim Bürgeramt etc. anfordern und bearbeiten können. 
 
 Es wird keine Fach- oder Rechtsberatung angeboten, sondern Beratung und Unterstützung beim Erlernen von Fähigkeiten, die zur Nutzung des digitalen Verwaltungsangebotes grundlegend nötig sind, wie z.B. das Suchen und Finden von Informationen. 
 
 ## Das Pilotprojekt soll herausfinden
 
-- welche Unterstützung die Nutzer*innen bei Online-Prozessen brauchen
+- welche Unterstützung die Nutzer\_innen bei Online-Prozessen brauchen
 - welche bedarfsorientierten Programmangebote für die Vermittlung digitaler Fähigkeiten gebraucht werden
-- welche Online-Dienstleistungen für Bürger*innen es gibt und wie deren Nutzbarkeit aussieht
+- welche Online-Dienstleistungen für Bürger\_innen es gibt und wie deren Nutzbarkeit aussieht
 - wie Serviceangebote weiterentwickelt werden können
 - wie digitale Souveränität verbreitet werden kann
 - welcher Beitrag im Projektrahmen zur Digitalen Daseinsvorsorge geleistet werden kann
@@ -86,23 +82,22 @@ Unser Ziel ist es, mit diesem Pilotprojekt möglichst viele digital unsichere B�
 
 ---
 
-Ein Kooperationsprojekt von: 
-[Zentral- und Landesbibliothek Berlin (ZLB)](https://www.zlb.de/) und die [Technologiestiftung Berlin](https://www.technologiestiftung-berlin.de/de/startseite/)
+Ein Kooperationsprojekt der [Zentral- und Landesbibliothek Berlin (ZLB)](https://www.zlb.de/) und die [Technologiestiftung Berlin](https://www.technologiestiftung-berlin.de/de/startseite/)
 
-Projektverantwortliche:
+**Projektverantwortliche:**
 
-Judith Galka
-Zentral- und Landesbibliothek Berlin
+Judith Galka\
+Zentral- und Landesbibliothek Berlin\
 Referentin des Vorstands | Generaldirektors
 
-Edmundo Galindo
-Technologiestiftung Berlin
-Ideation & Prototyping Lab
+Edmundo Galindo\
+Technologiestiftung Berlin\
+Ideation & Prototyping Lab\
 UX/UI Research & Design
 
-Sebastian Meier 
-Technologiestiftung Berlin
-Ideation & Prototyping Lab
+Dr. Sebastian Meier\
+Technologiestiftung Berlin\
+Ideation & Prototyping Lab\
 Lead Data Scientist
 
 ---
