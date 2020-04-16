@@ -29,7 +29,7 @@ Die Vermittlung von Kompetenzen zur Teilhabe an der zunehmend digitalen Gesellsc
 
 Einem nicht geringen Teil der Bürger\*innen ist kein souveräner Umgang mit digitaler Kommunikationstechnik möglich. Damit bleiben ihnen viele Dienstleistungen und Services, die zur Bewältigung alltäglicher Prozesse mittlerweile notwendig sind, verschlossen. Berlin braucht deshalb eine moderne Infrastruktur, um allen Teilen der Bevölkerung unabhängig von Einkommen und Bildung den Zugang zu digitalen Prozessen zu öffnen. Die öffentlichen Bibliotheken wollen diesem Bildungsauftrag nachkommen.
 
-![Zentral- und Landesbibliothek Berlin (ZLB) - Amerika-Gedenkbibliothek](/projects/medienkompetenzen/images/amerikagedenkbibliothek.jpeg)
+{% include macro-image-section-markdown.html src="/projects/medienkompetenzen/images/amerikagedenkbibliothek.jpeg" caption="Zentral- und Landesbibliothek Berlin (ZLB) - Amerika-Gedenkbibliothek" %}
 
 ## Pilotprojekt
 
@@ -50,7 +50,7 @@ Es wird keine Fach- oder Rechtsberatung angeboten, sondern Beratung und Unterst�
 - wie digitale Souveränität verbreitet werden kann
 - welcher Beitrag im Projektrahmen zur Digitalen Daseinsvorsorge geleistet werden kann
 
-![In Workshops fragten wir Teilnehmer\*innen: Welche staatlichen Online-Dienstleistungen wünschen Sie sich? Und welche Betreuung benötigen Sie dabei?](/projects/medienkompetenzen/images/dienstleistungen.jpg)
+{% include macro-image-section-markdown.html src="/projects/medienkompetenzen/images/dienstleistungen.jpg" caption="In Workshops fragten wir Teilnehmer\*innen: Welche staatlichen Online-Dienstleistungen wünschen Sie sich? Und welche Betreuung benötigen Sie dabei?" %}
 
 ## Online-Dienstleistungen
 
@@ -72,6 +72,8 @@ In der ersten Phase des Pilotprojektes wird an allen 3 Standorten ein Angebot f�
 * Arzttermine online machen
 
 ![Digital- Medienkompetenzen in der Bibliothek](/projects/medienkompetenzen/images/thumbnail.jpg)
+
+{% include macro-image-section-markdown.html src="/projects/medienkompetenzen/images/thumbnail.jpg" caption="Digital- Medienkompetenzen in der Bibliothek" %}
 
 ## Projektziel
 
