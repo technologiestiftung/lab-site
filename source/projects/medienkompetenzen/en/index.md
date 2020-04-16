@@ -29,7 +29,7 @@ The teaching of skills to participate in the increasingly digital society is a b
 
 A not inconsiderable number of citizens cannot confidently handle digital communication technology. This means that many of the services that are now necessary to cope with everyday processes remain closed to them. Berlin therefore needs a modern infrastructure in order to open access to digital processes to all parts of the population regardless of income and education. The public libraries want to fulfill this educational mandate.
 
-![Zentral- und Landesbibliothek Berlin (ZLB) - Amerika-Gedenkbibliothek](/projects/medienkompetenzen/images/amerikagedenkbibliothek.jpeg)
+{% include macro-image-section-markdown.html src="/projects/medienkompetenzen/images/amerikagedenkbibliothek.jpeg" caption="Zentral- und Landesbibliothek Berlin (ZLB) - Amerika-Gedenkbibliothek" %}
 
 ## Pilot Project
 
@@ -50,7 +50,7 @@ No specialist or legal advice is offered, but advice and support in learning ski
 - how digital sovereignty can be spread
 - What contribution can be made in the project framework to digital services of general interest
 
-![In workshops we asked participants: Which state online services would you like? And what kind of support do you need?](/projects/medienkompetenzen/images/dienstleistungen.jpg)
+{% include macro-image-section-markdown.html src="/projects/medienkompetenzen/images/dienstleistungen.jpg" caption="Question in workshops: Which state online services should we offer you? And what kind of support do you need when performing the desired services?" %}
 
 ## online services
 
