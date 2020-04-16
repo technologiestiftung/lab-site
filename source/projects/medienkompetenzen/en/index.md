@@ -87,18 +87,18 @@ A cooperation project from:
 
 **Project managers:**
 
-Judith Galka\
-Zentral- und Landesbibliothek Berlin\
+Judith Galka  
+Zentral- und Landesbibliothek Berlin  
 Referentin des Vorstands | Generaldirektors
 
-Edmundo Galindo\
-Technologiestiftung Berlin\
-Ideation & Prototyping Lab\
+Edmundo Galindo  
+Technologiestiftung Berlin  
+Ideation & Prototyping Lab  
 UX/UI Research & Design
 
-Dr. Sebastian Meier\
-Technologiestiftung Berlin\
-Ideation & Prototyping Lab\
+Dr. Sebastian Meier  
+Technologiestiftung Berlin  
+Ideation & Prototyping Lab  
 Lead Data Scientist
 
 ---
