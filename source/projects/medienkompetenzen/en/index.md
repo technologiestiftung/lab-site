@@ -80,8 +80,6 @@ In the first phase of the pilot project, an offer for the following administrati
 
 Our aim is to take as many digitally insecure citizens as possible with this pilot project and to take away the uncertainty and fear of the rapid development of digital applications through our offer. We believe that public libraries are the right place to acquire media and digital skills, because libraries are already established as open meeting places with an information mandate. Your offer to impart knowledge in various cultural techniques is accepted and can be expanded and supported by our project.
 
----
-
 A cooperation project from: 
 [Zentral- und Landesbibliothek Berlin (ZLB)](https://www.zlb.de/) und die [Technologiestiftung Berlin](https://www.technologiestiftung-berlin.de/de/startseite/)
 
@@ -101,8 +99,4 @@ Technologiestiftung Berlin
 Ideation & Prototyping Lab  
 Lead Data Scientist
 
----
-
 [Edmundo Galindo](mailto:galindo@technologiestiftung-berlin.de) will be happy to help with any questions about the project.
-
----

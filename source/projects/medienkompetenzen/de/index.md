@@ -80,8 +80,6 @@ In der ersten Phase des Pilotprojektes wird an allen 3 Standorten ein Angebot f�
 
 Unser Ziel ist es, mit diesem Pilotprojekt möglichst viele digital unsichere Bürger\*innen mitzunehmen und ihnen durch unser Angebot die Unsicherheit und Scheu vor der rasanten Entwicklung digitaler Anwendungen zu nehmen. Wir sind der Meinung, dass öffentliche Bibliotheken für die Gewinnung von Medien- und Digitalkompetenzen der richtige Ort sind, weil Bibliotheken bereits als offene Begegnungsorte mit Informationsauftrag etabliert sind. Ihr Angebot zur Wissensvermittlung in verschiedenen Kulturtechniken wird angenommen und kann durch unser Projekt erweitert und unterstützt werden.
 
----
-
 Ein Kooperationsprojekt der [Zentral- und Landesbibliothek Berlin (ZLB)](https://www.zlb.de/) und die [Technologiestiftung Berlin](https://www.technologiestiftung-berlin.de/de/startseite/)
 
 **Projektverantwortliche:**
@@ -100,8 +98,4 @@ Technologiestiftung Berlin
 Ideation & Prototyping Lab  
 Lead Data Scientist
 
----
-
 Bei Fragen rund um das Projekt hilft [Edmundo Galindo](mailto:galindo@technologiestiftung-berlin.de) gerne weiter.
-
----
