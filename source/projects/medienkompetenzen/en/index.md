@@ -50,7 +50,7 @@ No specialist or legal advice is offered, but advice and support in learning ski
 - how digital sovereignty can be spread
 - What contribution can be made in the project framework to digital services of general interest
 
-{% include macro-image-section-markdown.html src="/projects/medienkompetenzen/images/dienstleistungen.jpg" caption="Question in workshops: Which state online services should we offer you? And what kind of support do you need when performing the desired services?" %}
+{% include macro-image-section-markdown.html src="/projects/medienkompetenzen/images/online_dienstlestungen.jpg" caption="Question in workshops: Which state online services should we offer you? And what kind of support do you need when performing the desired services?" %}
 
 ## online services
 
