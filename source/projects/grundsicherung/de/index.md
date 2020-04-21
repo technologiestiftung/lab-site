@@ -1,9 +1,9 @@
 ---
 layout: project
-description: Eine Analyse der Verfügbarkeit von Daten für Barrierefreiheit
+description: ODIS zeigt, wie Datenvisualisierung offene Daten zugänglicher machen können.
 lang: de
-title: "Data Dive: Barrierefreiheit in Berlin"
-subtitle: Welchen Daten gibt es?
+title: "Mit Visualisierungen offene Daten zugänglich machen"
+subtitle: Durch eine Zusammenarbeit mit der Senatsverwaltung für Integration, Arbeit und Soziales zeigt ODIS, wie Visualisierungen offene Daten zugänglicher machen können.
 type: dataset
 colorMode: bright
 featuredImage: /projects/grundsicherung/images/featured.jpg
@@ -14,10 +14,10 @@ visible: true
 featured: false
 authors:
   - victoria-boeck
-start: 2020-04-15
-end: 2020-04-15
+start: 2020-04-22
+end: 2020-04-22
 status: finished
-date: 2020-04-15
+date: 2020-04-22
 
 ---
 

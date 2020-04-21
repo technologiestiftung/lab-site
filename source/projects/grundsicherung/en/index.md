@@ -1,9 +1,9 @@
 ---
 layout: project
-description: An analysis of open data on basic income support in Berlin
+description: ODIS explores how to use data visualization to make open data more accessible.
 lang: en
-title: "Understanding basic income support in Berlin through open data"
-subtitle: ODIS explores what kinds of insights we can gather from data made available by the Senate Department for Integration, Labor and Social Affairs
+title: "Using visualization to make open data accessible"
+subtitle: Through a project partnership with the Senate Department for Integration, Labor and Social Affairs, ODIS explores how to use data visualization to make open data more accessible.
 type: dataset
 colorMode: bright
 featuredImage: /projects/grundsicherung/images/featured.jpg
@@ -14,10 +14,10 @@ visible: true
 featured: false
 authors:
   - victoria-boeck
-start: 2020-04-15
-end: 2020-04-15
+start: 2020-04-22
+end: 2020-04-22
 status: finished
-date: 2020-04-15  
+date: 2020-04-22  
 
 ---
 
