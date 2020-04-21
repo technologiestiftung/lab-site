@@ -39,4 +39,4 @@ Die abschließende, auf der Projektseite zu sehende, Kartendarstellung bringt di
 
 {% include macro-image-section-markdown.html src="../images/map2.png" caption="A map showing changes in the spatial distribution of basic income support recipients" %}
 
-Um tiefer in das Thema einzutauchen, besuchen Sie [hier](https://odis-berlin.de/projekte/grundsicherung/). Dies sind natürlich nur einige der Erkenntnisse, die aus den Daten gezogen werden können - da sie als Open Data vorliegen, können alle Interessierten die Daten weiterverwenden und eigene Analysen durchführen. Weitere Informationen zu den Datenquellen finden Sie auf der Projektseite.
+Um tiefer in das Thema einzutauchen, kann man die Seite [hier](https://odis-berlin.de/projekte/grundsicherung/) besuchen. Dies sind natürlich nur einige der Erkenntnisse, die aus den Daten gezogen werden können - da sie als Open Data vorliegen, können alle Interessierten die Daten weiterverwenden und eigene Analysen durchführen. Weitere Informationen zu den Datenquellen sind auf der Projektseite zu finden.
