@@ -4,25 +4,21 @@ lang: de
 redirect_from: /de/
 ---
 
-needs special content and featurued projects
+needs special content and featured projects
 
 <section>
-  needs feed
-  needs landing page
-  needs featured projects
-  {%- for pg in site.pages -%}
-  <a href={{pg.url}}>url: {{pg.url}} TITLE: {{pg.title}}</a><br>
+  needs feed needs landing page needs featured projects {%- for pg in site.pages
+  -%}
+  <a href="{{ pg.url }}">url: {{ pg.url }} TITLE: {{ pg.title }}</a
+  ><br />
   {%- endfor -%}
 </section>
 
-
-{%- capture md -%}
-```plain
-Can this still be markdown?
-```
-{%- endcapture -%}
+{%- capture md -%} ```plain Can this still be markdown? ``` {%- endcapture -%}
 
 <section>
-  {{md | markdownify }}
+  {{ md | markdownify }}
 </section>
+
+
 

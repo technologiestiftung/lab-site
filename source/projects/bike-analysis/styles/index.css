@@ -1,0 +1,46 @@
+.line {
+    fill: none;
+    stroke: #2d91d2;
+    stroke-width: 2px;
+  }  
+
+.focus circle {
+    fill: None;
+    stroke: #2d91d2;
+    stroke-width: 5px;
+  }
+
+  .hover-line {
+    stroke: #2d91d2;
+    stroke-width: 2px;
+    stroke-dasharray: 3,3;
+  }
+
+  .overlay {
+    fill: none;
+    pointer-events: all;
+  }
+
+  .text {
+    fill: #000;
+    font-size: 10px;
+  }
+
+.axis-title {
+  fill: #000;
+  font-size: 10px;
+  text-anchor: end;
+  }
+
+.table {
+  width: 100%;
+}
+
+.map {
+  height: 500px;
+  width: 100%;
+}
+
+.table {
+  text-align: right;
+}
