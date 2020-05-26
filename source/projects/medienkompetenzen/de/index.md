@@ -86,7 +86,7 @@ Zentral- und Landesbibliothek Berlin
 Referentin des Vorstands | Generaldirektors
 
 **Edmundo Galindo**  
-Technologiestiftung Berlin  
+Technologiestiftung Berlin 
 Ideation & Prototyping Lab  
 UX/UI Research & Design
 
