@@ -1,5 +1,12 @@
 [
   {
+    "name": "Alexandra Kapp",
+    "role": {
+      "en": "Research Associate",
+      "de": "Wissenschaftliche Mitarbeiterin"
+    }
+  },
+  {
     "name": "Florian Zia",
     "role": {
       "en": "Developer",
