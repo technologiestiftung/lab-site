@@ -49,7 +49,7 @@
     "@babel/preset-env": "7.10.2",
     "@types/jest": "24.0.11",
     "autoprefixer": "9.5.1",
-    "core-js": "2.6.5",
+    "core-js": "2.6.11",
     "cssnano": "4.1.10",
     "cz-conventional-changelog": "2.1.0",
     "delims": "0.4.2",
