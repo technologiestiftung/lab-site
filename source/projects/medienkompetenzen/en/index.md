@@ -56,10 +56,6 @@ No specialist or legal advice is offered, but advice and support in learning ski
 
 {% include macro-image-section-markdown.html src="/projects/medienkompetenzen/images/dienstleistungen.jpg" caption="Question in workshops: Which government online services should we offer? And what support do you need when performing the desired services?" %}
 
-![Digital- Medienkompetenzen in der Bibliothek](/projects/medienkompetenzen/images/thumbnail.jpg)
-
-Ein Kooperationsprojekt der [Zentral- und Landesbibliothek Berlin (ZLB)](https://www.zlb.de/) und die [Technologiestiftung Berlin](https://www.technologiestiftung-berlin.de/de/startseite/)}
-
 ![Digital media skills in the library](/projects/medienkompetenzen/images/thumbnail.jpg)
 
 A cooperation project from: 
