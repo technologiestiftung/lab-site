@@ -35,7 +35,7 @@ Gemeinsam mit der Technologiestiftung Berlin hat die Zentral- und Landesbiblioth
 
 ## Pilotprojekt
 
-**Die Zentral- und Landesbibliothek Berlin (ZLB)** und die **Technologiestiftung Berlin** entwickeln ein Pilotprojekt.  Digitale Teilhabe soll unabhängig von den Vorkenntnissen und Voraussetzungen möglich gemacht werden, auch für Menschen, die nicht oder nur eingeschränkt souverän mit Digitaltechnologien umgehen können.
+**Die Zentral- und Landesbibliothek Berlin (ZLB)** und die **Technologiestiftung Berlin** entwickeln ein Pilotprojekt. Digitale Teilhabe soll unabhängig von den Vorkenntnissen und Voraussetzungen möglich gemacht werden, auch für Menschen, die nicht oder nur eingeschränkt souverän mit Digitaltechnologien umgehen können.
 
 ## Planung und Organisation
 
