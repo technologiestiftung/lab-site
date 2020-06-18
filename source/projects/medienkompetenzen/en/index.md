@@ -3,7 +3,7 @@ layout: project
 description: The Zentral- und Landesbibliothek Berlin (ZLB) and the Technologiestiftung Berlin are jointly developing a pilot project with the aim of imparting basic knowledge of media and digital skills to citizens, so that citizens can complete the increasing range of services offered by government services safely and independently, while ensuring full social participation, wherever it relies on digital processes.
 lang: en
 title: Everything is going digital. Everything! Everyone can do it digitally. Everyone?
-subtitle: The teaching of media and digital skills in the library is the goal of the joint pilot project by the Central and State Library Berlin (ZLB) and the Berlin Technology Foundation.
+subtitle: The teaching of basic knowledge on media and digital skills in the library is the objective of the joint pilot project of the Zentral- und Landesbibliothek Berlin (ZLB) and the Technologiestiftung Berlin.
 type: prototype
 colorMode: bright
 featuredImage: 
