@@ -3,7 +3,7 @@ layout: project
 description: Die Zentral- und Landesbibliothek Berlin (ZLB) und die Technologiestiftung Berlin entwickeln gemeinsam ein Pilotprojekt mit dem Ziel, Bürgerinnen Grundwissen zu Medien- und Digitalkompetenzen zu vermitteln, damit Bürgerinnen die zunehmenden Serviceangebote staatlicher Dienstleistungen sicher und selbständig erledigen können und dabei eine vollwertige gesellschaftliche Teilhabe, auch dort, wo sich diese auf digitale Prozesse stützt, erlangen können.
 lang: de
 title: Alles wird digital. Alles! Alle können digital. Alle?
-subtitle: Die Vermittlung von Medien- und Digitalkompetenzen in der Bibliothek ist das Ziel des gemeinsamen Pilotprojektes von der Zentral- und Landesbibliothek Berlin (ZLB) und die Technologiestiftung Berlin.
+subtitle: Die Vermittlung von Grundwissen zu Medien- und Digitalkompetenzen in der Bibliothek ist das Ziel des gemeinsamen Pilotprojektes der Zentral- und Landesbibliothek Berlin (ZLB) und der Technologiestiftung Berlin.
 type: prototype
 colorMode: bright
 featuredImage: 
