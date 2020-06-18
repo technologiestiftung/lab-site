@@ -27,7 +27,8 @@ Gerade jetzt wird noch sichtbarer: Vielen Menschen ist ein souveräner Umgang mi
 
 Hilfe zur Selbsthilfe ist für öffentliche Bibliotheken selbstverständlich, auch bei Orientierung und Unterstützung im digitalen Raum. Städtische Versorgungsunternehmen, Versicherungen und auch die Berliner und Bundesverwaltungen bieten ihre Dienste zunehmend online an. Aus diesem Grund braucht es neben einer guten Infrastruktur persönliche Vermittlung, um auch die Menschen zu erreichen, die sich noch nicht im Web-Applikationen orientieren können, kein Smartphone oder Computer haben oder denen der Umgang damit noch schwerfällt. 
 
-Das Projekt Bürger*innenterminals soll Lösungsideen entwickeln, um einem drohenden Ausschluss aus der digitalen Gesellschaft entgegenzuwirken. Im Projekt werden diese ausprobiert und weiterentwickelt.
+Das Projekt Bürger\*innenterminals soll Lösungsideen entwickeln, um einem drohenden Ausschluss aus der digitalen Gesellschaft entgegenzuwirken. Im Projekt werden diese ausprobiert und weiterentwickelt.
+
 Gemeinsam mit der Technologiestiftung Berlin hat die Zentral- und Landesbibliothek Berlin im November 2019 eine einjährige Pilotphase des Projekts gestartet: In 2020 sollen in der Amerika-Gedenkbibliothek, in der Stadtteilbibliothek Buch und in der Bezirkszentralbibliothek Neukölln Erfahrungen mit sogenannten Prototypen Erfahrungen gesammelt werden. Für die Betreuung von Nutzer\*innen der Terminals werden Weiterbildungen für die Bibliothekskolleg\*innen konzipiert, organisiert und durchgeführt, so dass zukünftig in den Bibliotheken eine ausgewiesene Bibliothekskraft am Bürger\*innenterminal unterstützen kann. Nach Auswertung des Testlaufs soll daran gearbeitet werden, in jedem Berliner Bezirk einen Bürger*innenterminal in einer öffentlichen Bibliothek aufzustellen. 
 
 {% include macro-image-section-markdown.html src="/projects/medienkompetenzen/images/Sonntag_print_AWS04979.jpg" caption="Zentral- und Landesbibliothek Berlin (ZLB) - Amerika-Gedenkbibliothek" %}
@@ -39,6 +40,7 @@ Gemeinsam mit der Technologiestiftung Berlin hat die Zentral- und Landesbiblioth
 ## Planung und Organisation
 
 Drei Bibliotheken in Berlin (Buch, Berlin/Mitte und Neukölln) werden an der Prototypenphase teilnehmen. An jedem dieser Standorte wird ein voll ausgestatteter und geschützter digitaler Arbeitsplatz, mit Beratungsleistung durch Mitarbeiter\*innen der Bibliothek zur Verfügung stehen. Die betreuenden Bibliotheksmitarbeiter\*innen erhalten im Projektrahmen eine gezielte Schulung. Nutzer*innen bekommen so Hilfe, um zu erlernen, wie sie online Verwaltungsleistungen wie z.B.: Beantragung eines Führungszeugnisses, Kita-Gutscheine, Terminanfragen beim Bürgeramt etc. anfordern und bearbeiten können.
+
 Es wird keine Fach- oder Rechtsberatung angeboten, sondern Beratung und Unterstützung beim Erlernen von Fähigkeiten, die zur Nutzung des digitalen Verwaltungsangebotes grundlegend nötig sind, wie z.B. das Suchen und Finden von Informationen.
 
 
