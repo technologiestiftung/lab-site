@@ -1,9 +1,9 @@
 ---
 layout: project
-description: The Zentral- und Landesbibliothek Berlin (ZLB) and the Technologiestiftung Berlin are jointly developing a pilot project with the aim of imparting basic knowledge of media and digital skills to citizens, so that citizens can complete the increasing range of services offered by government services safely and independently, while ensuring full social participation, wherever it relies on digital processes.
+description: The Zentral- und Landesbibliothek Berlin (ZLB), which is responsible for the Verbund der Öffentlichen Bibliotheken, and the Technologiestiftung Berlin are jointly developing a pilot project with the aim of imparting basic knowledge of media and digital skills to citizens, so that citizens can complete the increasing range of services offered by government services safely and independently, while ensuring full social participation, wherever it relies on digital processes.
 lang: en
 title: Everything is becoming digital. Everything! Everyone can be digital. ...Everyone?
-subtitle: A joint project between the Zentral- und Landesbibliothek Berlin (ZLB) and the Technologiestiftung Berlin aims to explore the role public libraries can play in helping citizens increase their media and digital skills. 
+subtitle: A joint project between the Zentral- und Landesbibliothek Berlin (ZLB), which is responsible for the Verbund der Öffentlichen Bibliotheken, and the Technologiestiftung Berlin aims to explore the role public libraries can play in helping citizens increase their media and digital skills. 
 type: prototype
 colorMode: bright
 featuredImage: 
@@ -35,11 +35,11 @@ Together with the Technologiestiftung Berlin, the Zentral- und Landesbibliothek 
 
 ## Pilot Project
 
-**The Zentral- und Landesbibliothek Berlin (ZLB)** and the **Technologiestiftung Berlin** are developing a pilot project. Digital participation should possible for all, regardless of previous knowledge and prerequisites, even for people who are unable to use digital technologies, or who have significant difficulties doing so.
+**The Zentral- und Landesbibliothek Berlin (ZLB)**, which is responsible for the **Verbund der Öffentlichen Bibliotheken**, and the **Technologiestiftung Berlin** are developing a pilot project. Digital participation should possible for all, regardless of previous knowledge and prerequisites, even for people who are unable to use digital technologies, or who have significant difficulties doing so.
 
 ## Planning and organization
 
-Three libraries in Berlin (Buch, Berlin/Mitte and Neukölln) will participate in the prototype phase. Each location will have a fully-equipped, private workspace available, accompanied by library employees who are able to support the usage of the workspace. The employees who supervise the workspace will receive targeted training within the project framework, so that they can help users learn how to request and process government services online, such as: applying for a certificate of good conduct (e.g. a background check), applying for day care center vouchers, requesting appointments at the citizen services office, etc.
+Three libraries in Berlin (Buch, Kreuzberg and Neukölln) will participate in the prototype phase. Each location will have a fully-equipped, private workspace available, accompanied by library employees who are able to support the usage of the workspace. The employees who supervise the workspace will receive targeted training within the project framework, so that they can help users learn how to request and process government services online, such as: applying for a certificate of good conduct (e.g. a background check), applying for day care center vouchers, requesting appointments at the citizen services office, etc.
 
 Library employees will not be expected to offer specialist or legal advice, but rather to advise and support patrons with the usage of the terminals and in learning the necessary skills to use these digital offerings (like how to search for and find information).
 
@@ -59,7 +59,7 @@ Library employees will not be expected to offer specialist or legal advice, but 
 ![Digital media skills in the library](/projects/medienkompetenzen/images/thumbnail.jpg)
 
 A cooperation between: 
-[Zentral- und Landesbibliothek Berlin (ZLB)](https://www.zlb.de/) and the [Technologiestiftung Berlin](https://www.technologiestiftung-berlin.de/de/startseite/)
+[Zentral- und Landesbibliothek Berlin (ZLB)](https://www.zlb.de/), which is responsible for the [Verbund der öffentlichen Bibliotheken](https://voebb.de/aDISWeb/app;jsessionid=95F5F7BA6073E166F7B89204FF0EDCEA.node1), and the [Technologiestiftung Berlin](https://www.technologiestiftung-berlin.de/de/startseite/)
 
 **Project managers:**
 
