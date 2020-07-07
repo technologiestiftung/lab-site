@@ -11,12 +11,10 @@
 
 <!-- code_chunk_output -->
 
-- [Website of the Ideation &amp; Prototyping Lab @technologiestiftung Berlin](#website-of-the-ideation-amp-prototyping-lab-technologiestiftung-berlin)
+- [Website of the Ideation & Prototyping Lab @technologiestiftung Berlin](#website-of-the-ideation--prototyping-lab-technologiestiftung-berlin)
   - [Table Of Contents](#table-of-contents)
   - [Prerequisites](#prerequisites)
-  - [Managing Ruby Versions](#managing-ruby-versions)
-    - [Ruby issues](#ruby-issues)
-  - [Setup Jekyll &amp; Run Jekyll](#setup-jekyll-amp-run-jekyll)
+  - [Setup Jekyll & Run Jekyll](#setup-jekyll--run-jekyll)
   - [How To](#how-to)
     - [Create a New Project](#create-a-new-project)
     - [Editing Content](#editing-content)
@@ -24,11 +22,11 @@
       - [Assign](#assign)
       - [Include](#include)
       - [Variables](#variables)
-      - [HTML in [M⬇︎]](#html-in-m%e2%ac%87%ef%b8%8e)
+      - [HTML in [M⬇︎]](#html-in-m︎)
       - [Example Projects for Reference](#example-projects-for-reference)
     - [Project Assets](#project-assets)
       - [Images](#images)
-      - [JS &amp; CSS](#js-amp-css)
+      - [JS & CSS](#js--css)
   - [YAML Frontmatter](#yaml-frontmatter)
   - [RSS Feed](#rss-feed)
   - [Project Generator](#project-generator)
