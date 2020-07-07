@@ -3,7 +3,7 @@ layout: project
 description: Die Zentral- und Landesbibliothek Berlin (ZLB), hier federführend für den Verbund der Öffentlichen Bibliotheken, und die Technologiestiftung Berlin entwickeln ein Pilotprojekt mit dem Ziel, Bürgerinnen Grundwissen zu Medien- und Digitalkompetenzen zu vermitteln, damit Bürgerinnen die zunehmenden Serviceangebote staatlicher Dienstleistungen sicher und selbständig erledigen können und dabei eine vollwertige gesellschaftliche Teilhabe, auch dort, wo sich diese auf digitale Prozesse stützt, erlangen können.
 lang: de
 title: Alles wird digital. Alles! Alle können digital. Alle?
-subtitle: Die Vermittlung von Grundwissen zu Medien- und Digitalkompetenzen in der Bibliothek ist das Ziel des gemeinsamen Pilotprojektes der Zentral- und Landesbibliothek Berlin (ZLB) und der Technologiestiftung Berlin.
+subtitle: Die Vermittlung von Grundwissen zu Medien- und Digitalkompetenzen in der Bibliothek ist das Ziel des gemeinsamen Pilotprojektes der Zentral- und Landesbibliothek Berlin (ZLB), hier federführend für den Verbund der Öffentlichen Bibliotheken, und der Technologiestiftung Berlin.
 type: prototype
 colorMode: bright
 featuredImage: 
@@ -35,7 +35,7 @@ Gemeinsam mit der Technologiestiftung Berlin hat die Zentral- und Landesbiblioth
 
 ## Pilotprojekt
 
-**Die Zentral- und Landesbibliothek Berlin (ZLB)**, hier federführend für den Verbund der Öffentlichen Bibliotheken, und die **Technologiestiftung Berlin** entwickeln ein Pilotprojekt. Digitale Teilhabe soll unabhängig von den Vorkenntnissen und Voraussetzungen möglich gemacht werden, auch für Menschen, die nicht oder nur eingeschränkt souverän mit Digitaltechnologien umgehen können.
+**Die Zentral- und Landesbibliothek Berlin (ZLB)**, hier federführend für den **Verbund der Öffentlichen Bibliotheken**, und die **Technologiestiftung Berlin** entwickeln ein Pilotprojekt. Digitale Teilhabe soll unabhängig von den Vorkenntnissen und Voraussetzungen möglich gemacht werden, auch für Menschen, die nicht oder nur eingeschränkt souverän mit Digitaltechnologien umgehen können.
 
 ## Planung und Organisation
 
