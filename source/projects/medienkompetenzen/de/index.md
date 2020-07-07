@@ -1,6 +1,6 @@
 ---
 layout: project
-description: Die Zentral- und Landesbibliothek Berlin (ZLB) und die Technologiestiftung Berlin entwickeln gemeinsam ein Pilotprojekt mit dem Ziel, Bürgerinnen Grundwissen zu Medien- und Digitalkompetenzen zu vermitteln, damit Bürgerinnen die zunehmenden Serviceangebote staatlicher Dienstleistungen sicher und selbständig erledigen können und dabei eine vollwertige gesellschaftliche Teilhabe, auch dort, wo sich diese auf digitale Prozesse stützt, erlangen können.
+description: Die Zentral- und Landesbibliothek Berlin (ZLB), hier federführend für den Verbund der Öffentlichen Bibliotheken, und die Technologiestiftung Berlin entwickeln ein Pilotprojekt mit dem Ziel, Bürgerinnen Grundwissen zu Medien- und Digitalkompetenzen zu vermitteln, damit Bürgerinnen die zunehmenden Serviceangebote staatlicher Dienstleistungen sicher und selbständig erledigen können und dabei eine vollwertige gesellschaftliche Teilhabe, auch dort, wo sich diese auf digitale Prozesse stützt, erlangen können.
 lang: de
 title: Alles wird digital. Alles! Alle können digital. Alle?
 subtitle: Die Vermittlung von Grundwissen zu Medien- und Digitalkompetenzen in der Bibliothek ist das Ziel des gemeinsamen Pilotprojektes der Zentral- und Landesbibliothek Berlin (ZLB) und der Technologiestiftung Berlin.
@@ -35,11 +35,11 @@ Gemeinsam mit der Technologiestiftung Berlin hat die Zentral- und Landesbiblioth
 
 ## Pilotprojekt
 
-**Die Zentral- und Landesbibliothek Berlin (ZLB)** und die **Technologiestiftung Berlin** entwickeln ein Pilotprojekt. Digitale Teilhabe soll unabhängig von den Vorkenntnissen und Voraussetzungen möglich gemacht werden, auch für Menschen, die nicht oder nur eingeschränkt souverän mit Digitaltechnologien umgehen können.
+**Die Zentral- und Landesbibliothek Berlin (ZLB)**, hier federführend für den Verbund der Öffentlichen Bibliotheken, und die **Technologiestiftung Berlin** entwickeln ein Pilotprojekt. Digitale Teilhabe soll unabhängig von den Vorkenntnissen und Voraussetzungen möglich gemacht werden, auch für Menschen, die nicht oder nur eingeschränkt souverän mit Digitaltechnologien umgehen können.
 
 ## Planung und Organisation
 
-Drei Bibliotheken in Berlin (Buch, Berlin/Mitte und Neukölln) werden an der Prototypenphase teilnehmen. An jedem dieser Standorte wird ein voll ausgestatteter und geschützter digitaler Arbeitsplatz, mit Beratungsleistung durch Mitarbeiter\*innen der Bibliothek zur Verfügung stehen. Die betreuenden Bibliotheksmitarbeiter\*innen erhalten im Projektrahmen eine gezielte Schulung. Nutzer*innen bekommen so Hilfe, um zu erlernen, wie sie online Verwaltungsleistungen wie z.B.: Beantragung eines Führungszeugnisses, Kita-Gutscheine, Terminanfragen beim Bürgeramt etc. anfordern und bearbeiten können.
+Drei Bibliotheken in Berlin (Buch, Kreuzberg und Neukölln) werden an der Prototypenphase teilnehmen. An jedem dieser Standorte wird ein voll ausgestatteter und geschützter digitaler Arbeitsplatz, mit Beratungsleistung durch Mitarbeiter\*innen der Bibliothek zur Verfügung stehen. Die betreuenden Bibliotheksmitarbeiter\*innen erhalten im Projektrahmen eine gezielte Schulung. Nutzer*innen bekommen so Hilfe, um zu erlernen, wie sie online Verwaltungsleistungen wie z.B.: Beantragung eines Führungszeugnisses, Kita-Gutscheine, Terminanfragen beim Bürgeramt etc. anfordern und bearbeiten können.
 
 Es wird keine Fach- oder Rechtsberatung angeboten, sondern Beratung und Unterstützung beim Erlernen von Fähigkeiten, die zur Nutzung des digitalen Verwaltungsangebotes grundlegend nötig sind, wie z.B. das Suchen und Finden von Informationen.
 
@@ -59,7 +59,7 @@ Es wird keine Fach- oder Rechtsberatung angeboten, sondern Beratung und Unterst�
 
 ![Digital- Medienkompetenzen in der Bibliothek](/projects/medienkompetenzen/images/thumbnail.jpg)
 
-Ein Kooperationsprojekt der [Zentral- und Landesbibliothek Berlin (ZLB)](https://www.zlb.de/) und die [Technologiestiftung Berlin](https://www.technologiestiftung-berlin.de/de/startseite/)
+Ein Kooperationsprojekt der [Zentral- und Landesbibliothek Berlin (ZLB)](https://www.zlb.de/), federführend für den [Verbund der öffentlichen Bibliotheken](https://voebb.de/aDISWeb/app;jsessionid=95F5F7BA6073E166F7B89204FF0EDCEA.node1), und die [Technologiestiftung Berlin](https://www.technologiestiftung-berlin.de/de/startseite/)
 
 **Projektverantwortliche:**
 
