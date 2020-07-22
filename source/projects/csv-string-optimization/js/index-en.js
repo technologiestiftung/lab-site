@@ -244,52 +244,51 @@ d3.selectAll('.btn-send').on('click', function(){
 
       var type = (d3.select(this).property('id').split('-'))[1];
 
-      //https://tsb.ara.uberspace.de/csvopti
-      //http://localhost:2307
-      d3.request("https://tsb.ara.uberspace.de/csvopti/"+type)
-          .header("X-Requested-With", "XMLHttpRequest")
-          .header("Content-Type", "application/x-www-form-urlencoded")
-          .post(request, function(err, data){
-              if(err){
-                  console.log('err',err);
-                  console.log(err.target.response);
-              }
+      fetch("https://csv-str-opti-webservice.vercel.app/"+type, { 
+        method: 'POST', 
+        body: JSON.stringify(request)
+      })
+      .then((data) => {
+        return data.json();
+      })
+      .then((data) => {
+        var template = data.data;
 
-              var template = (JSON.parse(data.response)).data;
+        if(type === 'analyse'){
 
-              if(type === 'analyse'){
+            globalTemplate = template;
+            setTemplateField(template, true);
 
-                  globalTemplate = template;
-                  setTemplateField(template, true);
+        }else{
 
-              }else{
+            var csv_str = '', keys = [];
 
-                  var csv_str = '', keys = [];
+            for(var key in template[0]){
+                if(csv_str !== ''){ csv_str += ','; }
+                csv_str += '"'+key+'"';
+                keys.push(key);
+            }
+            csv_str += '\n';
 
-                  for(var key in template[0]){
-                      if(csv_str !== ''){ csv_str += ','; }
-                      csv_str += '"'+key+'"';
-                      keys.push(key);
-                  }
-                  csv_str += '\n';
+            template.forEach(function(d,i){
+                keys.forEach(function(k,ki){
+                    csv_str += '"'+d[k]+'"';
+                    if(ki<keys.length-1){
+                        csv_str += ',';
+                    }
+                });
+                csv_str += '\n';
+            });
 
-                  template.forEach(function(d,i){
-                      keys.forEach(function(k,ki){
-                          csv_str += '"'+d[k]+'"';
-                          if(ki<keys.length-1){
-                              csv_str += ',';
-                          }
-                      });
-                      csv_str += '\n';
-                  });
+            d3.select('#clean-csv').node().value = csv_str;
 
-                  d3.select('#clean-csv').node().value = csv_str;
+        }
 
-              }
+        d3.selectAll('.feedback').text('');
 
-              d3.selectAll('.feedback').text('');
-
-              analyse_state = false;
-          });
+        analyse_state = false;
+      }).catch((err) => {
+        throw err;
+      });
   }
 });
