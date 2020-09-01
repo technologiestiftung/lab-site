@@ -39,11 +39,11 @@
     "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
-    "babel-polyfill": "^6.26.0",
-    "postcss-scss": "^2.0.0",
-    "postcss-preset-env": "^6.6.0",
-    "parcel-bundler": "^1.11.0",
-    "node-sass": "^4.13.1",
+    "babel-polyfill": "6.26.0",
+    "postcss-scss": "2.1.1",
+    "postcss-preset-env": "6.7.0",
+    "parcel-bundler": "1.12.4",
+    "node-sass": "4.14.1",
     "@babel/core": "7.11.1",
     "@babel/polyfill": "7.10.4",
     "@babel/preset-env": "7.11.0",
