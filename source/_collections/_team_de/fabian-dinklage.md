@@ -8,8 +8,8 @@ twitter: fdnklg
 github: fdnklg
 position: Visualization & Prototyping
 type: prototype # could also be "workshop", "dataset", "prototype"
+external: true
 order: 2
 ---
-
 
 Das ist als content zu haben

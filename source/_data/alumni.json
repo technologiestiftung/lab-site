@@ -1,5 +1,19 @@
 [
   {
+    "name": "Dr. Sebastian Meier",
+    "role": {
+      "en": "Lead Data Scientist",
+      "de": "Lead Data Scientist"
+    }
+  },
+  {
+    "name": "Fabian Dinklage",
+    "role": {
+      "en": "Visualization & Prototyping",
+      "de": "Visualization & Prototyping"
+    }
+  },
+  {
     "name": "Alexandra Kapp",
     "role": {
       "en": "Research Associate",
