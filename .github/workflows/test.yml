@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Node.js CI
+name: Build and Test CSS and JS
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    if: "!contains(github.event.head_commit.message, 'skip ci')"
     strategy:
       matrix:
         node-version: [10.x, 12.x, 14.x]
