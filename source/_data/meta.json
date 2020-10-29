@@ -55,15 +55,6 @@
         "de": "/projects/de",
         "en": "/projects/en"
       }
-    },
-    {
-      "name": "datasets",
-      "title": "Data Page",
-      "navigationTitle": {"de":"Daten","en":"Datasets"},
-      "url": {
-        "de": "https://data.technologiestiftung-berlin.de/",
-        "en": "https://data.technologiestiftung-berlin.de/en"
-      }
     }
   ]
 }
