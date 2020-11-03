@@ -1,227 +1,234 @@
 .team-detail {
-    display: grid;
-    width: auto;
-    grid-template-columns: repeat(2, 50%);
-    grid-template-rows: 1%;
+  display: grid;
+  width: auto;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
 
-    &:first-of-type {
-        @media screen and (max-width: $screen-m) {
-            margin-top: $spacing-xl;
-            margin-bottom: $spacing-xl;
+  &:first-of-type {
+    @media screen and (max-width: $screen-m) {
+      margin-top: $spacing-xl;
+      margin-bottom: $spacing-xl;
+    }
+  }
+
+  @media only screen and (max-width: $screen-m) {
+    grid-template-areas: inherit;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-row-gap: $spacing-m;
+  }
+
+  &.dataset {
+    .team-detail__image {
+      background-color: $color-dataset-60;
+      @media screen and (-ms-high-contrast: active),
+        screen and (-ms-high-contrast: none) {
+        box-shadow: inset 0 0 0 2000px $color-dataset-40;
+      }
+
+      &:hover {
+        background-color: $color-dataset-80;
+        @media screen and (-ms-high-contrast: active),
+          screen and (-ms-high-contrast: none) {
+          box-shadow: inset 0 0 0 2000px $color-dataset-60;
         }
+      }
+    }
+  }
+
+  &.workshop {
+    .team-detail__image {
+      background-color: $color-workshop-60;
+      @media screen and (-ms-high-contrast: active),
+        screen and (-ms-high-contrast: none) {
+        box-shadow: inset 0 0 0 2000px $color-workshop-40;
+      }
+
+      &:hover {
+        background-color: $color-workshop;
+        @media screen and (-ms-high-contrast: active),
+          screen and (-ms-high-contrast: none) {
+          box-shadow: inset 0 0 0 2000px $color-workshop-60;
+        }
+      }
+    }
+  }
+
+  &.publication {
+    .team-detail__image {
+      background-color: $color-publication-60;
+      @media screen and (-ms-high-contrast: active),
+        screen and (-ms-high-contrast: none) {
+        box-shadow: inset 0 0 0 2000px $color-publication-40;
+      }
+
+      &:hover {
+        background-color: $color-publication;
+        @media screen and (-ms-high-contrast: active),
+          screen and (-ms-high-contrast: none) {
+          box-shadow: inset 0 0 0 2000px $color-publication-40;
+        }
+      }
+    }
+  }
+
+  &.prototype {
+    .team-detail__image {
+      background-color: $color-prototype-60;
+      @media screen and (-ms-high-contrast: active),
+        screen and (-ms-high-contrast: none) {
+        box-shadow: inset 0 0 0 2000px $color-prototype-40;
+      }
+      &:hover {
+        background-color: $color-prototype;
+        @media screen and (-ms-high-contrast: active),
+          screen and (-ms-high-contrast: none) {
+          box-shadow: inset 0 0 0 2000px $color-prototype-60;
+        }
+      }
+    }
+  }
+
+  &__image {
+    &--outer {
+      position: relative;
+      width: 75%;
+      padding-bottom: 75%;
+
+      @media only screen and (max-width: $screen-m) {
+        width: 100%;
+        padding-bottom: 100%;
+      }
     }
 
-    @media only screen and (max-width: $screen-m) {
-        grid-template-areas: inherit;
-        grid-template-columns: repeat(1, 100%);
-        grid-template-rows: auto;
-        grid-row-gap: $spacing-m;
-    }
+    line-height: 0;
+    width: 100%;
+    position: absolute;
 
-    &.dataset {
-        .team-detail__image {
-            background-color: $color-dataset-60;
-            @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
-                box-shadow:inset 0 0 0 2000px $color-dataset-40;
-            }
+    background-repeat: no-repeat;
+    background-size: contain;
 
-            &:hover {
-                background-color: $color-dataset-80;
-                @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
-                    box-shadow:inset 0 0 0 2000px $color-dataset-60;
-                }
-            }  
-        }
-    }
+    background-blend-mode: multiply;
 
-    &.workshop {
-        .team-detail__image {
-            background-color: $color-workshop-60;
-            @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
-                box-shadow:inset 0 0 0 2000px $color-workshop-40;
-            }
+    transition: all $time-s;
+  }
 
-            &:hover {
-                background-color: $color-workshop;
-                @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
-                    box-shadow:inset 0 0 0 2000px $color-workshop-60;
-                }
-            }  
-        }
-    }
-
-    &.publication {
-        .team-detail__image {
-            background-color: $color-publication-60;
-            @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
-                box-shadow:inset 0 0 0 2000px $color-publication-40;
-            }
-
-
-
-            &:hover {
-                background-color: $color-publication;
-                @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
-                    box-shadow:inset 0 0 0 2000px $color-publication-40;
-                }
-            }  
-        }
+  &:hover {
+    .img-wrapper {
+      img:last-of-type {
+        opacity: 0;
+      }
     }
 
     &.prototype {
-        .team-detail__image {
-            background-color: $color-prototype-60;
-            @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
-                box-shadow: inset 0 0 0 2000px $color-prototype-40;
-            }
-            &:hover {
-                background-color: $color-prototype;
-                @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
-                    box-shadow: inset 0 0 0 2000px $color-prototype-60;
-                }
-            }  
-        }
+      .feed-list__project-title {
+        color: $color-prototype;
+      }
+      .feed-list__project-date {
+        color: $black;
+      }
     }
 
-    &__image {
-        &--outer {
-            position: relative;
-            width: 75%;
-            padding-bottom: 75%;
-            
-            @media only screen and (max-width: $screen-m) {
-                width: 100%;
-                padding-bottom: 100%;
-            }
-        }
-
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        
-        background-repeat: no-repeat;
-        background-size: contain;
-
-        background-blend-mode: multiply;
-
-        transition: all $time-s; 
+    &.dataset {
+      .feed-list__project-title {
+        color: $color-dataset;
+      }
+      .feed-list__project-date {
+        color: $black;
+      }
     }
 
-
-    &:hover {
-        .img-wrapper {
-            img:last-of-type {
-                opacity: 0;
-            }
-        }
-
-        &.prototype {
-            .feed-list__project-title {
-                color: $color-prototype;
-            }
-            .feed-list__project-date {
-                color: $black;
-            }
-        }
-
-        &.dataset {
-            .feed-list__project-title {
-                color: $color-dataset;
-            }
-            .feed-list__project-date {
-                color: $black;
-            }
-        }
-
-        &.workshop {
-            .feed-list__project-title {
-                color: $color-workshop;
-            }
-            .feed-list__project-date {
-                color: $black;
-            }
-        }
-
-        &.publication {
-            .feed-list__project-title {
-                color: $color-publication;
-            }
-            .feed-list__project-date {
-                color: $black;
-            }
-        }
+    &.workshop {
+      .feed-list__project-title {
+        color: $color-workshop;
+      }
+      .feed-list__project-date {
+        color: $black;
+      }
     }
 
-    &-date {
-        color: $grey;
-        font-size: $font-size-s;
-        font-family: 'plex-sans';
+    &.publication {
+      .feed-list__project-title {
+        color: $color-publication;
+      }
+      .feed-list__project-date {
+        color: $black;
+      }
+    }
+  }
+
+  &-date {
+    color: $grey;
+    font-size: $font-size-s;
+    font-family: "plex-sans";
+    line-height: $line-height-title;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    // margin-top: $spacing-ms;
+    transition: color $time-s;
+  }
+
+  &-title {
+    display: block;
+    font-size: $font-size-l;
+    margin-top: $spacing-xs;
+    transition: color $time-s;
+    line-height: $line-height-text;
+  }
+
+  &__image {
+    flex: 1;
+    margin-right: $spacing-column--half;
+
+    img {
+      max-width: 100%;
+      width: 100%;
+      mix-blend-mode: multiply;
+    }
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: row;
+    margin-top: $spacing-m;
+
+    &--github,
+    &--twitter {
+      margin: 4px 10px 0 0;
+    }
+
+    &--github {
+      transform: translateY(-3px);
+    }
+  }
+
+  &__description {
+    flex: 1;
+
+    &--text {
+      line-height: $line-height-text;
+    }
+
+    &--name {
+      font-weight: bold;
+      margin-bottom: $spacing-xs;
+      font-size: $font-size-ll;
+      line-height: $line-height-title;
+
+      @media screen and (max-width: $screen-m) {
         line-height: $line-height-title;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        // margin-top: $spacing-ms;
-        transition: color $time-s;
+        font-size: $font-size-ll;
+      }
     }
-
-    &-title {
-        display: block;
-        font-size: $font-size-l;
-        margin-top: $spacing-xs;
-        transition: color $time-s;
-        line-height: $line-height-text;
+    &--position {
+      color: $black;
+      line-height: $line-height-title;
+      margin-top: $spacing-xs;
+      margin-bottom: $spacing-m;
+      text-transform: uppercase;
+      font-family: "plex-mono";
+      font-size: $font-size-s;
+      letter-spacing: $letter-spacing-uppercase;
     }
-
-    &__image {
-        flex: 1;
-        margin-right: $spacing-column--half;
-
-        img {
-            max-width: 100%;
-            width: 100%;
-        }
-    }
-
-    &__social {
-        display: flex;
-        flex-direction: row;
-        margin-top: $spacing-m;
-
-        &--github, &--twitter {
-            margin: 4px 10px 0 0;
-        }
-
-        &--github {
-            transform: translateY(-3px);
-        }
-    }
-
-    &__description {
-        flex: 1;
-
-        &--text {
-            line-height: $line-height-text;
-        }
-
-        &--name {
-            font-weight: bold;
-            margin-bottom: $spacing-xs;
-            font-size: $font-size-ll;
-            line-height: $line-height-title;
-
-            @media screen and (max-width: $screen-m) {
-                line-height: $line-height-title;
-                font-size: $font-size-ll;
-            }
-        }
-        &--position {
-            color: $black;
-            line-height: $line-height-title;
-            margin-top: $spacing-xs;
-            margin-bottom: $spacing-m;
-            text-transform: uppercase;
-            font-family: 'plex-mono';
-            font-size: $font-size-s;
-            letter-spacing: $letter-spacing-uppercase;
-        }
-    }
+  }
 }
