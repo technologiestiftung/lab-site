@@ -69,7 +69,7 @@ At the [„CityVis“](https://cityvis.io/exhibition.php) exhibition, we present
 
 {% include macro-image-section-markdown.html src="../images/AR-CityVis.jpg" caption="New layers atop an old city model" %}
 
-Also still accessible – and still well-used: our humble [geospatial data portal](https://data.technologiestiftung-berlin.de/en), where we make some of Berlin's most useful geospatial datasets available to download in common, easy-to-use formats.
+Also still accessible – and still well-used: our humble [geospatial data portal](https://daten.odis-berlin.de/en), where we make some of Berlin's most useful geospatial datasets available to download in common, easy-to-use formats.
 
 {% include macro-image-section-markdown.html src="../images/portal.jpg" caption="Open data for all" %}
 

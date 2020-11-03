@@ -33,7 +33,7 @@ Diving into bicycle-related data
 
 To begin this series, we have decided to look at the subject of bicycle-related data. This has always been a popular topic in Berlin, where demand for more and improved bike infrastructure continues to mount. Most recently, a “mobility law” (Mobilitätsgesetz) was passed at the end of June of this year; it included specific provisions for how bicycle infrastructure should be expanded in the city.
 
-In the below sections, we list the key datasets needed to form a comprehensive overview of what the status quo of cycling in Berlin is. One general note: several of the datasets below exist in the FIS-Broker, Berlin’s main repository for geospatial data. In theory most data in the FIS-Broker is open data that can be downloaded and reused via a WFS server; in practice, the platform is extremely challenging and unintuitive to use and extracting data out of it is not trivial. To better enable the re-use of this open data, the Technologiestiftung Lab has extracted some of the core geospatial datasets mentioned here and made them available via our [data portal](https://data.technologiestiftung-berlin.de/en) in a variety of common data formats (e.g., GeoJSON, KML, etc.) The Lab is also working on tools to make it easier for FIS-Broker data to be extracted and used.
+In the below sections, we list the key datasets needed to form a comprehensive overview of what the status quo of cycling in Berlin is. One general note: several of the datasets below exist in the FIS-Broker, Berlin’s main repository for geospatial data. In theory most data in the FIS-Broker is open data that can be downloaded and reused via a WFS server; in practice, the platform is extremely challenging and unintuitive to use and extracting data out of it is not trivial. To better enable the re-use of this open data, the Technologiestiftung Lab has extracted some of the core geospatial datasets mentioned here and made them available via our [data portal](https://daten.odis-berlin.de/en) in a variety of common data formats (e.g., GeoJSON, KML, etc.) The Lab is also working on tools to make it easier for FIS-Broker data to be extracted and used.
 
 If you notice information here that seems to be incorrect, or if you are aware of relevant data sources that we did not identify, please feel free to reach out to [boeck@technologiestiftung-berlin.de](mailto:boeck@technologiestiftung-berlin.de) with corrections or suggested updates.
 
@@ -48,7 +48,7 @@ Bike infrastructure data
 Geospatial data for existing bike lanes can be found via the FIS-Broker. The current map was last updated in April 2017; no information is provided as to how regularly it is updated. The map includes geospatial data for the locations of bike paths (Radwege), designated bike lanes (Radfahrstreifen), advisory bike lanes (Schutzstreifen), and bus lanes (Bussonderfahrstreifen).
 
 *   [Map of existing bicycle infrastructure (FIS-Broker map)](https://fbinter.stadt-berlin.de/fb/index.jsp?loginkey=zoomStart&mapId=wmsk_radverkehrsanlagen@senstadt&bbox=383204,5818380,393456,5824453)
-*   [Geospatial data available for download via the Lab data portal](https://data.technologiestiftung-berlin.de/dataset/radverkehrsanlagen)
+*   [Geospatial data available for download via the Lab data portal](https://daten.odis-berlin.de/archive/radverkehrsanlagen)
 
 ### Bike lanes – planned
 
@@ -121,7 +121,7 @@ Many Bezirke also have their own feedback mechanisms for reporting damaged roads
 Bike riders concerned with choosing the most efficient routing possible may want to avoid roads with a lot of traffic lights. There is a map in the FIS-Broker which indicates the location of traffic lights (Lichtsignalanlagen) across the city.
 
 *   [Location of traffic lights (FIS-Broker map)](https://fbinter.stadt-berlin.de/fb/index.jsp?loginkey=zoomStart&mapId=lsa@senstadt&bbox=384259,5817306,395263,5823841)
-*   [Geospatial data available for download via the Lab data portal](https://data.technologiestiftung-berlin.de/dataset/lichtsignalanlagen/en)
+*   [Geospatial data available for download via the Lab data portal](https://daten.odis-berlin.de/archive/lichtsignalanlagen/en)
 
 ### Location and quantity of bike stands
 
@@ -168,7 +168,7 @@ A related metric for gauging ridership is data on the number of bicycle tickets 
 The volume of traffic on a given road naturally has a predictable impact on whether that road is suitable or at least ideal for bike riders – many riders would probably prefer to travel along less busy streets, if such adjustments can be made without sacrificing route efficiency. Berlin’s FIS-Broker contains a map of automobile traffic volume (encompassing all types of motorized traffic: cars, trucks, motorcycles, etc.). The current map was released in 2017, though its actual data is based on numbers observed in 2014. [A report (available in English)](https://www.stadtentwicklung.berlin.de/umwelt/umweltatlas/eid701.htm) from the Senatsverwaltung for Urban Development and Housing accompanying the map provides more information on the data, including how it was gathered and prepared.
 
 *   [Map of motorized traffic volume (FIS-Broker map)](https://fbinter.stadt-berlin.de/fb/index.jsp?loginkey=zoomStart&mapId=wmsk_07_01verkmeng2014@senstadt&bbox=388207,5818680,395085,5822381)
-*   [Geospatial data available for download via the Lab data portal](https://data.technologiestiftung-berlin.de/dataset/verkehrsmengen)
+*   [Geospatial data available for download via the Lab data portal](https://daten.odis-berlin.de/archive/verkehrsmengen)
 
 Miscellaneous
 -------------

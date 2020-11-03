@@ -34,7 +34,7 @@ Eintauchen in Radverkehrsdaten
 
 Radverkehr ist ein Thema, das viele Berliner\*innen bewegt, zumal der Bedarf nach besserer Radinfrastruktur offenkundig ist. Im Juni hat das Berliner Abgeordnetenhaus ein Mobilitätsgesetz verabschiedet, in dem auch der Ausbau der städtischen Radinfrakstruktur eine wichtige Rolle spielt.
 
-In den nachfolgenden Abschnitten versuchen wir, die jeweils wesentlichen Datensätze zu benennen und wo immer möglich auch zu verlinken. Viele der Datensätze stammen aus dem [FIS-Broker](https://www.stadtentwicklung.berlin.de/geoinformation/fis-broker/), dem zentralen Geodatenportal des Landes Berlin. Theoretisch sind die meisten Datensätze des FIS-Brokers frei zugänglich. In der Praxis ist die Plattform leider nicht sehr benutzerfreundlich, was vor allem unerfahrene Anwender\*innen vor Probleme stellt. Um eine leichtere Weiterverwendung zu ermöglichen, haben wir die wichtigsten Datensätze in gängige Formate (GeoJSON, KML, etc.) konvertiert und bieten sie über unsere [Daten-Seite](https://data.technologiestiftung-berlin.de) zum Download an. Wir arbeiten übrigens gerade an einem Werkzeug, um diese Konvertierung zukünftig zu automatisieren – dazu bald mehr.
+In den nachfolgenden Abschnitten versuchen wir, die jeweils wesentlichen Datensätze zu benennen und wo immer möglich auch zu verlinken. Viele der Datensätze stammen aus dem [FIS-Broker](https://www.stadtentwicklung.berlin.de/geoinformation/fis-broker/), dem zentralen Geodatenportal des Landes Berlin. Theoretisch sind die meisten Datensätze des FIS-Brokers frei zugänglich. In der Praxis ist die Plattform leider nicht sehr benutzerfreundlich, was vor allem unerfahrene Anwender\*innen vor Probleme stellt. Um eine leichtere Weiterverwendung zu ermöglichen, haben wir die wichtigsten Datensätze in gängige Formate (GeoJSON, KML, etc.) konvertiert und bieten sie über unsere [Daten-Seite](https://daten.odis-berlin.de) zum Download an. Wir arbeiten übrigens gerade an einem Werkzeug, um diese Konvertierung zukünftig zu automatisieren – dazu bald mehr.
 
 Falls ihr Fehler entdeckt, Verbesserungs- oder Ergänzungsvorschläge habt oder weitere relevante Datenquellen zum Thema kennt, meldet euch gerne unter [boeck@technologiestiftung-berlin.de](mailto:boeck@technologiestiftung-berlin.de)
 
@@ -49,7 +49,7 @@ Radinfrastrukturdaten
 Geodaten zu bestehenden Radwegen sind im FIS-Broker vorhanden. Die aktuelle Karte wurde zuletzt im April 2017 aktualisiert; Zum Aktualisierungszyklus sind keine Informationen vorhanden. Die Karte verzeichnet Radwege, Radfahrstreifen, Schutzstreifen und Bussonderfahrstreifen.
 
 * [Radverkehrsanlagen (FIS-Broker-Karte)](https://fbinter.stadt-berlin.de/fb/index.jsp?loginkey=zoomStart&mapId=wmsk_radverkehrsanlagen@senstadt&bbox=383204,5818380,393456,5824453)
-* [Geodaten zu Radverkehrsanlagen (Lab-Datenportal)](https://data.technologiestiftung-berlin.de/dataset/radverkehrsanlagen)
+* [Geodaten zu Radverkehrsanlagen (Lab-Datenportal)](https://daten.odis-berlin.de/archive/radverkehrsanlagen)
 
 ### Radwege – geplant
 
@@ -99,7 +99,7 @@ Natürlich sind auch allgemeine Daten zum Berliner Straßennetz für Radfahrende
 
 *   [Übergeordnetes Straßennetz (FIS-Broker-Karte)](https://fbinter.stadt-berlin.de/fb/index.jsp?loginkey=showMap&mapId=verkehr_strnetz@senstadt)
 *   [Detailnetz Berlin (FIS-Broker-Karte)](https://fbinter.stadt-berlin.de/fb/index.jsp?loginkey=zoomStart&mapId=k_vms_detailnetz_wms_spatial@senstadt)
-*  [Geodaten zum Straßennetz (Lab-Datenportal)](https://data.technologiestiftung-berlin.de/dataset/detailnetz_strassenabschnitte)
+*  [Geodaten zum Straßennetz (Lab-Datenportal)](https://daten.odis-berlin.de/dataset/detailnetz_strassenabschnitte)
 
 ### Straßenbau
 
@@ -124,7 +124,7 @@ Viele Bezirke haben eigene Feedback-Systeme für die Meldung von Straßenschäde
 "Lichtsignalanlagen" ist Verwaltungsdeutsch für Ampeln. Fahrradfahrer, die eine effiziente Route bevorzugen, wollen eventuell Straßen mit vielen Ampeln vermeiden. Im FIS-Broker findet sich eine Karte mit den Standorten von Ampeln in der Stadt.
 
 *   [Lichtsignalanlagen (FIS-Broker-Karte)](https://fbinter.stadt-berlin.de/fb/index.jsp?loginkey=zoomStart&mapId=lsa@senstadt&bbox=384259,5817306,395263,5823841)
-*   [Geodaten zu Lichtsignalanlagen (Lab-Datenportal)](https://data.technologiestiftung-berlin.de/dataset/lichtsignalanlagen)
+*   [Geodaten zu Lichtsignalanlagen (Lab-Datenportal)](https://daten.odis-berlin.de/archive/lichtsignalanlagen)
 
 ### Standorte und Anzahl von Fahrradabstellplätzen
 
@@ -173,7 +173,7 @@ Eine weitere Methode, um Rückschlüsse auf Fahrradfahrer in der Stadt zu erhalt
 Das Autoverkehrsaufkommen einer Straße hat auch Auswirkungen auf die Sicherheit des Radverkehrs – viele Fahrradfahrer nutzen lieber wenig befahrene Straßen, wenn sie denn eine Wahl haben. Im FIS-Broker findet sich eine Karte mit Verkehrsmengen von Kraftfahrzeugen auf Berliner Straßen. Die aktuellste Karte wurde 2017 veröffentlicht, die Daten stammen aber eigentlich aus 2014. [Ein Bericht](https://www.stadtentwicklung.berlin.de/umwelt/umweltatlas/id701.htm) von der Senatsverwaltung für Umwelt, Verkehr und Klimaschutz erklärt, wie die Daten erhoben und aufbereitet werden.
 
 *   [Verkehrsmengen 2014 (FIS-Broker-Karte)](https://fbinter.stadt-berlin.de/fb/index.jsp?loginkey=zoomStart&mapId=wmsk_07_01verkmeng2014@senstadt&bbox=388207,5818680,395085,5822381)
-*   [Geodaten zu Verkehrsmengen (Lab-Datenportal)](https://data.technologiestiftung-berlin.de/dataset/verkehrsmengen)
+*   [Geodaten zu Verkehrsmengen (Lab-Datenportal)](https://daten.odis-berlin.de/archive/verkehrsmengen)
 
 Sonstiges
 ---------
