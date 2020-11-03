@@ -151,6 +151,11 @@ npm run jekyll
 # to generate a new project run in a new session
 npm run new
 # now follow the prompt…
+
+# if you want to develop in js and css use
+npm run dev
+# and in another session
+npm run jekyll
 ```
 
 
