@@ -73,7 +73,7 @@ Bei der Ausstellung [„CityVis“](https://cityvis.io/exhibition.php) präsenti
 
 {% include macro-image-section-markdown.html src="../images/AR-CityVis.jpg" caption="Neue Layer auf alten Stadtmodellen" %}
 
-Ebenfalls ein Dauerbrenner: Unser eigenes kleines [Geodatenportal](https://data.technologiestiftung-berlin.de/), auf dem wir ausgewählte offene Datensätze nutzerfreundlich aufbereitet zum Download anbieten.
+Ebenfalls ein Dauerbrenner: Unser eigenes kleines [Geodatenportal](https://daten.odis-berlin.de/), auf dem wir ausgewählte offene Datensätze nutzerfreundlich aufbereitet zum Download anbieten.
 
 {% include macro-image-section-markdown.html src="../images/portal.jpg" caption="Offene Daten für alle" %}
 
