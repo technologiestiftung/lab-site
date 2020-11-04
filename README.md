@@ -11,10 +11,10 @@
 
 <!-- code_chunk_output -->
 
-- [Website of the Ideation &amp; Prototyping Lab @technologiestiftung Berlin](#website-of-the-ideation-amp-prototyping-lab-technologiestiftung-berlin)
+- [Website of the Ideation & Prototyping Lab @technologiestiftung Berlin](#website-of-the-ideation--prototyping-lab-technologiestiftung-berlin)
   - [Table Of Contents](#table-of-contents)
   - [Prerequisites](#prerequisites)
-  - [Setup Jekyll &amp; Run Jekyll](#setup-jekyll-amp-run-jekyll)
+  - [Setup Jekyll & Run Jekyll](#setup-jekyll--run-jekyll)
   - [How To](#how-to)
     - [Create a New Project](#create-a-new-project)
     - [Editing Content](#editing-content)
@@ -22,11 +22,11 @@
       - [Assign](#assign)
       - [Include](#include)
       - [Variables](#variables)
-      - [HTML in [M⬇︎]](#html-in-m%e2%ac%87%ef%b8%8e)
+      - [HTML in [M⬇︎]](#html-in-m︎)
       - [Example Projects for Reference](#example-projects-for-reference)
     - [Project Assets](#project-assets)
       - [Images](#images)
-      - [JS &amp; CSS](#js-amp-css)
+      - [JS & CSS](#js--css)
   - [YAML Frontmatter](#yaml-frontmatter)
   - [RSS Feed](#rss-feed)
   - [Project Generator](#project-generator)
@@ -68,11 +68,58 @@ echo "export PATH=${HOME}/.gem/bin:"'$PATH' >> "${HOME}/.zshrc" &&\
 source ~/.zshrc
 ```
 
+## Managing Ruby Versions
+
+Admin computers can install [Ruby Version Manager (rvm) →](https://rvm.io). If you are not admin on your machine you can use [rbenv](https://github.com/rbenv/rbenv) with [ruby-build](https://github.com/rbenv/ruby-build).
 
 
-Admin computers can install [Ruby Version Manager (rvm) →](https://rvm.io).
+- rvm needs `gpg` in `$PATH`: `brew install gpg`
+- `rbenv` only needs git
 
-- needs `gpg` in `$PATH`: `brew install gpg`
+### Ruby issues
+
+If you are running into problems with ruby versions you can use rbenv to manage your ruby.
+
+First of all you need to remove `rvm` if it installed.
+
+Check if it is installed `rvm -v`. If get an output uninstall it.
+
+```bash
+rvm impolde
+```
+
+And don’t forget to remove the script calls in the following files:
+
+- `~/.bashrc`
+- `~/.bash_profile`
+- `~/.profile`
+- `~/.zshrc`
+
+Taken [from here](https://stackoverflow.com/a/4747195).
+
+Then install `rbenv` using the [Basic Git checkout](https://github.com/rbenv/rbenv/blob/master/README.md#basic-github-checkout).
+
+1. clone it
+2. add it to your `$PATH`
+3. initialize it for your shell
+
+Next you need to [install `ruby-build` as `rbenv` plugin](https://github.com/rbenv/ruby-build#installation)
+
+```bash
+mkdir -p "$(rbenv root)"/plugins
+git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+```
+
+Now install the desired ruby version. E.g. v2.6.3 and set it as your global version.
+
+```bash
+rbenv install 2.6.3
+rbenv global 2.6.3
+```
+
+Now you should have 2.6.3 as your default. Open a new terminal session and test it: `ruby -v`.
+
+
 
 -->
 
@@ -104,7 +151,13 @@ npm run jekyll
 # to generate a new project run in a new session
 npm run new
 # now follow the prompt…
+
+# if you want to develop in js and css use
+npm run dev
+# and in another session
+npm run jekyll
 ```
+
 
 If you run into problems with the eventmachine (incompatible library version) this might help, or not:
 ```

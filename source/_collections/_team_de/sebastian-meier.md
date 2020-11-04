@@ -8,8 +8,8 @@ twitter: seb_meier
 github: sebastian-meier
 position: Lead Data Scientist
 type: dataset # could also be "workshop", "dataset", "prototype"
+external: true
 order: 1
 ---
-
 
 Das ist als content zu haben
