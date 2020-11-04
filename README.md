@@ -1,11 +1,8 @@
-
-
 # Website of the Ideation & Prototyping Lab @technologiestiftung Berlin
 
 [![Build Status](https://travis-ci.org/technologiestiftung/lab-site.svg?branch=master)](https://travis-ci.org/technologiestiftung/lab-site) [![Netlify Status](https://api.netlify.com/api/v1/badges/d95d4572-9a48-4a6b-a4c3-5ed33451d030/deploy-status)](https://app.netlify.com/sites/tsb-labsite/deploys)
 
 ## Table Of Contents
-
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
@@ -14,7 +11,7 @@
 - [Website of the Ideation & Prototyping Lab @technologiestiftung Berlin](#website-of-the-ideation--prototyping-lab-technologiestiftung-berlin)
   - [Table Of Contents](#table-of-contents)
   - [Prerequisites](#prerequisites)
-  - [Setup Jekyll & Run Jekyll](#setup-jekyll--run-jekyll)
+  - [Setup & Develop](#setup--develop)
   - [How To](#how-to)
     - [Create a New Project](#create-a-new-project)
     - [Editing Content](#editing-content)
@@ -37,17 +34,12 @@
 
 <!-- /code_chunk_output -->
 
-
 ## Prerequisites
 
 - Node.js (install it using [nvm](https://github.com/nvm-sh/nvm))
 - Ruby (install it using [rbenv](https://github.com/rbenv/rbenv))
 
 Make sure to add the needed code snippets for nvm and rbenv to your `.bash_profile` or `.zshrc`. You will also have to install [ruby-build](https://github.com/rbenv/ruby-build#readme) as a rbenv plugin.
-
-
-
-
 
 <!-- Non admin computers you need to change the ruby `.gem` folder location
 
@@ -123,7 +115,7 @@ Now you should have 2.6.3 as your default. Open a new terminal session and test 
 
 -->
 
-## Setup Jekyll & Run Jekyll
+## Setup & Develop
 
 **!Note:** This assumes you have Node.js installed with `nvm` and Node.js lts (currently at 12.16.0) installed (`nvm install --lts`). To set a default run `nvm alias default v12.16.0`
 
@@ -158,8 +150,8 @@ npm run dev
 npm run jekyll
 ```
 
-
 If you run into problems with the eventmachine (incompatible library version) this might help, or not:
+
 ```
 gem uninstall eventmachine
 gem install eventmachine --platform ruby
@@ -170,7 +162,6 @@ gem install eventmachine --platform ruby
 ### Create a New Project
 
 To just create a new article/project you can either,
-
 
 - copy one of the existing folders
 - give it a new name (no whitespace and special characters please 🙏)
@@ -188,7 +179,6 @@ Or even better you can use the project generate. (See infos in section **Project
 - [Pandoc Demo Page](https://pandoc.org/try/?text=&from=html&to=markdown_strict)
 
 There might be some leftovers within the **[M⬇︎]** that you need to remove manually.
-
 
 ### Editing Content
 
@@ -211,11 +201,11 @@ If you want a specialized layout you can use the macros included in `source/_inc
 - macro-text-column.html
 - macro-text.html
 
-
 The most common one will be the `macro-image-section-markdown.html` (if you write **[M⬇︎]**). The usage would look like this.
 
 ```html
-{% include macro-image-section-markdown.html src="../images/cat.png" caption="Here is a picture of a cat" %}
+{% include macro-image-section-markdown.html src="../images/cat.png"
+caption="Here is a picture of a cat" %}
 ```
 
 If you locate your images in the `images` folder you can use relativ urls.
@@ -256,12 +246,10 @@ TO capture some content for later use you insert this syntax.
 In use it is like this:
 
 ```html
-{% capture myvaribale %}
-This is some captured content. It will be stored in the variable "myvaribale".
-{% endcapture %}
+{% capture myvaribale %} This is some captured content. It will be stored in the
+variable "myvaribale". {% endcapture %}
 <!-- now use this later on -->
 {% include macro-text-column.html title="My Title" text=myvaribale -%}
-
 ```
 
 #### Assign
@@ -274,7 +262,6 @@ Assign also creates a variable. The difference is that you assign it directly to
 This is some random text with a inserted variable --> {{myvariable}}
 <!-- or you use the variable on an include -->
 {% include macro-text-column.html title="My title" text=myvaribale -%}
-
 ```
 
 #### Include
@@ -297,14 +284,13 @@ This is the title {{page.title}} this is the language {{page.lang}}
 
 Of course you can add your own variables.
 
-
-
 #### HTML in [M⬇︎]
 
 You can mix **[M⬇︎]** with HTML, just make sure you don't mix block level markup. E.g. This wont work!
 
 ```html
-Dies ist ein Typoblindtext.<div>someHTML</div>
+Dies ist ein Typoblindtext.
+<div>someHTML</div>
 ```
 
 This will work:
@@ -323,8 +309,8 @@ If your Jekyll development server is running you can go to these URLs
 
 - **HTML EN:** [http://localhost:4000/projects/example-html-project/en/](http://localhost:4000/projects/example-html-project/en/)
 - **HTML DE:** [http://localhost:4000/projects/example-html-project/de/](http://localhost:4000/projects/example-html-project/de/)
-- ****[M⬇︎]** EN:** [http://localhost:4000/projects/example-md-project/en/](http://localhost:4000/projects/example-md-project/en/)
-- ****[M⬇︎]** DE:** [http://localhost:4000/projects/example-md-project/de/](http://localhost:4000/projects/example-md-project/de/)
+- \***\*[M⬇︎]** EN:\*\* [http://localhost:4000/projects/example-md-project/en/](http://localhost:4000/projects/example-md-project/en/)
+- \***\*[M⬇︎]** DE:\*\* [http://localhost:4000/projects/example-md-project/de/](http://localhost:4000/projects/example-md-project/de/)
 
 ### Project Assets
 
@@ -345,16 +331,16 @@ You can have additional JS and CSS files for your project. Add them to the front
 **!Hint:** To make sure your JS executes when the [full document is loaded](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded) execute it in this event listener.
 
 ```js
-document.addEventListener('DOMContentLoaded',function() {
-// your code goes in here
+document.addEventListener("DOMContentLoaded", function () {
+  // your code goes in here
 });
 ```
 
 If you want to be super sure that everything is loaded you should use the [load event](https://developer.mozilla.org/en-US/docs/Web/Events/load):
 
 ```js
-window.addEventListener("load", function(event) {
-// Your code here
+window.addEventListener("load", function (event) {
+  // Your code here
 });
 ```
 
@@ -369,12 +355,10 @@ All variables for your project are located in the YAML frontmatter. You can see 
 
 There is an RSS Feed included for DE and EN content. If you want to add an excerpt to your post you can by adding a `<!--more-->` HTML comment to your text. If not the content of your text will we truncated at 50 words and is followed by an `…`
 
-
 ## Project Generator
 
 Run `npm run new-project` To get this help.
 To pass arguments to it use the dash dash whitspace `npm run new-project -- ` and then your arguments.
-
 
 ```plain
 > ./project-generator/bin/run --help
@@ -423,8 +407,7 @@ DESCRIPTION
 
 When using VSCode for writing you should install these extensions for a better writing experience.
 
-****Name: Markdown Preview Enhanced****
-****Id:**** shd101wyy.markdown-preview-enhanced
+\***\*Name: Markdown Preview Enhanced\*\*** \***\*Id:\*\*** shd101wyy.markdown-preview-enhanced
 **Description:** Markdown Preview Enhanced ported to vscode
 [VS Marketplace Link:](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced)
 
@@ -441,7 +424,6 @@ When using VSCode for writing you should install these extensions for a better w
 **Id:** davidanson.vscode-markdownlint
 **Description:** Markdown linting and style checking for Visual Studio Codevid Anson
 [VS Marketplace Link:](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
-
 
 ---
 
