@@ -10,7 +10,7 @@
   "dependencies": {
     "@oclif/command": "^1.5.8",
     "@oclif/config": "^1.12.4",
-    "@oclif/plugin-help": "^2.1.6",
+    "@oclif/plugin-help": "^3.0.0",
     "dayjs": "^1.8.5",
     "dumper.js": "^1.3.0",
     "inquirer": "^6.2.2",
