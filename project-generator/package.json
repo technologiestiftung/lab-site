@@ -13,7 +13,7 @@
     "@oclif/plugin-help": "^2.1.6",
     "dayjs": "^1.8.5",
     "dumper.js": "^1.3.0",
-    "inquirer": "^6.2.2",
+    "inquirer": "^7.0.0",
     "mkdirp": "^1.0.0",
     "slugify": "^1.3.4",
     "tslib": "^1.9.3",
