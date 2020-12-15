@@ -40,11 +40,9 @@
   },
   "devDependencies": {
     "@babel/core": "7.12.3",
-    "@babel/polyfill": "7.12.1",
     "@babel/preset-env": "7.12.1",
     "@inpyjamas/scripts": "0.1.9-alpha",
     "autoprefixer": "10.1.0",
-    "babel-polyfill": "6.26.0",
     "core-js": "3.8.1",
     "cssnano": "4.1.10",
     "cz-conventional-changelog": "3.3.0",
