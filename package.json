@@ -39,8 +39,8 @@
     "whatwg-fetch": "3.5.0"
   },
   "devDependencies": {
-    "@babel/core": "7.12.3",
-    "@babel/preset-env": "7.12.1",
+    "@babel/core": "7.12.10",
+    "@babel/preset-env": "7.12.10",
     "@inpyjamas/scripts": "0.1.9-alpha",
     "autoprefixer": "10.1.0",
     "core-js": "3.8.1",
