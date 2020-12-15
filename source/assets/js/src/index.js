@@ -2,6 +2,7 @@
 
 import "whatwg-fetch"; // needed for ie11 should be the first things
 import "babel-polyfill"; // needed for ie11 should be the first things
+import "core-js/stable"; // needed for ie11 should be the first things
 import handleOnload from "./modules/handleOnload.js";
 import navigationHandler from "./modules/navigationHandler.js";
 import hamburgerHandler from "./modules/hamburgerHandler.js";
