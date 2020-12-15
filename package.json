@@ -47,6 +47,7 @@
     "@babel/core": "7.12.3",
     "@babel/polyfill": "7.12.1",
     "@babel/preset-env": "7.12.1",
+    "@inpyjamas/scripts": "0.1.9-alpha",
     "@types/jest": "26.0.15",
     "autoprefixer": "9.8.6",
     "core-js": "3.7.0",
