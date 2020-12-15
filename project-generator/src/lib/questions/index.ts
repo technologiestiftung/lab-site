@@ -13,7 +13,7 @@ const questions = (force: boolean) => {
           const pt = buildTargetPath(slug(value));
           if (isFolderSync(pt) === true && force === false) {
             process.stdout.write(
-              "\n 🚨 🚨 🚨 The folder already exists  🚨 🚨 🚨 \n\n"
+              "\n 🚨 🚨 🚨 The folder already exists  🚨 🚨 🚨 \n\n",
             );
             return false;
           } else if (isFolderSync(pt) === false) {
@@ -25,7 +25,7 @@ const questions = (force: boolean) => {
           process.stdout.write("\n 🚨 🚨 🚨 No value given 🚨 🚨 🚨 \n\n");
           process.exit(1);
         }
-      }
+      },
     },
     {
       name: "fileType",
@@ -33,38 +33,38 @@ const questions = (force: boolean) => {
       type: "list",
       choices: [
         { name: "Markdown [M↓]", value: "md", default: true },
-        { name: "HTML ", value: "html" }
-      ]
+        { name: "HTML ", value: "html" },
+      ],
     },
     {
       name: "de_title",
       message: "🇩🇪\tWrite a title:\n",
-      type: "input"
+      type: "input",
     },
     {
       name: "en_title",
       message: "🇬🇧\tWrite a title:\n",
-      type: "input"
+      type: "input",
     },
     {
       name: "de_subtitle",
       message: "🇩🇪\tWrite a subtitle:\n",
-      type: "input"
+      type: "input",
     },
     {
       name: "en_subtitle",
       message: "🇬🇧\tWrite a subtitle:\n",
-      type: "input"
+      type: "input",
     },
     {
       name: "de_description",
       message: "🇩🇪\tWrite a description for the RSS feed:\n",
-      type: "input"
+      type: "input",
     },
     {
       name: "en_description",
       message: "🇬🇧\tWrite a description for the RSS feed:\n",
-      type: "input"
+      type: "input",
     },
     {
       name: "type",
@@ -74,8 +74,8 @@ const questions = (force: boolean) => {
         { name: "publication" },
         { name: "workshop" },
         { name: "dataset" },
-        { name: "prototype" }
-      ]
+        { name: "prototype" },
+      ],
     },
     {
       name: "colorMode",
@@ -83,8 +83,8 @@ const questions = (force: boolean) => {
       type: "list",
       choices: [
         { name: "bright", value: "bright", default: true },
-        { name: "dark", value: "dark" }
-      ]
+        { name: "dark", value: "dark" },
+      ],
     },
     {
       name: "visible",
@@ -92,8 +92,8 @@ const questions = (force: boolean) => {
       type: "list",
       choices: [
         { name: "is visible", value: true },
-        { name: "is not visible", value: false }
-      ]
+        { name: "is not visible", value: false },
+      ],
     },
     {
       name: "featured",
@@ -101,28 +101,29 @@ const questions = (force: boolean) => {
       type: "list",
       choices: [
         { name: "is featured", value: true },
-        { name: "is not featured", value: false, default: true }
-      ]
+        { name: "is not featured", value: false, default: true },
+      ],
     },
+    //TODO: [IPLSITE-12] Keep authors names up to date with the current team. Using GitHub API for example?
     {
       name: "authors",
       message: "✏️\tWho are the authors?\n",
       type: "checkbox",
       choices: [
-        { name: "🙄\tAlexandra Kapp", value: "alexandra-kapp" },
+        // { name: "🙄\tAlexandra Kapp", value: "alexandra-kapp" },
         { name: "🧐\tBenjamin Seibel", value: "benjamin-seibel" },
-        { name: "😳\tFabian Dinklage", value: "fabian-dinklage" },
+        // { name: "😳\tFabian Dinklage", value: "fabian-dinklage" },
         { name: "🤔\tFabian Morón Zirfas", value: "fabian-moron-zirfas" },
-        { name: "😬\tSebastian Meier", value: "sebastian-meier" },
+        // { name: "😬\tSebastian Meier", value: "sebastian-meier" },
         { name: "🤩\tVictoria Boeck", value: "victoria-boeck" },
-        { name: "🤗\tJolanta Paliszewska ", value: "jolanta-paliszewska" },
-        { name: "🤗\tJulia Zimmermann ", value: "julia-zimmermann" }
-      ]
+        // { name: "🤗\tJolanta Paliszewska ", value: "jolanta-paliszewska" },
+        { name: "🤗\tJulia Zimmermann ", value: "julia-zimmermann" },
+      ],
     },
     {
       name: "externalUrl",
       message: "🔗\tIs there a external url for the project?\n",
-      type: "input"
+      type: "input",
     },
     {
       name: "status",
@@ -130,9 +131,9 @@ const questions = (force: boolean) => {
       type: "list",
       choices: [
         { name: "is ongoing", value: "ongoing" },
-        { name: "is finished", value: "finished", default: true }
-      ]
-    }
+        { name: "is finished", value: "finished", default: true },
+      ],
+    },
   ];
 };
 export default questions;
