@@ -6,7 +6,7 @@
 # DEFAULT: project
 layout: project
 # REQUIRED: write a short description of this project
-description: 'this is my awesome project'
+description: "this is my awesome project"
 # REQUIRED: the language of the text
 # DEFAULT: de
 lang: de
@@ -44,6 +44,7 @@ featured: true
 
 # all the authors that where involved.
 # at least one isd needed
+# TODO: [IPLSITE-12] keep names up to date RE
 authors:
   - benjamin-seibel
   - victoria-boeck
