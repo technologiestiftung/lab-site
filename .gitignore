@@ -83,3 +83,4 @@ typings/
 .fusebox/
 # DynamoDB Local files
 .dynamodb/
+project-generator/source/projects/*
