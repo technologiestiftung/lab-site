@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/technologiestiftung/lab-site#readme",
   "dependencies": {
-    "d3": "^5.8.2",
+    "d3": "^6.0.0",
     "whatwg-fetch": "3.5.0"
   },
   "devDependencies": {
