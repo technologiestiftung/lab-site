@@ -1,4 +1,5 @@
-const { merge } = require("@inpyjamas/scripts/utilities");
+/* eslint-disable @typescript-eslint/no-var-requires */
+const { merge } = require("@inpyjamas/scripts/dist/utlities/merge");
 const config = require("@inpyjamas/scripts/eslint");
 const oldConfig = {
   extends: ["unobtrusive", "eslint:recommended", "plugin:jest/recommended"],
