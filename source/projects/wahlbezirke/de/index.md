@@ -29,7 +29,9 @@ Die Motivation für die Entwicklung dieses Werkzeugs liegt in den demographische
 
 Um diesen Prozess für Mitarbeiter*innen der Stadtverwaltung zukünftig zu vereinfachen, hat die Open Data Informationsstelle ([ODIS](https://odis-berlin.de)) der Technologiestiftung Berlin ein Werkzeug entwickelt, das einzelne Straßenblöcke automatisiert neuen Wahlkreisen zuordnet.
 
-[Hier geht's lang zu der interaktiven Webversion des Prototyps.](http://wahlbezirke.odis-berlin.de/). In den Text unten beschreiben wir näher, was unser Prozess für die Entwicklung des Tools war (mit Screenshots aus dem Web-Prototyp).
+- **[Hier geht's lang zu der interaktiven Webversion des Prototyps.](http://wahlbezirke.odis-berlin.de/)**
+
+In den Text unten beschreiben wir näher, was unser Prozess für die Entwicklung des Tools war (mit Screenshots aus dem Web-Prototyp).
 
 ## Entwicklung des Tools
 
@@ -39,35 +41,30 @@ Die Festlegung neuer Grenzen der Wahlbezirke erfordert die automatische Neuzuord
 
 Die Benutzung des Tools und der entsprechende Test für Tempelhof-Schöneberg, lässt sich in 5 Teilschritte untergliedern:
 
-
-1. Zunächst wurden **Daten aus verschiedenen Quellen bereinigt und zusammengeführt**, um dem Algorithmus alle Informationen zur Verfügung zu stellen, die er für die Durchführung der Simulationen benötigt. Der resultierende Datensatz enthält demografische Daten zu den einzelnen Straßenblöcken, die geografischen Informationen der Blöcke, sowie die Nummern der letzten zugehörigen Wahlbezirke zu den Blöcken. Die zugrundliegenden Daten sind als Open Data frei verfügbar, mit Ausnahme der Bevölkerungsdaten für einzelne Stadtblöcke, die aufgrund von Datenschutzbedenken nicht frei veröffentlicht werden können. Anhand der Daten erkennt das Tool, welche Wahlbezirke überbevölkert sind und demzufolge verändert werden müssen.
+**1)** Zunächst wurden **Daten aus verschiedenen Quellen bereinigt und zusammengeführt**, um dem Algorithmus alle Informationen zur Verfügung zu stellen, die er für die Durchführung der Simulationen benötigt. Der resultierende Datensatz enthält demografische Daten zu den einzelnen Straßenblöcken, die geografischen Informationen der Blöcke, sowie die Nummern der letzten zugehörigen Wahlbezirke zu den Blöcken. Die zugrundliegenden Daten sind als Open Data frei verfügbar, mit Ausnahme der Bevölkerungsdaten für einzelne Stadtblöcke, die aufgrund von Datenschutzbedenken nicht frei veröffentlicht werden können. Anhand der Daten erkennt das Tool, welche Wahlbezirke überbevölkert sind und demzufolge verändert werden müssen.
 
 {% include macro-image-section-markdown.html src="../images/Population-desktop@2x.png" caption="Die Wahlbezirke in Tempelhof-Schöneberg aus der letzen Wahl. Wahlbezirke mit mehr als 2.500 Einwohner*innen gelten as 'überbevölkert'." %}
 
-2. Im nächsten Schritt wurde der **Algorithmus entwickelt**, der Blöcke in überbevölkerten Wahlbezirken einem angrenzenden Bezirk zuordnet. Die Hauptidee hierbei ist, alternative Wahlbezirkszuordnungen für relevante Blöcke zu identifizieren, wo immer dies möglich ist. Die Methode besteht darin, Blöcke aus überbevölkerten Bezirken in benachbarte Wahlbezirke zu verlagern, die selbst nicht überbevölkert sind. Die folgende Darstellung zeigt die Euklidischen Distanzen (die kürzesten linearen Verbindungen) zwischen jedem Block und seinen Nachbarblöcken, unabhängig von der Wahlbezirkszugehörigkeit. Insgesamt generiert der Algorithmus 10.000 verschiedene Simulationen, durch die Verschiebung von Blöcken in benachbarte Bezirke unter Verwendung der Euklidischen Distanzrn.
+**2)** Im nächsten Schritt wurde der **Algorithmus entwickelt**, der Blöcke in überbevölkerten Wahlbezirken einem angrenzenden Bezirk zuordnet. Die Hauptidee hierbei ist, alternative Wahlbezirkszuordnungen für relevante Blöcke zu identifizieren, wo immer dies möglich ist. Die Methode besteht darin, Blöcke aus überbevölkerten Bezirken in benachbarte Wahlbezirke zu verlagern, die selbst nicht überbevölkert sind. Die folgende Darstellung zeigt die Euklidischen Distanzen (die kürzesten linearen Verbindungen) zwischen jedem Block und seinen Nachbarblöcken, unabhängig von der Wahlbezirkszugehörigkeit. Insgesamt generiert der Algorithmus 10.000 verschiedene Simulationen, durch die Verschiebung von Blöcken in benachbarte Bezirke unter Verwendung der Euklidischen Distanzrn.
 
 {% include macro-image-section-markdown.html src="../images/Network-desktop@2x.png" caption="Unser Algorithmus hat geschaut, welche die benachbarten Blöcke eines einzelnen Blocks sind. Darauf basierend könnte unsere Anwendung Vorschläge für alternative Wahlbezirke machen, wenn ein Straßenblock in einem überbevölkerten Wahlbezirk liegt." %}
 
-3. Als Nächstes wurden **die neu generierten Wahlkarten der 10.000 Simulationen bewertet**, um die 38 besten Ergebnisse auszuwählen. Dafür wurden folgende Kriterien herangezogen:
+**3)** Als Nächstes wurden **die neu generierten Wahlkarten der 10.000 Simulationen bewertet**, um die 38 besten Ergebnisse auszuwählen. Dafür wurden folgende Kriterien herangezogen:
 
-    -	Anzahl der neu zugewiesenen Blöcke: Die Anzahl der Blöcke, die ihre Wahlbezirkszugehörigkeit im Vergleich zur ursprünglichen Karte geändert haben.
-    -	Anzahl der betroffenen Wahlbezirke: Die Anzahl der Wahlbezirke, in denen ein oder mehrere Blöcke im Vergleich zur Originalkarte entfernt oder hinzugefügt wurden.
-    -	Anzahl der überbevölkerten Bezirke: Die Anzahl der Bezirke mit mehr als 2.500 Einwohnern (d.h. Bezirke, die auch nach der algorithmischen Optimierung noch über dem Schwellenwert liegen).
-    -	Mittelwert, Median und Minimum Convex Hull Score: Ein Kompaktheitsmaß, das das Verhältnis der Fläche eines Wahlbezirks zur Fläche des minimalen konvexen Polygons, das die Geometrie des Wahlbezirks umschließen kann, umfasst.
-    -	Standardabweichung Bevölkerungsgröße: Ein Maß für die Variation der Bevölkerungsgröße über alle Wahlbezirke hinweg.
+  -	Anzahl der neu zugewiesenen Blöcke: Die Anzahl der Blöcke, die ihre Wahlbezirkszugehörigkeit im Vergleich zur ursprünglichen Karte geändert haben.
+  -	Anzahl der betroffenen Wahlbezirke: Die Anzahl der Wahlbezirke, in denen ein oder mehrere Blöcke im Vergleich zur Originalkarte entfernt oder hinzugefügt wurden.
+  -	Anzahl der überbevölkerten Bezirke: Die Anzahl der Bezirke mit mehr als 2.500 Einwohnern (d.h. Bezirke, die auch nach der algorithmischen Optimierung noch über dem Schwellenwert liegen).
+  -	Mittelwert, Median und Minimum Convex Hull Score: Ein Kompaktheitsmaß, das das Verhältnis der Fläche eines Wahlbezirks zur Fläche des minimalen konvexen Polygons, das die Geometrie des Wahlbezirks umschließen kann, umfasst.
+  -	Standardabweichung Bevölkerungsgröße: Ein Maß für die Variation der Bevölkerungsgröße über alle Wahlbezirke hinweg.
 
-    Die besten generierten Karten wurden entweder anhand (1) ihrer Gesamtleistung aller Kriterien (d. h. wenn sie bei allen Kriterien zu den besten 25 % aller Simulationen gehörten, was 28 Simulationen betraf) oder (2) ihrer Leistung bei einem bestimmten Kriterium (d. h. nach der besten Leistung bei einem einzelnen Indikator, was 10 Simulationen betraf) ausgewählt.
+Die besten generierten Karten wurden entweder anhand (1) ihrer Gesamtleistung aller Kriterien (d. h. wenn sie bei allen Kriterien zu den besten 25 % aller Simulationen gehörten, was 28 Simulationen betraf) oder (2) ihrer Leistung bei einem bestimmten Kriterium (d. h. nach der besten Leistung bei einem einzelnen Indikator, was 10 Simulationen betraf) ausgewählt.
 
-{% include macro-image-section-markdown.html src="../images/simulation_gif.gif" caption="Eine Demonstration der Generierung der 10,000 verschiedene Simulationen." %}
+**4)** Anschließend wurde **eine grafische Darstellung der Bewertungen der ausgewählten, besten Simulationen** erstellt, damit Benutzer*innen des Tools verstehen können, welche Simulationen bei bestimmten Kriterien besonders gut abgeschnitten haben. Mithilfe eines mehrdimensionalen Graphen können die Benutzer die Gesamtleistung bestimmter Simulationen visualisieren und jedem Kriterium manuell unterschiedliche Gewichtungen zuweisen. Anhand dieser Informationen kann die zuständige Person die für sie passendste Simulation als Vorlage für den finalen Schritt auswählen. 
 
-4. Anschließend wurde **eine grafische Darstellung der Bewertungen der ausgewählten, besten Simulationen** erstellt, damit Benutzer*innen des Tools verstehen können, welche Simulationen bei bestimmten Kriterien besonders gut abgeschnitten haben. Mithilfe eines mehrdimensionalen Graphen können die Benutzer die Gesamtleistung bestimmter Simulationen visualisieren und jedem Kriterium manuell unterschiedliche Gewichtungen zuweisen. Anhand dieser Informationen kann die zuständige Person die für sie passendste Simulation als Vorlage für den finalen Schritt auswählen. 
-
-{% include macro-image-section-markdown.html src="../images/Auswahl-desktop@2x.png" caption="In unserer Anwendungen kann man die 30 "besten" Simulationen anschauen und miteinander vergleichen." %}
+{% include macro-image-section-markdown.html src="../images/Auswahl-desktop@2x.png" caption="In unserer Anwendungen kann man die 30 besten Simulationen anschauen und miteinander vergleichen." %}
 
 
-5. Im letzten Schritt haben wurde **eine interaktive Karte** erstellt, die Änderungen auf Blockebene an der simulierten optimierten Version ermöglicht, die vom Algorithmus erzeugt wurden. Wir wollten, dass unser Tool sowohl hilfreiche automatische Unterstützung bietet als auch dem Benutzer die Möglichkeit gibt, die endgültige Ausgabe selbst zu bestimmen. Durch Klicken auf eine Karte, die die Simulation ihrer Wahl repräsentiert, sind die Benutzer intuitiv in der Lage, die Zuordnung von Blöcken zu verschiedenen benachbarten Bezirken zu verschieben. Damit einhergehend werden sie über die gesamte Bevölkerungsänderung informiert, die sich aus dieser Modifikation ergibt. 
-
-{% include macro-image-section-markdown.html src="../images/Auswahl-desktop@2x.png" caption="In unserer Anwendungen kann man die 30 "besten" Simulationen anschauen und miteinander vergleichen." %}
+**5)** Im letzten Schritt haben wurde **eine interaktive Karte** erstellt, die Änderungen auf Blockebene an der simulierten optimierten Version ermöglicht, die vom Algorithmus erzeugt wurden. Wir wollten, dass unser Tool sowohl hilfreiche automatische Unterstützung bietet als auch dem Benutzer die Möglichkeit gibt, die endgültige Ausgabe selbst zu bestimmen. Durch Klicken auf eine Karte, die die Simulation ihrer Wahl repräsentiert, sind die Benutzer intuitiv in der Lage, die Zuordnung von Blöcken zu verschiedenen benachbarten Bezirken zu verschieben. Damit einhergehend werden sie über die gesamte Bevölkerungsänderung informiert, die sich aus dieser Modifikation ergibt. (Diese interaktive Karte ist im [Online-Prototyp](http://wahlbezirke.odis-berlin.de/) unter dem Reiter "Editor" verfügbar.)
 
 
 ## Zukünftige Schritte
