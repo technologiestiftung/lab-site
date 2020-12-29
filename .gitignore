@@ -7,6 +7,9 @@ build/**
 tmp
 # IDE & Editors
 .vscode
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
 # keep the snippet
 !.vscode/enclose-in-jekyll-comment.code-snippets
 # OSX
@@ -85,3 +88,5 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 project-generator/source/projects/*
+
+
