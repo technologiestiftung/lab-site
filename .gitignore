@@ -1,5 +1,4 @@
 .netlify
-.vscode
 # Distribution Files
 dist/**
 build/**
@@ -88,5 +87,3 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 project-generator/source/projects/*
-
-
