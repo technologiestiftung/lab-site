@@ -5,7 +5,7 @@ build/**
 *.map
 tmp
 # IDE & Editors
-.vscode
+.vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json
 !.vscode/tasks.json
