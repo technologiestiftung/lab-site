@@ -29,9 +29,9 @@ Die Motivation für die Entwicklung dieses Werkzeugs liegt in den demographische
 
 Um diesen Prozess für Mitarbeiter\*innen der Stadtverwaltung zukünftig zu vereinfachen, hat die Open Data Informationsstelle ([ODIS](https://odis-berlin.de)) der Technologiestiftung Berlin ein Werkzeug entwickelt, das einzelne Straßenblöcke automatisiert neuen Wahlkreisen zuordnet.
 
-- **[Hier geht's lang zu der interaktiven Webversion des Prototyps.](http://wahlbezirke.odis-berlin.de/)**
+- **[Hier geht's zur interaktiven Webversion des Prototyps.](http://wahlbezirke.odis-berlin.de/)**
 
-In den Text unten beschreiben wir näher, was unser Prozess für die Entwicklung des Tools war (mit Screenshots aus dem Web-Prototyp).
+Im folgenden Text beschreiben wir näher, welches Vorgehen wir bei der Entwicklung des Tools verfolgt haben (mit Screenshots aus dem Web-Prototyp).
 
 ## Entwicklung des Tools
 
