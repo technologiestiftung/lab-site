@@ -1,5 +1,26 @@
 [
   {
+    "name": "Joshua Pacheco",
+    "role": {
+      "en": "Service Designer",
+      "de": "Service Designer"
+    }
+  },
+  {
+    "name": "Sina Beckstein",
+    "role": {
+      "en": "Projectmanagement & Partnerships",
+      "de": "Projectmanagement & Partnerships"
+    }
+  },
+  {
+    "name": "Jeremias Volker",
+    "role": {
+      "en": "Creative Technologist & Interaction Designer",
+      "de": "Creative Technologist & Interaction Designer"
+    }
+  },
+  {
     "name": "Dr. Sebastian Meier",
     "role": {
       "en": "Lead Data Scientist",
