@@ -8,5 +8,6 @@ twitter:
 github: jvolker
 position: Creative Technologist & Interaction Designer
 type: publication
+external: true
 order: 2
 ---

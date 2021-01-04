@@ -8,8 +8,8 @@ twitter: SinaBeckstein
 github:
 position: Projectmanagement & Partnerships
 type: publication # could also be "workshop", "dataset", "prototype"
+external: true
 order: 1
 ---
-
 
 Das ist als content zu haben
