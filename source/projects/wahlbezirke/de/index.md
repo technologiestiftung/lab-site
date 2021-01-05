@@ -1,9 +1,9 @@
 ---
 layout: project
-description: ODIS präsentiert ihren neuen Prototyp, der die automatisierte Generierung von Wahlbezirke unterstützt.
+description: Ein digitales Tool der ODIS vereinfacht das notwendige Zuschneiden neuer Wahlbezirke für Verwaltungsbeschäftigte
 lang: de
-title: Ein digitaler Prototyp für die Optimierung von Wahlbezirken
-subtitle: Mit diesem neuen ODIS-Prototyp können Verwaltungsbeschäftigte aufgrund von Bevölkerungsänderungen leichter neue Wahlbezirke zuschneiden.
+title: Digitaler Prototyp für die Optimierung von Wahlbezirken
+subtitle: Ein digitales Tool der ODIS vereinfacht das notwendige Zuschneiden neuer Wahlbezirke für Verwaltungsbeschäftigte aufgrund von Bevölkerungsveränderungen
 type: prototype
 colorMode: bright
 featuredImage: /projects/wahlbezirke/images/featured.jpg
@@ -73,6 +73,6 @@ Die besten generierten Karten wurden entweder anhand (1) ihrer Gesamtleistung al
 
 ## Zukünftige Schritte
 
-Aktuell stellt ODIS einen webbasierten Prototypen zur Verfügung, der die oben beschriebenen Schritte verfolgt und einen interaktiven Editor anbietet. In diesem webbasierten Prototypen ist es aktuell nicht möglich, eigene Dateien hochzuladen (z.B. eine GeoJSON-Datei mit Einwohnerzahlen und den bestehenden Wahlbezirken) und darauf basierend eigene Simulationen zu generieren. Bisher kann nur mit Simulationen gearbeitet werden, die schon von unserem Algorithmus generiert und in die Web-Anwendung eingepflegt wurden. Wer seine eigenen Daten verarbeiten will, hat die Möglichkeit die Anwendung selbst zu hosten (Quellcode ist auf GitHub verfügbar) . So können eigene Daten in die Anwendung eingeladen, Simulationen generiert und anschließend im Editor bearbeitet werden.
+Aktuell stellt ODIS einen webbasierten Prototypen zur Verfügung, der die oben beschriebenen Schritte verfolgt und einen interaktiven Editor anbietet. In diesem webbasierten Prototypen ist es aktuell nicht möglich, eigene Dateien hochzuladen (z.B. eine GeoJSON-Datei mit Einwohnerzahlen und den bestehenden Wahlbezirken) und darauf basierend eigene Simulationen zu generieren. Bisher kann nur mit Simulationen gearbeitet werden, die schon von unserem Algorithmus generiert und in die Web-Anwendung eingepflegt wurden. Wer seine eigenen Daten verarbeiten will, hat die Möglichkeit die Anwendung selbst zu hosten (Quellcode ist auf GitHub verfügbar). So können eigene Daten in die Anwendung eingeladen, Simulationen generiert und anschließend im Editor bearbeitet werden.
 
-Für 2021 plant ODIS Kontakt mit allen bezirklichen Wahlämtern aufzunehmen, um eine mögliche Umsetzung des Tools für ganz Berlin zu evaluieren
+Für 2021 plant ODIS Kontakt mit allen bezirklichen Wahlämtern aufzunehmen, um eine mögliche Umsetzung des Tools für ganz Berlin zu evaluieren.
