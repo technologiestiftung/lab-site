@@ -2,8 +2,8 @@
 layout: project
 description: ODIS präsentiert ihren neuen Prototyp, der die automatisierte Generierung von Wahlbezirke unterstützt.
 lang: de
-title: Ein digitaler Prototyp für die Generierung von Wahlbezirken
-subtitle: Mit diesem neuen ODIS-Prototyp können Verwaltungsbeschäftigte aufgrund von Bevölkerungsänderungen leicht neue Wahlbezirke zuschneiden.
+title: Ein digitaler Prototyp für die Optimierung von Wahlbezirken
+subtitle: Mit diesem neuen ODIS-Prototyp können Verwaltungsbeschäftigte aufgrund von Bevölkerungsänderungen leichter neue Wahlbezirke zuschneiden.
 type: prototype
 colorMode: bright
 featuredImage: /projects/wahlbezirke/images/featured.jpg
@@ -17,7 +17,11 @@ authors:
 start: 2020-02-01
 end: 2020-12-18
 status: finished
-date: 2020-12-18
+date: 2021-01-11
+
+materialsIncluded:
+  - name: "GitHub"
+    link: "https://github.com/technologiestiftung/odis-wahlbezirke"
 
 ---
 
@@ -29,7 +33,7 @@ Die Motivation für die Entwicklung dieses Werkzeugs liegt in den demographische
 
 Um diesen Prozess für Mitarbeiter\*innen der Stadtverwaltung zukünftig zu vereinfachen, hat die Open Data Informationsstelle ([ODIS](https://odis-berlin.de)) der Technologiestiftung Berlin ein Werkzeug entwickelt, das einzelne Straßenblöcke automatisiert neuen Wahlkreisen zuordnet.
 
-- **[Hier geht's zur interaktiven Webversion des Prototyps.](http://wahlbezirke.odis-berlin.de/)**
+- **[Hier geht's zur interaktiven Webversion des Prototyps.](https://wahlbezirke.odis-berlin.de/)**
 
 Im folgenden Text beschreiben wir näher, welches Vorgehen wir bei der Entwicklung des Tools verfolgt haben (mit Screenshots aus dem Web-Prototyp).
 
