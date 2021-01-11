@@ -76,3 +76,8 @@ Currently, the protoype consists of a web-based application, which presents the 
 
 For 2021, ODIS plans to meet with representatives from all of Berlin's 12 district election offices in order to evaluate the possibility of developing this tool further so that it can be used Berlin-wide.
 
+## Disclaimer
+
+The modification of district boundaries always raises important neutrality concerns. Please note that we are committed to offer a **politically neutral support** to city officials as they redraw the borders of voting district within the city of Berlin. Our tool does not decide the new electoral map that will be implemented, but rather proposes a series of scenarios that can further be modified by its users. 
+
+Our algorithm uses official governmental data in order to generate iterations that maximize both the geographical compactness of districts and the evenness of the population distribution across the borough. Neither demographic characteristics data nor political affiliation data are taken into account during this process. Our tool is therefore unable to systemically favor any political party or demographic group, and rather seeks to offer a variety of scenarios strictly based on the distribution of the population within the borough. In line with our commitment to the transparency and the neutrality of this process, our code is openly available on GitHub for replication purposes.
