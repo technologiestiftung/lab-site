@@ -1,0 +1,30 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "project-generator"
+    }
+  ],
+  "settings": {
+    "workbench.colorCustomizations": {
+      "tab.unfocusedActiveBackground": "#ff0000",
+      "activityBar.background": "#84fe86",
+      "activityBar.activeBackground": "#84fe86",
+      "activityBar.activeBorder": "#8381fe",
+      "activityBar.foreground": "#15202b",
+      "activityBar.inactiveForeground": "#15202b99",
+      "activityBarBadge.background": "#8381fe",
+      "activityBarBadge.foreground": "#15202b",
+      "titleBar.activeBackground": "#51fe54",
+      "titleBar.inactiveBackground": "#51fe5499",
+      "titleBar.activeForeground": "#15202b",
+      "titleBar.inactiveForeground": "#15202b99",
+      "statusBar.background": "#51fe54",
+      "statusBarItem.hoverBackground": "#1efe22",
+      "statusBar.foreground": "#15202b"
+    },
+    "peacock.color": "#51fe54"
+  }
+}

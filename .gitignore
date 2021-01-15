@@ -1,3 +1,4 @@
+.netlify
 .vscode
 # Distribution Files
 dist/**
