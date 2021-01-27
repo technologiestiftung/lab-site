@@ -9,7 +9,7 @@ colorMode: bright
 featuredImage: /projects/wahlbezirke/images/featured.jpg
 thumbnail: /projects/wahlbezirke/images/thumbnail.png
 heroImage: /projects/wahlbezirke/images/hero.png
-socialMediaImage: /projects/wahlbezirke/social_media.jpg
+socialMediaImage: /projects/wahlbezirke/images/social_media.jpg
 visible: true
 featured: false
 authors:
@@ -79,6 +79,6 @@ Für 2021 plant ODIS Kontakt mit allen bezirklichen Wahlämtern aufzunehmen, um 
 
 ## Anmerkung zur politischen Bedeutung von Wahlbezirksgrenzen
 
-Die Veränderung von Wahlbezirksgrenzen ist schon immer ein heikles Thema und kann Skepsis hinsichtlich der Neutralität der Verantwortlichen wecken. Beobachter der US-Politik werden mit Diskussionen um das sogenannte [Gerrymandering](https://en.wikipedia.org/wiki/Gerrymandering) vertraut sein und damit, wie es Wahlergebnisse beeinflussen kann. Mit unserem Wahlbezirksprototypen haben wir bewusst ein Tool entwickelt, das beim Zuschneiden neuer Wahlbezirke eine **politisch neutrale Unterstützung** darstellt. Unser Tool trifft keine entgültige Entscheidung darüber, wie die neuen Wahlgebiete aussehen sollen, sondern schlägt eine Reihe von Szenarien vor, die von den Benutzer\*innen weiter nach ihren individuellen Vorgaben bearbeitet werden können. Dieses Tool ist ein Hilfsmittel, keine vollständig automatisierte Komplettlösung und ist nicht dafür gedacht menschliche Entscheidungsprozesse zu ersetzen.
+Die Veränderung von Wahlbezirksgrenzen ist schon immer ein heikles Thema und kann Skepsis hinsichtlich der Neutralität der Verantwortlichen wecken. Beobachter der US-Politik werden mit Diskussionen um das sogenannte [Gerrymandering](https://en.wikipedia.org/wiki/Gerrymandering) vertraut sein und damit, wie es Wahlergebnisse beeinflussen kann. Mit unserem Wahlbezirksprototypen haben wir bewusst ein Tool entwickelt, das beim Zuschneiden neuer Wahlbezirke eine **politisch neutrale Unterstützung** darstellt. Unser Tool trifft keine endgültige Entscheidung darüber, wie die neuen Wahlgebiete aussehen sollen, sondern schlägt eine Reihe von Szenarien vor, die von den Benutzer\*innen weiter nach ihren individuellen Vorgaben bearbeitet werden können. Dieses Tool ist ein Hilfsmittel, keine vollständig automatisierte Komplettlösung und ist nicht dafür gedacht menschliche Entscheidungsprozesse zu ersetzen.
 
 Unser Algorithmus verwendet offizielle Verwaltungsdaten, um Simulationen zu generieren, die sowohl die geografische Kompaktheit der Wahlbezirke als auch die Gleichmäßigkeit der Bevölkerungsverteilung im Bezirk maximieren. Dabei werden weder demografische Merkmale, noch Daten zur politischen Zugehörigkeit berücksichtigt. Unser Instrument ist daher nicht in der Lage eine politische Partei oder eine demografische Gruppe systematisch zu bevorzugen, sondern versucht eine Vielzahl von Szenarien anzubieten, die ausschließlich auf der Verteilung der Bevölkerung innerhalb des Bezirks basieren. Entsprechend unserer Verpflichtung zur Transparenz und Neutralität dieses Prozesses steht unser Quellcode für Replikationszwecke [offen auf GitHub zur Verfügung](https://github.com/technologiestiftung/odis-wahlbezirke).

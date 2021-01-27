@@ -9,7 +9,7 @@ colorMode: bright
 featuredImage: /projects/wahlbezirke/images/featured.jpg
 thumbnail: /projects/wahlbezirke/images/thumbnail.png
 heroImage: /projects/wahlbezirke/images/hero.png
-socialMediaImage: /projects/wahlbezirke/social_media.jpg
+socialMediaImage: /projects/wahlbezirke/images/social_media.jpg
 visible: true
 featured: false
 authors:
