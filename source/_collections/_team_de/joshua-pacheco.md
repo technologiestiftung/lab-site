@@ -8,5 +8,6 @@ twitter: joshuapachecos
 github: josues
 position: Service Designer
 type: publication
+external: true
 order: 2
 ---
