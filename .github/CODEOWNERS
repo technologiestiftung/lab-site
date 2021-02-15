@@ -1,24 +1,14 @@
 # https://help.github.com/articles/about-code-owners/
 
-* @fabianmoronzirfas @dnsos
+* @ff6347 @dnsos
 
 source/assets/js/* @dnsos
 source/assets/js/css/* @dnsos
 source/assets/js/_scss/* @dnsos
 
-project-generator/* @fabianmoronzirfas
-tslint.json @fabianmoronzirfas
-tsconfig.json @fabianmoronzirfas
-Gemfile.lock @fabianmoronzirfas
-Gemfile @fabianmoronzirfas
-jest.config.js @fabianmoronzirfas
-.travis.yml @fabianmoronzirfas
-.stylelintrc.js @fabianmoronzirfas
-.node-version @fabianmoronzirfas
-.eslintrc.js @fabianmoronzirfas
-.editorconfig @fabianmoronzirfas
-_config.yml @fabianmoronzirfas
-__tests__/* @fabianmoronzirfas
-.uglifyrc @fabianmoronzirfas
-source/_collections/* @fabianmoronzirfas
-source/_data/* @fabianmoronzirfas
+project-generator/* @ff6347
+Gemfile.lock @ff6347
+Gemfile @ff6347
+jest.config.js @ff6347
+source/_collections/* @ff6347
+source/_data/* @ff6347
