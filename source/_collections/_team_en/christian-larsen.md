@@ -8,7 +8,7 @@ twitter:
 github:
 position: Working Student
 type: publication # could also be "workshop", "dataset", "prototype"
-order: 2
+order: 4
 ---
 
 Das ist als content zu haben
