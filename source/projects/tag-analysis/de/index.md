@@ -54,7 +54,12 @@ Using the information from our data analysis, we used the visNetwork function in
 
 ## Insights
 
-From the graph, we can derive some interesting correlations to the frequency and use of tags. We see for example that the largest node is *Geodaten*, meaning this is the most frequently used tag in the data portal. When we select the *Geodaten* node, we can see what other terms are frequently used in connection with *Geodaten*. Some connections are not particularly surprising (e.g., *Karten*), but other connections give us an impression of what kinds of geospatial data are being published (for example, many of the connected nodes have something to do with geology/geological data).
+From the graph, we can derive some interesting correlations to the frequency and use of tags. The graph is visually divided into 2 large culsters that are only linked by a few tags. One is the area around the red *Geodata* and *Karten* nodes. It seems that at least most of the tags contained here belong to data sets that are actual geodata, i.e. data that have a spatial reference and can be further processed with a geoinformation system, for example. The second large cluster is found around the blue *GSI* and yellow *Regionalvergleich* nodes. Data from this subject areas of health and social affairs, as well as care and demography, are therefore frequently not available as georeferenced data sets. One reason for this is certainly that many of the data do not have a spatial reference or the spatial reference takes place via the specification of LORs, as the *LOR* node suggests, which represents a kind of link between the two large clusters.
 
-...
-...
+Also interesting are the connections of this "center nodes". We see for example that the largest node is *Geodaten*, meaning this is the most frequently used tag in the data portal. When we select the *Geodaten* node, we can see what other terms are frequently used in connection with *Geodaten*. Some connections are not particularly surprising (e.g., *Karten*), but other connections give us an impression of what kinds of geospatial data are being published (for example, many of the connected nodes have something to do with geology/geological data).
+
+There are some emerged categories in our calculation that contain very few tags. An example of this is the category *Verletzungen* which consists only of the 2 tags *Vergiftung* and *Verletzungen*. The fact that a category was created at all for these tags tells us that there is a larger number of records for these topics in the portal (since only the most frequently occurring tags were included in the graph). Obviously, however, these are mainly data sets that contain information on both topics in combination and not individual data sets.
+
+
+In summary, our tag analysis provides an interesting insight into the diversity, frequency, and coherence of the topics covered by the datasets in the Berlin Dataportal. Tags remain an important tool for describing data and making it more discoverable. Of course, the graph cannot show all the connections, as only the most frequent tags and connections have been included.
+
