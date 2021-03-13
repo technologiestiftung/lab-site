@@ -36,7 +36,7 @@
   "homepage": "https://github.com/technologiestiftung/lab-site#readme",
   "dependencies": {
     "d3": "^6.0.0",
-    "whatwg-fetch": "3.5.0"
+    "whatwg-fetch": "3.6.2"
   },
   "devDependencies": {
     "@babel/core": "7.12.10",
