@@ -1,9 +1,9 @@
 ---
 layout: project
-description: Analysis of the most frequently used tags for Berlins Open Data.
+description: Analyse der meist genutzten Tags im Berliner Open Data Portal.
 lang: de
-title: "The Urban Open Data Network"
-subtitle: A cluster analysis shows on which topics the most data from Berlins Open Data Portal is available and how different issues are interrelated
+title: "Urban Open Data Network"
+subtitle: Eine Clusteranalyse zeigt, zu welchen Themen die meisten Daten im Open Data Portal Berlin vorhanden sind und wie sie sich durch Tags miteinander verknüpft lassen
 type: dataset
 colorMode: bright
 featuredImage: /projects/tag-analysis/images/featured.jpg
@@ -17,7 +17,7 @@ authors:
 start: 2021-02-01
 end: 2021-03-01
 status: finished
-date: 2021-03-05
+date: 2021-03-16
 
 materialsIncluded:
   - name: "GitHub"
@@ -25,41 +25,45 @@ materialsIncluded:
 
 ---
 
-## Context and Objectives
+## Hintergrund und Zielsetzung
 
-The data used for this analysis are the description tags from all 2,514 datasets available on the Berlin Open Data Portal. These tags are used to describe the content of each dataset, therefore allowing users to find other datasets on similar themes. For instance, the dataset on eMobility electric stations is described by tags like *Elektro-Ladesäulen*, *Mobilität* and *Emobility*, each of which are associated with other data. On average, each dataset is described by 11.7 tags. Our objective was to determine which tags occurred most often with which other tags in order to outline a thematical network for all datasets available on the Berlin Open Data Portal. This allows to understand which tags are common across themes, and which themes are typically closest to each other in terms of content. 
+Offene, frei-verfügbare Datensätze werden für das Land Berlin zentral über eine Plattform gesammelt, dem [Open Data Portal Berlin](https://daten.berlin.de). Wer offene Daten sucht, für den ist diese Website die erste Anlaufstelle. Damit spezielle Datensätze von Nutzer\*innen in der Fülle des Portals auch gut gefunden werden können, wird jeder Datensatz durch Schlüsselworte, die sogenannten Tags, beschrieben. Diese Tags werden verwendet, um den Inhalt jedes Datensatzes schnell erfassbar zu machen und ermöglichen es den Nutzern so, andere Datensätze zu ähnlichen Themen zu finden. Zum Beispiel wird der Datensatz zu eMobility-Elektrostationen durch Tags wie *Elektro-Ladesäulen*, *Mobilität* und *Emobility* beschrieben, die jeweils mit anderen Daten verknüpft sind. Im Durchschnitt wird jeder Datensatz durch 11,7 Tags beschrieben. 
 
-## Getting Data and Extracting Tags
+Unser Ziel war es, festzustellen, welche Tags am häufigsten mit welchen anderen Tags vorkommen, um ein thematisches Netzwerk für alle auf dem Berlin Open Data Portal verfügbaren Datensätze zu skizzieren. So lässt sich nachvollziehen, welche Tags themenübergreifend gemeinsam vorkommen und welche Themen typischerweise inhaltlich am nächsten beieinander liegen. 
+Die Daten, die für diese Analyse verwendet wurden, sind die Tags von allen 2,643 Datensätzen, die auf dem Berlin Open Data Portal zu diesem Zeitpunkt (15. März 2021) verfügbar waren.
 
-The data register, which is responsible for the input and storage of all data records in the Berlin Open Data Portal, is based on the widely used software CKAN (Comprehensive Knowledge Archive Network). CKAN offers a so-called API, i.e. an interface for programming applications. This makes it possible, for example, to perform a search or analysis on the contents of the portal that goes beyond the possibilities of the web interface. You can also read more about CKAN in the context of the data portal [here](https://berlinonline.github.io/open-data-handbuch/#ckan-api-1).
+## Datengrundlage und Extraktion der Tags
 
-We used the CKAN API to access the data about tags. Using the R package ckanr, we made a request query to access the metadata for all datasets of the Open Data Portal. The output of this query is a JSON object---which can be presented as a table---with each row containing information on a different dataset from the Open Data Portal. One of the columns within this table contains a list of all tags associated with a given dataset, which is precisely the information we needed to complete this project. 
+Das Datenregister, das für die Eingabe und Speicherung aller Datensätze im Berlin Open Data Portal verwendet wird, basiert auf der weit verbreiteten Software CKAN (Comprehensive Knowledge Archive Network). CKAN bietet eine sogenannte API, d.h. eine Schnittstelle zur Programmierung von Anwendungen. Damit ist es z.B. möglich, eine über die Funktionen der Weboberfläche des Datenportals hinausgehende Suche oder Analyse mit den Inhalten durchzuführen. Mehr über CKAN im Zusammenhang mit dem Datenportal kann auch [hier](https://berlinonline.github.io/open-data-handbuch/#ckan-api-1) nachgelesen werden.
 
-We separated these tags and proceeded to clean them in order to avoid duplicates. More precisely, we uniformized tags which were written in sometimes slightly different formats across datasets, using singular or plural forms of a same noun, including or excluding accents, and with or without capital letters. Additionally, we removed stop words like *der* or *ein*, which are superfluous to our analysis and distract from the content of the tags. Once these changes were made, we removed the tag *Berlin*, which was the most used tag of all datasets---without providing any relevant information. 
+Um an die Daten zu den Tags der einzelnen Datensätze zu kommen, haben wir die CKAN-API verwendet. Mit Hilfe der Programmiersprache R und des R-Pakets *ckanr* haben wir eine Abfrage erstellt, um auf die Metadaten aller Datensätze des Open Data Portals zuzugreifen. Die Ausgabe dieser Abfrage ist ein JSON-Objekt, das als Tabelle dargestellt werden kann, wobei jede Zeile Informationen über einen Datasatz des Open Data Portals enthält. Eine der Spalten in dieser Tabelle enthält eine Liste aller Tags, die mit einem bestimmten Datensatz verknüpft sind, was genau die Informationen sind, die wir für dieses Projekt benötigten. 
+
+In einem nächsten Schritt wurden die Tags getrennt und bereinigt, um Duplikate zu vermeiden. Dafür haben wir die Tags vereinheitlicht, indem wir Wörter mit Singular- oder Pluralformen desselben Substantivs, mit oder ohne Akzenten und mit oder ohne Großbuchstaben, jeweils auf eine Form reduziert haben. Zusätzlich haben wir Stoppwörter wie *der* oder *ein* entfernt, die für unsere Analyse überflüssig sind und vom Inhalt der Tags ablenken. Nach diesen Änderungen entfernten wir den Tag *Berlin*, der der am häufigsten verwendete Tag aller Datensätze war - ohne relevante Informationen zu liefern. 
 
 
-## Analyzing the tags
+## Analyse der Tags
 
-We analyzed the tags by creating bigrams off all cooccurring tags--i.e. which tags are used with which other tags in the same dataset, and how often. This resulted in 22,783 tag bigrams whose occurrence distribution is displayed below. The median tag occurrence is 15, which means that most tag associations occur in 15 different datasets (as is the case for *Industriegebiet* and *Karten*), but the most cooccurring bigrams were present in up to 183 datasets (like for *Radverkehr* and *Anlegestelle*). 
+Die Tag-Zusammenhänge wurden nun analysiert, indem wir Bigramme aus allen gemeinsam vorkommenden Tags erstellten. So konnten wir identifizieren, welche Tags mit welchen anderen Tags für die selben Datensätze verwendet wurden und wie häufig. Daraus ergaben sich 22.783 Tag-Bigramme, deren Häufigkeitsverteilung unten dargestellt ist. Der Median des Tag-Biagramm-Vorkommens liegt bei 15. Tag-Pärchen kommen also statistisch gesehen am häufigsten in 15 verschiedenen, gemeinsamen Datensätzen vor (wie bei *Industriegebiet* und *Karten*). Es geht aber auch deutlich häufiger. Die Pärchen mit den höchsten Vorkommen, sind in bis zu 183 Datensätzen vorhanden (z.B. *Radverkehr* und *Anlegestelle*). 
 
 {% include macro-image-section-markdown.html src="../images/bigramm.png"%}
 
-Our next step was to conduct an automatic clustering analysis of all tags based on these bigrams. Using a Louvain community detection model, we measured which bigrams cooccured most often with which other bigrams, creating a network of bigrams separated across different themes. Using the most frequently used tags, this cluster analysis identified 28 different themes containing multiple bigrams which were manually given a label. Indeed, community detection is helpful to indicate which bigrams occur with which other bigrams, but the software itself isn't able to understand the underlying concept uniting terms like *Preise* and *Werte*. We therefore attributed labels using our understanding of the most common conceptual denominator behind these groups of tags. 
+Im nächster Schritt wurde eine automatische Clusteranalyse aller Tags auf der Grundlage der Bigramme durchgeführt. Mithilfe eines Louvain-Community-Detection-Modells konnten wir identifizieren, wie häufig Bigramme mit welchen anderen Bigrammen vorkommen, und so ein Netzwerk von Tag-Verbindungen erstellt. Unter Verwendung der am häufigsten verwendeten Tags identifizierte diese Clusteranalyse 28 verschiedene Kategorien, die ein oder mehrere Bigramme enthalten. Das Detection-Modell ist zwar hilfreich, um anzuzeigen, welche Bigramme mit welchen anderen Bigrammen auftreten, aber die Software selbst ist nicht in der Lage, das zugrunde liegende Konzept zu verstehen, das z.B. Begriffe wie *Preise* und *Werte* vereint. Wir haben daher manuell Labels für die Kategorien vergeben, indem wir unser Verständnis des gemeinsamsten konzeptionellen Nenners hinter diesen Gruppen von Tags verwendet haben. 
+ 
 
-## Visualization 
+## Visualisierung
 
-Using the information from our data analysis, we used the visNetwork function in R to establish a network visualization of our dataset tags. This visualization includes a search option for tags and categories. Nodes, each of which represents a different tag, are weighted to represent its number of total occurrences across all datasets---the bigger the node, the most frequently it appears on the Berlin Open Data Portal. Edges, which are the lines uniting nodes, illustrate how often tags occur in the same dataset using our initial bigram analysis. The graph is also interactive: when clicking on one of the nodes or edges, the associated tag(s) and their category and occurrence appear. 
+Anhand der Informationen aus unserer Datenanalyse haben wir mit der Funktion visNetwork in R eine Netzwerkvisualisierung der Tags unseres Datensatzes erstellt. Diese Visualisierung enthält eine Suchoption für Tags und Kategorien. Die Knotenpunkte, von denen jeder einen anderen Tag repräsentiert, werden gewichtet, um die Anzahl ihrer gesamten Vorkommen über alle Datensätze hinweg darzustellen - je größer der Node, desto häufiger kommt der zugehörige Tag im Berlin Open Data Portal vor. Die Kanten bzw. Linien, die diese Knoten miteinander verbinden, zeigen an, wie oft die Tags gemeinsam in Datensätzen vorkommen, also wie viele Tag-Pärchen durch die Bigramm-Analyse gefunden wurden. Der Graph ist interaktiv: Wenn man auf einen der Knoten oder Kanten klickt, erscheinen die zugehörigen Tags, deren Kategorie und Vorkommenshäufigkeiten. 
 
-- **[Try it yourself here!]()**
+- **[Sieh dir hier den interaktiven Graphen an!]()**
 
-## Insights
+## Auswertung
 
-From the graph, we can derive some interesting correlations to the frequency and use of tags. The graph is visually divided into 2 large culsters that are only linked by a few tags. One is the area around the red *Geodata* and *Karten* nodes. It seems that at least most of the tags contained here belong to data sets that are actual geodata, i.e. data that have a spatial reference and can be further processed with a geoinformation system, for example. The second large cluster is found around the blue *GSI* and yellow *Regionalvergleich* nodes. Data from this subject areas of health and social affairs, as well as care and demography, are therefore frequently not available as georeferenced data sets. One reason for this is certainly that many of the data do not have a spatial reference or the spatial reference takes place via the specification of LORs, as the *LOR* node suggests, which represents a kind of link between the two large clusters.
+Aus der Analyse lassen sich einige interessante Korrelationen zur Häufigkeit und Verwendung von Tags ableiten. Der Graph teilt sich optisch in zwei große Bereiche auf, die nur über wenige Tags miteinander verknüpft sind. Der eine Bereich ist der rund um die Knotenpunkte *Geodaten* und *Karten*. Es scheint, dass zumindest die meisten der hier enthaltenen Tags zu Datensätzen gehören, die tatsächliche Geodatensätze sind, also Daten die einen Raumbezug haben und zum Beispiel mit einem Geoinformationssystem weiterverarbeitet werden können. Das zweite große Cluster findet sich rund um die Nodes *GSI* und *Regionalvergleich*. Daten aus dem Themenbereichen Gesundheit und Sozialen, sowie Pflege und Demografie liegen demnach häufig nicht als georeferenzierte Datensätze vor. Ein Grund dafür ist sicher, dass viele der Daten keine Raumbezug besitzen oder der Raumbezug über die Angabe von LOR's stattfindet, wie der Knotenpunkt *LOR* (Lebensweltlich orientierte Räume, eine Raumeinheit, siehe auch unseren Post dazu [hier](https://lab.technologiestiftung-berlin.de/projects/spatial-units/de/)) vermuten lässt, der eine Art Bindeglied zwischen den zwei großen Clustern darstellt.
 
-Also interesting are the connections of this "center nodes". We see for example that the largest node is *Geodaten*, meaning this is the most frequently used tag in the data portal. When we select the *Geodaten* node, we can see what other terms are frequently used in connection with *Geodaten*. Some connections are not particularly surprising (e.g., *Karten*), but other connections give us an impression of what kinds of geospatial data are being published (for example, many of the connected nodes have something to do with geology/geological data).
+Interessant sind auch die Verbindungen der Hauptknotenpunkte. Wir sehen zum Beispiel, dass der größte Node durch den Tag *Geodaten* bezeichnet ist, was bedeutet, dass dies der am häufigsten verwendete Tag im Datenportal ist. Wenn wir den Knoten *Geodaten* auswählen, können wir sehen, welche anderen Begriffe häufig im Zusammenhang mit *Geodaten* verwendet werden. Einige Verbindungen sind nicht besonders überraschend (z.B. *Karten*), aber andere Verbindungen geben uns einen Eindruck davon, welche spezielleren Arten von Geodaten in größerer Zahl veröffentlicht wurden z.B. haben viele der verbundenen Knoten etwas mit Daten aus dem Umweltbereich zu tun.
 
-There are some emerged categories in our calculation that contain very few tags. An example of this is the category *Verletzungen* which consists only of the 2 tags *Vergiftung* and *Verletzungen*. The fact that a category was created at all for these tags tells us that there is a larger number of records for these topics in the portal (since only the most frequently occurring tags were included in the graph). Obviously, however, these are mainly data sets that contain information on both topics in combination and not individual data sets.
+Es gibt in unserer Berechnung einige entstandene Kategorien, die nur sehr wenige Tags enthalten. Ein Beispiel dafür ist die Kategorie Verletzungen die nur aus den zwei Tags *Vergiftungen* und *Verletzungen* besteht. Die Tatsache, dass zu diesen Tags überhaupt eine Kategorie erstellt wurde, sagt uns, das zu diesen Themen eine größere Anzahl Datensätzen im Portal vorhanden ist (da nur die am häufigsten auftretenden Tags in den Graphen mit aufgenommen wurden). Offensichtlich handelt es sich dabei aber überwiegend um Datensätze die Informationen zu beiden Themen in Kombination enthalten und nicht um jeweils einzelne Datensätze.
 
+Zusammenfassend lässt sich sagen, dass unsere Taganalyse einen interessanten Einblick in die Vielfalt, Häufigkeit und Zusammenhänger der durch die Datensätze abgedeckten Themen gibt. Tags sind und bleiben ein wichtiges Tool, um Daten zu beschreiben und besser auffindbar zu machen. Natürlich kann der Graph aber nicht alle Zusammenhänge darstellen, da nur die häufigsten Tags und Verbindungen mit eingeflossen sind.
 
-In summary, our tag analysis provides an interesting insight into the diversity, frequency, and coherence of the topics covered by the datasets in the Berlin Dataportal. Tags remain an important tool for describing data and making it more discoverable. Of course, the graph cannot show all the connections, as only the most frequent tags and connections have been included.
 
