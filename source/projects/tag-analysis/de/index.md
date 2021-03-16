@@ -54,7 +54,7 @@ Im nächsten Schritt wurde eine automatische Clusteranalyse aller Tags auf der G
 
 Anhand der Informationen aus unserer Datenanalyse haben wir mit der Funktion visNetwork in R eine Netzwerkvisualisierung der Tags unseres Datensatzes erstellt. Diese Visualisierung enthält eine Suchoption für Tags und Kategorien. Die Knotenpunkte, von denen jeder einen anderen Tag repräsentiert, werden gewichtet, um die Anzahl ihrer gesamten Vorkommen über alle Datensätze hinweg darzustellen - je größer der Node, desto häufiger kommt der zugehörige Tag im Berlin Open Data Portal vor. Die Kanten bzw. Linien, die diese Knoten miteinander verbinden, zeigen an, wie oft die Tags gemeinsam in Datensätzen vorkommen, also wie viele Tag-Pärchen durch die Bigramm-Analyse gefunden wurden. Der Graph ist interaktiv: Wenn man auf einen der Knoten oder Kanten klickt, erscheinen die zugehörigen Tags, sowie deren Kategorie und Vorkommenshäufigkeiten. 
 
-- **[Sieh dir hier den interaktiven Graphen an!]()**
+- **[Sieh dir hier den interaktiven Graphen an!](https://odis-berlin.de/ressourcen/tag-analyse.html)**
 
 ## Auswertung
 

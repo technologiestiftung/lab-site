@@ -53,7 +53,7 @@ Our next step was to conduct an automatic clustering analysis of all tags based 
 
 Using the information from our data analysis, we used the visNetwork function in R to establish a network visualization of our dataset tags. This visualization includes a search option for tags and categories. Nodes, each of which represents a different tag, are weighted to represent its number of total occurrences across all datasets---the bigger the node, the most frequently it appears on the Berlin Open Data Portal. Edges, which are the lines uniting nodes, illustrate how often tags occur in the same dataset using our initial bigram analysis. The graph is also interactive: when clicking on one of the nodes or edges, the associated tag(s) and their category and occurrence appear. 
 
-- **[Try it yourself here!]()**
+- **[Try it yourself here!](https://odis-berlin.de/ressourcen/tag-analyse.html)**
 
 ## Insights
 
