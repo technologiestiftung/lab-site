@@ -17,7 +17,7 @@ authors:
 start: 2021-02-01
 end: 2021-03-01
 status: finished
-date: 2021-03-05
+date: 2021-03-16
 
 materialsIncluded:
   - name: "GitHub"
@@ -27,7 +27,10 @@ materialsIncluded:
 
 ## Context and Objectives
 
-The data used for this analysis are the description tags from all 2,514 datasets available on the Berlin Open Data Portal. These tags are used to describe the content of each dataset, therefore allowing users to find other datasets on similar themes. For instance, the dataset on eMobility electric stations is described by tags like *Elektro-Ladesäulen*, *Mobilität* and *Emobility*, each of which are associated with other data. On average, each dataset is described by 11.7 tags. Our objective was to determine which tags occurred most often with which other tags in order to outline a thematical network for all datasets available on the Berlin Open Data Portal. This allows to understand which tags are common across themes, and which themes are typically closest to each other in terms of content. 
+Open, freely-available data sets are collected centrally for the state of Berlin via a platform, the [Open Data Portal Berlin](https://daten.berlin.de). If you are looking for open data, this website is the first place to go. To ensure that specific data sets can be easily found by users in the abundance of the portal, each data set is described by keywords, the so-called tags. These tags are used to quickly identify the content of each dataset and allow users to find other datasets on similar topics. For instance, the dataset on eMobility electric stations is described by tags like *Elektro-Ladesäulen*, *Mobilität* and *Emobility*, each of which are associated with other data. On average, each dataset is described by 11.7 tags. Our objective was to determine which tags occurred most often with which other tags in order to outline a thematical network for all datasets available on the Berlin Open Data Portal. This allows to understand which tags are common across themes, and which themes are typically closest to each other in terms of content. 
+
+Our goal was to determine which tags occur most frequently with which other tags in order to outline a thematic network for all datasets available on the Berlin Open Data Portal. This allows us to understand which tags co-occur across topics and which topics are typically closest in content. The data used for this analysis are the description tags from all 2,643 datasets available on the Berlin Open Data Portal at the time (March 15 2021).
+
 
 ## Getting Data and Extracting Tags
 
@@ -54,7 +57,7 @@ Using the information from our data analysis, we used the visNetwork function in
 
 ## Insights
 
-From the graph, we can derive some interesting correlations to the frequency and use of tags. The graph is visually divided into 2 large culsters that are only linked by a few tags. One is the area around the red *Geodata* and *Karten* nodes. It seems that at least most of the tags contained here belong to data sets that are actual geodata, i.e. data that have a spatial reference and can be further processed with a geoinformation system, for example. The second large cluster is found around the blue *GSI* and yellow *Regionalvergleich* nodes. Data from this subject areas of health and social affairs, as well as care and demography, are therefore frequently not available as georeferenced data sets. One reason for this is certainly that many of the data do not have a spatial reference or the spatial reference takes place via the specification of LORs, as the *LOR* node suggests, which represents a kind of link between the two large clusters.
+From the graph, we can derive some interesting correlations to the frequency and use of tags. The graph is visually divided into 2 large culsters that are only linked by a few tags. One is the area around the red *Geodata* and *Karten* nodes. It seems that at least most of the tags contained here belong to data sets that are actual geodata, i.e. data that have a spatial reference and can be further processed with a geoinformation system, for example. The second large cluster is found around the blue *GSI* and yellow *Regionalvergleich* nodes. Data from this subject areas of health and social affairs, as well as care and demography, are therefore frequently not available as georeferenced data sets. One reason for this is certainly that many of the data do not have a spatial reference or the spatial reference takes place via the specification of LORs (Lebensweltlich orientierte Räume, a spatial unit, see also our post here [hier](https://lab.technologiestiftung-berlin.de/projects/spatial-units/en/)), as the *LOR* node suggests, which represents a kind of link between the two large clusters.
 
 Also interesting are the connections of this "center nodes". We see for example that the largest node is *Geodaten*, meaning this is the most frequently used tag in the data portal. When we select the *Geodaten* node, we can see what other terms are frequently used in connection with *Geodaten*. Some connections are not particularly surprising (e.g., *Karten*), but other connections give us an impression of what kinds of geospatial data are being published (for example, many of the connected nodes have something to do with geology/geological data).
 
