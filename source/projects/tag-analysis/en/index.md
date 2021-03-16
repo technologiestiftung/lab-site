@@ -43,9 +43,11 @@ We separated these tags and proceeded to clean them in order to avoid duplicates
 
 ## Analyzing the tags
 
-We analyzed the tags by creating bigrams off all cooccurring tags--i.e. which tags are used with which other tags in the same dataset, and how often. This resulted in 22,783 tag bigrams whose occurrence distribution is displayed below. The median tag occurrence is 13.5, which means that most tag associations occur in 13-14 different datasets (as is the case for *Kinder* and *Migrationshintergrund*), but the most cooccurring bigrams were present in up to 183 datasets (like for *Geodaten* and *Karten*). 
+We analyzed the tags by creating bigrams off all cooccurring tags-i.e. which tags are used with which other tags in the same dataset, and how often. This resulted in 22,783 tag bigrams whose occurrence distribution is displayed below. 
 
 {% include macro-image-section-markdown.html src="../images/bigramm.png"%}
+
+From these 22,783 tags, we conducted an analysis on a subset of the 342 most co-occuring tags (i.e. most frequent bigramms), for 138 tags in total. In this subset, the median tag occurrence is 13.5 (in contrast with 2 for the whole dataset), which means that most tag associations occur in 13-14 different datasets (as is the case for *Kinder* and *Migrationshintergrund*), but the most cooccurring bigrams were present in up to 183 datasets (like for *Geodaten* and *Karten*). 
 
 Our next step was to conduct an automatic clustering analysis of all tags based on these bigrams. Using a Louvain community detection model, we measured which bigrams cooccured most often with which other bigrams, creating a network of bigrams separated across different themes. Using the most frequently used tags, this cluster analysis identified 13 different themes containing multiple bigrams which were manually given a label. Indeed, community detection is helpful to indicate which bigrams occur with which other bigrams, but the software itself isn't able to understand the underlying concept uniting terms like *Preise* and *Werte*. We therefore attributed labels using our understanding of the most common conceptual denominator behind these groups of tags. 
 

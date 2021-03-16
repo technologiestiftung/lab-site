@@ -43,9 +43,13 @@ In einem nächsten Schritt wurden die Tags getrennt und bereinigt, um Duplikate 
 
 ## Analyse der Tags
 
-Die Tag-Zusammenhänge wurden nun analysiert, indem wir Bigramme aus allen gemeinsam vorkommenden Tags erstellten. So konnten wir identifizieren, welche Tags mit welchen anderen Tags für die selben Datensätze verwendet wurden und wie häufig. Daraus ergaben sich 22.783 Tag-Bigramme, deren Häufigkeitsverteilung unten dargestellt ist. Der Median des Tag-Biagramm-Vorkommens liegt bei 13,5. Tag-Pärchen kommen also statistisch gesehen am häufigsten in 13-14 verschiedenen, gemeinsamen Datensätzen vor (wie z.B. bei *Kinder* und *Migrationshintergrund*). Es geht aber auch deutlich häufiger. Die Pärchen mit den höchsten Vorkommen, sind in bis zu 183 Datensätzen vorhanden (z.B. *Geodaten* und *Karten*). 
+Die Tag-Zusammenhänge wurden nun analysiert, indem wir Bigramme aus allen gemeinsam vorkommenden Tags erstellten. So konnten wir identifizieren, welche Tags mit welchen anderen Tags für die selben Datensätze verwendet wurden und wie häufig. Daraus ergaben sich 22.783 Tag-Bigramme, deren Häufigkeitsverteilung im folgenden Graphen dargestellt ist. 
 
 {% include macro-image-section-markdown.html src="../images/bigramm.png"%}
+
+Von diesen 22.783 Tags haben wir als Teilmenge für die weitere Analyse die 342 am häufigsten vorkommenden Bigramme und somit insgesamt 138 Tags extrahiert. In dieser Teilmenge liegt der Median des Tag-Vorkommens bei 13,5 (für den gesamten Datensatz liegt der Median bei 2), was bedeutet, dass Tag-Pärchen statistisch gesehen am häufigsten in 13-14 verschiedenen, gemeinsamen Datensätzen auftreten (wie z.B. bei *Kinder* und *Migrationshintergrund*). Es geht aber auch deutlich häufiger. Die Pärchen mit den höchsten Vorkommen, sind in bis zu 183 Datensätzen zu finden (z.B. *Geodaten* und *Karten*). 
+
+
 
 Im nächsten Schritt wurde eine automatische Clusteranalyse aller Tags auf der Grundlage der Bigramme durchgeführt. Mithilfe eines Louvain-Community-Detection-Modells konnten wir identifizieren, wie häufig Bigramme mit welchen anderen Bigrammen vorkommen, und so ein Netzwerk von Tag-Verbindungen erstellt. Unter Verwendung der am häufigsten verwendeten Tags identifizierten wir mit dieser Clusteranalyse 13 verschiedene Kategorien, die ein oder mehrere Bigramme enthalten. Das Detection-Modell ist zwar hilfreich, um aufzuzeigen, welche Bigramme mit welchen anderen Bigrammen auftreten, aber die Software selbst ist nicht in der Lage, das zugrunde liegende Konzept zu verstehen, das z.B. Begriffe wie *Preise* und *Werte* vereint. Wir haben daher manuell Labels für die Kategorien vergeben, indem wir unser Verständnis des gemeinsamsten konzeptionellen Nenners hinter diesen Gruppen von Tags verwendet haben. 
  
