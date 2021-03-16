@@ -20,8 +20,8 @@ status: finished
 date: 2021-03-16
 
 materialsIncluded:
-  - name: ""
-    link: ""
+  - name: "GitHub"
+    link: "https://github.com/technologiestiftung/network_analysis"
 
 ---
 

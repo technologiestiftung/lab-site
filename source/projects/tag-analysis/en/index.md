@@ -21,7 +21,7 @@ date: 2021-03-16
 
 materialsIncluded:
   - name: "GitHub"
-    link: ""
+    link: "https://github.com/technologiestiftung/network_analysis"
 
 ---
 
