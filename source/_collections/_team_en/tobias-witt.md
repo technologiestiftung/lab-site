@@ -8,6 +8,5 @@ twitter:
 github:
 position: Service Designer
 type: publication
-external: true
 order: 2
 ---
