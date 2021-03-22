@@ -3,7 +3,7 @@ layout: project
 description: Analyse der meist genutzten Tags im Berliner Open Data Portal.
 lang: de
 title: "Berlins Open Data Network"
-subtitle: Eine Clusteranalyse zeigt, zu welchen Themen die meisten Daten im Open Data Portal Berlin vorhanden sind und wie sie sich durch Tags miteinander verknüpft lassen
+subtitle: Eine Clusteranalyse zeigt, zu welchen Themen die meisten Daten im Open Data Portal Berlin vorhanden sind und wie sie sich durch Tags miteinander verknüpfen lassen
 type: dataset
 colorMode: bright
 featuredImage: /projects/tag-analysis/images/featured.jpg
