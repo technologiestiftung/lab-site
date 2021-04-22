@@ -6,9 +6,9 @@ title: Best Practice Beispiele für Smart City Anwendungen in Europa
 subtitle: Das Thema der smarten Stadt beschäftigt nicht nur Berlin. Gemeinsam mit der Senatsverwaltung für Wirtschaft, Energie und Betriebe haben wir uns angeschaut, welche Maßnahmen und Projekte andere Städte im Bereich Smart City unternehmen und welche Anwendungspotentiale diese für Berlin haben.
 type: publication
 colorMode: bright
-thumbnail: /projects/od-for-cities/images/thumbnail.jpg
-heroImage: /projects/od-for-cities/images/zuerich.png
-socialMediaImage: /projects/od-for-cities/social_media.jpg
+thumbnail: /projects/best practice smart city europe/images/thumbnail.jpg
+heroImage: /projects/best practice smart city europe/images/heroe.jpg
+socialMediaImage: /projects/best practice smart city europe/SocialMedia.jpg
 visible: true
 featured: false
 authors:
@@ -19,7 +19,7 @@ status: finished
 date: 2021-04-22
 
 redirect_from:
-  - /projects/od-for-cities/index.html
+  - /projects/best practice smart city europe/index.html
 
 ---
 
