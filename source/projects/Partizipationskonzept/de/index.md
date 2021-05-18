@@ -9,15 +9,15 @@ type: publication
 colorMode: bright
 thumbnail: /projects/Partizipationskonzept/images/thumbnail.jpg
 heroImage: /projects/Partizipationskonzept/images/hero.jpg
-socialMediaImage: /projects/Partizipationskonzept/images/SocialMedia.jpg
+socialMediaImage: /projects/Partizipationskonzept/images/socialmedia.jpg
 visible: true
 featured: false
 authors:
   - ines-weigand
-start: 2021-04-22
-end: 2021-04-22
+start: 2021-05-18
+end: 2021-05-18
 status: finished
-date: 2021-04-22
+date: 2021-05-18
 
 materialsIncluded:
   - name: "GitHub"
@@ -49,6 +49,9 @@ werden, deren Perspektive sonst schnell ungehört bleibt. Des weiteren sollten a
 ## Woran? Themen für die Bürger*innen- und Stakeholderbeteiligung
 
 Wir haben drei Handlungsfelder identifiziert, die beispielhaft das Potenzial eines Beteiligungsverfahrens im Rahmen einer Data Governance-Strategie aufzeigen. Diese sind in der Tabelle unten in Detail ausformuliert.
+
+<iframe title=“Handlungsfelder” aria-label=“table” id=“datawrapper-chart-v4mFE” src=“https://datawrapper.dwcdn.net/v4mFE/7/” scrolling=“no” frameborder=“0" style=“width: 0; min-width: 100% !important; border: none;” height=“1199"></iframe><script type=“text/javascript”>!function(){“use strict”;window.addEventListener(“message”,(function(a){if(void 0!==a.data[“datawrapper-height”])for(var e in a.data[“datawrapper-height”]){var t=document.getElementById(“datawrapper-chart-“+e)||document.querySelector(“iframe[src*=‘“+e+“’]“);t&&(t.style.height=a.data[“datawrapper-height”][e]+“px”)}}))}();
+</script>
 
 
 ## Wie? Mögliche Partizipationsformate
