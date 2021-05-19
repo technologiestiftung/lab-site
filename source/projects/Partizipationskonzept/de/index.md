@@ -50,8 +50,7 @@ werden, deren Perspektive sonst schnell ungehört bleibt. Des weiteren sollten a
 
 Wir haben drei Handlungsfelder identifiziert, die beispielhaft das Potenzial eines Beteiligungsverfahrens im Rahmen einer Data Governance-Strategie aufzeigen. Diese sind in der Tabelle unten in Detail ausformuliert.
 
-<iframe title=“Handlungsfelder” aria-label=“table” id=“datawrapper-chart-v4mFE” src=“https://datawrapper.dwcdn.net/v4mFE/7/” scrolling=“no” frameborder=“0" style=“width: 0; min-width: 100% !important; border: none;” height=“1199"></iframe><script type=“text/javascript”>!function(){“use strict”;window.addEventListener(“message”,(function(a){if(void 0!==a.data[“datawrapper-height”])for(var e in a.data[“datawrapper-height”]){var t=document.getElementById(“datawrapper-chart-“+e)||document.querySelector(“iframe[src*=‘“+e+“’]“);t&&(t.style.height=a.data[“datawrapper-height”][e]+“px”)}}))}();
-</script>
+{% include macro-image-section-markdown.html src="../images/tabelle.jpg" caption="Handlungsfelder"%}
 
 
 ## Wie? Mögliche Partizipationsformate
