@@ -43,7 +43,7 @@ Bedürfnisse von Bürger\*innen, Organisationen, Unternehmen und weiteren Stakeh
 Die Beteiligungsformate im Rahmen der Data Governance Strategie sollten sich an diese gesamte Stadtgesellschaft richten. Dabei sollte ein besonderer Augenmerk auf die stillen Gruppen innerhalb der Bürger\*innen gelegt
 werden, deren Perspektive sonst schnell ungehört bleibt. Des weiteren sollten auch interessierte Stakeholder aus Wirtschaft, Wissenschaft und der organisierten Zivilgesellschaft gehört und eingebunden werden. Eine gesonderte Rolle nehmen Mitarbeiter\*innen der Verwaltung ein: sie müssen die Data Governance umsetzen. Abbildung 1 bietet eine Übersicht der Hauptakteur\*innen der jeweiligen Stakeholder-Gruppen an, die eine kritische Rolle im Rahmen einer Data Governance-Strategie spielen können. Anschließend werden verschieden Handlungsfelder aufgeführt, in deren Kontext bestimmte Stakeholdergruppen spezifisch angesprochen werden können.
 
-{% include macro-image-section-markdown.html src="../images/stakeholder.png" caption="Berliner Stakeholder für Beteiligungsverfahren im Bereich der Data Governance"%}
+{% include macro-image-section-markdown.html src="../images/stakeholder.png" caption="Berliner Stakeholder für Beteiligungsverfahren im Bereich der Data Governance"%} 
 
 
 ## Woran? Themen für die Bürger*innen- und Stakeholderbeteiligung
