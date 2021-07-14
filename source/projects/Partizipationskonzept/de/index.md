@@ -34,7 +34,7 @@ Die Beteiligungsformate im Rahmen der Data Governance Strategie sollten sich an 
 werden, deren Perspektive sonst schnell ungehört bleibt. Des weiteren sollten auch interessierte Stakeholder aus Wirtschaft, Wissenschaft und der organisierten Zivilgesellschaft gehört und eingebunden werden. Eine gesonderte Rolle nehmen Mitarbeiter\*innen der Verwaltung ein: sie müssen die Data Governance umsetzen. Abbildung 1 bietet eine Übersicht der Hauptakteur\*innen der jeweiligen Stakeholder-Gruppen an, die eine kritische Rolle im Rahmen einer Data Governance-Strategie spielen können. Anschließend werden verschieden Handlungsfelder aufgeführt, in deren Kontext bestimmte Stakeholdergruppen spezifisch angesprochen werden können.
 
 ![Berliner Stakeholder für Beteiligungsverfahren im Bereich der Data Governance](/projects/Partizipationskonzept/images/stakeholder.png)
-
+*Berliner Stakeholder für Beteiligungsverfahren im Bereich der Data Governance*
 
 
 ## Woran? Themen für die Bürger\*innen- und Stakeholderbeteiligung
@@ -42,6 +42,7 @@ werden, deren Perspektive sonst schnell ungehört bleibt. Des weiteren sollten a
 Wir haben drei Handlungsfelder identifiziert, die beispielhaft das Potenzial eines Beteiligungsverfahrens im Rahmen einer Data Governance-Strategie aufzeigen. Diese sind in der Tabelle unten in Detail ausformuliert.
 
 ![Handlungsfelder](/projects/Partizipationskonzept/images/tabelle.jpg)
+*Handlungsfelder*
 
 ## Wie? Mögliche Partizipationsformate
 
