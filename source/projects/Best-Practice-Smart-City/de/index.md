@@ -56,7 +56,7 @@ Das Vision Zero Boston-Projekt basiert auf der Idee, dass selbst ein einziger To
 
 Varaamo ist Teil des „City of Helsinki Strategy Programme 2013-2016“ und dem „IT programme 2015-2017“. Die Pilotversion des Projektes wurde im Frühling 2015 an zwei Bibliotheken in Helsinki gestartet und hat sich mittlerweile auf andere Räumlichkeiten in Helsinki ausgebreitet. Der Fokus des Projekts liegt auf einer Verbesserung des Service für Bürger\*innen, indem es ihnen eine Plattform bereitstellt, auf der sie unterschiedliche Räumlichkeiten oder Arbeitsflächen des öffentlichen Betriebs für den privaten Gebrauch reservieren können. Das Projekt hat einen prototypischen Charakter, lädt auf der Homepage zu Feedback ein und verweist direkt zu den Datengrundlagen via Github.
 
-[Zum Konzept Helsinki](h/projects/best-practice-smart-city/pdfs/Smart-City-Helsinki.pdf)
+[Zum Konzept Helsinki](/projects/best-practice-smart-city/pdfs/Smart-City-Helsinki.pdf)
 
 ## Deutschland: Herrenberg
 
