@@ -50,7 +50,7 @@ Das Projekt DECODE („Decentralised Citizen Owned Data Economy“) wurde 2016 m
 Trotz ihrer bereits guten Erfolgsbilanz bei Verkehrsunfällen hat die Stadt Boston eine proaktive Haltung bewiesen, um ihre Straßen für Fußgänger, Radfahrer und Autofahrer noch sicherer zu machen.
 Das Vision Zero Boston-Projekt basiert auf der Idee, dass selbst ein einziger Todesfall durch Verkehrsunfälle zu viel ist. Ziel ist es, die Zahl der Verkehrstoten bis 2030 vollständig zu beseitigen. Um dieses Ziel zu erreichen, hat das Team von Vision Zero Boston drei verschiedene Komponenten entwickelt.
 
-[Zum Konzept Boston](/projects/best-practice-smart-city/pdfs/SmartCityBoston.pdf)
+[Zum Konzept Boston](/projects/best-practice-smart-city/pdfs/Smart-City-Boston.pdf)
 
 ## Finnland: Helsinki
 
