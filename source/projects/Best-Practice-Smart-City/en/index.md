@@ -20,7 +20,7 @@ date: 2021-05-19
 
 ---
 
-The topic of smart cities is not only of interest to Berlin. Cities around the world are confronted with challenges like resource scarcity, climate change, increasing social conflicts and social division. But as the power and potential of technology continues to increase, so too do the options for strategically and creatively addressing these challenges. Together with the Senate Department for Economics, Energy and Public Enterpreises, we took a look at what measures and projects other cities are undertaking in the area of smart cities and what potential applications these initiatives have for Berlin.
+The topic of smart cities is not only of interest to Berlin. Cities around the world are confronted with challenges like resource scarcity, climate change, increasing social conflicts and social division. But as the power and potential of technology continues to increase, so too do the options for strategically and creatively addressing these challenges. Together with the Senate Department for Economics, Energy and Public Enterprises, we took a look at what measures and projects other cities are undertaking in the area of smart cities and what potential applications these initiatives have for Berlin.
 
 ## The Netherlands: Amsterdam
 
