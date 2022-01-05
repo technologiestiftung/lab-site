@@ -8,5 +8,6 @@ twitter:
 github:
 position: Werkstudent
 type: publication
+external: true
 order: 4
 ---

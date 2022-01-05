@@ -8,6 +8,7 @@ twitter: EvelyneBrie
 github: evelynebrie
 position: Open Data Researcher
 type: publication # could also be "workshop", "dataset", "prototype"
+external: true
 order: 2
 ---
 
