@@ -3,7 +3,7 @@ name: Yannick Müller
 uid: yannick-mueller
 image: /assets/images/yannick_sw_final.jpg
 mail: yannick.mueller@technologiestiftung-berlin.de
-description: Yannick arbeitet als wissenschaftlicher Mitarbeiter für die Technologiestiftung Berlin im CityLAB Berlin. Er unterstützt bei der Organisation von Veranstaltungen, Partnerschaften sowie Beteiligungsformaten und vertritt die Interessen der Technologiestiftung im Austausch rund um digitale, politische Themen in Wissenschaft und urbaner Praxis. Yannick hat Politik- und Verwaltungswissenschaft an der Zeppelin Universität sowie der Universität Leipzig studiert.
+description: Yannick works as a research associate for Technologiestiftung Berlin at CityLAB Berlin. He supports the organization of events, partnerships and participation formats while representing the interests of Technologiestiftung Berlin in digital and political topics in exchange with both science and urban practitioners. Yannick studied political and administrative science at Zeppelin University and the University of Leipzig.
 twitter: YannickAntonioM
 github:
 position: Research Associate
