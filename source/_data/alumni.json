@@ -1,5 +1,26 @@
 [
   {
+    "name": "Evelyne Brie",
+    "role": {
+      "en": "Open Data Researcher",
+      "de": "Open Data Researcher"
+    }
+  },
+  {
+    "name": "Sara Reichert",
+    "role": {
+      "en": "CityLAB Berlin",
+      "de": "Werkstatt-Leitung - CityLAB Berlin"
+    }
+  },
+  {
+    "name": "Rikko Tuitjer",
+    "role": {
+      "en": "Working Student",
+      "de": "Werkstudent"
+    }
+  },
+  {
     "name": "Joshua Pacheco",
     "role": {
       "en": "Service Designer",

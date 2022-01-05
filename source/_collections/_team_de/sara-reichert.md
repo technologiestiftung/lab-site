@@ -8,6 +8,7 @@ twitter: Sarapedia1
 github:
 position: Werkstattleitung – CityLAB Berlin
 type: prototype # could also be "workshop", "dataset", "prototype"
+external: true
 order: 0
 ---
 
