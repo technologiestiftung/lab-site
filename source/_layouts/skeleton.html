@@ -135,11 +135,12 @@
 
     </head>
     <body>
-        {%- comment -%}
-        <!-- navigation -->
-        <!-- TODO Nav not working yet -->
-        {%- endcomment -%}
-        {% include navigation.html %}
+        {% include archival-modal.html %}
+
+        <header style="display: block; position: fixed; right: 0; top: 0; background: white; width: 100%; z-index: 999999; border-bottom: 1px solid #e8e8e8;">
+          {% include archival-banner.html %}
+          {% include navigation.html %}
+        </header>
 
         {{ content }}
 

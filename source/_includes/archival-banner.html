@@ -1,0 +1,50 @@
+<div class="archival-banner">
+  <div class="archival-banner__content">
+    <p>
+      <b>Aufgepasst:</b> Die Website des Ideation & Prototyping Lab wird seit
+      Februar 2022 nicht mehr aktualisiert.
+      <button id="open-archival-modal">Mehr Infos</button>
+    </p>
+  </div>
+</div>
+
+<style>
+  .archival-banner {
+    border-bottom: 1px solid #e8e8e8;
+    padding: 1rem 0;
+    background-color: hsl(347, 100%, 98%);
+  }
+
+  .archival-banner--hidden {
+    display: none !important;
+  }
+
+  .archival-banner__content {
+    margin: 0 30px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .archival-banner__content {
+      margin: 0 12vw;
+    }
+  }
+
+  @media screen and (min-width: 1020px) {
+    .archival-banner__content {
+      text-align: center;
+    }
+  }
+
+  .archival-banner__content p {
+    font-size: 14px;
+    margin-right: 4px;
+  }
+
+  .archival-banner__content button#open-archival-modal {
+    background: none;
+    border: none;
+    text-decoration: underline;
+    font-size: 14px;
+    cursor: pointer;
+  }
+</style>

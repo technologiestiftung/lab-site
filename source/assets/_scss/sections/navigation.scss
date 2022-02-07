@@ -1,16 +1,9 @@
 .navigation {
-    background: rgba($white, 0);
     box-shadow: none;
     display: flex;
     justify-content: space-between;
     padding: $spacing-s $spacing-page-m;
-    position: fixed;
-    right: 0;
-    top: 0;
-    background: white;
-    // transition: all $time-s;
     width: 100%;
-    z-index: 999999;
 
     @media only screen and (min-width: $screen-xl) {
         padding: 0;
