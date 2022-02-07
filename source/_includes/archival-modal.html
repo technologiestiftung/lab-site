@@ -1,4 +1,4 @@
-<div id="archival-modal__wrapper" class="archival-modal__wrapper--hidden" role="dialog">
+<div id="archival-modal__wrapper" tabindex="1" class="archival-modal__wrapper--hidden" role="dialog">
   <div class="archival-modal">
     <p>
       <b>Liebe Besucher:innen,</b>
@@ -41,6 +41,7 @@
     padding: 3rem;
     max-width: 65ch;
     position: relative;
+    box-sizing: border-box;
   }
 
   .archival-modal p:not(:first-of-type) {
@@ -64,5 +65,11 @@
     top: 0;
     right: 0;
     cursor: pointer;
+    box-sizing: border-box;
   }
+
+  button#close-archival-modal:focus {
+    outline: 1px dotted black;
+  }
+
 </style>
