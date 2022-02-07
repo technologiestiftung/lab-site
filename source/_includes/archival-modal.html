@@ -1,0 +1,71 @@
+<div id="archival-modal__wrapper" tabindex="1" class="archival-modal__wrapper--hidden" role="dialog">
+  <div class="archival-modal">
+    <p>
+      <b>Liebe Besucher:innen,</b>
+      die Website des Ideation & Prototyping Lab der Technologiestiftung
+      wird nicht mehr aktualisiert, bleibt aber zu
+      archivarischen Zwecken online.
+    </p>
+    <p>Unsere neueren Projekte findet ihr auf der Seite des CityLAB Berlin.</p>
+    <a href="https://www.citylab-berlin.org" class="link--button"
+      >Zum CityLAB Berlin</a
+    >
+    <button id="close-archival-modal" aria-label="Schließen">
+      <img src="/assets/icons/close.svg" alt="Cross Icon" aria-hidden="true" />
+    </button>
+  </div>
+</div>
+
+<style>
+  #archival-modal__wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999999;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0 1rem;
+  }
+
+  .archival-modal__wrapper--hidden {
+    display: none !important;
+  }
+
+  .archival-modal {
+    background-color: white;
+    margin: 0 auto;
+    padding: 3rem;
+    max-width: 65ch;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  .archival-modal p:not(:first-of-type) {
+    margin-top: 0.5rem;
+  }
+
+  .archival-modal b {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  button#close-archival-modal {
+    border: none;
+    background: none;
+    padding: 8px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+
+  button#close-archival-modal:focus {
+    outline: 1px dotted black;
+  }
+
+</style>
