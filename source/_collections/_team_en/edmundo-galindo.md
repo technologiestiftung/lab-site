@@ -3,7 +3,7 @@ name: Edmundo Galindo
 uid: edmundo-galindo
 image: /assets/images/edmundo.jpg
 mail: Galindo@technologiestiftung-berlin.de
-description: Edmundo Galindo is an scientific researcher in the Ideation & Prototyping Lab of the Technologiestiftung Berlin in the field of User Experience-, User Interface Design, Design Thinking and Project Management. He studied industrial design at the UDK Berlin and interface design at the University of Applied Sciences Potsdam. He is currently working on the project for citizen terminals for the Central and State Library Berlin (Zentral- und Landes Bibliothek Berlin [ZLB]). His interest lies in research, conception and design of digital applications with future-oriented visions.
+description: Edmundo is an interface and industrial designer and works as a research assistant at CityLAB Berlin and Ideation & Prototyping Lab. With his experience in user experience, user interface, interaction design and human centered design, he has designed, conducted and evaluated numerous design thinking workshops for the administration, cultural landscape and civil society. He is currently working on various projects for the modernization of the government administration and its online services for civil society in the field of service design, user experience and develops prototypical solution approaches for digital applications with future-oriented visions.
 twitter: EdmundoMGalindo
 github:
 position: UX/UI HCI Research & Design
