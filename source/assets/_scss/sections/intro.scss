@@ -1,8 +1,14 @@
 .intro {
     &:first-of-type {
+        margin-top: 360px;
         @media screen and (max-width: $screen-m) {
-            margin-top: $spacing-xll;
             margin-bottom: $spacing-xl;
+        }
+        @media screen and (min-width: $screen-xs) {
+            margin-top: 320px;
+        }
+        @media screen and (min-width: $screen-s) {
+            margin-top: 250px;
         }
     }
 
