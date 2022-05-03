@@ -6,8 +6,15 @@
 
   &:first-of-type {
     @media screen and (max-width: $screen-m) {
-      margin-top: $spacing-xl;
       margin-bottom: $spacing-xl;
+    }
+
+    margin-top: 290px;
+    @media screen and (min-width: $screen-s) {
+      margin-top: 220px;
+    }
+    @media screen and (min-width: $screen-m) {
+      margin-top: 250px;
     }
   }
 
