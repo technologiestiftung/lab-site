@@ -54,7 +54,7 @@ body {
     }
 
     main {
-        margin-top: 120px;
+        margin-top: 0;
         margin-bottom: $spacing-xl;
         opacity: 1;
         overflow: visible;
@@ -64,30 +64,6 @@ body {
         &.loading {
             opacity: 0;
         }
-    }
-
-    @media screen and (min-width: $screen-s) {
-        main {
-            margin-top: 100px;
-        } 
-    }
-
-    @media screen and (min-width: $screen-m) {
-        main {
-            margin-top: 80px;
-        } 
-    }
-
-    @media screen and (min-width: $screen-l) {
-        main {
-            margin-top: 40px;
-        } 
-    }
-
-    @media screen and (min-width: $screen-xxl) {
-        main {
-            margin-top: 0;
-        } 
     }
 }
 

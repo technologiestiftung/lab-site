@@ -9,7 +9,6 @@ import languageSwitch from "./modules/languageSwitch.js";
 import ImageSlider from "./modules/ImageSlider.js";
 import featProjectsHandler from "./modules/featProjectsHandler.js";
 import embedResize from "./modules/embed-resize.js";
-import initArchivalModal from "./modules/archivalModal.js";
 
 function createImageSliders(sliderClassName) {
   const imageSliders = document.getElementsByClassName(sliderClassName);
@@ -22,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
   navigationHandler();
   hamburgerHandler();
   languageSwitch();
-  initArchivalModal();
   featProjectsHandler();
   // createTimeline('timeline');
   createImageSliders("image-slider");

@@ -57,8 +57,18 @@ section.project-feed {
 
   &:first-of-type {
     @media screen and (max-width: $screen-m) {
-      margin-top: $spacing-xll !important;
       margin-bottom: $spacing-xl !important;
+    }
+
+    margin-top: 360px !important;
+    @media screen and (min-width: $screen-xs) {
+      margin-top: 320px !important;
+    }
+    @media screen and (min-width: $screen-s) {
+      margin-top: 280px !important;
+    }
+    @media screen and (min-width: $screen-m) {
+      margin-top: 220px !important;
     }
   }
 }
@@ -72,8 +82,12 @@ section.project-feed {
 section.mission-statement {
   &:first-of-type {
     @media screen and (max-width: $screen-m) {
-      margin-top: $spacing-xll;
       margin-bottom: $spacing-xl;
+    }
+
+    margin-top: 320px;
+    @media screen and (min-width: $screen-s) {
+      margin-top: 250px;
     }
   }
 

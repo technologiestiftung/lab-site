@@ -60,7 +60,16 @@
     }
 
 
-    margin-top: 0;
+    margin-top: 280px;
+    @media only screen and (min-width: $screen-xs) {
+        margin-top: 220px;
+    }
+    @media only screen and (min-width: $screen-s) {
+        margin-top: 0;
+    }
+    @media only screen and (min-width: $screen-m) {
+        margin-top: 100px;
+    }
 
     .image {
         &-text {
